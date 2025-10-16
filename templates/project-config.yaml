@@ -1,0 +1,105 @@
+# Claude Multi-Agent System - Project Configuration Template
+# Copy this file to ~/.claude-projects/YOUR_PROJECT_NAME.yaml
+# Customize for each project
+
+# ============================================================================
+# Project Identification
+# ============================================================================
+name: my-app
+repo: github.com/username/my-app
+base_branch: main
+protected_branches:
+  - main
+  - develop
+
+# ============================================================================
+# Pull Request Settings
+# ============================================================================
+requires_pr: true              # Always create PR (never push directly)
+auto_merge: false              # Require manual merge approval
+require_pr_approval: true      # Require PR approval before merge
+
+# ============================================================================
+# Docker Configuration
+# ============================================================================
+docker:
+  # Image to use: claude-python:latest or claude-node:latest
+  image: claude-python:latest
+
+  # Memory limit (overrides DEFAULT_DOCKER_MEMORY)
+  memory: 4g
+
+  # CPU limit (overrides DEFAULT_DOCKER_CPUS)
+  cpus: 2
+
+  # Network mode during development:
+  #   none   - No network access (most secure)
+  #   bridge - Normal Docker network
+  #   host   - Host network (least secure)
+  network_mode: none
+
+# ============================================================================
+# Testing & Quality Assurance
+# ============================================================================
+tests:
+  # Command to run tests (leave empty to skip)
+  command: pytest
+
+  # Require code coverage reports
+  coverage_required: true
+
+  # Minimum coverage percentage (0-100)
+  min_coverage: 80
+
+lint:
+  # Linting command (leave empty to skip)
+  command: flake8
+
+  # Require passing linting
+  required: true
+
+security:
+  # Security scanning command (leave empty to skip)
+  scan_command: bandit -r src/
+
+  # Require passing security scan
+  required: true
+
+# Pre-push checks (run before creating PR)
+# These must all pass before PR is created
+pre_push_checks:
+  - tests
+  - lint
+  - security
+
+# ============================================================================
+# Safety Settings
+# ============================================================================
+safety:
+  # Maximum cost per task in USD (overrides DEFAULT_MAX_COST)
+  max_cost_per_task: 5.00
+
+  # Allow agents to modify package.json/requirements.txt
+  allow_dependency_changes: false
+
+  # Require manual review even if all tests pass
+  require_manual_review: false
+
+  # Create backup before making changes
+  backup_before_changes: false
+
+# ============================================================================
+# Notifications (Optional)
+# ============================================================================
+notifications:
+  # Send notification on task completion
+  on_complete: false
+
+  # Send notification on error
+  on_error: true
+
+  # Email address for notifications (null to disable)
+  email: null
+
+  # Webhook URL for notifications (null to disable)
+  webhook: null
