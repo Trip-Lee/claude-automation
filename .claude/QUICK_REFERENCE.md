@@ -123,5 +123,130 @@ STOP if you see:
 
 ---
 
+## 🧪 Testing Quick Reference
+
+### Before ANY commit
+```bash
+node cli.js validate --smoke  # <3 seconds
+```
+
+### Before pushing to GitHub
+```bash
+node cli.js validate --full   # 30-60 seconds
+```
+
+### After major changes
+```bash
+node cli.js validate --full
+```
+
+---
+
+## 🐳 Docker Quick Reference
+
+### Check containers
+```bash
+docker ps -a | grep claude
+```
+
+### Cleanup
+```bash
+node cli.js cleanup --all
+```
+
+### API Usage
+```javascript
+// exec() returns string directly (NOT object!)
+const output = await dockerManager.exec(container, 'ls');
+if (output.includes('file.txt')) { ... }
+
+// Always cleanup
+finally {
+  if (container) {
+    await dockerManager.stop(container);
+    await dockerManager.remove(container);
+  }
+}
+```
+
+---
+
+## 🔧 Git Quick Reference
+
+### Check .gitignore before first commit
+```bash
+cat .gitignore  # Must have node_modules, .env, package-lock.json
+```
+
+### Remove from tracking
+```bash
+git rm -r --cached node_modules/
+git rm --cached package-lock.json
+```
+
+### Commit with tests
+```bash
+node cli.js validate --smoke
+git add .
+git commit -m "type: description"
+node cli.js validate --full
+git push
+```
+
+---
+
+## 📚 Documentation Files
+
+### In .claude/ (Development Guides)
+- `DOCUMENTATION_CHECKLIST.md` - Complete checklist
+- `QUICK_REFERENCE.md` - This file (quick patterns)
+- `LESSONS_LEARNED.md` - Key insights and what worked/didn't
+- `DEVELOPMENT_WORKFLOW.md` - Best practices for sessions
+- `API_PATTERNS.md` - How to use APIs correctly
+- `TESTING_GUIDE.md` - Testing strategy and how-to
+
+### When to read which file
+- **Starting work?** → Read DEVELOPMENT_WORKFLOW.md
+- **Need API usage?** → Read API_PATTERNS.md
+- **Adding tests?** → Read TESTING_GUIDE.md
+- **Want to avoid past mistakes?** → Read LESSONS_LEARNED.md
+- **Quick lookup?** → Read this file (QUICK_REFERENCE.md)
+
+---
+
+## 🚨 Common Pitfalls (Today's Learnings)
+
+### ❌ DON'T
+```javascript
+// Wrong: exec() doesn't return object
+const exec = await dockerManager.exec(container, 'ls');
+const { stdout } = await exec.getOutput(); // ❌ NO!
+
+// Wrong: not cleaning up
+const container = await dockerManager.create(...);
+// ... work ...
+// Forgot cleanup! ❌
+```
+
+### ✅ DO
+```javascript
+// Correct: exec() returns string
+const output = await dockerManager.exec(container, 'ls');
+if (output.includes('file')) { ... } // ✅
+
+// Correct: always cleanup
+let container = null;
+try {
+  container = await dockerManager.create(...);
+} finally {
+  if (container) {
+    await dockerManager.stop(container);
+    await dockerManager.remove(container);
+  }
+} // ✅
+```
+
+---
+
 **Last Updated**: 2025-10-21
 **Use**: EVERY session, EVERY change!
