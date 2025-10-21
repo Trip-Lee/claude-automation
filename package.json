@@ -4,7 +4,8 @@
   "description": "Claude Multi-Agent Coding System - Mobile-accessible AI-powered coding orchestration",
   "type": "module",
   "bin": {
-    "claude": "./cli.js"
+    "claude": "./cli.js",
+    "dev-tools": "./dev-tools.js"
   },
   "scripts": {
     "start": "node cli.js",
@@ -28,7 +29,9 @@
     "date-fns": "^3.3.1",
     "dockerode": "^4.0.2",
     "dotenv": "^16.4.5",
+    "inquirer": "^9.2.15",
     "ora": "^8.0.1",
+    "uuid": "^13.0.0",
     "yaml": "^2.4.0",
     "zod": "^4.1.12"
   },

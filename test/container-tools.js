@@ -100,9 +100,14 @@ export class ContainerTools {
 
   /**
    * Get tool definitions for Claude API
+   * Only return fields that Anthropic API accepts (no validator field)
    */
   getTools() {
-    return this.tools;
+    return this.tools.map(tool => ({
+      name: tool.name,
+      description: tool.description,
+      input_schema: tool.input_schema
+    }));
   }
 
   /**
@@ -151,25 +156,30 @@ export class ContainerTools {
 
   /**
    * Write file to container
+   * Uses base64 encoding to safely handle UTF-8 and avoid shell escaping issues
    */
   async writeFile(path, content) {
-    // Escape content for safe shell execution
-    const escapedContent = content.replace(/'/g, "'\\''");
+    // Use base64 encoding to safely transfer content without shell escaping issues
+    const base64Content = Buffer.from(content, 'utf-8').toString('base64');
 
-    // Create parent directories and write file
-    const commands = [
-      ['mkdir', '-p', path.substring(0, path.lastIndexOf('/'))],
-      ['sh', '-c', `printf '%s' '${escapedContent}' > ${path}`]
-    ];
+    // Create parent directories
+    const mkdirCmd = ['mkdir', '-p', path.substring(0, path.lastIndexOf('/'))];
+    const mkdirExec = await this.container.exec({
+      Cmd: mkdirCmd,
+      AttachStdout: true,
+      AttachStderr: true
+    });
+    await this.execAndGetOutput(mkdirExec);
 
-    for (const cmd of commands) {
-      const exec = await this.container.exec({
-        Cmd: cmd,
-        AttachStdout: true,
-        AttachStderr: true
-      });
-      await this.execAndGetOutput(exec);
-    }
+    // Write file using base64 decode and tee (tee can overwrite bind-mounted files)
+    // Using tee instead of > redirection to handle permission issues on bind mounts
+    const writeCmd = ['sh', '-c', `echo '${base64Content}' | base64 -d | tee ${path} > /dev/null`];
+    const writeExec = await this.container.exec({
+      Cmd: writeCmd,
+      AttachStdout: true,
+      AttachStderr: true
+    });
+    await this.execAndGetOutput(writeExec);
 
     return `Successfully wrote ${content.length} bytes to ${path}`;
   }
