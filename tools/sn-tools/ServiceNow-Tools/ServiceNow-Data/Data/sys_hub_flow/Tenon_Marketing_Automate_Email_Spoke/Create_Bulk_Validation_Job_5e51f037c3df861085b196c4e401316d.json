@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "5e51f037c3df861085b196c4e401316d",
+    "extracted_at": "2025-09-19T21:48:46.493Z",
+    "display_value": "Create Bulk Validation Job",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2024-08-03 03:10:07",
+    "display_value": "2024-08-02 08:10:07 PM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "b2231fd5c3ff829085b196c4e40131a6",
+    "display_value": "b2231fd5c3ff829085b196c4e40131a6"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "batch_validate_emails",
+    "display_value": "batch_validate_emails"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-07-16 13:04:34",
+    "display_value": "2024-07-16 06:04:34 AM"
+  },
+  "compiler_build": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Create Bulk Validation Job",
+    "display_value": "Create Bulk Validation Job"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "b2231fd5c3ff829085b196c4e40131a6",
+    "display_value": "b2231fd5c3ff829085b196c4e40131a6"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_5e51f037c3df861085b196c4e401316d",
+    "display_value": "sys_hub_flow_5e51f037c3df861085b196c4e401316d"
+  },
+  "name": {
+    "value": "Create Bulk Validation Job",
+    "display_value": "Create Bulk Validation Job"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"fe64af57-67c8-4192-93dc-a4a8fd7a9506.list_id\",\"label\":\"1 - Create Bulk Job➛List ID\",\"reference_display\":\"List ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"3508d5fa-f283-4d4f-b882-b848dc831bb9\":[\"list_id-0\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"5038e892-dcd7-4d75-849e-1f88700ace0e\"}},{\"name\":\"fe64af57-67c8-4192-93dc-a4a8fd7a9506.__action_status__.message\",\"label\":\"1 - Create Bulk Job➛Action Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{}},{\"name\":\"subflow.list_name\",\"label\":\"Input➛List Name\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fe64af57-67c8-4192-93dc-a4a8fd7a9506\":[\"list_name\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"da8ecb38-67ed-4318-9fe6-49f233478410\"}},{\"name\":\"subflow.attachment_sys_id\",\"label\":\"Input➛Attachment Sys ID\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fe64af57-67c8-4192-93dc-a4a8fd7a9506\":[\"attachment_sys_id\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"37f0a96c-3f23-4dec-b716-99a7dce7b36b\"}},{\"name\":\"531b30eb-8139-4508-9623-8d60113cd360.__status__.message\",\"label\":\"3 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"9ad69820-63f3-410f-b9ed-aa6afde01297\":[\"log_message\"]},\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"fe64af57-67c8-4192-93dc-a4a8fd7a9506.list_id\",\"label\":\"1 - Create Bulk Job➛List ID\",\"reference_display\":\"List ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"3508d5fa-f283-4d4f-b882-b848dc831bb9\":[\"list_id-0\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"5038e892-dcd7-4d75-849e-1f88700ace0e\"}},{\"name\":\"fe64af57-67c8-4192-93dc-a4a8fd7a9506.__action_status__.message\",\"label\":\"1 - Create Bulk Job➛Action Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{}},{\"name\":\"subflow.list_name\",\"label\":\"Input➛List Name\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fe64af57-67c8-4192-93dc-a4a8fd7a9506\":[\"list_name\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"da8ecb38-67ed-4318-9fe6-49f233478410\"}},{\"name\":\"subflow.attachment_sys_id\",\"label\":\"Input➛Attachment Sys ID\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fe64af57-67c8-4192-93dc-a4a8fd7a9506\":[\"attachment_sys_id\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"37f0a96c-3f23-4dec-b716-99a7dce7b36b\"}},{\"name\":\"531b30eb-8139-4508-9623-8d60113cd360.__status__.message\",\"label\":\"3 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"9ad69820-63f3-410f-b9ed-aa6afde01297\":[\"log_message\"]},\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "Create a bulk validation job",
+    "display_value": "Create a bulk validation job"
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "9",
+    "display_value": "9"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1519531000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1519531000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "b9ddc626c3ee4a1085b196c4e40131c9",
+    "display_value": "Bulk Validations"
+  }
+}

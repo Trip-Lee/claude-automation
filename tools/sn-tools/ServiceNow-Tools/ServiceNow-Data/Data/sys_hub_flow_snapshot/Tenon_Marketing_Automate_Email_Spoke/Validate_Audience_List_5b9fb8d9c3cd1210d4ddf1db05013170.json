@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "5b9fb8d9c3cd1210d4ddf1db05013170",
+    "extracted_at": "2025-09-19T21:49:47.351Z",
+    "display_value": "Validate Audience List",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"ddef01d6-de7b-4f91-b43e-9c6c94058dde.status\",\"label\":\"14 - Get Bulk Job➛Status\",\"reference_display\":\"Status\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"182291a2-79cf-497a-86cf-c7012a35beea\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"2a06a2b0-3065-41a3-8894-c7ee730b5fc2\"}},{\"name\":\"75555d9c-51da-4398-8408-06f7b7cb8cf2.item.result\",\"label\":\"18 - For Each➛Results_child0➛result\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"d5144625-6099-4522-92d8-85bbe9b0a406\":[\"verification_status\"]},\"attributes\":{}},{\"name\":\"75555d9c-51da-4398-8408-06f7b7cb8cf2.item.address\",\"label\":\"18 - For Each➛Results_child0➛address\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"d5144625-6099-4522-92d8-85bbe9b0a406\":[\"email_address\"]},\"attributes\":{}},{\"name\":\"1a2384f6-1221-4f5f-a963-f8706ffe2d3d.results\",\"label\":\"19 - Parse Validation Results File➛Results\",\"reference_display\":\"Results\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"usedInstances\":{\"75555d9c-51da-4398-8408-06f7b7cb8cf2\":[\"items\"]},\"attributes\":{\"sourceId\":\"7dba5c69-8921-4f5b-8d00-29563e7a2761\",\"child_name\":\"results_child0\",\"uiUniqueId\":\"0789488e-7d66-4590-a7ce-d7aea987c0c1\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD143a15bd2a6f0250aa05c345909d6684\",\"child_label\":\"Results_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"41613bc7-891e-44fa-9de5-b971ff105d2f\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_uiUniqueId\":\"941acb23-5b2c-4ec5-80e0-a4545f6180ac\"}},{\"name\":\"22239fb6-fc57-49cd-9831-7b31c181b2f8.results_attachment\",\"label\":\"18 - Unzip➛Results Attachment\",\"reference\":\"sys_attachment\",\"reference_display\":\"Results Attachment\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"1a2384f6-1221-4f5f-a963-f8706ffe2d3d\":[\"json_attachment\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"0a210883-0770-4d6e-828a-1a047b045a5c\"}},{\"name\":\"75446b9e-f6ae-4ba8-ba25-ad387ceac94e.attachment_record\",\"label\":\"17 - Get Results File➛Attachment Record\",\"reference\":\"sys_attachment\",\"reference_display\":\"Attachment Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"22239fb6-fc57-49cd-9831-7b31c181b2f8\":[\"attachment\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"a093a945-27cb-47b3-a382-50baba11a055\"}},{\"name\":\"ddef01d6-de7b-4f91-b43e-9c6c94058dde.json_download_url\",\"label\":\"14 - Get Bulk Job➛JSON Download URL\",\"reference_display\":\"JSON Download URL\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"209ed594-f687-48f6-999f-6c5f0855c2eb\":[\"results_url-0\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"0266e800-e609-4d7d-b200-6843e4942c52\"}},{\"name\":\"719b97c7-644a-4c72-811f-1f2da58e3223.list_id\",\"label\":\"11 - Create Bulk Job➛List ID\",\"reference_display\":\"List ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"ddef01d6-de7b-4f91-b43e-9c6c94058dde\":[\"list_id\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"5038e892-dcd7-4d75-849e-1f88700ace0e\"}},{\"name\":\"flow_variable.current_monthly_validations\",\"label\":\"Flow Variables➛Current Monthly Validations\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"773caedf-be93-457f-9b40-4d7b585e4c5c\":[\"condition\"],\"4adc4dd9-7a72-4481-842d-c13fae88b7e9\":[\"current_monthly_validations-0\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"946266a1-1ab3-4aa9-965d-a5d746eb6805\"}},{\"name\":\"flow_variable.max_monthly_validations\",\"label\":\"Flow Variables➛Max Monthly Validations\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"773caedf-be93-457f-9b40-4d7b585e4c5c\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"4fd827af-7190-4c11-819c-5085cc1a3715\"}},{\"name\":\"flow_variable.validation_complete\",\"label\":\"Flow Variables➛All Addresses Added\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"column_name\":\"\",\"choices\":[],\"usedInstances\":{\"773caedf-be93-457f-9b40-4d7b585e4c5c\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"14729ff8-4466-4cf6-a92b-d15683487a1d\"}},{\"name\":\"subflow.audience\",\"label\":\"Input➛Audience\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"e146ee20-9554-4e12-9505-9c37af2bded5\":[\"conditions\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"65b3b01b-c883-4d25-afb4-80b7e13532a6\",\"uiTypeLabel\":\"Reference\"}},{\"name\":\"0f900ddc-33cd-4630-904f-1bec71f49955.file\",\"label\":\"2 - Begin File➛File\",\"reference\":\"sn_utility_spoke_file\",\"reference_display\":\"File\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"bc866b45-d310-49c1-805b-b59f65073b38\":[\"file\"],\"83cdf07a-0845-4c25-8451-fac9de0adee9\":[\"file\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"191a1553-dd8a-48aa-8242-b960d789516a\"}},{\"name\":\"e146ee20-9554-4e12-9505-9c37af2bded5.Records\",\"label\":\"4 - Look Up Records➛x_cadso_automate_m2m_audience_email_detail Records\",\"reference\":\"x_cadso_automate_m2m_audience_email_detail\",\"reference_display\":\"x_cadso_automate_m2m_audience_email_detail Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"804c1e4a-7757-4478-8684-857c98565c52\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"804c1e4a-7757-4478-8684-857c98565c52.item.x_cadso_automate_email_detail.email_address\",\"label\":\"5 - For Each➛Audience to Email Detail (M2M) Record➛Email Details➛Email Address\",\"reference\":\"\",\"reference_display\":\"Email Address\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_email_detail\",\"column_name\":\"email_address\",\"usedInstances\":{\"bc866b45-d310-49c1-805b-b59f65073b38\":[\"email_address\"]}},{\"name\":\"83cdf07a-0845-4c25-8451-fac9de0adee9.file_attachment_id\",\"label\":\"10 - Build File➛File Attachment ID\",\"reference_display\":\"File Attachment ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"719b97c7-644a-4c72-811f-1f2da58e3223\":[\"attachment_sys_id\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"e25bc0f5-2759-4f15-b476-94f3722d938b\"}},{\"name\":\"flow_variable.bulk_job_status\",\"label\":\"Flow Variables➛Bulk Job Status\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"bba5f809-ecee-4170-9a69-a48078ea1604\"}},{\"name\":\"flow_variable.results_url\",\"label\":\"Flow Variables➛Results URL\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"75446b9e-f6ae-4ba8-ba25-ad387ceac94e\":[\"url\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"321c4fd4-6a19-4441-8b0b-df417f2aeada\"}}]",
+    "display_value": "[{\"name\":\"ddef01d6-de7b-4f91-b43e-9c6c94058dde.status\",\"label\":\"14 - Get Bulk Job➛Status\",\"reference_display\":\"Status\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"182291a2-79cf-497a-86cf-c7012a35beea\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"2a06a2b0-3065-41a3-8894-c7ee730b5fc2\"}},{\"name\":\"75555d9c-51da-4398-8408-06f7b7cb8cf2.item.result\",\"label\":\"18 - For Each➛Results_child0➛result\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"d5144625-6099-4522-92d8-85bbe9b0a406\":[\"verification_status\"]},\"attributes\":{}},{\"name\":\"75555d9c-51da-4398-8408-06f7b7cb8cf2.item.address\",\"label\":\"18 - For Each➛Results_child0➛address\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"d5144625-6099-4522-92d8-85bbe9b0a406\":[\"email_address\"]},\"attributes\":{}},{\"name\":\"1a2384f6-1221-4f5f-a963-f8706ffe2d3d.results\",\"label\":\"19 - Parse Validation Results File➛Results\",\"reference_display\":\"Results\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"usedInstances\":{\"75555d9c-51da-4398-8408-06f7b7cb8cf2\":[\"items\"]},\"attributes\":{\"sourceId\":\"7dba5c69-8921-4f5b-8d00-29563e7a2761\",\"child_name\":\"results_child0\",\"uiUniqueId\":\"0789488e-7d66-4590-a7ce-d7aea987c0c1\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD143a15bd2a6f0250aa05c345909d6684\",\"child_label\":\"Results_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"41613bc7-891e-44fa-9de5-b971ff105d2f\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_uiUniqueId\":\"941acb23-5b2c-4ec5-80e0-a4545f6180ac\"}},{\"name\":\"22239fb6-fc57-49cd-9831-7b31c181b2f8.results_attachment\",\"label\":\"18 - Unzip➛Results Attachment\",\"reference\":\"sys_attachment\",\"reference_display\":\"Results Attachment\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"1a2384f6-1221-4f5f-a963-f8706ffe2d3d\":[\"json_attachment\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"0a210883-0770-4d6e-828a-1a047b045a5c\"}},{\"name\":\"75446b9e-f6ae-4ba8-ba25-ad387ceac94e.attachment_record\",\"label\":\"17 - Get Results File➛Attachment Record\",\"reference\":\"sys_attachment\",\"reference_display\":\"Attachment Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"22239fb6-fc57-49cd-9831-7b31c181b2f8\":[\"attachment\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"a093a945-27cb-47b3-a382-50baba11a055\"}},{\"name\":\"ddef01d6-de7b-4f91-b43e-9c6c94058dde.json_download_url\",\"label\":\"14 - Get Bulk Job➛JSON Download URL\",\"reference_display\":\"JSON Download URL\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"209ed594-f687-48f6-999f-6c5f0855c2eb\":[\"results_url-0\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"0266e800-e609-4d7d-b200-6843e4942c52\"}},{\"name\":\"719b97c7-644a-4c72-811f-1f2da58e3223.list_id\",\"label\":\"11 - Create Bulk Job➛List ID\",\"reference_display\":\"List ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"ddef01d6-de7b-4f91-b43e-9c6c94058dde\":[\"list_id\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"5038e892-dcd7-4d75-849e-1f88700ace0e\"}},{\"name\":\"flow_variable.current_monthly_validations\",\"label\":\"Flow Variables➛Current Monthly Validations\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"773caedf-be93-457f-9b40-4d7b585e4c5c\":[\"condition\"],\"4adc4dd9-7a72-4481-842d-c13fae88b7e9\":[\"current_monthly_validations-0\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"946266a1-1ab3-4aa9-965d-a5d746eb6805\"}},{\"name\":\"flow_variable.max_monthly_validations\",\"label\":\"Flow Variables➛Max Monthly Validations\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"773caedf-be93-457f-9b40-4d7b585e4c5c\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"4fd827af-7190-4c11-819c-5085cc1a3715\"}},{\"name\":\"flow_variable.validation_complete\",\"label\":\"Flow Variables➛All Addresses Added\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"column_name\":\"\",\"choices\":[],\"usedInstances\":{\"773caedf-be93-457f-9b40-4d7b585e4c5c\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"14729ff8-4466-4cf6-a92b-d15683487a1d\"}},{\"name\":\"subflow.audience\",\"label\":\"Input➛Audience\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"e146ee20-9554-4e12-9505-9c37af2bded5\":[\"conditions\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"65b3b01b-c883-4d25-afb4-80b7e13532a6\",\"uiTypeLabel\":\"Reference\"}},{\"name\":\"0f900ddc-33cd-4630-904f-1bec71f49955.file\",\"label\":\"2 - Begin File➛File\",\"reference\":\"sn_utility_spoke_file\",\"reference_display\":\"File\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"bc866b45-d310-49c1-805b-b59f65073b38\":[\"file\"],\"83cdf07a-0845-4c25-8451-fac9de0adee9\":[\"file\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"191a1553-dd8a-48aa-8242-b960d789516a\"}},{\"name\":\"e146ee20-9554-4e12-9505-9c37af2bded5.Records\",\"label\":\"4 - Look Up Records➛x_cadso_automate_m2m_audience_email_detail Records\",\"reference\":\"x_cadso_automate_m2m_audience_email_detail\",\"reference_display\":\"x_cadso_automate_m2m_audience_email_detail Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"804c1e4a-7757-4478-8684-857c98565c52\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"804c1e4a-7757-4478-8684-857c98565c52.item.x_cadso_automate_email_detail.email_address\",\"label\":\"5 - For Each➛Audience to Email Detail (M2M) Record➛Email Details➛Email Address\",\"reference\":\"\",\"reference_display\":\"Email Address\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_email_detail\",\"column_name\":\"email_address\",\"usedInstances\":{\"bc866b45-d310-49c1-805b-b59f65073b38\":[\"email_address\"]}},{\"name\":\"83cdf07a-0845-4c25-8451-fac9de0adee9.file_attachment_id\",\"label\":\"10 - Build File➛File Attachment ID\",\"reference_display\":\"File Attachment ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"719b97c7-644a-4c72-811f-1f2da58e3223\":[\"attachment_sys_id\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"e25bc0f5-2759-4f15-b476-94f3722d938b\"}},{\"name\":\"flow_variable.bulk_job_status\",\"label\":\"Flow Variables➛Bulk Job Status\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"bba5f809-ecee-4170-9a69-a48078ea1604\"}},{\"name\":\"flow_variable.results_url\",\"label\":\"Flow Variables➛Results URL\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"75446b9e-f6ae-4ba8-ba25-ad387ceac94e\":[\"url\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"321c4fd4-6a19-4441-8b0b-df417f2aeada\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Validate Email Addresses In An Audience List",
+    "display_value": "Validate Email Addresses In An Audience List"
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-03 19:31:57",
+    "display_value": "2024-10-03 12:31:57 PM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "validate_audience_list",
+    "display_value": "validate_audience_list"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-10-03 19:31:57",
+    "display_value": "2024-10-03 12:31:57 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "36d774ddc38d1210d4ddf1db0501315b",
+    "display_value": ""
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Validate Audience List",
+    "display_value": "Validate Audience List"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

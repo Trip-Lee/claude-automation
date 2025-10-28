@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "d6fd8f36333c62507b18bc534d5c7bd2",
+    "extracted_at": "2025-09-19T21:48:28.952Z",
+    "display_value": "BrandKitAPI",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "4",
+    "display_value": "4"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-07-02 20:09:23",
+    "display_value": "2025-07-02 01:09:23 PM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "var BrandKitAPI = Class.create();\nBrandKitAPI.prototype = Object.extendsObject(x_cadso_core.BrandKitApiMS, {\n\n    initialize: function() {\n\t\tx_cadso_core.BrandKitApiMS.prototype.initialize.apply(this, arguments);\n    },\n\t\n    type: 'BrandKitAPI'\n});\n\n",
+    "display_value": "var BrandKitAPI = Class.create();\nBrandKitAPI.prototype = Object.extendsObject(x_cadso_core.BrandKitApiMS, {\n\n    initialize: function() {\n\t\tx_cadso_core.BrandKitApiMS.prototype.initialize.apply(this, arguments);\n    },\n\t\n    type: 'BrandKitAPI'\n});\n\n",
+    "formatted_script": {
+      "line_count": 11,
+      "char_count": 251,
+      "preview": "var BrandKitAPI = Class.create();\nBrandKitAPI.prototype = Object.extendsObject(x_cadso_core.BrandKitApiMS, {\n\n    initialize: function() {\n\t\tx_cadso_core.BrandKitApiMS.prototype.initialize.apply(this,...",
+      "full_script": "var BrandKitAPI = Class.create();\nBrandKitAPI.prototype = Object.extendsObject(x_cadso_core.BrandKitApiMS, {\n\n    initialize: function() {\n\t\tx_cadso_core.BrandKitApiMS.prototype.initialize.apply(this, arguments);\n    },\n\t\n    type: 'BrandKitAPI'\n});\n\n"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_d6fd8f36333c62507b18bc534d5c7bd2",
+    "display_value": "sys_script_include_d6fd8f36333c62507b18bc534d5c7bd2"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "api_name": {
+    "value": "x_cadso_core.BrandKitAPI",
+    "display_value": "x_cadso_core.BrandKitAPI"
+  },
+  "sys_created_on": {
+    "value": "2025-04-13 07:40:17",
+    "display_value": "2025-04-13 12:40:17 AM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "BrandKitAPI",
+    "display_value": "BrandKitAPI"
+  },
+  "sys_name": {
+    "value": "BrandKitAPI",
+    "display_value": "BrandKitAPI"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

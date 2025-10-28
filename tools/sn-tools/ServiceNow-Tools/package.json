@@ -1,0 +1,73 @@
+{
+  "name": "servicenow-tools",
+  "version": "2.1.0",
+  "description": "Professional ServiceNow development toolkit with AI integration, multi-instance support, and advanced automation",
+  "main": "servicenow-tools.js",
+  "bin": {
+    "sn-tools": "./sn-auto-execute.js"
+  },
+  "scripts": {
+    "install": "node install.js",
+    "start": "node sn-auto-execute.js",
+    "execute": "node sn-auto-execute.js",
+    "fetch-data": "node sn-menu-wrapper.js fetch-data",
+    "fetch-stories": "node sn-menu-wrapper.js fetch-stories",
+    "fetch-all": "npm run fetch-data && npm run fetch-stories",
+    "process-updates": "node sn-menu-wrapper.js process-updates",
+    "test-connections": "node sn-menu-wrapper.js test",
+    "watch": "node sn-file-watcher.js watch",
+    "watch-auto": "node sn-file-watcher.js watch --auto-update",
+    "dependency-scan": "node sn-dependency-tracker.js scan",
+    "impact-analysis": "node sn-dependency-tracker.js impact",
+    "generate-context": "node sn-claude-helper.js summary",
+    "claude-setup": "echo 'Legacy Claude manager removed. Use consolidated AI system.'",
+    "claude-stats": "echo 'Legacy Claude manager removed. Use consolidated AI system.'",
+    "claude-approvals": "echo 'Legacy Claude manager removed. Use consolidated AI system.'",
+    "claude-test": "echo 'Legacy Claude manager removed. Use consolidated AI system.'",
+    "test-consolidated-ai": "node test-consolidated-ai.js",
+    "external-ai": "node sn-external-ai.js",
+    "setup": "node sn-setup-wizard.js",
+    "setup-force": "node sn-setup-wizard.js --force",
+    "encrypt-config": "node sn-credential-manager.js migrate",
+    "test-encryption": "node sn-credential-manager.js test",
+    "error-stats": "node -e \"const {ErrorHandler} = require('./sn-error-handler'); const eh = new ErrorHandler(); console.log(JSON.stringify(eh.getStats(), null, 2));\"",
+    "test-all-functionality": "node test-all-functionality.js",
+    "table-fields": "node sn-operations.js table-fields",
+    "search-fields": "node sn-operations.js search-fields",
+    "table-info": "node sn-operations.js table-info",
+    "mapper-stats": "node sn-table-field-mapper.js stats",
+    "create-enhanced": "node sn-operations.js create",
+    "show-table-fields": "node sn-enhanced-record-creator.js show-fields"
+  },
+  "keywords": [
+    "servicenow",
+    "automation",
+    "api",
+    "integration",
+    "development-tools",
+    "multi-instance",
+    "file-watcher",
+    "dependency-tracking"
+  ],
+  "author": "CadenceSoft/Tenon",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cli-progress": "^3.12.0",
+    "figlet": "^1.9.1",
+    "glob": "^11.0.3",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.32.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "internal"
+  },
+  "private": true
+}

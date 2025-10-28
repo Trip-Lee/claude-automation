@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "a78c77a0c377ce5085b196c4e40131de",
+    "extracted_at": "2025-08-22T18:46:23.358Z",
+    "display_value": "Sending Strategy - Fetch",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-31 22:36:02",
+    "display_value": "2024-07-31 03:36:02 PM"
+  },
+  "name": {
+    "value": "Sending Strategy - Fetch",
+    "display_value": "Sending Strategy - Fetch"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-15 19:01:44",
+    "display_value": "2025-08-15 12:01:44 PM"
+  }
+}

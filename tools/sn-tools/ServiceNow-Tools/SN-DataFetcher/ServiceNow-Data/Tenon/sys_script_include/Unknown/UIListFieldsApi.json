@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "973aef02c3922210d4ddf1db05013173",
+    "extracted_at": "2025-08-22T18:42:33.888Z",
+    "display_value": "UIListFieldsApi",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-24 15:22:42",
+    "display_value": "2025-06-24 08:22:42 AM"
+  },
+  "name": {
+    "value": "UIListFieldsApi",
+    "display_value": "UIListFieldsApi"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-24 15:23:52",
+    "display_value": "2025-06-24 08:23:52 AM"
+  }
+}

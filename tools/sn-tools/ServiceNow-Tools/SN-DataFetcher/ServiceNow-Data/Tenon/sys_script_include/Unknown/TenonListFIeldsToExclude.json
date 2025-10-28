@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "b1239a7f47b3b150b0361ae8036d43c0",
+    "extracted_at": "2025-08-22T18:42:35.209Z",
+    "display_value": "TenonListFIeldsToExclude",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-01-24 20:32:08",
+    "display_value": "2024-01-24 12:32:08 PM"
+  },
+  "name": {
+    "value": "TenonListFIeldsToExclude",
+    "display_value": "TenonListFIeldsToExclude"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-11 20:24:54",
+    "display_value": "2025-03-11 01:24:54 PM"
+  }
+}

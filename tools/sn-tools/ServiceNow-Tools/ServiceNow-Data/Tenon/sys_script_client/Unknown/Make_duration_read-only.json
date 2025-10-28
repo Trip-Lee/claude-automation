@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "20f73d4347656510fc4c1ae8036d43f4",
+    "extracted_at": "2025-08-22T18:46:29.017Z",
+    "display_value": "Make duration read-only",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-03-17 18:07:56",
+    "display_value": "2023-03-17 11:07:56 AM"
+  },
+  "name": {
+    "value": "Make duration read-only",
+    "display_value": "Make duration read-only"
+  },
+  "sys_updated_on": {
+    "value": "2023-03-17 18:20:04",
+    "display_value": "2023-03-17 11:20:04 AM"
+  }
+}

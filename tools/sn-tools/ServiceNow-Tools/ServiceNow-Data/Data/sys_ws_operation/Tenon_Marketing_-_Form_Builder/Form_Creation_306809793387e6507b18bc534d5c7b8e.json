@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "306809793387e6507b18bc534d5c7b8e",
+    "extracted_at": "2025-09-19T21:48:32.526Z",
+    "display_value": "Form Creation",
+    "application": "Tenon_Marketing_-_Form_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing - Form Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/a39d00d5334366507b18bc534d5c7b7d",
+      "value": "a39d00d5334366507b18bc534d5c7b7d"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\ttry {\r\n\t\tvar body = request.body.data;\r\n\r\n\t\t// Checking for required fields\r\n\t\tvar required = ['name', 'record_table'];\r\n\t\tfor (var i = 0; i < required.length; i++) {\r\n\t\t\tif (!body[required[i]]) {\r\n\t\t\t\tresponse.setStatus(400);\r\n\t\t\t\treturn { error: `Missing required field: ${required[i]}` };\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tvar gr = new GlideRecord('x_cadso_form_form');\r\n\t\tgr.initialize();\r\n\r\n\t\tgr.name = body.name;\r\n\t\tgr.slug = body.slug;\r\n\t\tgr.record_table = body.record_table;\r\n\t\tgr.owner = gs.getUserID();\r\n\r\n\t\tif (body.description) gr.description = body.description;\r\n\t\tif (body.form_data) gr.form_data = JSON.stringify(body.form_data);\r\n\t\tif (body.publish_date) gr.publish_date = body.publish_date;\r\n\t\tif (body.status) gr.status = body.status;\r\n\t\tif (body.subdomain) gr.subdomain = body.subdomain;\r\n\t\tif (body.thumbnail) gr.thumbnail = body.thumbnail;\r\n\t\tif (body.thumbnail_large) gr.thumbnail_large = body.thumbnail_large;\r\n\r\n\t\tvar sys_id = gr.insert();\r\n\r\n\t\tresponse.setStatus(201);\r\n\t\treturn { message: \"Form created successfully\", sys_id: sys_id };\r\n\r\n\t} catch (e) {\r\n\t\tgs.error(\"Form API Error: \" + e.message);\r\n\t\tresponse.setStatus(500);\r\n\t\treturn { error: \"Internal Server Error\", details: e.message };\r\n\t}\r\n})(request, response);\r\n",
+    "display_value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\ttry {\r\n\t\tvar body = request.body.data;\r\n\r\n\t\t// Checking for required fields\r\n\t\tvar required = ['name', 'record_table'];\r\n\t\tfor (var i = 0; i < required.length; i++) {\r\n\t\t\tif (!body[required[i]]) {\r\n\t\t\t\tresponse.setStatus(400);\r\n\t\t\t\treturn { error: `Missing required field: ${required[i]}` };\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tvar gr = new GlideRecord('x_cadso_form_form');\r\n\t\tgr.initialize();\r\n\r\n\t\tgr.name = body.name;\r\n\t\tgr.slug = body.slug;\r\n\t\tgr.record_table = body.record_table;\r\n\t\tgr.owner = gs.getUserID();\r\n\r\n\t\tif (body.description) gr.description = body.description;\r\n\t\tif (body.form_data) gr.form_data = JSON.stringify(body.form_data);\r\n\t\tif (body.publish_date) gr.publish_date = body.publish_date;\r\n\t\tif (body.status) gr.status = body.status;\r\n\t\tif (body.subdomain) gr.subdomain = body.subdomain;\r\n\t\tif (body.thumbnail) gr.thumbnail = body.thumbnail;\r\n\t\tif (body.thumbnail_large) gr.thumbnail_large = body.thumbnail_large;\r\n\r\n\t\tvar sys_id = gr.insert();\r\n\r\n\t\tresponse.setStatus(201);\r\n\t\treturn { message: \"Form created successfully\", sys_id: sys_id };\r\n\r\n\t} catch (e) {\r\n\t\tgs.error(\"Form API Error: \" + e.message);\r\n\t\tresponse.setStatus(500);\r\n\t\treturn { error: \"Internal Server Error\", details: e.message };\r\n\t}\r\n})(request, response);\r\n"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-01 04:15:14",
+    "display_value": "2025-07-31 09:15:14 PM"
+  },
+  "enforce_acl": {
+    "value": "cf9d01d3e73003009d6247e603f6a990",
+    "display_value": "Scripted REST External Default"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "endy.munoz",
+    "display_value": "endy.munoz"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_form/form_creation/submit",
+    "display_value": "/api/x_cadso_form/form_creation/submit"
+  },
+  "sys_created_on": {
+    "value": "2025-07-30 18:31:50",
+    "display_value": "2025-07-30 11:31:50 AM"
+  },
+  "sys_name": {
+    "value": "Form Creation",
+    "display_value": "Form Creation"
+  },
+  "sys_scope": {
+    "value": "a39d00d5334366507b18bc534d5c7b7d",
+    "display_value": "Tenon Marketing - Form Builder"
+  },
+  "sys_created_by": {
+    "value": "endy.munoz",
+    "display_value": "endy.munoz"
+  },
+  "web_service_definition": {
+    "value": "b6e601393387e6507b18bc534d5c7b30",
+    "display_value": "Form Creation"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "7",
+    "display_value": "7"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "a39d00d5334366507b18bc534d5c7b7d",
+    "display_value": "Tenon Marketing - Form Builder"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_306809793387e6507b18bc534d5c7b8e",
+    "display_value": "sys_ws_operation_306809793387e6507b18bc534d5c7b8e"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Form Creation",
+    "display_value": "Form Creation"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/submit",
+    "display_value": "/submit"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

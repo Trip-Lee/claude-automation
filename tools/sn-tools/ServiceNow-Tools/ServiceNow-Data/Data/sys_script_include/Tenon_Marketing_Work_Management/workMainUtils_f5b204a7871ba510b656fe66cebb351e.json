@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "f5b204a7871ba510b656fe66cebb351e",
+    "extracted_at": "2025-09-19T21:48:31.539Z",
+    "display_value": "workMainUtils",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2023-06-13 22:44:05",
+    "display_value": "2023-06-13 03:44:05 PM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "var workMainUtils = Class.create();\nworkMainUtils.prototype = Object.extendsObject(x_cadso_work.workMainUtilsMS, {\n\tinitialize: function() {\n\t\tx_cadso_work.workMainUtilsMS.prototype.initialize.apply(this, arguments);\n\t},\n\n\ttype: 'workMainUtils'\n});",
+    "display_value": "var workMainUtils = Class.create();\nworkMainUtils.prototype = Object.extendsObject(x_cadso_work.workMainUtilsMS, {\n\tinitialize: function() {\n\t\tx_cadso_work.workMainUtilsMS.prototype.initialize.apply(this, arguments);\n\t},\n\n\ttype: 'workMainUtils'\n});",
+    "formatted_script": {
+      "line_count": 8,
+      "char_count": 248,
+      "preview": "var workMainUtils = Class.create();\nworkMainUtils.prototype = Object.extendsObject(x_cadso_work.workMainUtilsMS, {\n\tinitialize: function() {\n\t\tx_cadso_work.workMainUtilsMS.prototype.initialize.apply(t...",
+      "full_script": "var workMainUtils = Class.create();\nworkMainUtils.prototype = Object.extendsObject(x_cadso_work.workMainUtilsMS, {\n\tinitialize: function() {\n\t\tx_cadso_work.workMainUtilsMS.prototype.initialize.apply(this, arguments);\n\t},\n\n\ttype: 'workMainUtils'\n});"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_f5b204a7871ba510b656fe66cebb351e",
+    "display_value": "sys_script_include_f5b204a7871ba510b656fe66cebb351e"
+  },
+  "sys_updated_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "api_name": {
+    "value": "x_cadso_work.workMainUtils",
+    "display_value": "x_cadso_work.workMainUtils"
+  },
+  "sys_created_on": {
+    "value": "2023-06-13 22:40:22",
+    "display_value": "2023-06-13 03:40:22 PM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "workMainUtils",
+    "display_value": "workMainUtils"
+  },
+  "sys_name": {
+    "value": "workMainUtils",
+    "display_value": "workMainUtils"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

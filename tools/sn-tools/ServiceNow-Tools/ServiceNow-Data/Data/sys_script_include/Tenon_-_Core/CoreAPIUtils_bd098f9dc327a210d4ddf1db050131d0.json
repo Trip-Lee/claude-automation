@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "bd098f9dc327a210d4ddf1db050131d0",
+    "extracted_at": "2025-09-19T21:48:28.580Z",
+    "display_value": "CoreAPIUtils",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-08-23 08:20:27",
+    "display_value": "2025-08-23 01:20:27 AM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "script": {
+    "value": "var CoreAPIUtils = Class.create();\r\nCoreAPIUtils.prototype = Object.extendsObject(x_cadso_core.CoreAPIUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.CoreAPIUtilsMS.prototype.initialize.apply(this, arguments);\r\n  },\r\n\r\n  type: \"CoreAPIUtils\"\r\n});\r\n",
+    "display_value": "var CoreAPIUtils = Class.create();\r\nCoreAPIUtils.prototype = Object.extendsObject(x_cadso_core.CoreAPIUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.CoreAPIUtilsMS.prototype.initialize.apply(this, arguments);\r\n  },\r\n\r\n  type: \"CoreAPIUtils\"\r\n});\r\n",
+    "formatted_script": {
+      "line_count": 9,
+      "char_count": 258,
+      "preview": "var CoreAPIUtils = Class.create();\r\nCoreAPIUtils.prototype = Object.extendsObject(x_cadso_core.CoreAPIUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.CoreAPIUtilsMS.prototype.initialize.appl...",
+      "full_script": "var CoreAPIUtils = Class.create();\r\nCoreAPIUtils.prototype = Object.extendsObject(x_cadso_core.CoreAPIUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.CoreAPIUtilsMS.prototype.initialize.apply(this, arguments);\r\n  },\r\n\r\n  type: \"CoreAPIUtils\"\r\n});\r\n"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_bd098f9dc327a210d4ddf1db050131d0",
+    "display_value": "sys_script_include_bd098f9dc327a210d4ddf1db050131d0"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "api_name": {
+    "value": "x_cadso_core.CoreAPIUtils",
+    "display_value": "x_cadso_core.CoreAPIUtils"
+  },
+  "sys_created_on": {
+    "value": "2025-08-23 08:20:27",
+    "display_value": "2025-08-23 01:20:27 AM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "CoreAPIUtils",
+    "display_value": "CoreAPIUtils"
+  },
+  "sys_name": {
+    "value": "CoreAPIUtils",
+    "display_value": "CoreAPIUtils"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

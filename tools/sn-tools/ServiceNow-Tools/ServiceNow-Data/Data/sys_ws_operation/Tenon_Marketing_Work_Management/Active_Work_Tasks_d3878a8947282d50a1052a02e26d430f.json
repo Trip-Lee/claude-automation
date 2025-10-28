@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "d3878a8947282d50a1052a02e26d430f",
+    "extracted_at": "2025-09-19T21:48:35.463Z",
+    "display_value": "Active Work Tasks",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\t\r\n\tvar activeTaskApi = new x_cadso_work.ActiveTaskApi();\r\n\treturn activeTaskApi.getTasks(request, response);\r\n\t\r\n})(request, response);",
+    "display_value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\t\r\n\tvar activeTaskApi = new x_cadso_work.ActiveTaskApi();\r\n\treturn activeTaskApi.getTasks(request, response);\r\n\t\r\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-05 21:53:38",
+    "display_value": "2025-06-05 02:53:38 PM"
+  },
+  "enforce_acl": {
+    "value": "85a45d5247b1ed10fc4c1ae8036d439e",
+    "display_value": "Tenon Work Baseline Access"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "GET",
+    "display_value": "GET"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_work/ui/ActiveTasks",
+    "display_value": "/api/x_cadso_work/ui/ActiveTasks"
+  },
+  "sys_created_on": {
+    "value": "2023-01-20 21:03:40",
+    "display_value": "2023-01-20 01:03:40 PM"
+  },
+  "sys_name": {
+    "value": "Active Work Tasks",
+    "display_value": "Active Work Tasks"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "web_service_definition": {
+    "value": "3a4228b84728e950a1052a02e26d43b0",
+    "display_value": "Tenon Work UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "15",
+    "display_value": "15"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_d3878a8947282d50a1052a02e26d430f",
+    "display_value": "sys_ws_operation_d3878a8947282d50a1052a02e26d430f"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Active Work Tasks",
+    "display_value": "Active Work Tasks"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/ActiveTasks",
+    "display_value": "/ActiveTasks"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "read",
+    "display_value": "Read-only"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "d12da6b847e5bd1098519fd8036d4320",
+    "extracted_at": "2025-08-22T18:42:35.333Z",
+    "display_value": "NotificationApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-09-25 18:22:38",
+    "display_value": "2023-09-25 11:22:38 AM"
+  },
+  "name": {
+    "value": "NotificationApiMS",
+    "display_value": "NotificationApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-11 21:02:35",
+    "display_value": "2025-03-11 02:02:35 PM"
+  }
+}

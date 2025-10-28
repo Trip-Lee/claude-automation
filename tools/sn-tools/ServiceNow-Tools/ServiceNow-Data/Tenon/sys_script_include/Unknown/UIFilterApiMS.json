@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "8fcbbd1987876510b656fe66cebb3579",
+    "extracted_at": "2025-08-22T18:46:19.860Z",
+    "display_value": "UIFilterApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-05-25 21:27:01",
+    "display_value": "2023-05-25 02:27:01 PM"
+  },
+  "name": {
+    "value": "UIFilterApiMS",
+    "display_value": "UIFilterApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-01-02 23:01:52",
+    "display_value": "2025-01-02 03:01:52 PM"
+  }
+}

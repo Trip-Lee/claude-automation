@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "9cee9ec8c3b0e610d4ddf1db05013104",
+    "extracted_at": "2025-08-22T18:42:39.926Z",
+    "display_value": "Send Consent Event To Lead Scoring",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-04 15:12:16",
+    "display_value": "2025-04-04 08:12:16 AM"
+  },
+  "name": {
+    "value": "Send Consent Event To Lead Scoring",
+    "display_value": "Send Consent Event To Lead Scoring"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-08 21:15:27",
+    "display_value": "2025-05-08 02:15:27 PM"
+  }
+}

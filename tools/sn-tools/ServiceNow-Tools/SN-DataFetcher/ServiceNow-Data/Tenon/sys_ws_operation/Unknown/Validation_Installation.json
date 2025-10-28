@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "19a4943e87a30650369f33373cbb35f3",
+    "extracted_at": "2025-08-22T18:42:35.686Z",
+    "display_value": "Validation Installation",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-25 18:42:36",
+    "display_value": "2024-07-25 11:42:36 AM"
+  },
+  "name": {
+    "value": "Validation Installation",
+    "display_value": "Validation Installation"
+  },
+  "sys_updated_on": {
+    "value": "2025-01-13 22:05:21",
+    "display_value": "2025-01-13 02:05:21 PM"
+  }
+}

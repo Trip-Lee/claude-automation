@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "21552f27c3836a90d4ddf1db0501315b",
+    "extracted_at": "2025-09-19T21:49:15.111Z",
+    "display_value": "Batched Bulk Upload Mailing List Members Subflow",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"d247e8b2-6d07-468a-9aed-b21eb7152b26.members2\",\"label\":\"1 - Get Audience Members➛Members2\",\"reference_display\":\"Members2\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"78e55a67-e5ea-414d-980a-df53727aee79\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"b68b91b5-1a3c-4bfc-b84b-71d8f3929062\"}},{\"name\":\"d247e8b2-6d07-468a-9aed-b21eb7152b26.members1\",\"label\":\"1 - Get Audience Members➛Members1\",\"reference_display\":\"Members1\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"f0f0c8d5-8288-4029-8b13-4a8cba6ad179\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"fb454066-d639-45dd-9266-6bd2add7b895\"}},{\"name\":\"subflow.audience_members.audience.mailgun_address\",\"label\":\"Input➛Audience Members➛Audience➛Mailgun Address\",\"reference\":\"\",\"reference_display\":\"Mailgun Address\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_audience\",\"column_name\":\"mailgun_address\",\"usedInstances\":{\"f76717bc-626e-4397-af6c-55f8cd8b1dff\":[\"list_address\"],\"f10f429e-6892-490d-8a95-eee8bfec32be\":[\"list_address\"],\"7bcbf9ac-a287-4e06-9d6b-831a5d8718f8\":[\"list_address\"],\"5c27cf31-da2c-4c82-b172-6b31e3483abd\":[\"list_address\"],\"decf7dca-c6b8-41ca-81ec-bd1c3f996365\":[\"list_address\"]}},{\"name\":\"d247e8b2-6d07-468a-9aed-b21eb7152b26.members0\",\"label\":\"1 - Get Audience Members➛Members0\",\"reference_display\":\"Members0\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"f76717bc-626e-4397-af6c-55f8cd8b1dff\":[\"members\"],\"f10f429e-6892-490d-8a95-eee8bfec32be\":[\"members\"],\"7bcbf9ac-a287-4e06-9d6b-831a5d8718f8\":[\"members\"],\"5c27cf31-da2c-4c82-b172-6b31e3483abd\":[\"members\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"0d440234-8813-4d4e-98da-e10738b83eb9\"}},{\"name\":\"subflow.audience_members\",\"label\":\"Input➛Audience Members\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"d247e8b2-6d07-468a-9aed-b21eb7152b26\":[\"audience_member\"],\"f76717bc-626e-4397-af6c-55f8cd8b1dff\":[\"list_address\"],\"decf7dca-c6b8-41ca-81ec-bd1c3f996365\":[\"list_address\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"656fb60d-bf56-4db8-969e-12ec21b8c524\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}}]",
+    "display_value": "[{\"name\":\"d247e8b2-6d07-468a-9aed-b21eb7152b26.members2\",\"label\":\"1 - Get Audience Members➛Members2\",\"reference_display\":\"Members2\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"78e55a67-e5ea-414d-980a-df53727aee79\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"b68b91b5-1a3c-4bfc-b84b-71d8f3929062\"}},{\"name\":\"d247e8b2-6d07-468a-9aed-b21eb7152b26.members1\",\"label\":\"1 - Get Audience Members➛Members1\",\"reference_display\":\"Members1\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"f0f0c8d5-8288-4029-8b13-4a8cba6ad179\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"fb454066-d639-45dd-9266-6bd2add7b895\"}},{\"name\":\"subflow.audience_members.audience.mailgun_address\",\"label\":\"Input➛Audience Members➛Audience➛Mailgun Address\",\"reference\":\"\",\"reference_display\":\"Mailgun Address\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_audience\",\"column_name\":\"mailgun_address\",\"usedInstances\":{\"f76717bc-626e-4397-af6c-55f8cd8b1dff\":[\"list_address\"],\"f10f429e-6892-490d-8a95-eee8bfec32be\":[\"list_address\"],\"7bcbf9ac-a287-4e06-9d6b-831a5d8718f8\":[\"list_address\"],\"5c27cf31-da2c-4c82-b172-6b31e3483abd\":[\"list_address\"],\"decf7dca-c6b8-41ca-81ec-bd1c3f996365\":[\"list_address\"]}},{\"name\":\"d247e8b2-6d07-468a-9aed-b21eb7152b26.members0\",\"label\":\"1 - Get Audience Members➛Members0\",\"reference_display\":\"Members0\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"f76717bc-626e-4397-af6c-55f8cd8b1dff\":[\"members\"],\"f10f429e-6892-490d-8a95-eee8bfec32be\":[\"members\"],\"7bcbf9ac-a287-4e06-9d6b-831a5d8718f8\":[\"members\"],\"5c27cf31-da2c-4c82-b172-6b31e3483abd\":[\"members\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"0d440234-8813-4d4e-98da-e10738b83eb9\"}},{\"name\":\"subflow.audience_members\",\"label\":\"Input➛Audience Members\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"d247e8b2-6d07-468a-9aed-b21eb7152b26\":[\"audience_member\"],\"f76717bc-626e-4397-af6c-55f8cd8b1dff\":[\"list_address\"],\"decf7dca-c6b8-41ca-81ec-bd1c3f996365\":[\"list_address\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"656fb60d-bf56-4db8-969e-12ec21b8c524\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-05 13:39:05",
+    "display_value": "2025-08-05 06:39:05 AM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "batched_bulk_upload_mailing_list_members_subflow",
+    "display_value": "batched_bulk_upload_mailing_list_members_subflow"
+  },
+  "sys_updated_by": {
+    "value": "trevor.offen",
+    "display_value": "trevor.offen"
+  },
+  "sys_created_on": {
+    "value": "2025-08-05 13:39:05",
+    "display_value": "2025-08-05 06:39:05 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "trevor.offen",
+    "display_value": "trevor.offen"
+  },
+  "parent_flow": {
+    "value": "b089df57c30fe690d4ddf1db05013189",
+    "display_value": "Batched Bulk Upload Mailing List Members Subflow"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "HIGH",
+    "display_value": "High"
+  },
+  "name": {
+    "value": "Batched Bulk Upload Mailing List Members Subflow",
+    "display_value": "Batched Bulk Upload Mailing List Members Subflow"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

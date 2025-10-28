@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "0d19f45233c462107b18bc534d5c7b88",
+    "extracted_at": "2025-09-19T21:49:30.641Z",
+    "display_value": "Test - Now Assist",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"8746fc5e-8e84-6210-2874-5986e2f96037.email.state\",\"label\":\"1 - Send Email➛email➛State\",\"reference\":\"\",\"reference_display\":\"State\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_email\",\"column_name\":\"state\",\"choices\":[{\"label\":\"Error\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Error\",\"value\":\"error\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Ignored\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Ignored\",\"value\":\"ignored\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Processed\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Processed\",\"value\":\"processed\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Ready\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Ready\",\"value\":\"ready\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"recipient-list-resolution-complete\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"recipient-list-resolution-complete\",\"value\":\"recipient-list-resolution-complete\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"recipient-list-resolution-pending\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"recipient-list-resolution-pending\",\"value\":\"recipient-list-resolution-pending\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"8746fc5e-cc84-6210-e43a-5cd898f6e544\":[\"condition\"]}},{\"name\":\"4b46fc5e-6084-6210-0b0d-af648e209842.email.state\",\"label\":\"3 - Send SMS➛Email➛State\",\"reference\":\"\",\"reference_display\":\"State\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_email\",\"column_name\":\"state\",\"choices\":[{\"label\":\"Error\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Error\",\"value\":\"error\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Ignored\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Ignored\",\"value\":\"ignored\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Processed\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Processed\",\"value\":\"processed\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Ready\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Ready\",\"value\":\"ready\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"recipient-list-resolution-complete\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"recipient-list-resolution-complete\",\"value\":\"recipient-list-resolution-complete\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"recipient-list-resolution-pending\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"recipient-list-resolution-pending\",\"value\":\"recipient-list-resolution-pending\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"4346fc5e-5e84-6210-cd22-ee1204e89b4b\":[\"condition\"]}},{\"name\":\"a2eb19d2-93f3-40c8-801d-1a8d78ef96db.id\",\"label\":\"1 - Send An Email➛ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"8746fc5e-cc84-6210-e43a-5cd898f6e544\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"2acd1a70-9ba7-4661-93bc-4885b60b31a0\"}},{\"name\":\"18a857e1-ae99-4586-9f46-a9475d7bc22d.message_id\",\"label\":\"3 - Send SMS➛Message ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"4346fc5e-5e84-6210-cd22-ee1204e89b4b\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"70b9c162-67bd-4b29-9112-37807c7532be\"}}]",
+    "display_value": "[{\"name\":\"8746fc5e-8e84-6210-2874-5986e2f96037.email.state\",\"label\":\"1 - Send Email➛email➛State\",\"reference\":\"\",\"reference_display\":\"State\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_email\",\"column_name\":\"state\",\"choices\":[{\"label\":\"Error\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Error\",\"value\":\"error\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Ignored\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Ignored\",\"value\":\"ignored\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Processed\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Processed\",\"value\":\"processed\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Ready\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Ready\",\"value\":\"ready\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"recipient-list-resolution-complete\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"recipient-list-resolution-complete\",\"value\":\"recipient-list-resolution-complete\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"recipient-list-resolution-pending\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"recipient-list-resolution-pending\",\"value\":\"recipient-list-resolution-pending\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"8746fc5e-cc84-6210-e43a-5cd898f6e544\":[\"condition\"]}},{\"name\":\"4b46fc5e-6084-6210-0b0d-af648e209842.email.state\",\"label\":\"3 - Send SMS➛Email➛State\",\"reference\":\"\",\"reference_display\":\"State\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_email\",\"column_name\":\"state\",\"choices\":[{\"label\":\"Error\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Error\",\"value\":\"error\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Ignored\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Ignored\",\"value\":\"ignored\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Processed\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Processed\",\"value\":\"processed\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"Ready\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"Ready\",\"value\":\"ready\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"recipient-list-resolution-complete\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"recipient-list-resolution-complete\",\"value\":\"recipient-list-resolution-complete\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}},{\"label\":\"recipient-list-resolution-pending\",\"reference\":false,\"used\":false,\"image\":\"\",\"selected\":false,\"missing\":false,\"rawLabel\":\"recipient-list-resolution-pending\",\"value\":\"recipient-list-resolution-pending\",\"parameters\":{\"name\":\"sys_email\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"4346fc5e-5e84-6210-cd22-ee1204e89b4b\":[\"condition\"]}},{\"name\":\"a2eb19d2-93f3-40c8-801d-1a8d78ef96db.id\",\"label\":\"1 - Send An Email➛ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"8746fc5e-cc84-6210-e43a-5cd898f6e544\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"2acd1a70-9ba7-4661-93bc-4885b60b31a0\"}},{\"name\":\"18a857e1-ae99-4586-9f46-a9475d7bc22d.message_id\",\"label\":\"3 - Send SMS➛Message ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"4346fc5e-5e84-6210-cd22-ee1204e89b4b\":[\"condition\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"70b9c162-67bd-4b29-9112-37807c7532be\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "A test to see if we can preload a journey ahead of time with Now Assist, triggered by what we call the journey. ",
+    "display_value": "A test to see if we can preload a journey ahead of time with Now Assist, triggered by what we call the journey. "
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-05 00:45:42",
+    "display_value": "2025-03-04 04:45:42 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "test__now_assist",
+    "display_value": "test__now_assist"
+  },
+  "sys_updated_by": {
+    "value": "david.cohen",
+    "display_value": "david.cohen"
+  },
+  "sys_created_on": {
+    "value": "2025-03-05 00:45:42",
+    "display_value": "2025-03-04 04:45:42 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "david.cohen",
+    "display_value": "david.cohen"
+  },
+  "parent_flow": {
+    "value": "0746bc5e338462107b18bc534d5c7bb4",
+    "display_value": ""
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Test - Now Assist",
+    "display_value": "Test - Now Assist"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,intermediateFlowVersion=1.2,labelCacheCleanUpExecuted=true,viewActivatedIn=diagramming",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,intermediateFlowVersion=1.2,labelCacheCleanUpExecuted=true,viewActivatedIn=diagramming"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

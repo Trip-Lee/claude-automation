@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "93822b5233e666107b18bc534d5c7b8d",
+    "extracted_at": "2025-08-22T18:42:33.867Z",
+    "display_value": "IncomingMessageAPI2MS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-07-07 19:43:06",
+    "display_value": "2025-07-07 12:43:06 PM"
+  },
+  "name": {
+    "value": "IncomingMessageAPI2MS",
+    "display_value": "IncomingMessageAPI2MS"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-07 19:43:06",
+    "display_value": "2025-07-07 12:43:06 PM"
+  }
+}

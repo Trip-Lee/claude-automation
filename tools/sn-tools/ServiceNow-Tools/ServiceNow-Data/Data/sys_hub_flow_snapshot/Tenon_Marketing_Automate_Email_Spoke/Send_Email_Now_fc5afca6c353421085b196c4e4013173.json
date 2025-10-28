@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "fc5afca6c353421085b196c4e4013173",
+    "extracted_at": "2025-09-19T21:50:03.696Z",
+    "display_value": "Send Email Now",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"9482612a-708d-45bb-a43c-bb53b0eaf382.Records\",\"label\":\"5 - Look Up Records➛Audience to Email Detail (M2M) Records\",\"reference\":\"x_cadso_automate_m2m_audience_email_detail\",\"reference_display\":\"Audience to Email Detail (M2M) Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"9345d97f-5eab-489d-ba5d-16380fbd45d4\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"f727e8fc-0622-4117-afaf-59b287e0cbf9.item\",\"label\":\"2 - For Each➛Audience Record\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"9482612a-708d-45bb-a43c-bb53b0eaf382\":[\"conditions\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"f727e8fc-0622-4117-afaf-59b287e0cbf9.item.sys_id\",\"label\":\"2 - For Each➛Audience Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_audience_list\",\"column_name\":\"sys_id\",\"usedInstances\":{}},{\"name\":\"ef9be05a-7cff-4b24-9d29-6da64c177dd2.Records\",\"label\":\"1 - Look Up Records➛Audience Records\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"f727e8fc-0622-4117-afaf-59b287e0cbf9\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Created_1.current.audiences\",\"label\":\"Trigger - Record Created➛Email Send Record➛Audiences\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"audiences\",\"usedInstances\":{\"ef9be05a-7cff-4b24-9d29-6da64c177dd2\":[\"conditions\"]}},{\"name\":\"flow_variable.send_time\",\"label\":\"Flow Variables➛Send Time\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"column_name\":\"\",\"usedInstances\":{\"a39fd86b-2035-4e38-a41a-5b1bdbc3ad8e\":[\"timer_duration\"]},\"attributes\":{\"uiType\":\"glide_date_time\",\"uiTypeLabel\":\"Date/Time\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"218986bf-c3a5-4784-9340-b7a41b62c641\"}},{\"name\":\"Created_1.current.delivery_time\",\"label\":\"Trigger - Record Created➛Email Send Record➛Delivery Time\",\"reference\":\"\",\"reference_display\":\"Delivery Time\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"delivery_time\",\"usedInstances\":{\"6fa330ea-3b1c-4342-ba46-e3616ef7abbe\":[\"send_time-0\"]}},{\"name\":\"Created_1.current\",\"label\":\"Trigger - Record Created➛Email Send Record\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"5a37aee4-17a7-48db-8c02-ea7fbfab8951\":[\"record\"],\"74a95911-1645-4471-8592-241eba4e2e95\":[\"record\"],\"a1d4ac85-bf1f-41de-9a47-c07fd36e3029\":[\"email_record\"]},\"attributes\":{}},{\"name\":\"Created_1.current.domain\",\"label\":\"Trigger - Record Created➛Email Send Record➛Domain\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"domain\",\"usedInstances\":{\"a1d4ac85-bf1f-41de-9a47-c07fd36e3029\":[\"domain_record\"]}},{\"name\":\"flow_variable.to_addresses\",\"label\":\"Flow Variables➛To Addresses\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"a1d4ac85-bf1f-41de-9a47-c07fd36e3029\":[\"to\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"d459eda8-e3a2-4139-a981-821ac3c56dfd\"}},{\"name\":\"Created_1.current.send_now\",\"label\":\"Trigger - Record Created➛Email Send Record➛Send Now\",\"reference\":\"\",\"reference_display\":\"Send Now\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"send_now\",\"usedInstances\":{\"f26cdd8b-674d-4e99-8929-dfe2b975d42a\":[\"condition\"]}},{\"name\":\"9345d97f-5eab-489d-ba5d-16380fbd45d4.item\",\"label\":\"6 - For Each➛Audience to Email Detail (M2M) Record\",\"reference\":\"x_cadso_automate_m2m_audience_email_detail\",\"reference_display\":\"Audience to Email Detail (M2M) Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"5beb32e8-8c34-4c78-9d63-42d363cd8aba\":[\"condition\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"9345d97f-5eab-489d-ba5d-16380fbd45d4.item.sys_id\",\"label\":\"6 - For Each➛Audience to Email Detail (M2M) Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_m2m_audience_email_detail\",\"column_name\":\"sys_id\",\"usedInstances\":{\"9b11c9a5-42d9-40b6-887c-e47628a66db5\":[\"last_audience_member_queried-1\"]}},{\"name\":\"flow_variable.last_audience_member_queried\",\"label\":\"Flow Variables➛Last Audience Member Queried\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"9482612a-708d-45bb-a43c-bb53b0eaf382\":[\"conditions\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"db12284d-820c-4b1b-b5bd-ea854e0c2be8\"}},{\"name\":\"flow_variable.audience_members_emailed\",\"label\":\"Flow Variables➛Audience Members Emailed\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"5863a780-a832-4f72-b810-c1a5b6a711fc\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"db62511b-900b-46ed-9136-8aa1b2c4b8a6\"}},{\"name\":\"flow_variable.total_audience_members\",\"label\":\"Flow Variables➛Total Audience Members\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"5863a780-a832-4f72-b810-c1a5b6a711fc\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"f6513d61-857a-4644-9be6-36893fb7667b\"}}]",
+    "display_value": "[{\"name\":\"9482612a-708d-45bb-a43c-bb53b0eaf382.Records\",\"label\":\"5 - Look Up Records➛Audience to Email Detail (M2M) Records\",\"reference\":\"x_cadso_automate_m2m_audience_email_detail\",\"reference_display\":\"Audience to Email Detail (M2M) Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"9345d97f-5eab-489d-ba5d-16380fbd45d4\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"f727e8fc-0622-4117-afaf-59b287e0cbf9.item\",\"label\":\"2 - For Each➛Audience Record\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"9482612a-708d-45bb-a43c-bb53b0eaf382\":[\"conditions\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"f727e8fc-0622-4117-afaf-59b287e0cbf9.item.sys_id\",\"label\":\"2 - For Each➛Audience Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_audience_list\",\"column_name\":\"sys_id\",\"usedInstances\":{}},{\"name\":\"ef9be05a-7cff-4b24-9d29-6da64c177dd2.Records\",\"label\":\"1 - Look Up Records➛Audience Records\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"f727e8fc-0622-4117-afaf-59b287e0cbf9\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Created_1.current.audiences\",\"label\":\"Trigger - Record Created➛Email Send Record➛Audiences\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"audiences\",\"usedInstances\":{\"ef9be05a-7cff-4b24-9d29-6da64c177dd2\":[\"conditions\"]}},{\"name\":\"flow_variable.send_time\",\"label\":\"Flow Variables➛Send Time\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"column_name\":\"\",\"usedInstances\":{\"a39fd86b-2035-4e38-a41a-5b1bdbc3ad8e\":[\"timer_duration\"]},\"attributes\":{\"uiType\":\"glide_date_time\",\"uiTypeLabel\":\"Date/Time\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"218986bf-c3a5-4784-9340-b7a41b62c641\"}},{\"name\":\"Created_1.current.delivery_time\",\"label\":\"Trigger - Record Created➛Email Send Record➛Delivery Time\",\"reference\":\"\",\"reference_display\":\"Delivery Time\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"delivery_time\",\"usedInstances\":{\"6fa330ea-3b1c-4342-ba46-e3616ef7abbe\":[\"send_time-0\"]}},{\"name\":\"Created_1.current\",\"label\":\"Trigger - Record Created➛Email Send Record\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"5a37aee4-17a7-48db-8c02-ea7fbfab8951\":[\"record\"],\"74a95911-1645-4471-8592-241eba4e2e95\":[\"record\"],\"a1d4ac85-bf1f-41de-9a47-c07fd36e3029\":[\"email_record\"]},\"attributes\":{}},{\"name\":\"Created_1.current.domain\",\"label\":\"Trigger - Record Created➛Email Send Record➛Domain\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"domain\",\"usedInstances\":{\"a1d4ac85-bf1f-41de-9a47-c07fd36e3029\":[\"domain_record\"]}},{\"name\":\"flow_variable.to_addresses\",\"label\":\"Flow Variables➛To Addresses\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"a1d4ac85-bf1f-41de-9a47-c07fd36e3029\":[\"to\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"d459eda8-e3a2-4139-a981-821ac3c56dfd\"}},{\"name\":\"Created_1.current.send_now\",\"label\":\"Trigger - Record Created➛Email Send Record➛Send Now\",\"reference\":\"\",\"reference_display\":\"Send Now\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"send_now\",\"usedInstances\":{\"f26cdd8b-674d-4e99-8929-dfe2b975d42a\":[\"condition\"]}},{\"name\":\"9345d97f-5eab-489d-ba5d-16380fbd45d4.item\",\"label\":\"6 - For Each➛Audience to Email Detail (M2M) Record\",\"reference\":\"x_cadso_automate_m2m_audience_email_detail\",\"reference_display\":\"Audience to Email Detail (M2M) Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"5beb32e8-8c34-4c78-9d63-42d363cd8aba\":[\"condition\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"9345d97f-5eab-489d-ba5d-16380fbd45d4.item.sys_id\",\"label\":\"6 - For Each➛Audience to Email Detail (M2M) Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_m2m_audience_email_detail\",\"column_name\":\"sys_id\",\"usedInstances\":{\"9b11c9a5-42d9-40b6-887c-e47628a66db5\":[\"last_audience_member_queried-1\"]}},{\"name\":\"flow_variable.last_audience_member_queried\",\"label\":\"Flow Variables➛Last Audience Member Queried\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"9482612a-708d-45bb-a43c-bb53b0eaf382\":[\"conditions\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"db12284d-820c-4b1b-b5bd-ea854e0c2be8\"}},{\"name\":\"flow_variable.audience_members_emailed\",\"label\":\"Flow Variables➛Audience Members Emailed\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"5863a780-a832-4f72-b810-c1a5b6a711fc\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"db62511b-900b-46ed-9136-8aa1b2c4b8a6\"}},{\"name\":\"flow_variable.total_audience_members\",\"label\":\"Flow Variables➛Total Audience Members\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"5863a780-a832-4f72-b810-c1a5b6a711fc\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"f6513d61-857a-4644-9be6-36893fb7667b\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2024-07-12 16:31:23",
+    "display_value": "2024-07-12 09:31:23 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "send_email_now",
+    "display_value": "send_email_now"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-07-12 16:31:23",
+    "display_value": "2024-07-12 09:31:23 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "fc872d13c38b8a1085b196c4e40131b3",
+    "display_value": "Send Email"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Send Email Now",
+    "display_value": "Send Email Now"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "3f9a748fc3834a1085b196c4e40131e8",
+    "display_value": "3f9a748fc3834a1085b196c4e40131e8"
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

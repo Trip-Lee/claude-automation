@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "77d3916c3310ea107b18bc534d5c7bf0",
+    "extracted_at": "2025-08-22T18:42:39.669Z",
+    "display_value": "Setting Message",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-03-12 02:29:59",
+    "display_value": "2025-03-11 07:29:59 PM"
+  },
+  "name": {
+    "value": "Setting Message",
+    "display_value": "Setting Message"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-12 02:29:59",
+    "display_value": "2025-03-11 07:29:59 PM"
+  }
+}

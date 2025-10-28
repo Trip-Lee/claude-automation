@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "35c9f3eec3062e10d4ddf1db05013112",
+    "extracted_at": "2025-08-22T18:46:19.604Z",
+    "display_value": "UTMsApi",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-13 19:31:41",
+    "display_value": "2025-06-13 12:31:41 PM"
+  },
+  "name": {
+    "value": "UTMsApi",
+    "display_value": "UTMsApi"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-13 19:38:30",
+    "display_value": "2025-06-13 12:38:30 PM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "056d0e1487578e10369f33373cbb35df",
+    "extracted_at": "2025-08-22T18:42:33.517Z",
+    "display_value": "RequestAuthTenonEditor",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-05 22:50:32",
+    "display_value": "2024-07-05 03:50:32 PM"
+  },
+  "name": {
+    "value": "RequestAuthTenonEditor",
+    "display_value": "RequestAuthTenonEditor"
+  },
+  "sys_updated_on": {
+    "value": "2024-07-05 22:50:32",
+    "display_value": "2024-07-05 03:50:32 PM"
+  }
+}

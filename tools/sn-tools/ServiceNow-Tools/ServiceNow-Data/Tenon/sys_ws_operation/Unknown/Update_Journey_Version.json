@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "8a963757c3716e50d4ddf1db05013180",
+    "extracted_at": "2025-08-22T18:46:22.119Z",
+    "display_value": "Update Journey Version",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-05 19:04:57",
+    "display_value": "2025-06-05 12:04:57 PM"
+  },
+  "name": {
+    "value": "Update Journey Version",
+    "display_value": "Update Journey Version"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-15 21:41:41",
+    "display_value": "2025-07-15 02:41:41 PM"
+  }
+}

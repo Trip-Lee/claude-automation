@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "17ddcff2333c62507b18bc534d5c7b0b",
+    "extracted_at": "2025-08-22T18:46:19.527Z",
+    "display_value": "BrandKitApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-13 07:39:48",
+    "display_value": "2025-04-13 12:39:48 AM"
+  },
+  "name": {
+    "value": "BrandKitApiMS",
+    "display_value": "BrandKitApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-24 17:07:25",
+    "display_value": "2025-04-24 10:07:25 AM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "79f3ba50330d2a507b18bc534d5c7bb9",
+    "extracted_at": "2025-08-22T18:46:22.066Z",
+    "display_value": "Update Setting",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-17 21:38:06",
+    "display_value": "2025-04-17 02:38:06 PM"
+  },
+  "name": {
+    "value": "Update Setting",
+    "display_value": "Update Setting"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-17 21:56:26",
+    "display_value": "2025-04-17 02:56:26 PM"
+  }
+}

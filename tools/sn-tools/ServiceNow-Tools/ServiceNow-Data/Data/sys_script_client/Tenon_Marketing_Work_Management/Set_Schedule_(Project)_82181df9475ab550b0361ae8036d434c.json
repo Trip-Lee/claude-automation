@@ -1,0 +1,140 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "82181df9475ab550b0361ae8036d434c",
+    "extracted_at": "2025-09-19T21:48:44.951Z",
+    "display_value": "Set Schedule (Project)",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "isolate_script": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "applies_extended": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "global": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_updated_on": {
+    "value": "2023-11-04 21:46:30",
+    "display_value": "2023-11-04 02:46:30 PM"
+  },
+  "type": {
+    "value": "onChange",
+    "display_value": "onChange"
+  },
+  "sys_class_name": {
+    "value": "sys_script_client",
+    "display_value": "Client Script"
+  },
+  "ui_type": {
+    "value": "10",
+    "display_value": "All"
+  },
+  "view": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "sys_created_on": {
+    "value": "2023-11-04 21:32:04",
+    "display_value": "2023-11-04 02:32:04 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Set Schedule (Project)",
+    "display_value": "Set Schedule (Project)"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "table": {
+    "value": "x_cadso_work_project",
+    "display_value": "x_cadso_work_project"
+  },
+  "order": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_mod_count": {
+    "value": "4",
+    "display_value": "4"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "function onChange(control, oldValue, newValue, isLoading, isTemplate) {\n\tif (isLoading) return;\n\tvar ga = new GlideAjax('x_cadso_work.ScheduleClientUtils');\n\tga.addParam(\"sysparm_name\", \"getSchedule\");\n\tga.addParam(\"sysparm_group\", newValue);\n\tga.getXMLAnswer(getResponse);\n\n\tfunction getResponse(answer) {\n\t\tg_form.setValue('schedule', answer);\n\t}\n}",
+    "display_value": "function onChange(control, oldValue, newValue, isLoading, isTemplate) {\n\tif (isLoading) return;\n\tvar ga = new GlideAjax('x_cadso_work.ScheduleClientUtils');\n\tga.addParam(\"sysparm_name\", \"getSchedule\");\n\tga.addParam(\"sysparm_group\", newValue);\n\tga.getXMLAnswer(getResponse);\n\n\tfunction getResponse(answer) {\n\t\tg_form.setValue('schedule', answer);\n\t}\n}",
+    "formatted_script": {
+      "line_count": 11,
+      "char_count": 350,
+      "preview": "function onChange(control, oldValue, newValue, isLoading, isTemplate) {\n\tif (isLoading) return;\n\tvar ga = new GlideAjax('x_cadso_work.ScheduleClientUtils');\n\tga.addParam(\"sysparm_name\", \"getSchedule\")...",
+      "full_script": "function onChange(control, oldValue, newValue, isLoading, isTemplate) {\n\tif (isLoading) return;\n\tvar ga = new GlideAjax('x_cadso_work.ScheduleClientUtils');\n\tga.addParam(\"sysparm_name\", \"getSchedule\");\n\tga.addParam(\"sysparm_group\", newValue);\n\tga.getXMLAnswer(getResponse);\n\n\tfunction getResponse(answer) {\n\t\tg_form.setValue('schedule', answer);\n\t}\n}"
+    }
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_client_82181df9475ab550b0361ae8036d434c",
+    "display_value": "sys_script_client_82181df9475ab550b0361ae8036d434c"
+  },
+  "field": {
+    "value": "assignment_group",
+    "display_value": "assignment_group"
+  },
+  "name": {
+    "value": "Set Schedule (Project)",
+    "display_value": "Set Schedule (Project)"
+  },
+  "messages": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,5 +1,15 @@
 # TODO - Claude Multi-Agent System
 
+> **⚠️ ARCHIVED - 2025-10-23**
+>
+> This TODO list is from v0.6.0 (2025-10-16) and is now **archived**.
+>
+> **See `PRIORITIZED_TODOS.md` for the current, actively maintained TODO list.**
+>
+> This file is kept for historical reference only. Many items have been completed or superseded.
+
+---
+
 ## Critical Issues to Fix
 
 ### 1. **Verify File Writing with New Functions**

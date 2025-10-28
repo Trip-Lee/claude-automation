@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "82181df9475ab550b0361ae8036d434c",
+    "extracted_at": "2025-08-22T18:46:29.084Z",
+    "display_value": "Set Schedule (Project)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-11-04 21:32:04",
+    "display_value": "2023-11-04 02:32:04 PM"
+  },
+  "name": {
+    "value": "Set Schedule (Project)",
+    "display_value": "Set Schedule (Project)"
+  },
+  "sys_updated_on": {
+    "value": "2023-11-04 21:46:30",
+    "display_value": "2023-11-04 02:46:30 PM"
+  }
+}

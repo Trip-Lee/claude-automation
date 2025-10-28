@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "473abd1433e516507b18bc534d5c7b37",
+    "extracted_at": "2025-09-19T21:48:33.094Z",
+    "display_value": "Update Journey",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "short_description": {
+    "value": "Update Details of a Journey",
+    "display_value": "Update Details of a Journey"
+  },
+  "operation_script": {
+    "value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\r\n    try {\r\n        const apiUtil = new x_cadso_automate.APIUtils();\r\n        const table = 'x_cadso_journey_flow';\r\n        const sysID = request.pathParams.sys_id;\r\n        const updates = request.body.data;\r\n\r\n        if (updates.outdated_action !== 'continue') {\r\n\t\t\t// Bad way to do this but will stop all steps from firing if archived or just the latest for all other\r\n            let instanceStepGQ = new global.GlideQuery('x_cadso_journey_instance_step')\r\n                .where('journey', sysID)\r\n                .where(new global.GlideQuery().where('status', 'Pending').orWhere('status', ''));\r\n\t\t\tif (updates.state !== '333') {\r\n                instanceStepGQ.where('instance.latest', true);\r\n            }\r\n            instanceStepGQ.updateMultiple({\r\n                status: 'Cancelled'\r\n            });\r\n        }\r\n\r\n        if (updates.outdated_action) {\r\n            delete updates.outdated_action;\r\n        }\r\n\r\n        const journey = apiUtil.update({\r\n            table,\r\n            sysID,\r\n            updates\r\n        });\r\n        return journey;\r\n    } catch (error) {\r\n        return new sn_ws_err.BadRequestError(error.message);\r\n    }\r\n\r\n})(request, response);",
+    "display_value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\r\n    try {\r\n        const apiUtil = new x_cadso_automate.APIUtils();\r\n        const table = 'x_cadso_journey_flow';\r\n        const sysID = request.pathParams.sys_id;\r\n        const updates = request.body.data;\r\n\r\n        if (updates.outdated_action !== 'continue') {\r\n\t\t\t// Bad way to do this but will stop all steps from firing if archived or just the latest for all other\r\n            let instanceStepGQ = new global.GlideQuery('x_cadso_journey_instance_step')\r\n                .where('journey', sysID)\r\n                .where(new global.GlideQuery().where('status', 'Pending').orWhere('status', ''));\r\n\t\t\tif (updates.state !== '333') {\r\n                instanceStepGQ.where('instance.latest', true);\r\n            }\r\n            instanceStepGQ.updateMultiple({\r\n                status: 'Cancelled'\r\n            });\r\n        }\r\n\r\n        if (updates.outdated_action) {\r\n            delete updates.outdated_action;\r\n        }\r\n\r\n        const journey = apiUtil.update({\r\n            table,\r\n            sysID,\r\n            updates\r\n        });\r\n        return journey;\r\n    } catch (error) {\r\n        return new sn_ws_err.BadRequestError(error.message);\r\n    }\r\n\r\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-25 21:11:27",
+    "display_value": "2025-03-25 02:11:27 PM"
+  },
+  "enforce_acl": {
+    "value": "95371672c3582210d4ddf1db050131eb",
+    "display_value": "Journey Builder REST"
+  },
+  "web_service_version": {
+    "value": "235d87f387a4d654369f33373cbb3539",
+    "display_value": "v1"
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "{\r\n  \"name\": \"Updated Name For Default Tenon Journey\",\r\n  \"description\": \"Updated Default Journey that runs when a lead is created\",\r\n  \"active\": true\r\n}",
+    "display_value": "{\r\n  \"name\": \"Updated Name For Default Tenon Journey\",\r\n  \"description\": \"Updated Default Journey that runs when a lead is created\",\r\n  \"active\": true\r\n}"
+  },
+  "http_method": {
+    "value": "PUT",
+    "display_value": "PUT"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_journey/v1/ui/journeys/{sys_id}",
+    "display_value": "/api/x_cadso_journey/v1/ui/journeys/{sys_id}"
+  },
+  "sys_created_on": {
+    "value": "2024-10-25 17:46:02",
+    "display_value": "2024-10-25 10:46:02 AM"
+  },
+  "sys_name": {
+    "value": "Update Journey",
+    "display_value": "Update Journey"
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "web_service_definition": {
+    "value": "d11dc3f387a4d654369f33373cbb3506",
+    "display_value": "Tenon Journey Builder UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "e7dca48233e51e507b18bc534d5c7b04",
+    "display_value": "Journey Post Request"
+  },
+  "requires_snc_internal_role": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "17",
+    "display_value": "17"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "Journeys",
+    "display_value": "Journeys"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_473abd1433e516507b18bc534d5c7b37",
+    "display_value": "sys_ws_operation_473abd1433e516507b18bc534d5c7b37"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Update Journey",
+    "display_value": "Update Journey"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/journeys/{sys_id}",
+    "display_value": "/journeys/{sys_id}"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "/api/x_cadso_journey/ui/journeys/{sys_id}",
+    "display_value": "/api/x_cadso_journey/ui/journeys/{sys_id}"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

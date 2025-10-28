@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "4345b34a4730b91098519fd8036d4390",
+    "extracted_at": "2025-09-19T21:50:06.403Z",
+    "display_value": "Close Project on All Associated Tasks Completion",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"Updated_1.current.project\",\"label\":\"Trigger - Record Updated➛Marketing Task Record➛Project\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_work_task\",\"column_name\":\"project\"},{\"name\":\"f1eb5610-5745-47f9-8f8d-bf62fd0294dd.Count\",\"label\":\"1 - Look Up Records➛Count\",\"reference_display\":\"Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"Updated_1.current.project\",\"label\":\"Trigger - Record Updated➛Marketing Task Record➛Project\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_work_task\",\"column_name\":\"project\"},{\"name\":\"f1eb5610-5745-47f9-8f8d-bf62fd0294dd.Count\",\"label\":\"1 - Look Up Records➛Count\",\"reference_display\":\"Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "When all of the Tasks associated to the Project are in a \"Closed Complete\", \"Closed Incomplete\", or \"Closed Skipped\" status, then the Project Status should be updated to \"Closed Complete\" and the Project Actual End Date should be set to the current date",
+    "display_value": "When all of the Tasks associated to the Project are in a \"Closed Complete\", \"Closed Incomplete\", or \"Closed Skipped\" status, then the Project Status should be updated to \"Closed Complete\" and the Project Actual End Date should be set to the current date"
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2023-10-30 01:33:28",
+    "display_value": "2023-10-29 06:33:28 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "close_project_on_all_associated_tasks_completion",
+    "display_value": "close_project_on_all_associated_tasks_completion"
+  },
+  "sys_updated_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "sys_created_on": {
+    "value": "2023-08-23 14:03:12",
+    "display_value": "2023-08-23 07:03:12 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "parent_flow": {
+    "value": "1e003bc24730b91098519fd8036d43cb",
+    "display_value": "Close Project on All Associated Tasks Completion"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "5",
+    "display_value": "5"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "Close Project on All Associated Tasks Completion",
+    "display_value": "Close Project on All Associated Tasks Completion"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

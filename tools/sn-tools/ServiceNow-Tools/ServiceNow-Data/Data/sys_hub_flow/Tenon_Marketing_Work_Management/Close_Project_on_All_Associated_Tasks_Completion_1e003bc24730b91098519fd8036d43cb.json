@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "1e003bc24730b91098519fd8036d43cb",
+    "extracted_at": "2025-09-19T21:48:47.888Z",
+    "display_value": "Close Project on All Associated Tasks Completion",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2024-06-11 19:13:11",
+    "display_value": "2024-06-11 12:13:11 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "b846c23c33ee66507b18bc534d5c7bec",
+    "display_value": "b846c23c33ee66507b18bc534d5c7bec"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "close_project_on_all_associated_tasks_completion",
+    "display_value": "close_project_on_all_associated_tasks_completion"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2023-08-23 13:40:12",
+    "display_value": "2023-08-23 06:40:12 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch7b-hotfix1-05-20-2025_05-22-2025_2350.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch7b-hotfix1-05-20-2025_05-22-2025_2350.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Close Project on All Associated Tasks Completion",
+    "display_value": "Close Project on All Associated Tasks Completion"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "4345b34a4730b91098519fd8036d4390",
+    "display_value": "4345b34a4730b91098519fd8036d4390"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "authored_on_release_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_1e003bc24730b91098519fd8036d43cb",
+    "display_value": "sys_hub_flow_1e003bc24730b91098519fd8036d43cb"
+  },
+  "name": {
+    "value": "Close Project on All Associated Tasks Completion",
+    "display_value": "Close Project on All Associated Tasks Completion"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"Updated_1.current.project\",\"label\":\"Trigger - Record Updated➛Marketing Task Record➛Project\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_work_task\",\"column_name\":\"project\"},{\"name\":\"f1eb5610-5745-47f9-8f8d-bf62fd0294dd.Count\",\"label\":\"1 - Look Up Records➛Count\",\"reference_display\":\"Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"Updated_1.current.project\",\"label\":\"Trigger - Record Updated➛Marketing Task Record➛Project\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_work_task\",\"column_name\":\"project\"},{\"name\":\"f1eb5610-5745-47f9-8f8d-bf62fd0294dd.Count\",\"label\":\"1 - Look Up Records➛Count\",\"reference_display\":\"Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "When all of the Tasks associated to the Project are in a \"Closed Complete\", \"Closed Incomplete\", or \"Closed Skipped\" status, then the Project Status should be updated to \"Closed Complete\" and the Project Actual End Date should be set to the current date",
+    "display_value": "When all of the Tasks associated to the Project are in a \"Closed Complete\", \"Closed Incomplete\", or \"Closed Skipped\" status, then the Project Status should be updated to \"Closed Complete\" and the Project Actual End Date should be set to the current date"
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "remote_trigger_id": {
+    "value": "5b45b34a4730b91098519fd8036d43f3",
+    "display_value": "5b45b34a4730b91098519fd8036d43f3"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  }
+}

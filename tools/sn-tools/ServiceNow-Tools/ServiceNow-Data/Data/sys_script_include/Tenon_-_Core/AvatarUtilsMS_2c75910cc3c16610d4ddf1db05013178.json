@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "2c75910cc3c16610d4ddf1db05013178",
+    "extracted_at": "2025-09-19T21:48:28.922Z",
+    "display_value": "AvatarUtilsMS",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "8",
+    "display_value": "8"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-04-21 19:35:46",
+    "display_value": "2025-04-21 12:35:46 PM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "const AvatarUtilsMS = Class.create();\r\nAvatarUtilsMS.prototype = {\r\n\tinitialize: function () {\r\n\t\tthis.users = {};\r\n\t},\r\n\r\n\tget: function ({ tableGr, sysId, table, userName, element, userSysId }) {\r\n\t\tif (userSysId && this.users[userSysId]) {\r\n\t\t\treturn this.users[userSysId];\r\n\t\t} else if (userName && this.users[userName]) {\r\n\t\t\treturn this.users[userName];\r\n\t\t}\r\n\r\n\t\tif (userSysId) {\r\n\t\t\tif (userSysId.indexOf('.') > -1) {\r\n\t\t\t\treturn this.getUserNameAvatar({ userName });\r\n\t\t\t} else {\r\n\t\t\t\treturn this.getUserAvatar({ sysId: userSysId });\r\n\t\t\t}\r\n\t\t} else if (tableGr && tableGr.isValidRecord()) {\r\n\t\t\tif (tableGr.getTableName() === \"sys_user\") {\r\n\t\t\t\treturn this.getAvatar({ userGr: tableGr });\r\n\t\t\t} else if (element && (element === \"sys_updated_by\" || element === \"sys_created_by\")) {\r\n\t\t\t\treturn this.getUserNameAvatar({ userName: tableGr.getValue(element) });\r\n\t\t\t} else if (element) {\r\n\t\t\t\treturn this.getElementAvatar({ tableGr, element });\r\n\t\t\t}\r\n\t\t} else if (userName) {\r\n\t\t\treturn this.getUserNameAvatar({ userName });\r\n\t\t} else if (table && (sysId || userSysId)) {\r\n\t\t\treturn this.getTableAvatar({ table, sysId: sysId || userSysId, element });\r\n\t\t}\r\n\r\n\t\treturn {};\r\n\t},\r\n\r\n\tgetTableAvatar: function ({ table, sysId, element }) {\r\n\t\tif (!table || !sysId) {\r\n\t\t\treturn {};\r\n\t\t} else if (sysId && this.users[sysId]) {\r\n\t\t\treturn this.users[sysId];\r\n\t\t}\r\n\t\t\r\n\t\tconst tableGr = new GlideRecordSecure(table);\r\n\t\tif (tableGr.get(sysId)) {\r\n\t\t\tif (element) {\r\n\t\t\t\treturn this.getElementAvatar({ tableGr, element });\r\n\t\t\t} else if (tableGr.getTableName() === 'sys_user') {\r\n\t\t\t\treturn this.getAvatar({ userGr });\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn {};\r\n\t},\r\n\r\n\tgetElementAvatar: function ({ tableGr, element }) {\r\n\t\tconst userGr = tableGr.isValidField(element) && tableGr[element].getRefRecord();\r\n\t\tif (!userGr.isValidRecord()) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst userSysId = userGr.getUniqueValue();\r\n\t\tif (userSysId && this.users[userSysId]) {\r\n\t\t\treturn this.users[userSysId];\r\n\t\t} else if (!userSysId) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\treturn this.getAvatar({ userGr });\r\n\t},\r\n\r\n\tgetUserNameAvatar: function ({ userName }) {\r\n\t\tif (userName && this.users[userName]) {\r\n\t\t\treturn this.users[userName];\r\n\t\t} else if (!userName) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst userGr = new GlideRecordSecure(\"sys_user\");\r\n\t\tif (userGr.get(\"user_name\", userName)) {\r\n\t\t\treturn this.getAvatar({ userGr });\r\n\t\t} else {\r\n\t\t\treturn {};\r\n\t\t}\r\n\t},\r\n\r\n\tgetUserAvatar: function ({ sysId }) {\r\n\t\tif (sysId && this.users[sysId]) {\r\n\t\t\treturn this.users[sysId];\r\n\t\t} else if (!sysId) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst userGr = new GlideRecordSecure(\"sys_user\");\r\n\t\tif (userGr.get(sysId)) {\r\n\t\t\treturn this.getAvatar({ userGr });\r\n\t\t} else {\r\n\t\t\treturn {};\r\n\t\t}\r\n\t},\r\n\r\n\tgetAvatar: function ({ userGr }) {\r\n\t\tif (!userGr || !userGr.isValidRecord()) {\r\n\t\t\treturn {};\r\n\t\t} else if (this.users[userGr.getUniqueValue()]) {\r\n\t\t\treturn this.users[userGr.getUniqueValue()];\r\n\t\t} else if (userGr.getTableName() !== \"sys_user\") {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst avatar = {\r\n\t\t\tavatar: userGr.getValue('avatar'),\r\n\t\t\timage: userGr.getValue('image') || '',\r\n\t\t\tphoto: userGr.getValue('photo') || '',\r\n\t\t\tdisplayValue: userGr.getDisplayValue() || userGr.getDisplayValue('user_name') || '',\r\n\t\t\ttitle: userGr.getDisplayValue('title') || '',\r\n\t\t\tisValid: true,\r\n\t\t};\r\n\r\n\t\tavatar.avatar = avatar.avatar || avatar.photo || avatar.image || '' || '';\r\n\r\n\t\tif (avatar.avatar && avatar.avatar.indexOf('.iix') === -1) {\r\n\t\t\tavatar.avatar += '.iix';\r\n\t\t}\r\n\r\n\t\tthis.users[userGr.getUniqueValue()] = avatar;\r\n\t\t\r\n\t\treturn avatar;\r\n\t},\r\n\r\n\tfakeFunction: function() {\r\n\r\n\t},\r\n\r\n\ttype: \"AvatarUtilsMS\",\r\n};\r\n",
+    "display_value": "const AvatarUtilsMS = Class.create();\r\nAvatarUtilsMS.prototype = {\r\n\tinitialize: function () {\r\n\t\tthis.users = {};\r\n\t},\r\n\r\n\tget: function ({ tableGr, sysId, table, userName, element, userSysId }) {\r\n\t\tif (userSysId && this.users[userSysId]) {\r\n\t\t\treturn this.users[userSysId];\r\n\t\t} else if (userName && this.users[userName]) {\r\n\t\t\treturn this.users[userName];\r\n\t\t}\r\n\r\n\t\tif (userSysId) {\r\n\t\t\tif (userSysId.indexOf('.') > -1) {\r\n\t\t\t\treturn this.getUserNameAvatar({ userName });\r\n\t\t\t} else {\r\n\t\t\t\treturn this.getUserAvatar({ sysId: userSysId });\r\n\t\t\t}\r\n\t\t} else if (tableGr && tableGr.isValidRecord()) {\r\n\t\t\tif (tableGr.getTableName() === \"sys_user\") {\r\n\t\t\t\treturn this.getAvatar({ userGr: tableGr });\r\n\t\t\t} else if (element && (element === \"sys_updated_by\" || element === \"sys_created_by\")) {\r\n\t\t\t\treturn this.getUserNameAvatar({ userName: tableGr.getValue(element) });\r\n\t\t\t} else if (element) {\r\n\t\t\t\treturn this.getElementAvatar({ tableGr, element });\r\n\t\t\t}\r\n\t\t} else if (userName) {\r\n\t\t\treturn this.getUserNameAvatar({ userName });\r\n\t\t} else if (table && (sysId || userSysId)) {\r\n\t\t\treturn this.getTableAvatar({ table, sysId: sysId || userSysId, element });\r\n\t\t}\r\n\r\n\t\treturn {};\r\n\t},\r\n\r\n\tgetTableAvatar: function ({ table, sysId, element }) {\r\n\t\tif (!table || !sysId) {\r\n\t\t\treturn {};\r\n\t\t} else if (sysId && this.users[sysId]) {\r\n\t\t\treturn this.users[sysId];\r\n\t\t}\r\n\t\t\r\n\t\tconst tableGr = new GlideRecordSecure(table);\r\n\t\tif (tableGr.get(sysId)) {\r\n\t\t\tif (element) {\r\n\t\t\t\treturn this.getElementAvatar({ tableGr, element });\r\n\t\t\t} else if (tableGr.getTableName() === 'sys_user') {\r\n\t\t\t\treturn this.getAvatar({ userGr });\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn {};\r\n\t},\r\n\r\n\tgetElementAvatar: function ({ tableGr, element }) {\r\n\t\tconst userGr = tableGr.isValidField(element) && tableGr[element].getRefRecord();\r\n\t\tif (!userGr.isValidRecord()) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst userSysId = userGr.getUniqueValue();\r\n\t\tif (userSysId && this.users[userSysId]) {\r\n\t\t\treturn this.users[userSysId];\r\n\t\t} else if (!userSysId) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\treturn this.getAvatar({ userGr });\r\n\t},\r\n\r\n\tgetUserNameAvatar: function ({ userName }) {\r\n\t\tif (userName && this.users[userName]) {\r\n\t\t\treturn this.users[userName];\r\n\t\t} else if (!userName) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst userGr = new GlideRecordSecure(\"sys_user\");\r\n\t\tif (userGr.get(\"user_name\", userName)) {\r\n\t\t\treturn this.getAvatar({ userGr });\r\n\t\t} else {\r\n\t\t\treturn {};\r\n\t\t}\r\n\t},\r\n\r\n\tgetUserAvatar: function ({ sysId }) {\r\n\t\tif (sysId && this.users[sysId]) {\r\n\t\t\treturn this.users[sysId];\r\n\t\t} else if (!sysId) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst userGr = new GlideRecordSecure(\"sys_user\");\r\n\t\tif (userGr.get(sysId)) {\r\n\t\t\treturn this.getAvatar({ userGr });\r\n\t\t} else {\r\n\t\t\treturn {};\r\n\t\t}\r\n\t},\r\n\r\n\tgetAvatar: function ({ userGr }) {\r\n\t\tif (!userGr || !userGr.isValidRecord()) {\r\n\t\t\treturn {};\r\n\t\t} else if (this.users[userGr.getUniqueValue()]) {\r\n\t\t\treturn this.users[userGr.getUniqueValue()];\r\n\t\t} else if (userGr.getTableName() !== \"sys_user\") {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst avatar = {\r\n\t\t\tavatar: userGr.getValue('avatar'),\r\n\t\t\timage: userGr.getValue('image') || '',\r\n\t\t\tphoto: userGr.getValue('photo') || '',\r\n\t\t\tdisplayValue: userGr.getDisplayValue() || userGr.getDisplayValue('user_name') || '',\r\n\t\t\ttitle: userGr.getDisplayValue('title') || '',\r\n\t\t\tisValid: true,\r\n\t\t};\r\n\r\n\t\tavatar.avatar = avatar.avatar || avatar.photo || avatar.image || '' || '';\r\n\r\n\t\tif (avatar.avatar && avatar.avatar.indexOf('.iix') === -1) {\r\n\t\t\tavatar.avatar += '.iix';\r\n\t\t}\r\n\r\n\t\tthis.users[userGr.getUniqueValue()] = avatar;\r\n\t\t\r\n\t\treturn avatar;\r\n\t},\r\n\r\n\tfakeFunction: function() {\r\n\r\n\t},\r\n\r\n\ttype: \"AvatarUtilsMS\",\r\n};\r\n",
+    "formatted_script": {
+      "line_count": 136,
+      "char_count": 3634,
+      "preview": "const AvatarUtilsMS = Class.create();\r\nAvatarUtilsMS.prototype = {\r\n\tinitialize: function () {\r\n\t\tthis.users = {};\r\n\t},\r\n\r\n\tget: function ({ tableGr, sysId, table, userName, element, userSysId }) {\r\n\t...",
+      "full_script": "const AvatarUtilsMS = Class.create();\r\nAvatarUtilsMS.prototype = {\r\n\tinitialize: function () {\r\n\t\tthis.users = {};\r\n\t},\r\n\r\n\tget: function ({ tableGr, sysId, table, userName, element, userSysId }) {\r\n\t\tif (userSysId && this.users[userSysId]) {\r\n\t\t\treturn this.users[userSysId];\r\n\t\t} else if (userName && this.users[userName]) {\r\n\t\t\treturn this.users[userName];\r\n\t\t}\r\n\r\n\t\tif (userSysId) {\r\n\t\t\tif (userSysId.indexOf('.') > -1) {\r\n\t\t\t\treturn this.getUserNameAvatar({ userName });\r\n\t\t\t} else {\r\n\t\t\t\treturn this.getUserAvatar({ sysId: userSysId });\r\n\t\t\t}\r\n\t\t} else if (tableGr && tableGr.isValidRecord()) {\r\n\t\t\tif (tableGr.getTableName() === \"sys_user\") {\r\n\t\t\t\treturn this.getAvatar({ userGr: tableGr });\r\n\t\t\t} else if (element && (element === \"sys_updated_by\" || element === \"sys_created_by\")) {\r\n\t\t\t\treturn this.getUserNameAvatar({ userName: tableGr.getValue(element) });\r\n\t\t\t} else if (element) {\r\n\t\t\t\treturn this.getElementAvatar({ tableGr, element });\r\n\t\t\t}\r\n\t\t} else if (userName) {\r\n\t\t\treturn this.getUserNameAvatar({ userName });\r\n\t\t} else if (table && (sysId || userSysId)) {\r\n\t\t\treturn this.getTableAvatar({ table, sysId: sysId || userSysId, element });\r\n\t\t}\r\n\r\n\t\treturn {};\r\n\t},\r\n\r\n\tgetTableAvatar: function ({ table, sysId, element }) {\r\n\t\tif (!table || !sysId) {\r\n\t\t\treturn {};\r\n\t\t} else if (sysId && this.users[sysId]) {\r\n\t\t\treturn this.users[sysId];\r\n\t\t}\r\n\t\t\r\n\t\tconst tableGr = new GlideRecordSecure(table);\r\n\t\tif (tableGr.get(sysId)) {\r\n\t\t\tif (element) {\r\n\t\t\t\treturn this.getElementAvatar({ tableGr, element });\r\n\t\t\t} else if (tableGr.getTableName() === 'sys_user') {\r\n\t\t\t\treturn this.getAvatar({ userGr });\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn {};\r\n\t},\r\n\r\n\tgetElementAvatar: function ({ tableGr, element }) {\r\n\t\tconst userGr = tableGr.isValidField(element) && tableGr[element].getRefRecord();\r\n\t\tif (!userGr.isValidRecord()) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst userSysId = userGr.getUniqueValue();\r\n\t\tif (userSysId && this.users[userSysId]) {\r\n\t\t\treturn this.users[userSysId];\r\n\t\t} else if (!userSysId) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\treturn this.getAvatar({ userGr });\r\n\t},\r\n\r\n\tgetUserNameAvatar: function ({ userName }) {\r\n\t\tif (userName && this.users[userName]) {\r\n\t\t\treturn this.users[userName];\r\n\t\t} else if (!userName) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst userGr = new GlideRecordSecure(\"sys_user\");\r\n\t\tif (userGr.get(\"user_name\", userName)) {\r\n\t\t\treturn this.getAvatar({ userGr });\r\n\t\t} else {\r\n\t\t\treturn {};\r\n\t\t}\r\n\t},\r\n\r\n\tgetUserAvatar: function ({ sysId }) {\r\n\t\tif (sysId && this.users[sysId]) {\r\n\t\t\treturn this.users[sysId];\r\n\t\t} else if (!sysId) {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst userGr = new GlideRecordSecure(\"sys_user\");\r\n\t\tif (userGr.get(sysId)) {\r\n\t\t\treturn this.getAvatar({ userGr });\r\n\t\t} else {\r\n\t\t\treturn {};\r\n\t\t}\r\n\t},\r\n\r\n\tgetAvatar: function ({ userGr }) {\r\n\t\tif (!userGr || !userGr.isValidRecord()) {\r\n\t\t\treturn {};\r\n\t\t} else if (this.users[userGr.getUniqueValue()]) {\r\n\t\t\treturn this.users[userGr.getUniqueValue()];\r\n\t\t} else if (userGr.getTableName() !== \"sys_user\") {\r\n\t\t\treturn {};\r\n\t\t}\r\n\r\n\t\tconst avatar = {\r\n\t\t\tavatar: userGr.getValue('avatar'),\r\n\t\t\timage: userGr.getValue('image') || '',\r\n\t\t\tphoto: userGr.getValue('photo') || '',\r\n\t\t\tdisplayValue: userGr.getDisplayValue() || userGr.getDisplayValue('user_name') || '',\r\n\t\t\ttitle: userGr.getDisplayValue('title') || '',\r\n\t\t\tisValid: true,\r\n\t\t};\r\n\r\n\t\tavatar.avatar = avatar.avatar || avatar.photo || avatar.image || '' || '';\r\n\r\n\t\tif (avatar.avatar && avatar.avatar.indexOf('.iix') === -1) {\r\n\t\t\tavatar.avatar += '.iix';\r\n\t\t}\r\n\r\n\t\tthis.users[userGr.getUniqueValue()] = avatar;\r\n\t\t\r\n\t\treturn avatar;\r\n\t},\r\n\r\n\tfakeFunction: function() {\r\n\r\n\t},\r\n\r\n\ttype: \"AvatarUtilsMS\",\r\n};\r\n"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_2c75910cc3c16610d4ddf1db05013178",
+    "display_value": "sys_script_include_2c75910cc3c16610d4ddf1db05013178"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "api_name": {
+    "value": "x_cadso_core.AvatarUtilsMS",
+    "display_value": "x_cadso_core.AvatarUtilsMS"
+  },
+  "sys_created_on": {
+    "value": "2025-04-16 20:06:05",
+    "display_value": "2025-04-16 01:06:05 PM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "AvatarUtilsMS",
+    "display_value": "AvatarUtilsMS"
+  },
+  "sys_name": {
+    "value": "AvatarUtilsMS",
+    "display_value": "AvatarUtilsMS"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_policy": {
+    "value": "protected",
+    "display_value": "Protected"
+  }
+}

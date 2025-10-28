@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "4711ff0e879eca10369f33373cbb3531",
+    "extracted_at": "2025-09-19T21:48:51.818Z",
+    "display_value": "Totals for account domains for a single time resolution",
+    "application": "Tenon_Marking_Email_Send_Spoke",
+    "scope": {
+      "display_value": "Tenon Marking Email Send Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/aa8b5171c39ac61085b196c4e4013109",
+      "value": "aa8b5171c39ac61085b196c4e4013109"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.event}}\",\"label\":\"action➛event\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.limit}}\",\"label\":\"action➛limit\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.resolution}}\",\"label\":\"action➛resolution\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.timestamp}}\",\"label\":\"action➛timestamp\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[12102211-2197-4441-9445-450241142224].error_code}}\",\"label\":\"step➛OpenAPI step➛Error Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[12102211-2197-4441-9445-450241142224].error_message}}\",\"label\":\"step➛OpenAPI step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null}]",
+    "display_value": "[{\"name\":\"{{action.event}}\",\"label\":\"action➛event\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.limit}}\",\"label\":\"action➛limit\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.resolution}}\",\"label\":\"action➛resolution\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.timestamp}}\",\"label\":\"action➛timestamp\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[12102211-2197-4441-9445-450241142224].error_code}}\",\"label\":\"step➛OpenAPI step➛Error Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[12102211-2197-4441-9445-450241142224].error_message}}\",\"label\":\"step➛OpenAPI step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Gets stat  totals for domains in an account for a single time resolution",
+    "display_value": "Gets stat  totals for domains in an account for a single time resolution"
+  },
+  "sys_updated_on": {
+    "value": "2024-05-22 23:30:14",
+    "display_value": "2024-05-22 04:30:14 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "totals_for_account_domains_for_a_single_time_resolution",
+    "display_value": "totals_for_account_domains_for_a_single_time_resolution"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-05-22 23:30:13",
+    "display_value": "2024-05-22 04:30:13 PM"
+  },
+  "compiler_build": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Totals for account domains for a single time resolution",
+    "display_value": "Totals for account domains for a single time resolution"
+  },
+  "sys_scope": {
+    "value": "aa8b5171c39ac61085b196c4e4013109",
+    "display_value": "Tenon Marking Email Send Spoke"
+  },
+  "state": {
+    "value": "draft",
+    "display_value": "Draft"
+  },
+  "master_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "aa8b5171c39ac61085b196c4e4013109",
+    "display_value": "Tenon Marking Email Send Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_4711ff0e879eca10369f33373cbb3531",
+    "display_value": "sys_hub_action_type_definition_4711ff0e879eca10369f33373cbb3531"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Totals for account domains for a single time resolution",
+    "display_value": "Totals for account domains for a single time resolution"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "55b0fb42c3524a1085b196c4e40131e0",
+    "display_value": "Stats"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

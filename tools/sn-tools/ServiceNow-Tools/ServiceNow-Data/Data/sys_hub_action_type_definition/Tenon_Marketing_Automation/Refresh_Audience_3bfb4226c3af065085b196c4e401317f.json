@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "3bfb4226c3af065085b196c4e401317f",
+    "extracted_at": "2025-09-19T21:48:49.470Z",
+    "display_value": "Refresh Audience",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.audience}}\",\"label\":\"action➛audience\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"GUID\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[b36f964c-00c8-4831-9630-66fe200262a5].valid}}\",\"label\":\"step➛Script step➛valid\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}}]",
+    "display_value": "[{\"name\":\"{{action.audience}}\",\"label\":\"action➛audience\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"GUID\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[b36f964c-00c8-4831-9630-66fe200262a5].valid}}\",\"label\":\"step➛Script step➛valid\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Refresh audience member(s) records for an audience.",
+    "display_value": "Refresh audience member(s) records for an audience."
+  },
+  "sys_updated_on": {
+    "value": "2024-07-25 08:48:44",
+    "display_value": "2024-07-25 01:48:44 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "d21dce66c3af065085b196c4e4013185",
+    "display_value": "d21dce66c3af065085b196c4e4013185"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "refresh_audience",
+    "display_value": "refresh_audience"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2024-07-25 08:43:55",
+    "display_value": "2024-07-25 01:43:55 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Refresh Audience",
+    "display_value": "Refresh Audience"
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "8e1dce66c3af065085b196c4e4013157",
+    "display_value": "8e1dce66c3af065085b196c4e4013157"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "4",
+    "display_value": "4"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_3bfb4226c3af065085b196c4e401317f",
+    "display_value": "sys_hub_action_type_definition_3bfb4226c3af065085b196c4e401317f"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Refresh Audience",
+    "display_value": "Refresh Audience"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

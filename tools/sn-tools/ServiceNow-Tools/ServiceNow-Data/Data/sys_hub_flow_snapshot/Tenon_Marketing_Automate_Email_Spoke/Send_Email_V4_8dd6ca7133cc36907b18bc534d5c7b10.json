@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "8dd6ca7133cc36907b18bc534d5c7b10",
+    "extracted_at": "2025-09-19T21:49:08.877Z",
+    "display_value": "Send Email V4",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"470aabd2-e204-4467-9ec6-70e24a4cf933.batches\",\"label\":\"5 - Email Audience Batching Check➛Batches\",\"reference_display\":\"Batches\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"usedInstances\":{\"74139bee-c196-4fb3-8909-ba364ab6101f\":[\"items\"]},\"attributes\":{\"sourceId\":\"64f1c083-ea4a-4eb1-882d-a07efadbe23a\",\"child_name\":\"batches_child0\",\"uiUniqueId\":\"0ceba860-b417-4d2f-ba16-eb9b341baba1\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD231e71a13288f290dec00b79a238972b\",\"child_label\":\"Batches_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"1f94dc8e-4d99-4a66-ae4f-18f020afc91e\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_uiUniqueId\":\"1144962b-58d6-42d6-9089-d09847008cf9\"}},{\"name\":\"f3be98e5-6820-4aee-8374-51e7de00cc16.domain_region\",\"label\":\"3 - Set Domain Region➛Domain Region\",\"reference_display\":\"Domain Region\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"3a083af2-249b-4113-892f-c00beef4755e\":[\"domain_region\"],\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"domain_region\"],\"d4e8593e-904b-470d-8c41-979b3565b9c4\":[\"domain_region\"],\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"domain_region\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"e73acc2b-b414-4fc8-a396-7f2acc797370\"}},{\"name\":\"Created or Updated_1.current.mailing_list_address\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record➛Mailing List Address\",\"reference\":\"\",\"reference_display\":\"Mailing List Address\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"mailing_list_address\",\"usedInstances\":{\"3a083af2-249b-4113-892f-c00beef4755e\":[\"address\"]}},{\"name\":\"470aabd2-e204-4467-9ec6-70e24a4cf933.is_batched\",\"label\":\"5 - Email Audience Batching Check➛Is Batched\",\"reference_display\":\"Is Batched\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"usedInstances\":{\"1aafb83c-6d17-415f-9e6e-411280215fdb\":[\"condition\"]},\"attributes\":{\"uiType\":\"boolean\",\"uiTypeLabel\":\"True/False\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"6046e74b-4ed4-4703-87c9-f7d1c1a5c46a\"}},{\"name\":\"Created or Updated_1.current.domain.sys_id\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record➛Domain➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"sys_id\",\"usedInstances\":{\"f3be98e5-6820-4aee-8374-51e7de00cc16\":[\"domain\"]}},{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"cd0a4f07-d368-46e9-9fa7-d57ec4119f16\":[\"send_id\"],\"16320671-42c8-45a8-8a3f-3607928c8689\":[\"email_send_rec\"],\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"email_record\"],\"fefc9cbf-a1b0-44c9-a801-4e2391d37667\":[\"email_send_rec\"],\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"email_record\"],\"b78512a7-c872-4a7d-a46b-e7f0673750ed\":[\"record\"],\"8851f568-cadf-480a-8765-43e9205e7394\":[\"email_send_rec\"]},\"attributes\":{}},{\"name\":\"Created or Updated_1.current.sys_id\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"sys_id\",\"usedInstances\":{\"cd0a4f07-d368-46e9-9fa7-d57ec4119f16\":[\"send_id\"],\"4fc4e0f3-4bb8-4162-9685-ee55ac82b67b\":[\"sendid\"],\"470aabd2-e204-4467-9ec6-70e24a4cf933\":[\"emailsendid\"],\"8a8181fa-d5d8-421d-888a-30588bf0897d\":[\"email_send\"],\"af4ab0c3-f303-4210-866d-1564b1d9ce93\":[\"email_send\"],\"965f9059-063e-4a77-ba30-824257651907\":[\"emailsendid\"]}},{\"name\":\"3a083af2-249b-4113-892f-c00beef4755e.list.address\",\"label\":\"6 - Create a mailing list➛List➛address\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"8a8181fa-d5d8-421d-888a-30588bf0897d\":[\"mailing_list_address\"],\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"to\"]},\"attributes\":{}},{\"name\":\"Created or Updated_1.current.domain.domain_name\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record➛Domain➛Domain\",\"reference\":\"\",\"reference_display\":\"Domain\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"usedInstances\":{\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"domain_name\"],\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"domain_name\"],\"8851f568-cadf-480a-8765-43e9205e7394\":[\"domain\"]}},{\"name\":\"16320671-42c8-45a8-8a3f-3607928c8689.tag\",\"label\":\"9 - Generate Mailing List Tag➛tag\",\"reference_display\":\"tag\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"mailing_tag\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"662cb3b2-9730-4da4-b5af-6d1f03fe672b\"}},{\"name\":\"470aabd2-e204-4467-9ec6-70e24a4cf933.batch_count\",\"label\":\"5 - Email Audience Batching Check➛Batch Count\",\"reference_display\":\"Batch Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"8a8181fa-d5d8-421d-888a-30588bf0897d\":[\"offset\"]},\"attributes\":{\"uiType\":\"integer\",\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"f7cf813a-a65d-436c-a1da-18074199d80c\"}},{\"name\":\"470aabd2-e204-4467-9ec6-70e24a4cf933.total_audience_count\",\"label\":\"5 - Email Audience Batching Check➛Total Audience Count\",\"reference_display\":\"Total Audience Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"8a8181fa-d5d8-421d-888a-30588bf0897d\":[\"limit\"]},\"attributes\":{\"uiType\":\"integer\",\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"2096887a-ed36-44e1-b455-bcd3809ad653\"}},{\"name\":\"d4e8593e-904b-470d-8c41-979b3565b9c4.list.address\",\"label\":\"13 - Create a mailing list➛List➛address\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"to\"],\"af4ab0c3-f303-4210-866d-1564b1d9ce93\":[\"mailing_list_address\"]},\"attributes\":{}},{\"name\":\"fefc9cbf-a1b0-44c9-a801-4e2391d37667.tag\",\"label\":\"15 - Generate Mailing List Tag➛tag\",\"reference_display\":\"tag\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"mailing_tag\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"662cb3b2-9730-4da4-b5af-6d1f03fe672b\"}},{\"name\":\"1a8fcfd4-3556-4cc2-b21e-72b38188f69d.__status__.message\",\"label\":\"18 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"8a70de88-6dde-4400-86b3-692d238de870\":[\"log_message\"]},\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"470aabd2-e204-4467-9ec6-70e24a4cf933.batches\",\"label\":\"5 - Email Audience Batching Check➛Batches\",\"reference_display\":\"Batches\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"usedInstances\":{\"74139bee-c196-4fb3-8909-ba364ab6101f\":[\"items\"]},\"attributes\":{\"sourceId\":\"64f1c083-ea4a-4eb1-882d-a07efadbe23a\",\"child_name\":\"batches_child0\",\"uiUniqueId\":\"0ceba860-b417-4d2f-ba16-eb9b341baba1\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD231e71a13288f290dec00b79a238972b\",\"child_label\":\"Batches_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"1f94dc8e-4d99-4a66-ae4f-18f020afc91e\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_uiUniqueId\":\"1144962b-58d6-42d6-9089-d09847008cf9\"}},{\"name\":\"f3be98e5-6820-4aee-8374-51e7de00cc16.domain_region\",\"label\":\"3 - Set Domain Region➛Domain Region\",\"reference_display\":\"Domain Region\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"3a083af2-249b-4113-892f-c00beef4755e\":[\"domain_region\"],\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"domain_region\"],\"d4e8593e-904b-470d-8c41-979b3565b9c4\":[\"domain_region\"],\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"domain_region\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"e73acc2b-b414-4fc8-a396-7f2acc797370\"}},{\"name\":\"Created or Updated_1.current.mailing_list_address\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record➛Mailing List Address\",\"reference\":\"\",\"reference_display\":\"Mailing List Address\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"mailing_list_address\",\"usedInstances\":{\"3a083af2-249b-4113-892f-c00beef4755e\":[\"address\"]}},{\"name\":\"470aabd2-e204-4467-9ec6-70e24a4cf933.is_batched\",\"label\":\"5 - Email Audience Batching Check➛Is Batched\",\"reference_display\":\"Is Batched\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"usedInstances\":{\"1aafb83c-6d17-415f-9e6e-411280215fdb\":[\"condition\"]},\"attributes\":{\"uiType\":\"boolean\",\"uiTypeLabel\":\"True/False\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"6046e74b-4ed4-4703-87c9-f7d1c1a5c46a\"}},{\"name\":\"Created or Updated_1.current.domain.sys_id\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record➛Domain➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"sys_id\",\"usedInstances\":{\"f3be98e5-6820-4aee-8374-51e7de00cc16\":[\"domain\"]}},{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"cd0a4f07-d368-46e9-9fa7-d57ec4119f16\":[\"send_id\"],\"16320671-42c8-45a8-8a3f-3607928c8689\":[\"email_send_rec\"],\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"email_record\"],\"fefc9cbf-a1b0-44c9-a801-4e2391d37667\":[\"email_send_rec\"],\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"email_record\"],\"b78512a7-c872-4a7d-a46b-e7f0673750ed\":[\"record\"],\"8851f568-cadf-480a-8765-43e9205e7394\":[\"email_send_rec\"]},\"attributes\":{}},{\"name\":\"Created or Updated_1.current.sys_id\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"sys_id\",\"usedInstances\":{\"cd0a4f07-d368-46e9-9fa7-d57ec4119f16\":[\"send_id\"],\"4fc4e0f3-4bb8-4162-9685-ee55ac82b67b\":[\"sendid\"],\"470aabd2-e204-4467-9ec6-70e24a4cf933\":[\"emailsendid\"],\"8a8181fa-d5d8-421d-888a-30588bf0897d\":[\"email_send\"],\"af4ab0c3-f303-4210-866d-1564b1d9ce93\":[\"email_send\"],\"965f9059-063e-4a77-ba30-824257651907\":[\"emailsendid\"]}},{\"name\":\"3a083af2-249b-4113-892f-c00beef4755e.list.address\",\"label\":\"6 - Create a mailing list➛List➛address\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"8a8181fa-d5d8-421d-888a-30588bf0897d\":[\"mailing_list_address\"],\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"to\"]},\"attributes\":{}},{\"name\":\"Created or Updated_1.current.domain.domain_name\",\"label\":\"Trigger - Record Created or Updated➛Email Send Record➛Domain➛Domain\",\"reference\":\"\",\"reference_display\":\"Domain\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"usedInstances\":{\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"domain_name\"],\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"domain_name\"],\"8851f568-cadf-480a-8765-43e9205e7394\":[\"domain\"]}},{\"name\":\"16320671-42c8-45a8-8a3f-3607928c8689.tag\",\"label\":\"9 - Generate Mailing List Tag➛tag\",\"reference_display\":\"tag\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"cf59dab6-6c09-4188-abbc-d2420b4d262a\":[\"mailing_tag\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"662cb3b2-9730-4da4-b5af-6d1f03fe672b\"}},{\"name\":\"470aabd2-e204-4467-9ec6-70e24a4cf933.batch_count\",\"label\":\"5 - Email Audience Batching Check➛Batch Count\",\"reference_display\":\"Batch Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"8a8181fa-d5d8-421d-888a-30588bf0897d\":[\"offset\"]},\"attributes\":{\"uiType\":\"integer\",\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"f7cf813a-a65d-436c-a1da-18074199d80c\"}},{\"name\":\"470aabd2-e204-4467-9ec6-70e24a4cf933.total_audience_count\",\"label\":\"5 - Email Audience Batching Check➛Total Audience Count\",\"reference_display\":\"Total Audience Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"usedInstances\":{\"8a8181fa-d5d8-421d-888a-30588bf0897d\":[\"limit\"]},\"attributes\":{\"uiType\":\"integer\",\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"2096887a-ed36-44e1-b455-bcd3809ad653\"}},{\"name\":\"d4e8593e-904b-470d-8c41-979b3565b9c4.list.address\",\"label\":\"13 - Create a mailing list➛List➛address\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"to\"],\"af4ab0c3-f303-4210-866d-1564b1d9ce93\":[\"mailing_list_address\"]},\"attributes\":{}},{\"name\":\"fefc9cbf-a1b0-44c9-a801-4e2391d37667.tag\",\"label\":\"15 - Generate Mailing List Tag➛tag\",\"reference_display\":\"tag\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"e759a984-9db6-4baf-8678-79d369431ca3\":[\"mailing_tag\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"662cb3b2-9730-4da4-b5af-6d1f03fe672b\"}},{\"name\":\"1a8fcfd4-3556-4cc2-b21e-72b38188f69d.__status__.message\",\"label\":\"18 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"8a70de88-6dde-4400-86b3-692d238de870\":[\"log_message\"]},\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-09-18 18:12:06",
+    "display_value": "2025-09-18 11:12:06 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "send_email_v4",
+    "display_value": "send_email_v4"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2025-09-18 13:19:35",
+    "display_value": "2025-09-18 06:19:35 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "parent_flow": {
+    "value": "d3847d253348f2907b18bc534d5c7be9",
+    "display_value": "Send Email V4"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Send Email V4",
+    "display_value": "Send Email V4"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

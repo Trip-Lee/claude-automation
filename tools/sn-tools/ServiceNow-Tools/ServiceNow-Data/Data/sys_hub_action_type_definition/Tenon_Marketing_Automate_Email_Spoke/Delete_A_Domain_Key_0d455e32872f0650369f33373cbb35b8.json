@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "0d455e32872f0650369f33373cbb35b8",
+    "extracted_at": "2025-09-19T21:48:49.437Z",
+    "display_value": "Delete A Domain Key",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.signing_domain}}\",\"label\":\"action➛Domain\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\"}},{\"name\":\"{{action.selector}}\",\"label\":\"action➛selector\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.signing_domain.domain_name}}\",\"label\":\"action➛Domain➛Domain Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[58509054-9610-4931-0508-242217308250].error_code}}\",\"label\":\"step➛OpenAPI/Postman➛Error Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[58509054-9610-4931-0508-242217308250].error_message}}\",\"label\":\"step➛OpenAPI/Postman➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[58509054-9610-4931-0508-242217308250].response_body}}\",\"label\":\"step➛OpenAPI/Postman➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[74337cba-916f-4c2c-b911-5b3b2a848592].root.message}}\",\"label\":\"step➛JSON Parser step➛root➛message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"{{action.signing_domain}}\",\"label\":\"action➛Domain\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\"}},{\"name\":\"{{action.selector}}\",\"label\":\"action➛selector\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.signing_domain.domain_name}}\",\"label\":\"action➛Domain➛Domain Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[58509054-9610-4931-0508-242217308250].error_code}}\",\"label\":\"step➛OpenAPI/Postman➛Error Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[58509054-9610-4931-0508-242217308250].error_message}}\",\"label\":\"step➛OpenAPI/Postman➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[58509054-9610-4931-0508-242217308250].response_body}}\",\"label\":\"step➛OpenAPI/Postman➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[74337cba-916f-4c2c-b911-5b3b2a848592].root.message}}\",\"label\":\"step➛JSON Parser step➛root➛message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Domain keys are not recoverable after deletion so use with care",
+    "display_value": "Domain keys are not recoverable after deletion so use with care"
+  },
+  "sys_updated_on": {
+    "value": "2024-08-01 20:11:45",
+    "display_value": "2024-08-01 01:11:45 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "bb8ca40dc33f029085b196c4e401311e",
+    "display_value": "bb8ca40dc33f029085b196c4e401311e"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "delete_a_domain_key",
+    "display_value": "delete_a_domain_key"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-07-26 04:02:53",
+    "display_value": "2024-07-25 09:02:53 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Delete A Domain Key",
+    "display_value": "Delete A Domain Key"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "005e1a36c327865085b196c4e40131f7",
+    "display_value": "005e1a36c327865085b196c4e40131f7"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "14",
+    "display_value": "14"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_0d455e32872f0650369f33373cbb35b8",
+    "display_value": "sys_hub_action_type_definition_0d455e32872f0650369f33373cbb35b8"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Delete A Domain Key",
+    "display_value": "Delete A Domain Key"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "5c451e32872f0650369f33373cbb35b6",
+    "display_value": "Domain Keys"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "38863654330d2a507b18bc534d5c7b44",
+    "extracted_at": "2025-08-22T18:46:21.838Z",
+    "display_value": "Get Option",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-17 21:48:40",
+    "display_value": "2025-04-17 02:48:40 PM"
+  },
+  "name": {
+    "value": "Get Option",
+    "display_value": "Get Option"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-17 21:48:40",
+    "display_value": "2025-04-17 02:48:40 PM"
+  }
+}

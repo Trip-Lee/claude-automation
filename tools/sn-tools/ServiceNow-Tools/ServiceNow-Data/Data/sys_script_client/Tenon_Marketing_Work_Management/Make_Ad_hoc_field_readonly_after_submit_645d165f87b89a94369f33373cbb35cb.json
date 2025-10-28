@@ -1,0 +1,140 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "645d165f87b89a94369f33373cbb35cb",
+    "extracted_at": "2025-09-19T21:48:44.838Z",
+    "display_value": "Make Ad hoc field readonly after submit",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "isolate_script": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "applies_extended": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "global": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_updated_on": {
+    "value": "2024-09-27 21:16:53",
+    "display_value": "2024-09-27 02:16:53 PM"
+  },
+  "type": {
+    "value": "onLoad",
+    "display_value": "onLoad"
+  },
+  "sys_class_name": {
+    "value": "sys_script_client",
+    "display_value": "Client Script"
+  },
+  "ui_type": {
+    "value": "0",
+    "display_value": "Desktop"
+  },
+  "view": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "rumman.tariq",
+    "display_value": "rumman.tariq"
+  },
+  "sys_created_on": {
+    "value": "2024-09-27 21:15:49",
+    "display_value": "2024-09-27 02:15:49 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Make Ad hoc field readonly after submit",
+    "display_value": "Make Ad hoc field readonly after submit"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "rumman.tariq",
+    "display_value": "rumman.tariq"
+  },
+  "table": {
+    "value": "x_cadso_work_project",
+    "display_value": "x_cadso_work_project"
+  },
+  "order": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_mod_count": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "function onLoad() {\r\n   if(g_form.isNewRecord()){\r\n\tg_form.setReadOnly('ad_hoc',false);\r\n   }\r\n   else if(g_form.getValue('ad_hoc') == \"true\"){\r\n\tg_form.setReadOnly('ad_hoc',true);\r\n   }\r\n}",
+    "display_value": "function onLoad() {\r\n   if(g_form.isNewRecord()){\r\n\tg_form.setReadOnly('ad_hoc',false);\r\n   }\r\n   else if(g_form.getValue('ad_hoc') == \"true\"){\r\n\tg_form.setReadOnly('ad_hoc',true);\r\n   }\r\n}",
+    "formatted_script": {
+      "line_count": 8,
+      "char_count": 189,
+      "preview": "function onLoad() {\r\n   if(g_form.isNewRecord()){\r\n\tg_form.setReadOnly('ad_hoc',false);\r\n   }\r\n   else if(g_form.getValue('ad_hoc') == \"true\"){\r\n\tg_form.setReadOnly('ad_hoc',true);\r\n   }\r\n}",
+      "full_script": "function onLoad() {\r\n   if(g_form.isNewRecord()){\r\n\tg_form.setReadOnly('ad_hoc',false);\r\n   }\r\n   else if(g_form.getValue('ad_hoc') == \"true\"){\r\n\tg_form.setReadOnly('ad_hoc',true);\r\n   }\r\n}"
+    }
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_client_645d165f87b89a94369f33373cbb35cb",
+    "display_value": "sys_script_client_645d165f87b89a94369f33373cbb35cb"
+  },
+  "field": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Make Ad hoc field readonly after submit",
+    "display_value": "Make Ad hoc field readonly after submit"
+  },
+  "messages": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

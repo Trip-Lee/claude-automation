@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "8900120f8780d690369f33373cbb3597",
+    "extracted_at": "2025-08-22T18:42:33.850Z",
+    "display_value": "CreateDKIMKey",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-08-20 18:51:58",
+    "display_value": "2024-08-20 11:51:58 AM"
+  },
+  "name": {
+    "value": "CreateDKIMKey",
+    "display_value": "CreateDKIMKey"
+  },
+  "sys_updated_on": {
+    "value": "2024-08-20 18:51:58",
+    "display_value": "2024-08-20 11:51:58 AM"
+  }
+}

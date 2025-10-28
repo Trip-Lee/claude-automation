@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "d844282fc39b461085b196c4e40131de",
+    "extracted_at": "2025-08-22T18:46:23.499Z",
+    "display_value": "Audience Builder - Save",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-15 17:29:30",
+    "display_value": "2024-07-15 10:29:30 AM"
+  },
+  "name": {
+    "value": "Audience Builder - Save",
+    "display_value": "Audience Builder - Save"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-14 12:55:23",
+    "display_value": "2025-08-14 05:55:23 AM"
+  }
+}

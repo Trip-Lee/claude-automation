@@ -1,0 +1,140 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "0b21216997e6e990ac33f109c253af12",
+    "extracted_at": "2025-09-19T21:48:45.090Z",
+    "display_value": "Task 'Story Points' && 'Sprint' CS",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "isolate_script": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "applies_extended": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "global": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_updated_on": {
+    "value": "2023-06-02 17:37:00",
+    "display_value": "2023-06-02 10:37:00 AM"
+  },
+  "type": {
+    "value": "onLoad",
+    "display_value": "onLoad"
+  },
+  "sys_class_name": {
+    "value": "sys_script_client",
+    "display_value": "Client Script"
+  },
+  "ui_type": {
+    "value": "0",
+    "display_value": "Desktop"
+  },
+  "view": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2023-05-01 17:43:49",
+    "display_value": "2023-05-01 10:43:49 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Task 'Story Points' && 'Sprint' CS",
+    "display_value": "Task 'Story Points' && 'Sprint' CS"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "table": {
+    "value": "x_cadso_work_task",
+    "display_value": "x_cadso_work_task"
+  },
+  "order": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_mod_count": {
+    "value": "12",
+    "display_value": "12"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "function onLoad() {\n\tif (g_scratchpad.agile_mode == 'true') {\n\t\tg_form.setVisible('story_points', true);\n\t\tg_form.setMandatory('story_points', true);\n\t\tg_form.setVisible('sprint', true);\n\t} else {\n\t\tg_form.setVisible('story_points', false);\n\t\tg_form.setMandatory('story_points', false);\n\t\tg_form.setVisible('sprint', false);\n\t}\n}",
+    "display_value": "function onLoad() {\n\tif (g_scratchpad.agile_mode == 'true') {\n\t\tg_form.setVisible('story_points', true);\n\t\tg_form.setMandatory('story_points', true);\n\t\tg_form.setVisible('sprint', true);\n\t} else {\n\t\tg_form.setVisible('story_points', false);\n\t\tg_form.setMandatory('story_points', false);\n\t\tg_form.setVisible('sprint', false);\n\t}\n}",
+    "formatted_script": {
+      "line_count": 11,
+      "char_count": 329,
+      "preview": "function onLoad() {\n\tif (g_scratchpad.agile_mode == 'true') {\n\t\tg_form.setVisible('story_points', true);\n\t\tg_form.setMandatory('story_points', true);\n\t\tg_form.setVisible('sprint', true);\n\t} else {\n\t\tg...",
+      "full_script": "function onLoad() {\n\tif (g_scratchpad.agile_mode == 'true') {\n\t\tg_form.setVisible('story_points', true);\n\t\tg_form.setMandatory('story_points', true);\n\t\tg_form.setVisible('sprint', true);\n\t} else {\n\t\tg_form.setVisible('story_points', false);\n\t\tg_form.setMandatory('story_points', false);\n\t\tg_form.setVisible('sprint', false);\n\t}\n}"
+    }
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_client_0b21216997e6e990ac33f109c253af12",
+    "display_value": "sys_script_client_0b21216997e6e990ac33f109c253af12"
+  },
+  "field": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Task 'Story Points' && 'Sprint' CS",
+    "display_value": "Task 'Story Points' && 'Sprint' CS"
+  },
+  "messages": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "b03da5d033a516507b18bc534d5c7b53",
+    "extracted_at": "2025-08-22T18:46:27.183Z",
+    "display_value": "Unpublish Previously Published Version",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-25 16:51:21",
+    "display_value": "2024-10-25 09:51:21 AM"
+  },
+  "name": {
+    "value": "Unpublish Previously Published Version",
+    "display_value": "Unpublish Previously Published Version"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-21 18:18:10",
+    "display_value": "2025-03-21 11:18:10 AM"
+  }
+}

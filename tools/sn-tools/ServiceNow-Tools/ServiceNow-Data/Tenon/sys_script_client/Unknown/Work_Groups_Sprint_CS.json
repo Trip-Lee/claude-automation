@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "82050128974cf110ac33f109c253af6e",
+    "extracted_at": "2025-08-22T18:46:29.079Z",
+    "display_value": "Work Groups \"Sprint\" CS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-07-12 02:35:53",
+    "display_value": "2023-07-11 07:35:53 PM"
+  },
+  "name": {
+    "value": "Work Groups \"Sprint\" CS",
+    "display_value": "Work Groups \"Sprint\" CS"
+  },
+  "sys_updated_on": {
+    "value": "2023-07-12 02:42:30",
+    "display_value": "2023-07-11 07:42:30 PM"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "05afff0087ab0a10369f33373cbb3586",
+    "extracted_at": "2025-09-19T21:48:33.469Z",
+    "display_value": "Audience Builder - Fetch",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n    let {\r\n        sysId\r\n    } = request.body.data;\r\n    let title = 'People in this List...';\r\n    let encodedQuery = '';\r\n    let count = 0;\r\n    let type = '';\r\n    let view = '';\r\n    let orderByField = '';\r\n    let table = '';\r\n    let staticView = '';\r\n    let filters = [];\r\n    const query = {};\r\n\r\n    const audienceGr = new GlideRecord('x_cadso_automate_audience');\r\n    if (audienceGr.get(sysId)) {\r\n        title = audienceGr.getDisplayValue('source') + 's in this List';\r\n        encodedQuery = audienceGr.getDisplayValue('conditions');\r\n        type = audienceGr.getDisplayValue('type');\r\n        count = audienceGr.getValue('count');\r\n        view = audienceGr.getValue('view');\r\n        staticView = audienceGr.getValue('static_view');\r\n        orderByField = audienceGr.getValue('order_by');\r\n        table = audienceGr.getDisplayValue('table');\r\n        filters = JSON.parse(audienceGr.getValue('filter_object')) || [];\r\n\r\n    }\r\n\r\n    const isStatic = type === 'Static';\r\n\r\n    if (isStatic) {\r\n        var hashEncodedQuery = '';\r\n        var audHashGR = new GlideRecord('x_cadso_automate_audience_hash');\r\n        audHashGR.addQuery('audience', sysId);\r\n        audHashGR.setLimit(10);\r\n        audHashGR.query();\r\n\r\n        while (audHashGR.next()) {\r\n            var hashArr = JSON.parse(audHashGR.getValue('member_hash')) || [];\r\n            var idArr = [];\r\n\r\n            for (var x = 0; x < hashArr.length; x++) {\r\n                if (!hashArr[x]) {\r\n\t\t\t\t\t//Do nothing\r\n                } else {\r\n                    idArr.push(hashArr[x].sysId);\r\n                }\r\n\r\n            }\r\n            if (idArr.length > 0) {\r\n                hashEncodedQuery += 'sys_idIN' + idArr.join(',');\r\n            }\r\n        }\r\n    }\r\n    response.setBody({\r\n        title,\r\n        encodedQuery,\r\n        type,\r\n        filters,\r\n        query,\r\n        count,\r\n        table,\r\n        view,\r\n        orderByField,\r\n        staticObj: isStatic ? {\r\n            orderByField: 'name',\r\n            table,\r\n            encodedQuery: hashEncodedQuery,\r\n            view: staticView\r\n        } : {},\r\n        isStatic\r\n    });\r\n\r\n\r\n})(request, response);",
+    "display_value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n    let {\r\n        sysId\r\n    } = request.body.data;\r\n    let title = 'People in this List...';\r\n    let encodedQuery = '';\r\n    let count = 0;\r\n    let type = '';\r\n    let view = '';\r\n    let orderByField = '';\r\n    let table = '';\r\n    let staticView = '';\r\n    let filters = [];\r\n    const query = {};\r\n\r\n    const audienceGr = new GlideRecord('x_cadso_automate_audience');\r\n    if (audienceGr.get(sysId)) {\r\n        title = audienceGr.getDisplayValue('source') + 's in this List';\r\n        encodedQuery = audienceGr.getDisplayValue('conditions');\r\n        type = audienceGr.getDisplayValue('type');\r\n        count = audienceGr.getValue('count');\r\n        view = audienceGr.getValue('view');\r\n        staticView = audienceGr.getValue('static_view');\r\n        orderByField = audienceGr.getValue('order_by');\r\n        table = audienceGr.getDisplayValue('table');\r\n        filters = JSON.parse(audienceGr.getValue('filter_object')) || [];\r\n\r\n    }\r\n\r\n    const isStatic = type === 'Static';\r\n\r\n    if (isStatic) {\r\n        var hashEncodedQuery = '';\r\n        var audHashGR = new GlideRecord('x_cadso_automate_audience_hash');\r\n        audHashGR.addQuery('audience', sysId);\r\n        audHashGR.setLimit(10);\r\n        audHashGR.query();\r\n\r\n        while (audHashGR.next()) {\r\n            var hashArr = JSON.parse(audHashGR.getValue('member_hash')) || [];\r\n            var idArr = [];\r\n\r\n            for (var x = 0; x < hashArr.length; x++) {\r\n                if (!hashArr[x]) {\r\n\t\t\t\t\t//Do nothing\r\n                } else {\r\n                    idArr.push(hashArr[x].sysId);\r\n                }\r\n\r\n            }\r\n            if (idArr.length > 0) {\r\n                hashEncodedQuery += 'sys_idIN' + idArr.join(',');\r\n            }\r\n        }\r\n    }\r\n    response.setBody({\r\n        title,\r\n        encodedQuery,\r\n        type,\r\n        filters,\r\n        query,\r\n        count,\r\n        table,\r\n        view,\r\n        orderByField,\r\n        staticObj: isStatic ? {\r\n            orderByField: 'name',\r\n            table,\r\n            encodedQuery: hashEncodedQuery,\r\n            view: staticView\r\n        } : {},\r\n        isStatic\r\n    });\r\n\r\n\r\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-14 17:02:45",
+    "display_value": "2025-08-14 10:02:45 AM"
+  },
+  "enforce_acl": {
+    "value": "003a5109c3ee021085b196c4e40131ab",
+    "display_value": "Tenon Automate UI API Access"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_automate/ui/audienceBuilder/fetch",
+    "display_value": "/api/x_cadso_automate/ui/audienceBuilder/fetch"
+  },
+  "sys_created_on": {
+    "value": "2024-07-17 22:44:21",
+    "display_value": "2024-07-17 03:44:21 PM"
+  },
+  "sys_name": {
+    "value": "Audience Builder - Fetch",
+    "display_value": "Audience Builder - Fetch"
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "web_service_definition": {
+    "value": "4a222358c3aa425085b196c4e401318e",
+    "display_value": "Tenon Automate UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "59",
+    "display_value": "59"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "Audiences",
+    "display_value": "Audiences"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_05afff0087ab0a10369f33373cbb3586",
+    "display_value": "sys_ws_operation_05afff0087ab0a10369f33373cbb3586"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Audience Builder - Fetch",
+    "display_value": "Audience Builder - Fetch"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/audienceBuilder/fetch",
+    "display_value": "/audienceBuilder/fetch"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

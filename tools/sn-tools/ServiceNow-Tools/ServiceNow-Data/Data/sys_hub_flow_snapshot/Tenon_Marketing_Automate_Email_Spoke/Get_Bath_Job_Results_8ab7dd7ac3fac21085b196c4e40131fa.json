@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "8ab7dd7ac3fac21085b196c4e40131fa",
+    "extracted_at": "2025-09-19T21:50:06.157Z",
+    "display_value": "Get Bath Job Results",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"subflow.list_id\",\"label\":\"Input➛List ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"d7a310f7-e4c1-42fe-a4e4-9d0292c2e1fa\":[\"list_id\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"464c9523-dc71-4190-969c-6f9a725ccd14\"}},{\"name\":\"flow_variable.job_status\",\"label\":\"Flow Variables➛Job Status\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fe41f2ae-fed2-4863-943b-f6d04625e9a1\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"52b153b4-b31f-4f8a-b68b-ce6d4e08baf4\"}}]",
+    "display_value": "[{\"name\":\"subflow.list_id\",\"label\":\"Input➛List ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"d7a310f7-e4c1-42fe-a4e4-9d0292c2e1fa\":[\"list_id\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"464c9523-dc71-4190-969c-6f9a725ccd14\"}},{\"name\":\"flow_variable.job_status\",\"label\":\"Flow Variables➛Job Status\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fe41f2ae-fed2-4863-943b-f6d04625e9a1\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"52b153b4-b31f-4f8a-b68b-ce6d4e08baf4\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2024-06-18 16:46:53",
+    "display_value": "2024-06-18 09:46:53 AM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "get_bath_job_results",
+    "display_value": "get_bath_job_results"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-06-18 16:46:53",
+    "display_value": "2024-06-18 09:46:53 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "ead55d36c3fac21085b196c4e4013139",
+    "display_value": "Get Batch Job Results"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Get Bath Job Results",
+    "display_value": "Get Bath Job Results"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

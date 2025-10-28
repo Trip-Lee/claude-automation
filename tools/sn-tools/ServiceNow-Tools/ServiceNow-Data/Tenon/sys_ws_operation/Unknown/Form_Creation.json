@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "306809793387e6507b18bc534d5c7b8e",
+    "extracted_at": "2025-08-22T18:46:21.796Z",
+    "display_value": "Form Creation",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-07-30 18:31:50",
+    "display_value": "2025-07-30 11:31:50 AM"
+  },
+  "name": {
+    "value": "Form Creation",
+    "display_value": "Form Creation"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-01 04:15:14",
+    "display_value": "2025-07-31 09:15:14 PM"
+  }
+}

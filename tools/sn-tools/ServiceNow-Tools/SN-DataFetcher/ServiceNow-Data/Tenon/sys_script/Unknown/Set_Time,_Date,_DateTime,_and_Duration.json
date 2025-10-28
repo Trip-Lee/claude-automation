@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "02313eeac32c6250d4ddf1db05013162",
+    "extracted_at": "2025-08-22T18:42:37.760Z",
+    "display_value": "Set Time, Date, DateTime, and Duration",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-03-31 00:41:18",
+    "display_value": "2025-03-30 05:41:18 PM"
+  },
+  "name": {
+    "value": "Set Time, Date, DateTime, and Duration",
+    "display_value": "Set Time, Date, DateTime, and Duration"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-31 02:50:32",
+    "display_value": "2025-03-30 07:50:32 PM"
+  }
+}

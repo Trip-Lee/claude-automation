@@ -1,0 +1,130 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_logic",
+    "sys_id": "4653b05147382510a1052a02e26d4369",
+    "extracted_at": "2025-09-19T21:49:07.001Z",
+    "display_value": "4653b05147382510a1052a02e26d4369",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "ui_id": {
+    "value": "9e8b5ec1-80cc-46ed-a369-bd128d12cacf",
+    "display_value": "9e8b5ec1-80cc-46ed-a369-bd128d12cacf"
+  },
+  "decision_table": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2023-10-30 01:31:52",
+    "display_value": "2023-10-29 06:31:52 PM"
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_logic",
+    "display_value": "Flow Logic Instance"
+  },
+  "outputs_to_assign": {
+    "value": "",
+    "display_value": ""
+  },
+  "connected_to": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "logic_definition": {
+    "value": "098e1dc5c3e232002841b63b12d3ae33",
+    "display_value": "For Each"
+  },
+  "sys_created_on": {
+    "value": "2023-02-02 19:49:11",
+    "display_value": "2023-02-02 11:49:11 AM"
+  },
+  "block": {
+    "value": "89eeb45e47467910b0361ae8036d4366",
+    "display_value": ""
+  },
+  "outputs_assigned": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "aa7f6c5d47f42510a1052a02e26d43b3",
+    "display_value": "Project Cancelation Business logic"
+  },
+  "sys_created_by": {
+    "value": "Kyle.Commette",
+    "display_value": "Kyle.Commette"
+  },
+  "order": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "decision_table_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_mod_count": {
+    "value": "28",
+    "display_value": "28"
+  },
+  "extended_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_variable": {
+    "value": "",
+    "display_value": ""
+  },
+  "workflow_reference": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "workflow_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_variables_assigned": {
+    "value": "",
+    "display_value": ""
+  }
+}

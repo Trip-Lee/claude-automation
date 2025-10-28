@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "1cfd8db44779a910fc4c1ae8036d43d2",
+    "extracted_at": "2025-08-22T18:46:23.976Z",
+    "display_value": "Copy Rejection Reason from sysapproval",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-03-23 01:32:15",
+    "display_value": "2023-03-22 06:32:15 PM"
+  },
+  "name": {
+    "value": "Copy Rejection Reason from sysapproval",
+    "display_value": "Copy Rejection Reason from sysapproval"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-16 19:54:50",
+    "display_value": "2025-07-16 12:54:50 PM"
+  }
+}

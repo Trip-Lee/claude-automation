@@ -149,9 +149,9 @@ async function runValidationSuite() {
     await runTest('infrastructure', 'Git operations work', async () => {
       gitManager = new GitManager();
       const testProjectPath = path.join(homedir(), 'projects', 'test-project');
-      const status = await gitManager.status(testProjectPath);
-      if (!status.branch) {
-        throw new Error('Git status failed');
+      const branch = await gitManager.getCurrentBranch(testProjectPath);
+      if (!branch || typeof branch !== 'string') {
+        throw new Error('Git operations failed');
       }
     });
 

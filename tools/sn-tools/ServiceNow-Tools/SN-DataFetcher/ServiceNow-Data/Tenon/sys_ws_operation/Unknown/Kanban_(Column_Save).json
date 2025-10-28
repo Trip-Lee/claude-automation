@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "0c1846388793a110b656fe66cebb355b",
+    "extracted_at": "2025-08-22T18:42:35.615Z",
+    "display_value": "Kanban (Column Save)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-06-05 19:19:21",
+    "display_value": "2023-06-05 12:19:21 PM"
+  },
+  "name": {
+    "value": "Kanban (Column Save)",
+    "display_value": "Kanban (Column Save)"
+  },
+  "sys_updated_on": {
+    "value": "2024-07-15 20:08:49",
+    "display_value": "2024-07-15 01:08:49 PM"
+  }
+}

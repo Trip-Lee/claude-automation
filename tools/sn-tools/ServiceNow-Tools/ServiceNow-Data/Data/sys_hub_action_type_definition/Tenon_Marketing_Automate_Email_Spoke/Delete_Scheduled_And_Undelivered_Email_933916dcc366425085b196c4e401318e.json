@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "933916dcc366425085b196c4e401318e",
+    "extracted_at": "2025-09-19T21:48:51.519Z",
+    "display_value": "Delete Scheduled And Undelivered Email",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.domain_record}}\",\"label\":\"action➛Domain Record\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.domain_name}}\",\"label\":\"action➛Domain Record➛Domain Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[96e60a2d-4449-4eda-acc5-6ffadd577f38].root.message}}\",\"label\":\"step➛JSON Parser step➛root➛message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[6e8d60c2-96a9-48d2-9602-7813cedef87b].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[6e8d60c2-96a9-48d2-9602-7813cedef87b].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[6e8d60c2-96a9-48d2-9602-7813cedef87b].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}}]",
+    "display_value": "[{\"name\":\"{{action.domain_record}}\",\"label\":\"action➛Domain Record\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.domain_name}}\",\"label\":\"action➛Domain Record➛Domain Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[96e60a2d-4449-4eda-acc5-6ffadd577f38].root.message}}\",\"label\":\"step➛JSON Parser step➛root➛message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[6e8d60c2-96a9-48d2-9602-7813cedef87b].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[6e8d60c2-96a9-48d2-9602-7813cedef87b].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[6e8d60c2-96a9-48d2-9602-7813cedef87b].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Deletes all scheduled and undelivered mail from the domain queue",
+    "display_value": "Deletes all scheduled and undelivered mail from the domain queue"
+  },
+  "sys_updated_on": {
+    "value": "2024-08-19 18:00:29",
+    "display_value": "2024-08-19 11:00:29 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Delete scheduled and undelivered",
+    "display_value": "Delete scheduled and undelivered"
+  },
+  "latest_snapshot": {
+    "value": "642b703e87805690369f33373cbb3584",
+    "display_value": "642b703e87805690369f33373cbb3584"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "delete_scheduled_and_undelivered_mail",
+    "display_value": "delete_scheduled_and_undelivered_mail"
+  },
+  "sys_updated_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "sys_created_on": {
+    "value": "2024-05-29 16:52:38",
+    "display_value": "2024-05-29 09:52:38 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Delete Scheduled And Undelivered Email",
+    "display_value": "Delete Scheduled And Undelivered Email"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "6593761cc3e6425085b196c4e401316e",
+    "display_value": "6593761cc3e6425085b196c4e401316e"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "20",
+    "display_value": "20"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_933916dcc366425085b196c4e401318e",
+    "display_value": "sys_hub_action_type_definition_933916dcc366425085b196c4e401318e"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Delete Scheduled And Undelivered Email",
+    "display_value": "Delete Scheduled And Undelivered Email"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "43411b15c3ff829085b196c4e401319f",
+    "display_value": "Messages"
+  },
+  "copied_from": {
+    "value": "50d03382c3524a1085b196c4e4013146",
+    "display_value": "50d03382c3524a1085b196c4e4013146"
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

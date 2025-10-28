@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "77f3c98087d81e90369f33373cbb3520",
+    "extracted_at": "2025-08-22T18:46:22.052Z",
+    "display_value": "Update Style Kit",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-08-23 15:52:11",
+    "display_value": "2024-08-23 08:52:11 AM"
+  },
+  "name": {
+    "value": "Update Style Kit",
+    "display_value": "Update Style Kit"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-10 02:01:25",
+    "display_value": "2025-04-09 07:01:25 PM"
+  }
+}

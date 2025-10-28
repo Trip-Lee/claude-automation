@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "2c829a4987cb2510b656fe66cebb35a9",
+    "extracted_at": "2025-08-22T18:42:35.758Z",
+    "display_value": "Kanban (Fetch)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-05-25 04:28:40",
+    "display_value": "2023-05-24 09:28:40 PM"
+  },
+  "name": {
+    "value": "Kanban (Fetch)",
+    "display_value": "Kanban (Fetch)"
+  },
+  "sys_updated_on": {
+    "value": "2024-03-03 20:41:04",
+    "display_value": "2024-03-03 12:41:04 PM"
+  }
+}

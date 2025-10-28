@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "5c7c53da479e3950b0361ae8036d434a",
+    "extracted_at": "2025-08-22T18:46:29.044Z",
+    "display_value": "Tenon ONLY - Rejected",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-11-06 20:31:14",
+    "display_value": "2023-11-06 12:31:14 PM"
+  },
+  "name": {
+    "value": "Tenon ONLY - Rejected",
+    "display_value": "Tenon ONLY - Rejected"
+  },
+  "sys_updated_on": {
+    "value": "2023-11-06 20:39:17",
+    "display_value": "2023-11-06 12:39:17 PM"
+  }
+}

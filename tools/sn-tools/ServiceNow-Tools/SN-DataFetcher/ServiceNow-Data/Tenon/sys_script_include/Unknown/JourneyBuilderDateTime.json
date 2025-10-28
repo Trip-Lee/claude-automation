@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "b45c888333ac6a507b18bc534d5c7b07",
+    "extracted_at": "2025-08-22T18:42:35.237Z",
+    "display_value": "JourneyBuilderDateTime",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-01 01:57:01",
+    "display_value": "2025-03-31 06:57:01 PM"
+  },
+  "name": {
+    "value": "JourneyBuilderDateTime",
+    "display_value": "JourneyBuilderDateTime"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-01 20:15:26",
+    "display_value": "2025-04-01 01:15:26 PM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "68115160472d611085d19fd8036d43ab",
+    "extracted_at": "2025-08-22T18:46:19.764Z",
+    "display_value": "denyApprovalApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-03-09 20:58:15",
+    "display_value": "2023-03-09 12:58:15 PM"
+  },
+  "name": {
+    "value": "denyApprovalApiMS",
+    "display_value": "denyApprovalApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-11 18:47:34",
+    "display_value": "2025-03-11 11:47:34 AM"
+  }
+}

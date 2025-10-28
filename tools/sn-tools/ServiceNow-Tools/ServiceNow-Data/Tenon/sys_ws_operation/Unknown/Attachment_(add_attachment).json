@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "14251e5d47153510b0361ae8036d43a1",
+    "extracted_at": "2025-08-22T18:46:21.672Z",
+    "display_value": "Attachment (add attachment)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-09-14 19:42:05",
+    "display_value": "2023-09-14 12:42:05 PM"
+  },
+  "name": {
+    "value": "Attachment (add attachment)",
+    "display_value": "Attachment (add attachment)"
+  },
+  "sys_updated_on": {
+    "value": "2023-09-15 19:34:13",
+    "display_value": "2023-09-15 12:34:13 PM"
+  }
+}

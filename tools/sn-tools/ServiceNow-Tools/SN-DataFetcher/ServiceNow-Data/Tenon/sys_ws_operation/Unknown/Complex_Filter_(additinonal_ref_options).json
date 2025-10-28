@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "a70a3e084752b15098519fd8036d4359",
+    "extracted_at": "2025-08-22T18:42:37.271Z",
+    "display_value": "Complex Filter (additinonal ref options)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-10-30 18:10:41",
+    "display_value": "2023-10-30 11:10:41 AM"
+  },
+  "name": {
+    "value": "Complex Filter (additinonal ref options)",
+    "display_value": "Complex Filter (additinonal ref options)"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-29 22:01:57",
+    "display_value": "2024-10-29 03:01:57 PM"
+  }
+}

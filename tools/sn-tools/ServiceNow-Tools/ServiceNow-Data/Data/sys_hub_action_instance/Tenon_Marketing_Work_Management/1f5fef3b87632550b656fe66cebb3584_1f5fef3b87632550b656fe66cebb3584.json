@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "1f5fef3b87632550b656fe66cebb3584",
+    "extracted_at": "2025-09-19T21:49:02.324Z",
+    "display_value": "1f5fef3b87632550b656fe66cebb3584",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "43400a1587003300663ca1bb36cb0b4b",
+    "display_value": "Look Up Records"
+  },
+  "ui_id": {
+    "value": "76a2fe21-cc7d-434f-84f9-077526dce7f8",
+    "display_value": "76a2fe21-cc7d-434f-84f9-077526dce7f8"
+  },
+  "sys_mod_count": {
+    "value": "26",
+    "display_value": "26"
+  },
+  "sys_updated_on": {
+    "value": "2024-08-24 19:47:21",
+    "display_value": "2024-08-24 12:47:21 PM"
+  },
+  "compiled_snapshot": {
+    "value": "43400a1587003300663ca1bb36cb0b4b",
+    "display_value": "43400a1587003300663ca1bb36cb0b4b"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "",
+    "display_value": ""
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2023-06-27 20:48:09",
+    "display_value": "2023-06-27 01:48:09 PM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "5377c0124770291085d19fd8036d4398",
+    "display_value": "Cancel Projects - Campaign - Cancellation Business logic"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "order": {
+    "value": "1",
+    "display_value": "1"
+  }
+}

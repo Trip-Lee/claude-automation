@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "ffe249f7ebfe82509097f65cbad0cdaf",
+    "extracted_at": "2025-09-19T21:48:41.873Z",
+    "display_value": "Create Feedback Record",
+    "application": "Tenon_Internal_Agile",
+    "scope": {
+      "display_value": "Tenon Internal Agile",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/463f78c0ebde82d0f5a7f746cad0cdd2",
+      "value": "463f78c0ebde82d0f5a7f746cad0cdd2"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_update": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2024-06-21 17:56:44",
+    "display_value": "2024-06-21 10:56:44 AM"
+  },
+  "when": {
+    "value": "after",
+    "display_value": "after"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2024-06-21 17:56:44",
+    "display_value": "2024-06-21 10:56:44 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Create Feedback Record",
+    "display_value": "Create Feedback Record"
+  },
+  "sys_scope": {
+    "value": "463f78c0ebde82d0f5a7f746cad0cdd2",
+    "display_value": "Tenon Internal Agile"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "order": {
+    "value": "999",
+    "display_value": "999"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "rm_story",
+    "display_value": "rm_story"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/ ) {\n    const updatedByUsername = current.getValue('sys_updated_by');\n\tlet sentBackBy = '';\n    var sysUserGr = new GlideRecord('sys_user');\n    sysUserGr.addQuery('user_name', updatedByUsername);\n    sysUserGr.query();\n\n    while (sysUserGr.next()) {\n\t\tsentBackBy = sysUserGr.getUniqueValue();\n    }\n\n    const reasonGr = new GlideRecord('x_cadso_ti_agile_sent_back_reason');\n    reasonGr.initialize();\n    reasonGr.newRecord();\n    reasonGr.setValue('story', current.getUniqueValue());\n    reasonGr.setValue('sent_back_by', sentBackBy);\n    reasonGr.setValue('previous_state', previous.getValue('state'));\n    reasonGr.insert();\n\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/ ) {\n    const updatedByUsername = current.getValue('sys_updated_by');\n\tlet sentBackBy = '';\n    var sysUserGr = new GlideRecord('sys_user');\n    sysUserGr.addQuery('user_name', updatedByUsername);\n    sysUserGr.query();\n\n    while (sysUserGr.next()) {\n\t\tsentBackBy = sysUserGr.getUniqueValue();\n    }\n\n    const reasonGr = new GlideRecord('x_cadso_ti_agile_sent_back_reason');\n    reasonGr.initialize();\n    reasonGr.newRecord();\n    reasonGr.setValue('story', current.getUniqueValue());\n    reasonGr.setValue('sent_back_by', sentBackBy);\n    reasonGr.setValue('previous_state', previous.getValue('state'));\n    reasonGr.insert();\n\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 20,
+      "char_count": 714,
+      "preview": "(function executeRule(current, previous /*null when async*/ ) {\n    const updatedByUsername = current.getValue('sys_updated_by');\n\tlet sentBackBy = '';\n    var sysUserGr = new GlideRecord('sys_user');...",
+      "full_script": "(function executeRule(current, previous /*null when async*/ ) {\n    const updatedByUsername = current.getValue('sys_updated_by');\n\tlet sentBackBy = '';\n    var sysUserGr = new GlideRecord('sys_user');\n    sysUserGr.addQuery('user_name', updatedByUsername);\n    sysUserGr.query();\n\n    while (sysUserGr.next()) {\n\t\tsentBackBy = sysUserGr.getUniqueValue();\n    }\n\n    const reasonGr = new GlideRecord('x_cadso_ti_agile_sent_back_reason');\n    reasonGr.initialize();\n    reasonGr.newRecord();\n    reasonGr.setValue('story', current.getUniqueValue());\n    reasonGr.setValue('sent_back_by', sentBackBy);\n    reasonGr.setValue('previous_state', previous.getValue('state'));\n    reasonGr.insert();\n\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "stateCHANGESTO-2^EQ",
+    "display_value": "stateCHANGESTO-2^EQ"
+  },
+  "sys_package": {
+    "value": "463f78c0ebde82d0f5a7f746cad0cdd2",
+    "display_value": "Tenon Internal Agile"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_ffe249f7ebfe82509097f65cbad0cdaf",
+    "display_value": "sys_script_ffe249f7ebfe82509097f65cbad0cdaf"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Create Feedback Record",
+    "display_value": "Create Feedback Record"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

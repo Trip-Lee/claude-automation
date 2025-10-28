@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "dbae254433e1d2507b18bc534d5c7b46",
+    "extracted_at": "2025-08-22T18:46:23.519Z",
+    "display_value": "Create Journey Version",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-24 22:36:57",
+    "display_value": "2024-10-24 03:36:57 PM"
+  },
+  "name": {
+    "value": "Create Journey Version",
+    "display_value": "Create Journey Version"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-22 22:38:40",
+    "display_value": "2025-05-22 03:38:40 PM"
+  }
+}

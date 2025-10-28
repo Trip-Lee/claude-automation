@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "c9a1fc899760fd50ac33f109c253afbd",
+    "extracted_at": "2025-08-22T18:46:23.456Z",
+    "display_value": "Kanban (Like)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-08-07 10:58:43",
+    "display_value": "2023-08-07 03:58:43 AM"
+  },
+  "name": {
+    "value": "Kanban (Like)",
+    "display_value": "Kanban (Like)"
+  },
+  "sys_updated_on": {
+    "value": "2023-08-07 10:58:43",
+    "display_value": "2023-08-07 03:58:43 AM"
+  }
+}

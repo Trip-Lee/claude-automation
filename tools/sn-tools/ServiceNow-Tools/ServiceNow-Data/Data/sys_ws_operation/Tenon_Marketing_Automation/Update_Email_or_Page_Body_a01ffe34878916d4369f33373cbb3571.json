@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "a01ffe34878916d4369f33373cbb3571",
+    "extracted_at": "2025-09-19T21:48:33.196Z",
+    "display_value": "Update Email or Page Body",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\ttry {\r\n\t\tconst apiUtil = new x_cadso_automate.APIUtils();\r\n\t\tconst updates = request.body.data;\r\n\t\tconst { mergeTags = null, table } = updates;\r\n\r\n\t\tif (mergeTags?.length > 0) {\r\n\t\t\tconst emailSendGr = new GlideRecord(\"x_cadso_automate_email_send\");\r\n\t\t\temailSendGr.addQuery(\"email\", request.pathParams.sys_id);\r\n\t\t\temailSendGr.query();\r\n\r\n\t\t\tif (emailSendGr.next()) {\r\n\t\t\t\t// Get the sys_id of the email_send record\r\n\t\t\t\tconst emailSendSysId = emailSendGr.getUniqueValue();\r\n\r\n\t\t\t\t// Check if record already exists in x_cadso_core_merge_tag_send\r\n\t\t\t\tconst mergeTagsGr = new GlideRecord(\"x_cadso_core_merge_tag_send\");\r\n\t\t\t\tmergeTagsGr.addQuery(\"document_id\", emailSendSysId);\r\n\t\t\t\tmergeTagsGr.query();\r\n\r\n\t\t\t\tif (mergeTagsGr.next()) {\r\n\t\t\t\t\tgs.info(\"merge tag exists\");\r\n\t\t\t\t\t// Record exists - update it\r\n\t\t\t\t\tmergeTagsGr.setValue(\"merge_tag_data\", JSON.stringify(mergeTags));\r\n\t\t\t\t\tmergeTagsGr.setValue(\"document_id\", emailSendSysId);\r\n\t\t\t\t\tmergeTagsGr.setValue(\"table\", \"x_cadso_automate_email_send\");\r\n\t\t\t\t\tconst updateResult = mergeTagsGr.update();\r\n\t\t\t\t\tif (!updateResult) {\r\n\t\t\t\t\t\tgs.error(\"Failed to update merge tag record for document_id: \" + emailSendSysId);\r\n\t\t\t\t\t\treturn new sn_ws_err.ServiceError(\"Failed to update merge tag data\");\r\n\t\t\t\t\t}\r\n\t\t\t\t} else {\r\n\t\t\t\t\t// Record doesn't exist - create new one\r\n\t\t\t\t\tconst newMergeTagsGr = new GlideRecord(\"x_cadso_core_merge_tag_send\");\r\n\t\t\t\t\tnewMergeTagsGr.initialize();\r\n\t\t\t\t\tnewMergeTagsGr.setValue(\"document_id\", emailSendSysId);\r\n\t\t\t\t\tnewMergeTagsGr.setValue(\"table\", \"x_cadso_automate_email_send\");\r\n\t\t\t\t\tnewMergeTagsGr.setValue(\"merge_tag_data\", JSON.stringify(mergeTags));\r\n\t\t\t\t\tconst insertResult = newMergeTagsGr.insert();\r\n\t\t\t\t\tif (!insertResult) {\r\n\t\t\t\t\t\tgs.error(\"Failed to insert merge tag record for document_id: \" + emailSendSysId);\r\n\t\t\t\t\t\treturn new sn_ws_err.ServiceError(\"Failed to create merge tag data\");\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tdelete updates.table;\r\n\t\tconst sysID = request.pathParams.sys_id;\r\n\r\n\t\tconst email = apiUtil.update({\r\n\t\t\ttable,\r\n\t\t\tsysID,\r\n\t\t\tupdates,\r\n\t\t});\r\n\t\treturn email;\r\n\t} catch (error) {\r\n\t\treturn new sn_ws_err.BadRequestError(error.message);\r\n\t}\r\n})(request, response);\r\n",
+    "display_value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\ttry {\r\n\t\tconst apiUtil = new x_cadso_automate.APIUtils();\r\n\t\tconst updates = request.body.data;\r\n\t\tconst { mergeTags = null, table } = updates;\r\n\r\n\t\tif (mergeTags?.length > 0) {\r\n\t\t\tconst emailSendGr = new GlideRecord(\"x_cadso_automate_email_send\");\r\n\t\t\temailSendGr.addQuery(\"email\", request.pathParams.sys_id);\r\n\t\t\temailSendGr.query();\r\n\r\n\t\t\tif (emailSendGr.next()) {\r\n\t\t\t\t// Get the sys_id of the email_send record\r\n\t\t\t\tconst emailSendSysId = emailSendGr.getUniqueValue();\r\n\r\n\t\t\t\t// Check if record already exists in x_cadso_core_merge_tag_send\r\n\t\t\t\tconst mergeTagsGr = new GlideRecord(\"x_cadso_core_merge_tag_send\");\r\n\t\t\t\tmergeTagsGr.addQuery(\"document_id\", emailSendSysId);\r\n\t\t\t\tmergeTagsGr.query();\r\n\r\n\t\t\t\tif (mergeTagsGr.next()) {\r\n\t\t\t\t\tgs.info(\"merge tag exists\");\r\n\t\t\t\t\t// Record exists - update it\r\n\t\t\t\t\tmergeTagsGr.setValue(\"merge_tag_data\", JSON.stringify(mergeTags));\r\n\t\t\t\t\tmergeTagsGr.setValue(\"document_id\", emailSendSysId);\r\n\t\t\t\t\tmergeTagsGr.setValue(\"table\", \"x_cadso_automate_email_send\");\r\n\t\t\t\t\tconst updateResult = mergeTagsGr.update();\r\n\t\t\t\t\tif (!updateResult) {\r\n\t\t\t\t\t\tgs.error(\"Failed to update merge tag record for document_id: \" + emailSendSysId);\r\n\t\t\t\t\t\treturn new sn_ws_err.ServiceError(\"Failed to update merge tag data\");\r\n\t\t\t\t\t}\r\n\t\t\t\t} else {\r\n\t\t\t\t\t// Record doesn't exist - create new one\r\n\t\t\t\t\tconst newMergeTagsGr = new GlideRecord(\"x_cadso_core_merge_tag_send\");\r\n\t\t\t\t\tnewMergeTagsGr.initialize();\r\n\t\t\t\t\tnewMergeTagsGr.setValue(\"document_id\", emailSendSysId);\r\n\t\t\t\t\tnewMergeTagsGr.setValue(\"table\", \"x_cadso_automate_email_send\");\r\n\t\t\t\t\tnewMergeTagsGr.setValue(\"merge_tag_data\", JSON.stringify(mergeTags));\r\n\t\t\t\t\tconst insertResult = newMergeTagsGr.insert();\r\n\t\t\t\t\tif (!insertResult) {\r\n\t\t\t\t\t\tgs.error(\"Failed to insert merge tag record for document_id: \" + emailSendSysId);\r\n\t\t\t\t\t\treturn new sn_ws_err.ServiceError(\"Failed to create merge tag data\");\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tdelete updates.table;\r\n\t\tconst sysID = request.pathParams.sys_id;\r\n\r\n\t\tconst email = apiUtil.update({\r\n\t\t\ttable,\r\n\t\t\tsysID,\r\n\t\t\tupdates,\r\n\t\t});\r\n\t\treturn email;\r\n\t} catch (error) {\r\n\t\treturn new sn_ws_err.BadRequestError(error.message);\r\n\t}\r\n})(request, response);\r\n"
+  },
+  "sys_updated_on": {
+    "value": "2025-09-16 15:03:00",
+    "display_value": "2025-09-16 08:03:00 AM"
+  },
+  "enforce_acl": {
+    "value": "003a5109c3ee021085b196c4e40131ab",
+    "display_value": "Tenon Automate UI API Access"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "dennis.huh",
+    "display_value": "dennis.huh"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_automate/ui/email/{sys_id}",
+    "display_value": "/api/x_cadso_automate/ui/email/{sys_id}"
+  },
+  "sys_created_on": {
+    "value": "2024-10-02 15:33:00",
+    "display_value": "2024-10-02 08:33:00 AM"
+  },
+  "sys_name": {
+    "value": "Update Email or Page Body",
+    "display_value": "Update Email or Page Body"
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "web_service_definition": {
+    "value": "4a222358c3aa425085b196c4e401318e",
+    "display_value": "Tenon Automate UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "35",
+    "display_value": "35"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "Emails",
+    "display_value": "Emails"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_a01ffe34878916d4369f33373cbb3571",
+    "display_value": "sys_ws_operation_a01ffe34878916d4369f33373cbb3571"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Update Email or Page Body",
+    "display_value": "Update Email or Page Body"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/email/{sys_id}",
+    "display_value": "/email/{sys_id}"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

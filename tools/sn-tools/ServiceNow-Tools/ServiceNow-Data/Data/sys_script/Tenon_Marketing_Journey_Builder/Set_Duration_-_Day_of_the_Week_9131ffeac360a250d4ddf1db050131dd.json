@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "9131ffeac360a250d4ddf1db050131dd",
+    "extracted_at": "2025-09-19T21:48:37.708Z",
+    "display_value": "Set Duration - Day of the Week",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_update": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-01 20:17:31",
+    "display_value": "2025-04-01 01:17:31 PM"
+  },
+  "when": {
+    "value": "before",
+    "display_value": "before"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2025-03-31 05:20:02",
+    "display_value": "2025-03-30 10:20:02 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Set Duration - Day of the Week",
+    "display_value": "Set Duration - Day of the Week"
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "order": {
+    "value": "1000",
+    "display_value": "1,000"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "10",
+    "display_value": "10"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "x_cadso_journey_instance_step",
+    "display_value": "x_cadso_journey_instance_step"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/ ) {\r\n    const versionStepGr = current.version_step.getRefRecord();\r\n    if (!versionStepGr.isValidRecord()) return;\r\n\t\r\n    const targetDayOfWeek = versionStepGr.day_of_week.nil() ? 0 : Number(versionStepGr.getValue(\"day_of_week\"));\r\n    const time = versionStepGr.time.nil() ? \"\" : versionStepGr.getValue(\"time\");\r\n    const jbDateTime = new JourneyBuilderDateTime();\r\n\tconst { glideDuration, glideDateTime } = jbDateTime.getNextDayOfWeekDateTime({\r\n        time,\r\n        dayOfTheWeek: targetDayOfWeek\r\n    });\r\n\r\n    current.setValue(\"duration\", glideDuration);\r\n    current.setValue(\"datetime\", glideDateTime);\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/ ) {\r\n    const versionStepGr = current.version_step.getRefRecord();\r\n    if (!versionStepGr.isValidRecord()) return;\r\n\t\r\n    const targetDayOfWeek = versionStepGr.day_of_week.nil() ? 0 : Number(versionStepGr.getValue(\"day_of_week\"));\r\n    const time = versionStepGr.time.nil() ? \"\" : versionStepGr.getValue(\"time\");\r\n    const jbDateTime = new JourneyBuilderDateTime();\r\n\tconst { glideDuration, glideDateTime } = jbDateTime.getNextDayOfWeekDateTime({\r\n        time,\r\n        dayOfTheWeek: targetDayOfWeek\r\n    });\r\n\r\n    current.setValue(\"duration\", glideDuration);\r\n    current.setValue(\"datetime\", glideDateTime);\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 15,
+      "char_count": 699,
+      "preview": "(function executeRule(current, previous /*null when async*/ ) {\r\n    const versionStepGr = current.version_step.getRefRecord();\r\n    if (!versionStepGr.isValidRecord()) return;\r\n\t\r\n    const targetDay...",
+      "full_script": "(function executeRule(current, previous /*null when async*/ ) {\r\n    const versionStepGr = current.version_step.getRefRecord();\r\n    if (!versionStepGr.isValidRecord()) return;\r\n\t\r\n    const targetDayOfWeek = versionStepGr.day_of_week.nil() ? 0 : Number(versionStepGr.getValue(\"day_of_week\"));\r\n    const time = versionStepGr.time.nil() ? \"\" : versionStepGr.getValue(\"time\");\r\n    const jbDateTime = new JourneyBuilderDateTime();\r\n\tconst { glideDuration, glideDateTime } = jbDateTime.getNextDayOfWeekDateTime({\r\n        time,\r\n        dayOfTheWeek: targetDayOfWeek\r\n    });\r\n\r\n    current.setValue(\"duration\", glideDuration);\r\n    current.setValue(\"datetime\", glideDateTime);\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "action.action_type=wait^version_step.wait_type=weekly^statusCHANGESTOProcessing^EQ",
+    "display_value": "action.action_type=wait^version_step.wait_type=weekly^statusCHANGESTOProcessing^EQ"
+  },
+  "sys_package": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_9131ffeac360a250d4ddf1db050131dd",
+    "display_value": "sys_script_9131ffeac360a250d4ddf1db050131dd"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Set Duration - Day of the Week",
+    "display_value": "Set Duration - Day of the Week"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

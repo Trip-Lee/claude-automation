@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "065b988fc3966210d4ddf1db05013198",
+    "extracted_at": "2025-08-22T18:46:23.808Z",
+    "display_value": "Delete UTM Mapping",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-27 02:52:31",
+    "display_value": "2025-06-26 07:52:31 PM"
+  },
+  "name": {
+    "value": "Delete UTM Mapping",
+    "display_value": "Delete UTM Mapping"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-27 02:52:31",
+    "display_value": "2025-06-26 07:52:31 PM"
+  }
+}

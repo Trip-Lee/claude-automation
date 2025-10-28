@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "0150c547c3c34a1085b196c4e401310a",
+    "extracted_at": "2025-09-19T21:48:33.488Z",
+    "display_value": "Domain Table Update",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\n\tconst { data } = request.body;\n\t\n\tconst asApi = new x_cadso_automate.listCopyApi();\n\tconst responseData = asApi.updateRecordActive(data);\n\t\n\tif (!responseData.success) {\n\t\tresponse.setStatus(400);\n\t\tresponse.setBody(responseData);\n\t\treturn response;\n\t}\n\t\n\tresponse.setStatus(200);\n\tresponse.setBody(responseData);\n\t\n\treturn response;\n\n})(request, response);",
+    "display_value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\n\tconst { data } = request.body;\n\t\n\tconst asApi = new x_cadso_automate.listCopyApi();\n\tconst responseData = asApi.updateRecordActive(data);\n\t\n\tif (!responseData.success) {\n\t\tresponse.setStatus(400);\n\t\tresponse.setBody(responseData);\n\t\treturn response;\n\t}\n\t\n\tresponse.setStatus(200);\n\tresponse.setBody(responseData);\n\t\n\treturn response;\n\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2024-11-04 21:01:14",
+    "display_value": "2024-11-04 01:01:14 PM"
+  },
+  "enforce_acl": {
+    "value": "003a5109c3ee021085b196c4e40131ab",
+    "display_value": "Tenon Automate UI API Access"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_automate/ui/listcopy/update",
+    "display_value": "/api/x_cadso_automate/ui/listcopy/update"
+  },
+  "sys_created_on": {
+    "value": "2024-07-01 19:59:56",
+    "display_value": "2024-07-01 12:59:56 PM"
+  },
+  "sys_name": {
+    "value": "Domain Table Update",
+    "display_value": "Domain Table Update"
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "tyler.liu",
+    "display_value": "tyler.liu"
+  },
+  "web_service_definition": {
+    "value": "4a222358c3aa425085b196c4e401318e",
+    "display_value": "Tenon Automate UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "Other",
+    "display_value": "Other"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_0150c547c3c34a1085b196c4e401310a",
+    "display_value": "sys_ws_operation_0150c547c3c34a1085b196c4e401310a"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Domain Table Update",
+    "display_value": "Domain Table Update"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/listcopy/update",
+    "display_value": "/listcopy/update"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

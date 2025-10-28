@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "59969eae97eb2550ac33f109c253af8f",
+    "extracted_at": "2025-08-22T18:46:25.517Z",
+    "display_value": "Update Project / Task Sprt Fld (Delete)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-06-23 17:07:51",
+    "display_value": "2023-06-23 10:07:51 AM"
+  },
+  "name": {
+    "value": "Update Project / Task Sprt Fld (Delete)",
+    "display_value": "Update Project / Task Sprt Fld (Delete)"
+  },
+  "sys_updated_on": {
+    "value": "2023-07-29 21:00:08",
+    "display_value": "2023-07-29 02:00:08 PM"
+  }
+}

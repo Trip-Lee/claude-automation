@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "b37401a2c3395a10d4ddf1db050131fd",
+    "extracted_at": "2025-09-19T21:49:41.597Z",
+    "display_value": "Generate Journey Instance",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"Created_1.current\",\"label\":\"Trigger - Record Created➛Instance Record\",\"reference\":\"x_cadso_journey_instance\",\"reference_display\":\"Instance\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"b51242fb-2bde-4c09-a2de-b4f7b5108336\":[\"journey_instance\"],\"3e8cf3c5-759b-4ff9-85c6-ddfb003c08ca\":[\"record\"],\"ceb57019-6e5a-414b-9295-e0a0dc744a13\":[\"record\"],\"f761f6cd-712b-465d-a995-cf663eb58fef\":[\"record\"],\"eff97c44-94d4-459e-b6e8-5bf4c4f77625\":[\"record\"],\"d95b1059-ed1d-48b1-810c-d9a49ee47c88\":[\"record\"]},\"attributes\":{}},{\"name\":\"Created_1.current.published_date\",\"label\":\"Trigger - Record Created➛Instance Record➛Published Date\",\"reference\":\"\",\"reference_display\":\"Published Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"published_date\",\"usedInstances\":{\"5f7c793d-bb11-4605-9390-56019adf83bf\":[\"condition\"],\"ecdfe17c-6614-4867-b85a-55e31196176d\":[\"end_time\"]}},{\"name\":\"Created_1.run_start_date_time\",\"label\":\"Trigger - Record Created➛Run Start Date/Time\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"usedInstances\":{\"5f7c793d-bb11-4605-9390-56019adf83bf\":[\"condition\"]},\"attributes\":{\"test_input_hidden\":\"true\"}},{\"name\":\"ccc364e8-8b61-45ca-a80b-ae365ba2feb1.__status__.message\",\"label\":\"7 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3acc0c70-e1ab-417b-aed4-48e7f5dc2a4f\":[\"log_message\"]},\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"Created_1.current\",\"label\":\"Trigger - Record Created➛Instance Record\",\"reference\":\"x_cadso_journey_instance\",\"reference_display\":\"Instance\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"b51242fb-2bde-4c09-a2de-b4f7b5108336\":[\"journey_instance\"],\"3e8cf3c5-759b-4ff9-85c6-ddfb003c08ca\":[\"record\"],\"ceb57019-6e5a-414b-9295-e0a0dc744a13\":[\"record\"],\"f761f6cd-712b-465d-a995-cf663eb58fef\":[\"record\"],\"eff97c44-94d4-459e-b6e8-5bf4c4f77625\":[\"record\"],\"d95b1059-ed1d-48b1-810c-d9a49ee47c88\":[\"record\"]},\"attributes\":{}},{\"name\":\"Created_1.current.published_date\",\"label\":\"Trigger - Record Created➛Instance Record➛Published Date\",\"reference\":\"\",\"reference_display\":\"Published Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"published_date\",\"usedInstances\":{\"5f7c793d-bb11-4605-9390-56019adf83bf\":[\"condition\"],\"ecdfe17c-6614-4867-b85a-55e31196176d\":[\"end_time\"]}},{\"name\":\"Created_1.run_start_date_time\",\"label\":\"Trigger - Record Created➛Run Start Date/Time\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"usedInstances\":{\"5f7c793d-bb11-4605-9390-56019adf83bf\":[\"condition\"]},\"attributes\":{\"test_input_hidden\":\"true\"}},{\"name\":\"ccc364e8-8b61-45ca-a80b-ae365ba2feb1.__status__.message\",\"label\":\"7 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3acc0c70-e1ab-417b-aed4-48e7f5dc2a4f\":[\"log_message\"]},\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2024-11-13 23:52:48",
+    "display_value": "2024-11-13 03:52:48 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "generate_journey_instance",
+    "display_value": "generate_journey_instance"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-11-13 23:52:48",
+    "display_value": "2024-11-13 03:52:48 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "1be57f02c37dd610d4ddf1db050131bc",
+    "display_value": "Generate Journey Instance"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Generate Journey Instance",
+    "display_value": "Generate Journey Instance"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

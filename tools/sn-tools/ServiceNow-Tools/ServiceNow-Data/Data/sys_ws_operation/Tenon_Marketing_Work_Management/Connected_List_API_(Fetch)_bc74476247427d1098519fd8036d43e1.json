@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "bc74476247427d1098519fd8036d43e1",
+    "extracted_at": "2025-09-19T21:48:35.159Z",
+    "display_value": "Connected List API (Fetch)",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process(/* RESTAPIRequest */ request, /* RESTAPIResponse */ response) {\r\n\tconst {\r\n\t\trecordField,\r\n\t\trecordSysId,\r\n\t\trecordTable,\r\n\t\ttable,\r\n\t\tlimit,\r\n\t\tquery,\r\n\t\torderBy,\r\n\t\tchildTable,\r\n\t\tparentField,\r\n\t\tchildQuery,\r\n\t\tchildQueryComplete,\r\n\t\tchildQueryTotal,\r\n\t} = request.body.data;\r\n\r\n\tconst items = [];\r\n\tconst error = { error: false, message: \"\", title: \"\" };\r\n\tlet count = 0;\r\n\r\n\tconst connectedTableGr = new GlideRecordSecure(recordTable);\r\n\r\n\tif (connectedTableGr.get(recordSysId)) {\r\n\t\tlet sysIds = connectedTableGr.getValue(recordField) + \"\";\r\n\t\tsysIds = sysIds === \"null\" ? [] : sysIds.split(\",\");\r\n\t\tif (sysIds.length) {\r\n\t\t\tconst tableGr = new GlideRecordSecure(table);\r\n\t\t\ttableGr.addQuery(\"sys_id\", \"IN\", sysIds);\r\n\t\t\tif (query) {\r\n\t\t\t\ttableGr.addEncodedQuery(query, true);\r\n\t\t\t}\r\n\t\t\ttableGr.orderByDesc(orderBy);\r\n\t\t\ttableGr.query();\r\n\r\n\t\t\twhile (tableGr.next() && count < limit) {\r\n\t\t\t\tcount++;\r\n\t\t\t\tconst item = {\r\n\t\t\t\t\tdisplayValue: tableGr.getDisplayValue(),\r\n\t\t\t\t\tvalue: tableGr.getUniqueValue(),\r\n\t\t\t\t\tassignedTo: {},\r\n\t\t\t\t\tcolor: tableGr.isValidField('glyph_color') ? tableGr.getValue('glyph_color') : '',\r\n\t\t\t\t\tcompleted: 0,\r\n\t\t\t\t\ttotal: 0,\r\n\t\t\t\t};\r\n\t\t\t\t\r\n\t\t\t\tif (tableGr.getValue('assigned_to')) {\r\n\t\t\t\t\tconst assignedToGr = tableGr.assigned_to.getRefRecord();\r\n\t\t\t\t\tif (assignedToGr.isValidRecord()) {\r\n\t\t\t\t\t\tlet _avatar = assignedToGr.getValue('avatar') + '';\r\n\t\t\t\t\t\t_avatar = _avatar !== 'null' ? _avatar : '';\r\n\t\t\t\t\t\tlet photo = assignedToGr.getValue('photo') + '';\r\n\t\t\t\t\t\tphoto = photo !== 'null' ? photo : '';\r\n\t\t\t\t\t\tlet avatar = (_avatar || photo) + '.iix';\r\n\t\t\t\t\t\titem.assignedTo = {\r\n\t\t\t\t\t\t\tdisplayValue: assignedToGr.getDisplayValue(),\r\n\t\t\t\t\t\t\tvalue: assignedToGr.getUniqueValue(),\r\n\t\t\t\t\t\t\tavatar: (photo || _avatar) ? avatar : ''\r\n\t\t\t\t\t\t};\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// complete\r\n\t\t\t\tlet childTableGA = new GlideAggregate(childTable);\r\n\t\t\t\tif (childQuery) {\r\n\t\t\t\t\tchildTableGA.addEncodedQuery(childQuery, true);\r\n\t\t\t\t}\r\n\t\t\t\tif (parentField) {\r\n\t\t\t\t\tchildTableGA.addQuery(parentField, tableGr.getUniqueValue());\r\n\t\t\t\t}\r\n\t\t\t\tif (childQueryComplete) {\r\n\t\t\t\t\tchildTableGA.addEncodedQuery(childQueryComplete, true);\r\n\t\t\t\t}\r\n\t\t\t\tchildTableGA.addAggregate(\"COUNT\");\r\n\t\t\t\tchildTableGA.query();\r\n\t\t\t\twhile (childTableGA.next()) {\r\n\t\t\t\t\titem.completed = parseInt(childTableGA.getAggregate(\"COUNT\"));\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// total\r\n\t\t\t\tchildTableGA = new GlideAggregate(childTable);\r\n\t\t\t\tif (childQuery) {\r\n\t\t\t\t\tchildTableGA.addEncodedQuery(childQuery, true);\r\n\t\t\t\t}\r\n\t\t\t\tif (parentField) {\r\n\t\t\t\t\tchildTableGA.addQuery(parentField, tableGr.getUniqueValue());\r\n\t\t\t\t}\r\n\t\t\t\tif (childQueryTotal) {\r\n\t\t\t\t\tchildTableGA.addEncodedQuery(childQueryTotal, true);\r\n\t\t\t\t}\r\n\t\t\t\tchildTableGA.addAggregate(\"COUNT\");\r\n\t\t\t\tchildTableGA.query();\r\n\r\n\t\t\t\twhile (childTableGA.next()) {\r\n\t\t\t\t\titem.total = parseInt(childTableGA.getAggregate(\"COUNT\"));\r\n\t\t\t\t}\r\n\r\n\t\t\t\titems.push(item);\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\terror.message = \"Invalid system id or access denied.\";\r\n\t\terror.title = \"Record not found\";\r\n\t\terror.error = true;\r\n\t}\r\n\r\n\tresponse.setBody({ items, error });\r\n\treturn response;\r\n})(request, response);\r\n",
+    "display_value": "(function process(/* RESTAPIRequest */ request, /* RESTAPIResponse */ response) {\r\n\tconst {\r\n\t\trecordField,\r\n\t\trecordSysId,\r\n\t\trecordTable,\r\n\t\ttable,\r\n\t\tlimit,\r\n\t\tquery,\r\n\t\torderBy,\r\n\t\tchildTable,\r\n\t\tparentField,\r\n\t\tchildQuery,\r\n\t\tchildQueryComplete,\r\n\t\tchildQueryTotal,\r\n\t} = request.body.data;\r\n\r\n\tconst items = [];\r\n\tconst error = { error: false, message: \"\", title: \"\" };\r\n\tlet count = 0;\r\n\r\n\tconst connectedTableGr = new GlideRecordSecure(recordTable);\r\n\r\n\tif (connectedTableGr.get(recordSysId)) {\r\n\t\tlet sysIds = connectedTableGr.getValue(recordField) + \"\";\r\n\t\tsysIds = sysIds === \"null\" ? [] : sysIds.split(\",\");\r\n\t\tif (sysIds.length) {\r\n\t\t\tconst tableGr = new GlideRecordSecure(table);\r\n\t\t\ttableGr.addQuery(\"sys_id\", \"IN\", sysIds);\r\n\t\t\tif (query) {\r\n\t\t\t\ttableGr.addEncodedQuery(query, true);\r\n\t\t\t}\r\n\t\t\ttableGr.orderByDesc(orderBy);\r\n\t\t\ttableGr.query();\r\n\r\n\t\t\twhile (tableGr.next() && count < limit) {\r\n\t\t\t\tcount++;\r\n\t\t\t\tconst item = {\r\n\t\t\t\t\tdisplayValue: tableGr.getDisplayValue(),\r\n\t\t\t\t\tvalue: tableGr.getUniqueValue(),\r\n\t\t\t\t\tassignedTo: {},\r\n\t\t\t\t\tcolor: tableGr.isValidField('glyph_color') ? tableGr.getValue('glyph_color') : '',\r\n\t\t\t\t\tcompleted: 0,\r\n\t\t\t\t\ttotal: 0,\r\n\t\t\t\t};\r\n\t\t\t\t\r\n\t\t\t\tif (tableGr.getValue('assigned_to')) {\r\n\t\t\t\t\tconst assignedToGr = tableGr.assigned_to.getRefRecord();\r\n\t\t\t\t\tif (assignedToGr.isValidRecord()) {\r\n\t\t\t\t\t\tlet _avatar = assignedToGr.getValue('avatar') + '';\r\n\t\t\t\t\t\t_avatar = _avatar !== 'null' ? _avatar : '';\r\n\t\t\t\t\t\tlet photo = assignedToGr.getValue('photo') + '';\r\n\t\t\t\t\t\tphoto = photo !== 'null' ? photo : '';\r\n\t\t\t\t\t\tlet avatar = (_avatar || photo) + '.iix';\r\n\t\t\t\t\t\titem.assignedTo = {\r\n\t\t\t\t\t\t\tdisplayValue: assignedToGr.getDisplayValue(),\r\n\t\t\t\t\t\t\tvalue: assignedToGr.getUniqueValue(),\r\n\t\t\t\t\t\t\tavatar: (photo || _avatar) ? avatar : ''\r\n\t\t\t\t\t\t};\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// complete\r\n\t\t\t\tlet childTableGA = new GlideAggregate(childTable);\r\n\t\t\t\tif (childQuery) {\r\n\t\t\t\t\tchildTableGA.addEncodedQuery(childQuery, true);\r\n\t\t\t\t}\r\n\t\t\t\tif (parentField) {\r\n\t\t\t\t\tchildTableGA.addQuery(parentField, tableGr.getUniqueValue());\r\n\t\t\t\t}\r\n\t\t\t\tif (childQueryComplete) {\r\n\t\t\t\t\tchildTableGA.addEncodedQuery(childQueryComplete, true);\r\n\t\t\t\t}\r\n\t\t\t\tchildTableGA.addAggregate(\"COUNT\");\r\n\t\t\t\tchildTableGA.query();\r\n\t\t\t\twhile (childTableGA.next()) {\r\n\t\t\t\t\titem.completed = parseInt(childTableGA.getAggregate(\"COUNT\"));\r\n\t\t\t\t}\r\n\r\n\t\t\t\t// total\r\n\t\t\t\tchildTableGA = new GlideAggregate(childTable);\r\n\t\t\t\tif (childQuery) {\r\n\t\t\t\t\tchildTableGA.addEncodedQuery(childQuery, true);\r\n\t\t\t\t}\r\n\t\t\t\tif (parentField) {\r\n\t\t\t\t\tchildTableGA.addQuery(parentField, tableGr.getUniqueValue());\r\n\t\t\t\t}\r\n\t\t\t\tif (childQueryTotal) {\r\n\t\t\t\t\tchildTableGA.addEncodedQuery(childQueryTotal, true);\r\n\t\t\t\t}\r\n\t\t\t\tchildTableGA.addAggregate(\"COUNT\");\r\n\t\t\t\tchildTableGA.query();\r\n\r\n\t\t\t\twhile (childTableGA.next()) {\r\n\t\t\t\t\titem.total = parseInt(childTableGA.getAggregate(\"COUNT\"));\r\n\t\t\t\t}\r\n\r\n\t\t\t\titems.push(item);\r\n\t\t\t}\r\n\t\t}\r\n\t} else {\r\n\t\terror.message = \"Invalid system id or access denied.\";\r\n\t\terror.title = \"Record not found\";\r\n\t\terror.error = true;\r\n\t}\r\n\r\n\tresponse.setBody({ items, error });\r\n\treturn response;\r\n})(request, response);\r\n"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-18 00:53:30",
+    "display_value": "2024-10-17 05:53:30 PM"
+  },
+  "enforce_acl": {
+    "value": "85a45d5247b1ed10fc4c1ae8036d439e",
+    "display_value": "Tenon Work Baseline Access"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "trevor.offen",
+    "display_value": "trevor.offen"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_work/ui/ConnectedList/fetch",
+    "display_value": "/api/x_cadso_work/ui/ConnectedList/fetch"
+  },
+  "sys_created_on": {
+    "value": "2023-10-26 03:05:13",
+    "display_value": "2023-10-25 08:05:13 PM"
+  },
+  "sys_name": {
+    "value": "Connected List API (Fetch)",
+    "display_value": "Connected List API (Fetch)"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "web_service_definition": {
+    "value": "3a4228b84728e950a1052a02e26d43b0",
+    "display_value": "Tenon Work UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_bc74476247427d1098519fd8036d43e1",
+    "display_value": "sys_ws_operation_bc74476247427d1098519fd8036d43e1"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Connected List API (Fetch)",
+    "display_value": "Connected List API (Fetch)"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/ConnectedList/fetch",
+    "display_value": "/ConnectedList/fetch"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

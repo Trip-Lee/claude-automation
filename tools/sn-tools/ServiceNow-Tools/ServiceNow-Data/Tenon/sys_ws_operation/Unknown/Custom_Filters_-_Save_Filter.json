@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "35a45f6947b4c250b0361ae8036d43f5",
+    "extracted_at": "2025-08-22T18:46:21.818Z",
+    "display_value": "Custom Filters - Save Filter",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-03-07 18:34:44",
+    "display_value": "2024-03-07 10:34:44 AM"
+  },
+  "name": {
+    "value": "Custom Filters - Save Filter",
+    "display_value": "Custom Filters - Save Filter"
+  },
+  "sys_updated_on": {
+    "value": "2024-05-17 03:27:54",
+    "display_value": "2024-05-16 08:27:54 PM"
+  }
+}

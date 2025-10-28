@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "293c7bb7c3712290d4ddf1db050131b5",
+    "extracted_at": "2025-09-19T21:49:17.529Z",
+    "display_value": "Get Landing Page Template",
+    "application": "Tenon_Cloud_Management",
+    "scope": {
+      "display_value": "Tenon Cloud Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/506711fbc331ee50d4ddf1db05013112",
+      "value": "506711fbc331ee50d4ddf1db05013112"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"Updated_1.current\",\"label\":\"Trigger - Record Updated➛Landing Page Record\",\"reference\":\"x_cadso_cloud_page\",\"reference_display\":\"Landing Page\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"1689c854-8d0a-43e2-bc32-8278aad7c676\":[\"record\"],\"2c314b17-3f18-42f7-9afa-58e9359ac3b8\":[\"page\"]},\"attributes\":{}},{\"name\":\"ea3843ef-2557-4238-b731-37bbea582217.access_token\",\"label\":\"1 - Get Content Service Token➛Access Token\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"2c314b17-3f18-42f7-9afa-58e9359ac3b8\":[\"token\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"dc9e87c2-4356-464f-adc9-099e25c1670e\"}}]",
+    "display_value": "[{\"name\":\"Updated_1.current\",\"label\":\"Trigger - Record Updated➛Landing Page Record\",\"reference\":\"x_cadso_cloud_page\",\"reference_display\":\"Landing Page\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"1689c854-8d0a-43e2-bc32-8278aad7c676\":[\"record\"],\"2c314b17-3f18-42f7-9afa-58e9359ac3b8\":[\"page\"]},\"attributes\":{}},{\"name\":\"ea3843ef-2557-4238-b731-37bbea582217.access_token\",\"label\":\"1 - Get Content Service Token➛Access Token\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"2c314b17-3f18-42f7-9afa-58e9359ac3b8\":[\"token\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"dc9e87c2-4356-464f-adc9-099e25c1670e\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-05 06:39:01",
+    "display_value": "2025-06-04 11:39:01 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "get_landing_page_template",
+    "display_value": "get_landing_page_template"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2025-06-05 06:39:01",
+    "display_value": "2025-06-04 11:39:01 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "506711fbc331ee50d4ddf1db05013112",
+    "display_value": "Tenon Cloud Management"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "parent_flow": {
+    "value": "f128f733c3712290d4ddf1db05013104",
+    "display_value": "Get Landing Page Thumbnail"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "HIGH",
+    "display_value": "High"
+  },
+  "name": {
+    "value": "Get Landing Page Template",
+    "display_value": "Get Landing Page Template"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

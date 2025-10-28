@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "cf86c151978b6510ac33f109c253afa8",
+    "extracted_at": "2025-08-22T18:42:35.325Z",
+    "display_value": "kanbanApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-05-25 17:34:23",
+    "display_value": "2023-05-25 10:34:23 AM"
+  },
+  "name": {
+    "value": "kanbanApiMS",
+    "display_value": "kanbanApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-15 00:34:13",
+    "display_value": "2025-07-14 05:34:13 PM"
+  }
+}

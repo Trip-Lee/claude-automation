@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "67777294330d2a507b18bc534d5c7bac",
+    "extracted_at": "2025-09-19T21:48:28.890Z",
+    "display_value": "APIUtils",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-05-01 17:54:44",
+    "display_value": "2025-05-01 10:54:44 AM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "const APIUtils = Class.create();\r\nAPIUtils.prototype = Object.extendsObject(x_cadso_core.APIUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.APIUtilsMS.prototype.initialize.apply(this, arguments);\r\n  },\r\n\r\n  type: \"APIUtils\",\r\n});\r\n",
+    "display_value": "const APIUtils = Class.create();\r\nAPIUtils.prototype = Object.extendsObject(x_cadso_core.APIUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.APIUtilsMS.prototype.initialize.apply(this, arguments);\r\n  },\r\n\r\n  type: \"APIUtils\",\r\n});\r\n",
+    "formatted_script": {
+      "line_count": 9,
+      "char_count": 241,
+      "preview": "const APIUtils = Class.create();\r\nAPIUtils.prototype = Object.extendsObject(x_cadso_core.APIUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.APIUtilsMS.prototype.initialize.apply(this, argume...",
+      "full_script": "const APIUtils = Class.create();\r\nAPIUtils.prototype = Object.extendsObject(x_cadso_core.APIUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.APIUtilsMS.prototype.initialize.apply(this, arguments);\r\n  },\r\n\r\n  type: \"APIUtils\",\r\n});\r\n"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_67777294330d2a507b18bc534d5c7bac",
+    "display_value": "sys_script_include_67777294330d2a507b18bc534d5c7bac"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "api_name": {
+    "value": "x_cadso_core.APIUtils",
+    "display_value": "x_cadso_core.APIUtils"
+  },
+  "sys_created_on": {
+    "value": "2025-04-17 21:53:40",
+    "display_value": "2025-04-17 02:53:40 PM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "APIUtils",
+    "display_value": "APIUtils"
+  },
+  "sys_name": {
+    "value": "APIUtils",
+    "display_value": "APIUtils"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

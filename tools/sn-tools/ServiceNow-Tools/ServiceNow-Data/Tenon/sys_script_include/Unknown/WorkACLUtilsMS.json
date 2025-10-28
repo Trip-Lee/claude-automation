@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "8722e56387d07950b656fe66cebb35bc",
+    "extracted_at": "2025-08-22T18:46:19.828Z",
+    "display_value": "WorkACLUtilsMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-08-02 22:39:53",
+    "display_value": "2023-08-02 03:39:53 PM"
+  },
+  "name": {
+    "value": "WorkACLUtilsMS",
+    "display_value": "WorkACLUtilsMS"
+  },
+  "sys_updated_on": {
+    "value": "2023-08-03 18:59:52",
+    "display_value": "2023-08-03 11:59:52 AM"
+  }
+}

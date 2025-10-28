@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "94c81db847f03910b0361ae8036d43c4",
+    "extracted_at": "2025-08-22T18:42:37.225Z",
+    "display_value": "NavigationHeader Event",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-08-19 05:26:50",
+    "display_value": "2023-08-18 10:26:50 PM"
+  },
+  "name": {
+    "value": "NavigationHeader Event",
+    "display_value": "NavigationHeader Event"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-13 15:29:07",
+    "display_value": "2025-08-13 08:29:07 AM"
+  }
+}

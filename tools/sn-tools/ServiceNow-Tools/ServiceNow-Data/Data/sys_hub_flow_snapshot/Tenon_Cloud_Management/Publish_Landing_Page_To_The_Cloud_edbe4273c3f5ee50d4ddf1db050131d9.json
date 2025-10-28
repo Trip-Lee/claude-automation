@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "edbe4273c3f5ee50d4ddf1db050131d9",
+    "extracted_at": "2025-09-19T21:49:17.596Z",
+    "display_value": "Publish Landing Page To The Cloud",
+    "application": "Tenon_Cloud_Management",
+    "scope": {
+      "display_value": "Tenon Cloud Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/506711fbc331ee50d4ddf1db05013112",
+      "value": "506711fbc331ee50d4ddf1db05013112"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"c3e1afd2-1ed9-4739-9b5c-52ac9af19ced.url\",\"label\":\"2 - Publish Landing Page to S3➛url\",\"reference_display\":\"url\",\"type\":\"url\",\"base_type\":\"url\",\"usedInstances\":{\"73038bbf-0d4a-463c-a6f3-3f223ba89d00\":[\"url\"],\"aa1f19ed-51e3-4bbd-b22c-73b4e1f81d99\":[\"values\"]},\"attributes\":{\"uiType\":\"url\",\"uiTypeLabel\":\"URL\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"c301bee8-a73b-46da-8d7b-9713fbebd397\"}},{\"name\":\"c3e1afd2-1ed9-4739-9b5c-52ac9af19ced.state\",\"label\":\"2 - Publish Landing Page to S3➛state\",\"reference_display\":\"state\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"73038bbf-0d4a-463c-a6f3-3f223ba89d00\":[\"state\"],\"aa1f19ed-51e3-4bbd-b22c-73b4e1f81d99\":[\"values\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"96ccca16-6688-4509-9173-118a1166d239\"}},{\"name\":\"Created or Updated_1.current.bucket.type\",\"label\":\"Trigger - Record Created or Updated➛Landing Page Record➛Bucket➛Type\",\"reference\":\"\",\"reference_display\":\"Type\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_cloud_bucket\",\"column_name\":\"type\",\"choices\":[{\"used\":false,\"label\":\"AWS (S3)\",\"image\":\"\",\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"AWS (S3)\",\"value\":\"aws_s3\",\"parameters\":{\"name\":\"x_cadso_cloud_bucket\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"fb2b85e7-5d3d-41d7-8ea1-b08b97a8af26\":[\"condition\"]}},{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Landing Page Record\",\"reference\":\"x_cadso_cloud_page\",\"reference_display\":\"Landing Page\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"c3e1afd2-1ed9-4739-9b5c-52ac9af19ced\":[\"page\"],\"73038bbf-0d4a-463c-a6f3-3f223ba89d00\":[\"record\"],\"aa1f19ed-51e3-4bbd-b22c-73b4e1f81d99\":[\"record\"]},\"attributes\":{}},{\"name\":\"c3e1afd2-1ed9-4739-9b5c-52ac9af19ced.published_url\",\"label\":\"2 - Publish Landing Page to S3➛published_url\",\"type\":\"url\",\"base_type\":\"url\",\"usedInstances\":{\"73038bbf-0d4a-463c-a6f3-3f223ba89d00\":[\"published_url\"]},\"attributes\":{\"uiType\":\"url\",\"uiTypeLabel\":\"URL\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"a68fb758-7a41-4110-b3d5-bd61587313df\"}}]",
+    "display_value": "[{\"name\":\"c3e1afd2-1ed9-4739-9b5c-52ac9af19ced.url\",\"label\":\"2 - Publish Landing Page to S3➛url\",\"reference_display\":\"url\",\"type\":\"url\",\"base_type\":\"url\",\"usedInstances\":{\"73038bbf-0d4a-463c-a6f3-3f223ba89d00\":[\"url\"],\"aa1f19ed-51e3-4bbd-b22c-73b4e1f81d99\":[\"values\"]},\"attributes\":{\"uiType\":\"url\",\"uiTypeLabel\":\"URL\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"c301bee8-a73b-46da-8d7b-9713fbebd397\"}},{\"name\":\"c3e1afd2-1ed9-4739-9b5c-52ac9af19ced.state\",\"label\":\"2 - Publish Landing Page to S3➛state\",\"reference_display\":\"state\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"73038bbf-0d4a-463c-a6f3-3f223ba89d00\":[\"state\"],\"aa1f19ed-51e3-4bbd-b22c-73b4e1f81d99\":[\"values\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"96ccca16-6688-4509-9173-118a1166d239\"}},{\"name\":\"Created or Updated_1.current.bucket.type\",\"label\":\"Trigger - Record Created or Updated➛Landing Page Record➛Bucket➛Type\",\"reference\":\"\",\"reference_display\":\"Type\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_cloud_bucket\",\"column_name\":\"type\",\"choices\":[{\"used\":false,\"label\":\"AWS (S3)\",\"image\":\"\",\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"AWS (S3)\",\"value\":\"aws_s3\",\"parameters\":{\"name\":\"x_cadso_cloud_bucket\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"fb2b85e7-5d3d-41d7-8ea1-b08b97a8af26\":[\"condition\"]}},{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Landing Page Record\",\"reference\":\"x_cadso_cloud_page\",\"reference_display\":\"Landing Page\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"c3e1afd2-1ed9-4739-9b5c-52ac9af19ced\":[\"page\"],\"73038bbf-0d4a-463c-a6f3-3f223ba89d00\":[\"record\"],\"aa1f19ed-51e3-4bbd-b22c-73b4e1f81d99\":[\"record\"]},\"attributes\":{}},{\"name\":\"c3e1afd2-1ed9-4739-9b5c-52ac9af19ced.published_url\",\"label\":\"2 - Publish Landing Page to S3➛published_url\",\"type\":\"url\",\"base_type\":\"url\",\"usedInstances\":{\"73038bbf-0d4a-463c-a6f3-3f223ba89d00\":[\"published_url\"]},\"attributes\":{\"uiType\":\"url\",\"uiTypeLabel\":\"URL\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"a68fb758-7a41-4110-b3d5-bd61587313df\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Publish Landing Page To The Cloud",
+    "display_value": "Publish Landing Page To The Cloud"
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-04 22:40:36",
+    "display_value": "2025-06-04 03:40:36 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "publish_landing_page_to_the_cloud",
+    "display_value": "publish_landing_page_to_the_cloud"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2025-06-04 22:40:36",
+    "display_value": "2025-06-04 03:40:36 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "506711fbc331ee50d4ddf1db05013112",
+    "display_value": "Tenon Cloud Management"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "parent_flow": {
+    "value": "7ead0ebfc3b5ee50d4ddf1db05013101",
+    "display_value": "Publish Landing Page To The Cloud"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "HIGH",
+    "display_value": "High"
+  },
+  "name": {
+    "value": "Publish Landing Page To The Cloud",
+    "display_value": "Publish Landing Page To The Cloud"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

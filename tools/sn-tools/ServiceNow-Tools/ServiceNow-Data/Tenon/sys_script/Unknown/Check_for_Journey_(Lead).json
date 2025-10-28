@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "c5d69d3133d11a107b18bc534d5c7bfc",
+    "extracted_at": "2025-08-22T18:46:27.337Z",
+    "display_value": "Check for Journey (Lead)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-17 20:46:03",
+    "display_value": "2024-10-17 01:46:03 PM"
+  },
+  "name": {
+    "value": "Check for Journey (Lead)",
+    "display_value": "Check for Journey (Lead)"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-21 19:11:08",
+    "display_value": "2025-03-21 12:11:08 PM"
+  }
+}

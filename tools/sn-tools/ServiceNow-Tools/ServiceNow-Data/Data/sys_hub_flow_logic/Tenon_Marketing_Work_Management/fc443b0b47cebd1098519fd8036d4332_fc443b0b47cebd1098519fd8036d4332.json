@@ -1,0 +1,130 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_logic",
+    "sys_id": "fc443b0b47cebd1098519fd8036d4332",
+    "extracted_at": "2025-09-19T21:49:05.105Z",
+    "display_value": "fc443b0b47cebd1098519fd8036d4332",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "ui_id": {
+    "value": "53176dc4-293c-4cec-8f0c-0a73eb303c34",
+    "display_value": "53176dc4-293c-4cec-8f0c-0a73eb303c34"
+  },
+  "decision_table": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2024-03-19 20:46:04",
+    "display_value": "2024-03-19 01:46:04 PM"
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_logic",
+    "display_value": "Flow Logic Instance"
+  },
+  "outputs_to_assign": {
+    "value": "",
+    "display_value": ""
+  },
+  "connected_to": {
+    "value": "e4fabc95-8ce0-4e90-89cb-5d30c55545d3",
+    "display_value": "e4fabc95-8ce0-4e90-89cb-5d30c55545d3"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "logic_definition": {
+    "value": "1f781bf3c32232002841b63b12d3aee6",
+    "display_value": "Else"
+  },
+  "sys_created_on": {
+    "value": "2023-10-27 19:51:05",
+    "display_value": "2023-10-27 12:51:05 PM"
+  },
+  "block": {
+    "value": "2934770b47cebd1098519fd8036d4364",
+    "display_value": ""
+  },
+  "outputs_assigned": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "3844f70b47cebd1098519fd8036d43fa",
+    "display_value": "Marketing Task - Dependencies Flow"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "order": {
+    "value": "9",
+    "display_value": "9"
+  },
+  "decision_table_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_mod_count": {
+    "value": "16",
+    "display_value": "16"
+  },
+  "extended_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_variable": {
+    "value": "",
+    "display_value": ""
+  },
+  "workflow_reference": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "workflow_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_variables_assigned": {
+    "value": "",
+    "display_value": ""
+  }
+}

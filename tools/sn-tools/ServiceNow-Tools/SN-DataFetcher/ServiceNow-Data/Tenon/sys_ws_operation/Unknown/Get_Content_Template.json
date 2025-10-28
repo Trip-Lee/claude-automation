@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "82d2ab58c3aa425085b196c4e4013164",
+    "extracted_at": "2025-08-22T18:42:36.028Z",
+    "display_value": "Get Content Template",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-05-29 22:22:59",
+    "display_value": "2024-05-29 03:22:59 PM"
+  },
+  "name": {
+    "value": "Get Content Template",
+    "display_value": "Get Content Template"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-30 03:12:47",
+    "display_value": "2025-05-29 08:12:47 PM"
+  }
+}

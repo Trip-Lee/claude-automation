@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "f1ddc626c3ee4a1085b196c4e40131cc",
+    "extracted_at": "2025-09-19T21:48:49.822Z",
+    "display_value": "Get Job",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.list_id}}\",\"label\":\"action➛list_id\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.x_mailgun_account_id}}\",\"label\":\"action➛X-Mailgun-Account-Id\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[28526251-6531-4207-9039-609438011057].error_code}}\",\"label\":\"step➛OpenAPI step➛Error Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[28526251-6531-4207-9039-609438011057].error_message}}\",\"label\":\"step➛OpenAPI step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null}]",
+    "display_value": "[{\"name\":\"{{action.list_id}}\",\"label\":\"action➛list_id\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.x_mailgun_account_id}}\",\"label\":\"action➛X-Mailgun-Account-Id\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[28526251-6531-4207-9039-609438011057].error_code}}\",\"label\":\"step➛OpenAPI step➛Error Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[28526251-6531-4207-9039-609438011057].error_message}}\",\"label\":\"step➛OpenAPI step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Gets a selected job by list ID.",
+    "display_value": "Gets a selected job by list ID."
+  },
+  "sys_updated_on": {
+    "value": "2024-08-01 20:38:47",
+    "display_value": "2024-08-01 01:38:47 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "get_job_v4",
+    "display_value": "get_job_v4"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-06-05 15:49:11",
+    "display_value": "2024-06-05 08:49:11 AM"
+  },
+  "compiler_build": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Get Job",
+    "display_value": "Get Job"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "draft",
+    "display_value": "Draft"
+  },
+  "master_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "3",
+    "display_value": "3"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_f1ddc626c3ee4a1085b196c4e40131cc",
+    "display_value": "sys_hub_action_type_definition_f1ddc626c3ee4a1085b196c4e40131cc"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Get Job",
+    "display_value": "Get Job"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "b9ddc626c3ee4a1085b196c4e40131c9",
+    "display_value": "Bulk Validations"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

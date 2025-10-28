@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "4a950c0bc3132210d4ddf1db05013160",
+    "extracted_at": "2025-08-22T18:42:33.691Z",
+    "display_value": "ConditionBuilderMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-08-15 18:20:16",
+    "display_value": "2025-08-15 11:20:16 AM"
+  },
+  "name": {
+    "value": "ConditionBuilderMS",
+    "display_value": "ConditionBuilderMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-17 05:51:40",
+    "display_value": "2025-08-16 10:51:40 PM"
+  }
+}

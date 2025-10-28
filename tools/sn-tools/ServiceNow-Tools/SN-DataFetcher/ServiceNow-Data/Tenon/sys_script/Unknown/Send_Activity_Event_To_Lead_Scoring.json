@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "ece1e20cc3b0e610d4ddf1db050131a7",
+    "extracted_at": "2025-08-22T18:42:41.624Z",
+    "display_value": "Send Activity Event To Lead Scoring",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-04 15:25:40",
+    "display_value": "2025-04-04 08:25:40 AM"
+  },
+  "name": {
+    "value": "Send Activity Event To Lead Scoring",
+    "display_value": "Send Activity Event To Lead Scoring"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-07 23:34:00",
+    "display_value": "2025-07-07 04:34:00 PM"
+  }
+}

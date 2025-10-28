@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "b8ec5f1333b026507b18bc534d5c7b06",
+    "extracted_at": "2025-08-22T18:46:23.405Z",
+    "display_value": "Update Brand Kit",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-14 22:02:24",
+    "display_value": "2025-04-14 03:02:24 PM"
+  },
+  "name": {
+    "value": "Update Brand Kit",
+    "display_value": "Update Brand Kit"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-14 22:02:24",
+    "display_value": "2025-04-14 03:02:24 PM"
+  }
+}

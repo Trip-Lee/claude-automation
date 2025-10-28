@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "b45c888333ac6a507b18bc534d5c7b07",
+    "extracted_at": "2025-09-19T21:48:29.046Z",
+    "display_value": "JourneyBuilderDateTime",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "Get the correct datetime object back",
+    "display_value": "Get the correct datetime object back"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-01 20:15:26",
+    "display_value": "2025-04-01 01:15:26 PM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "var JourneyBuilderDateTime = Class.create();\r\nJourneyBuilderDateTime.prototype = Object.extendsObject(x_cadso_journey.JourneyBuilderDateTimeMS, {\r\n\tinitialize: function() {\r\n\t\tx_cadso_journey.JourneyBuilderDateTimeMS.prototype.initialize.apply(this, arguments);\r\n\t},\r\n\r\n    type: 'JourneyBuilderDateTime'\r\n});",
+    "display_value": "var JourneyBuilderDateTime = Class.create();\r\nJourneyBuilderDateTime.prototype = Object.extendsObject(x_cadso_journey.JourneyBuilderDateTimeMS, {\r\n\tinitialize: function() {\r\n\t\tx_cadso_journey.JourneyBuilderDateTimeMS.prototype.initialize.apply(this, arguments);\r\n\t},\r\n\r\n    type: 'JourneyBuilderDateTime'\r\n});",
+    "formatted_script": {
+      "line_count": 8,
+      "char_count": 309,
+      "preview": "var JourneyBuilderDateTime = Class.create();\r\nJourneyBuilderDateTime.prototype = Object.extendsObject(x_cadso_journey.JourneyBuilderDateTimeMS, {\r\n\tinitialize: function() {\r\n\t\tx_cadso_journey.JourneyB...",
+      "full_script": "var JourneyBuilderDateTime = Class.create();\r\nJourneyBuilderDateTime.prototype = Object.extendsObject(x_cadso_journey.JourneyBuilderDateTimeMS, {\r\n\tinitialize: function() {\r\n\t\tx_cadso_journey.JourneyBuilderDateTimeMS.prototype.initialize.apply(this, arguments);\r\n\t},\r\n\r\n    type: 'JourneyBuilderDateTime'\r\n});"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_b45c888333ac6a507b18bc534d5c7b07",
+    "display_value": "sys_script_include_b45c888333ac6a507b18bc534d5c7b07"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "api_name": {
+    "value": "x_cadso_journey.JourneyBuilderDateTime",
+    "display_value": "x_cadso_journey.JourneyBuilderDateTime"
+  },
+  "sys_created_on": {
+    "value": "2025-04-01 01:57:01",
+    "display_value": "2025-03-31 06:57:01 PM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "JourneyBuilderDateTime",
+    "display_value": "JourneyBuilderDateTime"
+  },
+  "sys_name": {
+    "value": "JourneyBuilderDateTime",
+    "display_value": "JourneyBuilderDateTime"
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

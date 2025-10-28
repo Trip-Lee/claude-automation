@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "c5568466c3f0e250d4ddf1db05013148",
+    "extracted_at": "2025-08-22T18:46:21.304Z",
+    "display_value": "GetRelatedListsAPIMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-11 22:31:41",
+    "display_value": "2025-04-11 03:31:41 PM"
+  },
+  "name": {
+    "value": "GetRelatedListsAPIMS",
+    "display_value": "GetRelatedListsAPIMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-15 14:16:30",
+    "display_value": "2025-04-15 07:16:30 AM"
+  }
+}

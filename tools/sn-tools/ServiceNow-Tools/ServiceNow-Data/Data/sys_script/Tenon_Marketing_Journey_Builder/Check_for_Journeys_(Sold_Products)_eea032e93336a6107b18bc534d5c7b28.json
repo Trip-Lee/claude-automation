@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "eea032e93336a6107b18bc534d5c7b28",
+    "extracted_at": "2025-09-19T21:48:36.938Z",
+    "display_value": "Check for Journeys (Sold Products)",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_update": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-17 18:26:59",
+    "display_value": "2025-07-17 11:26:59 AM"
+  },
+  "when": {
+    "value": "async_always",
+    "display_value": "async"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "ben.ivers",
+    "display_value": "ben.ivers"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2025-07-17 18:26:59",
+    "display_value": "2025-07-17 11:26:59 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Check for Journeys (Sold Products)",
+    "display_value": "Check for Journeys (Sold Products)"
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "ben.ivers",
+    "display_value": "ben.ivers"
+  },
+  "order": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "sn_install_base_sold_product",
+    "display_value": "sn_install_base_sold_product"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/) {\r\n\r\nconst recordGR = current;\r\n\t\tconst refField = 'contact'; // Set the field name of the record to be processed via Journey builder.\r\n        let versionGR = new GlideRecord('x_cadso_journey_version');\r\n        versionGR.addEncodedQuery('published=true^active=true^type=criteria^trigger.table=' + recordGR.getTableName());\r\n        versionGR.query();\r\n        while (versionGR.next()) {\r\n            if (versionGR.trigger.nil()) {\r\n                continue;\r\n            }\r\n            let triggerGR = versionGR.trigger.getRefRecord();\r\n            if (!triggerGR.isValidRecord) continue;\r\n            let condition = triggerGR.getValue('conditions');\r\n            let glideFilter = new GlideFilter(condition);\r\n            glideFilter.setCaseSensitive(false)\r\n            if (!condition || glideFilter.match(recordGR)) {\r\n                let table = recordGR.getTableName();\r\n                let sysID = recordGR.getUniqueValue();\r\n                if (table === 'x_cadso_automate_email_event') {\r\n                    let EMAIL = new x_cadso_automate.EmailMS();\r\n                    let contactGQ = EMAIL.getContactSourceRecord({\r\n                        sysID: recordGR.getValue('contact_detail')\r\n                    });\r\n\r\n                    table = contactGQ.sys_class_name;\r\n                    sysID = contactGQ.sys_id;\r\n                } else if (refField && recordGR.getValue(refField)) {\r\n\t\t\t\t\tconst refRecordGr = recordGR[refField].getRefRecord();\r\n\t\t\t\t\tif (refRecordGr.isValidRecord()) {\r\n\t\t\t\t\t\ttable = refRecordGr.getTableName();\r\n\t\t\t\t\t\tsysID = refRecordGr.getUniqueValue();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\r\n                let instance = {\r\n                    journey: versionGR.getValue('journey'),\r\n                    table: table,\r\n                    document_id: sysID\r\n                }\r\n\r\n                let instanceGQ = new global.GlideQuery('x_cadso_journey_instance')\r\n                    .getBy(instance)\r\n                    .orElse(null)\r\n\r\n                if (instanceGQ) {\r\n                    continue;\r\n                }\r\n\r\n                let instanceGR = new GlideRecord('x_cadso_journey_instance');\r\n                instanceGR.setValue('journey', versionGR.getValue('journey'));\r\n                instanceGR.setValue('version', versionGR.getUniqueValue());\r\n                instanceGR.setValue('table', table);\r\n                instanceGR.setValue('document_id', sysID);\r\n                let instanceID = instanceGR.insert();\r\n                instanceGR.initialize();\r\n                if (instanceGR.get(instanceID)) {\r\n                    instanceGR.setValue('status', 'ready');\r\n                    instanceGR.update();\r\n                }\r\n            }\r\n        }\r\n\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/) {\r\n\r\nconst recordGR = current;\r\n\t\tconst refField = 'contact'; // Set the field name of the record to be processed via Journey builder.\r\n        let versionGR = new GlideRecord('x_cadso_journey_version');\r\n        versionGR.addEncodedQuery('published=true^active=true^type=criteria^trigger.table=' + recordGR.getTableName());\r\n        versionGR.query();\r\n        while (versionGR.next()) {\r\n            if (versionGR.trigger.nil()) {\r\n                continue;\r\n            }\r\n            let triggerGR = versionGR.trigger.getRefRecord();\r\n            if (!triggerGR.isValidRecord) continue;\r\n            let condition = triggerGR.getValue('conditions');\r\n            let glideFilter = new GlideFilter(condition);\r\n            glideFilter.setCaseSensitive(false)\r\n            if (!condition || glideFilter.match(recordGR)) {\r\n                let table = recordGR.getTableName();\r\n                let sysID = recordGR.getUniqueValue();\r\n                if (table === 'x_cadso_automate_email_event') {\r\n                    let EMAIL = new x_cadso_automate.EmailMS();\r\n                    let contactGQ = EMAIL.getContactSourceRecord({\r\n                        sysID: recordGR.getValue('contact_detail')\r\n                    });\r\n\r\n                    table = contactGQ.sys_class_name;\r\n                    sysID = contactGQ.sys_id;\r\n                } else if (refField && recordGR.getValue(refField)) {\r\n\t\t\t\t\tconst refRecordGr = recordGR[refField].getRefRecord();\r\n\t\t\t\t\tif (refRecordGr.isValidRecord()) {\r\n\t\t\t\t\t\ttable = refRecordGr.getTableName();\r\n\t\t\t\t\t\tsysID = refRecordGr.getUniqueValue();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\r\n                let instance = {\r\n                    journey: versionGR.getValue('journey'),\r\n                    table: table,\r\n                    document_id: sysID\r\n                }\r\n\r\n                let instanceGQ = new global.GlideQuery('x_cadso_journey_instance')\r\n                    .getBy(instance)\r\n                    .orElse(null)\r\n\r\n                if (instanceGQ) {\r\n                    continue;\r\n                }\r\n\r\n                let instanceGR = new GlideRecord('x_cadso_journey_instance');\r\n                instanceGR.setValue('journey', versionGR.getValue('journey'));\r\n                instanceGR.setValue('version', versionGR.getUniqueValue());\r\n                instanceGR.setValue('table', table);\r\n                instanceGR.setValue('document_id', sysID);\r\n                let instanceID = instanceGR.insert();\r\n                instanceGR.initialize();\r\n                if (instanceGR.get(instanceID)) {\r\n                    instanceGR.setValue('status', 'ready');\r\n                    instanceGR.update();\r\n                }\r\n            }\r\n        }\r\n\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 64,
+      "char_count": 2776,
+      "preview": "(function executeRule(current, previous /*null when async*/) {\r\n\r\nconst recordGR = current;\r\n\t\tconst refField = 'contact'; // Set the field name of the record to be processed via Journey builder.\r\n   ...",
+      "full_script": "(function executeRule(current, previous /*null when async*/) {\r\n\r\nconst recordGR = current;\r\n\t\tconst refField = 'contact'; // Set the field name of the record to be processed via Journey builder.\r\n        let versionGR = new GlideRecord('x_cadso_journey_version');\r\n        versionGR.addEncodedQuery('published=true^active=true^type=criteria^trigger.table=' + recordGR.getTableName());\r\n        versionGR.query();\r\n        while (versionGR.next()) {\r\n            if (versionGR.trigger.nil()) {\r\n                continue;\r\n            }\r\n            let triggerGR = versionGR.trigger.getRefRecord();\r\n            if (!triggerGR.isValidRecord) continue;\r\n            let condition = triggerGR.getValue('conditions');\r\n            let glideFilter = new GlideFilter(condition);\r\n            glideFilter.setCaseSensitive(false)\r\n            if (!condition || glideFilter.match(recordGR)) {\r\n                let table = recordGR.getTableName();\r\n                let sysID = recordGR.getUniqueValue();\r\n                if (table === 'x_cadso_automate_email_event') {\r\n                    let EMAIL = new x_cadso_automate.EmailMS();\r\n                    let contactGQ = EMAIL.getContactSourceRecord({\r\n                        sysID: recordGR.getValue('contact_detail')\r\n                    });\r\n\r\n                    table = contactGQ.sys_class_name;\r\n                    sysID = contactGQ.sys_id;\r\n                } else if (refField && recordGR.getValue(refField)) {\r\n\t\t\t\t\tconst refRecordGr = recordGR[refField].getRefRecord();\r\n\t\t\t\t\tif (refRecordGr.isValidRecord()) {\r\n\t\t\t\t\t\ttable = refRecordGr.getTableName();\r\n\t\t\t\t\t\tsysID = refRecordGr.getUniqueValue();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\r\n                let instance = {\r\n                    journey: versionGR.getValue('journey'),\r\n                    table: table,\r\n                    document_id: sysID\r\n                }\r\n\r\n                let instanceGQ = new global.GlideQuery('x_cadso_journey_instance')\r\n                    .getBy(instance)\r\n                    .orElse(null)\r\n\r\n                if (instanceGQ) {\r\n                    continue;\r\n                }\r\n\r\n                let instanceGR = new GlideRecord('x_cadso_journey_instance');\r\n                instanceGR.setValue('journey', versionGR.getValue('journey'));\r\n                instanceGR.setValue('version', versionGR.getUniqueValue());\r\n                instanceGR.setValue('table', table);\r\n                instanceGR.setValue('document_id', sysID);\r\n                let instanceID = instanceGR.insert();\r\n                instanceGR.initialize();\r\n                if (instanceGR.get(instanceID)) {\r\n                    instanceGR.setValue('status', 'ready');\r\n                    instanceGR.update();\r\n                }\r\n            }\r\n        }\r\n\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_eea032e93336a6107b18bc534d5c7b28",
+    "display_value": "sys_script_eea032e93336a6107b18bc534d5c7b28"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Check for Journeys (Sold Products)",
+    "display_value": "Check for Journeys (Sold Products)"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

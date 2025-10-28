@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "2c02f537c3f1ee50d4ddf1db0501316d",
+    "extracted_at": "2025-08-22T18:42:38.065Z",
+    "display_value": "Enable Publishing Available",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-04 20:35:12",
+    "display_value": "2025-06-04 01:35:12 PM"
+  },
+  "name": {
+    "value": "Enable Publishing Available",
+    "display_value": "Enable Publishing Available"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-04 20:36:39",
+    "display_value": "2025-06-04 01:36:39 PM"
+  }
+}

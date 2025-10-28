@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "f5b98da4331a1e107b18bc534d5c7b54",
+    "extracted_at": "2025-08-22T18:46:21.444Z",
+    "display_value": "getSmsImage",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-12-02 15:39:08",
+    "display_value": "2024-12-02 07:39:08 AM"
+  },
+  "name": {
+    "value": "getSmsImage",
+    "display_value": "getSmsImage"
+  },
+  "sys_updated_on": {
+    "value": "2024-12-02 19:35:33",
+    "display_value": "2024-12-02 11:35:33 AM"
+  }
+}

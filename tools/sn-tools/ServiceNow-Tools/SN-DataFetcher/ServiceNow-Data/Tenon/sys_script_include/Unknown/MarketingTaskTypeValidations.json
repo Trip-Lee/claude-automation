@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "d591566cc3bb8e5085b196c4e40131a8",
+    "extracted_at": "2025-08-22T18:42:35.351Z",
+    "display_value": "MarketingTaskTypeValidations",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-31 14:30:37",
+    "display_value": "2024-07-31 07:30:37 AM"
+  },
+  "name": {
+    "value": "MarketingTaskTypeValidations",
+    "display_value": "MarketingTaskTypeValidations"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-11 20:58:35",
+    "display_value": "2025-03-11 01:58:35 PM"
+  }
+}

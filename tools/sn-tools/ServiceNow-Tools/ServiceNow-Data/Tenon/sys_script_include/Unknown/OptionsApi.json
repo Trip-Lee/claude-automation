@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "216037f33389a2107b18bc534d5c7b5f",
+    "extracted_at": "2025-08-22T18:46:19.543Z",
+    "display_value": "OptionsApi",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-28 23:00:18",
+    "display_value": "2025-04-28 04:00:18 PM"
+  },
+  "name": {
+    "value": "OptionsApi",
+    "display_value": "OptionsApi"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-02 20:09:27",
+    "display_value": "2025-07-02 01:09:27 PM"
+  }
+}

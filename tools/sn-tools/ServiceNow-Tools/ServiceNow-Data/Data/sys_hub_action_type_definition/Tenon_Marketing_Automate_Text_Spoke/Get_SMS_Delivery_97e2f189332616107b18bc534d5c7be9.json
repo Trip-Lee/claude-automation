@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "97e2f189332616107b18bc534d5c7be9",
+    "extracted_at": "2025-09-19T21:48:49.194Z",
+    "display_value": "Get SMS Delivery",
+    "application": "Tenon_Marketing_Automate_Text_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Text Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c710ee73c3541e5085b196c4e4013170",
+      "value": "c710ee73c3541e5085b196c4e4013170"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.page_size}}\",\"label\":\"action➛Page Size\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.start_date}}\",\"label\":\"action➛End Date\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Date/Time\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"glide_date_time\",\"uiUniqueId\":\"3b2b5ddf-cdfc-476f-939d-5365749d42c5\"}},{\"name\":\"{{action.next_page}}\",\"label\":\"action➛Next Page\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batch_id}}\",\"label\":\"action➛Batch ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Message Batch\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.service_plan_id}}\",\"label\":\"action➛Service Plan ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.end_date}}\",\"label\":\"action➛End Date\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[eb453a8c-a68d-4b5e-b1b5-dcbe87c3419f].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[f4e2e5fb-e12e-42f4-9f69-d3767432f585].result}}\",\"label\":\"step➛Script step➛Result\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"child_name\":\"result_child0\",\"uiUniqueId\":\"887b03da-74e5-4a58-a2f1-28f05b9161eb\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDe63d794562661610ca91a6e46d1c0e4e\",\"child_label\":\"Result_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_uiUniqueId\":\"1e546ccf-9872-4a0d-ab9f-29801db55528\"}},{\"name\":\"{{step[eb453a8c-a68d-4b5e-b1b5-dcbe87c3419f].sn_auth_token}}\",\"label\":\"step➛REST step➛Credential Value\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"password2\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Password (2 Way Encrypted)\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"password2\",\"isLocal\":\"true\",\"uiUniqueId\":\"8e028ded-743c-400a-ae2a-bac1ba75a093\"}}]",
+    "display_value": "[{\"name\":\"{{action.page_size}}\",\"label\":\"action➛Page Size\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.start_date}}\",\"label\":\"action➛End Date\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Date/Time\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"glide_date_time\",\"uiUniqueId\":\"3b2b5ddf-cdfc-476f-939d-5365749d42c5\"}},{\"name\":\"{{action.next_page}}\",\"label\":\"action➛Next Page\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batch_id}}\",\"label\":\"action➛Batch ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Message Batch\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.service_plan_id}}\",\"label\":\"action➛Service Plan ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.end_date}}\",\"label\":\"action➛End Date\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[eb453a8c-a68d-4b5e-b1b5-dcbe87c3419f].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[f4e2e5fb-e12e-42f4-9f69-d3767432f585].result}}\",\"label\":\"step➛Script step➛Result\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"child_name\":\"result_child0\",\"uiUniqueId\":\"887b03da-74e5-4a58-a2f1-28f05b9161eb\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDe63d794562661610ca91a6e46d1c0e4e\",\"child_label\":\"Result_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_uiUniqueId\":\"1e546ccf-9872-4a0d-ab9f-29801db55528\"}},{\"name\":\"{{step[eb453a8c-a68d-4b5e-b1b5-dcbe87c3419f].sn_auth_token}}\",\"label\":\"step➛REST step➛Credential Value\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"password2\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Password (2 Way Encrypted)\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"password2\",\"isLocal\":\"true\",\"uiUniqueId\":\"8e028ded-743c-400a-ae2a-bac1ba75a093\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_updated_on": {
+    "value": "2025-03-28 21:47:31",
+    "display_value": "2025-03-28 02:47:31 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "c5763bb5c36cae10d4ddf1db05013104",
+    "display_value": "c5763bb5c36cae10d4ddf1db05013104"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "get_sms_delivery",
+    "display_value": "get_sms_delivery"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-12-16 18:11:51",
+    "display_value": "2024-12-16 10:11:51 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch4b-01-15-2025_02-11-2025_1733.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch4b-01-15-2025_02-11-2025_1733.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Get SMS Delivery",
+    "display_value": "Get SMS Delivery"
+  },
+  "sys_scope": {
+    "value": "c710ee73c3541e5085b196c4e4013170",
+    "display_value": "Tenon Marketing Automate Text Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "c3f10e89336616107b18bc534d5c7baf",
+    "display_value": "c3f10e89336616107b18bc534d5c7baf"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "69",
+    "display_value": "69"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "c710ee73c3541e5085b196c4e4013170",
+    "display_value": "Tenon Marketing Automate Text Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_97e2f189332616107b18bc534d5c7be9",
+    "display_value": "sys_hub_action_type_definition_97e2f189332616107b18bc534d5c7be9"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Get SMS Delivery",
+    "display_value": "Get SMS Delivery"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

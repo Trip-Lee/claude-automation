@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "8b574fbe478e7d1098519fd8036d43e7",
+    "extracted_at": "2025-08-22T18:42:36.051Z",
+    "display_value": "Format Dates",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-10-26 21:57:04",
+    "display_value": "2023-10-26 02:57:04 PM"
+  },
+  "name": {
+    "value": "Format Dates",
+    "display_value": "Format Dates"
+  },
+  "sys_updated_on": {
+    "value": "2024-02-14 21:59:36",
+    "display_value": "2024-02-14 01:59:36 PM"
+  }
+}

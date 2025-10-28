@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "4562f38747cebd1098519fd8036d4359",
+    "extracted_at": "2025-09-19T21:49:02.176Z",
+    "display_value": "4562f38747cebd1098519fd8036d4359",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "f9d01dd2c31332002841b63b12d3aea1",
+    "display_value": "Update Record"
+  },
+  "ui_id": {
+    "value": "38811f6d-bdff-4ae8-be90-17e02f66c817",
+    "display_value": "38811f6d-bdff-4ae8-be90-17e02f66c817"
+  },
+  "sys_mod_count": {
+    "value": "42",
+    "display_value": "42"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-02 21:09:02",
+    "display_value": "2025-07-02 02:09:02 PM"
+  },
+  "compiled_snapshot": {
+    "value": "f9d01dd2c31332002841b63b12d3aea1",
+    "display_value": "f9d01dd2c31332002841b63b12d3aea1"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "",
+    "display_value": ""
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "system",
+    "display_value": "system"
+  },
+  "sys_created_on": {
+    "value": "2023-10-27 19:42:54",
+    "display_value": "2023-10-27 12:42:54 PM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "ccb14a46-8e54-4ae0-bf52-4af5dddd5ba7",
+    "display_value": "ccb14a46-8e54-4ae0-bf52-4af5dddd5ba7"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "2b4727cb478ebd1098519fd8036d43c0",
+    "display_value": "Marketing Task - Lookup and Start Dependency Flow"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "order": {
+    "value": "9",
+    "display_value": "9"
+  }
+}

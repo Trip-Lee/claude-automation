@@ -1,0 +1,95 @@
+# Tool Manifest Template
+# Copy this file to your tool directory and fill in accurate information
+
+name: your-tool-name
+version: 1.0.0
+description: Brief, accurate description of what this tool does
+type: node_script  # Options: node_script, python_script, binary, shell_script
+
+# List all capabilities this tool provides
+# Be specific and accurate - agents use this to decide when to use the tool
+capabilities:
+  - "Capability 1 - describe what it does"
+  - "Capability 2 - describe what it does"
+  - "Capability 3 - describe what it does"
+
+# How to execute this tool
+entry_point: path/to/main/script.js  # Relative to tool directory
+working_directory: /tools/your-tool-name  # In container
+
+# Detailed usage instructions for agents
+usage: |
+  Provide clear instructions on how to use this tool.
+
+  Basic usage:
+  node path/to/script.js [options]
+
+  Or with npm:
+  cd /tools/your-tool-name && npm run command
+
+# Provide concrete examples with expected outcomes
+examples:
+  - command: "node script.js --help"
+    description: "Show help information"
+    use_case: "Learn about available commands and options"
+
+  - command: "node script.js action --param value"
+    description: "Perform specific action"
+    use_case: "When you need to accomplish X"
+
+# List all dependencies and requirements
+requires:
+  - "Node.js 18+"
+  - "npm packages (installed via npm install)"
+  - "API access to XYZ"
+
+# Define all environment variables the tool needs
+environment:
+  - name: TOOLNAME_API_URL
+    description: "API endpoint URL"
+    required: true
+    example: "https://api.example.com"
+
+  - name: TOOLNAME_API_KEY
+    description: "API authentication key"
+    required: true
+    example: "your_api_key_here"
+
+  - name: TOOLNAME_TIMEOUT
+    description: "Request timeout in seconds"
+    required: false
+    example: "30"
+
+# Security and execution constraints
+constraints:
+  read_only: true          # Tool code is read-only (always true)
+  executable: true         # Tool can be executed (always true for tools)
+  network: false           # Does this tool need network access?
+  requires_config: false   # Does it need a config file?
+
+# Additional metadata
+metadata:
+  author: "Your Name"
+  version_date: "2025-10-27"
+  license: "MIT"
+  repository: "https://github.com/user/repo"
+  documentation: "README.md"
+  installation_required: true
+  install_command: "npm install"
+
+# Guidance for agents on when to use this tool
+agent_notes: |
+  This tool is best used when:
+  - Situation 1
+  - Situation 2
+  - Situation 3
+
+  Before first use:
+  - Setup step 1
+  - Setup step 2
+
+  Common workflows:
+  - Workflow description
+
+  Error handling:
+  - How to handle common errors

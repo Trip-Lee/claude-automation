@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "b3ccc81f336862107b18bc534d5c7b12",
+    "extracted_at": "2025-08-22T18:42:37.305Z",
+    "display_value": "Get Message Send Metrics",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-01 20:37:36",
+    "display_value": "2025-04-01 01:37:36 PM"
+  },
+  "name": {
+    "value": "Get Message Send Metrics",
+    "display_value": "Get Message Send Metrics"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-22 16:50:54",
+    "display_value": "2025-07-22 09:50:54 AM"
+  }
+}

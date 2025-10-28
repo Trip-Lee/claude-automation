@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "0150c547c3c34a1085b196c4e401310a",
+    "extracted_at": "2025-08-22T18:46:21.604Z",
+    "display_value": "Domain Table Update",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-01 19:59:56",
+    "display_value": "2024-07-01 12:59:56 PM"
+  },
+  "name": {
+    "value": "Domain Table Update",
+    "display_value": "Domain Table Update"
+  },
+  "sys_updated_on": {
+    "value": "2024-11-04 21:01:14",
+    "display_value": "2024-11-04 01:01:14 PM"
+  }
+}

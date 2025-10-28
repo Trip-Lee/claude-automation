@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "43f40005c37b029085b196c4e401317e",
+    "extracted_at": "2025-08-22T18:42:35.859Z",
+    "display_value": "Sending Strategy - Save",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-08-01 17:18:51",
+    "display_value": "2024-08-01 10:18:51 AM"
+  },
+  "name": {
+    "value": "Sending Strategy - Save",
+    "display_value": "Sending Strategy - Save"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-14 15:57:05",
+    "display_value": "2025-08-14 08:57:05 AM"
+  }
+}

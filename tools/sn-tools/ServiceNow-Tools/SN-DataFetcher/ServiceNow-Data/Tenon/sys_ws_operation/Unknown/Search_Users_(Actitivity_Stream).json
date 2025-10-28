@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "1a8fc0ae474d3d50b0361ae8036d4372",
+    "extracted_at": "2025-08-22T18:42:35.700Z",
+    "display_value": "Search Users (Actitivity Stream)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-09-05 20:56:06",
+    "display_value": "2023-09-05 01:56:06 PM"
+  },
+  "name": {
+    "value": "Search Users (Actitivity Stream)",
+    "display_value": "Search Users (Actitivity Stream)"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-16 20:57:43",
+    "display_value": "2025-05-16 01:57:43 PM"
+  }
+}

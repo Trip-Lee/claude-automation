@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "084591f5c36f025085b196c4e4013103",
+    "extracted_at": "2025-09-19T21:48:49.480Z",
+    "display_value": "Parse Validation Results File",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.json_attachment}}\",\"label\":\"action➛JSON Attachment\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Attachment\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[7dba5c69-8921-4f5b-8d00-29563e7a2761].results}}\",\"label\":\"step➛Script step➛Results\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD934711b9636f0250ba7dbd7026df1ad1\",\"child_label\":\"Results_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_name\":\"results_child0\",\"child_uiUniqueId\":\"941acb23-5b2c-4ec5-80e0-a4545f6180ac\",\"uiUniqueId\":\"41613bc7-891e-44fa-9de5-b971ff105d2f\"}}]",
+    "display_value": "[{\"name\":\"{{action.json_attachment}}\",\"label\":\"action➛JSON Attachment\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Attachment\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[7dba5c69-8921-4f5b-8d00-29563e7a2761].results}}\",\"label\":\"step➛Script step➛Results\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD934711b9636f0250ba7dbd7026df1ad1\",\"child_label\":\"Results_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_name\":\"results_child0\",\"child_uiUniqueId\":\"941acb23-5b2c-4ec5-80e0-a4545f6180ac\",\"uiUniqueId\":\"41613bc7-891e-44fa-9de5-b971ff105d2f\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_updated_on": {
+    "value": "2024-08-01 20:37:32",
+    "display_value": "2024-08-01 01:37:32 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "13c75e4ac3e7825085b196c4e4013125",
+    "display_value": "13c75e4ac3e7825085b196c4e4013125"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "parse_json_file",
+    "display_value": "parse_json_file"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-07-22 20:49:17",
+    "display_value": "2024-07-22 01:49:17 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Parse Validation Results File",
+    "display_value": "Parse Validation Results File"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "11b799b9c36f025085b196c4e401315d",
+    "display_value": "11b799b9c36f025085b196c4e401315d"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "35",
+    "display_value": "35"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_084591f5c36f025085b196c4e4013103",
+    "display_value": "sys_hub_action_type_definition_084591f5c36f025085b196c4e4013103"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Parse Validation Results File",
+    "display_value": "Parse Validation Results File"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "a9dd8626c3ee4a1085b196c4e40131d2",
+    "display_value": "Validations"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

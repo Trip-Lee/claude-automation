@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "3a6a759bc3cb8a1085b196c4e4013121",
+    "extracted_at": "2025-09-19T21:50:03.902Z",
+    "display_value": "Get Domain Stats (Daily)",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"9d73ef73-f8e5-410c-a9da-6d202de936e7.item.sys_id\",\"label\":\"2 - For Each➛Domain Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"sys_id\",\"usedInstances\":{\"de2c8728-3899-4211-983f-fb9cf939a059\":[\"domain\"]}},{\"name\":\"805b96b9-40e1-4f6e-aa62-17ecc538c092.stats\",\"label\":\"3 - Get Domain Stats➛stats\",\"reference_display\":\"stats\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"usedInstances\":{\"150c48e0-4ec3-41a1-9068-3fce2af4e9d8\":[\"items\"]},\"attributes\":{\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FD045f5d57a54b8a10be137dcad987832a\",\"child_label\":\"stats_child0\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.string\",\"child_type\":\"string\",\"child_name\":\"stats_child0\",\"child_uiUniqueId\":\"015956f9-4b22-4344-80db-63edd2126a51\",\"uiUniqueId\":\"fdf5fd1e-1e6d-4638-b1ed-65f9d87b56a5\"}},{\"name\":\"9d73ef73-f8e5-410c-a9da-6d202de936e7.item.domain_name\",\"label\":\"2 - For Each➛Domain Record➛Domain Name\",\"reference\":\"\",\"reference_display\":\"Domain Name\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"usedInstances\":{\"5e2428ce-27a9-4a2d-b058-cd22b76af584\":[\"domain\"],\"de2c8728-3899-4211-983f-fb9cf939a059\":[\"domain\"],\"805b96b9-40e1-4f6e-aa62-17ecc538c092\":[\"domain\"]}},{\"name\":\"f2d1e2ab-4ba9-480f-8fc2-7423d3c72a63.Records\",\"label\":\"1 - Look Up Records➛Domain Records\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"9d73ef73-f8e5-410c-a9da-6d202de936e7\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"9d73ef73-f8e5-410c-a9da-6d202de936e7.item.sys_id\",\"label\":\"2 - For Each➛Domain Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"sys_id\",\"usedInstances\":{\"de2c8728-3899-4211-983f-fb9cf939a059\":[\"domain\"]}},{\"name\":\"805b96b9-40e1-4f6e-aa62-17ecc538c092.stats\",\"label\":\"3 - Get Domain Stats➛stats\",\"reference_display\":\"stats\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"usedInstances\":{\"150c48e0-4ec3-41a1-9068-3fce2af4e9d8\":[\"items\"]},\"attributes\":{\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FD045f5d57a54b8a10be137dcad987832a\",\"child_label\":\"stats_child0\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.string\",\"child_type\":\"string\",\"child_name\":\"stats_child0\",\"child_uiUniqueId\":\"015956f9-4b22-4344-80db-63edd2126a51\",\"uiUniqueId\":\"fdf5fd1e-1e6d-4638-b1ed-65f9d87b56a5\"}},{\"name\":\"9d73ef73-f8e5-410c-a9da-6d202de936e7.item.domain_name\",\"label\":\"2 - For Each➛Domain Record➛Domain Name\",\"reference\":\"\",\"reference_display\":\"Domain Name\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"usedInstances\":{\"5e2428ce-27a9-4a2d-b058-cd22b76af584\":[\"domain\"],\"de2c8728-3899-4211-983f-fb9cf939a059\":[\"domain\"],\"805b96b9-40e1-4f6e-aa62-17ecc538c092\":[\"domain\"]}},{\"name\":\"f2d1e2ab-4ba9-480f-8fc2-7423d3c72a63.Records\",\"label\":\"1 - Look Up Records➛Domain Records\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"9d73ef73-f8e5-410c-a9da-6d202de936e7\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2024-07-02 18:51:09",
+    "display_value": "2024-07-02 11:51:09 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "get_domain_stats_daily",
+    "display_value": "get_domain_stats_daily"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2024-07-02 18:51:09",
+    "display_value": "2024-07-02 11:51:09 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "parent_flow": {
+    "value": "db6f1d17c34b8a1085b196c4e4013102",
+    "display_value": ""
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Get Domain Stats (Daily)",
+    "display_value": "Get Domain Stats (Daily)"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

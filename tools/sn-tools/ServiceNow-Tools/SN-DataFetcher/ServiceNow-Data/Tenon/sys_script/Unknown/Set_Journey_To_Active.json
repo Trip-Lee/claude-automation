@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "eb4ee11433a516507b18bc534d5c7b32",
+    "extracted_at": "2025-08-22T18:42:41.615Z",
+    "display_value": "Set Journey To Active",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-25 16:54:34",
+    "display_value": "2024-10-25 09:54:34 AM"
+  },
+  "name": {
+    "value": "Set Journey To Active",
+    "display_value": "Set Journey To Active"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-21 18:15:50",
+    "display_value": "2025-03-21 11:15:50 AM"
+  }
+}

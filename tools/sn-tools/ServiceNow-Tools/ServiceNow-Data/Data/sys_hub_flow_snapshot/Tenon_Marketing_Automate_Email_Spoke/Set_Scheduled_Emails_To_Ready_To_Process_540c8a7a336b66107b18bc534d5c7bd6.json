@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "540c8a7a336b66107b18bc534d5c7bd6",
+    "extracted_at": "2025-09-19T21:49:12.548Z",
+    "display_value": "Set Scheduled Emails To Ready To Process",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"265bcf88-f116-4c31-b53d-532dcb9966af.item\",\"label\":\"2 - For Each➛Email Send Record\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"6fb638eb-7e3e-4ad0-b2b8-a201e359344f\":[\"record\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"4712ccc3-7bd3-42fd-bbf0-683fe2289afa.Records\",\"label\":\"1 - Look Up Records➛x_cadso_automate_email_send Records\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"265bcf88-f116-4c31-b53d-532dcb9966af\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"265bcf88-f116-4c31-b53d-532dcb9966af.item\",\"label\":\"2 - For Each➛Email Send Record\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"6fb638eb-7e3e-4ad0-b2b8-a201e359344f\":[\"record\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"4712ccc3-7bd3-42fd-bbf0-683fe2289afa.Records\",\"label\":\"1 - Look Up Records➛x_cadso_automate_email_send Records\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"265bcf88-f116-4c31-b53d-532dcb9966af\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-27 19:44:44",
+    "display_value": "2025-08-27 12:44:44 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "set_scheduled_emails_to_ready_to_process",
+    "display_value": "set_scheduled_emails_to_ready_to_process"
+  },
+  "sys_updated_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "sys_created_on": {
+    "value": "2025-08-27 19:44:44",
+    "display_value": "2025-08-27 12:44:44 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "parent_flow": {
+    "value": "e7f6592dc3c59210d4ddf1db0501317d",
+    "display_value": "Set Scheduled Emails To Ready To Process"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Set Scheduled Emails To Ready To Process",
+    "display_value": "Set Scheduled Emails To Ready To Process"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

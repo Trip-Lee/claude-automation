@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "3065be1e87705694369f33373cbb3526",
+    "extracted_at": "2025-09-19T21:48:49.306Z",
+    "display_value": "Generate Unsubscribe Output Object",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.items}}\",\"label\":\"action➛Items\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[f8e61d3c-7811-4b7f-ac5b-c16255b4caef].schema}}\",\"label\":\"step➛Script step➛Schema\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"json\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"JSON\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"json\",\"uiUniqueId\":\"1ef95df5-99cf-4032-8dbf-3027803ecabb\"}}]",
+    "display_value": "[{\"name\":\"{{action.items}}\",\"label\":\"action➛Items\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[f8e61d3c-7811-4b7f-ac5b-c16255b4caef].schema}}\",\"label\":\"step➛Script step➛Schema\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"json\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"JSON\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"json\",\"uiUniqueId\":\"1ef95df5-99cf-4032-8dbf-3027803ecabb\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_updated_on": {
+    "value": "2024-09-24 21:10:58",
+    "display_value": "2024-09-24 02:10:58 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "f9ffb25e87b05694369f33373cbb35e6",
+    "display_value": "f9ffb25e87b05694369f33373cbb35e6"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "generate_unsubscribe_output_object",
+    "display_value": "generate_unsubscribe_output_object"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-09-24 20:24:45",
+    "display_value": "2024-09-24 01:24:45 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Generate Unsubscribe Output Object",
+    "display_value": "Generate Unsubscribe Output Object"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "00673e1287b05694369f33373cbb3527",
+    "display_value": "00673e1287b05694369f33373cbb3527"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "17",
+    "display_value": "17"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_3065be1e87705694369f33373cbb3526",
+    "display_value": "sys_hub_action_type_definition_3065be1e87705694369f33373cbb3526"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Generate Unsubscribe Output Object",
+    "display_value": "Generate Unsubscribe Output Object"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

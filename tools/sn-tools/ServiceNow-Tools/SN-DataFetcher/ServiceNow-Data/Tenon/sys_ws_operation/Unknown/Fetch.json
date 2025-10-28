@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "136d0ff387a4d654369f33373cbb351b",
+    "extracted_at": "2025-08-22T18:42:35.648Z",
+    "display_value": "Fetch",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-09-17 03:49:22",
+    "display_value": "2024-09-16 08:49:22 PM"
+  },
+  "name": {
+    "value": "Fetch",
+    "display_value": "Fetch"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-28 04:11:27",
+    "display_value": "2025-03-27 09:11:27 PM"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "9aa043ec3368ae107b18bc534d5c7bb1",
+    "extracted_at": "2025-09-19T21:49:28.057Z",
+    "display_value": "Opt-Out/In",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"subflow.version_step_instance.instance.document_id\",\"label\":\"Input➛Instance Step➛Instance➛Document ID\",\"reference\":\"\",\"reference_display\":\"Document ID\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"document_id\",\"usedInstances\":{\"83088b76-f737-4dc8-b6c9-3ab3fb4be18d\":[\"document_id\"]}},{\"name\":\"83088b76-f737-4dc8-b6c9-3ab3fb4be18d.contact_detail\",\"label\":\"3 - Get Contact Detail➛Contact Detail\",\"reference\":\"x_cadso_automate_contact_detail\",\"reference_display\":\"Contact Detail\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"5ce6b552-5de3-422a-91b4-4e76524fc370\":[\"contact_detail\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"d79ff1bc-6afa-422d-8073-7ed7b1297e81\"}},{\"name\":\"b47a3674-7846-468b-9a15-3c1e449e9519.__status__.message\",\"label\":\"7 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"8ab7d123-6201-4d8f-8771-be99a06956f3\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"subflow.version_step_instance\",\"label\":\"Input➛Instance Step\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"f60b8cf9-b1e8-4f8f-acc2-ea2a4a51c6d1\":[\"record\"],\"2d1d7817-add7-4f20-9122-10f9f1e6e7e4\":[\"record\"],\"53e578a3-85cf-4c31-9a4b-344b11b5cc75\":[\"record\"],\"5853657a-d28b-4eae-b5c3-0c47c89c1a45\":[\"record\"],\"bcf43176-f72e-46e1-af31-67969350aa21\":[\"record\"],\"f60a02d4-42ad-4ab9-816c-8fe0e6ab439b\":[\"record\"],\"e9957e1c-e18a-4316-82fe-8f2e2542d5e7\":[\"record\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"f2b891ff-3571-4d54-978b-ce4887729990\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.version_step_instance.duration\",\"label\":\"Input➛Instance Step➛Duration\",\"reference\":\"\",\"reference_display\":\"Duration\",\"type\":\"glide_duration\",\"base_type\":\"glide_duration\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"duration\",\"usedInstances\":{\"fe1c5df5-911c-476f-99d0-40bcdc9e2f56\":[\"timer_duration\"]}},{\"name\":\"subflow.version_step_instance.version_step.version.trigger.table\",\"label\":\"Input➛Instance Step➛Version Step➛Version➛Trigger➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"table\",\"usedInstances\":{\"3676a408-3a2d-4b6a-969e-1ab059cf7a94\":[\"table\"],\"83088b76-f737-4dc8-b6c9-3ab3fb4be18d\":[\"table\"]}},{\"name\":\"subflow.version_step_instance.version.trigger.table\",\"label\":\"Input➛Instance Step➛Version➛Trigger➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"table\",\"usedInstances\":{}},{\"name\":\"subflow.version_step_instance.version_step.version.trigger.document_id\",\"label\":\"Input➛Instance Step➛Version Step➛Version➛Trigger➛Document ID\",\"reference\":\"\",\"reference_display\":\"Document ID\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"document_id\",\"usedInstances\":{}},{\"name\":\"subflow.version_step_instance.instance.table\",\"label\":\"Input➛Instance Step➛Instance➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"table\",\"usedInstances\":{\"83088b76-f737-4dc8-b6c9-3ab3fb4be18d\":[\"table\"]}},{\"name\":\"subflow.version_step_instance.version_step.opt_email\",\"label\":\"Input➛Instance Step➛Version Step➛Opt Email\",\"reference\":\"\",\"reference_display\":\"Opt Email\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"opt_email\",\"usedInstances\":{}},{\"name\":\"subflow.version_step_instance.version_step.opt_status\",\"label\":\"Input➛Instance Step➛Version Step➛Opt Status\",\"reference\":\"\",\"reference_display\":\"Opt Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"opt_status\",\"choices\":[{\"label\":\"-- None --\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"-- None --\",\"selected\":false,\"missing\":false,\"value\":\"\"},{\"label\":\"In\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"In\",\"selected\":false,\"missing\":false,\"value\":\"in\",\"parameters\":{\"name\":\"x_cadso_journey_version_step\",\"dependent_values\":[\"\"]}},{\"label\":\"Out\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"Out\",\"selected\":false,\"missing\":false,\"value\":\"out\",\"parameters\":{\"name\":\"x_cadso_journey_version_step\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{}},{\"name\":\"subflow.version_step_instance.version_step.opt_option\",\"label\":\"Input➛Instance Step➛Version Step➛Opt Option\",\"reference\":\"\",\"reference_display\":\"Opt Option\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"opt_option\",\"choices\":[{\"label\":\"-- None --\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"-- None --\",\"selected\":false,\"missing\":false,\"value\":\"\"},{\"label\":\"Email\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"Email\",\"selected\":false,\"missing\":false,\"value\":\"email\",\"parameters\":{\"name\":\"x_cadso_journey_version_step\",\"dependent_values\":[\"\"]}},{\"label\":\"SMS\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"SMS\",\"selected\":false,\"missing\":false,\"value\":\"sms\",\"parameters\":{\"name\":\"x_cadso_journey_version_step\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"3e3d4d78-2cdd-4af5-80f8-3a79f7751988\":[\"condition\"]}},{\"name\":\"flow_variable.contact_values\",\"label\":\"Flow Variables➛Contact Values\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"9b8f2162-2fa4-4460-8cb3-b7fdb03c5995\":[\"values\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"288ea9fa-dcb8-4727-b613-10b7080e7628\"}},{\"name\":\"9b8f2162-2fa4-4460-8cb3-b7fdb03c5995.record.sys_id\",\"label\":\"5 - Create Record➛Contact Consent Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_contact_consent\",\"column_name\":\"sys_id\",\"usedInstances\":{\"2d1d7817-add7-4f20-9122-10f9f1e6e7e4\":[\"document_id\"]}},{\"name\":\"9b8f2162-2fa4-4460-8cb3-b7fdb03c5995.table_name\",\"label\":\"5 - Create Record➛Contact Consent Table\",\"reference\":\"x_cadso_automate_contact_consent\",\"reference_display\":\"Contact Consent\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"usedInstances\":{\"2d1d7817-add7-4f20-9122-10f9f1e6e7e4\":[\"table\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"subflow.version_step_instance.instance.document_id\",\"label\":\"Input➛Instance Step➛Instance➛Document ID\",\"reference\":\"\",\"reference_display\":\"Document ID\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"document_id\",\"usedInstances\":{\"83088b76-f737-4dc8-b6c9-3ab3fb4be18d\":[\"document_id\"]}},{\"name\":\"83088b76-f737-4dc8-b6c9-3ab3fb4be18d.contact_detail\",\"label\":\"3 - Get Contact Detail➛Contact Detail\",\"reference\":\"x_cadso_automate_contact_detail\",\"reference_display\":\"Contact Detail\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"5ce6b552-5de3-422a-91b4-4e76524fc370\":[\"contact_detail\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"d79ff1bc-6afa-422d-8073-7ed7b1297e81\"}},{\"name\":\"b47a3674-7846-468b-9a15-3c1e449e9519.__status__.message\",\"label\":\"7 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"8ab7d123-6201-4d8f-8771-be99a06956f3\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"subflow.version_step_instance\",\"label\":\"Input➛Instance Step\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"f60b8cf9-b1e8-4f8f-acc2-ea2a4a51c6d1\":[\"record\"],\"2d1d7817-add7-4f20-9122-10f9f1e6e7e4\":[\"record\"],\"53e578a3-85cf-4c31-9a4b-344b11b5cc75\":[\"record\"],\"5853657a-d28b-4eae-b5c3-0c47c89c1a45\":[\"record\"],\"bcf43176-f72e-46e1-af31-67969350aa21\":[\"record\"],\"f60a02d4-42ad-4ab9-816c-8fe0e6ab439b\":[\"record\"],\"e9957e1c-e18a-4316-82fe-8f2e2542d5e7\":[\"record\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"f2b891ff-3571-4d54-978b-ce4887729990\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.version_step_instance.duration\",\"label\":\"Input➛Instance Step➛Duration\",\"reference\":\"\",\"reference_display\":\"Duration\",\"type\":\"glide_duration\",\"base_type\":\"glide_duration\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"duration\",\"usedInstances\":{\"fe1c5df5-911c-476f-99d0-40bcdc9e2f56\":[\"timer_duration\"]}},{\"name\":\"subflow.version_step_instance.version_step.version.trigger.table\",\"label\":\"Input➛Instance Step➛Version Step➛Version➛Trigger➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"table\",\"usedInstances\":{\"3676a408-3a2d-4b6a-969e-1ab059cf7a94\":[\"table\"],\"83088b76-f737-4dc8-b6c9-3ab3fb4be18d\":[\"table\"]}},{\"name\":\"subflow.version_step_instance.version.trigger.table\",\"label\":\"Input➛Instance Step➛Version➛Trigger➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"table\",\"usedInstances\":{}},{\"name\":\"subflow.version_step_instance.version_step.version.trigger.document_id\",\"label\":\"Input➛Instance Step➛Version Step➛Version➛Trigger➛Document ID\",\"reference\":\"\",\"reference_display\":\"Document ID\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"document_id\",\"usedInstances\":{}},{\"name\":\"subflow.version_step_instance.instance.table\",\"label\":\"Input➛Instance Step➛Instance➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"table\",\"usedInstances\":{\"83088b76-f737-4dc8-b6c9-3ab3fb4be18d\":[\"table\"]}},{\"name\":\"subflow.version_step_instance.version_step.opt_email\",\"label\":\"Input➛Instance Step➛Version Step➛Opt Email\",\"reference\":\"\",\"reference_display\":\"Opt Email\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"opt_email\",\"usedInstances\":{}},{\"name\":\"subflow.version_step_instance.version_step.opt_status\",\"label\":\"Input➛Instance Step➛Version Step➛Opt Status\",\"reference\":\"\",\"reference_display\":\"Opt Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"opt_status\",\"choices\":[{\"label\":\"-- None --\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"-- None --\",\"selected\":false,\"missing\":false,\"value\":\"\"},{\"label\":\"In\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"In\",\"selected\":false,\"missing\":false,\"value\":\"in\",\"parameters\":{\"name\":\"x_cadso_journey_version_step\",\"dependent_values\":[\"\"]}},{\"label\":\"Out\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"Out\",\"selected\":false,\"missing\":false,\"value\":\"out\",\"parameters\":{\"name\":\"x_cadso_journey_version_step\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{}},{\"name\":\"subflow.version_step_instance.version_step.opt_option\",\"label\":\"Input➛Instance Step➛Version Step➛Opt Option\",\"reference\":\"\",\"reference_display\":\"Opt Option\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"opt_option\",\"choices\":[{\"label\":\"-- None --\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"-- None --\",\"selected\":false,\"missing\":false,\"value\":\"\"},{\"label\":\"Email\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"Email\",\"selected\":false,\"missing\":false,\"value\":\"email\",\"parameters\":{\"name\":\"x_cadso_journey_version_step\",\"dependent_values\":[\"\"]}},{\"label\":\"SMS\",\"image\":\"\",\"used\":false,\"reference\":false,\"rawLabel\":\"SMS\",\"selected\":false,\"missing\":false,\"value\":\"sms\",\"parameters\":{\"name\":\"x_cadso_journey_version_step\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"3e3d4d78-2cdd-4af5-80f8-3a79f7751988\":[\"condition\"]}},{\"name\":\"flow_variable.contact_values\",\"label\":\"Flow Variables➛Contact Values\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"9b8f2162-2fa4-4460-8cb3-b7fdb03c5995\":[\"values\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"288ea9fa-dcb8-4727-b613-10b7080e7628\"}},{\"name\":\"9b8f2162-2fa4-4460-8cb3-b7fdb03c5995.record.sys_id\",\"label\":\"5 - Create Record➛Contact Consent Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_contact_consent\",\"column_name\":\"sys_id\",\"usedInstances\":{\"2d1d7817-add7-4f20-9122-10f9f1e6e7e4\":[\"document_id\"]}},{\"name\":\"9b8f2162-2fa4-4460-8cb3-b7fdb03c5995.table_name\",\"label\":\"5 - Create Record➛Contact Consent Table\",\"reference\":\"x_cadso_automate_contact_consent\",\"reference_display\":\"Contact Consent\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"usedInstances\":{\"2d1d7817-add7-4f20-9122-10f9f1e6e7e4\":[\"table\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-02 19:17:26",
+    "display_value": "2025-04-02 12:17:26 PM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "optoutin",
+    "display_value": "optoutin"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2025-03-24 20:40:06",
+    "display_value": "2025-03-24 01:40:06 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "2ea5faac3328ae107b18bc534d5c7bf9",
+    "display_value": "Opt-Out/In"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "12",
+    "display_value": "12"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Opt-Out/In",
+    "display_value": "Opt-Out/In"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=4302304000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=4302304000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "291d223d33591a107b18bc534d5c7b03",
+    "display_value": "291d223d33591a107b18bc534d5c7b03"
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

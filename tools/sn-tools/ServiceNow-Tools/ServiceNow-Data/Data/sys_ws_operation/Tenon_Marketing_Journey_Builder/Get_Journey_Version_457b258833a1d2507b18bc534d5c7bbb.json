@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "457b258833a1d2507b18bc534d5c7bbb",
+    "extracted_at": "2025-09-19T21:48:33.124Z",
+    "display_value": "Get Journey Version",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "short_description": {
+    "value": "Get a Journey Version",
+    "display_value": "Get a Journey Version"
+  },
+  "operation_script": {
+    "value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\r\n    const apiUtil = new x_cadso_automate.APIUtils();\r\n    let table, query;\r\n    try {\r\n        table = 'x_cadso_journey_version';\r\n        query = 'journey=' + request.pathParams.journeySysID + '^version=' + request.pathParams.versionNumber;\r\n\t\tlet includeDisplay = request.queryParams.includeDisplay == 'true';\r\n        let version = apiUtil.query({ table, query, includeDisplay });\r\n\t\tversion = version[0];\r\n        if (!version) {\r\n            return new sn_ws_err.BadRequestError('Could not find the provided Journey version');\r\n        }\r\n        table = 'x_cadso_journey_version_step';\r\n        query = 'version=' + version.sys_id;\r\n        const steps = apiUtil.query({ table, query });\r\n\t\tsteps.sort((stepA, stepB) => stepA.order - stepB.order);\r\n\t\tlet journeyVersion = {\r\n\t\t\tversion: version,\r\n\t\t\tversionSteps: steps\r\n\t\t};\r\n        return journeyVersion;\r\n    } catch (error) {\r\n        return new sn_ws_err.BadRequestError(error.message);\r\n    }\r\n})(request, response);",
+    "display_value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\r\n    const apiUtil = new x_cadso_automate.APIUtils();\r\n    let table, query;\r\n    try {\r\n        table = 'x_cadso_journey_version';\r\n        query = 'journey=' + request.pathParams.journeySysID + '^version=' + request.pathParams.versionNumber;\r\n\t\tlet includeDisplay = request.queryParams.includeDisplay == 'true';\r\n        let version = apiUtil.query({ table, query, includeDisplay });\r\n\t\tversion = version[0];\r\n        if (!version) {\r\n            return new sn_ws_err.BadRequestError('Could not find the provided Journey version');\r\n        }\r\n        table = 'x_cadso_journey_version_step';\r\n        query = 'version=' + version.sys_id;\r\n        const steps = apiUtil.query({ table, query });\r\n\t\tsteps.sort((stepA, stepB) => stepA.order - stepB.order);\r\n\t\tlet journeyVersion = {\r\n\t\t\tversion: version,\r\n\t\t\tversionSteps: steps\r\n\t\t};\r\n        return journeyVersion;\r\n    } catch (error) {\r\n        return new sn_ws_err.BadRequestError(error.message);\r\n    }\r\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-22 21:18:31",
+    "display_value": "2025-05-22 02:18:31 PM"
+  },
+  "enforce_acl": {
+    "value": "95371672c3582210d4ddf1db050131eb",
+    "display_value": "Journey Builder REST"
+  },
+  "web_service_version": {
+    "value": "235d87f387a4d654369f33373cbb3539",
+    "display_value": "v1"
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "GET",
+    "display_value": "GET"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_journey/v1/ui/journeys/{journeySysID}/versions/{versionNumber}",
+    "display_value": "/api/x_cadso_journey/v1/ui/journeys/{journeySysID}/versions/{versionNumber}"
+  },
+  "sys_created_on": {
+    "value": "2024-10-24 22:02:29",
+    "display_value": "2024-10-24 03:02:29 PM"
+  },
+  "sys_name": {
+    "value": "Get Journey Version",
+    "display_value": "Get Journey Version"
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "web_service_definition": {
+    "value": "d11dc3f387a4d654369f33373cbb3506",
+    "display_value": "Tenon Journey Builder UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "27",
+    "display_value": "27"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "Journey Versions",
+    "display_value": "Journey Versions"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_457b258833a1d2507b18bc534d5c7bbb",
+    "display_value": "sys_ws_operation_457b258833a1d2507b18bc534d5c7bbb"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Get Journey Version",
+    "display_value": "Get Journey Version"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/journeys/{journeySysID}/versions/{versionNumber}",
+    "display_value": "/journeys/{journeySysID}/versions/{versionNumber}"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "/api/x_cadso_journey/ui/journeys/{journeySysID}/versions/{versionNumber}",
+    "display_value": "/api/x_cadso_journey/ui/journeys/{journeySysID}/versions/{versionNumber}"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

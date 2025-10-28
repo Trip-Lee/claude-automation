@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "d4c0be6987c59210369f33373cbb357c",
+    "extracted_at": "2025-08-22T18:42:37.399Z",
+    "display_value": "Fetch Options",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-05 05:24:40",
+    "display_value": "2024-10-04 10:24:40 PM"
+  },
+  "name": {
+    "value": "Fetch Options",
+    "display_value": "Fetch Options"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-25 21:11:26",
+    "display_value": "2025-03-25 02:11:26 PM"
+  }
+}

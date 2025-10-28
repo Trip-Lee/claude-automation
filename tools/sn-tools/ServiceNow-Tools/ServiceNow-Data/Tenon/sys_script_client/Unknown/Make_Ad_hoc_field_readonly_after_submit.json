@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "645d165f87b89a94369f33373cbb35cb",
+    "extracted_at": "2025-08-22T18:46:29.062Z",
+    "display_value": "Make Ad hoc field readonly after submit",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-09-27 21:15:49",
+    "display_value": "2024-09-27 02:15:49 PM"
+  },
+  "name": {
+    "value": "Make Ad hoc field readonly after submit",
+    "display_value": "Make Ad hoc field readonly after submit"
+  },
+  "sys_updated_on": {
+    "value": "2024-09-27 21:16:53",
+    "display_value": "2024-09-27 02:16:53 PM"
+  }
+}

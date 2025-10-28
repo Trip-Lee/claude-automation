@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "f95b2ad033c92a507b18bc534d5c7b17",
+    "extracted_at": "2025-08-22T18:42:37.469Z",
+    "display_value": "Delete Record(s)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-17 23:43:46",
+    "display_value": "2025-04-17 04:43:46 PM"
+  },
+  "name": {
+    "value": "Delete Record(s)",
+    "display_value": "Delete Record(s)"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-18 00:11:51",
+    "display_value": "2025-04-17 05:11:51 PM"
+  }
+}

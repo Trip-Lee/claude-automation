@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "88ebaf3947de6298a18780c4116d4345",
+    "extracted_at": "2025-09-19T21:48:28.816Z",
+    "display_value": "ContactDetailUtilMS",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-06-24 15:17:33",
+    "display_value": "2025-06-24 08:17:33 AM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "var ContactDetailUtilMS = Class.create();\nContactDetailUtilMS.prototype = {\n    initialize: function() {\n    },\n\n\tgetContactDetailFromEmailAddress: function(emailAddress){\n\t\tif(!emailAddress){\n\t\t\treturn null;\n\t\t}\n\t\tlet emailGQ = new global.GlideQuery('x_cadso_core_email_address')\n\t\t.getBy({ email: emailAddress }, ['sys_id', 'contact_detail'])\n\t\t.orElse(null);\n\t\treturn emailGQ;\n\t},\n\n\tgetContactDetailFromPhoneNumber: function(phoneNumber){\n\t\tif(!phoneNumber){\n\t\t\treturn null;\n\t\t}\n\t\tlet phoneGQ = new global.GlideQuery('x_cadso_core_phone_number')\n\t\t.getBy({ phone_number: phone_number }, ['sys_id', 'contact_detail'])\n\t\t.orElse(null);\n\t\treturn phoneGQ;\n\t},\n\n\tcreateContactDetail: function({ contact, lead, user, consumer, account }){\n\t\tlet contactDetail = {};\n\t\tif(contact){\n\t\t\tcontactDetail.contact = contact;\n\t\t}\n\t\tif(user){\n\t\t\tcontactDetail.user = user;\n\t\t}if(lead){\n\t\t\tcontactDetail.lead = lead;\n\t\t}if(consumer){\n\t\t\tcontactDetail.consumer = consumer;\n\t\t}if(account){\n\t\t\tcontactDetail.account = account;\n\t\t}\n\t\tlet contactDetailGQ = new global.GlideQuery('x_cadso_automate_contact_detail')\n\t\t.insert(contactDetail)\n\t\t.get();\n\t\treturn contactDetailGQ;\n\t},\n\n\n\n    type: 'ContactDetailUtilMS'\n};",
+    "display_value": "var ContactDetailUtilMS = Class.create();\nContactDetailUtilMS.prototype = {\n    initialize: function() {\n    },\n\n\tgetContactDetailFromEmailAddress: function(emailAddress){\n\t\tif(!emailAddress){\n\t\t\treturn null;\n\t\t}\n\t\tlet emailGQ = new global.GlideQuery('x_cadso_core_email_address')\n\t\t.getBy({ email: emailAddress }, ['sys_id', 'contact_detail'])\n\t\t.orElse(null);\n\t\treturn emailGQ;\n\t},\n\n\tgetContactDetailFromPhoneNumber: function(phoneNumber){\n\t\tif(!phoneNumber){\n\t\t\treturn null;\n\t\t}\n\t\tlet phoneGQ = new global.GlideQuery('x_cadso_core_phone_number')\n\t\t.getBy({ phone_number: phone_number }, ['sys_id', 'contact_detail'])\n\t\t.orElse(null);\n\t\treturn phoneGQ;\n\t},\n\n\tcreateContactDetail: function({ contact, lead, user, consumer, account }){\n\t\tlet contactDetail = {};\n\t\tif(contact){\n\t\t\tcontactDetail.contact = contact;\n\t\t}\n\t\tif(user){\n\t\t\tcontactDetail.user = user;\n\t\t}if(lead){\n\t\t\tcontactDetail.lead = lead;\n\t\t}if(consumer){\n\t\t\tcontactDetail.consumer = consumer;\n\t\t}if(account){\n\t\t\tcontactDetail.account = account;\n\t\t}\n\t\tlet contactDetailGQ = new global.GlideQuery('x_cadso_automate_contact_detail')\n\t\t.insert(contactDetail)\n\t\t.get();\n\t\treturn contactDetailGQ;\n\t},\n\n\n\n    type: 'ContactDetailUtilMS'\n};",
+    "formatted_script": {
+      "line_count": 49,
+      "char_count": 1196,
+      "preview": "var ContactDetailUtilMS = Class.create();\nContactDetailUtilMS.prototype = {\n    initialize: function() {\n    },\n\n\tgetContactDetailFromEmailAddress: function(emailAddress){\n\t\tif(!emailAddress){\n\t\t\tretu...",
+      "full_script": "var ContactDetailUtilMS = Class.create();\nContactDetailUtilMS.prototype = {\n    initialize: function() {\n    },\n\n\tgetContactDetailFromEmailAddress: function(emailAddress){\n\t\tif(!emailAddress){\n\t\t\treturn null;\n\t\t}\n\t\tlet emailGQ = new global.GlideQuery('x_cadso_core_email_address')\n\t\t.getBy({ email: emailAddress }, ['sys_id', 'contact_detail'])\n\t\t.orElse(null);\n\t\treturn emailGQ;\n\t},\n\n\tgetContactDetailFromPhoneNumber: function(phoneNumber){\n\t\tif(!phoneNumber){\n\t\t\treturn null;\n\t\t}\n\t\tlet phoneGQ = new global.GlideQuery('x_cadso_core_phone_number')\n\t\t.getBy({ phone_number: phone_number }, ['sys_id', 'contact_detail'])\n\t\t.orElse(null);\n\t\treturn phoneGQ;\n\t},\n\n\tcreateContactDetail: function({ contact, lead, user, consumer, account }){\n\t\tlet contactDetail = {};\n\t\tif(contact){\n\t\t\tcontactDetail.contact = contact;\n\t\t}\n\t\tif(user){\n\t\t\tcontactDetail.user = user;\n\t\t}if(lead){\n\t\t\tcontactDetail.lead = lead;\n\t\t}if(consumer){\n\t\t\tcontactDetail.consumer = consumer;\n\t\t}if(account){\n\t\t\tcontactDetail.account = account;\n\t\t}\n\t\tlet contactDetailGQ = new global.GlideQuery('x_cadso_automate_contact_detail')\n\t\t.insert(contactDetail)\n\t\t.get();\n\t\treturn contactDetailGQ;\n\t},\n\n\n\n    type: 'ContactDetailUtilMS'\n};"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_88ebaf3947de6298a18780c4116d4345",
+    "display_value": "sys_script_include_88ebaf3947de6298a18780c4116d4345"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "api_name": {
+    "value": "x_cadso_core.ContactDetailUtilMS",
+    "display_value": "x_cadso_core.ContactDetailUtilMS"
+  },
+  "sys_created_on": {
+    "value": "2025-06-23 21:26:15",
+    "display_value": "2025-06-23 02:26:15 PM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "ContactDetailUtilMS",
+    "display_value": "ContactDetailUtilMS"
+  },
+  "sys_name": {
+    "value": "ContactDetailUtilMS",
+    "display_value": "ContactDetailUtilMS"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_policy": {
+    "value": "read",
+    "display_value": "Read-only"
+  }
+}

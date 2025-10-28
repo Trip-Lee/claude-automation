@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "f7e411f5475ab550b0361ae8036d43a9",
+    "extracted_at": "2025-08-22T18:46:21.448Z",
+    "display_value": "ScheduleClientUtils",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-11-04 21:18:15",
+    "display_value": "2023-11-04 02:18:15 PM"
+  },
+  "name": {
+    "value": "ScheduleClientUtils",
+    "display_value": "ScheduleClientUtils"
+  },
+  "sys_updated_on": {
+    "value": "2024-07-12 06:10:05",
+    "display_value": "2024-07-11 11:10:05 PM"
+  }
+}

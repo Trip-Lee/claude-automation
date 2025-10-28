@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "74d7a098c3ef2210d4ddf1db050131a9",
+    "extracted_at": "2025-09-19T21:49:14.755Z",
+    "display_value": "Batched Bulk Upload Mailing List Members v2",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"a0b3fea5-1611-4f6d-bf29-4aa80a283b49.batches\",\"label\":\"1 - Get Audience Members v2➛Batches\",\"reference_display\":\"Batches\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"usedInstances\":{\"4791dd21-e86a-4593-a572-ed76e042f408\":[\"items\"]},\"attributes\":{\"sourceId\":\"01d3b5a4-ac4f-4a3c-9fdc-43470d6057b0\",\"child_name\":\"batches_child0\",\"uiUniqueId\":\"368409f8-b25d-4f4e-a71b-7afcbdbb8631\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD8636e4d4c4ef2210b067c68aeef00a3c\",\"child_label\":\"Batches_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"598ac4d3-f86f-4cd5-85dd-a6c6671f66fe\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_uiUniqueId\":\"4ca48a7d-2d70-4307-9363-23431595658a\"}},{\"name\":\"subflow.audience\",\"label\":\"Input➛Audience\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"a0b3fea5-1611-4f6d-bf29-4aa80a283b49\":[\"audience\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"b0f6f4b8-3dca-4e8e-865b-d587351ab1a2\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}}]",
+    "display_value": "[{\"name\":\"a0b3fea5-1611-4f6d-bf29-4aa80a283b49.batches\",\"label\":\"1 - Get Audience Members v2➛Batches\",\"reference_display\":\"Batches\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"usedInstances\":{\"4791dd21-e86a-4593-a572-ed76e042f408\":[\"items\"]},\"attributes\":{\"sourceId\":\"01d3b5a4-ac4f-4a3c-9fdc-43470d6057b0\",\"child_name\":\"batches_child0\",\"uiUniqueId\":\"368409f8-b25d-4f4e-a71b-7afcbdbb8631\",\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD8636e4d4c4ef2210b067c68aeef00a3c\",\"child_label\":\"Batches_child0\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceType\":\"step\",\"sourceUiUniqueId\":\"598ac4d3-f86f-4cd5-85dd-a6c6671f66fe\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_uiUniqueId\":\"4ca48a7d-2d70-4307-9363-23431595658a\"}},{\"name\":\"subflow.audience\",\"label\":\"Input➛Audience\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"a0b3fea5-1611-4f6d-bf29-4aa80a283b49\":[\"audience\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"b0f6f4b8-3dca-4e8e-865b-d587351ab1a2\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-19 18:02:14",
+    "display_value": "2025-08-19 11:02:14 AM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "batched_bulk_upload_mailing_list_members_v2",
+    "display_value": "batched_bulk_upload_mailing_list_members_v2"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2025-08-19 18:02:14",
+    "display_value": "2025-08-19 11:02:14 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "parent_flow": {
+    "value": "bd259010c3af2210d4ddf1db050131ee",
+    "display_value": ""
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Batched Bulk Upload Mailing List Members v2",
+    "display_value": "Batched Bulk Upload Mailing List Members v2"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

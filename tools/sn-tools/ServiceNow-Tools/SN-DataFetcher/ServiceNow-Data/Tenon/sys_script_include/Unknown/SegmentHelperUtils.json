@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "130b377247786910a1052a02e26d43b0",
+    "extracted_at": "2025-08-22T18:42:33.565Z",
+    "display_value": "SegmentHelperUtils",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-02-08 02:12:36",
+    "display_value": "2023-02-07 06:12:36 PM"
+  },
+  "name": {
+    "value": "SegmentHelperUtils",
+    "display_value": "SegmentHelperUtils"
+  },
+  "sys_updated_on": {
+    "value": "2023-02-08 02:12:36",
+    "display_value": "2023-02-07 06:12:36 PM"
+  }
+}

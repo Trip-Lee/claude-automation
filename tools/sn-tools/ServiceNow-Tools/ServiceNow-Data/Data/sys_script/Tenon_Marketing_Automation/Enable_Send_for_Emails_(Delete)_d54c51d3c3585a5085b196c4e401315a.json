@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "d54c51d3c3585a5085b196c4e401315a",
+    "extracted_at": "2025-09-19T21:48:40.116Z",
+    "display_value": "Enable Send for Emails (Delete)",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "action_update": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2024-09-02 20:34:40",
+    "display_value": "2024-09-02 01:34:40 PM"
+  },
+  "when": {
+    "value": "after",
+    "display_value": "after"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2024-09-02 19:57:55",
+    "display_value": "2024-09-02 12:57:55 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Enable Send for Emails (Delete)",
+    "display_value": "Enable Send for Emails (Delete)"
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "order": {
+    "value": "300",
+    "display_value": "300"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "x_cadso_automate_email_send",
+    "display_value": "x_cadso_automate_email_send"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    if (!current.email.nil()) {\r\n        const currentEmailGr = current.email.getRefRecord();\r\n        if (currentEmailGr.isValidRecord()) {\r\n            const canSend = getSendNowValue(current.getValue('email'));\r\n            currentEmailGr.setValue('send_now', canSend);\r\n            currentEmailGr.update();\r\n        }\r\n    }\r\n\r\n    function getSendNowValue(emailSysId) {\r\n        const emailSendGr = new GlideRecord('x_cadso_automate_email_send');\r\n        emailSendGr.addQuery('email', emailSysId);\r\n        emailSendGr.query();\r\n        let total = 0;\r\n        let canSendCount = 0;\r\n        while (emailSendGr.next()) {\r\n            total += 1;\r\n            const _canSend = emailSendGr.getValue('can_send');\r\n            if (_canSend === 1 || _canSend === '1') {\r\n                canSendCount += 1;\r\n            }\r\n        }\r\n        return total === canSendCount;\r\n    }\r\n\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    if (!current.email.nil()) {\r\n        const currentEmailGr = current.email.getRefRecord();\r\n        if (currentEmailGr.isValidRecord()) {\r\n            const canSend = getSendNowValue(current.getValue('email'));\r\n            currentEmailGr.setValue('send_now', canSend);\r\n            currentEmailGr.update();\r\n        }\r\n    }\r\n\r\n    function getSendNowValue(emailSysId) {\r\n        const emailSendGr = new GlideRecord('x_cadso_automate_email_send');\r\n        emailSendGr.addQuery('email', emailSysId);\r\n        emailSendGr.query();\r\n        let total = 0;\r\n        let canSendCount = 0;\r\n        while (emailSendGr.next()) {\r\n            total += 1;\r\n            const _canSend = emailSendGr.getValue('can_send');\r\n            if (_canSend === 1 || _canSend === '1') {\r\n                canSendCount += 1;\r\n            }\r\n        }\r\n        return total === canSendCount;\r\n    }\r\n\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 28,
+      "char_count": 972,
+      "preview": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    if (!current.email.nil()) {\r\n        const currentEmailGr = current.email.getRefRecord();\r\n        if (currentEmailGr.isValidReco...",
+      "full_script": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    if (!current.email.nil()) {\r\n        const currentEmailGr = current.email.getRefRecord();\r\n        if (currentEmailGr.isValidRecord()) {\r\n            const canSend = getSendNowValue(current.getValue('email'));\r\n            currentEmailGr.setValue('send_now', canSend);\r\n            currentEmailGr.update();\r\n        }\r\n    }\r\n\r\n    function getSendNowValue(emailSysId) {\r\n        const emailSendGr = new GlideRecord('x_cadso_automate_email_send');\r\n        emailSendGr.addQuery('email', emailSysId);\r\n        emailSendGr.query();\r\n        let total = 0;\r\n        let canSendCount = 0;\r\n        while (emailSendGr.next()) {\r\n            total += 1;\r\n            const _canSend = emailSendGr.getValue('can_send');\r\n            if (_canSend === 1 || _canSend === '1') {\r\n                canSendCount += 1;\r\n            }\r\n        }\r\n        return total === canSendCount;\r\n    }\r\n\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_d54c51d3c3585a5085b196c4e401315a",
+    "display_value": "sys_script_d54c51d3c3585a5085b196c4e401315a"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Enable Send for Emails (Delete)",
+    "display_value": "Enable Send for Emails (Delete)"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

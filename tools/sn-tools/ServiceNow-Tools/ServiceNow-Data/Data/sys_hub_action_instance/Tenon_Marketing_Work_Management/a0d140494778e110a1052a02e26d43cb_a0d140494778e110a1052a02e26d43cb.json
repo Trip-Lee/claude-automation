@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "a0d140494778e110a1052a02e26d43cb",
+    "extracted_at": "2025-09-19T21:49:04.048Z",
+    "display_value": "a0d140494778e110a1052a02e26d43cb",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "43400a1587003300663ca1bb36cb0b4b",
+    "display_value": "Look Up Records"
+  },
+  "ui_id": {
+    "value": "49d52573-5ac6-49d4-967a-38c5e4faa568",
+    "display_value": "49d52573-5ac6-49d4-967a-38c5e4faa568"
+  },
+  "sys_mod_count": {
+    "value": "119",
+    "display_value": "119"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-14 18:03:58",
+    "display_value": "2025-07-14 11:03:58 AM"
+  },
+  "compiled_snapshot": {
+    "value": "43400a1587003300663ca1bb36cb0b4b",
+    "display_value": "43400a1587003300663ca1bb36cb0b4b"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "",
+    "display_value": ""
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "system",
+    "display_value": "system"
+  },
+  "sys_created_on": {
+    "value": "2023-02-01 21:34:20",
+    "display_value": "2023-02-01 01:34:20 PM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "Look up all tasks associated to project. Ordering takes place on this step (lowest-highest)",
+    "display_value": "Look up all tasks associated to project. Ordering takes place on this step (lowest-highest)"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "0c0048854778e110a1052a02e26d43a8",
+    "display_value": "Project Start Business Logic Definition Subflow"
+  },
+  "sys_created_by": {
+    "value": "Kyle.Commette",
+    "display_value": "Kyle.Commette"
+  },
+  "order": {
+    "value": "1",
+    "display_value": "1"
+  }
+}

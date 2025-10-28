@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "1687339ac38b1250d4ddf1db0501311c",
+    "extracted_at": "2025-08-22T18:42:35.663Z",
+    "display_value": "Get Style Kits",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-01-14 21:35:41",
+    "display_value": "2025-01-14 01:35:41 PM"
+  },
+  "name": {
+    "value": "Get Style Kits",
+    "display_value": "Get Style Kits"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-10 02:00:07",
+    "display_value": "2025-04-09 07:00:07 PM"
+  }
+}

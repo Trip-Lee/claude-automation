@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "c0d50d024703f91098519fd8036d4371",
+    "extracted_at": "2025-08-22T18:46:23.430Z",
+    "display_value": "List Action Menu (getReferences)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-12-12 21:39:19",
+    "display_value": "2023-12-12 01:39:19 PM"
+  },
+  "name": {
+    "value": "List Action Menu (getReferences)",
+    "display_value": "List Action Menu (getReferences)"
+  },
+  "sys_updated_on": {
+    "value": "2024-01-28 22:26:12",
+    "display_value": "2024-01-28 02:26:12 PM"
+  }
+}

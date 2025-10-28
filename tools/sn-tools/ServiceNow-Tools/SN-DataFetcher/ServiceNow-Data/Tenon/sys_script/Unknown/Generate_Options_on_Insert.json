@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "4c2b775233062a107b18bc534d5c7ba0",
+    "extracted_at": "2025-08-22T18:42:38.237Z",
+    "display_value": "Generate Options on Insert",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-13 01:04:30",
+    "display_value": "2025-06-12 06:04:30 PM"
+  },
+  "name": {
+    "value": "Generate Options on Insert",
+    "display_value": "Generate Options on Insert"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-13 23:36:34",
+    "display_value": "2025-06-13 04:36:34 PM"
+  }
+}

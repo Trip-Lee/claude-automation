@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "4233cd54c3d66290d4ddf1db050131e6",
+    "extracted_at": "2025-08-22T18:46:21.894Z",
+    "display_value": "Search Bar Extract Displayed Fields",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-18 16:48:13",
+    "display_value": "2025-06-18 09:48:13 AM"
+  },
+  "name": {
+    "value": "Search Bar Extract Displayed Fields",
+    "display_value": "Search Bar Extract Displayed Fields"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-28 19:43:30",
+    "display_value": "2025-07-28 12:43:30 PM"
+  }
+}

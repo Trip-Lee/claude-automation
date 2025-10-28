@@ -1,0 +1,194 @@
+{
+  "extraction_info": {
+    "timestamp": "2025-09-19T21:48:26.896Z",
+    "instance": "tenonworkstudio.service-now.com",
+    "config_file": "config.json",
+    "version": "1.2.0",
+    "organize_by_application": true,
+    "incremental_sync": false,
+    "last_full_sync": null
+  },
+  "applications": {
+    "mapping": {
+      "x_cadso_work": "Tenon Work Management",
+      "x_cadso_automate": "Tenon Automation",
+      "x_cadso_core": "Tenon - Core",
+      "x_cadso_journey": "Tenon Journey Builder",
+      "x_cadso_cloud": "Tenon Cloud Management",
+      "x_cadso_ti_gitint": "Tenon GitHub Integration",
+      "x_cadso_ti_agile": "Tenon Internal Agile",
+      "x_cadso_ti_devkit": "Tenon Internal Developer Toolkit",
+      "x_cadso_lead": "Tenon Lead Management",
+      "x_cadso_form": "Tenon Form Builder",
+      "x_cadso_email_spok": "Tenon Email Spoke"
+    },
+    "default": "Unknown"
+  },
+  "tables": [
+    {
+      "name": "sys_script_include",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_ws_operation",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_script",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_script_client",
+      "query": "sys_scope.nameLIKEtenon^active=true",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_action_type_definition",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_action_instance",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_logic",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_logic_definition",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_safe_edit",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_logic_ext_input",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_logic_variable",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_snapshot",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_logic_input",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_output",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_stage",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_variable",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_base",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_component",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_input",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_logic_instance_v2",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_designer_co_template",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_flow_block",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_hub_step_instance",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_update_xml",
+      "query": "name=sys_hub_flow^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_variable_value",
+      "query": "document=sys_hub_action_instance",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_flow_trigger",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_flow_timer_trigger",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_flow_trigger_plan",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_flow_trigger_auto_script",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_flow_rest_trigger",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sys_flow_record_trigger",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    },
+    {
+      "name": "sysauto",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "field_count": "ALL"
+    }
+  ]
+}

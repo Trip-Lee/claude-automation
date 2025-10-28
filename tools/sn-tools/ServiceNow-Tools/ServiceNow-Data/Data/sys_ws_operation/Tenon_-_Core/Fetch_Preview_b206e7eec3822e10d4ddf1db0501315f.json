@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "b206e7eec3822e10d4ddf1db0501315f",
+    "extracted_at": "2025-09-19T21:48:32.627Z",
+    "display_value": "Fetch Preview",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n    const {\r\n        sysId,\r\n        table\r\n    } = request.pathParams;\r\n\r\n    const tableGr = new GlideRecord(table);\r\n    if (tableGr.get(sysId)) {\r\n\t\tif (table === 'x_cadso_cloud_page') {\r\n\t\t\tresponse.setBody({\r\n\t\t\t\thtml: tableGr.getValue('html'),\r\n\t\t\t\tthumbnail: tableGr.getDisplayValue('thumbnail'),\r\n\t\t\t\tthumbnailLarge: tableGr.getDisplayValue('thumbnail_large')\r\n\t\t\t});\r\n\t\t} else if (table.indexOf('email') > -1) {\r\n\t\t\tresponse.setBody({\r\n\t\t\t\tprofile: tableGr.getDisplayValue('from_address'),\r\n\t\t\t\tdynamicSubjectLine: tableGr.getDisplayValue('dynamic_subject_line'),\r\n\t\t\t\tsubjectLine: tableGr.getDisplayValue('static_subject_line'),\r\n\t\t\t\tpreviewText: tableGr.getDisplayValue('preview_text'),\r\n\t\t\t\thtml: tableGr.getValue('email_html'),\r\n\t\t\t\tthumbnail: tableGr.getDisplayValue('thumbnail'),\r\n\t\t\t\tthumbnailLarge: tableGr.getDisplayValue('thumbnail_large')\r\n\t\t\t});\r\n\t\t} else {\r\n\t\t\tresponse.setBody({\r\n\t\t\t\trichText: tableGr.getDisplayValue('rich_text_object'),\r\n\t\t\t});\r\n\t\t}\r\n    }\r\n\r\n\treturn response;\r\n\r\n})(request, response);",
+    "display_value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n    const {\r\n        sysId,\r\n        table\r\n    } = request.pathParams;\r\n\r\n    const tableGr = new GlideRecord(table);\r\n    if (tableGr.get(sysId)) {\r\n\t\tif (table === 'x_cadso_cloud_page') {\r\n\t\t\tresponse.setBody({\r\n\t\t\t\thtml: tableGr.getValue('html'),\r\n\t\t\t\tthumbnail: tableGr.getDisplayValue('thumbnail'),\r\n\t\t\t\tthumbnailLarge: tableGr.getDisplayValue('thumbnail_large')\r\n\t\t\t});\r\n\t\t} else if (table.indexOf('email') > -1) {\r\n\t\t\tresponse.setBody({\r\n\t\t\t\tprofile: tableGr.getDisplayValue('from_address'),\r\n\t\t\t\tdynamicSubjectLine: tableGr.getDisplayValue('dynamic_subject_line'),\r\n\t\t\t\tsubjectLine: tableGr.getDisplayValue('static_subject_line'),\r\n\t\t\t\tpreviewText: tableGr.getDisplayValue('preview_text'),\r\n\t\t\t\thtml: tableGr.getValue('email_html'),\r\n\t\t\t\tthumbnail: tableGr.getDisplayValue('thumbnail'),\r\n\t\t\t\tthumbnailLarge: tableGr.getDisplayValue('thumbnail_large')\r\n\t\t\t});\r\n\t\t} else {\r\n\t\t\tresponse.setBody({\r\n\t\t\t\trichText: tableGr.getDisplayValue('rich_text_object'),\r\n\t\t\t});\r\n\t\t}\r\n    }\r\n\r\n\treturn response;\r\n\r\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-13 18:09:08",
+    "display_value": "2025-06-13 11:09:08 AM"
+  },
+  "enforce_acl": {
+    "value": "cf9d01d3e73003009d6247e603f6a990",
+    "display_value": "Scripted REST External Default"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "GET",
+    "display_value": "GET"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_core/component/fetchPreview/{table}/{sysId}",
+    "display_value": "/api/x_cadso_core/component/fetchPreview/{table}/{sysId}"
+  },
+  "sys_created_on": {
+    "value": "2025-06-13 18:09:08",
+    "display_value": "2025-06-13 11:09:08 AM"
+  },
+  "sys_name": {
+    "value": "Fetch Preview",
+    "display_value": "Fetch Preview"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "web_service_definition": {
+    "value": "7a28ef3b3349a2107b18bc534d5c7b8f",
+    "display_value": "Component"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_b206e7eec3822e10d4ddf1db0501315f",
+    "display_value": "sys_ws_operation_b206e7eec3822e10d4ddf1db0501315f"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Fetch Preview",
+    "display_value": "Fetch Preview"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/fetchPreview/{table}/{sysId}",
+    "display_value": "/fetchPreview/{table}/{sysId}"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "5e4576d0330d2a507b18bc534d5c7bd1",
+    "extracted_at": "2025-08-22T18:42:35.942Z",
+    "display_value": "Create Option",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-17 21:43:59",
+    "display_value": "2025-04-17 02:43:59 PM"
+  },
+  "name": {
+    "value": "Create Option",
+    "display_value": "Create Option"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-17 21:46:50",
+    "display_value": "2025-04-17 02:46:50 PM"
+  }
+}

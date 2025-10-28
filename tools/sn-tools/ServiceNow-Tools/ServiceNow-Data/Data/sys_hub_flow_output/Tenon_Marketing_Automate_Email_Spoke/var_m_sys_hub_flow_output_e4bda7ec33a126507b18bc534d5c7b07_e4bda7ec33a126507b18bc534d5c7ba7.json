@@ -1,0 +1,322 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_output",
+    "sys_id": "e4bda7ec33a126507b18bc534d5c7ba7",
+    "extracted_at": "2025-09-19T21:50:08.892Z",
+    "display_value": "var__m_sys_hub_flow_output_e4bda7ec33a126507b18bc534d5c7b07",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "calculation": {
+    "value": "(function calculatedFieldValue(current) {\n\n\t// Add your code here\n\treturn '';  // return the calculated value\n\n})(current);",
+    "display_value": "(function calculatedFieldValue(current) {\n\n\t// Add your code here\n\treturn '';  // return the calculated value\n\n})(current);"
+  },
+  "dynamic_ref_qual": {
+    "value": "",
+    "display_value": ""
+  },
+  "choice_field": {
+    "value": "",
+    "display_value": ""
+  },
+  "function_field": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-13 16:59:39",
+    "display_value": "2025-05-13 09:59:39 AM"
+  },
+  "spell_check": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "reference_cascade_rule": {
+    "value": "",
+    "display_value": null
+  },
+  "reference": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "read_only": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_created_on": {
+    "value": "2025-05-13 16:59:39",
+    "display_value": "2025-05-13 09:59:39 AM"
+  },
+  "array_denormalized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "element_reference": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "model": {
+    "value": "e4bda7ec33a126507b18bc534d5c7b07",
+    "display_value": "Get All Excluded Audience Members"
+  },
+  "reference_key": {
+    "value": "",
+    "display_value": ""
+  },
+  "reference_qual_condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "xml_view": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "dependent": {
+    "value": "",
+    "display_value": ""
+  },
+  "internal_type": {
+    "value": "string",
+    "display_value": "String"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "element": {
+    "value": "excluded_members",
+    "display_value": "excluded_members"
+  },
+  "max_length": {
+    "value": "65000",
+    "display_value": "65,000"
+  },
+  "order": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "use_dependent_field": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "delete_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "virtual_type": {
+    "value": "script",
+    "display_value": "Script"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "choice_table": {
+    "value": "",
+    "display_value": ""
+  },
+  "model_table": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "sys_hub_flow_snapshot"
+  },
+  "foreign_database": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "hint": {
+    "value": "",
+    "display_value": ""
+  },
+  "unique": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "var__m_sys_hub_flow_output_e4bda7ec33a126507b18bc534d5c7b07",
+    "display_value": "var__m_sys_hub_flow_output_e4bda7ec33a126507b18bc534d5c7b07"
+  },
+  "dependent_on_field": {
+    "value": "",
+    "display_value": ""
+  },
+  "dynamic_creation": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "primary": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "next_element": {
+    "value": "",
+    "display_value": ""
+  },
+  "virtual": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "widget": {
+    "value": "",
+    "display_value": ""
+  },
+  "use_dynamic_default": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sizeclass": {
+    "value": "",
+    "display_value": ""
+  },
+  "mandatory": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_output",
+    "display_value": "Flow Outputs"
+  },
+  "dynamic_default_value": {
+    "value": "",
+    "display_value": ""
+  },
+  "write_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "array": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "audit": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "read_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "create_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "dynamic_creation_script": {
+    "value": "",
+    "display_value": ""
+  },
+  "defaultsort": {
+    "value": "",
+    "display_value": ""
+  },
+  "internal_link": {
+    "value": "",
+    "display_value": ""
+  },
+  "column_label": {
+    "value": "",
+    "display_value": null
+  },
+  "comments": {
+    "value": "",
+    "display_value": ""
+  },
+  "use_reference_qualifier": {
+    "value": "simple",
+    "display_value": "Simple"
+  },
+  "display": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "reference_floats": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "default_value": {
+    "value": "",
+    "display_value": ""
+  },
+  "label": {
+    "value": "Excluded Members",
+    "display_value": "Excluded Members"
+  },
+  "model_id": {
+    "value": "e4bda7ec33a126507b18bc534d5c7b07",
+    "display_value": "Flow Snapshot: Get All Excluded Audience Members"
+  },
+  "staged": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "reference_type": {
+    "value": "",
+    "display_value": ""
+  },
+  "help": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "formula": {
+    "value": "",
+    "display_value": ""
+  },
+  "attributes": {
+    "value": "child_label=Member,child_name=member,child_type=string,child_type_label=String,child_uiUniqueId=137c2131-72f7-4b21-8c8d-f5e0431174b1,co_type_name=FDe0bda7ec72a12650e808e55eac68ada6,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=array.string,uiTypeLabel=Array.String,uiUniqueId=e5485daa-22c7-4e82-9293-c3b8f1749eaf",
+    "display_value": "child_label=Member,child_name=member,child_type=string,child_type_label=String,child_uiUniqueId=137c2131-72f7-4b21-8c8d-f5e0431174b1,co_type_name=FDe0bda7ec72a12650e808e55eac68ada6,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=array.string,uiTypeLabel=Array.String,uiUniqueId=e5485daa-22c7-4e82-9293-c3b8f1749eaf"
+  },
+  "choice": {
+    "value": "",
+    "display_value": ""
+  },
+  "reference_qual": {
+    "value": "",
+    "display_value": ""
+  },
+  "table_reference": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "text_index": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "function_definition": {
+    "value": "",
+    "display_value": ""
+  }
+}

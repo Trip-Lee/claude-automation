@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "33c930a547346510a1052a02e26d43a3",
+    "extracted_at": "2025-09-19T21:49:03.947Z",
+    "display_value": "33c930a547346510a1052a02e26d43a3",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "f8f2e9920b10030085c083eb37673abd",
+    "display_value": "Ask For Approval"
+  },
+  "ui_id": {
+    "value": "6edd2a13-4ffd-4a7e-a0b4-9bad54c70bf4",
+    "display_value": "6edd2a13-4ffd-4a7e-a0b4-9bad54c70bf4"
+  },
+  "sys_mod_count": {
+    "value": "349",
+    "display_value": "349"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-14 18:03:56",
+    "display_value": "2025-07-14 11:03:56 AM"
+  },
+  "compiled_snapshot": {
+    "value": "f8f2e9920b10030085c083eb37673abd",
+    "display_value": "f8f2e9920b10030085c083eb37673abd"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "",
+    "display_value": ""
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "system",
+    "display_value": "system"
+  },
+  "sys_created_on": {
+    "value": "2023-02-03 14:55:55",
+    "display_value": "2023-02-03 06:55:55 AM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "43deeeb0-02df-447f-89c2-00b7cc27b3c8",
+    "display_value": "43deeeb0-02df-447f-89c2-00b7cc27b3c8"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "Approval sent to approval group on template. Requires only one to approve. DO NOT add fields to \"Approval Field\" or \"Journal Field\". It duplicates project updates when linked",
+    "display_value": "Approval sent to approval group on template. Requires only one to approve. DO NOT add fields to \"Approval Field\" or \"Journal Field\". It duplicates project updates when linked"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "8c9634e147346510a1052a02e26d4308",
+    "display_value": "Requested Project Sent for Manager Approval"
+  },
+  "sys_created_by": {
+    "value": "Kyle.Commette",
+    "display_value": "Kyle.Commette"
+  },
+  "order": {
+    "value": "6",
+    "display_value": "6"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "0529c8cd2baf52101897f9466e91bfd6",
+    "extracted_at": "2025-09-19T21:48:54.947Z",
+    "display_value": "0529c8cd2baf52101897f9466e91bfd6",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "9d09f99587003300663ca1bb36cb0ba3",
+    "display_value": "Look Up Record"
+  },
+  "ui_id": {
+    "value": "6f46129f-0aa0-4dde-b5f9-8f4635314a95",
+    "display_value": "6f46129f-0aa0-4dde-b5f9-8f4635314a95"
+  },
+  "sys_mod_count": {
+    "value": "10",
+    "display_value": "10"
+  },
+  "sys_updated_on": {
+    "value": "2025-02-04 04:23:55",
+    "display_value": "2025-02-03 08:23:55 PM"
+  },
+  "compiled_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "b93f42810b30030085c083eb37673a63",
+    "display_value": "Look Up Record"
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2025-02-04 03:32:27",
+    "display_value": "2025-02-03 07:32:27 PM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "8d8061da-9a4f-4022-a9e4-8dde3ec9f29e",
+    "display_value": "8d8061da-9a4f-4022-a9e4-8dde3ec9f29e"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "5c29c8cd2baf52101897f9466e91bf08",
+    "display_value": "Get Project Start and End Date from Task"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "order": {
+    "value": "14",
+    "display_value": "14"
+  }
+}

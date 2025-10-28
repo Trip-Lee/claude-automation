@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "b950b269338922107b18bc534d5c7b26",
+    "extracted_at": "2025-08-22T18:42:41.359Z",
+    "display_value": "Set Event Type To Custom",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-21 18:35:05",
+    "display_value": "2025-04-21 11:35:05 AM"
+  },
+  "name": {
+    "value": "Set Event Type To Custom",
+    "display_value": "Set Event Type To Custom"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-13 20:42:47",
+    "display_value": "2025-05-13 01:42:47 PM"
+  }
+}

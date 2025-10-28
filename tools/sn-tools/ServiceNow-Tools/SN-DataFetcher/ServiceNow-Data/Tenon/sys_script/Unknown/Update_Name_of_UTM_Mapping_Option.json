@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "86ed2c86339222107b18bc534d5c7b3c",
+    "extracted_at": "2025-08-22T18:42:39.748Z",
+    "display_value": "Update Name of UTM Mapping Option",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-24 01:39:41",
+    "display_value": "2025-06-23 06:39:41 PM"
+  },
+  "name": {
+    "value": "Update Name of UTM Mapping Option",
+    "display_value": "Update Name of UTM Mapping Option"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-29 00:42:52",
+    "display_value": "2025-07-28 05:42:52 PM"
+  }
+}

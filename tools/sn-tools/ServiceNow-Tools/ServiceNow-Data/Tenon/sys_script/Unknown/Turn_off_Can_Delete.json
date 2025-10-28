@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "d1f9475ac3542610d4ddf1db0501317e",
+    "extracted_at": "2025-08-22T18:46:27.414Z",
+    "display_value": "Turn off Can Delete",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-03-17 21:36:06",
+    "display_value": "2025-03-17 02:36:06 PM"
+  },
+  "name": {
+    "value": "Turn off Can Delete",
+    "display_value": "Turn off Can Delete"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-24 17:45:26",
+    "display_value": "2025-03-24 10:45:26 AM"
+  }
+}

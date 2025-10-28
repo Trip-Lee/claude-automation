@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "dd3766cc33f7d2107b18bc534d5c7b81",
+    "extracted_at": "2025-09-19T21:48:49.102Z",
+    "display_value": "Look up Records",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.tabli}}\",\"label\":\"action➛Tabli\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.table}}\",\"label\":\"action➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.conditions}}\",\"label\":\"action➛Conditions\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"conditions\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"uiTypeLabel\":\"Conditions\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"uiType\":\"conditions\",\"uiUniqueId\":\"524b6235-9806-4dfe-85c8-8db378ff63d1\"}},{\"name\":\"{{action.conditions_string}}\",\"label\":\"action➛Conditions String\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[34fcd466-29b9-4a24-a83d-2b341bd0b220].records}}\",\"label\":\"step➛Script step➛Records\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD756cbb66fb10a6109d511f1765a222bb\",\"child_label\":\"Record\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_name\":\"Record\",\"child_uiUniqueId\":\"2fa9c278-ec4f-4703-b006-21d70d4594f2\",\"uiUniqueId\":\"b65498e0-f79f-43fa-a737-8aa0aee63585\"}}]",
+    "display_value": "[{\"name\":\"{{action.tabli}}\",\"label\":\"action➛Tabli\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.table}}\",\"label\":\"action➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.conditions}}\",\"label\":\"action➛Conditions\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"conditions\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"uiTypeLabel\":\"Conditions\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"uiType\":\"conditions\",\"uiUniqueId\":\"524b6235-9806-4dfe-85c8-8db378ff63d1\"}},{\"name\":\"{{action.conditions_string}}\",\"label\":\"action➛Conditions String\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[34fcd466-29b9-4a24-a83d-2b341bd0b220].records}}\",\"label\":\"step➛Script step➛Records\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FD756cbb66fb10a6109d511f1765a222bb\",\"child_label\":\"Record\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_name\":\"Record\",\"child_uiUniqueId\":\"2fa9c278-ec4f-4703-b006-21d70d4594f2\",\"uiUniqueId\":\"b65498e0-f79f-43fa-a737-8aa0aee63585\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_updated_on": {
+    "value": "2025-03-20 14:44:21",
+    "display_value": "2025-03-20 07:44:21 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "54e889db3318e6107b18bc534d5c7baf",
+    "display_value": "54e889db3318e6107b18bc534d5c7baf"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "look_up_records",
+    "display_value": "look_up_records"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2025-02-13 22:44:49",
+    "display_value": "2025-02-13 02:44:49 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch4b-01-15-2025_02-11-2025_1733.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch4b-01-15-2025_02-11-2025_1733.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Look up Records",
+    "display_value": "Look up Records"
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "cac7b7aec3dc6610d4ddf1db05013171",
+    "display_value": "cac7b7aec3dc6610d4ddf1db05013171"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "64",
+    "display_value": "64"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_dd3766cc33f7d2107b18bc534d5c7b81",
+    "display_value": "sys_hub_action_type_definition_dd3766cc33f7d2107b18bc534d5c7b81"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Look up Records",
+    "display_value": "Look up Records"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

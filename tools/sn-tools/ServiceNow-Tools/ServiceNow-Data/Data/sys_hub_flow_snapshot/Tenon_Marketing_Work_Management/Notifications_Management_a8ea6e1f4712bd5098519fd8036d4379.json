@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "a8ea6e1f4712bd5098519fd8036d4379",
+    "extracted_at": "2025-09-19T21:50:06.266Z",
+    "display_value": "Notifications Management",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"86689f54-6ac6-4fba-b588-53bc07108eba.item\",\"label\":\"8 - For Each➛Notification Record\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"7b9908d8-16db-4172-92e7-baae277faf83.Records\",\"label\":\"7 - Look Up Records➛Notification Records\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"002ac8d4-2025-4f36-b114-19c9e3685d33.item\",\"label\":\"5 - For Each➛Notification Record\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"2ea697d2-3a29-4d24-95d3-2f6c3a4f82c3.Records\",\"label\":\"4 - Look Up Records➛Notification Records\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"e7e70b7a-4c5b-480a-8482-755be710d73b.item\",\"label\":\"2 - For Each➛Notification Record\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"de095547-2aab-49ba-a321-4409f03fa0e0.Records\",\"label\":\"1 - Look Up Records➛Notification Records\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"86689f54-6ac6-4fba-b588-53bc07108eba.item\",\"label\":\"8 - For Each➛Notification Record\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"7b9908d8-16db-4172-92e7-baae277faf83.Records\",\"label\":\"7 - Look Up Records➛Notification Records\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"002ac8d4-2025-4f36-b114-19c9e3685d33.item\",\"label\":\"5 - For Each➛Notification Record\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"2ea697d2-3a29-4d24-95d3-2f6c3a4f82c3.Records\",\"label\":\"4 - Look Up Records➛Notification Records\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"e7e70b7a-4c5b-480a-8482-755be710d73b.item\",\"label\":\"2 - For Each➛Notification Record\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"de095547-2aab-49ba-a321-4409f03fa0e0.Records\",\"label\":\"1 - Look Up Records➛Notification Records\",\"reference\":\"x_cadso_work_notification\",\"reference_display\":\"Notification\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "This flow will be used to remove notifications after a certain amount of time",
+    "display_value": "This flow will be used to remove notifications after a certain amount of time"
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_updated_on": {
+    "value": "2023-11-09 19:24:39",
+    "display_value": "2023-11-09 11:24:39 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "notifications_management",
+    "display_value": "notifications_management"
+  },
+  "sys_updated_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "sys_created_on": {
+    "value": "2023-11-09 19:24:39",
+    "display_value": "2023-11-09 11:24:39 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "parent_flow": {
+    "value": "0214f997475e7d5098519fd8036d4343",
+    "display_value": "Notifications Management"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "Notifications Management",
+    "display_value": "Notifications Management"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

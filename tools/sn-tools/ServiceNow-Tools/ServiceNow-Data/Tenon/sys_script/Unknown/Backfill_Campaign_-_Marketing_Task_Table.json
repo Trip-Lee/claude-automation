@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "a318b4b347f06d1085d19fd8036d43f2",
+    "extracted_at": "2025-08-22T18:46:25.905Z",
+    "display_value": "Backfill Campaign - Marketing Task Table",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-02-10 14:37:27",
+    "display_value": "2023-02-10 06:37:27 AM"
+  },
+  "name": {
+    "value": "Backfill Campaign - Marketing Task Table",
+    "display_value": "Backfill Campaign - Marketing Task Table"
+  },
+  "sys_updated_on": {
+    "value": "2023-02-10 14:44:11",
+    "display_value": "2023-02-10 06:44:11 AM"
+  }
+}

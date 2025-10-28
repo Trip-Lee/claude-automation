@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "ef68713433ae66507b18bc534d5c7b89",
+    "extracted_at": "2025-09-19T21:48:28.753Z",
+    "display_value": "MergeTagsAPIMS",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-07-03 18:24:14",
+    "display_value": "2025-07-03 11:24:14 AM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "const MergeTagsAPIMS = Class.create();\r\nMergeTagsAPIMS.prototype = {\r\n    initialize: function() {\r\n\r\n    },\r\n\r\n    generate: function(name) {\r\n        const coreSettingsApi = new x_cadso_core.CoreSettings();\r\n        let tables = coreSettingsApi.get('x_cadso_core.mergeTags.tables.available');\r\n        tables = tables ? tables.split(',') : [];\r\n\r\n        tables.forEach(function(tableName) {\r\n            try {\r\n                tableName = tableName.trim();\r\n                var tableGR = new GlideRecordSecure(tableName);\r\n                tableGR.initialize();\r\n\r\n                var elements = tableGR.getElements();\r\n                for (var i = 0; i < elements.length; i++) {\r\n                    try {\r\n                        var element = elements[i];\r\n                        var fieldName = element.getName();\r\n                        var fieldLabel = element.getLabel();\r\n\r\n                        var allowedSysFields = [\r\n                            'sys_created_on',\r\n                            'sys_created_by',\r\n                            'sys_updated_on',\r\n                            'sys_updated_by'\r\n                        ].indexOf(fieldName) > -1;\r\n\r\n                        if (fieldName.startsWith('sys_') && !allowedSysFields) {\r\n                            continue;\r\n                        }\r\n\r\n                        var mergeTagGR = new GlideRecordSecure('x_cadso_core_merge_tag');\r\n                        mergeTagGR.addQuery('field', fieldName);\r\n                        mergeTagGR.addQuery('table', tableName);\r\n                        mergeTagGR.query();\r\n\r\n                        if (!mergeTagGR.next()) {\r\n                            mergeTagGR.initialize();\r\n                            mergeTagGR.newRecord();\r\n                            mergeTagGR.setValue('field', fieldName);\r\n                            mergeTagGR.setValue('name', fieldLabel);\r\n                            mergeTagGR.setValue('table', tableName);\r\n                            mergeTagGR.setValue('active', true);\r\n                            mergeTagGR.setValue('custom', false);\r\n                            mergeTagGR.insert();\r\n                        }\r\n                    } catch (e2) {\r\n                        gs.error('Error processing table ' + tableName + ' and field ' + elements[i] +': ' + e2.message);\r\n                        continue;\r\n                    }\r\n                }\r\n            } catch (e) {\r\n                gs.error('Error processing table ' + tableName + ': ' + e.message);\r\n            }\r\n        });\r\n    },\r\n\r\n    type: \"MergeTagsAPIMS\",\r\n};",
+    "display_value": "const MergeTagsAPIMS = Class.create();\r\nMergeTagsAPIMS.prototype = {\r\n    initialize: function() {\r\n\r\n    },\r\n\r\n    generate: function(name) {\r\n        const coreSettingsApi = new x_cadso_core.CoreSettings();\r\n        let tables = coreSettingsApi.get('x_cadso_core.mergeTags.tables.available');\r\n        tables = tables ? tables.split(',') : [];\r\n\r\n        tables.forEach(function(tableName) {\r\n            try {\r\n                tableName = tableName.trim();\r\n                var tableGR = new GlideRecordSecure(tableName);\r\n                tableGR.initialize();\r\n\r\n                var elements = tableGR.getElements();\r\n                for (var i = 0; i < elements.length; i++) {\r\n                    try {\r\n                        var element = elements[i];\r\n                        var fieldName = element.getName();\r\n                        var fieldLabel = element.getLabel();\r\n\r\n                        var allowedSysFields = [\r\n                            'sys_created_on',\r\n                            'sys_created_by',\r\n                            'sys_updated_on',\r\n                            'sys_updated_by'\r\n                        ].indexOf(fieldName) > -1;\r\n\r\n                        if (fieldName.startsWith('sys_') && !allowedSysFields) {\r\n                            continue;\r\n                        }\r\n\r\n                        var mergeTagGR = new GlideRecordSecure('x_cadso_core_merge_tag');\r\n                        mergeTagGR.addQuery('field', fieldName);\r\n                        mergeTagGR.addQuery('table', tableName);\r\n                        mergeTagGR.query();\r\n\r\n                        if (!mergeTagGR.next()) {\r\n                            mergeTagGR.initialize();\r\n                            mergeTagGR.newRecord();\r\n                            mergeTagGR.setValue('field', fieldName);\r\n                            mergeTagGR.setValue('name', fieldLabel);\r\n                            mergeTagGR.setValue('table', tableName);\r\n                            mergeTagGR.setValue('active', true);\r\n                            mergeTagGR.setValue('custom', false);\r\n                            mergeTagGR.insert();\r\n                        }\r\n                    } catch (e2) {\r\n                        gs.error('Error processing table ' + tableName + ' and field ' + elements[i] +': ' + e2.message);\r\n                        continue;\r\n                    }\r\n                }\r\n            } catch (e) {\r\n                gs.error('Error processing table ' + tableName + ': ' + e.message);\r\n            }\r\n        });\r\n    },\r\n\r\n    type: \"MergeTagsAPIMS\",\r\n};",
+    "formatted_script": {
+      "line_count": 63,
+      "char_count": 2592,
+      "preview": "const MergeTagsAPIMS = Class.create();\r\nMergeTagsAPIMS.prototype = {\r\n    initialize: function() {\r\n\r\n    },\r\n\r\n    generate: function(name) {\r\n        const coreSettingsApi = new x_cadso_core.CoreSet...",
+      "full_script": "const MergeTagsAPIMS = Class.create();\r\nMergeTagsAPIMS.prototype = {\r\n    initialize: function() {\r\n\r\n    },\r\n\r\n    generate: function(name) {\r\n        const coreSettingsApi = new x_cadso_core.CoreSettings();\r\n        let tables = coreSettingsApi.get('x_cadso_core.mergeTags.tables.available');\r\n        tables = tables ? tables.split(',') : [];\r\n\r\n        tables.forEach(function(tableName) {\r\n            try {\r\n                tableName = tableName.trim();\r\n                var tableGR = new GlideRecordSecure(tableName);\r\n                tableGR.initialize();\r\n\r\n                var elements = tableGR.getElements();\r\n                for (var i = 0; i < elements.length; i++) {\r\n                    try {\r\n                        var element = elements[i];\r\n                        var fieldName = element.getName();\r\n                        var fieldLabel = element.getLabel();\r\n\r\n                        var allowedSysFields = [\r\n                            'sys_created_on',\r\n                            'sys_created_by',\r\n                            'sys_updated_on',\r\n                            'sys_updated_by'\r\n                        ].indexOf(fieldName) > -1;\r\n\r\n                        if (fieldName.startsWith('sys_') && !allowedSysFields) {\r\n                            continue;\r\n                        }\r\n\r\n                        var mergeTagGR = new GlideRecordSecure('x_cadso_core_merge_tag');\r\n                        mergeTagGR.addQuery('field', fieldName);\r\n                        mergeTagGR.addQuery('table', tableName);\r\n                        mergeTagGR.query();\r\n\r\n                        if (!mergeTagGR.next()) {\r\n                            mergeTagGR.initialize();\r\n                            mergeTagGR.newRecord();\r\n                            mergeTagGR.setValue('field', fieldName);\r\n                            mergeTagGR.setValue('name', fieldLabel);\r\n                            mergeTagGR.setValue('table', tableName);\r\n                            mergeTagGR.setValue('active', true);\r\n                            mergeTagGR.setValue('custom', false);\r\n                            mergeTagGR.insert();\r\n                        }\r\n                    } catch (e2) {\r\n                        gs.error('Error processing table ' + tableName + ' and field ' + elements[i] +': ' + e2.message);\r\n                        continue;\r\n                    }\r\n                }\r\n            } catch (e) {\r\n                gs.error('Error processing table ' + tableName + ': ' + e.message);\r\n            }\r\n        });\r\n    },\r\n\r\n    type: \"MergeTagsAPIMS\",\r\n};"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_ef68713433ae66507b18bc534d5c7b89",
+    "display_value": "sys_script_include_ef68713433ae66507b18bc534d5c7b89"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "api_name": {
+    "value": "x_cadso_core.MergeTagsAPIMS",
+    "display_value": "x_cadso_core.MergeTagsAPIMS"
+  },
+  "sys_created_on": {
+    "value": "2025-07-02 20:08:34",
+    "display_value": "2025-07-02 01:08:34 PM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "MergeTagsAPIMS",
+    "display_value": "MergeTagsAPIMS"
+  },
+  "sys_name": {
+    "value": "MergeTagsAPIMS",
+    "display_value": "MergeTagsAPIMS"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_policy": {
+    "value": "read",
+    "display_value": "Read-only"
+  }
+}

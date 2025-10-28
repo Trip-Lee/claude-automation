@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "42ebf003c3c34a1085b196c4e40131f1",
+    "extracted_at": "2025-08-22T18:42:35.853Z",
+    "display_value": "Domain Table Delete",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-01 19:43:59",
+    "display_value": "2024-07-01 12:43:59 PM"
+  },
+  "name": {
+    "value": "Domain Table Delete",
+    "display_value": "Domain Table Delete"
+  },
+  "sys_updated_on": {
+    "value": "2024-11-04 21:01:14",
+    "display_value": "2024-11-04 01:01:14 PM"
+  }
+}

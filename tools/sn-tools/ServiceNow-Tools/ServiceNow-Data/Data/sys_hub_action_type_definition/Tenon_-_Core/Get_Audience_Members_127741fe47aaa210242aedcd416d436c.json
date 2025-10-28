@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "127741fe47aaa210242aedcd416d436c",
+    "extracted_at": "2025-09-19T21:48:48.908Z",
+    "display_value": "Get Audience Members",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.reference}}\",\"label\":\"action➛Reference\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.audience_member}}\",\"label\":\"action➛Audience Member\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Audience Member\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.audience_members}}\",\"label\":\"action➛Email Send\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Temp\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"99bfb56c-0d50-4126-845a-699de6952f8d\"}},{\"name\":\"{{action.email_send}}\",\"label\":\"action➛Email Send\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member_hash}}\",\"label\":\"action➛Member Hash\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Temp\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_send_rec}}\",\"label\":\"action➛Email Send Rec\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_temp_rec}}\",\"label\":\"action➛Email Temp Rec\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Temp\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members}}\",\"label\":\"step➛Script step➛Members\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"json\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"JSON\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"json\",\"uiUniqueId\":\"9b4b7b7f-63f6-4e34-ad68-92237def466f\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members_string}}\",\"label\":\"step➛Script step➛Members String\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"e5200ddf-6034-4f3b-9efc-0d678c85287f\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].MemberEmailAddresses}}\",\"label\":\"step➛Script step➛MemberEmailAddresses\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FD61f2a10fd7aa2a10f8cd79e224b4a9f8\",\"child_label\":\"MemberID\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.string\",\"child_type\":\"string\",\"child_name\":\"MemberID\",\"child_uiUniqueId\":\"528a7dea-f39c-451e-8f27-7b8796ab75c3\",\"uiUniqueId\":\"da49fc17-4afb-4ffd-be49-58e7d73ffea9\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].membersarray}}\",\"label\":\"step➛Script step➛membersArray\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members0}}\",\"label\":\"step➛Script step➛Members0\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"8987c465-a8e6-4e83-97a0-5c61057aa722\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members1}}\",\"label\":\"step➛Script step➛Members1\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"58633378-ee11-4ce5-ade6-83b04f79a6d0\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members2}}\",\"label\":\"step➛Script step➛Members2\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"46031d1c-47f3-4a55-aa6a-719b4a3cdfff\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members3}}\",\"label\":\"step➛Script step➛Members3\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"648fdbb6-ee3b-4fcb-b7f2-fff33135fe84\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members4}}\",\"label\":\"step➛Script step➛Members4\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"b1dabba7-0f5e-4f3a-924f-962f1118e285\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members5}}\",\"label\":\"step➛Script step➛Members5\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"4af8fd58-8fa7-4a8d-ab7a-9c31131f358a\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members6}}\",\"label\":\"step➛Script step➛Members6\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"4640807c-bd04-4c41-99de-ef2c0e759097\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members7}}\",\"label\":\"step➛Script step➛Members7\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"87afd08e-59e0-42c9-b547-7a59ef0b9734\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members8}}\",\"label\":\"step➛Script step➛Members8\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"3e0eff6b-7a2c-485b-81df-23844cb38dc0\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members9}}\",\"label\":\"step➛Script step➛Members9\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"c16840cb-d73a-4144-87da-6702a50369ce\"}}]",
+    "display_value": "[{\"name\":\"{{action.reference}}\",\"label\":\"action➛Reference\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.audience_member}}\",\"label\":\"action➛Audience Member\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Audience Member\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.audience_members}}\",\"label\":\"action➛Email Send\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Temp\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"99bfb56c-0d50-4126-845a-699de6952f8d\"}},{\"name\":\"{{action.email_send}}\",\"label\":\"action➛Email Send\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member_hash}}\",\"label\":\"action➛Member Hash\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Temp\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_send_rec}}\",\"label\":\"action➛Email Send Rec\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_temp_rec}}\",\"label\":\"action➛Email Temp Rec\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Temp\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members}}\",\"label\":\"step➛Script step➛Members\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"json\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"JSON\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"json\",\"uiUniqueId\":\"9b4b7b7f-63f6-4e34-ad68-92237def466f\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members_string}}\",\"label\":\"step➛Script step➛Members String\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"e5200ddf-6034-4f3b-9efc-0d678c85287f\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].MemberEmailAddresses}}\",\"label\":\"step➛Script step➛MemberEmailAddresses\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FD61f2a10fd7aa2a10f8cd79e224b4a9f8\",\"child_label\":\"MemberID\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.string\",\"child_type\":\"string\",\"child_name\":\"MemberID\",\"child_uiUniqueId\":\"528a7dea-f39c-451e-8f27-7b8796ab75c3\",\"uiUniqueId\":\"da49fc17-4afb-4ffd-be49-58e7d73ffea9\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].membersarray}}\",\"label\":\"step➛Script step➛membersArray\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members0}}\",\"label\":\"step➛Script step➛Members0\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"8987c465-a8e6-4e83-97a0-5c61057aa722\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members1}}\",\"label\":\"step➛Script step➛Members1\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"58633378-ee11-4ce5-ade6-83b04f79a6d0\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members2}}\",\"label\":\"step➛Script step➛Members2\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"46031d1c-47f3-4a55-aa6a-719b4a3cdfff\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members3}}\",\"label\":\"step➛Script step➛Members3\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"648fdbb6-ee3b-4fcb-b7f2-fff33135fe84\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members4}}\",\"label\":\"step➛Script step➛Members4\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"b1dabba7-0f5e-4f3a-924f-962f1118e285\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members5}}\",\"label\":\"step➛Script step➛Members5\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"4af8fd58-8fa7-4a8d-ab7a-9c31131f358a\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members6}}\",\"label\":\"step➛Script step➛Members6\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"4640807c-bd04-4c41-99de-ef2c0e759097\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members7}}\",\"label\":\"step➛Script step➛Members7\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"87afd08e-59e0-42c9-b547-7a59ef0b9734\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members8}}\",\"label\":\"step➛Script step➛Members8\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"3e0eff6b-7a2c-485b-81df-23844cb38dc0\"}},{\"name\":\"{{step[6890701f-7eb0-4cf5-b9d7-a6a6c2ca59b2].members9}}\",\"label\":\"step➛Script step➛Members9\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"c16840cb-d73a-4144-87da-6702a50369ce\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_updated_on": {
+    "value": "2025-09-16 19:42:07",
+    "display_value": "2025-09-16 12:42:07 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "8d3bc9913380b2907b18bc534d5c7b07",
+    "display_value": "8d3bc9913380b2907b18bc534d5c7b07"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "get_audience_members",
+    "display_value": "get_audience_members"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2025-07-08 21:42:31",
+    "display_value": "2025-07-08 02:42:31 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch9b-07-28-2025_08-07-2025_0908.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch9b-07-28-2025_08-07-2025_0908.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Get Audience Members",
+    "display_value": "Get Audience Members"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "576a0df647eaa210242aedcd416d430d",
+    "display_value": "576a0df647eaa210242aedcd416d430d"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "86",
+    "display_value": "86"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_127741fe47aaa210242aedcd416d436c",
+    "display_value": "sys_hub_action_type_definition_127741fe47aaa210242aedcd416d436c"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Get Audience Members",
+    "display_value": "Get Audience Members"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "210fb1d833e516507b18bc534d5c7b3f",
+    "extracted_at": "2025-08-22T18:46:21.734Z",
+    "display_value": "Clone Journey Version",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-25 20:36:46",
+    "display_value": "2024-10-25 01:36:46 PM"
+  },
+  "name": {
+    "value": "Clone Journey Version",
+    "display_value": "Clone Journey Version"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-29 16:57:03",
+    "display_value": "2025-04-29 09:57:03 AM"
+  }
+}

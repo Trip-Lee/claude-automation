@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "f0e6c75bc374a210d4ddf1db050131c3",
+    "extracted_at": "2025-08-22T18:42:37.452Z",
+    "display_value": "Related Lists (get query)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-14 20:27:21",
+    "display_value": "2025-04-14 01:27:21 PM"
+  },
+  "name": {
+    "value": "Related Lists (get query)",
+    "display_value": "Related Lists (get query)"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-14 20:27:21",
+    "display_value": "2025-04-14 01:27:21 PM"
+  }
+}

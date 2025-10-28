@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "c4d4e1aac3c96610d4ddf1db050131fc",
+    "extracted_at": "2025-08-22T18:42:37.362Z",
+    "display_value": "Get Fields",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-24 15:38:32",
+    "display_value": "2025-04-24 08:38:32 AM"
+  },
+  "name": {
+    "value": "Get Fields",
+    "display_value": "Get Fields"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-30 13:24:33",
+    "display_value": "2025-04-30 06:24:33 AM"
+  }
+}

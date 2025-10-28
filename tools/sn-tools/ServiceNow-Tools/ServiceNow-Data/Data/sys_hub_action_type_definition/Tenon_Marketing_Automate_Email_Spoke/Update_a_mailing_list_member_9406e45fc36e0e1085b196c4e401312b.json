@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "9406e45fc36e0e1085b196c4e401312b",
+    "extracted_at": "2025-09-19T21:48:49.728Z",
+    "display_value": "Update a mailing list member",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.list_address}}\",\"label\":\"action➛List Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member_address}}\",\"label\":\"action➛Member Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member}}\",\"label\":\"action➛Member\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDe8a6f4f7857dae50e86d0e136e109aa1\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"object\",\"uiUniqueId\":\"0c3b30bb-1d26-4aa9-941a-1190751def26\"}},{\"name\":\"{{action.member.Name}}\",\"label\":\"action➛Member➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.name}}\",\"label\":\"action➛Member➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.Address}}\",\"label\":\"action➛Member➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.address}}\",\"label\":\"action➛Member➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.Recipient_Variables}}\",\"label\":\"action➛Member➛Recipient Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.vars}}\",\"label\":\"action➛Member➛Recipient Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.Subscribed}}\",\"label\":\"action➛Member➛Subscribed\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.subscribed}}\",\"label\":\"action➛Member➛Subscribed\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.vars}}\",\"label\":\"action➛Recipient Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"json\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"2f5e4087-23de-4a5a-871f-fa3edbae6b86\"}},{\"name\":\"{{action.domain_region}}\",\"label\":\"action➛Domain Region\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"{{action.list_address}}\",\"label\":\"action➛List Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member_address}}\",\"label\":\"action➛Member Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member}}\",\"label\":\"action➛Member\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDe8a6f4f7857dae50e86d0e136e109aa1\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"object\",\"uiUniqueId\":\"0c3b30bb-1d26-4aa9-941a-1190751def26\"}},{\"name\":\"{{action.member.Name}}\",\"label\":\"action➛Member➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.name}}\",\"label\":\"action➛Member➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.Address}}\",\"label\":\"action➛Member➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.address}}\",\"label\":\"action➛Member➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.Recipient_Variables}}\",\"label\":\"action➛Member➛Recipient Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.vars}}\",\"label\":\"action➛Member➛Recipient Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.Subscribed}}\",\"label\":\"action➛Member➛Subscribed\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.member.subscribed}}\",\"label\":\"action➛Member➛Subscribed\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.vars}}\",\"label\":\"action➛Recipient Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"json\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"2f5e4087-23de-4a5a-871f-fa3edbae6b86\"}},{\"name\":\"{{action.domain_region}}\",\"label\":\"action➛Domain Region\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Updates a mailing list member with the given properties. Existing properties not included in the request will not be changed.",
+    "display_value": "Updates a mailing list member with the given properties. Existing properties not included in the request will not be changed."
+  },
+  "sys_updated_on": {
+    "value": "2025-08-13 13:19:03",
+    "display_value": "2025-08-13 06:19:03 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "update_a_mailing_list_member",
+    "display_value": "update_a_mailing_list_member"
+  },
+  "sys_updated_by": {
+    "value": "ben.ivers",
+    "display_value": "ben.ivers"
+  },
+  "sys_created_on": {
+    "value": "2024-06-07 16:10:57",
+    "display_value": "2024-06-07 09:10:57 AM"
+  },
+  "compiler_build": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Update a mailing list member",
+    "display_value": "Update a mailing list member"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "draft",
+    "display_value": "Draft"
+  },
+  "master_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "14",
+    "display_value": "14"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_9406e45fc36e0e1085b196c4e401312b",
+    "display_value": "sys_hub_action_type_definition_9406e45fc36e0e1085b196c4e401312b"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Update a mailing list member",
+    "display_value": "Update a mailing list member"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "67f5645fc36e0e1085b196c4e4013136",
+    "display_value": "Mailing Lists"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

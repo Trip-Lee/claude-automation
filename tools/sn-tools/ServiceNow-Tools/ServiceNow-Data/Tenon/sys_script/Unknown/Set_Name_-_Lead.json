@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "b915427bc3c99a10d4ddf1db050131c1",
+    "extracted_at": "2025-08-22T18:46:27.239Z",
+    "display_value": "Set Name - Lead",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-11 19:00:19",
+    "display_value": "2024-10-11 12:00:19 PM"
+  },
+  "name": {
+    "value": "Set Name - Lead",
+    "display_value": "Set Name - Lead"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-02 19:02:54",
+    "display_value": "2025-05-02 12:02:54 PM"
+  }
+}

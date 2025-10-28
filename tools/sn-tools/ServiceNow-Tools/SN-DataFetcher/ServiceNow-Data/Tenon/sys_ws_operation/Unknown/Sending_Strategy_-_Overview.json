@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "d50eda12c3e8d69085b196c4e4013118",
+    "extracted_at": "2025-08-22T18:42:37.403Z",
+    "display_value": "Sending Strategy - Overview",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-09-12 08:26:58",
+    "display_value": "2024-09-12 01:26:58 AM"
+  },
+  "name": {
+    "value": "Sending Strategy - Overview",
+    "display_value": "Sending Strategy - Overview"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-21 15:16:01",
+    "display_value": "2025-08-21 08:16:01 AM"
+  }
+}

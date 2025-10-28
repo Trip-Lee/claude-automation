@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "39d597ac3341aa507b18bc534d5c7bc0",
+    "extracted_at": "2025-09-19T21:48:37.637Z",
+    "display_value": "Update Contact Detail",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_update": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-18 18:58:07",
+    "display_value": "2025-04-18 11:58:07 AM"
+  },
+  "when": {
+    "value": "before",
+    "display_value": "before"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2025-04-18 18:44:01",
+    "display_value": "2025-04-18 11:44:01 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Update Contact Detail",
+    "display_value": "Update Contact Detail"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "order": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "5",
+    "display_value": "5"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "sn_lead_mgmt_core_lead",
+    "display_value": "sn_lead_mgmt_core_lead"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/) {\r\n\r\n\tlet userFields = [];\r\n\tlet settingsGQ = new global.GlideQuery('x_cadso_core_setting')\r\n\t.where('category', '9d8992d833492a507b18bc534d5c7b70')\r\n\t.where('subcategory', '011aded833492a507b18bc534d5c7b25')\r\n\t.orderBy('value')\r\n\t.select('name')\r\n\t.forEach(setting => userFields.push(setting.name));\r\n\r\n\tlet fieldsToSync = ['first_name', 'last_name', 'email', 'mobile_phone', 'company']\r\n\r\n\tlet contactDetailGR = new GlideRecord('x_cadso_automate_contact_detail');\r\n\tcontactDetailGR.addQuery('lead', current.getUniqueValue());\r\n\tcontactDetailGR.query();\r\n\tif(!contactDetailGR.next()){\r\n\t\treturn;\r\n\t}\r\n\r\n\tfor(let field of fieldsToSync){\r\n\t\tfor(let userField of userFields){\r\n\t\t\tlet recordGR = contactDetailGR[userField].getRefRecord();\r\n\t\t\tif(!recordGR || !recordGR.isValidRecord()){\r\n\t\t\t\tcontinue;\r\n\t\t\t}\r\n\t\t\tlet value = recordGR.getValue(field);\r\n\t\t\tif(value){\r\n\t\t\t\tcontactDetailGR.setValue(field, value);\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\tcontactDetailGR.update();\r\n\r\n\r\n\r\n\t\r\n\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/) {\r\n\r\n\tlet userFields = [];\r\n\tlet settingsGQ = new global.GlideQuery('x_cadso_core_setting')\r\n\t.where('category', '9d8992d833492a507b18bc534d5c7b70')\r\n\t.where('subcategory', '011aded833492a507b18bc534d5c7b25')\r\n\t.orderBy('value')\r\n\t.select('name')\r\n\t.forEach(setting => userFields.push(setting.name));\r\n\r\n\tlet fieldsToSync = ['first_name', 'last_name', 'email', 'mobile_phone', 'company']\r\n\r\n\tlet contactDetailGR = new GlideRecord('x_cadso_automate_contact_detail');\r\n\tcontactDetailGR.addQuery('lead', current.getUniqueValue());\r\n\tcontactDetailGR.query();\r\n\tif(!contactDetailGR.next()){\r\n\t\treturn;\r\n\t}\r\n\r\n\tfor(let field of fieldsToSync){\r\n\t\tfor(let userField of userFields){\r\n\t\t\tlet recordGR = contactDetailGR[userField].getRefRecord();\r\n\t\t\tif(!recordGR || !recordGR.isValidRecord()){\r\n\t\t\t\tcontinue;\r\n\t\t\t}\r\n\t\t\tlet value = recordGR.getValue(field);\r\n\t\t\tif(value){\r\n\t\t\t\tcontactDetailGR.setValue(field, value);\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\tcontactDetailGR.update();\r\n\r\n\r\n\r\n\t\r\n\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 39,
+      "char_count": 1057,
+      "preview": "(function executeRule(current, previous /*null when async*/) {\r\n\r\n\tlet userFields = [];\r\n\tlet settingsGQ = new global.GlideQuery('x_cadso_core_setting')\r\n\t.where('category', '9d8992d833492a507b18bc534...",
+      "full_script": "(function executeRule(current, previous /*null when async*/) {\r\n\r\n\tlet userFields = [];\r\n\tlet settingsGQ = new global.GlideQuery('x_cadso_core_setting')\r\n\t.where('category', '9d8992d833492a507b18bc534d5c7b70')\r\n\t.where('subcategory', '011aded833492a507b18bc534d5c7b25')\r\n\t.orderBy('value')\r\n\t.select('name')\r\n\t.forEach(setting => userFields.push(setting.name));\r\n\r\n\tlet fieldsToSync = ['first_name', 'last_name', 'email', 'mobile_phone', 'company']\r\n\r\n\tlet contactDetailGR = new GlideRecord('x_cadso_automate_contact_detail');\r\n\tcontactDetailGR.addQuery('lead', current.getUniqueValue());\r\n\tcontactDetailGR.query();\r\n\tif(!contactDetailGR.next()){\r\n\t\treturn;\r\n\t}\r\n\r\n\tfor(let field of fieldsToSync){\r\n\t\tfor(let userField of userFields){\r\n\t\t\tlet recordGR = contactDetailGR[userField].getRefRecord();\r\n\t\t\tif(!recordGR || !recordGR.isValidRecord()){\r\n\t\t\t\tcontinue;\r\n\t\t\t}\r\n\t\t\tlet value = recordGR.getValue(field);\r\n\t\t\tif(value){\r\n\t\t\t\tcontactDetailGR.setValue(field, value);\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\tcontactDetailGR.update();\r\n\r\n\r\n\r\n\t\r\n\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "first_nameVALCHANGES^ORlast_nameVALCHANGES^ORcompanyVALCHANGES^ORemailVALCHANGES^ORmobile_phoneVALCHANGES^EQ",
+    "display_value": "first_nameVALCHANGES^ORlast_nameVALCHANGES^ORcompanyVALCHANGES^ORemailVALCHANGES^ORmobile_phoneVALCHANGES^EQ"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_39d597ac3341aa507b18bc534d5c7bc0",
+    "display_value": "sys_script_39d597ac3341aa507b18bc534d5c7bc0"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Update Contact Detail",
+    "display_value": "Update Contact Detail"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

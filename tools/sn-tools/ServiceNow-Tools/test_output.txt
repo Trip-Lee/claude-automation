@@ -1,0 +1,63 @@
+Fetching ServiceNow data...
+=========================================
+     ServiceNow Data Fetcher v2
+=========================================
+Table Configuration:
+  sys_script_include:
+    Instance: dev
+    Query: active=true^sys_scope.nameLIKEtenon
+    Fields: ALL
+  sys_ws_operation:
+    Instance: dev
+    Query: active=true^sys_scope.nameLIKEtenon
+    Fields: ALL
+  sys_script:
+    Instance: dev
+    Query: active=true^sys_scope.nameLIKEtenon
+    Fields: ALL
+  sys_script_client:
+    Instance: dev
+    Query: sys_scope.nameLIKEtenon^active=true
+    Fields: ALL
+
+=========================================
+     Deleting All Existing Data
+=========================================
+Found data directory: G:\Work\Tenon\ServiceNow-Tools\Servicenow Data\Tenon
+No existing data found to delete.
+
+DEBUG: enableIncremental = false, deletedData = true
+Running Data Fetcher with multi-instance routing...
+[2025-08-22T18:38:44.018Z] [INFO] Starting ServiceNow data extraction...
+[2025-08-22T18:38:44.018Z] [INFO] Instance: tenonworkstudio.service-now.com
+[2025-08-22T18:38:44.019Z] [INFO] Output directory: ./ServiceNow-Data/Tenon
+[2025-08-22T18:38:44.019Z] [INFO] Testing authentication...
+[2025-08-22T18:38:44.383Z] [INFO] ✓ Authentication successful
+[2025-08-22T18:38:44.384Z] [INFO] Validating table access...
+[2025-08-22T18:38:44.609Z] [INFO] Found 4/4 valid tables
+[2025-08-22T18:38:44.609Z] [INFO] Validating base directory: ./ServiceNow-Data/Tenon
+[2025-08-22T18:38:44.611Z] [INFO] needsFullSync check for sys_script_include: enableIncremental=false, lastFullSync=undefined
+[2025-08-22T18:38:44.611Z] [INFO] Full sync required: incremental sync disabled
+[2025-08-22T18:38:44.611Z] [ERROR] Failed to extract table sys_script_include: Cannot read properties of null (reading 'tables')
+[2025-08-22T18:38:44.611Z] [INFO] needsFullSync check for sys_ws_operation: enableIncremental=false, lastFullSync=undefined
+[2025-08-22T18:38:44.611Z] [INFO] Full sync required: incremental sync disabled
+[2025-08-22T18:38:44.612Z] [ERROR] Failed to extract table sys_ws_operation: Cannot read properties of null (reading 'tables')
+[2025-08-22T18:38:44.612Z] [INFO] needsFullSync check for sys_script: enableIncremental=false, lastFullSync=undefined
+[2025-08-22T18:38:44.612Z] [INFO] Full sync required: incremental sync disabled
+[2025-08-22T18:38:44.612Z] [ERROR] Failed to extract table sys_script: Cannot read properties of null (reading 'tables')
+[2025-08-22T18:38:44.612Z] [INFO] needsFullSync check for sys_script_client: enableIncremental=false, lastFullSync=undefined
+[2025-08-22T18:38:44.612Z] [INFO] Full sync required: incremental sync disabled
+[2025-08-22T18:38:44.612Z] [ERROR] Failed to extract table sys_script_client: Cannot read properties of null (reading 'tables')
+[2025-08-22T18:38:44.612Z] [INFO] ==================================================
+[2025-08-22T18:38:44.612Z] [INFO] EXTRACTION COMPLETE
+[2025-08-22T18:38:44.612Z] [INFO] Duration: 0.59 seconds
+[2025-08-22T18:38:44.612Z] [INFO] Tables processed: 0/4
+[2025-08-22T18:38:44.612Z] [INFO] Records extracted: 0
+[2025-08-22T18:38:44.612Z] [INFO] Files created: 1
+[2025-08-22T18:38:44.612Z] [INFO] Files verified: 1
+[2025-08-22T18:38:44.612Z] [INFO] Path validations: 1
+[2025-08-22T18:38:44.612Z] [INFO] Errors: 4
+[2025-08-22T18:38:44.612Z] [INFO] Verification success rate: 100.0%
+[2025-08-22T18:38:44.612Z] [INFO] Output location: G:\Work\Tenon\ServiceNow-Tools\SN-DataFetcher\ServiceNow-Data\Tenon
+[2025-08-22T18:38:44.612Z] [INFO] ==================================================
+✓ Data fetch completed

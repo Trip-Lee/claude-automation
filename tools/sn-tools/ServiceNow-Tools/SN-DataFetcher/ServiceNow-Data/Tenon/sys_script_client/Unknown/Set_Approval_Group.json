@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "5d78672947197510b0361ae8036d4391",
+    "extracted_at": "2025-08-22T18:42:43.139Z",
+    "display_value": "Set Approval Group",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-09-15 20:23:59",
+    "display_value": "2023-09-15 01:23:59 PM"
+  },
+  "name": {
+    "value": "Set Approval Group",
+    "display_value": "Set Approval Group"
+  },
+  "sys_updated_on": {
+    "value": "2023-09-15 20:25:59",
+    "display_value": "2023-09-15 01:25:59 PM"
+  }
+}

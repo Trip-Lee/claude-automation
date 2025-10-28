@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "164bb08d4735e910fc4c1ae8036d430d",
+    "extracted_at": "2025-09-19T21:49:02.384Z",
+    "display_value": "164bb08d4735e910fc4c1ae8036d430d",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "f9d01dd2c31332002841b63b12d3aea1",
+    "display_value": "Update Record"
+  },
+  "ui_id": {
+    "value": "f1d34bc0-3c43-456d-a1fb-cc113e2c4037",
+    "display_value": "f1d34bc0-3c43-456d-a1fb-cc113e2c4037"
+  },
+  "sys_mod_count": {
+    "value": "120",
+    "display_value": "120"
+  },
+  "sys_updated_on": {
+    "value": "2023-10-31 16:36:16",
+    "display_value": "2023-10-31 09:36:16 AM"
+  },
+  "compiled_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "",
+    "display_value": ""
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "system",
+    "display_value": "system"
+  },
+  "sys_created_on": {
+    "value": "2023-03-23 18:48:12",
+    "display_value": "2023-03-23 11:48:12 AM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "645b6997-4320-416e-b3cb-b378ab317651",
+    "display_value": "645b6997-4320-416e-b3cb-b378ab317651"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "Update start and end date of task based on calc",
+    "display_value": "Update start and end date of task based on calc"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "e059080547b1e910fc4c1ae8036d43b1",
+    "display_value": "Generate Task Start Date Based off Project Start Template"
+  },
+  "sys_created_by": {
+    "value": "Kyle.Commette",
+    "display_value": "Kyle.Commette"
+  },
+  "order": {
+    "value": "7",
+    "display_value": "7"
+  }
+}

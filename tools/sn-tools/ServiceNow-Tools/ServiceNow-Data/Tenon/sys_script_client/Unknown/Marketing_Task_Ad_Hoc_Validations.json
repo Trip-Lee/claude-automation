@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "feb4de60c3fb8e5085b196c4e4013170",
+    "extracted_at": "2025-08-22T18:46:29.160Z",
+    "display_value": "Marketing  Task Ad Hoc Validations",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-31 14:36:37",
+    "display_value": "2024-07-31 07:36:37 AM"
+  },
+  "name": {
+    "value": "Marketing  Task Ad Hoc Validations",
+    "display_value": "Marketing  Task Ad Hoc Validations"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-14 19:34:56",
+    "display_value": "2024-10-14 12:34:56 PM"
+  }
+}

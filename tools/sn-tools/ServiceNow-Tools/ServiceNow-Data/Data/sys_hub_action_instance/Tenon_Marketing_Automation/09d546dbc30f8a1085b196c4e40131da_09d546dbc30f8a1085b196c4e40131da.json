@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "09d546dbc30f8a1085b196c4e40131da",
+    "extracted_at": "2025-09-19T21:48:55.424Z",
+    "display_value": "09d546dbc30f8a1085b196c4e40131da",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "2374465bc30f8a1085b196c4e4013110",
+    "display_value": "Get Yesterday's Date (RFC 2822)"
+  },
+  "ui_id": {
+    "value": "b0fb7c35-9310-4043-a8cd-1efa82dee08f",
+    "display_value": "b0fb7c35-9310-4043-a8cd-1efa82dee08f"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "sys_updated_on": {
+    "value": "2024-07-02 19:41:00",
+    "display_value": "2024-07-02 12:41:00 PM"
+  },
+  "compiled_snapshot": {
+    "value": "2374465bc30f8a1085b196c4e4013110",
+    "display_value": "2374465bc30f8a1085b196c4e4013110"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "3a53ce97c30f8a1085b196c4e401316f",
+    "display_value": "Get Yesterday's Date (RFC 2822)"
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2024-07-02 19:41:00",
+    "display_value": "2024-07-02 12:41:00 PM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "flow": {
+    "value": "45d546dbc30f8a1085b196c4e40131ca",
+    "display_value": "Get Domain Stats (Daily)"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "order": {
+    "value": "1",
+    "display_value": "1"
+  }
+}

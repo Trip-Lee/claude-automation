@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "c4d4e1aac3c96610d4ddf1db050131fc",
+    "extracted_at": "2025-09-19T21:48:32.751Z",
+    "display_value": "Get Fields",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\r\n\ttry{\r\n\t\t//name=var__m_sys_ux_lib_component_attr_d274b2165c4fef691d09dae9000e5811\r\n\t\tconst apiUtil = new x_cadso_automate.APIUtils();\r\n\t\tconst table = 'sys_dictionary';\r\n\t\tconst query = `name=${request.pathParams.tableName}`;\r\n\t\tlet returnFields = request.queryParams.return_fields?.split(',') || null;\r\n\t\tconst fields = apiUtil.query({ table, query, returnFields });\r\n\t\tif(!fields){\r\n\t\t\treturn new sn_ws_err.NotFoundError('Could not find fields')\r\n\t\t}\r\n\t\tresponse.setBody(fields);\r\n\t}catch(error){\r\n\t\treturn new sn_ws_err.BadRequestError(error.message)\r\n\t}\r\n\r\n\r\n})(request, response);",
+    "display_value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\r\n\ttry{\r\n\t\t//name=var__m_sys_ux_lib_component_attr_d274b2165c4fef691d09dae9000e5811\r\n\t\tconst apiUtil = new x_cadso_automate.APIUtils();\r\n\t\tconst table = 'sys_dictionary';\r\n\t\tconst query = `name=${request.pathParams.tableName}`;\r\n\t\tlet returnFields = request.queryParams.return_fields?.split(',') || null;\r\n\t\tconst fields = apiUtil.query({ table, query, returnFields });\r\n\t\tif(!fields){\r\n\t\t\treturn new sn_ws_err.NotFoundError('Could not find fields')\r\n\t\t}\r\n\t\tresponse.setBody(fields);\r\n\t}catch(error){\r\n\t\treturn new sn_ws_err.BadRequestError(error.message)\r\n\t}\r\n\r\n\r\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-30 13:24:33",
+    "display_value": "2025-04-30 06:24:33 AM"
+  },
+  "enforce_acl": {
+    "value": "cf9d01d3e73003009d6247e603f6a990",
+    "display_value": "Scripted REST External Default"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "GET",
+    "display_value": "GET"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_core/tables/{tableName}/fields",
+    "display_value": "/api/x_cadso_core/tables/{tableName}/fields"
+  },
+  "sys_created_on": {
+    "value": "2025-04-24 15:38:32",
+    "display_value": "2025-04-24 08:38:32 AM"
+  },
+  "sys_name": {
+    "value": "Get Fields",
+    "display_value": "Get Fields"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "web_service_definition": {
+    "value": "c7a469aac3c96610d4ddf1db0501319f",
+    "display_value": "Tables"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "25",
+    "display_value": "25"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_c4d4e1aac3c96610d4ddf1db050131fc",
+    "display_value": "sys_ws_operation_c4d4e1aac3c96610d4ddf1db050131fc"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Get Fields",
+    "display_value": "Get Fields"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/{tableName}/fields",
+    "display_value": "/{tableName}/fields"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "63a9e646c3955610d4ddf1db050131e6",
+    "extracted_at": "2025-09-19T21:49:44.511Z",
+    "display_value": "Copy of Journey Builder",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.action\",\"label\":\"3 - For Each➛Instance Step Record➛Action\",\"reference\":\"x_cadso_journey_action\",\"reference_display\":\"Action\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"action\",\"usedInstances\":{}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.version_step\",\"label\":\"3 - For Each➛Instance Step Record➛Version Step\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"version_step\",\"usedInstances\":{\"0f576228-5d98-4e2a-9341-ea165bb519b5\":[\"version_step\"]}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.version_step.short_description\",\"label\":\"3 - For Each➛Instance Step Record➛Version Step➛Short Description\",\"reference\":\"\",\"reference_display\":\"Short Description\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"short_description\",\"usedInstances\":{}},{\"name\":\"Updated_1.current\",\"label\":\"Trigger - Record Updated➛Instance Record\",\"reference\":\"x_cadso_journey_instance\",\"reference_display\":\"Instance\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"6d0d75ae-a440-4854-bf6e-4d5db6e4266b\":[\"conditions\"],\"22d7b8dc-672f-4259-ba98-6f9fcbf8bed3\":[\"record\"],\"bb089c52-8c4d-4c8e-a394-01c17ad50704\":[\"record\"]},\"attributes\":{}},{\"name\":\"6d0d75ae-a440-4854-bf6e-4d5db6e4266b.Records\",\"label\":\"1 - Look Up Records➛x_cadso_journey_instance_step Records\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"x_cadso_journey_instance_step Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item\",\"label\":\"3 - For Each➛Instance Step Record\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"ab4260dc-5673-474c-b146-546995a6c8ea\":[\"instance_step\"],\"0f576228-5d98-4e2a-9341-ea165bb519b5\":[\"version_step_instance\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.instance\",\"label\":\"3 - For Each➛Instance Step Record➛Instance\",\"reference\":\"x_cadso_journey_instance\",\"reference_display\":\"Instance\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"instance\",\"usedInstances\":{\"ab4260dc-5673-474c-b146-546995a6c8ea\":[\"instance\"]}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.version_step.action.subflow.name\",\"label\":\"3 - For Each➛Instance Step Record➛Version Step➛Action➛Subflow➛Name\",\"reference\":\"\",\"reference_display\":\"Name\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_hub_flow\",\"column_name\":\"name\",\"usedInstances\":{\"0f576228-5d98-4e2a-9341-ea165bb519b5\":[\"version_step\",\"flow\"]}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.action.subflow.name\",\"label\":\"3 - For Each➛Instance Step Record➛Action➛Subflow➛Name\",\"reference\":\"\",\"reference_display\":\"Name\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_hub_flow\",\"column_name\":\"name\",\"usedInstances\":{}}]",
+    "display_value": "[{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.action\",\"label\":\"3 - For Each➛Instance Step Record➛Action\",\"reference\":\"x_cadso_journey_action\",\"reference_display\":\"Action\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"action\",\"usedInstances\":{}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.version_step\",\"label\":\"3 - For Each➛Instance Step Record➛Version Step\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"version_step\",\"usedInstances\":{\"0f576228-5d98-4e2a-9341-ea165bb519b5\":[\"version_step\"]}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.version_step.short_description\",\"label\":\"3 - For Each➛Instance Step Record➛Version Step➛Short Description\",\"reference\":\"\",\"reference_display\":\"Short Description\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"short_description\",\"usedInstances\":{}},{\"name\":\"Updated_1.current\",\"label\":\"Trigger - Record Updated➛Instance Record\",\"reference\":\"x_cadso_journey_instance\",\"reference_display\":\"Instance\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"6d0d75ae-a440-4854-bf6e-4d5db6e4266b\":[\"conditions\"],\"22d7b8dc-672f-4259-ba98-6f9fcbf8bed3\":[\"record\"],\"bb089c52-8c4d-4c8e-a394-01c17ad50704\":[\"record\"]},\"attributes\":{}},{\"name\":\"6d0d75ae-a440-4854-bf6e-4d5db6e4266b.Records\",\"label\":\"1 - Look Up Records➛x_cadso_journey_instance_step Records\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"x_cadso_journey_instance_step Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item\",\"label\":\"3 - For Each➛Instance Step Record\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"ab4260dc-5673-474c-b146-546995a6c8ea\":[\"instance_step\"],\"0f576228-5d98-4e2a-9341-ea165bb519b5\":[\"version_step_instance\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.instance\",\"label\":\"3 - For Each➛Instance Step Record➛Instance\",\"reference\":\"x_cadso_journey_instance\",\"reference_display\":\"Instance\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"instance\",\"usedInstances\":{\"ab4260dc-5673-474c-b146-546995a6c8ea\":[\"instance\"]}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.version_step.action.subflow.name\",\"label\":\"3 - For Each➛Instance Step Record➛Version Step➛Action➛Subflow➛Name\",\"reference\":\"\",\"reference_display\":\"Name\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_hub_flow\",\"column_name\":\"name\",\"usedInstances\":{\"0f576228-5d98-4e2a-9341-ea165bb519b5\":[\"version_step\",\"flow\"]}},{\"name\":\"ef6391c4-96bc-4b3f-b0c0-c2ba581f7166.item.action.subflow.name\",\"label\":\"3 - For Each➛Instance Step Record➛Action➛Subflow➛Name\",\"reference\":\"\",\"reference_display\":\"Name\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_hub_flow\",\"column_name\":\"name\",\"usedInstances\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-18 21:26:31",
+    "display_value": "2024-10-18 02:26:31 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "copy_of_journey_builder",
+    "display_value": "copy_of_journey_builder"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-10-18 21:26:31",
+    "display_value": "2024-10-18 02:26:31 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "b1df157d33d11a107b18bc534d5c7b47",
+    "display_value": "Copy of Journey Builder"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "HIGH",
+    "display_value": "High"
+  },
+  "name": {
+    "value": "Copy of Journey Builder",
+    "display_value": "Copy of Journey Builder"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=84448000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=84448000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "815547e0c319d210d4ddf1db05013149",
+    "display_value": "815547e0c319d210d4ddf1db05013149"
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

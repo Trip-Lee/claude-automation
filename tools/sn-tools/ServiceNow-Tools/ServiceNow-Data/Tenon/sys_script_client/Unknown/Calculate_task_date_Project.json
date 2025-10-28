@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "4fc1f320c337ce5085b196c4e40131f3",
+    "extracted_at": "2025-08-22T18:46:29.034Z",
+    "display_value": "Calculate task date Project",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-31 21:17:21",
+    "display_value": "2024-07-31 02:17:21 PM"
+  },
+  "name": {
+    "value": "Calculate task date Project",
+    "display_value": "Calculate task date Project"
+  },
+  "sys_updated_on": {
+    "value": "2024-09-09 18:16:56",
+    "display_value": "2024-09-09 11:16:56 AM"
+  }
+}

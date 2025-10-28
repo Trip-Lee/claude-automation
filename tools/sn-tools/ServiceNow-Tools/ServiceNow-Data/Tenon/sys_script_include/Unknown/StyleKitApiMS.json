@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "b5a945eb873fc210369f33373cbb35ac",
+    "extracted_at": "2025-08-22T18:46:21.234Z",
+    "display_value": "StyleKitApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-08-09 16:43:49",
+    "display_value": "2024-08-09 09:43:49 AM"
+  },
+  "name": {
+    "value": "StyleKitApiMS",
+    "display_value": "StyleKitApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-10 02:00:36",
+    "display_value": "2025-04-09 07:00:36 PM"
+  }
+}

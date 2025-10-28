@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "c8b9dedcc366425085b196c4e40131e0",
+    "extracted_at": "2025-09-19T21:48:51.500Z",
+    "display_value": "Retrieve A Stored Email",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.domain_record}}\",\"label\":\"action➛Domain Record\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_record}}\",\"label\":\"action➛Email Record\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.domain_name}}\",\"label\":\"action➛Domain Record➛Domain Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.storage_key}}\",\"label\":\"action➛Storage Key\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.subject}}\",\"label\":\"step➛JSON Parser step➛root➛subject\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.sender}}\",\"label\":\"step➛JSON Parser step➛root➛sender\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.stripped-html}}\",\"label\":\"step➛JSON Parser step➛root➛stripped-html\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.X-Mailgun-Tag}}\",\"label\":\"step➛JSON Parser step➛root➛X-Mailgun-Tag\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.recipients}}\",\"label\":\"step➛JSON Parser step➛root➛recipients\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Mime-Version}}\",\"label\":\"step➛JSON Parser step➛root➛Mime-Version\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.From}}\",\"label\":\"step➛JSON Parser step➛root➛From\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Body-Plain}}\",\"label\":\"step➛JSON Parser step➛root➛Body-Plain\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Subject}}\",\"label\":\"step➛JSON Parser step➛root➛Subject\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.To}}\",\"label\":\"step➛JSON Parser step➛root➛To\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.content_type}}\",\"label\":\"step➛JSON Parser step➛root➛content_type\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.content_transfer_encoding}}\",\"label\":\"step➛JSON Parser step➛root➛content_transfer_encoding\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Message-Id}}\",\"label\":\"step➛JSON Parser step➛root➛Message-Id\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.stripped-text}}\",\"label\":\"step➛JSON Parser step➛root➛stripped-text\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Body-HTML}}\",\"label\":\"step➛JSON Parser step➛root➛Body-HTML\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[5c8b1549-233d-4ecf-a9b9-176ce6896128].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[5c8b1549-233d-4ecf-a9b9-176ce6896128].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[5c8b1549-233d-4ecf-a9b9-176ce6896128].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}}]",
+    "display_value": "[{\"name\":\"{{action.domain_record}}\",\"label\":\"action➛Domain Record\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_record}}\",\"label\":\"action➛Email Record\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.domain_name}}\",\"label\":\"action➛Domain Record➛Domain Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.storage_key}}\",\"label\":\"action➛Storage Key\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.subject}}\",\"label\":\"step➛JSON Parser step➛root➛subject\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.sender}}\",\"label\":\"step➛JSON Parser step➛root➛sender\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.stripped-html}}\",\"label\":\"step➛JSON Parser step➛root➛stripped-html\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.X-Mailgun-Tag}}\",\"label\":\"step➛JSON Parser step➛root➛X-Mailgun-Tag\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.recipients}}\",\"label\":\"step➛JSON Parser step➛root➛recipients\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Mime-Version}}\",\"label\":\"step➛JSON Parser step➛root➛Mime-Version\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.From}}\",\"label\":\"step➛JSON Parser step➛root➛From\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Body-Plain}}\",\"label\":\"step➛JSON Parser step➛root➛Body-Plain\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Subject}}\",\"label\":\"step➛JSON Parser step➛root➛Subject\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.To}}\",\"label\":\"step➛JSON Parser step➛root➛To\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.content_type}}\",\"label\":\"step➛JSON Parser step➛root➛content_type\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.content_transfer_encoding}}\",\"label\":\"step➛JSON Parser step➛root➛content_transfer_encoding\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Message-Id}}\",\"label\":\"step➛JSON Parser step➛root➛Message-Id\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.stripped-text}}\",\"label\":\"step➛JSON Parser step➛root➛stripped-text\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0319c002-f167-4415-bf22-77b08be36791].root.Body-HTML}}\",\"label\":\"step➛JSON Parser step➛root➛Body-HTML\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[5c8b1549-233d-4ecf-a9b9-176ce6896128].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[5c8b1549-233d-4ecf-a9b9-176ce6896128].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[5c8b1549-233d-4ecf-a9b9-176ce6896128].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Event(s) created from sending an email will contain a `storage.key` to use to retrieve the email.",
+    "display_value": "Event(s) created from sending an email will contain a `storage.key` to use to retrieve the email."
+  },
+  "sys_updated_on": {
+    "value": "2024-08-19 18:39:34",
+    "display_value": "2024-08-19 11:39:34 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Retrieve a stored email",
+    "display_value": "Retrieve a stored email"
+  },
+  "latest_snapshot": {
+    "value": "8514097a87c05690369f33373cbb355d",
+    "display_value": "8514097a87c05690369f33373cbb355d"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "retrieve_a_stored_email",
+    "display_value": "retrieve_a_stored_email"
+  },
+  "sys_updated_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "sys_created_on": {
+    "value": "2024-05-29 16:54:36",
+    "display_value": "2024-05-29 09:54:36 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Retrieve A Stored Email",
+    "display_value": "Retrieve A Stored Email"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "a1b3fa1cc3e6425085b196c4e401315f",
+    "display_value": "a1b3fa1cc3e6425085b196c4e401315f"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "16",
+    "display_value": "16"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_c8b9dedcc366425085b196c4e40131e0",
+    "display_value": "sys_hub_action_type_definition_c8b9dedcc366425085b196c4e40131e0"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Retrieve A Stored Email",
+    "display_value": "Retrieve A Stored Email"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "43411b15c3ff829085b196c4e401319f",
+    "display_value": "Messages"
+  },
+  "copied_from": {
+    "value": "f811bf82c3524a1085b196c4e40131ad",
+    "display_value": "f811bf82c3524a1085b196c4e40131ad"
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "8eb711bac3fac21085b196c4e4013132",
+    "extracted_at": "2025-09-19T21:49:00.101Z",
+    "display_value": "8eb711bac3fac21085b196c4e4013132",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "fad4b095c332421085b196c4e40131ae",
+    "display_value": "Get Bulk Job"
+  },
+  "ui_id": {
+    "value": "d7a310f7-e4c1-42fe-a4e4-9d0292c2e1fa",
+    "display_value": "d7a310f7-e4c1-42fe-a4e4-9d0292c2e1fa"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "sys_updated_on": {
+    "value": "2024-06-18 16:46:54",
+    "display_value": "2024-06-18 09:46:54 AM"
+  },
+  "compiled_snapshot": {
+    "value": "fad4b095c332421085b196c4e40131ae",
+    "display_value": "fad4b095c332421085b196c4e40131ae"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "f4b1b051c332421085b196c4e401318f",
+    "display_value": "Get Bulk Job"
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-06-18 16:46:54",
+    "display_value": "2024-06-18 09:46:54 AM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "fe41f2ae-fed2-4863-943b-f6d04625e9a1",
+    "display_value": "fe41f2ae-fed2-4863-943b-f6d04625e9a1"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "flow": {
+    "value": "8ab7dd7ac3fac21085b196c4e40131fa",
+    "display_value": "Get Bath Job Results"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "order": {
+    "value": "2",
+    "display_value": "2"
+  }
+}

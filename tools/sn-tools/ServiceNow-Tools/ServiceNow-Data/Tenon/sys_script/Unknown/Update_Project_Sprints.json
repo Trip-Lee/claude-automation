@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "f39b7a469727e150ac33f109c253afcc",
+    "extracted_at": "2025-08-22T18:46:27.630Z",
+    "display_value": "Update Project Sprints",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-06-22 06:46:50",
+    "display_value": "2023-06-21 11:46:50 PM"
+  },
+  "name": {
+    "value": "Update Project Sprints",
+    "display_value": "Update Project Sprints"
+  },
+  "sys_updated_on": {
+    "value": "2023-06-22 07:04:09",
+    "display_value": "2023-06-22 12:04:09 AM"
+  }
+}

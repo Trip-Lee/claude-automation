@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "6493753bc3896210d4ddf1db05013111",
+    "extracted_at": "2025-08-22T18:46:22.008Z",
+    "display_value": "Complex Filter (AdditionalFilters fetch)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-28 14:12:47",
+    "display_value": "2025-04-28 07:12:47 AM"
+  },
+  "name": {
+    "value": "Complex Filter (AdditionalFilters fetch)",
+    "display_value": "Complex Filter (AdditionalFilters fetch)"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-06 17:49:36",
+    "display_value": "2025-08-06 10:49:36 AM"
+  }
+}

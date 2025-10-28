@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "531dfc66c3f55a10d4ddf1db050131e7",
+    "extracted_at": "2025-09-19T21:49:41.674Z",
+    "display_value": "Create Split Journey Steps",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"1cec4c5a-f0e4-4109-9fe7-08b77859ac69.Records\",\"label\":\"10 - Look Up Records➛Instance Step Records\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"085fc027-8358-4551-a1b3-fb16429f8ab2\":[\"instance_steps-0\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"flow_variable.instance_step_ids\",\"label\":\"Flow Variables➛Instance Step IDs\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"1cec4c5a-f0e4-4109-9fe7-08b77859ac69\":[\"conditions\"],\"085fc027-8358-4551-a1b3-fb16429f8ab2\":[\"instance_steps-0\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"28aa8d52-1490-4522-9ede-6cfb6cdbd947\"}},{\"name\":\"bd503009-835b-453b-9c1d-1cb11f19113c.__status__.message\",\"label\":\"12 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"33a728fe-ccae-45ba-9b1f-945c5ad8a2bb\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.version\",\"label\":\"2 - For Each➛Version Step Record➛Version\",\"reference\":\"x_cadso_journey_version\",\"reference_display\":\"Version\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"version\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"version\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.conditions\",\"label\":\"2 - For Each➛Version Step Record➛Conditions\",\"reference\":\"\",\"reference_display\":\"Conditions\",\"type\":\"conditions\",\"base_type\":\"conditions\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"conditions\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"conditions\"],\"1965cd28-8719-4b10-98f0-e3983f29c281\":[\"condition\"]}},{\"name\":\"subflow.parent_instance_step\",\"label\":\"Input➛Parent Instance Step\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"parent\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"490516a6-1ae5-4b69-a95b-12e16ebddc57\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e.record.sys_id\",\"label\":\"3 - Create Record➛Instance Step Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"sys_id\",\"usedInstances\":{\"f9695f52-89d6-4498-839f-9bb48ce6524e\":[\"instance_step\"],\"42072ba5-27f2-41cb-b093-4d432a05fff7\":[\"document_id\"]}},{\"name\":\"subflow.journey_instance.document_id\",\"label\":\"Input➛Journey Instance➛Document ID\",\"reference\":\"\",\"reference_display\":\"Document ID\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"document_id\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"document_id\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.document_id\",\"label\":\"2 - For Each➛Version Step Record➛Document ID\",\"reference\":\"\",\"reference_display\":\"Document ID\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"document_id\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"document_id\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.table\",\"label\":\"2 - For Each➛Version Step Record➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"table\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"table\"]}},{\"name\":\"subflow.journey_instance.version\",\"label\":\"Input➛Journey Instance➛Version\",\"reference\":\"x_cadso_journey_version\",\"reference_display\":\"Version\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"version\",\"usedInstances\":{\"598d6103-14b5-48ea-b2c0-19ff6f99832c\":[\"conditions\"],\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"version\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.action\",\"label\":\"2 - For Each➛Version Step Record➛Action\",\"reference\":\"x_cadso_journey_action\",\"reference_display\":\"Action\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"action\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"action\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.trigger\",\"label\":\"2 - For Each➛Version Step Record➛Trigger\",\"reference\":\"\",\"reference_display\":\"Trigger\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"trigger\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"trigger\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item\",\"label\":\"2 - For Each➛Version Step Record\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"version_step\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"598d6103-14b5-48ea-b2c0-19ff6f99832c.Records\",\"label\":\"1 - Look Up Records➛Version Step Records\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"6e283325-c025-4a5d-86a9-b7fa770b79d0\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e.record\",\"label\":\"3 - Create Record➛Instance Step Record\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"f9695f52-89d6-4498-839f-9bb48ce6524e\":[\"instance_step\"],\"69139631-086d-4096-ba8f-d2b3994c0602\":[\"record\"],\"00aa329d-606d-4600-8e79-daad93e871c5\":[\"parent_instance_step\"],\"42072ba5-27f2-41cb-b093-4d432a05fff7\":[\"record\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"f9695f52-89d6-4498-839f-9bb48ce6524e.field_values\",\"label\":\"4 - Get Dynamic Field Values➛Field Values\",\"reference_display\":\"Field Values\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"69139631-086d-4096-ba8f-d2b3994c0602\":[\"values\",\"conditions\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"7a5c754a-0fa1-4e5d-9670-ce1baee9ceac\"}},{\"name\":\"subflow.journey_instance\",\"label\":\"Input➛Journey Instance\",\"reference\":\"x_cadso_journey_instance\",\"reference_display\":\"Instance\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"version\",\"instance\"],\"55c63c1a-6f1b-436a-8a3e-04450924fc9d\":[\"record\"],\"2fdd06c2-5d43-4a3e-982a-75796f169cb1\":[\"record\"],\"00aa329d-606d-4600-8e79-daad93e871c5\":[\"journey_instance\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"6bd86032-def2-4405-ab18-11338cfc9ec0\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.journey_instance.journey\",\"label\":\"Input➛Journey Instance➛Journey\",\"reference\":\"x_cadso_journey_flow\",\"reference_display\":\"Journey\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"journey\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"journey\"],\"598d6103-14b5-48ea-b2c0-19ff6f99832c\":[\"conditions\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.order\",\"label\":\"2 - For Each➛Version Step Record➛Order\",\"reference\":\"\",\"reference_display\":\"Order\",\"type\":\"integer\",\"base_type\":\"integer\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"order\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"order\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.children\",\"label\":\"2 - For Each➛Version Step Record➛Children\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"children\",\"usedInstances\":{\"1965cd28-8719-4b10-98f0-e3983f29c281\":[\"condition\"]}},{\"name\":\"subflow.parent_instance_step.action\",\"label\":\"Input➛Parent Instance Step➛Action\",\"reference\":\"x_cadso_journey_action\",\"reference_display\":\"Action\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"action\",\"usedInstances\":{}},{\"name\":\"subflow.parent_instance_step.version_step\",\"label\":\"Input➛Parent Instance Step➛Version Step\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"version_step\",\"usedInstances\":{}},{\"name\":\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e.table_name\",\"label\":\"3 - Create Record➛Instance Step Table\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"usedInstances\":{\"42072ba5-27f2-41cb-b093-4d432a05fff7\":[\"table_name\",\"table\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"subflow.parent_version_step\",\"label\":\"Input➛Parent Version Step\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"598d6103-14b5-48ea-b2c0-19ff6f99832c\":[\"conditions\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"208f2488-a363-47f3-a9b6-1ca7dc4add47\",\"uiTypeLabel\":\"Reference\"}}]",
+    "display_value": "[{\"name\":\"1cec4c5a-f0e4-4109-9fe7-08b77859ac69.Records\",\"label\":\"10 - Look Up Records➛Instance Step Records\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"085fc027-8358-4551-a1b3-fb16429f8ab2\":[\"instance_steps-0\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"flow_variable.instance_step_ids\",\"label\":\"Flow Variables➛Instance Step IDs\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"1cec4c5a-f0e4-4109-9fe7-08b77859ac69\":[\"conditions\"],\"085fc027-8358-4551-a1b3-fb16429f8ab2\":[\"instance_steps-0\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"28aa8d52-1490-4522-9ede-6cfb6cdbd947\"}},{\"name\":\"bd503009-835b-453b-9c1d-1cb11f19113c.__status__.message\",\"label\":\"12 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"33a728fe-ccae-45ba-9b1f-945c5ad8a2bb\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.version\",\"label\":\"2 - For Each➛Version Step Record➛Version\",\"reference\":\"x_cadso_journey_version\",\"reference_display\":\"Version\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"version\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"version\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.conditions\",\"label\":\"2 - For Each➛Version Step Record➛Conditions\",\"reference\":\"\",\"reference_display\":\"Conditions\",\"type\":\"conditions\",\"base_type\":\"conditions\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"conditions\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"conditions\"],\"1965cd28-8719-4b10-98f0-e3983f29c281\":[\"condition\"]}},{\"name\":\"subflow.parent_instance_step\",\"label\":\"Input➛Parent Instance Step\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"parent\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"490516a6-1ae5-4b69-a95b-12e16ebddc57\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e.record.sys_id\",\"label\":\"3 - Create Record➛Instance Step Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"sys_id\",\"usedInstances\":{\"f9695f52-89d6-4498-839f-9bb48ce6524e\":[\"instance_step\"],\"42072ba5-27f2-41cb-b093-4d432a05fff7\":[\"document_id\"]}},{\"name\":\"subflow.journey_instance.document_id\",\"label\":\"Input➛Journey Instance➛Document ID\",\"reference\":\"\",\"reference_display\":\"Document ID\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"document_id\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"document_id\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.document_id\",\"label\":\"2 - For Each➛Version Step Record➛Document ID\",\"reference\":\"\",\"reference_display\":\"Document ID\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"document_id\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"document_id\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.table\",\"label\":\"2 - For Each➛Version Step Record➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"table\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"table\"]}},{\"name\":\"subflow.journey_instance.version\",\"label\":\"Input➛Journey Instance➛Version\",\"reference\":\"x_cadso_journey_version\",\"reference_display\":\"Version\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"version\",\"usedInstances\":{\"598d6103-14b5-48ea-b2c0-19ff6f99832c\":[\"conditions\"],\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"version\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.action\",\"label\":\"2 - For Each➛Version Step Record➛Action\",\"reference\":\"x_cadso_journey_action\",\"reference_display\":\"Action\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"action\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"action\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.trigger\",\"label\":\"2 - For Each➛Version Step Record➛Trigger\",\"reference\":\"\",\"reference_display\":\"Trigger\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"trigger\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"trigger\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item\",\"label\":\"2 - For Each➛Version Step Record\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"version_step\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"598d6103-14b5-48ea-b2c0-19ff6f99832c.Records\",\"label\":\"1 - Look Up Records➛Version Step Records\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"6e283325-c025-4a5d-86a9-b7fa770b79d0\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e.record\",\"label\":\"3 - Create Record➛Instance Step Record\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"f9695f52-89d6-4498-839f-9bb48ce6524e\":[\"instance_step\"],\"69139631-086d-4096-ba8f-d2b3994c0602\":[\"record\"],\"00aa329d-606d-4600-8e79-daad93e871c5\":[\"parent_instance_step\"],\"42072ba5-27f2-41cb-b093-4d432a05fff7\":[\"record\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"f9695f52-89d6-4498-839f-9bb48ce6524e.field_values\",\"label\":\"4 - Get Dynamic Field Values➛Field Values\",\"reference_display\":\"Field Values\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"69139631-086d-4096-ba8f-d2b3994c0602\":[\"values\",\"conditions\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"7a5c754a-0fa1-4e5d-9670-ce1baee9ceac\"}},{\"name\":\"subflow.journey_instance\",\"label\":\"Input➛Journey Instance\",\"reference\":\"x_cadso_journey_instance\",\"reference_display\":\"Instance\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"version\",\"instance\"],\"55c63c1a-6f1b-436a-8a3e-04450924fc9d\":[\"record\"],\"2fdd06c2-5d43-4a3e-982a-75796f169cb1\":[\"record\"],\"00aa329d-606d-4600-8e79-daad93e871c5\":[\"journey_instance\"]},\"attributes\":{\"uiType\":\"reference\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"6bd86032-def2-4405-ab18-11338cfc9ec0\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.journey_instance.journey\",\"label\":\"Input➛Journey Instance➛Journey\",\"reference\":\"x_cadso_journey_flow\",\"reference_display\":\"Journey\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"journey\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"journey\"],\"598d6103-14b5-48ea-b2c0-19ff6f99832c\":[\"conditions\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.order\",\"label\":\"2 - For Each➛Version Step Record➛Order\",\"reference\":\"\",\"reference_display\":\"Order\",\"type\":\"integer\",\"base_type\":\"integer\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"order\",\"usedInstances\":{\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e\":[\"order\"]}},{\"name\":\"6e283325-c025-4a5d-86a9-b7fa770b79d0.item.children\",\"label\":\"2 - For Each➛Version Step Record➛Children\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"children\",\"usedInstances\":{\"1965cd28-8719-4b10-98f0-e3983f29c281\":[\"condition\"]}},{\"name\":\"subflow.parent_instance_step.action\",\"label\":\"Input➛Parent Instance Step➛Action\",\"reference\":\"x_cadso_journey_action\",\"reference_display\":\"Action\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"action\",\"usedInstances\":{}},{\"name\":\"subflow.parent_instance_step.version_step\",\"label\":\"Input➛Parent Instance Step➛Version Step\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"version_step\",\"usedInstances\":{}},{\"name\":\"e2a887c1-57b3-4ac1-b997-6eee163d5d9e.table_name\",\"label\":\"3 - Create Record➛Instance Step Table\",\"reference\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"usedInstances\":{\"42072ba5-27f2-41cb-b093-4d432a05fff7\":[\"table_name\",\"table\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"subflow.parent_version_step\",\"label\":\"Input➛Parent Version Step\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"598d6103-14b5-48ea-b2c0-19ff6f99832c\":[\"conditions\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"208f2488-a363-47f3-a9b6-1ca7dc4add47\",\"uiTypeLabel\":\"Reference\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_updated_on": {
+    "value": "2024-11-15 05:22:01",
+    "display_value": "2024-11-14 09:22:01 PM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "create_split_journey_steps",
+    "display_value": "create_split_journey_steps"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-11-13 23:20:32",
+    "display_value": "2024-11-13 03:20:32 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "d27bfca2c3f55a10d4ddf1db0501312a",
+    "display_value": "Create Split Journey Steps"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "16",
+    "display_value": "16"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Create Split Journey Steps",
+    "display_value": "Create Split Journey Steps"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=2287823000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=2287823000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "60717802c35d1610d4ddf1db05013129",
+    "display_value": "60717802c35d1610d4ddf1db05013129"
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "a7d1ce8647de395098519fd8036d4338",
+    "extracted_at": "2025-08-22T18:42:43.175Z",
+    "display_value": "Set Inherited Schedule on Proj Change",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-11-05 19:13:03",
+    "display_value": "2023-11-05 11:13:03 AM"
+  },
+  "name": {
+    "value": "Set Inherited Schedule on Proj Change",
+    "display_value": "Set Inherited Schedule on Proj Change"
+  },
+  "sys_updated_on": {
+    "value": "2023-11-10 11:36:04",
+    "display_value": "2023-11-10 03:36:04 AM"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "fb7fdf73c31f2610d4ddf1db0501319f",
+    "extracted_at": "2025-09-19T21:49:14.846Z",
+    "display_value": "Get Audience Hashes and Remove Excluded Audience Hashes",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"subflow.sys_id\",\"label\":\"Input➛Sys Id\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"eeb2a8d6-6e81-4952-9e22-196b0d2a3b07\":[\"conditions\"],\"fc9afcb7-44ac-48be-9a73-af49dab2e9b7\":[\"conditions\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"1708aff3-dece-469d-aa7a-e80f52f32639\"}},{\"name\":\"fc9afcb7-44ac-48be-9a73-af49dab2e9b7.Record.audiences\",\"label\":\"1 - Look Up Record➛Email Send Record➛Audiences\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audiences\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"audiences\",\"usedInstances\":{\"8eae6e0c-324d-4bcc-aa41-ef13afc9ef59\":[\"items\"]}}]",
+    "display_value": "[{\"name\":\"subflow.sys_id\",\"label\":\"Input➛Sys Id\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"eeb2a8d6-6e81-4952-9e22-196b0d2a3b07\":[\"conditions\"],\"fc9afcb7-44ac-48be-9a73-af49dab2e9b7\":[\"conditions\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"1708aff3-dece-469d-aa7a-e80f52f32639\"}},{\"name\":\"fc9afcb7-44ac-48be-9a73-af49dab2e9b7.Record.audiences\",\"label\":\"1 - Look Up Record➛Email Send Record➛Audiences\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audiences\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"audiences\",\"usedInstances\":{\"8eae6e0c-324d-4bcc-aa41-ef13afc9ef59\":[\"items\"]}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-18 18:07:44",
+    "display_value": "2025-08-18 11:07:44 AM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "get_audience_hashes_and_remove_excluded_audience_hashes",
+    "display_value": "get_audience_hashes_and_remove_excluded_audience_hashes"
+  },
+  "sys_updated_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "sys_created_on": {
+    "value": "2025-08-18 18:07:44",
+    "display_value": "2025-08-18 11:07:44 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "parent_flow": {
+    "value": "213b93bbc3db2610d4ddf1db0501312f",
+    "display_value": "Get Audience Hashes and Remove Excluded Audience Hashes"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Get Audience Hashes and Remove Excluded Audience Hashes",
+    "display_value": "Get Audience Hashes and Remove Excluded Audience Hashes"
+  },
+  "attributes": {
+    "value": "labelCacheCleanUpExecuted=true",
+    "display_value": "labelCacheCleanUpExecuted=true"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

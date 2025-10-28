@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "7aab13c587409650369f33373cbb35f7",
+    "extracted_at": "2025-09-19T21:49:58.003Z",
+    "display_value": "Retrieve Email Events",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.user_variables\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛user_variables\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"user_variables\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.to\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛to\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"to_address\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.tags\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛tags\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"tags\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.subject\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛subject\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"subject\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.message_id\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛message_id\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"message_id\"],\"61863449-1ea0-475b-bc7f-06509b59475b\":[\"conditions\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.log_level\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛log_level\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"log_level\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.from\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛from\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"from_address\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.id\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛id\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"event_id\"]},\"attributes\":{}},{\"name\":\"aa725f57-17db-4ef3-b6da-e29ca1ac3910.item.domain_name\",\"label\":\"3 - For Each➛Domain Record➛Domain Name\",\"reference\":\"\",\"reference_display\":\"Domain Name\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"usedInstances\":{\"f2296fec-e6ad-4cbd-89e7-742a8757f430\":[\"domain\"]}},{\"name\":\"a3c82dcb-f69b-4a9c-80e0-ed4ede0968b6.Records\",\"label\":\"2 - Look Up Records➛x_cadso_automate_domain Records\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"x_cadso_automate_domain Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"aa725f57-17db-4ef3-b6da-e29ca1ac3910\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"aa725f57-17db-4ef3-b6da-e29ca1ac3910.item\",\"label\":\"3 - For Each➛Domain Record\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"e6b7b125-184b-4c48-b8a2-04e4cd20c425\":[\"domain\"],\"730d5aa6-81e8-41a5-b3ff-ab29bea6fe67\":[\"domain\"],\"f2296fec-e6ad-4cbd-89e7-742a8757f430\":[\"domain\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"c11b6661-f4d2-4b6f-b4b6-533a4f85ceb8.currdatetime\",\"label\":\"1 - Convert Date/Time to RFC 2822 Format➛currdatetime\",\"reference_display\":\"currdatetime\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"e6b7b125-184b-4c48-b8a2-04e4cd20c425\":[\"begin\"],\"730d5aa6-81e8-41a5-b3ff-ab29bea6fe67\":[\"begin\"],\"f2296fec-e6ad-4cbd-89e7-742a8757f430\":[\"begin\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"b7f473df-a8f3-4c90-85d5-398a59aa97b2\"}},{\"name\":\"c11b6661-f4d2-4b6f-b4b6-533a4f85ceb8.thirtyminsdatetime\",\"label\":\"1 - Convert Date/Time to RFC 2822 Format➛thirtyminsdatetime\",\"reference_display\":\"thirtyminsdatetime\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"e6b7b125-184b-4c48-b8a2-04e4cd20c425\":[\"end\"],\"730d5aa6-81e8-41a5-b3ff-ab29bea6fe67\":[\"end\"],\"f2296fec-e6ad-4cbd-89e7-742a8757f430\":[\"end\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"06945939-d1b1-4e34-96be-fe24fe0616b6\"}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.id\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛id\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"event_id\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.from\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛from\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"from_address\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.log_level\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛log_level\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"log_level\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.message_id\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛message_id\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"message_id\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.subject\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛subject\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"subject\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.tags\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛tags\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"tags\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.timestamp\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛timestamp\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"timestamp\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.to\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛to\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"to_address\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.user_variables\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛user_variables\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"object\",\"base_type\":\"object\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"user_variables\"]},\"attributes\":{}},{\"name\":\"61863449-1ea0-475b-bc7f-06509b59475b.Record.email_send.sys_id\",\"label\":\"5 - Look Up Record➛Email Batch Record➛Email Send➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"sys_id\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"email_send\"]}},{\"name\":\"5878f16e-da16-452b-9f9a-235d4e41d8de.__status__.message\",\"label\":\"7 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"fe76a120-3194-4334-a449-959ec8b0b021\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.event\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛event\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"event\"]},\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.user_variables\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛user_variables\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"user_variables\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.to\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛to\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"to_address\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.tags\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛tags\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"tags\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.subject\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛subject\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"subject\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.message_id\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛message_id\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"message_id\"],\"61863449-1ea0-475b-bc7f-06509b59475b\":[\"conditions\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.log_level\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛log_level\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"log_level\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.from\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛from\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"from_address\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.id\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛id\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"event_id\"]},\"attributes\":{}},{\"name\":\"aa725f57-17db-4ef3-b6da-e29ca1ac3910.item.domain_name\",\"label\":\"3 - For Each➛Domain Record➛Domain Name\",\"reference\":\"\",\"reference_display\":\"Domain Name\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"usedInstances\":{\"f2296fec-e6ad-4cbd-89e7-742a8757f430\":[\"domain\"]}},{\"name\":\"a3c82dcb-f69b-4a9c-80e0-ed4ede0968b6.Records\",\"label\":\"2 - Look Up Records➛x_cadso_automate_domain Records\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"x_cadso_automate_domain Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"aa725f57-17db-4ef3-b6da-e29ca1ac3910\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"aa725f57-17db-4ef3-b6da-e29ca1ac3910.item\",\"label\":\"3 - For Each➛Domain Record\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"e6b7b125-184b-4c48-b8a2-04e4cd20c425\":[\"domain\"],\"730d5aa6-81e8-41a5-b3ff-ab29bea6fe67\":[\"domain\"],\"f2296fec-e6ad-4cbd-89e7-742a8757f430\":[\"domain\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"c11b6661-f4d2-4b6f-b4b6-533a4f85ceb8.currdatetime\",\"label\":\"1 - Convert Date/Time to RFC 2822 Format➛currdatetime\",\"reference_display\":\"currdatetime\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"e6b7b125-184b-4c48-b8a2-04e4cd20c425\":[\"begin\"],\"730d5aa6-81e8-41a5-b3ff-ab29bea6fe67\":[\"begin\"],\"f2296fec-e6ad-4cbd-89e7-742a8757f430\":[\"begin\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"b7f473df-a8f3-4c90-85d5-398a59aa97b2\"}},{\"name\":\"c11b6661-f4d2-4b6f-b4b6-533a4f85ceb8.thirtyminsdatetime\",\"label\":\"1 - Convert Date/Time to RFC 2822 Format➛thirtyminsdatetime\",\"reference_display\":\"thirtyminsdatetime\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"e6b7b125-184b-4c48-b8a2-04e4cd20c425\":[\"end\"],\"730d5aa6-81e8-41a5-b3ff-ab29bea6fe67\":[\"end\"],\"f2296fec-e6ad-4cbd-89e7-742a8757f430\":[\"end\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"06945939-d1b1-4e34-96be-fe24fe0616b6\"}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.id\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛id\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"event_id\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.from\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛from\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"from_address\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.log_level\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛log_level\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"log_level\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.message_id\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛message_id\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"message_id\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.subject\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛subject\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"subject\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.tags\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛tags\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"tags\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.timestamp\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛timestamp\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"timestamp\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.to\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛to\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"to_address\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.results.user_variables\",\"label\":\"4 - Retrieve Email Events (DS)➛results➛user_variables\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"object\",\"base_type\":\"object\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"user_variables\"]},\"attributes\":{}},{\"name\":\"61863449-1ea0-475b-bc7f-06509b59475b.Record.email_send.sys_id\",\"label\":\"5 - Look Up Record➛Email Batch Record➛Email Send➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"sys_id\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"email_send\"]}},{\"name\":\"5878f16e-da16-452b-9f9a-235d4e41d8de.__status__.message\",\"label\":\"7 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"fe76a120-3194-4334-a449-959ec8b0b021\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"f2296fec-e6ad-4cbd-89e7-742a8757f430.targetobject.event\",\"label\":\"4 - Retrieve Email Events (DS)➛targetObject➛event\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3807ccf4-dfed-47a3-bc70-8dcf71d79275\":[\"event\"]},\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2024-08-14 19:12:30",
+    "display_value": "2024-08-14 12:12:30 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "retrieve_email_events",
+    "display_value": "retrieve_email_events"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2024-08-14 19:12:30",
+    "display_value": "2024-08-14 12:12:30 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "parent_flow": {
+    "value": "a6f0b6b68777c690369f33373cbb35fb",
+    "display_value": "Retrieve Email Events"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Retrieve Email Events",
+    "display_value": "Retrieve Email Events"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=594474000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=594474000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "9e5b26bcc3cc1ad085b196c4e4013181",
+    "display_value": "9e5b26bcc3cc1ad085b196c4e4013181"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

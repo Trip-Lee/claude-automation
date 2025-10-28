@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "406cdf9f337026507b18bc534d5c7b23",
+    "extracted_at": "2025-08-22T18:42:35.832Z",
+    "display_value": "Delete Brand Kit",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-14 22:01:09",
+    "display_value": "2025-04-14 03:01:09 PM"
+  },
+  "name": {
+    "value": "Delete Brand Kit",
+    "display_value": "Delete Brand Kit"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-14 22:02:39",
+    "display_value": "2025-04-14 03:02:39 PM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "e9612a62c3334a9085b196c4e40131cf",
+    "extracted_at": "2025-08-22T18:46:23.540Z",
+    "display_value": "Choice Component - Fetch",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-08-06 20:38:48",
+    "display_value": "2024-08-06 01:38:48 PM"
+  },
+  "name": {
+    "value": "Choice Component - Fetch",
+    "display_value": "Choice Component - Fetch"
+  },
+  "sys_updated_on": {
+    "value": "2025-02-25 13:38:45",
+    "display_value": "2025-02-25 05:38:45 AM"
+  }
+}

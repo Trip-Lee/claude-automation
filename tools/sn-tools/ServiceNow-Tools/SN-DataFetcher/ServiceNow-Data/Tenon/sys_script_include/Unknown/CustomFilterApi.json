@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "e7cf143d47910a50b0361ae8036d4338",
+    "extracted_at": "2025-08-22T18:42:35.424Z",
+    "display_value": "CustomFilterApi",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-04-01 20:34:30",
+    "display_value": "2024-04-01 01:34:30 PM"
+  },
+  "name": {
+    "value": "CustomFilterApi",
+    "display_value": "CustomFilterApi"
+  },
+  "sys_updated_on": {
+    "value": "2024-05-17 03:12:53",
+    "display_value": "2024-05-16 08:12:53 PM"
+  }
+}

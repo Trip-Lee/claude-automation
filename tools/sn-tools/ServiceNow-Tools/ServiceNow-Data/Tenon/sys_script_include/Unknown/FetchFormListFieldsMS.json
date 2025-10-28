@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "5f3f2fe8c3fa2610d4ddf1db050131af",
+    "extracted_at": "2025-08-22T18:46:19.712Z",
+    "display_value": "FetchFormListFieldsMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-07-14 20:38:10",
+    "display_value": "2025-07-14 01:38:10 PM"
+  },
+  "name": {
+    "value": "FetchFormListFieldsMS",
+    "display_value": "FetchFormListFieldsMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-15 14:43:13",
+    "display_value": "2025-07-15 07:43:13 AM"
+  }
+}

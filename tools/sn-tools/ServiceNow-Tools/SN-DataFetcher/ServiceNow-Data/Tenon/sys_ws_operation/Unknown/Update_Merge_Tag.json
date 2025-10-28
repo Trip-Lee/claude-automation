@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "3a7824e833d566107b18bc534d5c7b44",
+    "extracted_at": "2025-08-22T18:42:35.819Z",
+    "display_value": "Update Merge Tag",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-30 16:24:04",
+    "display_value": "2025-04-30 09:24:04 AM"
+  },
+  "name": {
+    "value": "Update Merge Tag",
+    "display_value": "Update Merge Tag"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-11 16:38:43",
+    "display_value": "2025-07-11 09:38:43 AM"
+  }
+}

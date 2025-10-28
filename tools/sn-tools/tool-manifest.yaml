@@ -1,0 +1,145 @@
+# ServiceNow Tools - Tool Manifest
+# Version: 2.1.0
+# This manifest describes the capabilities and usage of the ServiceNow Tools toolkit
+
+name: sn-tools
+version: 2.1.0
+description: Professional ServiceNow development toolkit with multi-instance support, real-time syncing, dependency tracking, and API automation
+type: node_script
+
+# What this tool can do (for agent decision-making)
+capabilities:
+  - "Query ServiceNow tables and records (incidents, stories, change requests, etc.)"
+  - "Create and update ServiceNow records through API"
+  - "Test ServiceNow instance connectivity and authentication"
+  - "Fetch data from multiple ServiceNow instances (dev/prod routing)"
+  - "Watch local files and auto-sync changes to ServiceNow"
+  - "Scan and analyze Script Include dependencies"
+  - "Perform impact analysis for code changes"
+  - "Trace ServiceNow Flow execution paths"
+  - "Map and validate ServiceNow table fields"
+  - "Generate AI context summaries for ServiceNow projects"
+  - "Handle multi-instance configurations (dev/prod separation)"
+
+# How to use this tool
+entry_point: ServiceNow-Tools/sn-auto-execute.js
+working_directory: /tools/sn-tools
+
+# Usage instructions for agents
+usage: |
+  Execute commands from the working directory:
+
+  # Interactive launcher (full menu)
+  node ServiceNow-Tools/sn-auto-execute.js
+
+  # Or use npm scripts (recommended):
+  cd /tools/sn-tools/ServiceNow-Tools && npm run <command>
+
+  Available npm commands:
+    - npm run execute              # Interactive launcher
+    - npm run test-connections     # Test ServiceNow connectivity
+    - npm run fetch-data           # Fetch ServiceNow data
+    - npm run fetch-stories        # Fetch stories from ServiceNow
+    - npm run fetch-all            # Fetch all data
+    - npm run watch                # Watch files for changes
+    - npm run dependency-scan      # Scan Script Include dependencies
+    - npm run impact-analysis      # Analyze change impact
+    - npm run generate-context     # Generate AI context summary
+    - npm run setup                # Configuration wizard
+    - npm run create-enhanced      # Create ServiceNow records
+
+# Concrete examples for agent learning
+examples:
+  - command: "cd /tools/sn-tools/ServiceNow-Tools && npm run test-connections"
+    description: "Test connectivity to configured ServiceNow instances"
+    use_case: "Verify ServiceNow credentials and instance accessibility before performing operations"
+
+  - command: "cd /tools/sn-tools/ServiceNow-Tools && npm run fetch-data"
+    description: "Fetch incident and table data from ServiceNow"
+    use_case: "Download current ServiceNow data for analysis or backup"
+
+  - command: "cd /tools/sn-tools/ServiceNow-Tools && npm run dependency-scan"
+    description: "Scan all Script Includes and map their dependencies"
+    use_case: "Understand code dependencies before making changes"
+
+  - command: "cd /tools/sn-tools/ServiceNow-Tools && npm run impact-analysis"
+    description: "Analyze the impact of potential code changes"
+    use_case: "Determine what will be affected by modifying a Script Include"
+
+  - command: "cd /tools/sn-tools/ServiceNow-Tools && npm run generate-context"
+    description: "Generate AI-friendly context summary of ServiceNow project"
+    use_case: "Create comprehensive context for AI analysis of ServiceNow codebase"
+
+# System requirements
+requires:
+  - "Node.js 12.0.0 or higher (v22.11.0 recommended)"
+  - "ServiceNow instance URL and credentials"
+  - "npm packages (installed via npm install in ServiceNow-Tools/)"
+
+# Required environment variables (must be set in container)
+environment:
+  - name: SNTOOL_DEV_URL
+    description: "ServiceNow development instance URL (e.g., https://dev12345.service-now.com)"
+    required: false
+    example: "https://dev12345.service-now.com"
+
+  - name: SNTOOL_DEV_USERNAME
+    description: "ServiceNow development instance username"
+    required: false
+    example: "admin"
+
+  - name: SNTOOL_DEV_PASSWORD
+    description: "ServiceNow development instance password"
+    required: false
+    example: "your_password"
+
+  - name: SNTOOL_PROD_URL
+    description: "ServiceNow production instance URL"
+    required: false
+    example: "https://prod12345.service-now.com"
+
+  - name: SNTOOL_PROD_USERNAME
+    description: "ServiceNow production instance username"
+    required: false
+    example: "admin"
+
+  - name: SNTOOL_PROD_PASSWORD
+    description: "ServiceNow production instance password"
+    required: false
+    example: "your_password"
+
+# Note: Tool reads from sn-config.json for full configuration
+# Environment variables can override config file settings
+
+# Security and execution constraints
+constraints:
+  read_only: true          # Tool code cannot be modified by agents
+  executable: true         # Tool can be executed by agents
+  network: true            # Requires network access to ServiceNow instances
+  requires_config: true    # Needs sn-config.json configuration
+
+# Metadata
+metadata:
+  author: "CadenceSoft/Tenon"
+  version_date: "2025-10-27"
+  license: "UNLICENSED"
+  documentation: "README.md"
+  installation_required: true
+  install_command: "cd ServiceNow-Tools && npm install"
+
+# Agent guidance
+agent_notes: |
+  This tool is best used when:
+  - Working with ServiceNow instances
+  - Needing to query or modify ServiceNow data
+  - Testing ServiceNow connectivity
+  - Analyzing ServiceNow code dependencies
+  - Syncing local code changes to ServiceNow
+
+  Before first use:
+  - Ensure configuration exists (sn-config.json) or run: npm run setup
+  - Install dependencies: cd ServiceNow-Tools && npm install
+  - Test connectivity: npm run test-connections
+
+  The tool supports multi-instance routing (dev/prod) and can automatically
+  route operations to the correct ServiceNow instance based on configuration.

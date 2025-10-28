@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "0411773433f2e2107b18bc534d5c7b59",
+    "extracted_at": "2025-08-22T18:42:33.510Z",
+    "display_value": "TableFieldsApi",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-07-15 15:13:17",
+    "display_value": "2025-07-15 08:13:17 AM"
+  },
+  "name": {
+    "value": "TableFieldsApi",
+    "display_value": "TableFieldsApi"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-16 19:42:50",
+    "display_value": "2025-07-16 12:42:50 PM"
+  }
+}

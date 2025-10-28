@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "4566c312c3871250d4ddf1db05013164",
+    "extracted_at": "2025-08-22T18:46:21.914Z",
+    "display_value": "Get SMS Messages",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-01-14 18:00:19",
+    "display_value": "2025-01-14 10:00:19 AM"
+  },
+  "name": {
+    "value": "Get SMS Messages",
+    "display_value": "Get SMS Messages"
+  },
+  "sys_updated_on": {
+    "value": "2025-01-15 04:28:30",
+    "display_value": "2025-01-14 08:28:30 PM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "58b834694701e15085d19fd8036d43e9",
+    "extracted_at": "2025-08-22T18:42:33.727Z",
+    "display_value": "WorkClientUtilsMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-02-16 01:07:49",
+    "display_value": "2023-02-15 05:07:49 PM"
+  },
+  "name": {
+    "value": "WorkClientUtilsMS",
+    "display_value": "WorkClientUtilsMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-16 20:48:05",
+    "display_value": "2025-05-16 01:48:05 PM"
+  }
+}

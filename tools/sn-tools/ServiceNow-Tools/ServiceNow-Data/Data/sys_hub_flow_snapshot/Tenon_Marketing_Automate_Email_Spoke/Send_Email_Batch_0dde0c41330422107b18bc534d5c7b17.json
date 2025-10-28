@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "0dde0c41330422107b18bc534d5c7b17",
+    "extracted_at": "2025-09-19T21:49:30.698Z",
+    "display_value": "Send Email Batch",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"890b1d79-d1fd-433b-b096-442872c6e5d4.__status__.message\",\"label\":\"5 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"7141cd8a-0b6d-4763-852c-a5bb1127977b\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"2aa8bf2f-91d1-4758-84d3-3364164cea66.id\",\"label\":\"4 - Send An Email➛ID\",\"reference_display\":\"ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"d9c68cea-4808-4474-a9f6-55723585d35f\":[\"mailgun_message_id\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"2acd1a70-9ba7-4661-93bc-4885b60b31a0\"}},{\"name\":\"Created or Updated_1.current.email_send.domain.domain_name\",\"label\":\"Trigger - Record Created or Updated➛Email Batch Record➛Email Send➛Domain➛Domain\",\"reference\":\"\",\"reference_display\":\"Domain\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"usedInstances\":{\"2aa8bf2f-91d1-4758-84d3-3364164cea66\":[\"domain_name\"]}},{\"name\":\"Created or Updated_1.current.recipient_variables\",\"label\":\"Trigger - Record Created or Updated➛Email Batch Record➛Recipient Variables\",\"reference\":\"\",\"reference_display\":\"Recipient Variables\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_email_batch\",\"column_name\":\"recipient_variables\",\"usedInstances\":{\"2aa8bf2f-91d1-4758-84d3-3364164cea66\":[\"recipient_variables\"]}},{\"name\":\"flow_variable.to_addresses\",\"label\":\"Flow Variables➛To Addresses\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"2aa8bf2f-91d1-4758-84d3-3364164cea66\":[\"to\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"085e61be-aac5-4ddf-97da-cd32da6f6f2e\"}},{\"name\":\"Created or Updated_1.current.email_send\",\"label\":\"Trigger - Record Created or Updated➛Email Batch Record➛Email Send\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_automate_email_batch\",\"column_name\":\"email_send\",\"usedInstances\":{\"2aa8bf2f-91d1-4758-84d3-3364164cea66\":[\"email_record\"]}},{\"name\":\"bd3e4217-8085-4086-aa15-21b36925b916.Records\",\"label\":\"1 - Look Up Records➛Email Batch Recipient Records\",\"reference\":\"x_cadso_automate_email_batch_recipient\",\"reference_display\":\"Email Batch Recipient\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"66cb1f6d-f85f-4035-bca9-a310e7b9b45e\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Email Batch Record\",\"reference\":\"x_cadso_automate_email_batch\",\"reference_display\":\"Email Batch\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"bd3e4217-8085-4086-aa15-21b36925b916\":[\"conditions\"],\"d9c68cea-4808-4474-a9f6-55723585d35f\":[\"record\"]},\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"890b1d79-d1fd-433b-b096-442872c6e5d4.__status__.message\",\"label\":\"5 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"7141cd8a-0b6d-4763-852c-a5bb1127977b\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"2aa8bf2f-91d1-4758-84d3-3364164cea66.id\",\"label\":\"4 - Send An Email➛ID\",\"reference_display\":\"ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"d9c68cea-4808-4474-a9f6-55723585d35f\":[\"mailgun_message_id\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"2acd1a70-9ba7-4661-93bc-4885b60b31a0\"}},{\"name\":\"Created or Updated_1.current.email_send.domain.domain_name\",\"label\":\"Trigger - Record Created or Updated➛Email Batch Record➛Email Send➛Domain➛Domain\",\"reference\":\"\",\"reference_display\":\"Domain\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"usedInstances\":{\"2aa8bf2f-91d1-4758-84d3-3364164cea66\":[\"domain_name\"]}},{\"name\":\"Created or Updated_1.current.recipient_variables\",\"label\":\"Trigger - Record Created or Updated➛Email Batch Record➛Recipient Variables\",\"reference\":\"\",\"reference_display\":\"Recipient Variables\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_email_batch\",\"column_name\":\"recipient_variables\",\"usedInstances\":{\"2aa8bf2f-91d1-4758-84d3-3364164cea66\":[\"recipient_variables\"]}},{\"name\":\"flow_variable.to_addresses\",\"label\":\"Flow Variables➛To Addresses\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"2aa8bf2f-91d1-4758-84d3-3364164cea66\":[\"to\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"085e61be-aac5-4ddf-97da-cd32da6f6f2e\"}},{\"name\":\"Created or Updated_1.current.email_send\",\"label\":\"Trigger - Record Created or Updated➛Email Batch Record➛Email Send\",\"reference\":\"x_cadso_automate_email_send\",\"reference_display\":\"Email Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_automate_email_batch\",\"column_name\":\"email_send\",\"usedInstances\":{\"2aa8bf2f-91d1-4758-84d3-3364164cea66\":[\"email_record\"]}},{\"name\":\"bd3e4217-8085-4086-aa15-21b36925b916.Records\",\"label\":\"1 - Look Up Records➛Email Batch Recipient Records\",\"reference\":\"x_cadso_automate_email_batch_recipient\",\"reference_display\":\"Email Batch Recipient\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"66cb1f6d-f85f-4035-bca9-a310e7b9b45e\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Email Batch Record\",\"reference\":\"x_cadso_automate_email_batch\",\"reference_display\":\"Email Batch\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"bd3e4217-8085-4086-aa15-21b36925b916\":[\"conditions\"],\"d9c68cea-4808-4474-a9f6-55723585d35f\":[\"record\"]},\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-01 00:35:34",
+    "display_value": "2025-02-28 04:35:34 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "send_email_batch",
+    "display_value": "send_email_batch"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2025-03-01 00:28:42",
+    "display_value": "2025-02-28 04:28:42 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "64eebbbc334022107b18bc534d5c7b68",
+    "display_value": "Send Email Batch"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Send Email Batch",
+    "display_value": "Send Email Batch"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "a89e3c75c3ab025085b196c4e4013144",
+    "extracted_at": "2025-09-19T21:48:49.491Z",
+    "display_value": "Get Results File",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.url}}\",\"label\":\"action➛URL\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain}}\",\"label\":\"action➛Domain\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.data_source}}\",\"label\":\"action➛Data Source\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Data Source\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[7882126d-5fd8-4476-b924-e5a2d0f7934f].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[e4c47422-bad2-4e2e-a62c-d9fa9a406e2b].record}}\",\"label\":\"step➛Look Up Record step➛Attachment Record\",\"type\":\"step\",\"ref\":\"sys_attachment\",\"reference_display\":\"\",\"base_type\":\"document_id\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"{{action.url}}\",\"label\":\"action➛URL\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain}}\",\"label\":\"action➛Domain\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.data_source}}\",\"label\":\"action➛Data Source\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Data Source\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[7882126d-5fd8-4476-b924-e5a2d0f7934f].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[e4c47422-bad2-4e2e-a62c-d9fa9a406e2b].record}}\",\"label\":\"step➛Look Up Record step➛Attachment Record\",\"type\":\"step\",\"ref\":\"sys_attachment\",\"reference_display\":\"\",\"base_type\":\"document_id\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_updated_on": {
+    "value": "2025-01-31 20:40:16",
+    "display_value": "2025-01-31 12:40:16 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "350e4ff3c3dfde10d4ddf1db05013155",
+    "display_value": "350e4ff3c3dfde10d4ddf1db05013155"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "get_results_file",
+    "display_value": "get_results_file"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-07-22 19:10:11",
+    "display_value": "2024-07-22 12:10:11 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch4-11-22-2024_12-02-2024_1408.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch4-11-22-2024_12-02-2024_1408.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Get Results File",
+    "display_value": "Get Results File"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "2ae3d9f1c36f025085b196c4e401315e",
+    "display_value": "2ae3d9f1c36f025085b196c4e401315e"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "37",
+    "display_value": "37"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_a89e3c75c3ab025085b196c4e4013144",
+    "display_value": "sys_hub_action_type_definition_a89e3c75c3ab025085b196c4e4013144"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Get Results File",
+    "display_value": "Get Results File"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "a9dd8626c3ee4a1085b196c4e40131d2",
+    "display_value": "Validations"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

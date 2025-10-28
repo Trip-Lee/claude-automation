@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "0ae959e587a89a14369f33373cbb353f",
+    "extracted_at": "2025-09-19T21:48:49.338Z",
+    "display_value": "Create Batch Recipients Dynamic",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.addresses}}\",\"label\":\"action➛Addresses\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FD8ae959e575a89a14a0092d92ffd90945\",\"child_label\":\"Address\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.string\",\"child_type\":\"string\",\"child_name\":\"address\",\"child_uiUniqueId\":\"1754e2ec-2f50-437b-bcdf-3733b54ed000\",\"uiUniqueId\":\"96de0c3a-f3fd-4d8d-8728-e9bfea8630be\"}},{\"name\":\"{{action.addresses.Address}}\",\"label\":\"action➛Addresses➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.addresses.address}}\",\"label\":\"action➛Addresses➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables}}\",\"label\":\"action➛Recipient Variabless\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"9d88cecc-d5f4-47c9-84d1-07161546420c\"}},{\"name\":\"{{action.current_address}}\",\"label\":\"action➛Current Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches}}\",\"label\":\"action➛Batches\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches._}}\",\"label\":\"action➛Batches\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch}}\",\"label\":\"action➛Batches➛Batch\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.addresses}}\",\"label\":\"action➛Batches➛Batch➛Addresses\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.addresses.Address}}\",\"label\":\"action➛Batches➛Batch➛Addresses➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.Recipent_Variables}}\",\"label\":\"action➛Batches➛Batch➛Recipent Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.recipient_variables}}\",\"label\":\"action➛Batches➛Batch➛Recipient Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"uiUniqueId\":\"1d74e5e2-5b3a-43c0-86e5-fecf952b60f9\"}},{\"name\":\"{{action.batch_number}}\",\"label\":\"action➛Batch Number\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.Email_Address}}\",\"label\":\"action➛Recipient Variabless➛Email Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address}}\",\"label\":\"action➛Recipient Variabless➛Email Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address.Name}}\",\"label\":\"action➛Recipient Variabless➛Email Address➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address.name}}\",\"label\":\"action➛Recipient Variabless➛Email Address➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address.Unique_ID}}\",\"label\":\"action➛Recipient Variabless➛Email Address➛Unique ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address.unique_id}}\",\"label\":\"action➛Recipient Variabless➛Email Address➛Unique ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.addresses.Adddress}}\",\"label\":\"action➛Batches➛Batch➛Addresses➛Adddress\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[e20f5e2c-98ec-4b4f-97a8-4f731cf6e45a].batches}}\",\"label\":\"step➛Script step➛Batches\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"uiTypeLabel\":\"JSON\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"uiType\":\"json\",\"uiUniqueId\":\"e3614183-68dc-44f8-9f65-0ea6bb819652\"}}]",
+    "display_value": "[{\"name\":\"{{action.addresses}}\",\"label\":\"action➛Addresses\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FD8ae959e575a89a14a0092d92ffd90945\",\"child_label\":\"Address\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"array.string\",\"child_type\":\"string\",\"child_name\":\"address\",\"child_uiUniqueId\":\"1754e2ec-2f50-437b-bcdf-3733b54ed000\",\"uiUniqueId\":\"96de0c3a-f3fd-4d8d-8728-e9bfea8630be\"}},{\"name\":\"{{action.addresses.Address}}\",\"label\":\"action➛Addresses➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.addresses.address}}\",\"label\":\"action➛Addresses➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables}}\",\"label\":\"action➛Recipient Variabless\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"9d88cecc-d5f4-47c9-84d1-07161546420c\"}},{\"name\":\"{{action.current_address}}\",\"label\":\"action➛Current Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches}}\",\"label\":\"action➛Batches\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches._}}\",\"label\":\"action➛Batches\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch}}\",\"label\":\"action➛Batches➛Batch\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.addresses}}\",\"label\":\"action➛Batches➛Batch➛Addresses\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.addresses.Address}}\",\"label\":\"action➛Batches➛Batch➛Addresses➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.Recipent_Variables}}\",\"label\":\"action➛Batches➛Batch➛Recipent Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.recipient_variables}}\",\"label\":\"action➛Batches➛Batch➛Recipient Variables\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"uiUniqueId\":\"1d74e5e2-5b3a-43c0-86e5-fecf952b60f9\"}},{\"name\":\"{{action.batch_number}}\",\"label\":\"action➛Batch Number\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.Email_Address}}\",\"label\":\"action➛Recipient Variabless➛Email Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address}}\",\"label\":\"action➛Recipient Variabless➛Email Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address.Name}}\",\"label\":\"action➛Recipient Variabless➛Email Address➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address.name}}\",\"label\":\"action➛Recipient Variabless➛Email Address➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address.Unique_ID}}\",\"label\":\"action➛Recipient Variabless➛Email Address➛Unique ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.recipient_variables.email_address.unique_id}}\",\"label\":\"action➛Recipient Variabless➛Email Address➛Unique ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.batches.Batch.addresses.Adddress}}\",\"label\":\"action➛Batches➛Batch➛Addresses➛Adddress\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[e20f5e2c-98ec-4b4f-97a8-4f731cf6e45a].batches}}\",\"label\":\"step➛Script step➛Batches\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"uiTypeLabel\":\"JSON\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"uiType\":\"json\",\"uiUniqueId\":\"e3614183-68dc-44f8-9f65-0ea6bb819652\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_updated_on": {
+    "value": "2024-09-11 18:32:23",
+    "display_value": "2024-09-11 11:32:23 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Create Batch Recipients Output",
+    "display_value": "Create Batch Recipients Output"
+  },
+  "latest_snapshot": {
+    "value": "180fdb8687609e14369f33373cbb354f",
+    "display_value": "180fdb8687609e14369f33373cbb354f"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "create_batch_recipients_dynamic",
+    "display_value": "create_batch_recipients_dynamic"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-09-09 19:33:55",
+    "display_value": "2024-09-09 12:33:55 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Create Batch Recipients Dynamic",
+    "display_value": "Create Batch Recipients Dynamic"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "d805216987e89a14369f33373cbb3575",
+    "display_value": "d805216987e89a14369f33373cbb3575"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "219",
+    "display_value": "219"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_0ae959e587a89a14369f33373cbb353f",
+    "display_value": "sys_hub_action_type_definition_0ae959e587a89a14369f33373cbb353f"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Create Batch Recipients Dynamic",
+    "display_value": "Create Batch Recipients Dynamic"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "0c1ec61a87945ad0369f33373cbb35b0",
+    "display_value": "0c1ec61a87945ad0369f33373cbb35b0"
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

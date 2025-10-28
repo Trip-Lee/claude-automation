@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "a48340e7871ba510b656fe66cebb35df",
+    "extracted_at": "2025-08-22T18:42:33.937Z",
+    "display_value": "sprintPlanningMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-06-13 22:43:54",
+    "display_value": "2023-06-13 03:43:54 PM"
+  },
+  "name": {
+    "value": "sprintPlanningMS",
+    "display_value": "sprintPlanningMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-11 20:28:12",
+    "display_value": "2025-03-11 01:28:12 PM"
+  }
+}

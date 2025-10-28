@@ -1,0 +1,95 @@
+{
+  "platform": "win32",
+  "timestamp": "2025-09-26T13:38:28.600Z",
+  "summary": {
+    "passed": 6,
+    "total": 6,
+    "success": true
+  },
+  "results": [
+    {
+      "timestamp": "2025-09-26T13:38:19.436Z",
+      "type": "info",
+      "message": "Starting cross-platform tests on win32",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:19.438Z",
+      "type": "info",
+      "message": "Running test: Core Files Exist",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:19.438Z",
+      "type": "success",
+      "message": "✅ Test passed: Core Files Exist",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:19.438Z",
+      "type": "info",
+      "message": "Running test: Platform Scripts Exist",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:19.438Z",
+      "type": "success",
+      "message": "✅ Test passed: Platform Scripts Exist",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:19.438Z",
+      "type": "info",
+      "message": "Running test: Shell Scripts Executable",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:19.438Z",
+      "type": "success",
+      "message": "✅ Test passed: Shell Scripts Executable",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:19.439Z",
+      "type": "info",
+      "message": "Running test: Node.js Launcher",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:19.476Z",
+      "type": "success",
+      "message": "✅ Test passed: Node.js Launcher",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:19.477Z",
+      "type": "info",
+      "message": "Running test: Command Line Interface",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:28.599Z",
+      "type": "success",
+      "message": "✅ Test passed: Command Line Interface",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:28.600Z",
+      "type": "info",
+      "message": "Running test: Configuration Management",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:28.600Z",
+      "type": "success",
+      "message": "✅ Test passed: Configuration Management",
+      "platform": "win32"
+    },
+    {
+      "timestamp": "2025-09-26T13:38:28.600Z",
+      "type": "success",
+      "message": "\n📊 Test Summary: 6/6 tests passed on win32",
+      "platform": "win32"
+    }
+  ]
+}

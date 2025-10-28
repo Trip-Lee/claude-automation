@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "c489643b47323510b0361ae8036d4348",
+    "extracted_at": "2025-08-22T18:46:23.443Z",
+    "display_value": "List Action Menu (Archive)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-12-05 19:48:15",
+    "display_value": "2023-12-05 11:48:15 AM"
+  },
+  "name": {
+    "value": "List Action Menu (Archive)",
+    "display_value": "List Action Menu (Archive)"
+  },
+  "sys_updated_on": {
+    "value": "2023-12-05 19:49:15",
+    "display_value": "2023-12-05 11:49:15 AM"
+  }
+}

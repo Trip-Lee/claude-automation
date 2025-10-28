@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "227e67f033f2e2107b18bc534d5c7b68",
+    "extracted_at": "2025-08-22T18:42:33.606Z",
+    "display_value": "TableFieldsApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-07-15 15:10:15",
+    "display_value": "2025-07-15 08:10:15 AM"
+  },
+  "name": {
+    "value": "TableFieldsApiMS",
+    "display_value": "TableFieldsApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-07 16:08:55",
+    "display_value": "2025-08-07 09:08:55 AM"
+  }
+}

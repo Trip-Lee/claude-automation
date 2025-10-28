@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "6694b12833fd96107b18bc534d5c7b7a",
+    "extracted_at": "2025-08-22T18:42:39.602Z",
+    "display_value": "Calculate Audience Size",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-11-07 22:18:17",
+    "display_value": "2024-11-07 02:18:17 PM"
+  },
+  "name": {
+    "value": "Calculate Audience Size",
+    "display_value": "Calculate Audience Size"
+  },
+  "sys_updated_on": {
+    "value": "2024-11-07 23:35:33",
+    "display_value": "2024-11-07 03:35:33 PM"
+  }
+}

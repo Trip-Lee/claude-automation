@@ -1,0 +1,216 @@
+{
+  "name": "orchestrator",
+  "description": "Main autonomous orchestrator for ServiceNow Tools",
+  "enabled": true,
+  "config": {
+    "maxConcurrentAgents": 5,
+    "decisionThreshold": 0.7,
+    "learningEnabled": true,
+    "autoStart": true,
+    "monitoringInterval": 10000,
+    "autonomous": {
+      "enabled": true,
+      "confidenceThreshold": 0.75,
+      "emergencyThreshold": 0.9
+    }
+  },
+  "agents": {
+    "monitor": {
+      "enabled": true,
+      "type": "MonitorAgent",
+      "capabilities": ["file-watch", "error-detection", "pattern-recognition", "anomaly-detection"],
+      "config": {
+        "watchPaths": [
+          "./temp_updates",
+          "./local_development",
+          "../ServiceNow-Data"
+        ],
+        "thresholds": {
+          "errorRate": 0.1,
+          "fileChangeRate": 10,
+          "memoryUsage": 0.8,
+          "responseTime": 5000
+        },
+        "autonomous": {
+          "enabled": true,
+          "confidenceThreshold": 0.6,
+          "decisionInterval": 3000
+        }
+      }
+    },
+    "analyzer": {
+      "enabled": true,
+      "type": "AnalyzerAgent",
+      "capabilities": ["data-analysis", "dependency-tracking", "impact-assessment", "pattern-analysis"],
+      "config": {
+        "analysisDepth": 3,
+        "cacheEnabled": true,
+        "autonomous": {
+          "enabled": true,
+          "confidenceThreshold": 0.7,
+          "decisionInterval": 5000
+        }
+      }
+    },
+    "executor": {
+      "enabled": true,
+      "type": "ExecutorAgent",
+      "capabilities": ["update", "deploy", "rollback", "test", "validate"],
+      "config": {
+        "requireConfirmation": false,
+        "autoBackup": true,
+        "autoValidate": true,
+        "autonomous": {
+          "enabled": true,
+          "confidenceThreshold": 0.8,
+          "decisionInterval": 10000
+        }
+      }
+    },
+    "learner": {
+      "enabled": true,
+      "type": "LearnerAgent",
+      "capabilities": ["pattern-learning", "outcome-analysis", "strategy-optimization", "knowledge-sharing"],
+      "config": {
+        "learningRate": 0.1,
+        "memorySize": 1000,
+        "shareKnowledge": true,
+        "autonomous": {
+          "enabled": true,
+          "confidenceThreshold": 0.5,
+          "decisionInterval": 30000
+        }
+      }
+    },
+    "reporter": {
+      "enabled": true,
+      "type": "ReporterAgent",
+      "capabilities": ["status-reporting", "metrics-collection", "log-aggregation", "alert-management"],
+      "config": {
+        "reportInterval": 60000,
+        "metricsRetention": 86400000,
+        "autonomous": {
+          "enabled": false
+        }
+      }
+    }
+  },
+  "rules": {
+    "autoProcessUpdates": {
+      "enabled": true,
+      "conditions": [
+        {
+          "type": "file-event",
+          "path": "temp_updates",
+          "event": "add"
+        }
+      ],
+      "actions": [
+        {
+          "agent": "analyzer",
+          "action": "analyze-update"
+        },
+        {
+          "agent": "executor",
+          "action": "process-update",
+          "requireConfidence": 0.8
+        }
+      ]
+    },
+    "errorResponse": {
+      "enabled": true,
+      "conditions": [
+        {
+          "type": "anomaly",
+          "severity": "high"
+        }
+      ],
+      "actions": [
+        {
+          "agent": "analyzer",
+          "action": "investigate-error"
+        },
+        {
+          "agent": "executor",
+          "action": "apply-fix",
+          "requireConfidence": 0.9
+        }
+      ]
+    },
+    "performanceOptimization": {
+      "enabled": true,
+      "conditions": [
+        {
+          "type": "metric",
+          "name": "performance",
+          "threshold": 0.7,
+          "operator": "below"
+        }
+      ],
+      "actions": [
+        {
+          "agent": "analyzer",
+          "action": "analyze-performance"
+        },
+        {
+          "agent": "executor",
+          "action": "optimize",
+          "requireConfidence": 0.75
+        }
+      ]
+    }
+  },
+  "integrations": {
+    "servicenow-tools": {
+      "enabled": true,
+      "modules": [
+        "sn-operations",
+        "sn-file-watcher",
+        "sn-dependency-tracker",
+        "sn-flow-tracer"
+      ]
+    },
+    "notifications": {
+      "enabled": true,
+      "channels": {
+        "console": true,
+        "file": true,
+        "webhook": false
+      }
+    }
+  },
+  "learning": {
+    "enabled": true,
+    "persistKnowledge": true,
+    "knowledgeBasePath": "./knowledge-base",
+    "shareAcrossAgents": true,
+    "optimizationInterval": 3600000
+  },
+  "monitoring": {
+    "healthChecks": {
+      "enabled": true,
+      "interval": 30000
+    },
+    "metrics": {
+      "collect": true,
+      "interval": 10000,
+      "retain": 86400000
+    },
+    "logging": {
+      "level": "info",
+      "file": "./logs/orchestrator.log",
+      "maxSize": "10MB",
+      "maxFiles": 5
+    }
+  },
+  "emergency": {
+    "enabled": true,
+    "autoShutdown": false,
+    "alertThreshold": 0.9,
+    "actions": {
+      "pauseProcessing": true,
+      "notifyAdmin": true,
+      "createSnapshot": true
+    }
+  }
+}

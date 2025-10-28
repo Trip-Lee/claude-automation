@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "e59a9a464707f91098519fd8036d4344",
+    "extracted_at": "2025-08-22T18:46:23.531Z",
+    "display_value": "List Action Menu (Retrieve)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-12-13 03:48:51",
+    "display_value": "2023-12-12 07:48:51 PM"
+  },
+  "name": {
+    "value": "List Action Menu (Retrieve)",
+    "display_value": "List Action Menu (Retrieve)"
+  },
+  "sys_updated_on": {
+    "value": "2023-12-13 03:49:37",
+    "display_value": "2023-12-12 07:49:37 PM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "2635874bc3ebc65085b196c4e40131ee",
+    "extracted_at": "2025-08-22T18:42:33.620Z",
+    "display_value": "MultiRefList",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-27 02:10:54",
+    "display_value": "2024-07-26 07:10:54 PM"
+  },
+  "name": {
+    "value": "MultiRefList",
+    "display_value": "MultiRefList"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-11 03:37:42",
+    "display_value": "2024-10-10 08:37:42 PM"
+  }
+}

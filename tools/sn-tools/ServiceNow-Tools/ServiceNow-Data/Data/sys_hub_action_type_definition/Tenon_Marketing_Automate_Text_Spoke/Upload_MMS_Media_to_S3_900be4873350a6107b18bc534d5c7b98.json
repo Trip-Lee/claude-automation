@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "900be4873350a6107b18bc534d5c7b98",
+    "extracted_at": "2025-09-19T21:48:49.058Z",
+    "display_value": "Upload MMS Media to S3",
+    "application": "Tenon_Marketing_Automate_Text_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Text Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c710ee73c3541e5085b196c4e4013170",
+      "value": "c710ee73c3541e5085b196c4e4013170"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.media}}\",\"label\":\"action➛message_send\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Message Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"File Attachment\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"file_attachment\",\"uiUniqueId\":\"c66bc40f-a14e-4b16-af9d-69b40fac2e97\"}},{\"name\":\"{{action.region}}\",\"label\":\"action➛region\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.bucket}}\",\"label\":\"action➛bucket\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.message_send}}\",\"label\":\"action➛attachment\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Attachment\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"4aecadd0-c58c-40fa-9d0e-7070cc169abb\"}},{\"name\":\"{{action.attachment}}\",\"label\":\"action➛attachment\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Attachment\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.attachment.sys_id}}\",\"label\":\"action➛attachment➛Sys ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Sys ID\",\"base_type\":\"GUID\",\"parent_table_name\":\"sys_attachment\",\"column_name\":\"sys_id\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.attachment.file_name}}\",\"label\":\"action➛attachment➛File name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"File name\",\"base_type\":\"string\",\"parent_table_name\":\"sys_attachment\",\"column_name\":\"file_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[d60157db-f222-4714-bb3e-b7c07440499e].__step_status__.code}}\",\"label\":\"step➛SetUp➛Step Status➛Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[5da8cefa-75f4-4429-b513-546cb2cca83e].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[5da8cefa-75f4-4429-b513-546cb2cca83e].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[d60157db-f222-4714-bb3e-b7c07440499e].clean_file_name}}\",\"label\":\"step➛SetUp➛clean_file_name\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"f3db64ad-dfa5-4dd4-884b-b664c74c5d65\"}},{\"name\":\"{{step[f9cbdbdf-4081-4a2e-9c89-93231464a19f].object_key}}\",\"label\":\"step➛Evaluate➛object_key\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"ef85f9b6-a7d0-4f57-b49e-d27731743951\"}},{\"name\":\"{{step[d60157db-f222-4714-bb3e-b7c07440499e].__step_status__.message}}\",\"label\":\"step➛SetUp➛Step Status➛Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[5da8cefa-75f4-4429-b513-546cb2cca83e].__step_status__.code}}\",\"label\":\"step➛REST step➛Step Status➛Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[5da8cefa-75f4-4429-b513-546cb2cca83e].__step_status__.message}}\",\"label\":\"step➛REST step➛Step Status➛Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[f9cbdbdf-4081-4a2e-9c89-93231464a19f].__step_status__.code}}\",\"label\":\"step➛Evaluate➛Step Status➛Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[f9cbdbdf-4081-4a2e-9c89-93231464a19f].__step_status__.message}}\",\"label\":\"step➛Evaluate➛Step Status➛Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[f9cbdbdf-4081-4a2e-9c89-93231464a19f].object_url}}\",\"label\":\"step➛Evaluate➛object_url\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"3e89c52d-a455-440e-8679-e6bd9da10cc3\"}}]",
+    "display_value": "[{\"name\":\"{{action.media}}\",\"label\":\"action➛message_send\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Message Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"File Attachment\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"file_attachment\",\"uiUniqueId\":\"c66bc40f-a14e-4b16-af9d-69b40fac2e97\"}},{\"name\":\"{{action.region}}\",\"label\":\"action➛region\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.bucket}}\",\"label\":\"action➛bucket\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.message_send}}\",\"label\":\"action➛attachment\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Attachment\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"4aecadd0-c58c-40fa-9d0e-7070cc169abb\"}},{\"name\":\"{{action.attachment}}\",\"label\":\"action➛attachment\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Attachment\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.attachment.sys_id}}\",\"label\":\"action➛attachment➛Sys ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Sys ID\",\"base_type\":\"GUID\",\"parent_table_name\":\"sys_attachment\",\"column_name\":\"sys_id\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.attachment.file_name}}\",\"label\":\"action➛attachment➛File name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"File name\",\"base_type\":\"string\",\"parent_table_name\":\"sys_attachment\",\"column_name\":\"file_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[d60157db-f222-4714-bb3e-b7c07440499e].__step_status__.code}}\",\"label\":\"step➛SetUp➛Step Status➛Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[5da8cefa-75f4-4429-b513-546cb2cca83e].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[5da8cefa-75f4-4429-b513-546cb2cca83e].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[d60157db-f222-4714-bb3e-b7c07440499e].clean_file_name}}\",\"label\":\"step➛SetUp➛clean_file_name\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"f3db64ad-dfa5-4dd4-884b-b664c74c5d65\"}},{\"name\":\"{{step[f9cbdbdf-4081-4a2e-9c89-93231464a19f].object_key}}\",\"label\":\"step➛Evaluate➛object_key\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"ef85f9b6-a7d0-4f57-b49e-d27731743951\"}},{\"name\":\"{{step[d60157db-f222-4714-bb3e-b7c07440499e].__step_status__.message}}\",\"label\":\"step➛SetUp➛Step Status➛Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[5da8cefa-75f4-4429-b513-546cb2cca83e].__step_status__.code}}\",\"label\":\"step➛REST step➛Step Status➛Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[5da8cefa-75f4-4429-b513-546cb2cca83e].__step_status__.message}}\",\"label\":\"step➛REST step➛Step Status➛Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[f9cbdbdf-4081-4a2e-9c89-93231464a19f].__step_status__.code}}\",\"label\":\"step➛Evaluate➛Step Status➛Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[f9cbdbdf-4081-4a2e-9c89-93231464a19f].__step_status__.message}}\",\"label\":\"step➛Evaluate➛Step Status➛Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[f9cbdbdf-4081-4a2e-9c89-93231464a19f].object_url}}\",\"label\":\"step➛Evaluate➛object_url\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"3e89c52d-a455-440e-8679-e6bd9da10cc3\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Upload MMS Media to S3",
+    "display_value": "Upload MMS Media to S3"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-19 19:51:07",
+    "display_value": "2025-03-19 12:51:07 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "c885c5033314a6107b18bc534d5c7bb6",
+    "display_value": "c885c5033314a6107b18bc534d5c7bb6"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "upload_mms_media_to_s3",
+    "display_value": "upload_mms_media_to_s3"
+  },
+  "sys_updated_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "sys_created_on": {
+    "value": "2025-03-19 17:55:21",
+    "display_value": "2025-03-19 10:55:21 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch4b-01-15-2025_02-11-2025_1733.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch4b-01-15-2025_02-11-2025_1733.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Upload MMS Media to S3",
+    "display_value": "Upload MMS Media to S3"
+  },
+  "sys_scope": {
+    "value": "c710ee73c3541e5085b196c4e4013170",
+    "display_value": "Tenon Marketing Automate Text Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "2fe205cb33d0a6107b18bc534d5c7bdb",
+    "display_value": "2fe205cb33d0a6107b18bc534d5c7bdb"
+  },
+  "sys_created_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "37",
+    "display_value": "37"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "c710ee73c3541e5085b196c4e4013170",
+    "display_value": "Tenon Marketing Automate Text Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_900be4873350a6107b18bc534d5c7b98",
+    "display_value": "sys_hub_action_type_definition_900be4873350a6107b18bc534d5c7b98"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Upload MMS Media to S3",
+    "display_value": "Upload MMS Media to S3"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

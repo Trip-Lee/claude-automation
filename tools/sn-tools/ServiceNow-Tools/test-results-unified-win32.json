@@ -1,0 +1,532 @@
+{
+  "platform": "win32",
+  "timestamp": "2025-09-29T20:30:35.360Z",
+  "summary": {
+    "total": 37,
+    "passed": 35,
+    "failed": 0,
+    "warnings": 2,
+    "success": false
+  },
+  "categories": {
+    "configuration": {
+      "status": "pass",
+      "tests": [
+        {
+          "name": "Unified Core Module",
+          "status": "pass",
+          "details": "sn-core module loaded successfully",
+          "timestamp": "2025-09-29T20:30:35.059Z"
+        },
+        {
+          "name": "Config Loading",
+          "status": "pass",
+          "details": "Configuration loaded via unified core",
+          "timestamp": "2025-09-29T20:30:35.061Z"
+        },
+        {
+          "name": "Setup Wizard",
+          "status": "pass",
+          "details": "Valid configuration found",
+          "timestamp": "2025-09-29T20:30:35.314Z"
+        }
+      ]
+    },
+    "security": {
+      "status": "pass",
+      "tests": [
+        {
+          "name": "Unified Credential Manager",
+          "status": "pass",
+          "details": "Credential manager loaded from unified core",
+          "timestamp": "2025-09-29T20:30:35.315Z"
+        },
+        {
+          "name": "Encryption Test",
+          "status": "pass",
+          "details": "Encryption/decryption works correctly",
+          "timestamp": "2025-09-29T20:30:35.316Z"
+        },
+        {
+          "name": "Key Management",
+          "status": "warn",
+          "details": "File-based key detected (consider using environment variable)",
+          "timestamp": "2025-09-29T20:30:35.316Z"
+        }
+      ]
+    },
+    "aiIntegration": {
+      "status": "pass",
+      "tests": [
+        {
+          "name": "Unified AI Module",
+          "status": "pass",
+          "details": "sn-ai-unified module loaded successfully",
+          "timestamp": "2025-09-29T20:30:35.321Z"
+        },
+        {
+          "name": "AI System Initialization",
+          "status": "pass",
+          "details": "AI system initialized successfully",
+          "timestamp": "2025-09-29T20:30:35.329Z"
+        },
+        {
+          "name": "Provider Detection",
+          "status": "pass",
+          "details": "0 providers detected",
+          "timestamp": "2025-09-29T20:30:35.329Z"
+        },
+        {
+          "name": "Provider Selection",
+          "status": "warn",
+          "details": "No available providers",
+          "timestamp": "2025-09-29T20:30:35.329Z"
+        }
+      ]
+    },
+    "errorHandling": {
+      "status": "pass",
+      "tests": [
+        {
+          "name": "Unified Error Handler",
+          "status": "pass",
+          "details": "Error handler loaded from unified core",
+          "timestamp": "2025-09-29T20:30:35.316Z"
+        },
+        {
+          "name": "Error Analysis",
+          "status": "pass",
+          "details": "Error categorized as: unknown, severity: medium",
+          "timestamp": "2025-09-29T20:30:35.317Z"
+        }
+      ]
+    },
+    "validation": {
+      "status": "pass",
+      "tests": [
+        {
+          "name": "Unified Validator",
+          "status": "pass",
+          "details": "Validator loaded from unified core",
+          "timestamp": "2025-09-29T20:30:35.330Z"
+        },
+        {
+          "name": "Instance URL Validation",
+          "status": "pass",
+          "details": "Validation result as expected",
+          "timestamp": "2025-09-29T20:30:35.330Z"
+        },
+        {
+          "name": "Invalid Instance URL",
+          "status": "pass",
+          "details": "Validation result as expected",
+          "timestamp": "2025-09-29T20:30:35.330Z"
+        },
+        {
+          "name": "Table Name Validation",
+          "status": "pass",
+          "details": "Validation result as expected",
+          "timestamp": "2025-09-29T20:30:35.330Z"
+        },
+        {
+          "name": "Sys ID Validation",
+          "status": "pass",
+          "details": "Validation result as expected",
+          "timestamp": "2025-09-29T20:30:35.330Z"
+        },
+        {
+          "name": "AI Prompt Validation",
+          "status": "pass",
+          "details": "Validation result as expected",
+          "timestamp": "2025-09-29T20:30:35.330Z"
+        },
+        {
+          "name": "Field Validator",
+          "status": "pass",
+          "details": "Field validator loaded successfully",
+          "timestamp": "2025-09-29T20:30:35.331Z"
+        },
+        {
+          "name": "String Field Test",
+          "status": "pass",
+          "details": "Field validation as expected",
+          "timestamp": "2025-09-29T20:30:35.331Z"
+        },
+        {
+          "name": "Email Field Test",
+          "status": "pass",
+          "details": "Field validation as expected",
+          "timestamp": "2025-09-29T20:30:35.331Z"
+        },
+        {
+          "name": "Integer Field Test",
+          "status": "pass",
+          "details": "Field validation as expected",
+          "timestamp": "2025-09-29T20:30:35.331Z"
+        }
+      ]
+    },
+    "fileOperations": {
+      "status": "pass",
+      "tests": [
+        {
+          "name": "Core File: sn-operations.js",
+          "status": "pass",
+          "details": "File exists",
+          "timestamp": "2025-09-29T20:30:35.317Z"
+        },
+        {
+          "name": "Core File: sn-launcher.js",
+          "status": "pass",
+          "details": "File exists",
+          "timestamp": "2025-09-29T20:30:35.317Z"
+        },
+        {
+          "name": "Core File: sn-config.json",
+          "status": "pass",
+          "details": "File exists",
+          "timestamp": "2025-09-29T20:30:35.317Z"
+        },
+        {
+          "name": "Core File: package.json",
+          "status": "pass",
+          "details": "File exists",
+          "timestamp": "2025-09-29T20:30:35.317Z"
+        },
+        {
+          "name": "Unified File: sn-ai-unified.js",
+          "status": "pass",
+          "details": "New unified file exists",
+          "timestamp": "2025-09-29T20:30:35.317Z"
+        },
+        {
+          "name": "Unified File: sn-core.js",
+          "status": "pass",
+          "details": "New unified file exists",
+          "timestamp": "2025-09-29T20:30:35.317Z"
+        }
+      ]
+    },
+    "crossPlatform": {
+      "status": "pass",
+      "tests": [
+        {
+          "name": "Platform Detection",
+          "status": "pass",
+          "details": "Detected platform: win32",
+          "timestamp": "2025-09-29T20:30:35.331Z"
+        },
+        {
+          "name": "Root Script: sn-tools.bat",
+          "status": "pass",
+          "details": "Platform script exists",
+          "timestamp": "2025-09-29T20:30:35.331Z"
+        },
+        {
+          "name": "Root Script: sn-setup.bat",
+          "status": "pass",
+          "details": "Platform script exists",
+          "timestamp": "2025-09-29T20:30:35.331Z"
+        },
+        {
+          "name": "Root Script: sn-dev.bat",
+          "status": "pass",
+          "details": "Platform script exists",
+          "timestamp": "2025-09-29T20:30:35.331Z"
+        },
+        {
+          "name": "Scripts Directory",
+          "status": "pass",
+          "details": "Scripts directory exists",
+          "timestamp": "2025-09-29T20:30:35.332Z"
+        },
+        {
+          "name": "Scripts/sn-tools.bat",
+          "status": "pass",
+          "details": "Script exists in Scripts directory",
+          "timestamp": "2025-09-29T20:30:35.332Z"
+        },
+        {
+          "name": "Scripts/sn-setup.bat",
+          "status": "pass",
+          "details": "Script exists in Scripts directory",
+          "timestamp": "2025-09-29T20:30:35.332Z"
+        },
+        {
+          "name": "Scripts/sn-dev.bat",
+          "status": "pass",
+          "details": "Script exists in Scripts directory",
+          "timestamp": "2025-09-29T20:30:35.332Z"
+        },
+        {
+          "name": "Node.js Availability",
+          "status": "pass",
+          "details": "Node.js version: v22.11.0",
+          "timestamp": "2025-09-29T20:30:35.360Z"
+        }
+      ]
+    },
+    "overall": "fail"
+  },
+  "detailedResults": [
+    {
+      "category": "configuration",
+      "name": "Unified Core Module",
+      "status": "pass",
+      "details": "sn-core module loaded successfully",
+      "timestamp": "2025-09-29T20:30:35.059Z"
+    },
+    {
+      "category": "configuration",
+      "name": "Config Loading",
+      "status": "pass",
+      "details": "Configuration loaded via unified core",
+      "timestamp": "2025-09-29T20:30:35.061Z"
+    },
+    {
+      "category": "configuration",
+      "name": "Setup Wizard",
+      "status": "pass",
+      "details": "Valid configuration found",
+      "timestamp": "2025-09-29T20:30:35.314Z"
+    },
+    {
+      "category": "security",
+      "name": "Unified Credential Manager",
+      "status": "pass",
+      "details": "Credential manager loaded from unified core",
+      "timestamp": "2025-09-29T20:30:35.315Z"
+    },
+    {
+      "category": "security",
+      "name": "Encryption Test",
+      "status": "pass",
+      "details": "Encryption/decryption works correctly",
+      "timestamp": "2025-09-29T20:30:35.316Z"
+    },
+    {
+      "category": "security",
+      "name": "Key Management",
+      "status": "warn",
+      "details": "File-based key detected (consider using environment variable)",
+      "timestamp": "2025-09-29T20:30:35.316Z"
+    },
+    {
+      "category": "errorHandling",
+      "name": "Unified Error Handler",
+      "status": "pass",
+      "details": "Error handler loaded from unified core",
+      "timestamp": "2025-09-29T20:30:35.316Z"
+    },
+    {
+      "category": "errorHandling",
+      "name": "Error Analysis",
+      "status": "pass",
+      "details": "Error categorized as: unknown, severity: medium",
+      "timestamp": "2025-09-29T20:30:35.317Z"
+    },
+    {
+      "category": "fileOperations",
+      "name": "Core File: sn-operations.js",
+      "status": "pass",
+      "details": "File exists",
+      "timestamp": "2025-09-29T20:30:35.317Z"
+    },
+    {
+      "category": "fileOperations",
+      "name": "Core File: sn-launcher.js",
+      "status": "pass",
+      "details": "File exists",
+      "timestamp": "2025-09-29T20:30:35.317Z"
+    },
+    {
+      "category": "fileOperations",
+      "name": "Core File: sn-config.json",
+      "status": "pass",
+      "details": "File exists",
+      "timestamp": "2025-09-29T20:30:35.317Z"
+    },
+    {
+      "category": "fileOperations",
+      "name": "Core File: package.json",
+      "status": "pass",
+      "details": "File exists",
+      "timestamp": "2025-09-29T20:30:35.317Z"
+    },
+    {
+      "category": "fileOperations",
+      "name": "Unified File: sn-ai-unified.js",
+      "status": "pass",
+      "details": "New unified file exists",
+      "timestamp": "2025-09-29T20:30:35.317Z"
+    },
+    {
+      "category": "fileOperations",
+      "name": "Unified File: sn-core.js",
+      "status": "pass",
+      "details": "New unified file exists",
+      "timestamp": "2025-09-29T20:30:35.317Z"
+    },
+    {
+      "category": "aiIntegration",
+      "name": "Unified AI Module",
+      "status": "pass",
+      "details": "sn-ai-unified module loaded successfully",
+      "timestamp": "2025-09-29T20:30:35.321Z"
+    },
+    {
+      "category": "aiIntegration",
+      "name": "AI System Initialization",
+      "status": "pass",
+      "details": "AI system initialized successfully",
+      "timestamp": "2025-09-29T20:30:35.329Z"
+    },
+    {
+      "category": "aiIntegration",
+      "name": "Provider Detection",
+      "status": "pass",
+      "details": "0 providers detected",
+      "timestamp": "2025-09-29T20:30:35.329Z"
+    },
+    {
+      "category": "aiIntegration",
+      "name": "Provider Selection",
+      "status": "warn",
+      "details": "No available providers",
+      "timestamp": "2025-09-29T20:30:35.329Z"
+    },
+    {
+      "category": "validation",
+      "name": "Unified Validator",
+      "status": "pass",
+      "details": "Validator loaded from unified core",
+      "timestamp": "2025-09-29T20:30:35.330Z"
+    },
+    {
+      "category": "validation",
+      "name": "Instance URL Validation",
+      "status": "pass",
+      "details": "Validation result as expected",
+      "timestamp": "2025-09-29T20:30:35.330Z"
+    },
+    {
+      "category": "validation",
+      "name": "Invalid Instance URL",
+      "status": "pass",
+      "details": "Validation result as expected",
+      "timestamp": "2025-09-29T20:30:35.330Z"
+    },
+    {
+      "category": "validation",
+      "name": "Table Name Validation",
+      "status": "pass",
+      "details": "Validation result as expected",
+      "timestamp": "2025-09-29T20:30:35.330Z"
+    },
+    {
+      "category": "validation",
+      "name": "Sys ID Validation",
+      "status": "pass",
+      "details": "Validation result as expected",
+      "timestamp": "2025-09-29T20:30:35.330Z"
+    },
+    {
+      "category": "validation",
+      "name": "AI Prompt Validation",
+      "status": "pass",
+      "details": "Validation result as expected",
+      "timestamp": "2025-09-29T20:30:35.330Z"
+    },
+    {
+      "category": "validation",
+      "name": "Field Validator",
+      "status": "pass",
+      "details": "Field validator loaded successfully",
+      "timestamp": "2025-09-29T20:30:35.331Z"
+    },
+    {
+      "category": "validation",
+      "name": "String Field Test",
+      "status": "pass",
+      "details": "Field validation as expected",
+      "timestamp": "2025-09-29T20:30:35.331Z"
+    },
+    {
+      "category": "validation",
+      "name": "Email Field Test",
+      "status": "pass",
+      "details": "Field validation as expected",
+      "timestamp": "2025-09-29T20:30:35.331Z"
+    },
+    {
+      "category": "validation",
+      "name": "Integer Field Test",
+      "status": "pass",
+      "details": "Field validation as expected",
+      "timestamp": "2025-09-29T20:30:35.331Z"
+    },
+    {
+      "category": "crossPlatform",
+      "name": "Platform Detection",
+      "status": "pass",
+      "details": "Detected platform: win32",
+      "timestamp": "2025-09-29T20:30:35.331Z"
+    },
+    {
+      "category": "crossPlatform",
+      "name": "Root Script: sn-tools.bat",
+      "status": "pass",
+      "details": "Platform script exists",
+      "timestamp": "2025-09-29T20:30:35.331Z"
+    },
+    {
+      "category": "crossPlatform",
+      "name": "Root Script: sn-setup.bat",
+      "status": "pass",
+      "details": "Platform script exists",
+      "timestamp": "2025-09-29T20:30:35.331Z"
+    },
+    {
+      "category": "crossPlatform",
+      "name": "Root Script: sn-dev.bat",
+      "status": "pass",
+      "details": "Platform script exists",
+      "timestamp": "2025-09-29T20:30:35.331Z"
+    },
+    {
+      "category": "crossPlatform",
+      "name": "Scripts Directory",
+      "status": "pass",
+      "details": "Scripts directory exists",
+      "timestamp": "2025-09-29T20:30:35.332Z"
+    },
+    {
+      "category": "crossPlatform",
+      "name": "Scripts/sn-tools.bat",
+      "status": "pass",
+      "details": "Script exists in Scripts directory",
+      "timestamp": "2025-09-29T20:30:35.332Z"
+    },
+    {
+      "category": "crossPlatform",
+      "name": "Scripts/sn-setup.bat",
+      "status": "pass",
+      "details": "Script exists in Scripts directory",
+      "timestamp": "2025-09-29T20:30:35.332Z"
+    },
+    {
+      "category": "crossPlatform",
+      "name": "Scripts/sn-dev.bat",
+      "status": "pass",
+      "details": "Script exists in Scripts directory",
+      "timestamp": "2025-09-29T20:30:35.332Z"
+    },
+    {
+      "category": "crossPlatform",
+      "name": "Node.js Availability",
+      "status": "pass",
+      "details": "Node.js version: v22.11.0",
+      "timestamp": "2025-09-29T20:30:35.360Z"
+    }
+  ]
+}

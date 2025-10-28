@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "e58bf9d587876510b656fe66cebb3529",
+    "extracted_at": "2025-08-22T18:42:35.420Z",
+    "display_value": "UIFilterApi",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-05-25 21:25:50",
+    "display_value": "2023-05-25 02:25:50 PM"
+  },
+  "name": {
+    "value": "UIFilterApi",
+    "display_value": "UIFilterApi"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-11 02:45:53",
+    "display_value": "2024-10-10 07:45:53 PM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "651c64f0c3870e1085b196c4e401318f",
+    "extracted_at": "2025-08-22T18:42:35.951Z",
+    "display_value": "Domain Table Fetch",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-06-24 18:47:15",
+    "display_value": "2024-06-24 11:47:15 AM"
+  },
+  "name": {
+    "value": "Domain Table Fetch",
+    "display_value": "Domain Table Fetch"
+  },
+  "sys_updated_on": {
+    "value": "2024-11-04 21:01:14",
+    "display_value": "2024-11-04 01:01:14 PM"
+  }
+}

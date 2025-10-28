@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "5ce8038d33f4aa107b18bc534d5c7b45",
+    "extracted_at": "2025-09-19T21:48:45.915Z",
+    "display_value": "Verify DNS Settings Flow",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-07-28 16:53:05",
+    "display_value": "2025-07-28 09:53:05 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Verify DNS Settings Flow",
+    "display_value": "Verify DNS Settings Flow"
+  },
+  "latest_snapshot": {
+    "value": "f4a60b01c3832e50d4ddf1db05013174",
+    "display_value": "f4a60b01c3832e50d4ddf1db05013174"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "verify_dns_settings_flow",
+    "display_value": "verify_dns_settings_flow"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2025-04-07 20:48:39",
+    "display_value": "2025-04-07 01:48:39 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch9-05-21-2025_06-04-2025_0434.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch9-05-21-2025_06-04-2025_0434.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Verify DNS Settings Flow",
+    "display_value": "Verify DNS Settings Flow"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "5e294b8d33f4aa107b18bc534d5c7b07",
+    "display_value": "5e294b8d33f4aa107b18bc534d5c7b07"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_5ce8038d33f4aa107b18bc534d5c7b45",
+    "display_value": "sys_hub_flow_5ce8038d33f4aa107b18bc534d5c7b45"
+  },
+  "name": {
+    "value": "Verify DNS Settings Flow",
+    "display_value": "Verify DNS Settings Flow"
+  },
+  "copied_from": {
+    "value": "06b0224f8704d690369f33373cbb35d2",
+    "display_value": "06b0224f8704d690369f33373cbb35d2"
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Domain Record\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"51af6bf3-3206-473d-bffe-9a2391a11fe0\":[\"domain\"]},\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Domain Record\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"51af6bf3-3206-473d-bffe-9a2391a11fe0\":[\"domain\"]},\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "Verifies dns values w/ESP",
+    "display_value": "Verifies dns values w/ESP"
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "11",
+    "display_value": "11"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=9662664000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=9662664000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "ca312a8f8704d690369f33373cbb356f",
+    "display_value": "ca312a8f8704d690369f33373cbb356f"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  }
+}

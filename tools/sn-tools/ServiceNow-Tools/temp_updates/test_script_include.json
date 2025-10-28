@@ -1,0 +1,9 @@
+{
+  "name": "DoNotPush",
+  "api_name": "x_cadso_automate.DoNotPush",
+  "sys_scope": "x_cadso_automate",
+  "script": "// This is a test Script Include created by Claude\n// DO NOT PUSH to production\n// Test comment as requested\n\nvar DoNotPush = Class.create();\nDoNotPush.prototype = {\n    initialize: function() {\n        // Test initialization\n    },\n\n    type: 'DoNotPush'\n};",
+  "description": "Test Script Include - DO NOT PUSH",
+  "active": true,
+  "access": "package_private"
+}

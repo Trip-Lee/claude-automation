@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "63b018d1470f4e1098519fd8036d4383",
+    "extracted_at": "2025-08-22T18:42:39.573Z",
+    "display_value": "Set Name and Key",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-06-26 06:05:26",
+    "display_value": "2024-06-25 11:05:26 PM"
+  },
+  "name": {
+    "value": "Set Name and Key",
+    "display_value": "Set Name and Key"
+  },
+  "sys_updated_on": {
+    "value": "2024-06-26 16:37:23",
+    "display_value": "2024-06-26 09:37:23 AM"
+  }
+}

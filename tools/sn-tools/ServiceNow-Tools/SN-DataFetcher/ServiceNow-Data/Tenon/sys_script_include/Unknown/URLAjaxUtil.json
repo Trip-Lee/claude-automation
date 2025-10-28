@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "818f79cec3ca2a10d4ddf1db05013172",
+    "extracted_at": "2025-08-22T18:42:33.833Z",
+    "display_value": "URLAjaxUtil",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-11 21:33:06",
+    "display_value": "2025-06-11 02:33:06 PM"
+  },
+  "name": {
+    "value": "URLAjaxUtil",
+    "display_value": "URLAjaxUtil"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-12 16:42:48",
+    "display_value": "2025-06-12 09:42:48 AM"
+  }
+}

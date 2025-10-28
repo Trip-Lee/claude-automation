@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "bc74476247427d1098519fd8036d43e1",
+    "extracted_at": "2025-08-22T18:46:23.410Z",
+    "display_value": "Connected List API (Fetch)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-10-26 03:05:13",
+    "display_value": "2023-10-25 08:05:13 PM"
+  },
+  "name": {
+    "value": "Connected List API (Fetch)",
+    "display_value": "Connected List API (Fetch)"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-18 00:53:30",
+    "display_value": "2024-10-17 05:53:30 PM"
+  }
+}

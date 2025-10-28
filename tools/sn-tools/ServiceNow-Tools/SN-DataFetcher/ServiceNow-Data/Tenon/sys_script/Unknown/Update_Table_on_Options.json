@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "bd9170b2c3066e10d4ddf1db0501310f",
+    "extracted_at": "2025-08-22T18:42:41.395Z",
+    "display_value": "Update Table on Options",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-13 23:35:31",
+    "display_value": "2025-06-13 04:35:31 PM"
+  },
+  "name": {
+    "value": "Update Table on Options",
+    "display_value": "Update Table on Options"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-14 00:04:09",
+    "display_value": "2025-06-13 05:04:09 PM"
+  }
+}

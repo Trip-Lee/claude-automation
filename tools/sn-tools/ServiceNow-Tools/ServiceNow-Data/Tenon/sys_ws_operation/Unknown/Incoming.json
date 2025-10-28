@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "d973d950c3e1de10d4ddf1db05013111",
+    "extracted_at": "2025-08-22T18:46:23.505Z",
+    "display_value": "Incoming",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-25 14:56:48",
+    "display_value": "2024-10-25 07:56:48 AM"
+  },
+  "name": {
+    "value": "Incoming",
+    "display_value": "Incoming"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-16 20:41:45",
+    "display_value": "2025-07-16 01:41:45 PM"
+  }
+}

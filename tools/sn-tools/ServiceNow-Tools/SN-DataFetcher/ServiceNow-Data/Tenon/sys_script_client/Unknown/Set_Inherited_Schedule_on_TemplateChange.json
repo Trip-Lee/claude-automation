@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "c636b9ca479e395098519fd8036d43d6",
+    "extracted_at": "2025-08-22T18:42:43.197Z",
+    "display_value": "Set Inherited Schedule on TemplateChange",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-11-05 18:22:10",
+    "display_value": "2023-11-05 10:22:10 AM"
+  },
+  "name": {
+    "value": "Set Inherited Schedule on TemplateChange",
+    "display_value": "Set Inherited Schedule on TemplateChange"
+  },
+  "sys_updated_on": {
+    "value": "2023-11-10 11:35:56",
+    "display_value": "2023-11-10 03:35:56 AM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "db2c8bedc3f2aa10d4ddf1db05013168",
+    "extracted_at": "2025-08-22T18:42:37.417Z",
+    "display_value": "Search Bar Extract Reference Feilds",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-07-17 20:28:56",
+    "display_value": "2025-07-17 01:28:56 PM"
+  },
+  "name": {
+    "value": "Search Bar Extract Reference Feilds",
+    "display_value": "Search Bar Extract Reference Feilds"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-28 19:45:42",
+    "display_value": "2025-07-28 12:45:42 PM"
+  }
+}

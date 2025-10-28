@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "7c4a37a987e3ce10369f33373cbb355b",
+    "extracted_at": "2025-08-22T18:42:36.004Z",
+    "display_value": "Property Validation",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-22 14:14:36",
+    "display_value": "2024-07-22 07:14:36 AM"
+  },
+  "name": {
+    "value": "Property Validation",
+    "display_value": "Property Validation"
+  },
+  "sys_updated_on": {
+    "value": "2024-08-19 13:41:35",
+    "display_value": "2024-08-19 06:41:35 AM"
+  }
+}

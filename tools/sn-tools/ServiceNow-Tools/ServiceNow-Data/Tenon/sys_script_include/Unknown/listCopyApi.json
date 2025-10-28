@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "adfce834c3870e1085b196c4e40131be",
+    "extracted_at": "2025-08-22T18:46:19.961Z",
+    "display_value": "listCopyApi",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-06-24 18:52:54",
+    "display_value": "2024-06-24 11:52:54 AM"
+  },
+  "name": {
+    "value": "listCopyApi",
+    "display_value": "listCopyApi"
+  },
+  "sys_updated_on": {
+    "value": "2024-06-24 18:52:54",
+    "display_value": "2024-06-24 11:52:54 AM"
+  }
+}

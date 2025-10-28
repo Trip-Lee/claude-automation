@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "6be89d8c47437510b0361ae8036d4385",
+    "extracted_at": "2025-08-22T18:42:35.960Z",
+    "display_value": "List Action Menu (Copy)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-12-06 17:53:56",
+    "display_value": "2023-12-06 09:53:56 AM"
+  },
+  "name": {
+    "value": "List Action Menu (Copy)",
+    "display_value": "List Action Menu (Copy)"
+  },
+  "sys_updated_on": {
+    "value": "2023-12-06 17:54:21",
+    "display_value": "2023-12-06 09:54:21 AM"
+  }
+}

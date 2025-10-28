@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "27ba756cc32cde5085b196c4e401319f",
+    "extracted_at": "2025-09-19T21:48:33.267Z",
+    "display_value": "Metrics (Fetch)",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\tlet {table, sysId, type} = request.body.data;\r\n\r\n\tconst apiUtil = new x_cadso_automate.APIUtils();\r\n\tconst metrics = [];\r\n\tconst successful = false;\r\n\tconst messages = [];\r\n\tconst labelMaps = {\r\n\t\tdelivery: {\r\n\t\t\tdelivered: {label: \"Successful Deliveries\", type: \"simple\"},\r\n\t\t\trejected: {label: \"Bounces\", type: \"simple\"},\r\n\t\t\tunsubscribed: {label: \"Unsubscribes\", type: \"simple\"},\r\n\t\t\tcomplained: {label: \"Spam Reports\", type: \"simple\"},\r\n\t\t},\r\n\t\trate: {\r\n\t\t\topened: {columnLabel: \"Open Rate\", type: \"rate\", label: \"Total Opens\"},\r\n\t\t\tclicked: {columnLabel: \"Click Rate\", type: \"rate\", label: \"Total Clicks\"},\r\n\t\t\t//replied: {columnLabel: \"Reply Rate\", type: \"rate\", label: \"Reply Rate\"},\r\n\t\t},\r\n\t\trecipient: {\r\n\t\t\tdelivered: {label: \"Emails Delivered\", type: \"simple\", color: \"none\"},\r\n\t\t\topened: {label: \"Emails Opened\", type: \"simple\", color: \"none\"},\r\n\t\t\tclicked: {label: \"Emails Clicked\", type: \"simple\", color: \"none\"},\r\n\t\t},\r\n\t\tsms_delivery: {\r\n\t\t\tsent: {label: \"Sent\", type: \"simple\"},\r\n\t\t\tdelivered: {label: \"Delivered\", type: \"simple\"},\r\n\t\t\trejected: {label: \"Rejected\", type: \"simple\"},\r\n\t\t},\r\n\t};\r\n\r\nif (table === \"x_cadso_automate_email\" || table === \"x_cadso_automate_email_send\") {\r\n    let emailMetrics = {};\r\n    let totalEmailCount = 0;\r\n    \r\n    const emailGR = new GlideRecord('x_cadso_automate_email');\r\n    emailGR.addQuery(\"sys_id\", sysId);\r\n    emailGR.query();\r\n    \r\n    if (emailGR.next()) {\r\n        const emailSendGR = new GlideRecord('x_cadso_automate_email_send');\r\n        emailSendGR.addQuery(\"email\", emailGR.getUniqueValue());\r\n        emailSendGR.query();\r\n\r\n\t\tlet sendCount = 0;\r\n        \r\n        while (emailSendGR.next()) {\r\n\t\t\tsendCount++;\r\n            const emailSendSysId = emailSendGR.getUniqueValue();\r\n\r\n\t\t\tgs.info(\"DM Debug - Processing email send #\" + sendCount + \" (sys_id: \" + emailSendSysId + \")\");\r\n            \r\n            const metricGR = new GlideRecord('x_cadso_core_metric');\r\n            metricGR.addQuery(\"document_id\", emailSendSysId);\r\n            metricGR.query();\r\n            \r\n            if (metricGR.next()) {\r\n                try {\r\n                    const metricsData = JSON.parse(metricGR.getValue('data'));\r\n                    \r\n                    totalEmailCount += parseInt(metricsData.delivered_count) || 0;\r\n                    \r\n                    emailMetrics['delivered'] = (emailMetrics['delivered'] || 0) + (parseInt(metricsData.delivered_count) || 0);\r\n                    emailMetrics['opened'] = (emailMetrics['opened'] || 0) + (parseInt(metricsData.opened_count) || 0);\r\n                    emailMetrics['clicked'] = (emailMetrics['clicked'] || 0) + (parseInt(metricsData.clicked_count) || 0);\r\n                    emailMetrics['complained'] = (emailMetrics['complained'] || 0) + (parseInt(metricsData.complained_count) || 0);\r\n                    emailMetrics['rejected'] = (emailMetrics['rejected'] || 0) + (parseInt(metricsData.rejected_count) || 0);\r\n                    emailMetrics['bounced'] = (emailMetrics['bounced'] || 0) + (parseInt(metricsData.bounced_count) || 0);\r\n                    emailMetrics['unsubscribed'] = (emailMetrics['unsubscribed'] || 0) + (parseInt(metricsData.unsubscribed_count) || 0);\r\n                } catch (e) {\r\n                    gs.error(\"Failed to parse metrics data for email_send \" + emailSendSysId + \": \" + e.message);\r\n                }\r\n            }\r\n        }\r\n    }\r\n    \r\n    let labelMap = labelMaps[type];\r\n    for (let label in labelMap) {\r\n        let metric = {...labelMap[label]};\r\n        \r\n        let count = emailMetrics[label] || 0;\r\n        \r\n        if (metric.type === 'rate') {\r\n            if (totalEmailCount > 0) {\r\n                let percentage = Math.round((count / totalEmailCount) * 100);\r\n                metric.number = count;\r\n                metric.percentage = percentage + \"%\";\r\n            } else {\r\n                metric.number = 0;\r\n                metric.percentage = \"0%\";\r\n            }\r\n        } else if (metric.type === 'simple') {\r\n            metric.number = count;\r\n            \r\n            if (label === 'delivered') {\r\n                metric.percentage = \"100%\";\r\n            } else if (totalEmailCount > 0) {\r\n                metric.percentage = Math.round((count / totalEmailCount) * 100) + \"%\";\r\n            } else {\r\n                metric.percentage = \"0%\";\r\n            }\r\n        }\r\n        \r\n        metrics.push(metric);\r\n    }\r\n\t} else if (table === \"sn_lead_mgmt_core_lead\") {\r\n\t\tconst leadGr = new GlideRecord(table);\r\n\t\tif (!leadGr.get(sysId)) {\r\n\t\t\treturn new sn_ws_err.BadRequestError(\"Could not find lead\");\r\n\t\t}\r\n\t\tif (type === \"highlights\") {\r\n\t\t\tmetrics.push({\r\n\t\t\t\ttype: \"simple\",\r\n\t\t\t\tlabel: \"Lead Score\",\r\n\t\t\t\tnumber: leadGr.getDisplayValue(\"lead_score\"),\r\n\t\t\t\tcolor: \"none\",\r\n\t\t\t});\r\n\t\t\tmetrics.push({\r\n\t\t\t\ttype: \"simple\",\r\n\t\t\t\tlabel: \"Lead Rating\",\r\n\t\t\t\tnumber: leadGr.getDisplayValue(\"lead_rating\"),\r\n\t\t\t\tcolor: \"none\",\r\n\t\t\t});\r\n\t\t\tmetrics.push({\r\n\t\t\t\ttype: \"simple\",\r\n\t\t\t\tlabel: \"Lead Stage\",\r\n\t\t\t\tnumber: leadGr.getDisplayValue(\"stage\"),\r\n\t\t\t\tcolor: \"none\",\r\n\t\t\t});\r\n\t\t\tmetrics.push({\r\n\t\t\t\ttype: \"simple\",\r\n\t\t\t\tlabel: \"Lead Source\",\r\n\t\t\t\tnumber: leadGr.getDisplayValue(\"lead_source\"),\r\n\t\t\t\tcolor: \"none\",\r\n\t\t\t});\r\n\t\t} else if (type === \"activity\") {\r\n\t\t\tlet query = \"to_address=\" + leadGr.getValue(\"email\");\r\n\t\t\tlet table = \"x_cadso_automate_email_event\";\r\n\t\t\tlet groupBy = \"event\";\r\n\t\t\tlet recipientMetrics = apiUtil.count({table, query, groupBy});\r\n            let labelMap = labelMaps['recipient'];\r\n\t\t\tfor (let label in labelMap) {\r\n\t\t\t\tlet metric = {...labelMap[label]};\r\n\t\t\t\tlet count = recipientMetrics[label] || 0;\r\n\t\t\t\tmetric.number = count;\r\n\t\t\t\tmetrics.push(metric);\r\n\t\t\t}\r\n\t\t}\r\n\t} else if (table === \"customer_contact\" || table === \"csm_consumer\") {\r\n\t\tconst contactGr = new GlideRecord(table);\r\n\t\tif (!contactGr.get(sysId)) {\r\n\t\t\treturn new sn_ws_err.BadRequestError(\"Could not find contact or consumer\");\r\n\t\t}\r\n\t\t// if (type === 'highlights') {\r\n\t\t//     metrics.push({\r\n\t\t//         type: \"simple\",\r\n\t\t//         label: 'Contact Score',\r\n\t\t//         number: contactGr.getDisplayValue('contact_score'),\r\n\t\t//         color: 'none',\r\n\t\t//     });\r\n\t\t//     metrics.push({\r\n\t\t//         type: \"simple\",\r\n\t\t//         label: 'Contact Rating',\r\n\t\t//         number: contactGr.getDisplayValue('contact_rating'),\r\n\t\t//         color: 'none',\r\n\t\t//     });\r\n\t\t//     metrics.push({\r\n\t\t//         type: \"simple\",\r\n\t\t//         label: 'Contact Stage',\r\n\t\t//         number: contactGr.getDisplayValue('stage'),\r\n\t\t//         color: 'none',\r\n\t\t//     });\r\n\t\t//     metrics.push({\r\n\t\t//         type: \"simple\",\r\n\t\t//         label: 'Contact Source',\r\n\t\t//         number: contactGr.getDisplayValue('contact_source'),\r\n\t\t//         color: 'none',\r\n\t\t//     });\r\n\t\t// } else\r\n\t\tif (type === \"activity\") {\r\n\t\t\tlet apiUtil = new x_cadso_automate.APIUtils();\r\n\t\t\tlet query = \"to_address=\" + contactGr.getValue(\"email\");\r\n\t\t\tlet table = \"x_cadso_automate_email_event\";\r\n\t\t\tlet groupBy = \"event\";\r\n\t\t\tlet recipientMetrics = apiUtil.count({table, query, groupBy});\r\n            let labelMap = labelMaps['recipient'];\r\n\t\t\tfor (let label in labelMap) {\r\n\t\t\t\tlet metric = {...labelMap[label]};\r\n\t\t\t\tlet count = recipientMetrics[label] || 0;\r\n\t\t\t\tmetric.number = count;\r\n\t\t\t\tmetrics.push(metric);\r\n\t\t\t}\r\n\t\t\t//}\r\n\t\t}\r\n\t}else if (table === \"x_cadso_automate_message_send\" || table === \"x_cadso_automate_message\") {\r\n\t\tif (type === \"sms_delivery\") {\r\n\t\t\tlet countQuery = table === \"x_cadso_automate_message_send\" ? \"message_batch.message_send=\" : \"message_batch.message_send.message=\";\r\n\t\t\tlet apiUtil = new x_cadso_automate.APIUtils();\r\n\t\t\tcountQuery = countQuery + sysId;\r\n\r\n\t\t\tconst recipientTable = \"x_cadso_automate_message_batch_recipient\";\r\n\t\t\tconst totalMessageCount = apiUtil.count({table: recipientTable, query: countQuery});\r\n\t\t\tconst eventTable = \"x_cadso_automate_message_event\";\r\n\t\t\t\r\n\t\t\tlet eventQuery = table === \"x_cadso_automate_message_send\" ? \"message_send=\" : \"message_send.message=\";\r\n\t\t\teventQuery = eventQuery + sysId;\r\n\r\n\t\t\tconst groupBy = \"status\";\r\n\t\t\tlet messageMetrics = apiUtil.count({table: eventTable, query: eventQuery, groupBy});\r\n\t\t\tlet labelMap = labelMaps[type];\r\n\t\t\tfor (let label in labelMap) {\r\n\t\t\t\tlet metric = {...labelMap[label]};\r\n\t\t\t\tlet count = messageMetrics[label] || 0;\r\n\t\t\t\t// if (label === 'sent') {\r\n\t\t\t\t// \tmetric.number = totalMessageCount;\r\n\t\t\t\t// } else {\r\n\t\t\t\t\tmetric.percentage = Math.round((count / totalMessageCount + Number.EPSILON) * 100) + \"%\";\r\n\t\t\t\t\tmetric.percentage = metric.percentage == \"NaN%\" ? \"0%\" : metric.percentage;\r\n\t\t\t\t\tmetric.number = count;\r\n\t\t\t\t// }\r\n\r\n\t\t\t\tmetrics.push(metric);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n      response.setBody({\r\n          metrics\r\n      });\r\n})(request, response);\r\n",
+    "display_value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\tlet {table, sysId, type} = request.body.data;\r\n\r\n\tconst apiUtil = new x_cadso_automate.APIUtils();\r\n\tconst metrics = [];\r\n\tconst successful = false;\r\n\tconst messages = [];\r\n\tconst labelMaps = {\r\n\t\tdelivery: {\r\n\t\t\tdelivered: {label: \"Successful Deliveries\", type: \"simple\"},\r\n\t\t\trejected: {label: \"Bounces\", type: \"simple\"},\r\n\t\t\tunsubscribed: {label: \"Unsubscribes\", type: \"simple\"},\r\n\t\t\tcomplained: {label: \"Spam Reports\", type: \"simple\"},\r\n\t\t},\r\n\t\trate: {\r\n\t\t\topened: {columnLabel: \"Open Rate\", type: \"rate\", label: \"Total Opens\"},\r\n\t\t\tclicked: {columnLabel: \"Click Rate\", type: \"rate\", label: \"Total Clicks\"},\r\n\t\t\t//replied: {columnLabel: \"Reply Rate\", type: \"rate\", label: \"Reply Rate\"},\r\n\t\t},\r\n\t\trecipient: {\r\n\t\t\tdelivered: {label: \"Emails Delivered\", type: \"simple\", color: \"none\"},\r\n\t\t\topened: {label: \"Emails Opened\", type: \"simple\", color: \"none\"},\r\n\t\t\tclicked: {label: \"Emails Clicked\", type: \"simple\", color: \"none\"},\r\n\t\t},\r\n\t\tsms_delivery: {\r\n\t\t\tsent: {label: \"Sent\", type: \"simple\"},\r\n\t\t\tdelivered: {label: \"Delivered\", type: \"simple\"},\r\n\t\t\trejected: {label: \"Rejected\", type: \"simple\"},\r\n\t\t},\r\n\t};\r\n\r\nif (table === \"x_cadso_automate_email\" || table === \"x_cadso_automate_email_send\") {\r\n    let emailMetrics = {};\r\n    let totalEmailCount = 0;\r\n    \r\n    const emailGR = new GlideRecord('x_cadso_automate_email');\r\n    emailGR.addQuery(\"sys_id\", sysId);\r\n    emailGR.query();\r\n    \r\n    if (emailGR.next()) {\r\n        const emailSendGR = new GlideRecord('x_cadso_automate_email_send');\r\n        emailSendGR.addQuery(\"email\", emailGR.getUniqueValue());\r\n        emailSendGR.query();\r\n\r\n\t\tlet sendCount = 0;\r\n        \r\n        while (emailSendGR.next()) {\r\n\t\t\tsendCount++;\r\n            const emailSendSysId = emailSendGR.getUniqueValue();\r\n\r\n\t\t\tgs.info(\"DM Debug - Processing email send #\" + sendCount + \" (sys_id: \" + emailSendSysId + \")\");\r\n            \r\n            const metricGR = new GlideRecord('x_cadso_core_metric');\r\n            metricGR.addQuery(\"document_id\", emailSendSysId);\r\n            metricGR.query();\r\n            \r\n            if (metricGR.next()) {\r\n                try {\r\n                    const metricsData = JSON.parse(metricGR.getValue('data'));\r\n                    \r\n                    totalEmailCount += parseInt(metricsData.delivered_count) || 0;\r\n                    \r\n                    emailMetrics['delivered'] = (emailMetrics['delivered'] || 0) + (parseInt(metricsData.delivered_count) || 0);\r\n                    emailMetrics['opened'] = (emailMetrics['opened'] || 0) + (parseInt(metricsData.opened_count) || 0);\r\n                    emailMetrics['clicked'] = (emailMetrics['clicked'] || 0) + (parseInt(metricsData.clicked_count) || 0);\r\n                    emailMetrics['complained'] = (emailMetrics['complained'] || 0) + (parseInt(metricsData.complained_count) || 0);\r\n                    emailMetrics['rejected'] = (emailMetrics['rejected'] || 0) + (parseInt(metricsData.rejected_count) || 0);\r\n                    emailMetrics['bounced'] = (emailMetrics['bounced'] || 0) + (parseInt(metricsData.bounced_count) || 0);\r\n                    emailMetrics['unsubscribed'] = (emailMetrics['unsubscribed'] || 0) + (parseInt(metricsData.unsubscribed_count) || 0);\r\n                } catch (e) {\r\n                    gs.error(\"Failed to parse metrics data for email_send \" + emailSendSysId + \": \" + e.message);\r\n                }\r\n            }\r\n        }\r\n    }\r\n    \r\n    let labelMap = labelMaps[type];\r\n    for (let label in labelMap) {\r\n        let metric = {...labelMap[label]};\r\n        \r\n        let count = emailMetrics[label] || 0;\r\n        \r\n        if (metric.type === 'rate') {\r\n            if (totalEmailCount > 0) {\r\n                let percentage = Math.round((count / totalEmailCount) * 100);\r\n                metric.number = count;\r\n                metric.percentage = percentage + \"%\";\r\n            } else {\r\n                metric.number = 0;\r\n                metric.percentage = \"0%\";\r\n            }\r\n        } else if (metric.type === 'simple') {\r\n            metric.number = count;\r\n            \r\n            if (label === 'delivered') {\r\n                metric.percentage = \"100%\";\r\n            } else if (totalEmailCount > 0) {\r\n                metric.percentage = Math.round((count / totalEmailCount) * 100) + \"%\";\r\n            } else {\r\n                metric.percentage = \"0%\";\r\n            }\r\n        }\r\n        \r\n        metrics.push(metric);\r\n    }\r\n\t} else if (table === \"sn_lead_mgmt_core_lead\") {\r\n\t\tconst leadGr = new GlideRecord(table);\r\n\t\tif (!leadGr.get(sysId)) {\r\n\t\t\treturn new sn_ws_err.BadRequestError(\"Could not find lead\");\r\n\t\t}\r\n\t\tif (type === \"highlights\") {\r\n\t\t\tmetrics.push({\r\n\t\t\t\ttype: \"simple\",\r\n\t\t\t\tlabel: \"Lead Score\",\r\n\t\t\t\tnumber: leadGr.getDisplayValue(\"lead_score\"),\r\n\t\t\t\tcolor: \"none\",\r\n\t\t\t});\r\n\t\t\tmetrics.push({\r\n\t\t\t\ttype: \"simple\",\r\n\t\t\t\tlabel: \"Lead Rating\",\r\n\t\t\t\tnumber: leadGr.getDisplayValue(\"lead_rating\"),\r\n\t\t\t\tcolor: \"none\",\r\n\t\t\t});\r\n\t\t\tmetrics.push({\r\n\t\t\t\ttype: \"simple\",\r\n\t\t\t\tlabel: \"Lead Stage\",\r\n\t\t\t\tnumber: leadGr.getDisplayValue(\"stage\"),\r\n\t\t\t\tcolor: \"none\",\r\n\t\t\t});\r\n\t\t\tmetrics.push({\r\n\t\t\t\ttype: \"simple\",\r\n\t\t\t\tlabel: \"Lead Source\",\r\n\t\t\t\tnumber: leadGr.getDisplayValue(\"lead_source\"),\r\n\t\t\t\tcolor: \"none\",\r\n\t\t\t});\r\n\t\t} else if (type === \"activity\") {\r\n\t\t\tlet query = \"to_address=\" + leadGr.getValue(\"email\");\r\n\t\t\tlet table = \"x_cadso_automate_email_event\";\r\n\t\t\tlet groupBy = \"event\";\r\n\t\t\tlet recipientMetrics = apiUtil.count({table, query, groupBy});\r\n            let labelMap = labelMaps['recipient'];\r\n\t\t\tfor (let label in labelMap) {\r\n\t\t\t\tlet metric = {...labelMap[label]};\r\n\t\t\t\tlet count = recipientMetrics[label] || 0;\r\n\t\t\t\tmetric.number = count;\r\n\t\t\t\tmetrics.push(metric);\r\n\t\t\t}\r\n\t\t}\r\n\t} else if (table === \"customer_contact\" || table === \"csm_consumer\") {\r\n\t\tconst contactGr = new GlideRecord(table);\r\n\t\tif (!contactGr.get(sysId)) {\r\n\t\t\treturn new sn_ws_err.BadRequestError(\"Could not find contact or consumer\");\r\n\t\t}\r\n\t\t// if (type === 'highlights') {\r\n\t\t//     metrics.push({\r\n\t\t//         type: \"simple\",\r\n\t\t//         label: 'Contact Score',\r\n\t\t//         number: contactGr.getDisplayValue('contact_score'),\r\n\t\t//         color: 'none',\r\n\t\t//     });\r\n\t\t//     metrics.push({\r\n\t\t//         type: \"simple\",\r\n\t\t//         label: 'Contact Rating',\r\n\t\t//         number: contactGr.getDisplayValue('contact_rating'),\r\n\t\t//         color: 'none',\r\n\t\t//     });\r\n\t\t//     metrics.push({\r\n\t\t//         type: \"simple\",\r\n\t\t//         label: 'Contact Stage',\r\n\t\t//         number: contactGr.getDisplayValue('stage'),\r\n\t\t//         color: 'none',\r\n\t\t//     });\r\n\t\t//     metrics.push({\r\n\t\t//         type: \"simple\",\r\n\t\t//         label: 'Contact Source',\r\n\t\t//         number: contactGr.getDisplayValue('contact_source'),\r\n\t\t//         color: 'none',\r\n\t\t//     });\r\n\t\t// } else\r\n\t\tif (type === \"activity\") {\r\n\t\t\tlet apiUtil = new x_cadso_automate.APIUtils();\r\n\t\t\tlet query = \"to_address=\" + contactGr.getValue(\"email\");\r\n\t\t\tlet table = \"x_cadso_automate_email_event\";\r\n\t\t\tlet groupBy = \"event\";\r\n\t\t\tlet recipientMetrics = apiUtil.count({table, query, groupBy});\r\n            let labelMap = labelMaps['recipient'];\r\n\t\t\tfor (let label in labelMap) {\r\n\t\t\t\tlet metric = {...labelMap[label]};\r\n\t\t\t\tlet count = recipientMetrics[label] || 0;\r\n\t\t\t\tmetric.number = count;\r\n\t\t\t\tmetrics.push(metric);\r\n\t\t\t}\r\n\t\t\t//}\r\n\t\t}\r\n\t}else if (table === \"x_cadso_automate_message_send\" || table === \"x_cadso_automate_message\") {\r\n\t\tif (type === \"sms_delivery\") {\r\n\t\t\tlet countQuery = table === \"x_cadso_automate_message_send\" ? \"message_batch.message_send=\" : \"message_batch.message_send.message=\";\r\n\t\t\tlet apiUtil = new x_cadso_automate.APIUtils();\r\n\t\t\tcountQuery = countQuery + sysId;\r\n\r\n\t\t\tconst recipientTable = \"x_cadso_automate_message_batch_recipient\";\r\n\t\t\tconst totalMessageCount = apiUtil.count({table: recipientTable, query: countQuery});\r\n\t\t\tconst eventTable = \"x_cadso_automate_message_event\";\r\n\t\t\t\r\n\t\t\tlet eventQuery = table === \"x_cadso_automate_message_send\" ? \"message_send=\" : \"message_send.message=\";\r\n\t\t\teventQuery = eventQuery + sysId;\r\n\r\n\t\t\tconst groupBy = \"status\";\r\n\t\t\tlet messageMetrics = apiUtil.count({table: eventTable, query: eventQuery, groupBy});\r\n\t\t\tlet labelMap = labelMaps[type];\r\n\t\t\tfor (let label in labelMap) {\r\n\t\t\t\tlet metric = {...labelMap[label]};\r\n\t\t\t\tlet count = messageMetrics[label] || 0;\r\n\t\t\t\t// if (label === 'sent') {\r\n\t\t\t\t// \tmetric.number = totalMessageCount;\r\n\t\t\t\t// } else {\r\n\t\t\t\t\tmetric.percentage = Math.round((count / totalMessageCount + Number.EPSILON) * 100) + \"%\";\r\n\t\t\t\t\tmetric.percentage = metric.percentage == \"NaN%\" ? \"0%\" : metric.percentage;\r\n\t\t\t\t\tmetric.number = count;\r\n\t\t\t\t// }\r\n\r\n\t\t\t\tmetrics.push(metric);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n      response.setBody({\r\n          metrics\r\n      });\r\n})(request, response);\r\n"
+  },
+  "sys_updated_on": {
+    "value": "2025-09-03 18:25:46",
+    "display_value": "2025-09-03 11:25:46 AM"
+  },
+  "enforce_acl": {
+    "value": "85a45d5247b1ed10fc4c1ae8036d439e",
+    "display_value": "Tenon Work Baseline Access"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_work/ui/metrics/fetch",
+    "display_value": "/api/x_cadso_work/ui/metrics/fetch"
+  },
+  "sys_created_on": {
+    "value": "2024-09-06 19:23:28",
+    "display_value": "2024-09-06 12:23:28 PM"
+  },
+  "sys_name": {
+    "value": "Metrics (Fetch)",
+    "display_value": "Metrics (Fetch)"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "web_service_definition": {
+    "value": "3a4228b84728e950a1052a02e26d43b0",
+    "display_value": "Tenon Work UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "212",
+    "display_value": "212"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_27ba756cc32cde5085b196c4e401319f",
+    "display_value": "sys_ws_operation_27ba756cc32cde5085b196c4e401319f"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Metrics (Fetch)",
+    "display_value": "Metrics (Fetch)"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/metrics/fetch",
+    "display_value": "/metrics/fetch"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

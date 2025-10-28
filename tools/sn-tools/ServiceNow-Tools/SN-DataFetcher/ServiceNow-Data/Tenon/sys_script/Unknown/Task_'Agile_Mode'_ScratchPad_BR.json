@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "b7af5de597e6e990ac33f109c253af8d",
+    "extracted_at": "2025-08-22T18:42:41.339Z",
+    "display_value": "Task 'Agile Mode' ScratchPad BR",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-05-01 17:33:13",
+    "display_value": "2023-05-01 10:33:13 AM"
+  },
+  "name": {
+    "value": "Task 'Agile Mode' ScratchPad BR",
+    "display_value": "Task 'Agile Mode' ScratchPad BR"
+  },
+  "sys_updated_on": {
+    "value": "2023-05-01 18:26:01",
+    "display_value": "2023-05-01 11:26:01 AM"
+  }
+}

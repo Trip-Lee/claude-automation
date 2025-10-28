@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "5377c0124770291085d19fd8036d4398",
+    "extracted_at": "2025-09-19T21:48:47.916Z",
+    "display_value": "Cancel Projects - Campaign - Cancellation Business logic",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2024-05-30 17:18:36",
+    "display_value": "2024-05-30 10:18:36 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "aa830b50c3181e1085b196c4e4013105",
+    "display_value": "aa830b50c3181e1085b196c4e4013105"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "cancel_campaign__campaign_cancellation_business_logic",
+    "display_value": "cancel_campaign__campaign_cancellation_business_logic"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2023-02-05 19:11:31",
+    "display_value": "2023-02-05 11:11:31 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Cancel Projects - Campaign - Cancellation Business logic",
+    "display_value": "Cancel Projects - Campaign - Cancellation Business logic"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "4a6ccc164770291085d19fd8036d4399",
+    "display_value": "4a6ccc164770291085d19fd8036d4399"
+  },
+  "sys_created_by": {
+    "value": "Cole.Mefford",
+    "display_value": "Cole.Mefford"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "authored_on_release_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_5377c0124770291085d19fd8036d4398",
+    "display_value": "sys_hub_flow_5377c0124770291085d19fd8036d4398"
+  },
+  "name": {
+    "value": "Cancel Projects - Campaign - Cancellation Business logic",
+    "display_value": "Cancel Projects - Campaign - Cancellation Business logic"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"76a2fe21-cc7d-434f-84f9-077526dce7f8.Records\",\"label\":\"1 - Look Up Records➛Project Records\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.Record\",\"label\":\"1 - Look Up Record➛Record\",\"reference_display\":\"Record\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.Table\",\"label\":\"1 - Look Up Record➛Table\",\"reference_display\":\"Table\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.status\",\"label\":\"1 - Look Up Record➛Status\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"choices\":[{\"label\":\"Error\",\"value\":\"1\",\"order\":0.0},{\"label\":\"Success\",\"value\":\"0\",\"order\":1.0}],\"attributes\":{\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"choice\",\"uiUniqueId\":\"5e478657-3a84-4a60-a92b-d3e80005ad34\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.error_message\",\"label\":\"1 - Look Up Record➛Error Message\",\"reference_display\":\"Error Message\",\"type\":\"string\",\"base_type\":\"string\",\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiType\":\"string\",\"uiUniqueId\":\"87687532-9e3d-4497-a88e-90f45bfb9adb\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.__action_status__\",\"label\":\"1 - Look Up Record➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"object\",\"action_error_output\":\"true\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.__dont_treat_as_error__\",\"label\":\"1 - Look Up Record➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.Record\",\"label\":\"1 - Look Up Record➛Record\",\"reference_display\":\"Record\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.Table\",\"label\":\"1 - Look Up Record➛Table\",\"reference_display\":\"Table\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.status\",\"label\":\"1 - Look Up Record➛Status\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"choices\":[{\"label\":\"Error\",\"value\":\"1\",\"order\":0.0},{\"label\":\"Success\",\"value\":\"0\",\"order\":1.0}],\"attributes\":{\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"choice\",\"uiUniqueId\":\"5e478657-3a84-4a60-a92b-d3e80005ad34\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.error_message\",\"label\":\"1 - Look Up Record➛Error Message\",\"reference_display\":\"Error Message\",\"type\":\"string\",\"base_type\":\"string\",\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiType\":\"string\",\"uiUniqueId\":\"87687532-9e3d-4497-a88e-90f45bfb9adb\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.__action_status__\",\"label\":\"1 - Look Up Record➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"object\",\"action_error_output\":\"true\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.__dont_treat_as_error__\",\"label\":\"1 - Look Up Record➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.Records\",\"label\":\"1 - Look Up Records➛Project Records\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.Table\",\"label\":\"1 - Look Up Records➛Project Table\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.Count\",\"label\":\"1 - Look Up Records➛Count\",\"reference_display\":\"Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.__action_status__\",\"label\":\"1 - Look Up Records➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"uiType\":\"object\",\"co_type_name\":\"FDACTIONSTATUS\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.__dont_treat_as_error__\",\"label\":\"1 - Look Up Records➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Updated_1.current.campaign\",\"label\":\"Trigger - Record Updated➛Project Record➛Campaign\",\"reference\":\"x_cadso_work_campaign\",\"reference_display\":\"Campaign\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"campaign\"},{\"name\":\"c81f8cbf-4054-44f8-8533-2a85da34648b.item\",\"label\":\"2 - For Each➛Project Record\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"c81f8cbf-4054-44f8-8533-2a85da34648b.item.state\",\"label\":\"2 - For Each➛Project Record➛Status\",\"reference\":\"\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"state\",\"choices\":[{\"used\":false,\"label\":\"Planning\",\"image\":\"\",\"rawLabel\":\"Planning\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"-10\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Requested\",\"image\":\"\",\"rawLabel\":\"Requested\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"0\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Rejected\",\"image\":\"\",\"rawLabel\":\"Rejected\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"6\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Upcoming\",\"image\":\"\",\"rawLabel\":\"Upcoming\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"10\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"On Hold\",\"image\":\"\",\"rawLabel\":\"On Hold\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"22\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"In Progress\",\"image\":\"\",\"rawLabel\":\"In Progress\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"30\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Completed\",\"image\":\"\",\"rawLabel\":\"Completed\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"40\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Canceled\",\"image\":\"\",\"rawLabel\":\"Canceled\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"70\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Archived\",\"image\":\"\",\"rawLabel\":\"Archived\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"333\",\"parameters\":{\"name\":\"x_cadso_work_project\"}}]},{\"name\":\"5db892dc-12e6-48a4-a22d-5b3e9f7456b4.state\",\"label\":\"5 - Wait For Condition➛State\",\"reference_display\":\"State\",\"type\":\"choice\",\"base_type\":\"choice\",\"choices\":[{\"label\":\"Complete\",\"value\":\"0\",\"order\":0.0},{\"label\":\"Timeout\",\"value\":\"1\",\"order\":1.0}],\"attributes\":{\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"choice\",\"uiUniqueId\":\"2e334039-7a20-4ead-9148-909988f1a7e4\"}},{\"name\":\"5db892dc-12e6-48a4-a22d-5b3e9f7456b4.__action_status__\",\"label\":\"5 - Wait For Condition➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"object\",\"action_error_output\":\"true\"}},{\"name\":\"5db892dc-12e6-48a4-a22d-5b3e9f7456b4.__dont_treat_as_error__\",\"label\":\"5 - Wait For Condition➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\"}},{\"name\":\"9d1021ca-5c07-403e-a0e4-92d30a2d66b1.record\",\"label\":\"4 - Update Record➛Record\",\"reference_display\":\"Record\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"9d1021ca-5c07-403e-a0e4-92d30a2d66b1.table_name\",\"label\":\"4 - Update Record➛Table\",\"reference_display\":\"Table\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"9d1021ca-5c07-403e-a0e4-92d30a2d66b1.__action_status__\",\"label\":\"4 - Update Record➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"uiType\":\"object\",\"co_type_name\":\"FDACTIONSTATUS\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"9d1021ca-5c07-403e-a0e4-92d30a2d66b1.__dont_treat_as_error__\",\"label\":\"4 - Update Record➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Updated_1.current.campaign.state\",\"label\":\"Trigger - Record Updated➛Project Record➛Campaign➛Status\",\"reference\":\"\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_work_campaign\",\"column_name\":\"state\",\"choices\":[{\"used\":false,\"label\":\"Upcoming\",\"image\":\"\",\"rawLabel\":\"Upcoming\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"10\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Open\",\"image\":\"\",\"rawLabel\":\"Open\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"20\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"On Hold\",\"image\":\"\",\"rawLabel\":\"On Hold\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"22\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Work In progress\",\"image\":\"\",\"rawLabel\":\"Work In progress\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"30\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Closed Complete\",\"image\":\"\",\"rawLabel\":\"Closed Complete\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"40\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Closed Incomplete\",\"image\":\"\",\"rawLabel\":\"Closed Incomplete\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"50\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Closed Skipped\",\"image\":\"\",\"rawLabel\":\"Closed Skipped\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"60\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Archived\",\"image\":\"\",\"rawLabel\":\"Archived\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"333\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}}]},{\"name\":\"3b8e938b-a1b3-496c-88f1-e39f797a6e43.record\",\"label\":\"6 - Update Record➛Record\",\"reference_display\":\"Record\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"3b8e938b-a1b3-496c-88f1-e39f797a6e43.table_name\",\"label\":\"6 - Update Record➛Table\",\"reference_display\":\"Table\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"3b8e938b-a1b3-496c-88f1-e39f797a6e43.__action_status__\",\"label\":\"6 - Update Record➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"uiType\":\"object\",\"co_type_name\":\"FDACTIONSTATUS\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"3b8e938b-a1b3-496c-88f1-e39f797a6e43.__dont_treat_as_error__\",\"label\":\"6 - Update Record➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"76a2fe21-cc7d-434f-84f9-077526dce7f8.Records\",\"label\":\"1 - Look Up Records➛Project Records\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.Record\",\"label\":\"1 - Look Up Record➛Record\",\"reference_display\":\"Record\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.Table\",\"label\":\"1 - Look Up Record➛Table\",\"reference_display\":\"Table\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.status\",\"label\":\"1 - Look Up Record➛Status\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"choices\":[{\"label\":\"Error\",\"value\":\"1\",\"order\":0.0},{\"label\":\"Success\",\"value\":\"0\",\"order\":1.0}],\"attributes\":{\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"choice\",\"uiUniqueId\":\"5e478657-3a84-4a60-a92b-d3e80005ad34\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.error_message\",\"label\":\"1 - Look Up Record➛Error Message\",\"reference_display\":\"Error Message\",\"type\":\"string\",\"base_type\":\"string\",\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiType\":\"string\",\"uiUniqueId\":\"87687532-9e3d-4497-a88e-90f45bfb9adb\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.__action_status__\",\"label\":\"1 - Look Up Record➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"object\",\"action_error_output\":\"true\"}},{\"name\":\"4b3a1310-d2ef-43ef-bbe6-f97e230a2718.__dont_treat_as_error__\",\"label\":\"1 - Look Up Record➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.Record\",\"label\":\"1 - Look Up Record➛Record\",\"reference_display\":\"Record\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.Table\",\"label\":\"1 - Look Up Record➛Table\",\"reference_display\":\"Table\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.status\",\"label\":\"1 - Look Up Record➛Status\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"choices\":[{\"label\":\"Error\",\"value\":\"1\",\"order\":0.0},{\"label\":\"Success\",\"value\":\"0\",\"order\":1.0}],\"attributes\":{\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"choice\",\"uiUniqueId\":\"5e478657-3a84-4a60-a92b-d3e80005ad34\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.error_message\",\"label\":\"1 - Look Up Record➛Error Message\",\"reference_display\":\"Error Message\",\"type\":\"string\",\"base_type\":\"string\",\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiType\":\"string\",\"uiUniqueId\":\"87687532-9e3d-4497-a88e-90f45bfb9adb\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.__action_status__\",\"label\":\"1 - Look Up Record➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"object\",\"action_error_output\":\"true\"}},{\"name\":\"ce715f2e-ff10-4f13-b17d-e16f89f15cc8.__dont_treat_as_error__\",\"label\":\"1 - Look Up Record➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.Records\",\"label\":\"1 - Look Up Records➛Project Records\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.Table\",\"label\":\"1 - Look Up Records➛Project Table\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.Count\",\"label\":\"1 - Look Up Records➛Count\",\"reference_display\":\"Count\",\"type\":\"integer\",\"base_type\":\"integer\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.__action_status__\",\"label\":\"1 - Look Up Records➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"uiType\":\"object\",\"co_type_name\":\"FDACTIONSTATUS\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"075b7b79-9a71-447b-a4ca-e8c5f5cdcb87.__dont_treat_as_error__\",\"label\":\"1 - Look Up Records➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Updated_1.current.campaign\",\"label\":\"Trigger - Record Updated➛Project Record➛Campaign\",\"reference\":\"x_cadso_work_campaign\",\"reference_display\":\"Campaign\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"campaign\"},{\"name\":\"c81f8cbf-4054-44f8-8533-2a85da34648b.item\",\"label\":\"2 - For Each➛Project Record\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"c81f8cbf-4054-44f8-8533-2a85da34648b.item.state\",\"label\":\"2 - For Each➛Project Record➛Status\",\"reference\":\"\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"state\",\"choices\":[{\"used\":false,\"label\":\"Planning\",\"image\":\"\",\"rawLabel\":\"Planning\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"-10\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Requested\",\"image\":\"\",\"rawLabel\":\"Requested\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"0\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Rejected\",\"image\":\"\",\"rawLabel\":\"Rejected\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"6\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Upcoming\",\"image\":\"\",\"rawLabel\":\"Upcoming\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"10\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"On Hold\",\"image\":\"\",\"rawLabel\":\"On Hold\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"22\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"In Progress\",\"image\":\"\",\"rawLabel\":\"In Progress\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"30\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Completed\",\"image\":\"\",\"rawLabel\":\"Completed\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"40\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Canceled\",\"image\":\"\",\"rawLabel\":\"Canceled\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"70\",\"parameters\":{\"name\":\"x_cadso_work_project\"}},{\"used\":false,\"label\":\"Archived\",\"image\":\"\",\"rawLabel\":\"Archived\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"333\",\"parameters\":{\"name\":\"x_cadso_work_project\"}}]},{\"name\":\"5db892dc-12e6-48a4-a22d-5b3e9f7456b4.state\",\"label\":\"5 - Wait For Condition➛State\",\"reference_display\":\"State\",\"type\":\"choice\",\"base_type\":\"choice\",\"choices\":[{\"label\":\"Complete\",\"value\":\"0\",\"order\":0.0},{\"label\":\"Timeout\",\"value\":\"1\",\"order\":1.0}],\"attributes\":{\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"choice\",\"uiUniqueId\":\"2e334039-7a20-4ead-9148-909988f1a7e4\"}},{\"name\":\"5db892dc-12e6-48a4-a22d-5b3e9f7456b4.__action_status__\",\"label\":\"5 - Wait For Condition➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"co_type_name\":\"FDACTIONSTATUS\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"object\",\"action_error_output\":\"true\"}},{\"name\":\"5db892dc-12e6-48a4-a22d-5b3e9f7456b4.__dont_treat_as_error__\",\"label\":\"5 - Wait For Condition➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\"}},{\"name\":\"9d1021ca-5c07-403e-a0e4-92d30a2d66b1.record\",\"label\":\"4 - Update Record➛Record\",\"reference_display\":\"Record\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"9d1021ca-5c07-403e-a0e4-92d30a2d66b1.table_name\",\"label\":\"4 - Update Record➛Table\",\"reference_display\":\"Table\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"9d1021ca-5c07-403e-a0e4-92d30a2d66b1.__action_status__\",\"label\":\"4 - Update Record➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"uiType\":\"object\",\"co_type_name\":\"FDACTIONSTATUS\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"9d1021ca-5c07-403e-a0e4-92d30a2d66b1.__dont_treat_as_error__\",\"label\":\"4 - Update Record➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Updated_1.current.campaign.state\",\"label\":\"Trigger - Record Updated➛Project Record➛Campaign➛Status\",\"reference\":\"\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_work_campaign\",\"column_name\":\"state\",\"choices\":[{\"used\":false,\"label\":\"Upcoming\",\"image\":\"\",\"rawLabel\":\"Upcoming\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"10\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Open\",\"image\":\"\",\"rawLabel\":\"Open\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"20\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"On Hold\",\"image\":\"\",\"rawLabel\":\"On Hold\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"22\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Work In progress\",\"image\":\"\",\"rawLabel\":\"Work In progress\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"30\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Closed Complete\",\"image\":\"\",\"rawLabel\":\"Closed Complete\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"40\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Closed Incomplete\",\"image\":\"\",\"rawLabel\":\"Closed Incomplete\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"50\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Closed Skipped\",\"image\":\"\",\"rawLabel\":\"Closed Skipped\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"60\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}},{\"used\":false,\"label\":\"Archived\",\"image\":\"\",\"rawLabel\":\"Archived\",\"selected\":false,\"missing\":false,\"reference\":false,\"value\":\"333\",\"parameters\":{\"name\":\"x_cadso_work_campaign\"}}]},{\"name\":\"3b8e938b-a1b3-496c-88f1-e39f797a6e43.record\",\"label\":\"6 - Update Record➛Record\",\"reference_display\":\"Record\",\"type\":\"document_id\",\"base_type\":\"document_id\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"3b8e938b-a1b3-496c-88f1-e39f797a6e43.table_name\",\"label\":\"6 - Update Record➛Table\",\"reference_display\":\"Table\",\"type\":\"table_name\",\"base_type\":\"table_name\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"3b8e938b-a1b3-496c-88f1-e39f797a6e43.__action_status__\",\"label\":\"6 - Update Record➛Action Status\",\"reference_display\":\"Action Status\",\"type\":\"object\",\"base_type\":\"object\",\"attributes\":{\"uiType\":\"object\",\"co_type_name\":\"FDACTIONSTATUS\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"3b8e938b-a1b3-496c-88f1-e39f797a6e43.__dont_treat_as_error__\",\"label\":\"6 - Update Record➛Don\\u0027t Treat as Error\",\"reference_display\":\"Don\\u0027t Treat as Error\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"attributes\":{\"uiType\":\"boolean\",\"visible_in_ui\":\"false\",\"action_error_output\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "remote_trigger_id": {
+    "value": "439fe77b87632550b656fe66cebb35a7",
+    "display_value": "439fe77b87632550b656fe66cebb35a7"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  }
+}

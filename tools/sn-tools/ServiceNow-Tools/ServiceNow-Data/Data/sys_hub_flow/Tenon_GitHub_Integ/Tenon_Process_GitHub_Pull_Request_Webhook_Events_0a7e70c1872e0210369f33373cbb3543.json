@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "0a7e70c1872e0210369f33373cbb3543",
+    "extracted_at": "2025-09-19T21:48:46.522Z",
+    "display_value": "Tenon Process GitHub Pull Request Webhook Events",
+    "application": "Tenon_GitHub_Integ",
+    "scope": {
+      "display_value": "Tenon GitHub Integ",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/16cd7041872e0210369f33373cbb35d3",
+      "value": "16cd7041872e0210369f33373cbb35d3"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2024-08-15 18:17:37",
+    "display_value": "2024-08-15 11:17:37 AM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Process GitHub Pull Request Webh",
+    "display_value": "Process GitHub Pull Request Webh"
+  },
+  "latest_snapshot": {
+    "value": "7b730949872e0210369f33373cbb35d6",
+    "display_value": "7b730949872e0210369f33373cbb35d6"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "tenon_process_github_pull_request_webhook_events",
+    "display_value": "tenon_process_github_pull_request_webhook_events"
+  },
+  "sys_updated_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "sys_created_on": {
+    "value": "2024-05-31 18:11:30",
+    "display_value": "2024-05-31 11:11:30 AM"
+  },
+  "compiler_build": {
+    "value": "glide-washingtondc-12-20-2023__patch3-04-25-2024_05-06-2024_1747.zip",
+    "display_value": "glide-washingtondc-12-20-2023__patch3-04-25-2024_05-06-2024_1747.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Tenon Process GitHub Pull Request Webhook Events",
+    "display_value": "Tenon Process GitHub Pull Request Webhook Events"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "7b730949872e0210369f33373cbb35d6",
+    "display_value": "7b730949872e0210369f33373cbb35d6"
+  },
+  "sys_created_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_0a7e70c1872e0210369f33373cbb3543",
+    "display_value": "sys_hub_flow_0a7e70c1872e0210369f33373cbb3543"
+  },
+  "name": {
+    "value": "Tenon Process GitHub Pull Request Webhook Events",
+    "display_value": "Tenon Process GitHub Pull Request Webhook Events"
+  },
+  "copied_from": {
+    "value": "213b58f187f8c010c1e95773e8cb0bae",
+    "display_value": "213b58f187f8c010c1e95773e8cb0bae"
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "read",
+    "display_value": "Read-only"
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"flow_variable.github_url\",\"label\":\"Flow Variables➛GitHub URL\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"github_url\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"f4ff09db-cefd-483b-a659-ac234b337ee3\"}},{\"name\":\"subflow.pull_request\",\"label\":\"Input➛Pull Request\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{\"uiType\":\"object\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD067e70c1722e021095d67ca91c8fda69\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"7068308f-5dea-41d7-9bbb-6f974ef18a02\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.labels\",\"label\":\"Input➛Pull Request➛Labels\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{\"uiUniqueId\":\"ee86f1e1-2da4-4298-844c-df7a6a998890\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.state\",\"label\":\"Input➛Pull Request➛State\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"1feac3c3-b211-408f-9880-7891b8bbdca3\":[\"log_message\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"state\"]},\"attributes\":{\"uiUniqueId\":\"41daab36-730e-402a-8261-a3cda2fdf464\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.url\",\"label\":\"Input➛Pull Request➛url\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"41377b34-5b5b-450b-a6f6-ca854aeb56fe\":[\"log_message\"]},\"attributes\":{\"uiUniqueId\":\"5ddb81b9-ef60-4d0a-a79c-0a8c6b268ae6\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.repository\",\"label\":\"Input➛Repository\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"object\",\"base_type\":\"object\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{\"uiType\":\"object\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD067e70c1f62e02104ecf77fb23371d66\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"e5464bda-c32e-4a27-9069-432a5d73c38e\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.payload\",\"label\":\"Input➛Payload\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string_full_utf8\",\"base_type\":\"string_full_utf8\",\"column_name\":\"\",\"usedInstances\":{\"d5d32ad1-420a-4b46-afc8-fa28d288a0c5\":[\"log_message\"]},\"attributes\":{\"uiType\":\"string_full_utf8\",\"uiTypeLabel\":\"String (Full UTF-8)\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"aac98255-b55c-4cb5-aa95-e036e42744a4\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.sender\",\"label\":\"Input➛Sender\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"object\",\"base_type\":\"object\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{\"uiType\":\"object\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD4a7e70c17f2e02102f21f5aee7d3c468\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"b5c91856-1a8c-402e-a4d1-bef17c7a7c35\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.labels.label\",\"label\":\"Input➛Labels➛Label\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{},\"attributes\":{\"uiUniqueId\":\"3f07894d-ccf7-4c59-9b45-fe5abad247e5\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.user.login\",\"label\":\"Input➛User➛Login\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"github_user\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"github_user\"]},\"attributes\":{\"uiUniqueId\":\"d739c7a0-ec11-4581-81a7-351a30326105\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.webhook_event\",\"label\":\"Input➛Webhook Event\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\"},{\"name\":\"subflow.pull_request.base.label\",\"label\":\"Input➛Base➛Label\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"base\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"base\"]},\"attributes\":{\"uiUniqueId\":\"42958aaa-f36a-4efd-bd31-26c87b62edcb\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.body\",\"label\":\"Input➛Pull Request➛Body\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"body\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"body\"]},\"attributes\":{\"uiUniqueId\":\"e5d5ed43-0324-48b8-b0c6-86cf748a86f5\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.head.label\",\"label\":\"Input➛Head➛Label\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"head\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"head\"]},\"attributes\":{\"uiUniqueId\":\"781c92a2-f32f-475a-9a49-2691b02120a1\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.repository.name\",\"label\":\"Input➛Repository➛Name\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"repository\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"repository\"]},\"attributes\":{\"uiUniqueId\":\"95b1704f-a532-4615-af37-2d2cd5f45159\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.title\",\"label\":\"Input➛Pull Request➛Title\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"title\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"title\"]},\"attributes\":{\"uiUniqueId\":\"55a8a3f1-4195-4c7f-8c7a-6036f7f94de5\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.action\",\"label\":\"Input➛Action\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"1feac3c3-b211-408f-9880-7891b8bbdca3\":[\"log_message\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"99892b58-9ee6-4bfc-a7df-e8165623c962\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"flow_variable.github_id\",\"label\":\"Flow Variables➛GitHub ID\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"column_name\":\"\",\"usedInstances\":{\"72abac1b-2fb1-4446-a388-eebf137637e1\":[\"conditions\"],\"5aa6d2db-f563-4a12-b19c-8ffbd00fe961\":[\"conditions\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"github_id\"]},\"attributes\":{\"uiType\":\"integer\",\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"20a1389c-92dc-461b-9d3a-3bc97dc3bf19\"}},{\"name\":\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230.record\",\"label\":\"3 - Create or Update Record➛x_cadso_ti_gitint_pull_request Record\",\"reference\":\"x_cadso_ti_gitint_pull_request\",\"reference_display\":\"Pull Request\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"fa4922b8-cde0-4262-96ea-d2574a1a4d0d\":[\"record\"]},\"attributes\":{\"uiType\":\"document_id\",\"uiTypeLabel\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230.record.stories\",\"label\":\"3 - Create or Update Record➛x_cadso_ti_gitint_pull_request Record➛Stories\",\"reference\":\"rm_story\",\"reference_display\":\"Story\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"parent_table_name\":\"x_cadso_ti_gitint_pull_request\",\"column_name\":\"stories\",\"usedInstances\":{\"d66be939-e046-4ddd-9ccc-b4d22c2b827d\":[\"existing_stories-0\"]}}]",
+    "display_value": "[{\"name\":\"flow_variable.github_url\",\"label\":\"Flow Variables➛GitHub URL\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"github_url\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"f4ff09db-cefd-483b-a659-ac234b337ee3\"}},{\"name\":\"subflow.pull_request\",\"label\":\"Input➛Pull Request\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{\"uiType\":\"object\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD067e70c1722e021095d67ca91c8fda69\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"7068308f-5dea-41d7-9bbb-6f974ef18a02\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.labels\",\"label\":\"Input➛Pull Request➛Labels\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{\"uiUniqueId\":\"ee86f1e1-2da4-4298-844c-df7a6a998890\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.state\",\"label\":\"Input➛Pull Request➛State\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"1feac3c3-b211-408f-9880-7891b8bbdca3\":[\"log_message\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"state\"]},\"attributes\":{\"uiUniqueId\":\"41daab36-730e-402a-8261-a3cda2fdf464\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.url\",\"label\":\"Input➛Pull Request➛url\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"41377b34-5b5b-450b-a6f6-ca854aeb56fe\":[\"log_message\"]},\"attributes\":{\"uiUniqueId\":\"5ddb81b9-ef60-4d0a-a79c-0a8c6b268ae6\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.repository\",\"label\":\"Input➛Repository\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"object\",\"base_type\":\"object\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{\"uiType\":\"object\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD067e70c1f62e02104ecf77fb23371d66\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"e5464bda-c32e-4a27-9069-432a5d73c38e\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.payload\",\"label\":\"Input➛Payload\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string_full_utf8\",\"base_type\":\"string_full_utf8\",\"column_name\":\"\",\"usedInstances\":{\"d5d32ad1-420a-4b46-afc8-fa28d288a0c5\":[\"log_message\"]},\"attributes\":{\"uiType\":\"string_full_utf8\",\"uiTypeLabel\":\"String (Full UTF-8)\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"aac98255-b55c-4cb5-aa95-e036e42744a4\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.sender\",\"label\":\"Input➛Sender\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"object\",\"base_type\":\"object\",\"column_name\":\"\",\"usedInstances\":{},\"attributes\":{\"uiType\":\"object\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FD4a7e70c17f2e02102f21f5aee7d3c468\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"b5c91856-1a8c-402e-a4d1-bef17c7a7c35\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.labels.label\",\"label\":\"Input➛Labels➛Label\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{},\"attributes\":{\"uiUniqueId\":\"3f07894d-ccf7-4c59-9b45-fe5abad247e5\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.user.login\",\"label\":\"Input➛User➛Login\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"github_user\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"github_user\"]},\"attributes\":{\"uiUniqueId\":\"d739c7a0-ec11-4581-81a7-351a30326105\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.webhook_event\",\"label\":\"Input➛Webhook Event\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\"},{\"name\":\"subflow.pull_request.base.label\",\"label\":\"Input➛Base➛Label\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"base\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"base\"]},\"attributes\":{\"uiUniqueId\":\"42958aaa-f36a-4efd-bd31-26c87b62edcb\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.body\",\"label\":\"Input➛Pull Request➛Body\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"body\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"body\"]},\"attributes\":{\"uiUniqueId\":\"e5d5ed43-0324-48b8-b0c6-86cf748a86f5\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.head.label\",\"label\":\"Input➛Head➛Label\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"head\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"head\"]},\"attributes\":{\"uiUniqueId\":\"781c92a2-f32f-475a-9a49-2691b02120a1\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.repository.name\",\"label\":\"Input➛Repository➛Name\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"repository\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"repository\"]},\"attributes\":{\"uiUniqueId\":\"95b1704f-a532-4615-af37-2d2cd5f45159\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.pull_request.title\",\"label\":\"Input➛Pull Request➛Title\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"26e1fa82-9859-4a53-9578-26a2e589d1af\":[\"title\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"title\"]},\"attributes\":{\"uiUniqueId\":\"55a8a3f1-4195-4c7f-8c7a-6036f7f94de5\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.action\",\"label\":\"Input➛Action\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"1feac3c3-b211-408f-9880-7891b8bbdca3\":[\"log_message\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"99892b58-9ee6-4bfc-a7df-e8165623c962\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"flow_variable.github_id\",\"label\":\"Flow Variables➛GitHub ID\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"integer\",\"base_type\":\"integer\",\"column_name\":\"\",\"usedInstances\":{\"72abac1b-2fb1-4446-a388-eebf137637e1\":[\"conditions\"],\"5aa6d2db-f563-4a12-b19c-8ffbd00fe961\":[\"conditions\"],\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230\":[\"github_id\"]},\"attributes\":{\"uiType\":\"integer\",\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"20a1389c-92dc-461b-9d3a-3bc97dc3bf19\"}},{\"name\":\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230.record\",\"label\":\"3 - Create or Update Record➛x_cadso_ti_gitint_pull_request Record\",\"reference\":\"x_cadso_ti_gitint_pull_request\",\"reference_display\":\"Pull Request\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"fa4922b8-cde0-4262-96ea-d2574a1a4d0d\":[\"record\"]},\"attributes\":{\"uiType\":\"document_id\",\"uiTypeLabel\":\"true\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"08f7ef8b-a8f9-40c0-83e8-28d0a0b50230.record.stories\",\"label\":\"3 - Create or Update Record➛x_cadso_ti_gitint_pull_request Record➛Stories\",\"reference\":\"rm_story\",\"reference_display\":\"Story\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"parent_table_name\":\"x_cadso_ti_gitint_pull_request\",\"column_name\":\"stories\",\"usedInstances\":{\"d66be939-e046-4ddd-9ccc-b4d22c2b827d\":[\"existing_stories-0\"]}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "Sample subflow to process GitHub Webhooks",
+    "display_value": "Sample subflow to process GitHub Webhooks"
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "16cd7041872e0210369f33373cbb35d3",
+    "display_value": "Tenon GitHub Integ"
+  },
+  "annotation": {
+    "value": "Sample sub-flow to process GitHub Webhooks",
+    "display_value": "Sample sub-flow to process GitHub Webhooks"
+  },
+  "sys_mod_count": {
+    "value": "130",
+    "display_value": "130"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "16cd7041872e0210369f33373cbb35d3",
+    "display_value": "Tenon GitHub Integ"
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=6566764000,viewActivatedIn=diagramming",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=6566764000,viewActivatedIn=diagramming"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  }
+}

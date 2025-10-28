@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "991e759997f56510ac33f109c253af12",
+    "extracted_at": "2025-09-19T21:48:31.663Z",
+    "display_value": "UISlushBucketApiMS",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "106",
+    "display_value": "106"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-01-28 20:11:43",
+    "display_value": "2025-01-28 12:11:43 PM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "var UISlushBucketApiMS = Class.create();\r\nUISlushBucketApiMS.prototype = {\r\n    initialize: function() {},\r\n\r\n    compare: function(a, b) {\r\n        if (a.displayValue < b.displayValue) {\r\n            return -1;\r\n        }\r\n        if (a.displayValue > b.displayValue) {\r\n            return 1;\r\n        }\r\n        return 0;\r\n    },\r\n\r\n    getData: function(request, response) {\r\n        // We need a table : work_group \r\n        // referance table : segment\r\n        // referance field : segment\r\n        // query field : work_group\r\n        // query field value : sys_id\r\n        // current record sys_id : sys_id \r\n        // current m2m table : x_cadso_work_group_segment_m2m\r\n        // m2m query becuase we dont want to show (inherit is true);\r\n\r\n        // We need to query the referance table and get all records and get - displayValue: displayValue  + value:sys_id\r\n        // query the m2m table and find the selected. We need referance fields - displayValue and sys_id\r\n        // well need to add a query becuase we dont want to show (inherit is true);\r\n\r\n        const {\r\n            table,\r\n            refTable,\r\n            refField,\r\n            queryField,\r\n            queryValue,\r\n            sysId,\r\n            m2mTable,\r\n            m2mQuery\r\n        } = request.queryParams;\r\n        let selectedArray = [];\r\n        let avalibleArray = [];\r\n\r\n        var m2mGR = new GlideRecordSecure(m2mTable);\r\n\r\n        if (m2mQuery && m2mQuery != \"false\") {\r\n            m2mGR.addQuery(m2mQuery);\r\n        }\r\n\r\n        m2mGR.addQuery(queryField, queryValue);\r\n        m2mGR.addEncodedQuery(`${refField}ISNOTEMPTY`);\r\n        m2mGR.orderBy(refField);\r\n        m2mGR.query();\r\n\r\n        while (m2mGR.next()) {\r\n            let displayValue = m2mGR.getDisplayValue(refField);\r\n            let value = m2mGR.getValue(refField);\r\n            selectedArray.push({\r\n                displayValue,\r\n                value\r\n            });\r\n        }\r\n\t\t\r\n        let tableQuery = selectedArray.map((selected) => selected.value).join(\",\");\r\n\r\n        if (refTable == 'sys_user') {\r\n            var tableGR = new GlideAggregate('sys_user_has_role');\r\n            tableGR.addEncodedQuery('role.nameLIKEx_cadso^state=active');\r\n            tableGR.groupBy('user');\r\n            tableGR.query();\r\n            while (tableGR.next()) {\r\n                let displayValue = tableGR.getDisplayValue('user');\r\n\t\t\t\tlet value = tableGR.getValue('user');\r\n\t\t\t\tif (displayValue) {\r\n                avalibleArray.push({\r\n                    displayValue,\r\n                    value\r\n                });\r\n\t\t\t}\r\n            }\r\n        } else {\r\n            var tableGR = new GlideRecordSecure(refTable);\r\n            if (tableQuery.length) {\r\n                tableGR.addEncodedQuery(\"sys_idNOT IN\" + tableQuery);\r\n            }\r\n            tableGR.addEncodedQuery(tableGR.getDisplayName() + 'ISNOTEMPTY');\r\n            tableGR.orderBy(tableGR.getDisplayName());\r\n            tableGR.query();\r\n\r\n\r\n            while (tableGR.next()) {\r\n\r\n                let displayValue = tableGR.getDisplayValue();\r\n                let value = tableGR.getUniqueValue();\r\n\r\n                avalibleArray.push({\r\n                    displayValue,\r\n                    value\r\n                });\r\n            }\r\n       }\r\n\r\n\r\n        avalibleArray.sort(this.compare);\r\n\r\n        response.setBody({\r\n            avalibleArray,\r\n            selectedArray,\r\n            queryField,\r\n            queryValue,\r\n            refTable,\r\n            refField,\r\n            m2mQuery,\r\n            m2mTable\r\n        });\r\n\r\n        return response;\r\n    },\r\n\r\n    saveDate: function(request, response) {\r\n        const {\r\n            table,\r\n            refTable,\r\n            refField,\r\n            queryField,\r\n            queryValue,\r\n            sysId,\r\n            m2mTable,\r\n            m2mQuery,\r\n            selectedArray\r\n        } = request.body.data;\r\n\r\n        var m2mGR = new GlideRecord(m2mTable);\r\n        m2mGR.addQuery(queryField, queryValue);\r\n        if (m2mQuery) {\r\n            m2mGR.addQuery(m2mQuery);\r\n        }\r\n        m2mGR.query();\r\n        m2mGR.deleteMultiple();\r\n\r\n        var m2mGR2 = new GlideRecordSecure(m2mTable);\r\n        selectedArray.forEach(({\r\n            value\r\n        }) => {\r\n            m2mGR2.initialize();\r\n            m2mGR2.newRecord();\r\n            m2mGR2.setValue(queryField, queryValue);\r\n            m2mGR2.setValue(refField, value);\r\n            m2mGR2.insert();\r\n        });\r\n\r\n        response.setBody({\r\n            test: true\r\n        });\r\n        response.setStatus(200);\r\n\r\n        return response;\r\n    },\r\n\r\n    type: 'UISlushBucketApiMS'\r\n};",
+    "display_value": "var UISlushBucketApiMS = Class.create();\r\nUISlushBucketApiMS.prototype = {\r\n    initialize: function() {},\r\n\r\n    compare: function(a, b) {\r\n        if (a.displayValue < b.displayValue) {\r\n            return -1;\r\n        }\r\n        if (a.displayValue > b.displayValue) {\r\n            return 1;\r\n        }\r\n        return 0;\r\n    },\r\n\r\n    getData: function(request, response) {\r\n        // We need a table : work_group \r\n        // referance table : segment\r\n        // referance field : segment\r\n        // query field : work_group\r\n        // query field value : sys_id\r\n        // current record sys_id : sys_id \r\n        // current m2m table : x_cadso_work_group_segment_m2m\r\n        // m2m query becuase we dont want to show (inherit is true);\r\n\r\n        // We need to query the referance table and get all records and get - displayValue: displayValue  + value:sys_id\r\n        // query the m2m table and find the selected. We need referance fields - displayValue and sys_id\r\n        // well need to add a query becuase we dont want to show (inherit is true);\r\n\r\n        const {\r\n            table,\r\n            refTable,\r\n            refField,\r\n            queryField,\r\n            queryValue,\r\n            sysId,\r\n            m2mTable,\r\n            m2mQuery\r\n        } = request.queryParams;\r\n        let selectedArray = [];\r\n        let avalibleArray = [];\r\n\r\n        var m2mGR = new GlideRecordSecure(m2mTable);\r\n\r\n        if (m2mQuery && m2mQuery != \"false\") {\r\n            m2mGR.addQuery(m2mQuery);\r\n        }\r\n\r\n        m2mGR.addQuery(queryField, queryValue);\r\n        m2mGR.addEncodedQuery(`${refField}ISNOTEMPTY`);\r\n        m2mGR.orderBy(refField);\r\n        m2mGR.query();\r\n\r\n        while (m2mGR.next()) {\r\n            let displayValue = m2mGR.getDisplayValue(refField);\r\n            let value = m2mGR.getValue(refField);\r\n            selectedArray.push({\r\n                displayValue,\r\n                value\r\n            });\r\n        }\r\n\t\t\r\n        let tableQuery = selectedArray.map((selected) => selected.value).join(\",\");\r\n\r\n        if (refTable == 'sys_user') {\r\n            var tableGR = new GlideAggregate('sys_user_has_role');\r\n            tableGR.addEncodedQuery('role.nameLIKEx_cadso^state=active');\r\n            tableGR.groupBy('user');\r\n            tableGR.query();\r\n            while (tableGR.next()) {\r\n                let displayValue = tableGR.getDisplayValue('user');\r\n\t\t\t\tlet value = tableGR.getValue('user');\r\n\t\t\t\tif (displayValue) {\r\n                avalibleArray.push({\r\n                    displayValue,\r\n                    value\r\n                });\r\n\t\t\t}\r\n            }\r\n        } else {\r\n            var tableGR = new GlideRecordSecure(refTable);\r\n            if (tableQuery.length) {\r\n                tableGR.addEncodedQuery(\"sys_idNOT IN\" + tableQuery);\r\n            }\r\n            tableGR.addEncodedQuery(tableGR.getDisplayName() + 'ISNOTEMPTY');\r\n            tableGR.orderBy(tableGR.getDisplayName());\r\n            tableGR.query();\r\n\r\n\r\n            while (tableGR.next()) {\r\n\r\n                let displayValue = tableGR.getDisplayValue();\r\n                let value = tableGR.getUniqueValue();\r\n\r\n                avalibleArray.push({\r\n                    displayValue,\r\n                    value\r\n                });\r\n            }\r\n       }\r\n\r\n\r\n        avalibleArray.sort(this.compare);\r\n\r\n        response.setBody({\r\n            avalibleArray,\r\n            selectedArray,\r\n            queryField,\r\n            queryValue,\r\n            refTable,\r\n            refField,\r\n            m2mQuery,\r\n            m2mTable\r\n        });\r\n\r\n        return response;\r\n    },\r\n\r\n    saveDate: function(request, response) {\r\n        const {\r\n            table,\r\n            refTable,\r\n            refField,\r\n            queryField,\r\n            queryValue,\r\n            sysId,\r\n            m2mTable,\r\n            m2mQuery,\r\n            selectedArray\r\n        } = request.body.data;\r\n\r\n        var m2mGR = new GlideRecord(m2mTable);\r\n        m2mGR.addQuery(queryField, queryValue);\r\n        if (m2mQuery) {\r\n            m2mGR.addQuery(m2mQuery);\r\n        }\r\n        m2mGR.query();\r\n        m2mGR.deleteMultiple();\r\n\r\n        var m2mGR2 = new GlideRecordSecure(m2mTable);\r\n        selectedArray.forEach(({\r\n            value\r\n        }) => {\r\n            m2mGR2.initialize();\r\n            m2mGR2.newRecord();\r\n            m2mGR2.setValue(queryField, queryValue);\r\n            m2mGR2.setValue(refField, value);\r\n            m2mGR2.insert();\r\n        });\r\n\r\n        response.setBody({\r\n            test: true\r\n        });\r\n        response.setStatus(200);\r\n\r\n        return response;\r\n    },\r\n\r\n    type: 'UISlushBucketApiMS'\r\n};",
+    "formatted_script": {
+      "line_count": 159,
+      "char_count": 4658,
+      "preview": "var UISlushBucketApiMS = Class.create();\r\nUISlushBucketApiMS.prototype = {\r\n    initialize: function() {},\r\n\r\n    compare: function(a, b) {\r\n        if (a.displayValue < b.displayValue) {\r\n           ...",
+      "full_script": "var UISlushBucketApiMS = Class.create();\r\nUISlushBucketApiMS.prototype = {\r\n    initialize: function() {},\r\n\r\n    compare: function(a, b) {\r\n        if (a.displayValue < b.displayValue) {\r\n            return -1;\r\n        }\r\n        if (a.displayValue > b.displayValue) {\r\n            return 1;\r\n        }\r\n        return 0;\r\n    },\r\n\r\n    getData: function(request, response) {\r\n        // We need a table : work_group \r\n        // referance table : segment\r\n        // referance field : segment\r\n        // query field : work_group\r\n        // query field value : sys_id\r\n        // current record sys_id : sys_id \r\n        // current m2m table : x_cadso_work_group_segment_m2m\r\n        // m2m query becuase we dont want to show (inherit is true);\r\n\r\n        // We need to query the referance table and get all records and get - displayValue: displayValue  + value:sys_id\r\n        // query the m2m table and find the selected. We need referance fields - displayValue and sys_id\r\n        // well need to add a query becuase we dont want to show (inherit is true);\r\n\r\n        const {\r\n            table,\r\n            refTable,\r\n            refField,\r\n            queryField,\r\n            queryValue,\r\n            sysId,\r\n            m2mTable,\r\n            m2mQuery\r\n        } = request.queryParams;\r\n        let selectedArray = [];\r\n        let avalibleArray = [];\r\n\r\n        var m2mGR = new GlideRecordSecure(m2mTable);\r\n\r\n        if (m2mQuery && m2mQuery != \"false\") {\r\n            m2mGR.addQuery(m2mQuery);\r\n        }\r\n\r\n        m2mGR.addQuery(queryField, queryValue);\r\n        m2mGR.addEncodedQuery(`${refField}ISNOTEMPTY`);\r\n        m2mGR.orderBy(refField);\r\n        m2mGR.query();\r\n\r\n        while (m2mGR.next()) {\r\n            let displayValue = m2mGR.getDisplayValue(refField);\r\n            let value = m2mGR.getValue(refField);\r\n            selectedArray.push({\r\n                displayValue,\r\n                value\r\n            });\r\n        }\r\n\t\t\r\n        let tableQuery = selectedArray.map((selected) => selected.value).join(\",\");\r\n\r\n        if (refTable == 'sys_user') {\r\n            var tableGR = new GlideAggregate('sys_user_has_role');\r\n            tableGR.addEncodedQuery('role.nameLIKEx_cadso^state=active');\r\n            tableGR.groupBy('user');\r\n            tableGR.query();\r\n            while (tableGR.next()) {\r\n                let displayValue = tableGR.getDisplayValue('user');\r\n\t\t\t\tlet value = tableGR.getValue('user');\r\n\t\t\t\tif (displayValue) {\r\n                avalibleArray.push({\r\n                    displayValue,\r\n                    value\r\n                });\r\n\t\t\t}\r\n            }\r\n        } else {\r\n            var tableGR = new GlideRecordSecure(refTable);\r\n            if (tableQuery.length) {\r\n                tableGR.addEncodedQuery(\"sys_idNOT IN\" + tableQuery);\r\n            }\r\n            tableGR.addEncodedQuery(tableGR.getDisplayName() + 'ISNOTEMPTY');\r\n            tableGR.orderBy(tableGR.getDisplayName());\r\n            tableGR.query();\r\n\r\n\r\n            while (tableGR.next()) {\r\n\r\n                let displayValue = tableGR.getDisplayValue();\r\n                let value = tableGR.getUniqueValue();\r\n\r\n                avalibleArray.push({\r\n                    displayValue,\r\n                    value\r\n                });\r\n            }\r\n       }\r\n\r\n\r\n        avalibleArray.sort(this.compare);\r\n\r\n        response.setBody({\r\n            avalibleArray,\r\n            selectedArray,\r\n            queryField,\r\n            queryValue,\r\n            refTable,\r\n            refField,\r\n            m2mQuery,\r\n            m2mTable\r\n        });\r\n\r\n        return response;\r\n    },\r\n\r\n    saveDate: function(request, response) {\r\n        const {\r\n            table,\r\n            refTable,\r\n            refField,\r\n            queryField,\r\n            queryValue,\r\n            sysId,\r\n            m2mTable,\r\n            m2mQuery,\r\n            selectedArray\r\n        } = request.body.data;\r\n\r\n        var m2mGR = new GlideRecord(m2mTable);\r\n        m2mGR.addQuery(queryField, queryValue);\r\n        if (m2mQuery) {\r\n            m2mGR.addQuery(m2mQuery);\r\n        }\r\n        m2mGR.query();\r\n        m2mGR.deleteMultiple();\r\n\r\n        var m2mGR2 = new GlideRecordSecure(m2mTable);\r\n        selectedArray.forEach(({\r\n            value\r\n        }) => {\r\n            m2mGR2.initialize();\r\n            m2mGR2.newRecord();\r\n            m2mGR2.setValue(queryField, queryValue);\r\n            m2mGR2.setValue(refField, value);\r\n            m2mGR2.insert();\r\n        });\r\n\r\n        response.setBody({\r\n            test: true\r\n        });\r\n        response.setStatus(200);\r\n\r\n        return response;\r\n    },\r\n\r\n    type: 'UISlushBucketApiMS'\r\n};"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_991e759997f56510ac33f109c253af12",
+    "display_value": "sys_script_include_991e759997f56510ac33f109c253af12"
+  },
+  "sys_updated_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "api_name": {
+    "value": "x_cadso_work.UISlushBucketApiMS",
+    "display_value": "x_cadso_work.UISlushBucketApiMS"
+  },
+  "sys_created_on": {
+    "value": "2023-03-24 18:18:31",
+    "display_value": "2023-03-24 11:18:31 AM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "UISlushBucketApiMS",
+    "display_value": "UISlushBucketApiMS"
+  },
+  "sys_name": {
+    "value": "UISlushBucketApiMS",
+    "display_value": "UISlushBucketApiMS"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "trevor.offen",
+    "display_value": "trevor.offen"
+  },
+  "sys_policy": {
+    "value": "read",
+    "display_value": "Read-only"
+  }
+}

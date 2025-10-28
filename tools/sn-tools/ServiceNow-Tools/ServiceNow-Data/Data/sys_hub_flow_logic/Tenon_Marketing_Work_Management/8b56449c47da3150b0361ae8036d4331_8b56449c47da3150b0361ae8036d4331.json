@@ -1,0 +1,130 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_logic",
+    "sys_id": "8b56449c47da3150b0361ae8036d4331",
+    "extracted_at": "2025-09-19T21:49:04.868Z",
+    "display_value": "8b56449c47da3150b0361ae8036d4331",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "ui_id": {
+    "value": "c4f31812-30a0-4609-92fe-3db9321cb9f4",
+    "display_value": "c4f31812-30a0-4609-92fe-3db9321cb9f4"
+  },
+  "decision_table": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2023-10-30 23:44:05",
+    "display_value": "2023-10-30 04:44:05 PM"
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_logic",
+    "display_value": "Flow Logic Instance"
+  },
+  "outputs_to_assign": {
+    "value": "",
+    "display_value": ""
+  },
+  "connected_to": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "logic_definition": {
+    "value": "4f787d1e0f9b0010ecf0cc52ff767ea0",
+    "display_value": "Set Flow Variables"
+  },
+  "sys_created_on": {
+    "value": "2023-10-30 23:44:04",
+    "display_value": "2023-10-30 04:44:04 PM"
+  },
+  "block": {
+    "value": "f556c09c47da3150b0361ae8036d43af",
+    "display_value": ""
+  },
+  "outputs_assigned": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "0b2b2700479a3150b0361ae8036d4336",
+    "display_value": "Unarchive (Campaign)"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "order": {
+    "value": "3",
+    "display_value": "3"
+  },
+  "decision_table_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_mod_count": {
+    "value": "3",
+    "display_value": "3"
+  },
+  "extended_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_variable": {
+    "value": "",
+    "display_value": ""
+  },
+  "workflow_reference": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "2696256c-fd5a-4d44-97ab-0f46f9ea8323",
+    "display_value": "2696256c-fd5a-4d44-97ab-0f46f9ea8323"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "workflow_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_variables_assigned": {
+    "value": "project_sys_id",
+    "display_value": "project_sys_id"
+  }
+}

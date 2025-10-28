@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "71822640c3f0e610d4ddf1db050131e7",
+    "extracted_at": "2025-09-19T21:48:45.924Z",
+    "display_value": "Calculate Lead Scores - Lead Management",
+    "application": "Tenon_Lead_Management",
+    "scope": {
+      "display_value": "Tenon Lead Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/d7d2017bc3646610d4ddf1db050131db",
+      "value": "d7d2017bc3646610d4ddf1db050131db"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-07-02 18:21:37",
+    "display_value": "2025-07-02 11:21:37 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Calculate Lead Scores",
+    "display_value": "Calculate Lead Scores"
+  },
+  "latest_snapshot": {
+    "value": "6834105233f3aa107b18bc534d5c7b3f",
+    "display_value": "6834105233f3aa107b18bc534d5c7b3f"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "calculate_lead_scores",
+    "display_value": "calculate_lead_scores"
+  },
+  "sys_updated_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "sys_created_on": {
+    "value": "2025-04-04 15:27:10",
+    "display_value": "2025-04-04 08:27:10 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch9b-07-28-2025_08-07-2025_0908.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch9b-07-28-2025_08-07-2025_0908.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Calculate Lead Scores - Lead Management",
+    "display_value": "Calculate Lead Scores - Lead Management"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "d0ed9be9c3416210d4ddf1db050131de",
+    "display_value": "d0ed9be9c3416210d4ddf1db050131de"
+  },
+  "sys_created_by": {
+    "value": "rumman.tariq",
+    "display_value": "rumman.tariq"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_71822640c3f0e610d4ddf1db050131e7",
+    "display_value": "sys_hub_flow_71822640c3f0e610d4ddf1db050131e7"
+  },
+  "name": {
+    "value": "Calculate Lead Scores - Lead Management",
+    "display_value": "Calculate Lead Scores - Lead Management"
+  },
+  "copied_from": {
+    "value": "3f8a6ae5c3646e10d4ddf1db050131a5",
+    "display_value": "3f8a6ae5c3646e10d4ddf1db050131a5"
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[]",
+    "display_value": "[]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "d7d2017bc3646610d4ddf1db050131db",
+    "display_value": "Tenon Lead Management"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "235",
+    "display_value": "235"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "d7d2017bc3646610d4ddf1db050131db",
+    "display_value": "Tenon Lead Management"
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=7700066000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=7700066000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "1ced9be9c3416210d4ddf1db050131f3",
+    "display_value": "1ced9be9c3416210d4ddf1db050131f3"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "c8392fdbc34fe690d4ddf1db05013127",
+    "extracted_at": "2025-09-19T21:48:45.739Z",
+    "display_value": "Create a new DKIM",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-08-04 19:17:49",
+    "display_value": "2025-08-04 12:17:49 PM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Create a new DKIM",
+    "display_value": "Create a new DKIM"
+  },
+  "latest_snapshot": {
+    "value": "9149efdbc34fe690d4ddf1db0501312f",
+    "display_value": "9149efdbc34fe690d4ddf1db0501312f"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "copy_of_create_a_new_dkim",
+    "display_value": "copy_of_create_a_new_dkim"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2025-08-04 19:17:26",
+    "display_value": "2025-08-04 12:17:26 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch9-05-21-2025_06-04-2025_0434.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch9-05-21-2025_06-04-2025_0434.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Create a new DKIM",
+    "display_value": "Create a new DKIM"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "9149efdbc34fe690d4ddf1db0501312f",
+    "display_value": "9149efdbc34fe690d4ddf1db0501312f"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_c8392fdbc34fe690d4ddf1db05013127",
+    "display_value": "sys_hub_flow_c8392fdbc34fe690d4ddf1db05013127"
+  },
+  "name": {
+    "value": "Create a new DKIM",
+    "display_value": "Create a new DKIM"
+  },
+  "copied_from": {
+    "value": "e45d7083872b4650369f33373cbb3583",
+    "display_value": "e45d7083872b4650369f33373cbb3583"
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"subflow.domain\",\"label\":\"Input➛Domain\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4\":[\"domain\"],\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"domain\"],\"f0b07753-4334-4bf9-8fd9-8246c2d7f14c\":[\"conditions\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"53f9e389-1fd4-48c4-9cd6-7bcf86113031\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.dns_record.is_active\",\"label\":\"1 - Create a domain key➛DNS Record➛is_active\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"status\"],\"a1ff23a9-9072-4341-8764-aa77a02ddfeb\":[\"active-3\"]},\"attributes\":{}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.dns_record.name\",\"label\":\"1 - Create a domain key➛DNS Record➛name\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"hostname\"],\"a1ff23a9-9072-4341-8764-aa77a02ddfeb\":[\"hostname-0\"]},\"attributes\":{}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.signing_domain\",\"label\":\"1 - Create a domain key➛Signing Domain\",\"reference_display\":\"Signing Domain\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"hostname\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"f0e18980-6511-4752-b001-4c58ebdc4160\"}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.selector\",\"label\":\"1 - Create a domain key➛Selector\",\"reference_display\":\"Selector\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"dkim_selector\"],\"a1ff23a9-9072-4341-8764-aa77a02ddfeb\":[\"new_selector-1\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"8178c825-e3db-4ccd-a404-0e30a3d86bd3\"}},{\"name\":\"subflow.selector\",\"label\":\"Input➛Selector\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4\":[\"selector\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"c4d05308-121f-4e6e-9109-67f27230cd46\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.bits\",\"label\":\"Input➛Bits\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"choice\",\"base_type\":\"choice\",\"column_name\":\"dkim_key_length\",\"choices\":[{\"label\":\"1024 bit\",\"value\":\"1024_bit\",\"order\":0.0},{\"label\":\"2048 bit\",\"value\":\"2048_bit\",\"order\":1.0}],\"usedInstances\":{\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4\":[\"bits\"],\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"dkim_key_length\"]},\"attributes\":{\"uiType\":\"choice\",\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"7e45f553-fc6e-479f-be29-3dee8beedf75\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.dns_record.value\",\"label\":\"1 - Create a domain key➛DNS Record➛value\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"value\"],\"a1ff23a9-9072-4341-8764-aa77a02ddfeb\":[\"value-2\"]},\"attributes\":{}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.__action_status__.message\",\"label\":\"1 - Create a domain key➛Action Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"9dd1265a-97d5-44b7-a018-0616d0b7fe25\":[\"log_message\"]},\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"subflow.domain\",\"label\":\"Input➛Domain\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain\",\"type\":\"reference\",\"base_type\":\"reference\",\"column_name\":\"\",\"usedInstances\":{\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4\":[\"domain\"],\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"domain\"],\"f0b07753-4334-4bf9-8fd9-8246c2d7f14c\":[\"conditions\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"53f9e389-1fd4-48c4-9cd6-7bcf86113031\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.dns_record.is_active\",\"label\":\"1 - Create a domain key➛DNS Record➛is_active\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"status\"],\"a1ff23a9-9072-4341-8764-aa77a02ddfeb\":[\"active-3\"]},\"attributes\":{}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.dns_record.name\",\"label\":\"1 - Create a domain key➛DNS Record➛name\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"hostname\"],\"a1ff23a9-9072-4341-8764-aa77a02ddfeb\":[\"hostname-0\"]},\"attributes\":{}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.signing_domain\",\"label\":\"1 - Create a domain key➛Signing Domain\",\"reference_display\":\"Signing Domain\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"hostname\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"f0e18980-6511-4752-b001-4c58ebdc4160\"}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.selector\",\"label\":\"1 - Create a domain key➛Selector\",\"reference_display\":\"Selector\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"dkim_selector\"],\"a1ff23a9-9072-4341-8764-aa77a02ddfeb\":[\"new_selector-1\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"8178c825-e3db-4ccd-a404-0e30a3d86bd3\"}},{\"name\":\"subflow.selector\",\"label\":\"Input➛Selector\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4\":[\"selector\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"c4d05308-121f-4e6e-9109-67f27230cd46\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"subflow.bits\",\"label\":\"Input➛Bits\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"choice\",\"base_type\":\"choice\",\"column_name\":\"dkim_key_length\",\"choices\":[{\"label\":\"1024 bit\",\"value\":\"1024_bit\",\"order\":0.0},{\"label\":\"2048 bit\",\"value\":\"2048_bit\",\"order\":1.0}],\"usedInstances\":{\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4\":[\"bits\"],\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"dkim_key_length\"]},\"attributes\":{\"uiType\":\"choice\",\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"7e45f553-fc6e-479f-be29-3dee8beedf75\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\"}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.dns_record.value\",\"label\":\"1 - Create a domain key➛DNS Record➛value\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"af16c56a-28ba-4665-9584-bf602de73fd3\":[\"value\"],\"a1ff23a9-9072-4341-8764-aa77a02ddfeb\":[\"value-2\"]},\"attributes\":{}},{\"name\":\"3c55acce-9a45-4b0c-8eb7-cffe6d710ba4.__action_status__.message\",\"label\":\"1 - Create a domain key➛Action Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"9dd1265a-97d5-44b7-a018-0616d0b7fe25\":[\"log_message\"]},\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "This subflow will be triggered by the 'create a new DKIM' button on the domains - overview page. It will create a new DKIM key and insert the record into the DNS records table. ",
+    "display_value": "This subflow will be triggered by the 'create a new DKIM' button on the domains - overview page. It will create a new DKIM key and insert the record into the DNS records table. "
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "3",
+    "display_value": "3"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=20000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=20000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  }
+}

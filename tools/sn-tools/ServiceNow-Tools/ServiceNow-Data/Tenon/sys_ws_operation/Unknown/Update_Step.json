@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "76ce5f15337316107b18bc534d5c7b0a",
+    "extracted_at": "2025-08-22T18:46:22.041Z",
+    "display_value": "Update Step",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-02-18 00:00:06",
+    "display_value": "2025-02-17 04:00:06 PM"
+  },
+  "name": {
+    "value": "Update Step",
+    "display_value": "Update Step"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-25 21:11:27",
+    "display_value": "2025-03-25 02:11:27 PM"
+  }
+}

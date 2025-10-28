@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "3c2b29203327e6107b18bc534d5c7b63",
+    "extracted_at": "2025-09-19T21:48:32.481Z",
+    "display_value": "Sending Strategy - Landing Page Overview",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n    const {\r\n        sysId,\r\n\t\ttable = 'x_cadso_cloud_page'\r\n    } = request.body.data;\r\n\tconst tableGR = new GlideRecordSecure(table);\r\n\tconst encodedQuery = `sys_id=${sysId}`;\r\n\r\n\tlet strat = {};\r\n\r\n\ttableGR.addEncodedQuery(encodedQuery, true);\r\n\ttableGR.orderBy('sys_created_on');\r\n\ttableGR.query();\r\n\r\n    while (tableGR.next()) {\r\n\t\tstrat = {\r\n\t\t\tname: tableGR.getDisplayValue('name'),\r\n\t\t\ttitle: tableGR.getDisplayValue('title'),\r\n\t\t\turl: tableGR.getDisplayValue('url'),\r\n\t\t\tmeta: tableGR.getDisplayValue('meta'),\r\n\t\t\tthumbnail: {\r\n\t\t\t\tmd: tableGR.getDisplayValue('thumbnail'),\r\n\t\t\t\tlg: tableGR.getDisplayValue('thumbnail_large')\r\n\t\t\t},\r\n\t\t\theadScript: tableGR.getDisplayValue('head_script'),\r\n\t\t\tbodyScript: tableGR.getDisplayValue('body_script'),\r\n\t\t\thtml: tableGR.getDisplayValue('html'),\r\n\t\t\tsysId: tableGR.getUniqueValue()\r\n\t\t};\r\n    }\r\n\r\n    response.setBody({\r\n        strat\r\n    });\r\n\r\n})(request, response);",
+    "display_value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n    const {\r\n        sysId,\r\n\t\ttable = 'x_cadso_cloud_page'\r\n    } = request.body.data;\r\n\tconst tableGR = new GlideRecordSecure(table);\r\n\tconst encodedQuery = `sys_id=${sysId}`;\r\n\r\n\tlet strat = {};\r\n\r\n\ttableGR.addEncodedQuery(encodedQuery, true);\r\n\ttableGR.orderBy('sys_created_on');\r\n\ttableGR.query();\r\n\r\n    while (tableGR.next()) {\r\n\t\tstrat = {\r\n\t\t\tname: tableGR.getDisplayValue('name'),\r\n\t\t\ttitle: tableGR.getDisplayValue('title'),\r\n\t\t\turl: tableGR.getDisplayValue('url'),\r\n\t\t\tmeta: tableGR.getDisplayValue('meta'),\r\n\t\t\tthumbnail: {\r\n\t\t\t\tmd: tableGR.getDisplayValue('thumbnail'),\r\n\t\t\t\tlg: tableGR.getDisplayValue('thumbnail_large')\r\n\t\t\t},\r\n\t\t\theadScript: tableGR.getDisplayValue('head_script'),\r\n\t\t\tbodyScript: tableGR.getDisplayValue('body_script'),\r\n\t\t\thtml: tableGR.getDisplayValue('html'),\r\n\t\t\tsysId: tableGR.getUniqueValue()\r\n\t\t};\r\n    }\r\n\r\n    response.setBody({\r\n        strat\r\n    });\r\n\r\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-20 18:22:15",
+    "display_value": "2025-08-20 11:22:15 AM"
+  },
+  "enforce_acl": {
+    "value": "cf9d01d3e73003009d6247e603f6a990",
+    "display_value": "Scripted REST External Default"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "dennis.huh",
+    "display_value": "dennis.huh"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_automate/ui/sendingStrategy/landing_page/overview",
+    "display_value": "/api/x_cadso_automate/ui/sendingStrategy/landing_page/overview"
+  },
+  "sys_created_on": {
+    "value": "2025-08-20 17:34:49",
+    "display_value": "2025-08-20 10:34:49 AM"
+  },
+  "sys_name": {
+    "value": "Sending Strategy - Landing Page Overview",
+    "display_value": "Sending Strategy - Landing Page Overview"
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "dennis.huh",
+    "display_value": "dennis.huh"
+  },
+  "web_service_definition": {
+    "value": "4a222358c3aa425085b196c4e401318e",
+    "display_value": "Tenon Automate UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "5",
+    "display_value": "5"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_3c2b29203327e6107b18bc534d5c7b63",
+    "display_value": "sys_ws_operation_3c2b29203327e6107b18bc534d5c7b63"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Sending Strategy - Landing Page Overview",
+    "display_value": "Sending Strategy - Landing Page Overview"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/sendingStrategy/landing_page/overview",
+    "display_value": "/sendingStrategy/landing_page/overview"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

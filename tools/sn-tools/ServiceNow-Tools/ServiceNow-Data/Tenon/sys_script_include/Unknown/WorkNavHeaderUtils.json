@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "8aded88947f6c250b0361ae8036d436f",
+    "extracted_at": "2025-08-22T18:46:19.855Z",
+    "display_value": "WorkNavHeaderUtils",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-06-13 02:09:02",
+    "display_value": "2024-06-12 07:09:02 PM"
+  },
+  "name": {
+    "value": "WorkNavHeaderUtils",
+    "display_value": "WorkNavHeaderUtils"
+  },
+  "sys_updated_on": {
+    "value": "2024-09-30 17:06:34",
+    "display_value": "2024-09-30 10:06:34 AM"
+  }
+}

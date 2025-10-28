@@ -16,6 +16,582 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Machine learning-based consensus detection
 - Advanced context optimizations
 - Expanded file type support
+- Tool versioning and automatic updates
+- Tool usage analytics and monitoring
+
+---
+
+## [0.12.0-alpha] - 2025-10-27
+
+### Added - External Tools System
+
+**Major Feature: External Tool Integration**
+
+A comprehensive tools system that allows agents to use external tools mounted in containers to extend their capabilities beyond core functionality.
+
+#### 1. Tool Registry System (`lib/tool-registry.js` - 357 lines)
+
+**Purpose**: Automatic tool discovery and management
+
+**Features**:
+- Auto-discovers tools by scanning for `tool-manifest.yaml` files
+- Validates tool manifests for required fields and accuracy
+- Generates formatted tool context for agent prompts (markdown)
+- Manages tool-specific environment variables with namespacing
+- Validates tool execution prerequisites
+- Provides tool statistics and insights
+
+**Key Capabilities**:
+- `loadAllTools()` - Discovers all tools in tools/ directory
+- `getToolContext()` - Returns formatted context for agents
+- `getToolContextMarkdown()` - Generates agent prompt text
+- `getToolEnvironmentVars(toolName)` - Filters env vars per tool
+- `validateToolExecution(toolName)` - Checks prerequisites
+
+#### 2. Tool Executor (`lib/tool-executor.js` - 249 lines)
+
+**Purpose**: Execute tools in containers with intelligent fallback
+
+**Execution Strategy**:
+- **Option B (Primary)**: Dedicated tool execution interface
+  - Type-aware execution (node_script, python_script, binary, shell_script)
+  - Constructs commands based on tool type
+  - Handles npm commands, direct scripts, and binaries
+- **Option A (Fallback)**: Bash execution
+  - Falls back if dedicated execution fails
+  - Agents can use Bash tool directly
+  - More flexible, less controlled
+
+**Key Methods**:
+- `executeTool(toolName, command, container, options)` - Execute with fallback
+- `executeNpmCommand(toolName, scriptName, container)` - npm convenience
+- `testTool(toolName, container)` - Test tool availability
+- `testAllTools(container)` - Validate all tools in container
+
+#### 3. Docker Manager Enhancements
+
+**Environment Variable Support**:
+- Added `toolEnv` parameter to `create()` method
+- Passes tool-specific environment variables to containers
+- Namespaced pattern (e.g., `SNTOOL_DEV_URL`, `JIRA_API_TOKEN`)
+
+**Read-Only Tool Mounting**:
+- Updated `createBinds()` to support `{containerPath, mode}` format
+- Tools directory mounted at `/tools:ro` (read-only, executable)
+- Security validation: Tools must be mounted read-only
+- Exception added for tools directory in security checks
+
+**Security Model**:
+```javascript
+volumes: {
+  [projectPath]: '/workspace',                          // Read-write
+  [toolsPath]: { containerPath: '/tools', mode: 'ro' }  // Read-only
+}
+```
+
+#### 4. Orchestrator Integration
+
+**Tool Registry Initialization**:
+- Automatically loads tool registry on startup
+- Discovers and validates all available tools
+
+**Container Creation**:
+- Tools directory automatically mounted read-only
+- Tool-specific environment variables passed to container
+- No configuration required by user
+
+**Agent Context Integration**:
+- Tool information automatically added to agent prompts
+- Agents receive formatted markdown with:
+  - Tool descriptions and capabilities
+  - Usage examples and commands
+  - Environment variable requirements
+  - Agent-specific guidance notes
+
+#### 5. Tool Manifest System
+
+**YAML-based Tool Definitions**:
+- Structured format for tool metadata
+- Required fields: name, version, description, type, capabilities, entry_point
+- Optional fields: examples, requires, environment, constraints, metadata
+- Template provided for creating new tools
+
+**Example Manifest**:
+```yaml
+name: sn-tools
+version: 2.1.0
+description: Professional ServiceNow development toolkit
+type: node_script
+capabilities:
+  - Query ServiceNow tables and records
+  - Create and update ServiceNow records
+  - Test ServiceNow connectivity
+entry_point: ServiceNow-Tools/sn-auto-execute.js
+environment:
+  - name: SNTOOL_DEV_URL
+    description: ServiceNow dev instance URL
+    required: false
+constraints:
+  read_only: true
+  executable: true
+  network: true
+```
+
+#### 6. ServiceNow Tools (sn-tools v2.1.0)
+
+**First Production Tool**:
+- Complete ServiceNow development toolkit
+- 11 capabilities for ServiceNow automation
+- Multi-instance support (dev/prod routing)
+- Real-time file watching and syncing
+- Dependency tracking and impact analysis
+- Flow tracing and table field mapping
+
+**npm Commands Available**:
+- `npm run test-connections` - Test ServiceNow connectivity
+- `npm run fetch-data` - Fetch ServiceNow records
+- `npm run dependency-scan` - Analyze Script Include dependencies
+- `npm run impact-analysis` - Analyze change impact
+- `npm run generate-context` - Generate AI context summary
+
+#### 7. Documentation
+
+**New Documentation Files**:
+- `tools/README.md` (350 lines) - Complete tools documentation
+- `tools/sn-tools/tool-manifest.yaml` (130 lines) - sn-tools definition
+- `tools/template/tool-manifest.yaml` (95 lines) - Tool template
+- `TOOLS_SYSTEM.md` (650+ lines) - Implementation documentation
+
+**Updated Files**:
+- `README.md` - Added tools system section
+- `STATUS.md` - Updated with v0.12.0 features
+- `CHANGELOG.md` - This entry
+
+### Changed
+
+**Docker Security**:
+- Enhanced security validation to allow tools directory mounting
+- Tools must be mounted read-only (enforced)
+- Agents can execute but not modify tool code
+
+**Agent Context**:
+- Agents now automatically receive tool information
+- Tool capabilities visible in agent prompts
+- Usage examples provided for agent decision-making
+
+### Technical Details
+
+**Files Added** (6):
+| File | Lines | Purpose |
+|------|-------|---------|
+| `tools/README.md` | 350 | Tools directory documentation |
+| `tools/sn-tools/tool-manifest.yaml` | 130 | sn-tools definition |
+| `tools/template/tool-manifest.yaml` | 95 | Template for new tools |
+| `lib/tool-registry.js` | 357 | Tool discovery & management |
+| `lib/tool-executor.js` | 249 | Tool execution with fallback |
+| `TOOLS_SYSTEM.md` | 650+ | Complete implementation docs |
+
+**Files Modified** (2):
+| File | Changes | Purpose |
+|------|---------|---------|
+| `lib/docker-manager.js` | +40 lines | Tools mount & env vars support |
+| `lib/orchestrator.js` | +20 lines | Tool registry integration |
+
+**Total New Code**: ~1,180 lines (registry + executor + docs + manifests)
+
+### Benefits
+
+**For Agents**:
+- Extended capabilities beyond core functionality
+- Clear documentation in prompts
+- Automatic tool discovery
+- Safe execution environment
+
+**For Users**:
+- Reusable tools across all agents and tasks
+- Centralized management
+- Easy tool addition via templates
+- Secure credential management
+- Extensible architecture
+
+**For Development**:
+- Modular design
+- Tools separate from core system
+- Template-based tool creation
+- Independently testable
+
+### Status
+
+**Phase 4.0: External Tools System** ✅ COMPLETE
+- ✅ Tool registry with auto-discovery
+- ✅ Tool executor with fallback strategy
+- ✅ Docker integration (read-only mounting)
+- ✅ Environment variable management
+- ✅ Agent context integration
+- ✅ ServiceNow tools installed and configured
+- ✅ Complete documentation
+- ✅ Template for future tools
+
+**Next Steps**:
+1. Test tools in real task execution
+2. Add more tools as needed (Jira, Slack, etc.)
+3. Monitor tool usage patterns
+4. Add tool versioning support
+
+---
+
+## [0.11.2-alpha] - 2025-10-25
+
+### Added - Professional CLI Interface
+
+**UX Improvements**
+
+#### 1. Emoji-Free Professional Interface
+
+**CLI Cleanup**:
+- Removed all emoji icons from CLI output
+- Replaced emoji prefixes with clear text labels (ERROR:, WARNING:)
+- Maintained color-coded output for visual clarity
+- Professional appearance suitable for enterprise environments
+
+**Benefits**:
+- Better compatibility with all terminals
+- Improved readability in logs
+- More professional presentation
+- Cleaner screenshot/documentation appearance
+
+#### 2. In-Workflow Project Creation
+
+**Enhanced Project Dropdown**:
+```
+? Select project: (Use arrow keys)
+    my-app
+    test-project
+  ─────────────────
+  + Create New Project
+```
+
+**Features**:
+- Create new projects directly from workflow dropdown
+- No workflow interruption
+- Seamless integration with existing flow
+- GitHub repo creation deferred to validation step
+
+**Workflow**:
+1. Select "+ Create New Project" from dropdown
+2. Enter project details (name, description, path, docker image)
+3. Specify GitHub repository (not created yet)
+4. Continue to task description
+5. GitHub repo validated/created during normal workflow step
+
+**Benefits**:
+- Faster project creation
+- No need to exit workflow
+- Consistent user experience
+- Reduces friction for new projects
+
+### Changed
+
+**CLI Output Format**:
+- Before: `🚀 Executing Task...`
+- After: `Executing Task...`
+- Before: `✅ Task Complete!`
+- After: `Task Complete!`
+- Before: `📁 my-project`
+- After: `  my-project` (2-space indent)
+- Before: `➕ Create New Project`
+- After: `+ Create New Project`
+
+**Arrow Symbols**:
+- Before: `→` (Unicode arrow)
+- After: `->` (ASCII arrow)
+
+### Technical Details
+
+**Files Modified**:
+- `cli.js` (lines 549-671): Added project creation in dropdown
+- `cli.js` (global): Removed all emoji characters
+- `README.md`: Updated examples and documentation
+- `WORKFLOW_MODE_GUIDE.md`: Updated workflow examples
+- `docs/CHANGELOG.md`: Added v0.11.2 entry
+
+**Version**: v0.11.2-alpha
+**Status**: Professional CLI + Dynamic Routing + Workflow Mode Complete
+**Date**: 2025-10-25
+
+---
+
+## [0.11.1-alpha] - 2025-10-24
+
+### Added - Testing Infrastructure
+
+**Complete Testing System (57 tests, 100% pass rate)**
+
+#### 1. Unit Tests (`test/unit/` - 260 lines)
+
+**ClaudeCodeAgent Unit Tests** (25 tests):
+- Configuration tests (4): initialization, timeout, retry, session IDs
+- Role configuration tests (4): architect, coder, reviewer, custom
+- Error classification tests (6): retryable vs non-retryable errors
+- Error enhancement tests (3): context addition, troubleshooting hints
+- System prompt tests (3): architect, coder, reviewer prompts
+- Tool configuration tests (3): architect, coder, custom tools
+- Helper method tests (2): sleep, retry validation
+
+**Coverage**: Error handling, retry logic, timeout protection, tool configuration
+
+#### 2. Smoke Tests (`test/smoke-test.js` - 192 lines, 7 tests)
+
+**Quick System Health Check** (<30s):
+- Docker daemon accessibility
+- Configuration system loading
+- Test project existence
+- Container creation and operations
+- File operations in containers
+- Container cleanup
+- Git operations
+
+**Purpose**: Fast validation before making changes or after updates
+
+#### 3. Validation Suite (`test/validation-suite.js` - 451 lines, 25 tests)
+
+**Comprehensive System Validation** (~5s):
+
+**Infrastructure Tests** (6):
+- Docker daemon accessible
+- Docker Python image exists
+- Configuration system initializes
+- Test project configuration exists
+- Test project directory exists
+- Git operations work
+
+**File Operations Tests** (6):
+- Container creation
+- List files in container
+- Read files in container
+- Write files in container
+- Execute Python in container
+- Run pytest in container
+
+**Cleanup System Tests** (4):
+- Container stop
+- Container remove
+- Orchestrator cleanup registration
+- Active container tracking
+
+**Error Handling Tests** (3):
+- ClaudeCodeAgent has timeout
+- ClaudeCodeAgent has retry logic
+- Error classification works
+
+**Cost Tracking Tests** (3):
+- CostMonitor initializes
+- CostMonitor tracks usage
+- CostMonitor enforces limit
+
+**Agent System Tests** (3):
+- Claude Code CLI available
+- ClaudeCodeAgent initializes
+- Agent system prompts defined
+
+#### 4. Test Runner (`test/run-unit-tests.js` - 53 lines)
+
+**Auto-discovering Test Runner**:
+- Discovers all `*.test.js` files in `test/unit/`
+- Runs tests with Node's built-in test runner
+- Reports pass/fail counts and duration
+- Clean output with colored formatting
+
+#### 5. CLI Test Commands (`cli.js` - +42 lines)
+
+**New Commands**:
+```bash
+claude validate           # Quick smoke tests (default)
+claude validate --smoke   # Explicit smoke tests
+claude validate --full    # Full validation suite
+claude test               # Unit tests
+claude test --all         # All tests (unit + smoke + validation)
+```
+
+#### 6. NPM Test Scripts (`package.json`)
+
+**Test Scripts**:
+```json
+{
+  "test": "node test/run-unit-tests.js",
+  "test:unit": "node test/run-unit-tests.js",
+  "test:smoke": "node test/smoke-test.js",
+  "test:validate": "node test/validation-suite.js",
+  "test:all": "npm run test:unit && npm run test:smoke && npm run test:validate"
+}
+```
+
+#### 7. Documentation (`docs/TESTING.md` - 550 lines)
+
+**Comprehensive Testing Guide**:
+- Overview of all test levels
+- Quick start commands
+- Test coverage details
+- Writing new tests
+- Debugging failed tests
+- Best practices
+- CI/CD integration
+- FAQ
+
+### Changed
+
+**Validation Suite Bug Fix**:
+- Fixed git test to use `getCurrentBranch()` instead of `status()`
+- All 25 validation tests now passing
+
+### Status
+
+**Test Results:**
+```
+Unit Tests:      25/25 passed ✅
+Smoke Tests:     7/7 passed ✅
+Validation:      25/25 passed ✅
+Total:           57/57 passed (100%) ✅
+Duration:        ~8 seconds (all tests)
+Coverage:        ~30% (critical paths)
+```
+
+**Files Added:**
+| File | Lines | Purpose |
+|------|-------|---------|
+| `test/unit/claude-code-agent.test.js` | 260 | Unit tests for ClaudeCodeAgent |
+| `test/run-unit-tests.js` | 53 | Auto-discovering test runner |
+| `docs/TESTING.md` | 550 | Complete testing guide |
+
+**Files Modified:**
+| File | Changes | Purpose |
+|------|---------|---------|
+| `test/validation-suite.js` | Fixed git test | Bug fix for 100% pass rate |
+| `cli.js` | +42 lines | Test commands integration |
+| `package.json` | Test scripts | NPM test integration |
+
+**Phase 3.2: Testing & Validation** (Complete)
+- ✅ Unit test infrastructure complete
+- ✅ Smoke tests for quick validation
+- ✅ Comprehensive validation suite
+- ✅ CLI test commands integrated
+- ✅ NPM scripts configured
+- ✅ Testing documentation complete
+
+**Next Steps:**
+1. Performance optimization (model selection for agents)
+2. `claude status` command
+3. Increase test coverage to 50-60%
+4. Integration tests
+
+---
+
+## [0.11.0-alpha] - 2025-10-23
+
+### Added - Dynamic Agent Routing + Workflow Mode
+
+**Major Features:**
+- ✅ Dynamic agent routing system (1,138 lines of core code)
+- ✅ Workflow-driven CLI mode (simple, linear, guided)
+- ✅ GitHub repo validation and automatic creation
+- ✅ Automatic container cleanup
+- ✅ Single unified orchestrator (no duplicate code)
+
+**Components Added:**
+- `lib/agent-registry.js` (157 lines)
+- `lib/standard-agents.js` (235 lines)
+- `lib/task-planner.js` (253 lines)
+- `lib/dynamic-agent-executor.js` (251 lines)
+
+**Performance Improvements:**
+- 59% faster for analysis-only tasks
+- 63% faster for simple fixes
+- Better quality for complex tasks (specialized agents)
+
+---
+
+## [0.10.0] - 2025-10-22
+
+### Added - CLI Completeness & Performance Optimization
+
+#### 1. New CLI Commands (`cli.js` - +51 lines, `lib/orchestrator.js` - +118 lines)
+
+**Cancel Command:**
+- `claude cancel <taskId>` - Cancel any task regardless of status
+- Graceful cleanup (branch deletion, container removal)
+- Handles missing resources (already deleted branch/container)
+- Updates task status to 'cancelled' with timestamp
+
+**Retry Command:**
+- `claude retry <taskId>` - Retry failed, rejected, or cancelled tasks
+- Validates task status before retry
+- Re-executes as completely new task
+- Shows original task details for context
+
+**Diff Command:**
+- `claude diff <taskId>` - Show git diff for task changes
+- `claude diff <taskId> --stat` - Show diffstat only
+- Displays project, branch, description, and status
+- Handles incomplete tasks gracefully (failed tasks without branches)
+- Formatted output with visual separators
+
+#### 2. Git Manager Enhancement (`lib/git-manager.js` - updated)
+
+**getDiff() Method Improvements:**
+- Backward compatible with both old and new signatures
+- Support for branch comparison: `getDiff(path, baseBranch, targetBranch, statOnly)`
+- Support for existing options object: `getDiff(path, {staged: true, file: 'path'})`
+- `--stat` flag support for diffstat-only output
+
+### Changed - Performance Optimization
+
+**Architect Prompt Verbosity Reduced:**
+- Before: 12 lines with verbose instructions
+- After: 8 lines with concise direction
+- **Key Change:** "Create a concise implementation brief" + "max 3-4 sentences"
+- **Goal:** Reduce Architect execution time (currently 22.5% of total)
+- Expected impact: 5-10% faster architect phase, ~3-5s savings per task
+
+**Prompt Optimization Details:**
+```diff
+- Analyze this project and create an implementation brief for: ${description}
++ Create a concise implementation brief for: ${description}
+
+- **Your Task:**
+- Create a detailed implementation brief with:
++ **Provide:**
+  1. Files to modify/create
+  2. Code patterns to follow
+- 3. Specific implementation guidance
++ 3. Implementation approach (max 3-4 sentences)
+  4. Testing strategy
+- You have access to Read and Bash tools if you need to examine specific files in more detail, but the context above should give you a strong starting point.
++ Keep it brief - the coder needs clear direction, not an essay. You can use Read/Bash if needed.
+```
+
+### Status
+
+**Phase 3.1: Hardening** (In Progress)
+- ✅ Error handling complete
+- ✅ Resource cleanup complete
+- ✅ CLI completeness (cancel, retry, diff) complete
+- ⬜ Unit test coverage (pending)
+- ⬜ Integration tests (pending)
+- ⬜ System validation script (pending)
+
+**Key Achievements:**
+
+1. **Complete CLI Suite**: All essential task management commands now available (task, approve, reject, cancel, retry, diff, status)
+2. **Flexible Task Management**: Can cancel any task, retry failed tasks, inspect changes before approval
+3. **Performance Focus**: First step toward optimizing agent execution time (architect verbosity reduced)
+
+**Line Counts:**
+| Component | Lines Added |
+|-----------|-------------|
+| CLI commands (cli.js) | +51 |
+| Orchestrator methods (orchestrator.js) | +118 |
+| Git manager enhancement (git-manager.js) | +26 |
+| **Total Production Code** | **+195 lines** |
 
 ---
 

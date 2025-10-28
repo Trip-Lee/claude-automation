@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "51028aa6c36f065085b196c4e401319c",
+    "extracted_at": "2025-08-22T18:46:19.679Z",
+    "display_value": "Audience",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-25 08:00:19",
+    "display_value": "2024-07-25 01:00:19 AM"
+  },
+  "name": {
+    "value": "Audience",
+    "display_value": "Audience"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-11 14:26:22",
+    "display_value": "2025-08-11 07:26:22 AM"
+  }
+}

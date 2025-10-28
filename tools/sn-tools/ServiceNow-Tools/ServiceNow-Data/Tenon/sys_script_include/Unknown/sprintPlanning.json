@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "b99ac4b7975be910ac33f109c253afcf",
+    "extracted_at": "2025-08-22T18:46:21.258Z",
+    "display_value": "sprintPlanning",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-06-14 17:52:56",
+    "display_value": "2023-06-14 10:52:56 AM"
+  },
+  "name": {
+    "value": "sprintPlanning",
+    "display_value": "sprintPlanning"
+  },
+  "sys_updated_on": {
+    "value": "2023-06-14 17:52:56",
+    "display_value": "2023-06-14 10:52:56 AM"
+  }
+}

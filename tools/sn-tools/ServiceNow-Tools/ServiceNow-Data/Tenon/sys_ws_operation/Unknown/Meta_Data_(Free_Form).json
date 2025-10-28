@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "bf4a2b69c394925085b196c4e401315f",
+    "extracted_at": "2025-08-22T18:46:23.426Z",
+    "display_value": "Meta Data (Free Form)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-08-28 19:49:08",
+    "display_value": "2024-08-28 12:49:08 PM"
+  },
+  "name": {
+    "value": "Meta Data (Free Form)",
+    "display_value": "Meta Data (Free Form)"
+  },
+  "sys_updated_on": {
+    "value": "2024-09-30 17:11:48",
+    "display_value": "2024-09-30 10:11:48 AM"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "4233cd54c3d66290d4ddf1db050131e6",
+    "extracted_at": "2025-09-19T21:48:32.617Z",
+    "display_value": "Search Bar Extract Displayed Fields",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\r\n\r\n    const {\r\n        view,\r\n        table\r\n    } = request.body.data;\r\n\r\n    let fields = [];\r\n    var sysUiViewGr = new GlideRecord('sys_ui_view');\r\n    sysUiViewGr.addEncodedQuery(`name=NULL^ORname=${view}^ORDERBYDESCname`);\r\n    sysUiViewGr.setLimit(1);\r\n    sysUiViewGr.query();\r\n\r\n    while (sysUiViewGr.next()) {\r\n        var sysUiListGr = new GlideRecord('sys_ui_list');\r\n        sysUiListGr.addQuery('name', table);\r\n        sysUiListGr.addQuery('view', sysUiViewGr.getUniqueValue());\r\n        sysUiListGr.addEncodedQuery('sys_user=NULL'); // ^ORsys_userDYNAMIC90d1921e5f510100a9ad2572f2b477fe'); // This gets the users configuration but disabled for now\r\n        sysUiListGr.orderByDesc('sys_user');\r\n        sysUiListGr.setLimit(1);\r\n        sysUiListGr.query();\r\n\r\n        while (sysUiListGr.next()) {\r\n            var sysUiListElement = new GlideRecord('sys_ui_list_element');\r\n            sysUiListElement.addQuery('list_id', sysUiListGr.getUniqueValue());\r\n            sysUiListElement.orderBy('position');\r\n            sysUiListElement.query();\r\n\r\n            while (sysUiListElement.next()) {\r\n                fields.push(sysUiListElement.getValue('element'));\r\n            }\r\n        }\r\n    }\r\n\r\n    let data = {\r\n        message: 'Success!',\r\n        statusCode: 200,\r\n        fields,\r\n    };\r\n\r\n    data.fields = fields;\r\n\r\n    response.setStatus(data.statusCode);\r\n    response.setBody(data);\r\n    return response;\r\n\r\n})(request, response);",
+    "display_value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n\r\n\r\n    const {\r\n        view,\r\n        table\r\n    } = request.body.data;\r\n\r\n    let fields = [];\r\n    var sysUiViewGr = new GlideRecord('sys_ui_view');\r\n    sysUiViewGr.addEncodedQuery(`name=NULL^ORname=${view}^ORDERBYDESCname`);\r\n    sysUiViewGr.setLimit(1);\r\n    sysUiViewGr.query();\r\n\r\n    while (sysUiViewGr.next()) {\r\n        var sysUiListGr = new GlideRecord('sys_ui_list');\r\n        sysUiListGr.addQuery('name', table);\r\n        sysUiListGr.addQuery('view', sysUiViewGr.getUniqueValue());\r\n        sysUiListGr.addEncodedQuery('sys_user=NULL'); // ^ORsys_userDYNAMIC90d1921e5f510100a9ad2572f2b477fe'); // This gets the users configuration but disabled for now\r\n        sysUiListGr.orderByDesc('sys_user');\r\n        sysUiListGr.setLimit(1);\r\n        sysUiListGr.query();\r\n\r\n        while (sysUiListGr.next()) {\r\n            var sysUiListElement = new GlideRecord('sys_ui_list_element');\r\n            sysUiListElement.addQuery('list_id', sysUiListGr.getUniqueValue());\r\n            sysUiListElement.orderBy('position');\r\n            sysUiListElement.query();\r\n\r\n            while (sysUiListElement.next()) {\r\n                fields.push(sysUiListElement.getValue('element'));\r\n            }\r\n        }\r\n    }\r\n\r\n    let data = {\r\n        message: 'Success!',\r\n        statusCode: 200,\r\n        fields,\r\n    };\r\n\r\n    data.fields = fields;\r\n\r\n    response.setStatus(data.statusCode);\r\n    response.setBody(data);\r\n    return response;\r\n\r\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-28 19:43:30",
+    "display_value": "2025-07-28 12:43:30 PM"
+  },
+  "enforce_acl": {
+    "value": "cf9d01d3e73003009d6247e603f6a990",
+    "display_value": "Scripted REST External Default"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "siwen.hu",
+    "display_value": "siwen.hu"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_work/ui/filter_search",
+    "display_value": "/api/x_cadso_work/ui/filter_search"
+  },
+  "sys_created_on": {
+    "value": "2025-06-18 16:48:13",
+    "display_value": "2025-06-18 09:48:13 AM"
+  },
+  "sys_name": {
+    "value": "Search Bar Extract Displayed Fields",
+    "display_value": "Search Bar Extract Displayed Fields"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "siwen.hu",
+    "display_value": "siwen.hu"
+  },
+  "web_service_definition": {
+    "value": "3a4228b84728e950a1052a02e26d43b0",
+    "display_value": "Tenon Work UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "18",
+    "display_value": "18"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_4233cd54c3d66290d4ddf1db050131e6",
+    "display_value": "sys_ws_operation_4233cd54c3d66290d4ddf1db050131e6"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Search Bar Extract Displayed Fields",
+    "display_value": "Search Bar Extract Displayed Fields"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/filter_search",
+    "display_value": "/filter_search"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

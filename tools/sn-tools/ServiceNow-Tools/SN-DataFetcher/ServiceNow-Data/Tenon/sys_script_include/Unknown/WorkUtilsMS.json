@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "27c5faa4477ca11085d19fd8036d43c4",
+    "extracted_at": "2025-08-22T18:42:33.629Z",
+    "display_value": "WorkUtilsMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-01-31 21:24:27",
+    "display_value": "2023-01-31 01:24:27 PM"
+  },
+  "name": {
+    "value": "WorkUtilsMS",
+    "display_value": "WorkUtilsMS"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-11 02:45:58",
+    "display_value": "2024-10-10 07:45:58 PM"
+  }
+}

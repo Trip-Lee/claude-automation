@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "ff9880d3c32c6210d4ddf1db050131b2",
+    "extracted_at": "2025-08-22T18:46:23.590Z",
+    "display_value": "Update Fields - Fetch",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-01 20:19:43",
+    "display_value": "2025-04-01 01:19:43 PM"
+  },
+  "name": {
+    "value": "Update Fields - Fetch",
+    "display_value": "Update Fields - Fetch"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-03 04:29:32",
+    "display_value": "2025-04-02 09:29:32 PM"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "6694b12833fd96107b18bc534d5c7b7a",
+    "extracted_at": "2025-09-19T21:48:39.848Z",
+    "display_value": "Calculate Audience Size",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_update": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2024-11-07 23:35:33",
+    "display_value": "2024-11-07 03:35:33 PM"
+  },
+  "when": {
+    "value": "before",
+    "display_value": "before"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "kristin.keys",
+    "display_value": "kristin.keys"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2024-11-07 22:18:17",
+    "display_value": "2024-11-07 02:18:17 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Calculate Audience Size",
+    "display_value": "Calculate Audience Size"
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "kristin.keys",
+    "display_value": "kristin.keys"
+  },
+  "order": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "10",
+    "display_value": "10"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "x_cadso_automate_message_send",
+    "display_value": "x_cadso_automate_message_send"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/) {\r\n\r\n    current.size = current.audience_size - current.excluded_audience_size;\r\n\t\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/) {\r\n\r\n    current.size = current.audience_size - current.excluded_audience_size;\r\n\t\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 5,
+      "char_count": 167,
+      "preview": "(function executeRule(current, previous /*null when async*/) {\r\n\r\n    current.size = current.audience_size - current.excluded_audience_size;\r\n\t\r\n})(current, previous);",
+      "full_script": "(function executeRule(current, previous /*null when async*/) {\r\n\r\n    current.size = current.audience_size - current.excluded_audience_size;\r\n\t\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "audience_size>0^excluded_audience_size>=0^EQ",
+    "display_value": "audience_size>0^excluded_audience_size>=0^EQ"
+  },
+  "sys_package": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_6694b12833fd96107b18bc534d5c7b7a",
+    "display_value": "sys_script_6694b12833fd96107b18bc534d5c7b7a"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Calculate Audience Size",
+    "display_value": "Calculate Audience Size"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "1785110cc3c16610d4ddf1db050131ed",
+    "extracted_at": "2025-09-19T21:48:28.912Z",
+    "display_value": "AvatarUtils",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-04-17 18:35:22",
+    "display_value": "2025-04-17 11:35:22 AM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "const AvatarUtils = Class.create();\r\nAvatarUtils.prototype = Object.extendsObject(x_cadso_core.AvatarUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.AvatarUtilsMS.prototype.initialize.apply(this, arguments);\r\n  },\r\n\r\n  type: \"AvatarUtils\",\r\n});\r\n",
+    "display_value": "const AvatarUtils = Class.create();\r\nAvatarUtils.prototype = Object.extendsObject(x_cadso_core.AvatarUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.AvatarUtilsMS.prototype.initialize.apply(this, arguments);\r\n  },\r\n\r\n  type: \"AvatarUtils\",\r\n});\r\n",
+    "formatted_script": {
+      "line_count": 9,
+      "char_count": 256,
+      "preview": "const AvatarUtils = Class.create();\r\nAvatarUtils.prototype = Object.extendsObject(x_cadso_core.AvatarUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.AvatarUtilsMS.prototype.initialize.apply(...",
+      "full_script": "const AvatarUtils = Class.create();\r\nAvatarUtils.prototype = Object.extendsObject(x_cadso_core.AvatarUtilsMS, {\r\n  initialize: function () {\r\n    x_cadso_core.AvatarUtilsMS.prototype.initialize.apply(this, arguments);\r\n  },\r\n\r\n  type: \"AvatarUtils\",\r\n});\r\n"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_1785110cc3c16610d4ddf1db050131ed",
+    "display_value": "sys_script_include_1785110cc3c16610d4ddf1db050131ed"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "api_name": {
+    "value": "x_cadso_core.AvatarUtils",
+    "display_value": "x_cadso_core.AvatarUtils"
+  },
+  "sys_created_on": {
+    "value": "2025-04-16 20:06:33",
+    "display_value": "2025-04-16 01:06:33 PM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "AvatarUtils",
+    "display_value": "AvatarUtils"
+  },
+  "sys_name": {
+    "value": "AvatarUtils",
+    "display_value": "AvatarUtils"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "37cc1b53c39f6210d4ddf1db050131df",
+    "extracted_at": "2025-08-22T18:42:35.802Z",
+    "display_value": "Related Filter - Condition Builder (1)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-08-17 04:39:02",
+    "display_value": "2025-08-16 09:39:02 PM"
+  },
+  "name": {
+    "value": "Related Filter - Condition Builder (1)",
+    "display_value": "Related Filter - Condition Builder (1)"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-19 07:46:08",
+    "display_value": "2025-08-19 12:46:08 AM"
+  }
+}

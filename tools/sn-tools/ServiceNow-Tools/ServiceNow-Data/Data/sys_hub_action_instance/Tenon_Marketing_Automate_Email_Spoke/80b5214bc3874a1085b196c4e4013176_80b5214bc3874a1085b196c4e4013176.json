@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "80b5214bc3874a1085b196c4e4013176",
+    "extracted_at": "2025-09-19T21:48:57.481Z",
+    "display_value": "80b5214bc3874a1085b196c4e4013176",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "43400a1587003300663ca1bb36cb0b4b",
+    "display_value": "Look Up Records"
+  },
+  "ui_id": {
+    "value": "9482612a-708d-45bb-a43c-bb53b0eaf382",
+    "display_value": "9482612a-708d-45bb-a43c-bb53b0eaf382"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "sys_updated_on": {
+    "value": "2024-07-01 22:42:05",
+    "display_value": "2024-07-01 03:42:05 PM"
+  },
+  "compiled_snapshot": {
+    "value": "43400a1587003300663ca1bb36cb0b4b",
+    "display_value": "43400a1587003300663ca1bb36cb0b4b"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "d1c56ec50b30030085c083eb37673a50",
+    "display_value": "Look Up Records"
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-07-01 22:42:05",
+    "display_value": "2024-07-01 03:42:05 PM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "f727e8fc-0622-4117-afaf-59b287e0cbf9",
+    "display_value": "f727e8fc-0622-4117-afaf-59b287e0cbf9"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "flow": {
+    "value": "3fa5ed0bc3874a1085b196c4e40131fe",
+    "display_value": "Send Email"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "order": {
+    "value": "10",
+    "display_value": "10"
+  }
+}

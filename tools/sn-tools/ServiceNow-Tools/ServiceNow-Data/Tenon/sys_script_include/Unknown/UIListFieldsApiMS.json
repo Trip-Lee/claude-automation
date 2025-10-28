@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "674a2742c3922210d4ddf1db05013193",
+    "extracted_at": "2025-08-22T18:46:19.749Z",
+    "display_value": "UIListFieldsApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-24 15:23:07",
+    "display_value": "2025-06-24 08:23:07 AM"
+  },
+  "name": {
+    "value": "UIListFieldsApiMS",
+    "display_value": "UIListFieldsApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-24 16:20:16",
+    "display_value": "2025-06-24 09:20:16 AM"
+  }
+}

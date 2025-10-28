@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "b4464324c319d210d4ddf1db050131a6",
+    "extracted_at": "2025-09-19T21:48:49.277Z",
+    "display_value": "Create / Update Record",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.instance}}\",\"label\":\"action➛Instance\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Instance\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.versionstep}}\",\"label\":\"action➛versionStep\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.version_step}}\",\"label\":\"action➛Version Step\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Version Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.step1}}\",\"label\":\"action➛Step\",\"type\":\"action\",\"ref\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.action}}\",\"label\":\"action➛Action\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Action\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.journey}}\",\"label\":\"action➛Journey\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Journey\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.version}}\",\"label\":\"action➛Version\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Version\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.step}}\",\"label\":\"action➛Step\",\"type\":\"action\",\"ref\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.instance_step}}\",\"label\":\"action➛Instance Step\",\"type\":\"action\",\"ref\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.configuration}}\",\"label\":\"action➛Configuration\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"JSON\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"json\",\"uiUniqueId\":\"e2f8cd17-ae32-4de0-b818-25eaa2fe0fa6\"}},{\"name\":\"{{action.instance_step.table}}\",\"label\":\"action➛Instance Step➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Table\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"table\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.create}}\",\"label\":\"action➛Create (False for Update)\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"True/False\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"boolean\",\"uiUniqueId\":\"f4e9aadf-bc10-4636-bf69-90c9bbcb3bf0\"}},{\"name\":\"{{action.fields}}\",\"label\":\"action➛Fields\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.fields.Field}}\",\"label\":\"action➛Fields➛Field\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.fields.field}}\",\"label\":\"action➛Fields➛field\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.instance_step.document_id}}\",\"label\":\"action➛Instance Step➛Document ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Document ID\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"document_id\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[a19dcc8b-3cba-4abf-adfc-d1ad24d4e594].fields}}\",\"label\":\"step➛Dynamically Replace Field Values➛fields\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[6cfff841-6cca-4c8a-9b1a-da2324267958].valid_record}}\",\"label\":\"step➛Create / Update Record➛Valid Record\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[6cfff841-6cca-4c8a-9b1a-da2324267958].table}}\",\"label\":\"step➛Create / Update Record➛table\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[6cfff841-6cca-4c8a-9b1a-da2324267958].document_id}}\",\"label\":\"step➛Create / Update Record➛Document Id\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"GUID\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Sys ID (GUID)\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"GUID\",\"uiUniqueId\":\"93ed37b6-4c0d-448f-b6d2-d9419d666337\"}},{\"name\":\"{{step[a19dcc8b-3cba-4abf-adfc-d1ad24d4e594].new_configuration}}\",\"label\":\"step➛Dynamically Replace Field Values➛New Configuration\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"json\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}}]",
+    "display_value": "[{\"name\":\"{{action.instance}}\",\"label\":\"action➛Instance\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Instance\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.versionstep}}\",\"label\":\"action➛versionStep\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.version_step}}\",\"label\":\"action➛Version Step\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Version Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.step1}}\",\"label\":\"action➛Step\",\"type\":\"action\",\"ref\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.action}}\",\"label\":\"action➛Action\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Action\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.journey}}\",\"label\":\"action➛Journey\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Journey\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.version}}\",\"label\":\"action➛Version\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Version\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.step}}\",\"label\":\"action➛Step\",\"type\":\"action\",\"ref\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.instance_step}}\",\"label\":\"action➛Instance Step\",\"type\":\"action\",\"ref\":\"x_cadso_journey_instance_step\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.configuration}}\",\"label\":\"action➛Configuration\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"JSON\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"json\",\"uiUniqueId\":\"e2f8cd17-ae32-4de0-b818-25eaa2fe0fa6\"}},{\"name\":\"{{action.instance_step.table}}\",\"label\":\"action➛Instance Step➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Table\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"table\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.create}}\",\"label\":\"action➛Create (False for Update)\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"True/False\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"boolean\",\"uiUniqueId\":\"f4e9aadf-bc10-4636-bf69-90c9bbcb3bf0\"}},{\"name\":\"{{action.fields}}\",\"label\":\"action➛Fields\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.fields.Field}}\",\"label\":\"action➛Fields➛Field\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.fields.field}}\",\"label\":\"action➛Fields➛field\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.instance_step.document_id}}\",\"label\":\"action➛Instance Step➛Document ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Document ID\",\"base_type\":\"document_id\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"document_id\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[a19dcc8b-3cba-4abf-adfc-d1ad24d4e594].fields}}\",\"label\":\"step➛Dynamically Replace Field Values➛fields\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[6cfff841-6cca-4c8a-9b1a-da2324267958].valid_record}}\",\"label\":\"step➛Create / Update Record➛Valid Record\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[6cfff841-6cca-4c8a-9b1a-da2324267958].table}}\",\"label\":\"step➛Create / Update Record➛table\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[6cfff841-6cca-4c8a-9b1a-da2324267958].document_id}}\",\"label\":\"step➛Create / Update Record➛Document Id\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"GUID\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Sys ID (GUID)\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"GUID\",\"uiUniqueId\":\"93ed37b6-4c0d-448f-b6d2-d9419d666337\"}},{\"name\":\"{{step[a19dcc8b-3cba-4abf-adfc-d1ad24d4e594].new_configuration}}\",\"label\":\"step➛Dynamically Replace Field Values➛New Configuration\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"json\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Creates a record for the Journey Builder flow",
+    "display_value": "Creates a record for the Journey Builder flow"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-15 18:15:23",
+    "display_value": "2024-10-15 11:15:23 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "e621e241c35d1210d4ddf1db05013194",
+    "display_value": "e621e241c35d1210d4ddf1db05013194"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "create_record",
+    "display_value": "create_record"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2024-10-14 07:40:31",
+    "display_value": "2024-10-14 12:40:31 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch1-hotfix2-10-03-2024_10-03-2024_2059.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch1-hotfix2-10-03-2024_10-03-2024_2059.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Create / Update Record",
+    "display_value": "Create / Update Record"
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "07c0e53cc3551610d4ddf1db0501312d",
+    "display_value": "07c0e53cc3551610d4ddf1db0501312d"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "Creates a record for the Journey Builder flow",
+    "display_value": "Creates a record for the Journey Builder flow"
+  },
+  "sys_mod_count": {
+    "value": "108",
+    "display_value": "108"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_b4464324c319d210d4ddf1db050131a6",
+    "display_value": "sys_hub_action_type_definition_b4464324c319d210d4ddf1db050131a6"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Create / Update Record",
+    "display_value": "Create / Update Record"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

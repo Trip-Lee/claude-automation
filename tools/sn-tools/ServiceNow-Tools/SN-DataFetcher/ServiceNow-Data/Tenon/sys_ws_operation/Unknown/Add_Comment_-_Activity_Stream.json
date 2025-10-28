@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "f1a3eea04781b550b0361ae8036d43eb",
+    "extracted_at": "2025-08-22T18:42:37.456Z",
+    "display_value": "Add Comment - Activity Stream",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-08-31 02:31:17",
+    "display_value": "2023-08-30 07:31:17 PM"
+  },
+  "name": {
+    "value": "Add Comment - Activity Stream",
+    "display_value": "Add Comment - Activity Stream"
+  },
+  "sys_updated_on": {
+    "value": "2023-08-31 02:32:12",
+    "display_value": "2023-08-30 07:32:12 PM"
+  }
+}

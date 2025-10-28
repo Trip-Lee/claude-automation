@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "4dd91f5f337026507b18bc534d5c7b86",
+    "extracted_at": "2025-08-22T18:42:35.907Z",
+    "display_value": "Get Brand Kits",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-14 21:53:14",
+    "display_value": "2025-04-14 02:53:14 PM"
+  },
+  "name": {
+    "value": "Get Brand Kits",
+    "display_value": "Get Brand Kits"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-15 19:10:02",
+    "display_value": "2025-07-15 12:10:02 PM"
+  }
+}

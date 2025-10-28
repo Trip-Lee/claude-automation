@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "cf1d5bd1337316107b18bc534d5c7b05",
+    "extracted_at": "2025-08-22T18:46:23.466Z",
+    "display_value": "Create Step",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-02-17 23:52:45",
+    "display_value": "2025-02-17 03:52:45 PM"
+  },
+  "name": {
+    "value": "Create Step",
+    "display_value": "Create Step"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-25 21:11:26",
+    "display_value": "2025-03-25 02:11:26 PM"
+  }
+}

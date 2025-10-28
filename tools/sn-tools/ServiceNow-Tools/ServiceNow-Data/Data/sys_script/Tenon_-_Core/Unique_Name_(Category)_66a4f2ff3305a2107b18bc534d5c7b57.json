@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "66a4f2ff3305a2107b18bc534d5c7b57",
+    "extracted_at": "2025-09-19T21:48:37.620Z",
+    "display_value": "Unique Name (Category)",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_update": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-20 18:40:45",
+    "display_value": "2025-05-20 11:40:45 AM"
+  },
+  "when": {
+    "value": "before",
+    "display_value": "before"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2025-04-28 18:43:28",
+    "display_value": "2025-04-28 11:43:28 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Unique Name (Category)",
+    "display_value": "Unique Name (Category)"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "order": {
+    "value": "-100",
+    "display_value": "-100"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "x_cadso_core_category",
+    "display_value": "x_cadso_core_category"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    var categoryGr = new GlideRecord('x_cadso_core_category');\r\n    categoryGr.addQuery('name', current.getValue('name'));\r\n    categoryGr.addQuery('sys_id', '!=', current.getUniqueValue());\r\n\tcategoryGr.setLimit(1);\r\n    categoryGr.query();\r\n\r\n    while (categoryGr.next()) {\r\n\t\tgs.addErrorMessage('Name is already in use on the record: ' + current.getDisplayValue());\r\n\t\tcurrent.setAbortAction(true);\r\n    }\r\n\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    var categoryGr = new GlideRecord('x_cadso_core_category');\r\n    categoryGr.addQuery('name', current.getValue('name'));\r\n    categoryGr.addQuery('sys_id', '!=', current.getUniqueValue());\r\n\tcategoryGr.setLimit(1);\r\n    categoryGr.query();\r\n\r\n    while (categoryGr.next()) {\r\n\t\tgs.addErrorMessage('Name is already in use on the record: ' + current.getDisplayValue());\r\n\t\tcurrent.setAbortAction(true);\r\n    }\r\n\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 14,
+      "char_count": 502,
+      "preview": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    var categoryGr = new GlideRecord('x_cadso_core_category');\r\n    categoryGr.addQuery('name', current.getValue('name'));\r\n    categ...",
+      "full_script": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    var categoryGr = new GlideRecord('x_cadso_core_category');\r\n    categoryGr.addQuery('name', current.getValue('name'));\r\n    categoryGr.addQuery('sys_id', '!=', current.getUniqueValue());\r\n\tcategoryGr.setLimit(1);\r\n    categoryGr.query();\r\n\r\n    while (categoryGr.next()) {\r\n\t\tgs.addErrorMessage('Name is already in use on the record: ' + current.getDisplayValue());\r\n\t\tcurrent.setAbortAction(true);\r\n    }\r\n\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "nameVALCHANGES^EQ",
+    "display_value": "nameVALCHANGES^EQ"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_66a4f2ff3305a2107b18bc534d5c7b57",
+    "display_value": "sys_script_66a4f2ff3305a2107b18bc534d5c7b57"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Unique Name (Category)",
+    "display_value": "Unique Name (Category)"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

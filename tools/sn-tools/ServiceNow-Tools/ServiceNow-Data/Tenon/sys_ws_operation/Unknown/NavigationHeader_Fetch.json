@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "7278dd7847f03910b0361ae8036d4346",
+    "extracted_at": "2025-08-22T18:46:22.032Z",
+    "display_value": "NavigationHeader Fetch",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-08-19 05:26:36",
+    "display_value": "2023-08-18 10:26:36 PM"
+  },
+  "name": {
+    "value": "NavigationHeader Fetch",
+    "display_value": "NavigationHeader Fetch"
+  },
+  "sys_updated_on": {
+    "value": "2024-07-10 15:16:04",
+    "display_value": "2024-07-10 08:16:04 AM"
+  }
+}

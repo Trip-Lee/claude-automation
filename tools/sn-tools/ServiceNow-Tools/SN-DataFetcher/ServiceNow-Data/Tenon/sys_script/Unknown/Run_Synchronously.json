@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "20e1cbfbc35fde10d4ddf1db0501312f",
+    "extracted_at": "2025-08-22T18:42:37.995Z",
+    "display_value": "Run Synchronously",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-01-31 19:52:36",
+    "display_value": "2025-01-31 11:52:36 AM"
+  },
+  "name": {
+    "value": "Run Synchronously",
+    "display_value": "Run Synchronously"
+  },
+  "sys_updated_on": {
+    "value": "2025-01-31 19:52:36",
+    "display_value": "2025-01-31 11:52:36 AM"
+  }
+}

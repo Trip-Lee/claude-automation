@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "bcd0bf42c3524a1085b196c4e40131a9",
+    "extracted_at": "2025-09-19T21:48:52.395Z",
+    "display_value": "Edit DIPP",
+    "application": "Tenon_Marking_Email_Send_Spoke",
+    "scope": {
+      "display_value": "Tenon Marking Email Send Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/aa8b5171c39ac61085b196c4e4013109",
+      "value": "aa8b5171c39ac61085b196c4e4013109"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.pool_id}}\",\"label\":\"action➛pool_id\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.x_mailgun_account_id}}\",\"label\":\"action➛X-Mailgun-Account-Id\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.x_mailgun_requestor}}\",\"label\":\"action➛X-Mailgun-Requestor\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.x_mailgun_requestor_client}}\",\"label\":\"action➛X-Mailgun-Requestor-Client\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[51833133-0214-4292-9160-554423674121].error_code}}\",\"label\":\"step➛OpenAPI step➛Error Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[51833133-0214-4292-9160-554423674121].error_message}}\",\"label\":\"step➛OpenAPI step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null}]",
+    "display_value": "[{\"name\":\"{{action.pool_id}}\",\"label\":\"action➛pool_id\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.x_mailgun_account_id}}\",\"label\":\"action➛X-Mailgun-Account-Id\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.x_mailgun_requestor}}\",\"label\":\"action➛X-Mailgun-Requestor\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{action.x_mailgun_requestor_client}}\",\"label\":\"action➛X-Mailgun-Requestor-Client\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[51833133-0214-4292-9160-554423674121].error_code}}\",\"label\":\"step➛OpenAPI step➛Error Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null},{\"name\":\"{{step[51833133-0214-4292-9160-554423674121].error_message}}\",\"label\":\"step➛OpenAPI step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":null}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "The account must have 'DIPPs' feature enabled.\n\nIt's not allowed to edit a DIPP inherited from the parent account.\n\nIPs being added to the DIPP must be dedicated ones and belong to the account.\n\nIf IPs of the DIPP end up modified, and the DIPP is linked to domains, the domains\nwill be updated asynchronously (after this endpoint returns response).\n\nReturns an error if the passed parameters won't result in any changes.",
+    "display_value": "The account must have 'DIPPs' feature enabled.\n\nIt's not allowed to edit a DIPP inherited from the parent account.\n\nIPs being added to the DIPP must be dedicated ones and belong to the account.\n\nIf IPs of the DIPP end up modified, and the DIPP is linked to domains, the domains\nwill be updated asynchronously (after this endpoint returns response).\n\nReturns an error if the passed parameters won't result in any changes."
+  },
+  "sys_updated_on": {
+    "value": "2024-05-22 23:29:00",
+    "display_value": "2024-05-22 04:29:00 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "edit_dipp",
+    "display_value": "edit_dipp"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-05-22 23:28:59",
+    "display_value": "2024-05-22 04:28:59 PM"
+  },
+  "compiler_build": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Edit DIPP",
+    "display_value": "Edit DIPP"
+  },
+  "sys_scope": {
+    "value": "aa8b5171c39ac61085b196c4e4013109",
+    "display_value": "Tenon Marking Email Send Spoke"
+  },
+  "state": {
+    "value": "draft",
+    "display_value": "Draft"
+  },
+  "master_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "aa8b5171c39ac61085b196c4e4013109",
+    "display_value": "Tenon Marking Email Send Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_bcd0bf42c3524a1085b196c4e40131a9",
+    "display_value": "sys_hub_action_type_definition_bcd0bf42c3524a1085b196c4e40131a9"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Edit DIPP",
+    "display_value": "Edit DIPP"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "a421c6fd87d28a10369f33373cbb3594",
+    "display_value": "IP Pools"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

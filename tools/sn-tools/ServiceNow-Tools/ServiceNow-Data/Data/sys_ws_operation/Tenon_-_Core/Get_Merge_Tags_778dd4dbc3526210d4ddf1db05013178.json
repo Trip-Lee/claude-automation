@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "778dd4dbc3526210d4ddf1db05013178",
+    "extracted_at": "2025-09-19T21:48:32.606Z",
+    "display_value": "Get Merge Tags",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n  try {\r\n    let { active = false } = request.queryParams;\r\n    if (typeof active === \"object\") {\r\n      active = active.toString();\r\n    }\r\n    active = active === \"true\" || active === true;\r\n    const coreSettingsApi = new x_cadso_core.CoreSettings();\r\n    let tables = coreSettingsApi.get(\"x_cadso_core.mergeTags.tables.available\");\r\n    tables = tables.replaceAll(\" \", \"\");\r\n    tables = tables ? tables.split(\",\") : [];\r\n    const apiUtil = new x_cadso_core.APIUtils();\r\n    const table = \"x_cadso_core_merge_tag\";\r\n    let query = \"tableIN\" + tables.join(\",\");\r\n    if (active) {\r\n      query += \"^active=true\";\r\n    }\r\n    const mergeTags = apiUtil.query({\r\n      table,\r\n      query,\r\n    });\r\n\r\n    if (!mergeTags) {\r\n      return new sn_ws_err.NotFoundError(\"Could not find merge tags\");\r\n    }\r\n\r\n    const allowedSysFields = [\r\n      \"sys_created_on\",\r\n      \"sys_created_by\",\r\n      \"sys_updated_on\",\r\n      \"sys_updated_by\",\r\n    ];\r\n\r\n    const fields = mergeTags.filter((tag) => {\r\n      const field = tag.field || \"\";\r\n      return !(field.startsWith(\"sys_\") && !allowedSysFields.includes(field));\r\n    });\r\n\r\n    const tableNames = {};\r\n\r\n    for (var x = 0; x < tables.length; x++) {\r\n      const tableGr = new GlideRecordSecure(tables[x]);\r\n      tableNames[tables[x]] = gs.getMessage(tableGr.getLabel());\r\n    }\r\n\r\n    response.setBody({\r\n      fields,\r\n      tableNames,\r\n    });\r\n  } catch (error) {\r\n    return new sn_ws_err.BadRequestError(error.message);\r\n  }\r\n})(request, response);\r\n",
+    "display_value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\r\n  try {\r\n    let { active = false } = request.queryParams;\r\n    if (typeof active === \"object\") {\r\n      active = active.toString();\r\n    }\r\n    active = active === \"true\" || active === true;\r\n    const coreSettingsApi = new x_cadso_core.CoreSettings();\r\n    let tables = coreSettingsApi.get(\"x_cadso_core.mergeTags.tables.available\");\r\n    tables = tables.replaceAll(\" \", \"\");\r\n    tables = tables ? tables.split(\",\") : [];\r\n    const apiUtil = new x_cadso_core.APIUtils();\r\n    const table = \"x_cadso_core_merge_tag\";\r\n    let query = \"tableIN\" + tables.join(\",\");\r\n    if (active) {\r\n      query += \"^active=true\";\r\n    }\r\n    const mergeTags = apiUtil.query({\r\n      table,\r\n      query,\r\n    });\r\n\r\n    if (!mergeTags) {\r\n      return new sn_ws_err.NotFoundError(\"Could not find merge tags\");\r\n    }\r\n\r\n    const allowedSysFields = [\r\n      \"sys_created_on\",\r\n      \"sys_created_by\",\r\n      \"sys_updated_on\",\r\n      \"sys_updated_by\",\r\n    ];\r\n\r\n    const fields = mergeTags.filter((tag) => {\r\n      const field = tag.field || \"\";\r\n      return !(field.startsWith(\"sys_\") && !allowedSysFields.includes(field));\r\n    });\r\n\r\n    const tableNames = {};\r\n\r\n    for (var x = 0; x < tables.length; x++) {\r\n      const tableGr = new GlideRecordSecure(tables[x]);\r\n      tableNames[tables[x]] = gs.getMessage(tableGr.getLabel());\r\n    }\r\n\r\n    response.setBody({\r\n      fields,\r\n      tableNames,\r\n    });\r\n  } catch (error) {\r\n    return new sn_ws_err.BadRequestError(error.message);\r\n  }\r\n})(request, response);\r\n"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-11 16:27:32",
+    "display_value": "2025-08-11 09:27:32 AM"
+  },
+  "enforce_acl": {
+    "value": "535603d7333026507b18bc534d5c7bcc",
+    "display_value": "Core REST Endpoint ACL"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "GET",
+    "display_value": "GET"
+  },
+  "sys_updated_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_core/merge_tags",
+    "display_value": "/api/x_cadso_core/merge_tags"
+  },
+  "sys_created_on": {
+    "value": "2025-06-27 21:42:22",
+    "display_value": "2025-06-27 02:42:22 PM"
+  },
+  "sys_name": {
+    "value": "Get Merge Tags",
+    "display_value": "Get Merge Tags"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "web_service_definition": {
+    "value": "8bcc589bc3526210d4ddf1db050131a3",
+    "display_value": "Merge Tags"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "5",
+    "display_value": "5"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_778dd4dbc3526210d4ddf1db05013178",
+    "display_value": "sys_ws_operation_778dd4dbc3526210d4ddf1db05013178"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Get Merge Tags",
+    "display_value": "Get Merge Tags"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

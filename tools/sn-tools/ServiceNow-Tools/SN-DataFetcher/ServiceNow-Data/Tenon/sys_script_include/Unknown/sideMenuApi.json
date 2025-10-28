@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "b953e4b84728e950a1052a02e26d43fa",
+    "extracted_at": "2025-08-22T18:42:35.257Z",
+    "display_value": "sideMenuApi",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-01-19 19:06:38",
+    "display_value": "2023-01-19 11:06:38 AM"
+  },
+  "name": {
+    "value": "sideMenuApi",
+    "display_value": "sideMenuApi"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-14 22:01:27",
+    "display_value": "2025-07-14 03:01:27 PM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "05afff0087ab0a10369f33373cbb3586",
+    "extracted_at": "2025-08-22T18:46:21.614Z",
+    "display_value": "Audience Builder - Fetch",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-07-17 22:44:21",
+    "display_value": "2024-07-17 03:44:21 PM"
+  },
+  "name": {
+    "value": "Audience Builder - Fetch",
+    "display_value": "Audience Builder - Fetch"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-14 17:02:45",
+    "display_value": "2025-08-14 10:02:45 AM"
+  }
+}

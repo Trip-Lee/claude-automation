@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "257f563e470e7d1098519fd8036d435e",
+    "extracted_at": "2025-08-22T18:42:33.616Z",
+    "display_value": "TenonTime",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-10-26 19:02:05",
+    "display_value": "2023-10-26 12:02:05 PM"
+  },
+  "name": {
+    "value": "TenonTime",
+    "display_value": "TenonTime"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-11 02:45:54",
+    "display_value": "2024-10-10 07:45:54 PM"
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "a028c5e6c3395a10d4ddf1db05013189",
+    "extracted_at": "2025-09-19T21:48:49.227Z",
+    "display_value": "Compare Record To Condition",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.record_to_check}}\",\"label\":\"action➛Record To Check\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"reference_name\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.record_id}}\",\"label\":\"action➛Record ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.record_table}}\",\"label\":\"action➛Record Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.split_instance_step}}\",\"label\":\"action➛Version Step\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"8a31af0c-21e3-45c9-8475-531c8ada65cc\"}},{\"name\":\"{{action.split_instance_step.instance.table}}\",\"label\":\"action➛Version Step➛Instance➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Table\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"table\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.split_instance_step.conditions}}\",\"label\":\"action➛Version Step➛Conditions\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Conditions\",\"base_type\":\"conditions\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"conditions\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.version_step}}\",\"label\":\"action➛Version Step\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Version Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.instance_step}}\",\"label\":\"action➛Instance Step\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.lookup_table_name}}\",\"label\":\"action➛lookup_table_name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"table_name\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.instance_step.instance.table}}\",\"label\":\"action➛Instance Step➛Instance➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Table\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"table\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.version_step.conditions}}\",\"label\":\"action➛Version Step➛Conditions\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Conditions\",\"base_type\":\"conditions\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"conditions\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.record_to_compare}}\",\"label\":\"action➛Record To Compare\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"reference_name\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.condition_to_check}}\",\"label\":\"action➛Condition To Check\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[c08b822f-0fde-407f-a055-7f9f45a3ad21].matches_condition}}\",\"label\":\"step➛Script step➛Matches Condition\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[c08b822f-0fde-407f-a055-7f9f45a3ad21].matches_condition_string}}\",\"label\":\"step➛Script step➛Matches Condition String\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}}]",
+    "display_value": "[{\"name\":\"{{action.record_to_check}}\",\"label\":\"action➛Record To Check\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"reference_name\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.record_id}}\",\"label\":\"action➛Record ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.record_table}}\",\"label\":\"action➛Record Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.split_instance_step}}\",\"label\":\"action➛Version Step\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"8a31af0c-21e3-45c9-8475-531c8ada65cc\"}},{\"name\":\"{{action.split_instance_step.instance.table}}\",\"label\":\"action➛Version Step➛Instance➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Table\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"table\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.split_instance_step.conditions}}\",\"label\":\"action➛Version Step➛Conditions\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Conditions\",\"base_type\":\"conditions\",\"parent_table_name\":\"x_cadso_journey_instance_step\",\"column_name\":\"conditions\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.version_step}}\",\"label\":\"action➛Version Step\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Version Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.instance_step}}\",\"label\":\"action➛Instance Step\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Instance Step\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.lookup_table_name}}\",\"label\":\"action➛lookup_table_name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"table_name\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.instance_step.instance.table}}\",\"label\":\"action➛Instance Step➛Instance➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Table\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_instance\",\"column_name\":\"table\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.version_step.conditions}}\",\"label\":\"action➛Version Step➛Conditions\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Conditions\",\"base_type\":\"conditions\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"conditions\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.record_to_compare}}\",\"label\":\"action➛Record To Compare\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"reference_name\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.condition_to_check}}\",\"label\":\"action➛Condition To Check\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[c08b822f-0fde-407f-a055-7f9f45a3ad21].matches_condition}}\",\"label\":\"step➛Script step➛Matches Condition\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"boolean\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[c08b822f-0fde-407f-a055-7f9f45a3ad21].matches_condition_string}}\",\"label\":\"step➛Script step➛Matches Condition String\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_updated_on": {
+    "value": "2024-11-26 21:26:02",
+    "display_value": "2024-11-26 01:26:02 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "b09fdf2ec3069250d4ddf1db050131f4",
+    "display_value": "b09fdf2ec3069250d4ddf1db050131f4"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "compare_record_to_condition",
+    "display_value": "compare_record_to_condition"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-11-14 00:08:41",
+    "display_value": "2024-11-13 04:08:41 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch3-10-23-2024_11-01-2024_2230.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch3-10-23-2024_11-01-2024_2230.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Compare Record To Condition",
+    "display_value": "Compare Record To Condition"
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "94bb393e33f51a107b18bc534d5c7b27",
+    "display_value": "94bb393e33f51a107b18bc534d5c7b27"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "34",
+    "display_value": "34"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_a028c5e6c3395a10d4ddf1db05013189",
+    "display_value": "sys_hub_action_type_definition_a028c5e6c3395a10d4ddf1db05013189"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Compare Record To Condition",
+    "display_value": "Compare Record To Condition"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

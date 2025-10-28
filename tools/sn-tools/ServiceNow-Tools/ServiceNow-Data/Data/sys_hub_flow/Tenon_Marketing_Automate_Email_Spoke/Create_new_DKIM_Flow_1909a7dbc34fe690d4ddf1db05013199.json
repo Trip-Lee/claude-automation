@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "1909a7dbc34fe690d4ddf1db05013199",
+    "extracted_at": "2025-09-19T21:48:45.748Z",
+    "display_value": "Create new DKIM Flow",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-08-04 19:19:17",
+    "display_value": "2025-08-04 12:19:17 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Create new DKIM Flow",
+    "display_value": "Create new DKIM Flow"
+  },
+  "latest_snapshot": {
+    "value": "be76bc66336fe2107b18bc534d5c7b8b",
+    "display_value": "be76bc66336fe2107b18bc534d5c7b8b"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "copy_of_create_new_dkim_flow",
+    "display_value": "copy_of_create_new_dkim_flow"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2025-08-04 19:16:41",
+    "display_value": "2025-08-04 12:16:41 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch9a-06-23-2025_07-23-2025_2226.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch9a-06-23-2025_07-23-2025_2226.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Create new DKIM Flow",
+    "display_value": "Create new DKIM Flow"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "af19abdbc34fe690d4ddf1db05013120",
+    "display_value": "af19abdbc34fe690d4ddf1db05013120"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_1909a7dbc34fe690d4ddf1db05013199",
+    "display_value": "sys_hub_flow_1909a7dbc34fe690d4ddf1db05013199"
+  },
+  "name": {
+    "value": "Create new DKIM Flow",
+    "display_value": "Create new DKIM Flow"
+  },
+  "copied_from": {
+    "value": "f2fab1ab87dcded0369f33373cbb350d",
+    "display_value": "f2fab1ab87dcded0369f33373cbb350d"
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"Created_1.current.dkim_key_length\",\"label\":\"Trigger - Record Created➛DNS Record Record➛DKIM key length\",\"reference\":\"\",\"reference_display\":\"DKIM key length\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_automate_dns_record\",\"column_name\":\"dkim_key_length\",\"choices\":[{\"label\":\"-- None --\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"-- None --\",\"value\":\"\"},{\"label\":\"1024 bit\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"1024 bit\",\"value\":\"1024_bit\",\"parameters\":{\"name\":\"x_cadso_automate_dns_record\",\"dependent_values\":[\"\"]}},{\"label\":\"2048 bit\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"2048 bit\",\"value\":\"2048_bit\",\"parameters\":{\"name\":\"x_cadso_automate_dns_record\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"2688aefa-7acf-4c86-9914-36428b6d89b9\":[\"bits\"]}},{\"name\":\"Created_1.current.dkim_selector\",\"label\":\"Trigger - Record Created➛DNS Record Record➛DKIM Selector\",\"reference\":\"\",\"reference_display\":\"DKIM Selector\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_dns_record\",\"column_name\":\"dkim_selector\",\"usedInstances\":{\"2688aefa-7acf-4c86-9914-36428b6d89b9\":[\"selector\"]}},{\"name\":\"Created_1.current.domain\",\"label\":\"Trigger - Record Created➛DNS Record Record➛Domain\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_automate_dns_record\",\"column_name\":\"domain\",\"usedInstances\":{\"2688aefa-7acf-4c86-9914-36428b6d89b9\":[\"domain\"]}},{\"name\":\"Created_1.current\",\"label\":\"Trigger - Record Created➛DNS Record Record\",\"reference\":\"x_cadso_automate_dns_record\",\"reference_display\":\"DNS Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"record\"]},\"attributes\":{}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.active\",\"label\":\"1 - Create a new DKIM➛Active\",\"reference_display\":\"Active\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"active\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"46fdd136-4132-47cd-812b-8832211f5d0f\"}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.new_selector\",\"label\":\"1 - Create a new DKIM➛New Selector\",\"reference_display\":\"New Selector\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"dkim_selector\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"a809fb37-aec1-44aa-98a9-1117033440dd\"}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.hostname\",\"label\":\"1 - Create a new DKIM➛Hostname\",\"reference_display\":\"Hostname\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"hostname\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"cfd43fe9-b81f-49b2-9431-4d5def8dd51a\"}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.value\",\"label\":\"1 - Create a new DKIM➛Value\",\"reference_display\":\"Value\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"value\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"a6fb3079-41b5-4947-a730-6e64d5477b4a\"}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.context.error_message\",\"label\":\"1 - Create a new DKIM➛Context➛Error message\",\"reference\":\"\",\"reference_display\":\"Error message\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_flow_context\",\"column_name\":\"error_message\",\"usedInstances\":{\"57826854-a552-4b5e-a96e-01cfeeee3892\":[\"log_message\"]}}]",
+    "display_value": "[{\"name\":\"Created_1.current.dkim_key_length\",\"label\":\"Trigger - Record Created➛DNS Record Record➛DKIM key length\",\"reference\":\"\",\"reference_display\":\"DKIM key length\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_automate_dns_record\",\"column_name\":\"dkim_key_length\",\"choices\":[{\"label\":\"-- None --\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"-- None --\",\"value\":\"\"},{\"label\":\"1024 bit\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"1024 bit\",\"value\":\"1024_bit\",\"parameters\":{\"name\":\"x_cadso_automate_dns_record\",\"dependent_values\":[\"\"]}},{\"label\":\"2048 bit\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"2048 bit\",\"value\":\"2048_bit\",\"parameters\":{\"name\":\"x_cadso_automate_dns_record\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"2688aefa-7acf-4c86-9914-36428b6d89b9\":[\"bits\"]}},{\"name\":\"Created_1.current.dkim_selector\",\"label\":\"Trigger - Record Created➛DNS Record Record➛DKIM Selector\",\"reference\":\"\",\"reference_display\":\"DKIM Selector\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_dns_record\",\"column_name\":\"dkim_selector\",\"usedInstances\":{\"2688aefa-7acf-4c86-9914-36428b6d89b9\":[\"selector\"]}},{\"name\":\"Created_1.current.domain\",\"label\":\"Trigger - Record Created➛DNS Record Record➛Domain\",\"reference\":\"x_cadso_automate_domain\",\"reference_display\":\"Domain\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_automate_dns_record\",\"column_name\":\"domain\",\"usedInstances\":{\"2688aefa-7acf-4c86-9914-36428b6d89b9\":[\"domain\"]}},{\"name\":\"Created_1.current\",\"label\":\"Trigger - Record Created➛DNS Record Record\",\"reference\":\"x_cadso_automate_dns_record\",\"reference_display\":\"DNS Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"record\"]},\"attributes\":{}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.active\",\"label\":\"1 - Create a new DKIM➛Active\",\"reference_display\":\"Active\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"active\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"46fdd136-4132-47cd-812b-8832211f5d0f\"}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.new_selector\",\"label\":\"1 - Create a new DKIM➛New Selector\",\"reference_display\":\"New Selector\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"dkim_selector\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"a809fb37-aec1-44aa-98a9-1117033440dd\"}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.hostname\",\"label\":\"1 - Create a new DKIM➛Hostname\",\"reference_display\":\"Hostname\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"hostname\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"cfd43fe9-b81f-49b2-9431-4d5def8dd51a\"}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.value\",\"label\":\"1 - Create a new DKIM➛Value\",\"reference_display\":\"Value\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"fbe62f71-2b3f-4c27-b872-e873db251d85\":[\"value\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"a6fb3079-41b5-4947-a730-6e64d5477b4a\"}},{\"name\":\"2688aefa-7acf-4c86-9914-36428b6d89b9.context.error_message\",\"label\":\"1 - Create a new DKIM➛Context➛Error message\",\"reference\":\"\",\"reference_display\":\"Error message\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"sys_flow_context\",\"column_name\":\"error_message\",\"usedInstances\":{\"57826854-a552-4b5e-a96e-01cfeeee3892\":[\"log_message\"]}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "5",
+    "display_value": "5"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=25000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=25000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "c2d28dee87601254369f33373cbb3566",
+    "display_value": "c2d28dee87601254369f33373cbb3566"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  }
+}

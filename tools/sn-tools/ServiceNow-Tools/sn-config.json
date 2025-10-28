@@ -1,0 +1,478 @@
+{
+  "instances": {
+    "dev": {
+      "instance": "tenonworkstudio.service-now.com",
+      "username": "trevor.offen",
+      "password": "WorkKickflip1."
+    },
+    "prod": {
+      "instance": "tenon.service-now.com",
+      "username": "trevor.offen",
+      "password": "WorkKickflip1."   
+    }
+  },
+  "routing": {
+    "stories": "prod",
+    "default": "dev",
+    "tables": {
+      "sys_script_include": "dev",
+      "sys_ws_operation": "dev",
+      "rm_story": "prod",
+      "sys_script": "dev",
+      "sys_ui_action": "dev",
+      "sys_script_client": "dev",
+      "sys_hub_flow": "dev",
+      "sys_hub_action_type_definition": "dev",
+      "sys_hub_action_instance": "dev",
+      "sys_hub_action_instance_v2": "dev",
+      "sys_hub_flow_logic": "dev",
+      "sys_hub_flow_logic_definition": "dev",
+      "sys_hub_flow_safe_edit": "dev",
+      "sys_hub_flow_logic_ext_input": "dev",
+      "sys_hub_flow_logic_variable": "dev",
+      "sys_hub_flow_snapshot": "dev",
+      "sys_hub_flow_logic_input": "dev",
+      "sys_hub_flow_output": "dev",
+      "sys_hub_flow_stage": "dev",
+      "sys_hub_flow_variable": "dev",
+      "sys_hub_flow_base": "dev",
+      "sys_hub_flow_component": "dev",
+      "sys_hub_flow_input": "dev",
+      "sys_hub_flow_logic_instance_v2": "dev",
+      "sys_hub_flow_designer_co_template": "dev",
+      "sys_hub_flow_block": "dev",
+      "sys_flow_rest_trigger": "dev",
+      "sys_flow_record_trigger": "dev",
+      "sys_flow_trigger": "dev",
+      "sys_flow_timer_trigger": "dev",
+      "sys_flow_trigger_plan": "dev",
+      "sys_flow_trigger_auto_script": "dev",
+      "sys_flow_value": "dev",
+      "sysauto": "dev",
+      "sys_db_object": "dev",
+      "sys_dictionary": "dev"
+    }
+  },
+  "stories": {
+    "instance": "prod",
+    "table": "rm_story",
+    "query": "assigned_to=6112ede347596110fc4c1ae8036d4311^active=true^state=-6^ORstateIN-1,3,70,71,72,74,75,4^sprint!=NULL",
+    "fields": null
+  },
+  "tables": {
+    "sys_script_include": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_ws_operation": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_script": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_script_client": {
+      "instance": "dev",
+      "query": "sys_scope.nameLIKEtenon^active=true",
+      "fields": null
+    },
+    "sys_db_object": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_dictionary": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_action_type_definition": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_action_instance": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_action_instance_v2": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_logic": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_logic_definition": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_safe_edit": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_logic_ext_input": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_logic_variable": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_snapshot": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_logic_input": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_output": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_stage": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_variable": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_base": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_component": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_input": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_logic_instance_v2": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_designer_co_template": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_flow_block": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_hub_step_instance": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_update_xml": {
+      "instance": "dev",
+      "query": "name=sys_hub_flow^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_variable_value": {
+      "instance": "dev",
+      "query": "document=sys_hub_action_instance",
+      "fields": null
+    },
+    "sys_flow_trigger": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_flow_timer_trigger": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_flow_trigger_plan": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_flow_trigger_auto_script": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_flow_rest_trigger": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sys_flow_record_trigger": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    },
+    "sysauto": {
+      "instance": "dev",
+      "query": "active=true^sys_scope.nameLIKEtenon",
+      "fields": null
+    }
+  },
+  "paths": {
+    "outputBase": "../ServiceNow-Data",
+    "dataSubdir": "Data",
+    "autoDetect": true,
+    "fallbackPaths": [
+      "./ServiceNow-Data",
+      "../Data"
+    ],
+    "componentRepoName": "Components",
+    "componentDirectories": [
+      "Sashimono",
+      "component-library"
+    ]
+  },
+  "project": {
+    "name": "Tenon",
+    "scopePrefix": "x_cadso",
+    "companyName": "CadenceSoft"
+  },
+  "settings": {
+    "autoBackup": true,
+    "validateUpdates": true,
+    "autoFetchData": true,
+    "autoFetchStories": true,
+    "autoProcessUpdates": true,
+    "fetchAllFields": true,
+    "deleteBeforeFetch": true,
+    "dataFetcherPath": "./SN-DataFetcher",
+    "storyFetcherPath": "./SN-StoryFetcher"
+  },
+  "autonomy": {
+    "enabled": false,
+    "globalOverride": false,
+    "requireManualApproval": true,
+    "confidenceThreshold": 0.8,
+    "emergencyDisable": false,
+    "lastToggled": "2025-08-26T19:55:23.231Z",
+    "toggledBy": "CLI"
+  },
+  "claude": {
+    "enabled": false,
+    "apiKey": "",
+    "model": "claude-3-sonnet-20240229",
+    "baseUrl": "https://api.anthropic.com",
+    "autoAnalysis": {
+      "onFileChange": false,
+      "onDataFetch": false,
+      "onError": true,
+      "onDependencyChange": false
+    },
+    "features": {
+      "codeReview": true,
+      "errorAnalysis": true,
+      "dependencyImpact": true,
+      "optimizationSuggestions": true,
+      "documentationGeneration": false
+    },
+    "safety": {
+      "requireApproval": true,
+      "maxApiCallsPerHour": 50,
+      "emergencyDisable": false,
+      "restrictedOperations": [
+        "update",
+        "create",
+        "delete"
+      ]
+    },
+    "contextLimits": {
+      "maxTokens": 100000,
+      "maxFileSize": 50000,
+      "includeHistory": true,
+      "historyLength": 10
+    }
+  },
+  "ai": {
+    "mode": "manual",
+    "description": "AI Integration Workflow Configuration",
+    "preferredProvider": "auto-detect",
+    "providers": {
+      "claude-code": {
+        "name": "Claude Code",
+        "enabled": true,
+        "detected": true,
+        "command": "claude",
+        "priority": 1,
+        "capabilities": [
+          "code-generation",
+          "analysis",
+          "record-creation",
+          "web-search",
+          "file-operations"
+        ],
+        "contextPassing": "stdin",
+        "outputFormat": "markdown",
+        "version": "1.0.120 (Claude Code)",
+        "path": "G:\\Programs\\Node.js\\claude\r"
+      },
+      "chatgpt-cli": {
+        "name": "ChatGPT CLI",
+        "enabled": false,
+        "detected": false,
+        "command": "chatgpt",
+        "priority": 2,
+        "capabilities": [
+          "code-generation",
+          "analysis",
+          "record-creation"
+        ],
+        "contextPassing": "args",
+        "outputFormat": "text"
+      },
+      "claude-api": {
+        "name": "Claude API",
+        "enabled": false,
+        "detected": "",
+        "priority": 3,
+        "capabilities": [
+          "code-generation",
+          "analysis",
+          "record-creation"
+        ],
+        "fallback": true
+      }
+    },
+    "recordCreation": {
+      "enabled": true,
+      "includeContext": true,
+      "includeSchema": true,
+      "includeExamples": true,
+      "timeout": 60000,
+      "maxRetries": 2
+    },
+    "modes": {
+      "auto": {
+        "name": "Auto AI Mode",
+        "description": "AI automatically handles all functionality including creating features, updating code, tracing, debugging, and analysis",
+        "behavior": "Full automation with continuous AI feedback through CLI"
+      },
+      "manual": {
+        "name": "Manual Mode",
+        "description": "No AI assistance used during operations",
+        "behavior": "User provides all input manually through CLI prompts and fills out all fields for feature requests"
+      },
+      "interactive": {
+        "name": "Interactive Mode",
+        "description": "System prompts user at each development step for AI assistance choice",
+        "behavior": "Ask 'Would you like to use AI assistance for [current step]? (y/n)' at each step"
+      }
+    },
+    "currentStep": null,
+    "stepHistory": [],
+    "promptSettings": {
+      "timeoutSeconds": 30,
+      "defaultResponse": "n",
+      "showModeHelp": true
+    }
+  },
+  "multiAgent": {
+    "enabled": false,
+    "mode": "local",
+    "description": "Multi-Agent System Configuration - Set enabled to true to use collaborative agent architecture",
+    "orchestrator": {
+      "maxConcurrentTasks": 10,
+      "taskTimeout": 30000,
+      "healthCheckInterval": 10000,
+      "circuitBreaker": {
+        "failureThreshold": 5,
+        "resetTimeout": 30000
+      }
+    },
+    "agents": {
+      "recordOps": {
+        "instances": 1,
+        "config": {
+          "validateBeforeCreate": true,
+          "validateBeforeUpdate": true,
+          "enableLocking": true
+        }
+      },
+      "schema": {
+        "instances": 1,
+        "config": {
+          "cacheSchemas": true,
+          "refreshInterval": 3600000
+        }
+      },
+      "ai": {
+        "instances": 1,
+        "config": {
+          "provider": "claude-code",
+          "model": "claude-3-5-sonnet-20241022",
+          "maxTokens": 4096
+        }
+      },
+      "validation": {
+        "instances": 1,
+        "config": {
+          "strictMode": false
+        }
+      },
+      "fileWatch": {
+        "instances": 0,
+        "config": {
+          "watchPaths": ["../ServiceNow-Data"],
+          "debounceMs": 500,
+          "autoSync": false
+        }
+      },
+      "dependency": {
+        "instances": 0,
+        "config": {
+          "autoTrack": false,
+          "scanInterval": 60000
+        }
+      }
+    },
+    "communication": {
+      "backend": "memory",
+      "redis": {
+        "host": "localhost",
+        "port": 6379
+      },
+      "messageTimeout": 5000,
+      "maxRetries": 3
+    },
+    "monitoring": {
+      "enabled": true,
+      "metricsInterval": 10000,
+      "dashboard": {
+        "port": 3000,
+        "enabled": false
+      }
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "44f81e9cc366425085b196c4e40131d0",
+    "extracted_at": "2025-09-19T21:48:51.529Z",
+    "display_value": "Create A Domain",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.domain_record}}\",\"label\":\"action➛Domain Record\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"1079745c-612a-4225-a0cb-204ed1713cfa\"}},{\"name\":\"{{action.domain_record.domain_name}}\",\"label\":\"action➛Domain Record➛Domain Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.encrypt_incoming_message}}\",\"label\":\"action➛Domain Record➛Encrypt Incoming Message\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Encrypt Incoming Message\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"encrypt_incoming_message\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.dkim_key_size}}\",\"label\":\"action➛Domain Record➛DKIM Key Size\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"DKIM Key Size\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"dkim_key_size\",\"choices\":[{\"reference\":false,\"image\":\"\",\"rawLabel\":\"-- None --\",\"missing\":false,\"label\":\"-- None --\",\"used\":false,\"value\":\"\",\"selected\":false}],\"attributes\":{}},{\"name\":\"{{action.domain_record.ips}}\",\"label\":\"action➛Domain Record➛IPs\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"IPs\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"ips\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.force_dkim_authority}}\",\"label\":\"action➛Domain Record➛Force DKIM Authority\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Force DKIM Authority\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"force_dkim_authority\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.force_root_dkim_host}}\",\"label\":\"action➛Domain Record➛Force Root DKIM Host\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Force Root DKIM Host\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"force_root_dkim_host\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.dkim_host_name}}\",\"label\":\"action➛Domain Record➛DKIM Host Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"DKIM Host Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"dkim_host_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.web_scheme}}\",\"label\":\"action➛Domain Record➛Web Scheme\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Web Scheme\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"web_scheme\",\"choices\":[{\"reference\":false,\"image\":\"\",\"rawLabel\":\"-- None --\",\"missing\":false,\"label\":\"-- None --\",\"used\":false,\"value\":\"\",\"selected\":false}],\"attributes\":{}},{\"name\":\"{{action.domain_record.spam_action}}\",\"label\":\"action➛Domain Record➛Spam Action\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Spam Action\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"spam_action\",\"choices\":[{\"reference\":false,\"image\":\"\",\"rawLabel\":\"-- None --\",\"missing\":false,\"label\":\"-- None --\",\"used\":false,\"value\":\"\",\"selected\":false}],\"attributes\":{}},{\"name\":\"{{action.domain_record.wildcard}}\",\"label\":\"action➛Domain Record➛Wildcard\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Wildcard\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"wildcard\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.web_prefix}}\",\"label\":\"action➛Domain Record➛Web Prefix\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Web Prefix\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"web_prefix\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.dkim_selector}}\",\"label\":\"action➛Domain Record➛DKIM Selector\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"DKIM Selector\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"dkim_selector\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[095d9c2f-3382-4aef-b99e-72bb73547e2f].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[095d9c2f-3382-4aef-b99e-72bb73547e2f].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[095d9c2f-3382-4aef-b99e-72bb73547e2f].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[e8579548-2939-415e-920e-10279364c65f].root.sending_dns_records}}\",\"label\":\"step➛JSON Parser step➛root➛sending_dns_records\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[e8579548-2939-415e-920e-10279364c65f].root.receiving_dns_records}}\",\"label\":\"step➛JSON Parser step➛root➛receiving_dns_records\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[e8579548-2939-415e-920e-10279364c65f].root.domain}}\",\"label\":\"step➛JSON Parser step➛root➛domain\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[e8579548-2939-415e-920e-10279364c65f].root.message}}\",\"label\":\"step➛JSON Parser step➛root➛message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"{{action.domain_record}}\",\"label\":\"action➛Domain Record\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"1079745c-612a-4225-a0cb-204ed1713cfa\"}},{\"name\":\"{{action.domain_record.domain_name}}\",\"label\":\"action➛Domain Record➛Domain Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Domain Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"domain_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.encrypt_incoming_message}}\",\"label\":\"action➛Domain Record➛Encrypt Incoming Message\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Encrypt Incoming Message\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"encrypt_incoming_message\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.dkim_key_size}}\",\"label\":\"action➛Domain Record➛DKIM Key Size\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"DKIM Key Size\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"dkim_key_size\",\"choices\":[{\"reference\":false,\"image\":\"\",\"rawLabel\":\"-- None --\",\"missing\":false,\"label\":\"-- None --\",\"used\":false,\"value\":\"\",\"selected\":false}],\"attributes\":{}},{\"name\":\"{{action.domain_record.ips}}\",\"label\":\"action➛Domain Record➛IPs\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"IPs\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"ips\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.force_dkim_authority}}\",\"label\":\"action➛Domain Record➛Force DKIM Authority\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Force DKIM Authority\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"force_dkim_authority\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.force_root_dkim_host}}\",\"label\":\"action➛Domain Record➛Force Root DKIM Host\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Force Root DKIM Host\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"force_root_dkim_host\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.dkim_host_name}}\",\"label\":\"action➛Domain Record➛DKIM Host Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"DKIM Host Name\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"dkim_host_name\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.web_scheme}}\",\"label\":\"action➛Domain Record➛Web Scheme\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Web Scheme\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"web_scheme\",\"choices\":[{\"reference\":false,\"image\":\"\",\"rawLabel\":\"-- None --\",\"missing\":false,\"label\":\"-- None --\",\"used\":false,\"value\":\"\",\"selected\":false}],\"attributes\":{}},{\"name\":\"{{action.domain_record.spam_action}}\",\"label\":\"action➛Domain Record➛Spam Action\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Spam Action\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"spam_action\",\"choices\":[{\"reference\":false,\"image\":\"\",\"rawLabel\":\"-- None --\",\"missing\":false,\"label\":\"-- None --\",\"used\":false,\"value\":\"\",\"selected\":false}],\"attributes\":{}},{\"name\":\"{{action.domain_record.wildcard}}\",\"label\":\"action➛Domain Record➛Wildcard\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Wildcard\",\"base_type\":\"boolean\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"wildcard\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.web_prefix}}\",\"label\":\"action➛Domain Record➛Web Prefix\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Web Prefix\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"web_prefix\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.domain_record.dkim_selector}}\",\"label\":\"action➛Domain Record➛DKIM Selector\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"DKIM Selector\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_automate_domain\",\"column_name\":\"dkim_selector\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[095d9c2f-3382-4aef-b99e-72bb73547e2f].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[095d9c2f-3382-4aef-b99e-72bb73547e2f].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[095d9c2f-3382-4aef-b99e-72bb73547e2f].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[e8579548-2939-415e-920e-10279364c65f].root.sending_dns_records}}\",\"label\":\"step➛JSON Parser step➛root➛sending_dns_records\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[e8579548-2939-415e-920e-10279364c65f].root.receiving_dns_records}}\",\"label\":\"step➛JSON Parser step➛root➛receiving_dns_records\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"array.object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[e8579548-2939-415e-920e-10279364c65f].root.domain}}\",\"label\":\"step➛JSON Parser step➛root➛domain\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[e8579548-2939-415e-920e-10279364c65f].root.message}}\",\"label\":\"step➛JSON Parser step➛root➛message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Creates a  domain for sending emails",
+    "display_value": "Creates a  domain for sending emails"
+  },
+  "sys_updated_on": {
+    "value": "2024-08-19 17:52:56",
+    "display_value": "2024-08-19 10:52:56 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Create a domain",
+    "display_value": "Create a domain"
+  },
+  "latest_snapshot": {
+    "value": "c269747a87805690369f33373cbb35f3",
+    "display_value": "c269747a87805690369f33373cbb35f3"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "create_a_domain",
+    "display_value": "create_a_domain"
+  },
+  "sys_updated_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "sys_created_on": {
+    "value": "2024-05-29 16:51:19",
+    "display_value": "2024-05-29 09:51:19 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Create A Domain",
+    "display_value": "Create A Domain"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "be602ad4c3a6425085b196c4e40131b7",
+    "display_value": "be602ad4c3a6425085b196c4e40131b7"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "32",
+    "display_value": "32"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_44f81e9cc366425085b196c4e40131d0",
+    "display_value": "sys_hub_action_type_definition_44f81e9cc366425085b196c4e40131d0"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Create A Domain",
+    "display_value": "Create A Domain"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "2be0d7d1c3ff829085b196c4e401319b",
+    "display_value": "Domains"
+  },
+  "copied_from": {
+    "value": "c8c2b346c3524a1085b196c4e40131b1",
+    "display_value": "c8c2b346c3524a1085b196c4e40131b1"
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

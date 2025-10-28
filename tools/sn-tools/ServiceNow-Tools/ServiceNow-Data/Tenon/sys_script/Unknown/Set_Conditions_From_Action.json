@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "13b66fc7334466107b18bc534d5c7b42",
+    "extracted_at": "2025-08-22T18:46:23.907Z",
+    "display_value": "Set Conditions From Action",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-03-07 21:24:54",
+    "display_value": "2025-03-07 01:24:54 PM"
+  },
+  "name": {
+    "value": "Set Conditions From Action",
+    "display_value": "Set Conditions From Action"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-07 21:25:09",
+    "display_value": "2025-03-07 01:25:09 PM"
+  }
+}

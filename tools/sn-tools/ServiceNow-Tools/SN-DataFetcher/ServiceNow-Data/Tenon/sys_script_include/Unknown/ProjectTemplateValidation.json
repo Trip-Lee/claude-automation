@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "627a395c47aa065098519fd8036d43c3",
+    "extracted_at": "2025-08-22T18:42:33.754Z",
+    "display_value": "ProjectTemplateValidation",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-05-29 14:45:32",
+    "display_value": "2024-05-29 07:45:32 AM"
+  },
+  "name": {
+    "value": "ProjectTemplateValidation",
+    "display_value": "ProjectTemplateValidation"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-11 02:45:58",
+    "display_value": "2024-10-10 07:45:58 PM"
+  }
+}

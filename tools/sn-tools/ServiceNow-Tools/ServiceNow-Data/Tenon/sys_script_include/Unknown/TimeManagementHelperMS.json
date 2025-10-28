@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "77565f3597907550ac33f109c253af14",
+    "extracted_at": "2025-08-22T18:46:19.794Z",
+    "display_value": "TimeManagementHelperMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-07-28 20:38:12",
+    "display_value": "2023-07-28 01:38:12 PM"
+  },
+  "name": {
+    "value": "TimeManagementHelperMS",
+    "display_value": "TimeManagementHelperMS"
+  },
+  "sys_updated_on": {
+    "value": "2023-11-07 01:02:50",
+    "display_value": "2023-11-06 05:02:50 PM"
+  }
+}

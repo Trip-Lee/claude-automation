@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "ff9880d3c32c6210d4ddf1db050131b2",
+    "extracted_at": "2025-09-19T21:48:32.949Z",
+    "display_value": "Update Fields - Fetch",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\n\n    let {\n        table,\n        query,\n        searchValue,\n        limit,\n        element,\n        isChoice,\n        tableName\n    } = request.body.data;\n\n    let choices = [];\n\n    let tableBeingSearched = '';\n    if (table === 'sys_dictionary' && query) {\n        // We will return all fields for a table regardless if the table is extended\n        const regex = /name=([a-zA-Z]*)/gm;\n        const matches = query.match(regex);\n        if (matches && matches.length > 0) {\n            tableBeingSearched = (matches[0] + '').replace('name=', '');\n            const list = getExtendedTablesList({\n                table: tableBeingSearched,\n                list: []\n            });\n            query = getColectionsEncodedQuery({\n                list,\n                query,\n                matches\n            });\n        }\n    } else if (isChoice) {\n        // If no table is provided; We must be looking for choices\n        const list = getExtendedTablesList({\n            table,\n            list: []\n        });\n        if (list && list.length) {\n            const tableWithChoicesForField = list.find(function(_table) {\n                return isChoiceFn({\n                    table,\n                    element\n                });\n            });\n\n            if (tableWithChoicesForField) {\n                choices = getChoices({\n                    table: tableWithChoicesForField,\n                    element,\n                    searchValue\n                });\n            }\n        }\n    }\n\n    if (!table || choices.length) {\n        // We will return if table is blank to prevent errors or if we are looking for choices.\n        response.setBody({\n            choices,\n        });\n\n        return response;\n    }\n\n    let sysDictQuery = '';\n    if (table === 'sys_dictionary') {\n        const list = getExtendedTablesList({\n            table: tableName,\n            list: []\n        });\n        sysDictQuery = 'name=' + list.join('^ORname=');\n    }\n\n    // Contine to regular logic\n    const tableGr = new GlideRecordSecure(table);\n    if (query) {\n        tableGr.addEncodedQuery(query);\n    }\n    if (table === 'sys_dictionary') {\n        tableGr.addActiveQuery();\n    }\n    if (sysDictQuery) {\n        tableGr.addEncodedQuery(sysDictQuery);\n    }\n\n    if (searchValue) {\n        let queryItem = 'CONTAINS';\n        const displayField = tableGr.getDisplayName();\n        if (displayField) {\n            const isReference = isReferenceField({\n                table,\n                element: displayField\n            });\n            if (isReference) {\n                queryItem = 'LIKE';\n            }\n        }\n        tableGr.addEncodedQuery(tableGr.getDisplayName() + queryItem + searchValue);\n    }\n\n    tableGr.orderBy(tableGr.getDisplayName());\n    tableGr.setLimit(limit || 7);\n    tableGr.query();\n\t\n    while (tableGr.next()) {\n        const choice = {\n            displayValue: tableGr.getDisplayValue() || '(Empty Display Value)',\n            value: tableGr.getUniqueValue()\n        };\n\n        if (table === 'sys_dictionary') {\n            const choiceField = tableGr.getValue('choice');\n            // const useChoice = !tableGr.choice.nil() && choiceField !== 0 && choiceField !== '0';\n            const useChoiceTable = !tableGr.choice_table.nil();\n            const useChoiceField = !tableGr.choice_field.nil();\n            const isChoice = isChoiceFn({\n                table: tableGr.getValue(\"name\"),\n                element: tableGr.getValue(\"element\")\n            }) || useChoiceTable || useChoiceField;\n\t\t\t\n            choice.field = {\n                table: tableGr.getValue(\"name\"),\n                element: tableGr.getValue(\"element\"),\n                type: isChoice ? 'choice' : tableGr.getValue(\"internal_type\"),\n                required: tableGr.getValue(\"mandatory\"),\n                length: tableGr.getValue(\"max_length\"),\n                mandatory: tableGr.getValue(\"mandatory\"),\n                reference: tableGr.getValue(\"reference\"),\n                query: tableGr.getValue(\"reference_qual_condition\"),\n                dynamicRefQual: tableGr.getValue(\"dynamic_ref_qual\"),\n                referenceQual: tableGr.getValue(\"reference_qual\"),\n                useReferenceQualifier: tableGr.getValue(\"use_reference_qualifier\"),\n                queryField: choice.useReferenceQualifier === \"simple\" ?\n                    \"query\" : choice.useReferenceQualifier === \"advanced\" ?\n                    \"referenceQual\" : \"dynamicRefQual\",\n                isChoice,\n                useChoiceTable,\n                useChoiceField,\n                choiceTable: tableGr.getValue(\"choice_table\"),\n                choiceField: tableGr.getValue(\"choice_field\"),\n            };\n        }\n\n        choices.push(choice);\n    }\n\n    response.setBody({\n        choices\n    });\n\n    return response;\n\n    // Functions below here\n    function getExtendedTablesList({\n        table,\n        list = []\n    }) {\n        list.push(table);\n\n        var sysDbObjGr = new GlideRecord('sys_db_object');\n        sysDbObjGr.addQuery('name', table);\n        sysDbObjGr.addEncodedQuery('super_classISNOTEMPTY');\n        sysDbObjGr.addEncodedQuery('super_class.nameISNOTEMPTY');\n        sysDbObjGr.setLimit(1);\n        sysDbObjGr.query();\n\n        if (sysDbObjGr.next()) {\n            const refRecordGr = sysDbObjGr.super_class.getRefRecord();\n            if (refRecordGr.isValidRecord()) {\n                getExtendedTablesList({\n                    table: refRecordGr.getValue('name'),\n                    list\n                });\n            }\n        }\n\n        return list;\n    }\n\n    function getColectionsEncodedQuery({\n        list,\n        query,\n        matches\n    }) {\n        let newQuery = query;\n        let replaceValue = 'elementNOT LIKEsys_^read_only=false^internal_type!=collection^name=' + list.join('^ORname=');\n        newQuery = newQuery.replace(matches[0], replaceValue);\n        return newQuery;\n    }\n\n    function getChoices({\n        table,\n        element,\n        searchValue\n    }) {\n        var choiceGr = new GlideRecord(\"sys_choice\");\n        choiceGr.addQuery('name', table);\n        choiceGr.addQuery('element', element);\n\n        if (searchValue) {\n            choiceGr.addQuery('label', 'CONTAINS', searchValue);\n        }\n\n        choiceGr.addQuery('language', 'en');\n        choiceGr.orderBy('sequence');\n        choiceGr.query();\n\n        const options = [];\n\n        while (choiceGr.next()) {\n            options.push({\n                displayValue: choiceGr.getDisplayValue(),\n                value: choiceGr.getValue('value')\n            });\n        }\n        return options;\n    }\n\n    function isChoiceFn({\n        table,\n        element\n    }) {\n        var agg = new GlideAggregate(\"sys_choice\");\n        agg.addAggregate('COUNT');\n        agg.addQuery('element', element);\n        agg.addQuery('name', table);\n        agg.addQuery('language', 'en');\n        agg.query();\n        let count = 0;\n        while (agg.next()) {\n            count = parseInt(agg.getAggregate('COUNT'));\n        }\n        return count > 0;\n    }\n\n    function isReferenceField({\n        table,\n        element\n    }) {\n        var agg = new GlideAggregate(\"sys_dictionary\");\n        agg.addAggregate('COUNT');\n        agg.addQuery('element', element);\n        agg.addQuery('name', table);\n        agg.addQuery('internal_type', 'reference');\n        agg.query();\n        let count = 0;\n        while (agg.next()) {\n            count = parseInt(agg.getAggregate('COUNT'));\n        }\n        return count > 0;\n    }\n\n})(request, response);",
+    "display_value": "(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\n\n    let {\n        table,\n        query,\n        searchValue,\n        limit,\n        element,\n        isChoice,\n        tableName\n    } = request.body.data;\n\n    let choices = [];\n\n    let tableBeingSearched = '';\n    if (table === 'sys_dictionary' && query) {\n        // We will return all fields for a table regardless if the table is extended\n        const regex = /name=([a-zA-Z]*)/gm;\n        const matches = query.match(regex);\n        if (matches && matches.length > 0) {\n            tableBeingSearched = (matches[0] + '').replace('name=', '');\n            const list = getExtendedTablesList({\n                table: tableBeingSearched,\n                list: []\n            });\n            query = getColectionsEncodedQuery({\n                list,\n                query,\n                matches\n            });\n        }\n    } else if (isChoice) {\n        // If no table is provided; We must be looking for choices\n        const list = getExtendedTablesList({\n            table,\n            list: []\n        });\n        if (list && list.length) {\n            const tableWithChoicesForField = list.find(function(_table) {\n                return isChoiceFn({\n                    table,\n                    element\n                });\n            });\n\n            if (tableWithChoicesForField) {\n                choices = getChoices({\n                    table: tableWithChoicesForField,\n                    element,\n                    searchValue\n                });\n            }\n        }\n    }\n\n    if (!table || choices.length) {\n        // We will return if table is blank to prevent errors or if we are looking for choices.\n        response.setBody({\n            choices,\n        });\n\n        return response;\n    }\n\n    let sysDictQuery = '';\n    if (table === 'sys_dictionary') {\n        const list = getExtendedTablesList({\n            table: tableName,\n            list: []\n        });\n        sysDictQuery = 'name=' + list.join('^ORname=');\n    }\n\n    // Contine to regular logic\n    const tableGr = new GlideRecordSecure(table);\n    if (query) {\n        tableGr.addEncodedQuery(query);\n    }\n    if (table === 'sys_dictionary') {\n        tableGr.addActiveQuery();\n    }\n    if (sysDictQuery) {\n        tableGr.addEncodedQuery(sysDictQuery);\n    }\n\n    if (searchValue) {\n        let queryItem = 'CONTAINS';\n        const displayField = tableGr.getDisplayName();\n        if (displayField) {\n            const isReference = isReferenceField({\n                table,\n                element: displayField\n            });\n            if (isReference) {\n                queryItem = 'LIKE';\n            }\n        }\n        tableGr.addEncodedQuery(tableGr.getDisplayName() + queryItem + searchValue);\n    }\n\n    tableGr.orderBy(tableGr.getDisplayName());\n    tableGr.setLimit(limit || 7);\n    tableGr.query();\n\t\n    while (tableGr.next()) {\n        const choice = {\n            displayValue: tableGr.getDisplayValue() || '(Empty Display Value)',\n            value: tableGr.getUniqueValue()\n        };\n\n        if (table === 'sys_dictionary') {\n            const choiceField = tableGr.getValue('choice');\n            // const useChoice = !tableGr.choice.nil() && choiceField !== 0 && choiceField !== '0';\n            const useChoiceTable = !tableGr.choice_table.nil();\n            const useChoiceField = !tableGr.choice_field.nil();\n            const isChoice = isChoiceFn({\n                table: tableGr.getValue(\"name\"),\n                element: tableGr.getValue(\"element\")\n            }) || useChoiceTable || useChoiceField;\n\t\t\t\n            choice.field = {\n                table: tableGr.getValue(\"name\"),\n                element: tableGr.getValue(\"element\"),\n                type: isChoice ? 'choice' : tableGr.getValue(\"internal_type\"),\n                required: tableGr.getValue(\"mandatory\"),\n                length: tableGr.getValue(\"max_length\"),\n                mandatory: tableGr.getValue(\"mandatory\"),\n                reference: tableGr.getValue(\"reference\"),\n                query: tableGr.getValue(\"reference_qual_condition\"),\n                dynamicRefQual: tableGr.getValue(\"dynamic_ref_qual\"),\n                referenceQual: tableGr.getValue(\"reference_qual\"),\n                useReferenceQualifier: tableGr.getValue(\"use_reference_qualifier\"),\n                queryField: choice.useReferenceQualifier === \"simple\" ?\n                    \"query\" : choice.useReferenceQualifier === \"advanced\" ?\n                    \"referenceQual\" : \"dynamicRefQual\",\n                isChoice,\n                useChoiceTable,\n                useChoiceField,\n                choiceTable: tableGr.getValue(\"choice_table\"),\n                choiceField: tableGr.getValue(\"choice_field\"),\n            };\n        }\n\n        choices.push(choice);\n    }\n\n    response.setBody({\n        choices\n    });\n\n    return response;\n\n    // Functions below here\n    function getExtendedTablesList({\n        table,\n        list = []\n    }) {\n        list.push(table);\n\n        var sysDbObjGr = new GlideRecord('sys_db_object');\n        sysDbObjGr.addQuery('name', table);\n        sysDbObjGr.addEncodedQuery('super_classISNOTEMPTY');\n        sysDbObjGr.addEncodedQuery('super_class.nameISNOTEMPTY');\n        sysDbObjGr.setLimit(1);\n        sysDbObjGr.query();\n\n        if (sysDbObjGr.next()) {\n            const refRecordGr = sysDbObjGr.super_class.getRefRecord();\n            if (refRecordGr.isValidRecord()) {\n                getExtendedTablesList({\n                    table: refRecordGr.getValue('name'),\n                    list\n                });\n            }\n        }\n\n        return list;\n    }\n\n    function getColectionsEncodedQuery({\n        list,\n        query,\n        matches\n    }) {\n        let newQuery = query;\n        let replaceValue = 'elementNOT LIKEsys_^read_only=false^internal_type!=collection^name=' + list.join('^ORname=');\n        newQuery = newQuery.replace(matches[0], replaceValue);\n        return newQuery;\n    }\n\n    function getChoices({\n        table,\n        element,\n        searchValue\n    }) {\n        var choiceGr = new GlideRecord(\"sys_choice\");\n        choiceGr.addQuery('name', table);\n        choiceGr.addQuery('element', element);\n\n        if (searchValue) {\n            choiceGr.addQuery('label', 'CONTAINS', searchValue);\n        }\n\n        choiceGr.addQuery('language', 'en');\n        choiceGr.orderBy('sequence');\n        choiceGr.query();\n\n        const options = [];\n\n        while (choiceGr.next()) {\n            options.push({\n                displayValue: choiceGr.getDisplayValue(),\n                value: choiceGr.getValue('value')\n            });\n        }\n        return options;\n    }\n\n    function isChoiceFn({\n        table,\n        element\n    }) {\n        var agg = new GlideAggregate(\"sys_choice\");\n        agg.addAggregate('COUNT');\n        agg.addQuery('element', element);\n        agg.addQuery('name', table);\n        agg.addQuery('language', 'en');\n        agg.query();\n        let count = 0;\n        while (agg.next()) {\n            count = parseInt(agg.getAggregate('COUNT'));\n        }\n        return count > 0;\n    }\n\n    function isReferenceField({\n        table,\n        element\n    }) {\n        var agg = new GlideAggregate(\"sys_dictionary\");\n        agg.addAggregate('COUNT');\n        agg.addQuery('element', element);\n        agg.addQuery('name', table);\n        agg.addQuery('internal_type', 'reference');\n        agg.query();\n        let count = 0;\n        while (agg.next()) {\n            count = parseInt(agg.getAggregate('COUNT'));\n        }\n        return count > 0;\n    }\n\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-03 04:29:32",
+    "display_value": "2025-04-02 09:29:32 PM"
+  },
+  "enforce_acl": {
+    "value": "95371672c3582210d4ddf1db050131eb",
+    "display_value": "Journey Builder REST"
+  },
+  "web_service_version": {
+    "value": "235d87f387a4d654369f33373cbb3539",
+    "display_value": "v1"
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_journey/v1/ui/updateFields/fetch",
+    "display_value": "/api/x_cadso_journey/v1/ui/updateFields/fetch"
+  },
+  "sys_created_on": {
+    "value": "2025-04-01 20:19:43",
+    "display_value": "2025-04-01 01:19:43 PM"
+  },
+  "sys_name": {
+    "value": "Update Fields - Fetch",
+    "display_value": "Update Fields - Fetch"
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "web_service_definition": {
+    "value": "d11dc3f387a4d654369f33373cbb3506",
+    "display_value": "Tenon Journey Builder UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "12",
+    "display_value": "12"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_ff9880d3c32c6210d4ddf1db050131b2",
+    "display_value": "sys_ws_operation_ff9880d3c32c6210d4ddf1db050131b2"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Update Fields - Fetch",
+    "display_value": "Update Fields - Fetch"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/updateFields/fetch",
+    "display_value": "/updateFields/fetch"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "/api/x_cadso_journey/ui/updateFields/fetch",
+    "display_value": "/api/x_cadso_journey/ui/updateFields/fetch"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

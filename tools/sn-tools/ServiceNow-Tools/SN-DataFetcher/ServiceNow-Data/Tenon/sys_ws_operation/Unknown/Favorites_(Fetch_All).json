@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "53c1fcbc470fca1098519fd8036d437f",
+    "extracted_at": "2025-08-22T18:42:35.920Z",
+    "display_value": "Favorites (Fetch All)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-06-24 19:43:48",
+    "display_value": "2024-06-24 12:43:48 PM"
+  },
+  "name": {
+    "value": "Favorites (Fetch All)",
+    "display_value": "Favorites (Fetch All)"
+  },
+  "sys_updated_on": {
+    "value": "2024-08-19 13:41:51",
+    "display_value": "2024-08-19 06:41:51 AM"
+  }
+}

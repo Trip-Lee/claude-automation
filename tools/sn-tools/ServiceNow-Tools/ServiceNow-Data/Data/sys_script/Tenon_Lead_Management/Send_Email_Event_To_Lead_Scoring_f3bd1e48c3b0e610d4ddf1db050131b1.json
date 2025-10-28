@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "f3bd1e48c3b0e610d4ddf1db050131b1",
+    "extracted_at": "2025-09-19T21:48:37.678Z",
+    "display_value": "Send Email Event To Lead Scoring",
+    "application": "Tenon_Lead_Management",
+    "scope": {
+      "display_value": "Tenon Lead Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/d7d2017bc3646610d4ddf1db050131db",
+      "value": "d7d2017bc3646610d4ddf1db050131db"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_update": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-11 14:16:03",
+    "display_value": "2025-07-11 07:16:03 AM"
+  },
+  "when": {
+    "value": "after",
+    "display_value": "after"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2025-04-04 15:07:48",
+    "display_value": "2025-04-04 08:07:48 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Send Email Event To Lead Scoring",
+    "display_value": "Send Email Event To Lead Scoring"
+  },
+  "sys_scope": {
+    "value": "d7d2017bc3646610d4ddf1db050131db",
+    "display_value": "Tenon Lead Management"
+  },
+  "sys_created_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "order": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "18",
+    "display_value": "18"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "x_cadso_automate_email_event",
+    "display_value": "x_cadso_automate_email_event"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/ ) {\r\n    //Check core setting if tenon lead scoring is enabled\r\n    var scoringEnabled = false;\r\n\tvar settingGR = new GlideRecord('x_cadso_core_setting');\r\n\tsettingGR.addQuery('name', 'x_cadso_lead.tenon_marketing_lead_scoring');\r\n\tsettingGR.addQuery(\"active\", \"true\");\r\n\tsettingGR.query();\r\n\tif(settingGR.next()){\r\n\t\tscoringEnabled = settingGR.getValue('value');\r\n\t}\r\n\t\r\n    if (scoringEnabled == 'true') {\r\n        //Check which features are installed\r\n        var featureAPI = new x_cadso_core.FeatureAvailability();\r\n        var leadEnabled = featureAPI.isLeadEnabled();\r\n        var contactEnabled = featureAPI.isContactEnabled();\r\n        var consumerEnabled = featureAPI.isConsumerEnabled();\r\n        var accountEnabled = featureAPI.isAccountEnabled();\r\n\r\n        //Check for contact, consumer, and lead and add score to lead event table\r\n        if (leadEnabled || contactEnabled || consumerEnabled || accountEnabled) {\r\n            var scoreAPI = new LeadScoring();\r\n            var event = current.event;\r\n            var eventType = 'email';\r\n            var score = scoreAPI.getScore(event, eventType);\r\n\r\n            var eventTableGR = new GlideRecord('x_cadso_lead_event');\r\n            eventTableGR.initialize();\r\n            eventTableGR.newRecord();\r\n            eventTableGR.setValue('event', event);\r\n            eventTableGR.setValue('score', score);\r\n            if (leadEnabled && current.contact_detail.lead) {\r\n                var lead = current.contact_detail.lead.getRefRecord();\r\n                if (lead.isValidRecord()) {\r\n                    var leadId = lead.getValue('sys_id');\r\n                    eventTableGR.setValue('lead', leadId);\r\n                }\r\n            }\r\n            if (contactEnabled && current.contact_detail.contact) {\r\n                var contact = current.contact_detail.contact.getRefRecord();\r\n                if (contact.isValidRecord()) {\r\n                    var contactId = contact.getValue('sys_id');\r\n                    eventTableGR.setValue('contact', contactId);\r\n                }\r\n            }\r\n            if (consumerEnabled && current.contact_detail.consumer) {\r\n                var consumer = current.contact_detail.consumer.getRefRecord();\r\n                if (consumer.isValidRecord()) {\r\n                    var consumerId = consumer.getValue('sys_id');\r\n                    eventTableGR.setValue('consumer', consumerId);\r\n                }\r\n            }\r\n            if (accountEnabled && current.contact_detail.account) {\r\n                var account = current.contact_detail.account.getRefRecord();\r\n                if (account.isValidRecord()) {\r\n                    var accountId = account.getValue('sys_id');\r\n                    eventTableGR.setValue('account', accountId);\r\n                }\r\n\r\n            }\r\n            eventTableGR.setValue('email_event', current.sys_id);\r\n            eventTableGR.setValue('event_type', eventType);\r\n            eventTableGR.insert();\r\n\r\n        }\r\n    }\r\n\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/ ) {\r\n    //Check core setting if tenon lead scoring is enabled\r\n    var scoringEnabled = false;\r\n\tvar settingGR = new GlideRecord('x_cadso_core_setting');\r\n\tsettingGR.addQuery('name', 'x_cadso_lead.tenon_marketing_lead_scoring');\r\n\tsettingGR.addQuery(\"active\", \"true\");\r\n\tsettingGR.query();\r\n\tif(settingGR.next()){\r\n\t\tscoringEnabled = settingGR.getValue('value');\r\n\t}\r\n\t\r\n    if (scoringEnabled == 'true') {\r\n        //Check which features are installed\r\n        var featureAPI = new x_cadso_core.FeatureAvailability();\r\n        var leadEnabled = featureAPI.isLeadEnabled();\r\n        var contactEnabled = featureAPI.isContactEnabled();\r\n        var consumerEnabled = featureAPI.isConsumerEnabled();\r\n        var accountEnabled = featureAPI.isAccountEnabled();\r\n\r\n        //Check for contact, consumer, and lead and add score to lead event table\r\n        if (leadEnabled || contactEnabled || consumerEnabled || accountEnabled) {\r\n            var scoreAPI = new LeadScoring();\r\n            var event = current.event;\r\n            var eventType = 'email';\r\n            var score = scoreAPI.getScore(event, eventType);\r\n\r\n            var eventTableGR = new GlideRecord('x_cadso_lead_event');\r\n            eventTableGR.initialize();\r\n            eventTableGR.newRecord();\r\n            eventTableGR.setValue('event', event);\r\n            eventTableGR.setValue('score', score);\r\n            if (leadEnabled && current.contact_detail.lead) {\r\n                var lead = current.contact_detail.lead.getRefRecord();\r\n                if (lead.isValidRecord()) {\r\n                    var leadId = lead.getValue('sys_id');\r\n                    eventTableGR.setValue('lead', leadId);\r\n                }\r\n            }\r\n            if (contactEnabled && current.contact_detail.contact) {\r\n                var contact = current.contact_detail.contact.getRefRecord();\r\n                if (contact.isValidRecord()) {\r\n                    var contactId = contact.getValue('sys_id');\r\n                    eventTableGR.setValue('contact', contactId);\r\n                }\r\n            }\r\n            if (consumerEnabled && current.contact_detail.consumer) {\r\n                var consumer = current.contact_detail.consumer.getRefRecord();\r\n                if (consumer.isValidRecord()) {\r\n                    var consumerId = consumer.getValue('sys_id');\r\n                    eventTableGR.setValue('consumer', consumerId);\r\n                }\r\n            }\r\n            if (accountEnabled && current.contact_detail.account) {\r\n                var account = current.contact_detail.account.getRefRecord();\r\n                if (account.isValidRecord()) {\r\n                    var accountId = account.getValue('sys_id');\r\n                    eventTableGR.setValue('account', accountId);\r\n                }\r\n\r\n            }\r\n            eventTableGR.setValue('email_event', current.sys_id);\r\n            eventTableGR.setValue('event_type', eventType);\r\n            eventTableGR.insert();\r\n\r\n        }\r\n    }\r\n\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 68,
+      "char_count": 3064,
+      "preview": "(function executeRule(current, previous /*null when async*/ ) {\r\n    //Check core setting if tenon lead scoring is enabled\r\n    var scoringEnabled = false;\r\n\tvar settingGR = new GlideRecord('x_cadso_c...",
+      "full_script": "(function executeRule(current, previous /*null when async*/ ) {\r\n    //Check core setting if tenon lead scoring is enabled\r\n    var scoringEnabled = false;\r\n\tvar settingGR = new GlideRecord('x_cadso_core_setting');\r\n\tsettingGR.addQuery('name', 'x_cadso_lead.tenon_marketing_lead_scoring');\r\n\tsettingGR.addQuery(\"active\", \"true\");\r\n\tsettingGR.query();\r\n\tif(settingGR.next()){\r\n\t\tscoringEnabled = settingGR.getValue('value');\r\n\t}\r\n\t\r\n    if (scoringEnabled == 'true') {\r\n        //Check which features are installed\r\n        var featureAPI = new x_cadso_core.FeatureAvailability();\r\n        var leadEnabled = featureAPI.isLeadEnabled();\r\n        var contactEnabled = featureAPI.isContactEnabled();\r\n        var consumerEnabled = featureAPI.isConsumerEnabled();\r\n        var accountEnabled = featureAPI.isAccountEnabled();\r\n\r\n        //Check for contact, consumer, and lead and add score to lead event table\r\n        if (leadEnabled || contactEnabled || consumerEnabled || accountEnabled) {\r\n            var scoreAPI = new LeadScoring();\r\n            var event = current.event;\r\n            var eventType = 'email';\r\n            var score = scoreAPI.getScore(event, eventType);\r\n\r\n            var eventTableGR = new GlideRecord('x_cadso_lead_event');\r\n            eventTableGR.initialize();\r\n            eventTableGR.newRecord();\r\n            eventTableGR.setValue('event', event);\r\n            eventTableGR.setValue('score', score);\r\n            if (leadEnabled && current.contact_detail.lead) {\r\n                var lead = current.contact_detail.lead.getRefRecord();\r\n                if (lead.isValidRecord()) {\r\n                    var leadId = lead.getValue('sys_id');\r\n                    eventTableGR.setValue('lead', leadId);\r\n                }\r\n            }\r\n            if (contactEnabled && current.contact_detail.contact) {\r\n                var contact = current.contact_detail.contact.getRefRecord();\r\n                if (contact.isValidRecord()) {\r\n                    var contactId = contact.getValue('sys_id');\r\n                    eventTableGR.setValue('contact', contactId);\r\n                }\r\n            }\r\n            if (consumerEnabled && current.contact_detail.consumer) {\r\n                var consumer = current.contact_detail.consumer.getRefRecord();\r\n                if (consumer.isValidRecord()) {\r\n                    var consumerId = consumer.getValue('sys_id');\r\n                    eventTableGR.setValue('consumer', consumerId);\r\n                }\r\n            }\r\n            if (accountEnabled && current.contact_detail.account) {\r\n                var account = current.contact_detail.account.getRefRecord();\r\n                if (account.isValidRecord()) {\r\n                    var accountId = account.getValue('sys_id');\r\n                    eventTableGR.setValue('account', accountId);\r\n                }\r\n\r\n            }\r\n            eventTableGR.setValue('email_event', current.sys_id);\r\n            eventTableGR.setValue('event_type', eventType);\r\n            eventTableGR.insert();\r\n\r\n        }\r\n    }\r\n\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "d7d2017bc3646610d4ddf1db050131db",
+    "display_value": "Tenon Lead Management"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_f3bd1e48c3b0e610d4ddf1db050131b1",
+    "display_value": "sys_script_f3bd1e48c3b0e610d4ddf1db050131b1"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Send Email Event To Lead Scoring",
+    "display_value": "Send Email Event To Lead Scoring"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

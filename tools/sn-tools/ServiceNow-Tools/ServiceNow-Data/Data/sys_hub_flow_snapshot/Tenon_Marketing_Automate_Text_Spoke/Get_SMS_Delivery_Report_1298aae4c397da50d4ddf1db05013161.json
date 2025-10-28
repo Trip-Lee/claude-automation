@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "1298aae4c397da50d4ddf1db05013161",
+    "extracted_at": "2025-09-19T21:49:31.545Z",
+    "display_value": "Get SMS Delivery Report",
+    "application": "Tenon_Marketing_Automate_Text_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Text Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c710ee73c3541e5085b196c4e4013170",
+      "value": "c710ee73c3541e5085b196c4e4013170"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"b88f2104-953e-40a0-b0a2-05d9a766a0c8.item\",\"label\":\"3 - For Each➛Result_child0\",\"reference_display\":\"Result_child0\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"Updated_1.current\",\"label\":\"Trigger - Record Updated➛Message Send Record\",\"reference\":\"x_cadso_automate_message_send\",\"reference_display\":\"Message Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"98d11955-ea33-4b5e-ab36-3f72f73a367a\":[\"message_send\"]},\"attributes\":{}},{\"name\":\"Updated_1.current.message_number\",\"label\":\"Trigger - Record Updated➛Message Send Record➛Message Number\",\"reference\":\"x_cadso_automate_message_number\",\"reference_display\":\"Message Number\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_automate_message_send\",\"column_name\":\"message_number\",\"usedInstances\":{\"98d11955-ea33-4b5e-ab36-3f72f73a367a\":[\"phone_number\"]}},{\"name\":\"Updated_1.run_start_date_time\",\"label\":\"Trigger - Record Updated➛Run Start Date/Time\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"usedInstances\":{\"88b2e8a0-9f0c-4640-84b5-9fd182703c8c\":[\"start_date\",\"end_date\"]},\"attributes\":{\"test_input_hidden\":\"true\"}},{\"name\":\"473487ff-2f52-494e-aec6-90ae3f896efa.service_plan_id\",\"label\":\"1 - Retrieve sys_property➛Service Plan ID\",\"reference_display\":\"Service Plan ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"88b2e8a0-9f0c-4640-84b5-9fd182703c8c\":[\"service_plan_id\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"8ec5636e-0d7f-4dd6-aa5a-729704db0ab0\"}},{\"name\":\"88b2e8a0-9f0c-4640-84b5-9fd182703c8c.result\",\"label\":\"2 - Get SMS Delivery➛Result\",\"reference_display\":\"Result\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"usedInstances\":{\"b88f2104-953e-40a0-b0a2-05d9a766a0c8\":[\"items\"]},\"attributes\":{\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FDf70e4a09c2a616108372afb43ec7f588\",\"child_label\":\"Result_child0\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiType\":\"array.string\",\"child_type\":\"string\",\"child_name\":\"result_child0\",\"child_uiUniqueId\":\"3c64958b-713f-4055-9fd1-da3cc7e2fe4d\",\"uiUniqueId\":\"272cf7a5-eb69-4ec4-a7e4-556662ef793c\"}},{\"name\":\"d1961de3-5dd0-43a6-ac6b-3280e1e8fa96.status\",\"label\":\"4 - Look Up Record➛Status\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"choices\":[{\"label\":\"Error\",\"value\":\"1\",\"order\":0.0},{\"label\":\"Success\",\"value\":\"0\",\"order\":1.0}],\"usedInstances\":{\"589bd194-843e-43c8-a7ee-a472c49b8a6c\":[\"condition\"]},\"attributes\":{\"uiType\":\"choice\",\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"5e478657-3a84-4a60-a92b-d3e80005ad34\"}},{\"name\":\"43a749ed-3e4e-414c-b117-becf463022a1.__status__.message\",\"label\":\"6 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"9df9fd77-b9d0-4935-a8fa-80c91c21fc30\":[\"log_message\"]},\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"b88f2104-953e-40a0-b0a2-05d9a766a0c8.item\",\"label\":\"3 - For Each➛Result_child0\",\"reference_display\":\"Result_child0\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"Updated_1.current\",\"label\":\"Trigger - Record Updated➛Message Send Record\",\"reference\":\"x_cadso_automate_message_send\",\"reference_display\":\"Message Send\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"98d11955-ea33-4b5e-ab36-3f72f73a367a\":[\"message_send\"]},\"attributes\":{}},{\"name\":\"Updated_1.current.message_number\",\"label\":\"Trigger - Record Updated➛Message Send Record➛Message Number\",\"reference\":\"x_cadso_automate_message_number\",\"reference_display\":\"Message Number\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_automate_message_send\",\"column_name\":\"message_number\",\"usedInstances\":{\"98d11955-ea33-4b5e-ab36-3f72f73a367a\":[\"phone_number\"]}},{\"name\":\"Updated_1.run_start_date_time\",\"label\":\"Trigger - Record Updated➛Run Start Date/Time\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"usedInstances\":{\"88b2e8a0-9f0c-4640-84b5-9fd182703c8c\":[\"start_date\",\"end_date\"]},\"attributes\":{\"test_input_hidden\":\"true\"}},{\"name\":\"473487ff-2f52-494e-aec6-90ae3f896efa.service_plan_id\",\"label\":\"1 - Retrieve sys_property➛Service Plan ID\",\"reference_display\":\"Service Plan ID\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"88b2e8a0-9f0c-4640-84b5-9fd182703c8c\":[\"service_plan_id\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"8ec5636e-0d7f-4dd6-aa5a-729704db0ab0\"}},{\"name\":\"88b2e8a0-9f0c-4640-84b5-9fd182703c8c.result\",\"label\":\"2 - Get SMS Delivery➛Result\",\"reference_display\":\"Result\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"usedInstances\":{\"b88f2104-953e-40a0-b0a2-05d9a766a0c8\":[\"items\"]},\"attributes\":{\"uiTypeLabel\":\"Array.String\",\"co_type_name\":\"FDf70e4a09c2a616108372afb43ec7f588\",\"child_label\":\"Result_child0\",\"child_type_label\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiType\":\"array.string\",\"child_type\":\"string\",\"child_name\":\"result_child0\",\"child_uiUniqueId\":\"3c64958b-713f-4055-9fd1-da3cc7e2fe4d\",\"uiUniqueId\":\"272cf7a5-eb69-4ec4-a7e4-556662ef793c\"}},{\"name\":\"d1961de3-5dd0-43a6-ac6b-3280e1e8fa96.status\",\"label\":\"4 - Look Up Record➛Status\",\"reference_display\":\"Status\",\"type\":\"choice\",\"base_type\":\"choice\",\"choices\":[{\"label\":\"Error\",\"value\":\"1\",\"order\":0.0},{\"label\":\"Success\",\"value\":\"0\",\"order\":1.0}],\"usedInstances\":{\"589bd194-843e-43c8-a7ee-a472c49b8a6c\":[\"condition\"]},\"attributes\":{\"uiType\":\"choice\",\"uiTypeLabel\":\"Choice\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"5e478657-3a84-4a60-a92b-d3e80005ad34\"}},{\"name\":\"43a749ed-3e4e-414c-b117-becf463022a1.__status__.message\",\"label\":\"6 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"9df9fd77-b9d0-4935-a8fa-80c91c21fc30\":[\"log_message\"]},\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-01-21 15:36:29",
+    "display_value": "2025-01-21 07:36:29 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "get_sms_delivery_report",
+    "display_value": "get_sms_delivery_report"
+  },
+  "sys_updated_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "sys_created_on": {
+    "value": "2025-01-21 15:36:29",
+    "display_value": "2025-01-21 07:36:29 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c710ee73c3541e5085b196c4e4013170",
+    "display_value": "Tenon Marketing Automate Text Spoke"
+  },
+  "sys_created_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "parent_flow": {
+    "value": "17df9d8533e216107b18bc534d5c7b90",
+    "display_value": "Get SMS Delivery Report"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Get SMS Delivery Report",
+    "display_value": "Get SMS Delivery Report"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

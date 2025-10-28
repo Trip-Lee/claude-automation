@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "f5b204a7871ba510b656fe66cebb351e",
+    "extracted_at": "2025-08-22T18:46:21.439Z",
+    "display_value": "workMainUtils",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-06-13 22:40:22",
+    "display_value": "2023-06-13 03:40:22 PM"
+  },
+  "name": {
+    "value": "workMainUtils",
+    "display_value": "workMainUtils"
+  },
+  "sys_updated_on": {
+    "value": "2023-06-13 22:44:05",
+    "display_value": "2023-06-13 03:44:05 PM"
+  }
+}

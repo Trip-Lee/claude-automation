@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "004d8e26c3af065085b196c4e40131eb",
+    "extracted_at": "2025-09-19T21:48:46.463Z",
+    "display_value": "Audience - Update Dynamic Lists",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2024-07-25 08:53:26",
+    "display_value": "2024-07-25 01:53:26 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "58c6d09ec3bb6610d4ddf1db050131c8",
+    "display_value": "58c6d09ec3bb6610d4ddf1db050131c8"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "audience__update_dynamic_lists",
+    "display_value": "audience__update_dynamic_lists"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2024-07-25 08:49:23",
+    "display_value": "2024-07-25 01:49:23 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch9b-07-28-2025_08-07-2025_0908.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch9b-07-28-2025_08-07-2025_0908.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Audience - Update Dynamic Lists",
+    "display_value": "Audience - Update Dynamic Lists"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "5f2ec6e6c3af065085b196c4e40131be",
+    "display_value": "5f2ec6e6c3af065085b196c4e40131be"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_004d8e26c3af065085b196c4e40131eb",
+    "display_value": "sys_hub_flow_004d8e26c3af065085b196c4e40131eb"
+  },
+  "name": {
+    "value": "Audience - Update Dynamic Lists",
+    "display_value": "Audience - Update Dynamic Lists"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"12b430da-d07f-450f-a622-878201d35460.Records\",\"label\":\"1 - Look Up Records➛Audience Records\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"9cece152-e750-4d3e-908f-cd8dcff69bd1\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"9cece152-e750-4d3e-908f-cd8dcff69bd1.item.sys_id\",\"label\":\"2 - For Each➛Audience Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_audience\",\"column_name\":\"sys_id\",\"usedInstances\":{\"d05208c7-758b-4f89-b9da-dad82b7f88b9\":[\"audience\"]}}]",
+    "display_value": "[{\"name\":\"12b430da-d07f-450f-a622-878201d35460.Records\",\"label\":\"1 - Look Up Records➛Audience Records\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"9cece152-e750-4d3e-908f-cd8dcff69bd1\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"9cece152-e750-4d3e-908f-cd8dcff69bd1.item.sys_id\",\"label\":\"2 - For Each➛Audience Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_audience\",\"column_name\":\"sys_id\",\"usedInstances\":{\"d05208c7-758b-4f89-b9da-dad82b7f88b9\":[\"audience\"]}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "flow_priority": {
+    "value": "LOW",
+    "display_value": "Low"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=242000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=242000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "972ec6e6c3af065085b196c4e40131ea",
+    "display_value": "972ec6e6c3af065085b196c4e40131ea"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "6cdb9b3d3376d6507b18bc534d5c7b64",
+    "extracted_at": "2025-09-19T21:49:33.616Z",
+    "display_value": "Set Scheduled SMS To Send-Ready",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"c81b661b-9db2-4e92-bd60-933e90023091.Records\",\"label\":\"1 - Look Up Records➛Message Send Records\",\"reference\":\"x_cadso_automate_message_send\",\"reference_display\":\"Message Send Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"4824b39c-6627-4114-bd6b-108476727530\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"4824b39c-6627-4114-bd6b-108476727530.item.delivery_time\",\"label\":\"2 - For Each➛Message Send Record➛Delivery Time\",\"reference\":\"\",\"reference_display\":\"Delivery Time\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_automate_message_send\",\"column_name\":\"delivery_time\",\"usedInstances\":{\"d7df3084-fcad-4244-825f-666857d11c5d\":[\"timer_duration\"]}},{\"name\":\"4824b39c-6627-4114-bd6b-108476727530.item\",\"label\":\"2 - For Each➛Message Send Record\",\"reference\":\"x_cadso_automate_message_send\",\"reference_display\":\"Message Send Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"fa7866a9-8f28-436e-b94b-21f5b76685c8\":[\"record\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}}]",
+    "display_value": "[{\"name\":\"c81b661b-9db2-4e92-bd60-933e90023091.Records\",\"label\":\"1 - Look Up Records➛Message Send Records\",\"reference\":\"x_cadso_automate_message_send\",\"reference_display\":\"Message Send Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"4824b39c-6627-4114-bd6b-108476727530\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"4824b39c-6627-4114-bd6b-108476727530.item.delivery_time\",\"label\":\"2 - For Each➛Message Send Record➛Delivery Time\",\"reference\":\"\",\"reference_display\":\"Delivery Time\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_automate_message_send\",\"column_name\":\"delivery_time\",\"usedInstances\":{\"d7df3084-fcad-4244-825f-666857d11c5d\":[\"timer_duration\"]}},{\"name\":\"4824b39c-6627-4114-bd6b-108476727530.item\",\"label\":\"2 - For Each➛Message Send Record\",\"reference\":\"x_cadso_automate_message_send\",\"reference_display\":\"Message Send Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"fa7866a9-8f28-436e-b94b-21f5b76685c8\":[\"record\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2024-12-31 20:01:17",
+    "display_value": "2024-12-31 12:01:17 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "set_scheduled_sms_to_sendready",
+    "display_value": "set_scheduled_sms_to_sendready"
+  },
+  "sys_updated_by": {
+    "value": "rumman.tariq",
+    "display_value": "rumman.tariq"
+  },
+  "sys_created_on": {
+    "value": "2024-12-31 20:01:17",
+    "display_value": "2024-12-31 12:01:17 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "rumman.tariq",
+    "display_value": "rumman.tariq"
+  },
+  "parent_flow": {
+    "value": "2e0db27933f2d6507b18bc534d5c7bd8",
+    "display_value": ""
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Set Scheduled SMS To Send-Ready",
+    "display_value": "Set Scheduled SMS To Send-Ready"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=7816000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=7816000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "095fb63d33f2d6507b18bc534d5c7b90",
+    "display_value": "095fb63d33f2d6507b18bc534d5c7b90"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

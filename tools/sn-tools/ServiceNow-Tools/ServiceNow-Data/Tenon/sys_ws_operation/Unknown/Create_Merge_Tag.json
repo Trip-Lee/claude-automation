@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "fc7f549f33d26a107b18bc534d5c7b62",
+    "extracted_at": "2025-08-22T18:46:23.576Z",
+    "display_value": "Create Merge Tag",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-27 21:48:55",
+    "display_value": "2025-06-27 02:48:55 PM"
+  },
+  "name": {
+    "value": "Create Merge Tag",
+    "display_value": "Create Merge Tag"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-11 19:54:56",
+    "display_value": "2025-07-11 12:54:56 PM"
+  }
+}

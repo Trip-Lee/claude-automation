@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "05ff089d4729311098519fd8036d4325",
+    "extracted_at": "2025-08-22T18:42:35.611Z",
+    "display_value": "Notifications (read)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-09-26 20:12:49",
+    "display_value": "2023-09-26 01:12:49 PM"
+  },
+  "name": {
+    "value": "Notifications (read)",
+    "display_value": "Notifications (read)"
+  },
+  "sys_updated_on": {
+    "value": "2023-11-09 19:37:16",
+    "display_value": "2023-11-09 11:37:16 AM"
+  }
+}

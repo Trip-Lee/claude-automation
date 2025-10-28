@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "9fc00277c375ee50d4ddf1db050131f9",
+    "extracted_at": "2025-09-19T21:48:48.964Z",
+    "display_value": "Publish Landing Page to S3",
+    "application": "Tenon_Cloud_Management",
+    "scope": {
+      "display_value": "Tenon Cloud Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/506711fbc331ee50d4ddf1db05013112",
+      "value": "506711fbc331ee50d4ddf1db05013112"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.bucket}}\",\"label\":\"action➛bucket\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Bucket\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.page}}\",\"label\":\"action➛page\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Landing Page\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.page.bucket}}\",\"label\":\"action➛page➛Bucket\",\"type\":\"action\",\"ref\":\"x_cadso_cloud_bucket\",\"reference_display\":\"Bucket\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_cloud_page\",\"column_name\":\"bucket\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].alias}}\",\"label\":\"step➛Script step➛alias\",\"type\":\"step\",\"ref\":\"sys_alias\",\"reference_display\":\"Connection & Credential Aliases\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].region}}\",\"label\":\"step➛Script step➛region\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].bucket}}\",\"label\":\"step➛Script step➛bucket\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].name}}\",\"label\":\"step➛Script step➛name\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].html}}\",\"label\":\"step➛Script step➛html\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[af35dc7d-bd0a-4ea9-9fc5-cd6a4c792f8f].url}}\",\"label\":\"step➛Script step➛url\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"url\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[af35dc7d-bd0a-4ea9-9fc5-cd6a4c792f8f].state}}\",\"label\":\"step➛Script step➛state\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[2b0ca44d-5dd8-434c-a9a1-5f7156644f9a].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[2b0ca44d-5dd8-434c-a9a1-5f7156644f9a].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[af35dc7d-bd0a-4ea9-9fc5-cd6a4c792f8f].published_url}}\",\"label\":\"step➛Script step➛published_url\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"url\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}}]",
+    "display_value": "[{\"name\":\"{{action.bucket}}\",\"label\":\"action➛bucket\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Bucket\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.page}}\",\"label\":\"action➛page\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Landing Page\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.page.bucket}}\",\"label\":\"action➛page➛Bucket\",\"type\":\"action\",\"ref\":\"x_cadso_cloud_bucket\",\"reference_display\":\"Bucket\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_cloud_page\",\"column_name\":\"bucket\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].alias}}\",\"label\":\"step➛Script step➛alias\",\"type\":\"step\",\"ref\":\"sys_alias\",\"reference_display\":\"Connection & Credential Aliases\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].region}}\",\"label\":\"step➛Script step➛region\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].bucket}}\",\"label\":\"step➛Script step➛bucket\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].name}}\",\"label\":\"step➛Script step➛name\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[4308fef6-aacb-4b4b-8a69-6aa984794601].html}}\",\"label\":\"step➛Script step➛html\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[af35dc7d-bd0a-4ea9-9fc5-cd6a4c792f8f].url}}\",\"label\":\"step➛Script step➛url\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"url\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[af35dc7d-bd0a-4ea9-9fc5-cd6a4c792f8f].state}}\",\"label\":\"step➛Script step➛state\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}},{\"name\":\"{{step[2b0ca44d-5dd8-434c-a9a1-5f7156644f9a].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[2b0ca44d-5dd8-434c-a9a1-5f7156644f9a].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[af35dc7d-bd0a-4ea9-9fc5-cd6a4c792f8f].published_url}}\",\"label\":\"step➛Script step➛published_url\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"url\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"sourceId\":\"\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Publish your landing page to the cloud! ",
+    "display_value": "Publish your landing page to the cloud! "
+  },
+  "sys_updated_on": {
+    "value": "2025-06-04 22:34:17",
+    "display_value": "2025-06-04 03:34:17 PM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "8d4dcebfc3b5ee50d4ddf1db05013162",
+    "display_value": "8d4dcebfc3b5ee50d4ddf1db05013162"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "publish_landing_page_to_s3",
+    "display_value": "publish_landing_page_to_s3"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2025-06-04 21:39:49",
+    "display_value": "2025-06-04 02:39:49 PM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch7a-03-19-2025_04-07-2025_1934.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch7a-03-19-2025_04-07-2025_1934.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Publish Landing Page to S3",
+    "display_value": "Publish Landing Page to S3"
+  },
+  "sys_scope": {
+    "value": "506711fbc331ee50d4ddf1db05013112",
+    "display_value": "Tenon Cloud Management"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "2c4d8ebfc3b5ee50d4ddf1db05013197",
+    "display_value": "2c4d8ebfc3b5ee50d4ddf1db05013197"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "Publish your landing page to the cloud! ",
+    "display_value": "Publish your landing page to the cloud! "
+  },
+  "sys_mod_count": {
+    "value": "4",
+    "display_value": "4"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "506711fbc331ee50d4ddf1db05013112",
+    "display_value": "Tenon Cloud Management"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_9fc00277c375ee50d4ddf1db050131f9",
+    "display_value": "sys_hub_action_type_definition_9fc00277c375ee50d4ddf1db050131f9"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Publish Landing Page to S3",
+    "display_value": "Publish Landing Page to S3"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

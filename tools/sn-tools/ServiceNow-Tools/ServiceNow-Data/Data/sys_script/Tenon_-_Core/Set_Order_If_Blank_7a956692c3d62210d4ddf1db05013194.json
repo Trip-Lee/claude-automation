@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "7a956692c3d62210d4ddf1db05013194",
+    "extracted_at": "2025-09-19T21:48:37.007Z",
+    "display_value": "Set Order If Blank",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_update": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-25 05:06:28",
+    "display_value": "2025-06-24 10:06:28 PM"
+  },
+  "when": {
+    "value": "before",
+    "display_value": "before"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2025-06-25 05:06:28",
+    "display_value": "2025-06-24 10:06:28 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Set Order If Blank",
+    "display_value": "Set Order If Blank"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "order": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "x_cadso_core_utm",
+    "display_value": "x_cadso_core_utm"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    var utmGr = new GlideRecord('x_cadso_core_utm');\r\n    utmGr.addNotNullQuery('order');\r\n    utmGr.orderByDesc('order');\r\n    utmGr.setLimit(1);\r\n    utmGr.query();\r\n    let order = 0;\r\n    while (utmGr.next()) {\r\n        order = utmGr.getValue('order');\r\n        order = order ? parseInt(order) : -1;\r\n    }\r\n\torder++;\r\n\tcurrent.setValue('order', order);\r\n\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    var utmGr = new GlideRecord('x_cadso_core_utm');\r\n    utmGr.addNotNullQuery('order');\r\n    utmGr.orderByDesc('order');\r\n    utmGr.setLimit(1);\r\n    utmGr.query();\r\n    let order = 0;\r\n    while (utmGr.next()) {\r\n        order = utmGr.getValue('order');\r\n        order = order ? parseInt(order) : -1;\r\n    }\r\n\torder++;\r\n\tcurrent.setValue('order', order);\r\n\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 16,
+      "char_count": 450,
+      "preview": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    var utmGr = new GlideRecord('x_cadso_core_utm');\r\n    utmGr.addNotNullQuery('order');\r\n    utmGr.orderByDesc('order');\r\n    utmGr...",
+      "full_script": "(function executeRule(current, previous /*null when async*/ ) {\r\n\r\n    var utmGr = new GlideRecord('x_cadso_core_utm');\r\n    utmGr.addNotNullQuery('order');\r\n    utmGr.orderByDesc('order');\r\n    utmGr.setLimit(1);\r\n    utmGr.query();\r\n    let order = 0;\r\n    while (utmGr.next()) {\r\n        order = utmGr.getValue('order');\r\n        order = order ? parseInt(order) : -1;\r\n    }\r\n\torder++;\r\n\tcurrent.setValue('order', order);\r\n\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "orderISEMPTY^EQ",
+    "display_value": "orderISEMPTY^EQ"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_7a956692c3d62210d4ddf1db05013194",
+    "display_value": "sys_script_7a956692c3d62210d4ddf1db05013194"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Set Order If Blank",
+    "display_value": "Set Order If Blank"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

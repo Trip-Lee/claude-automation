@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "66821a3747742d10a1052a02e26d43f7",
+    "extracted_at": "2025-08-22T18:42:39.593Z",
+    "display_value": "Set Template Fields",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-02-10 21:11:01",
+    "display_value": "2023-02-10 01:11:01 PM"
+  },
+  "name": {
+    "value": "Set Template Fields",
+    "display_value": "Set Template Fields"
+  },
+  "sys_updated_on": {
+    "value": "2023-02-10 21:11:01",
+    "display_value": "2023-02-10 01:11:01 PM"
+  }
+}

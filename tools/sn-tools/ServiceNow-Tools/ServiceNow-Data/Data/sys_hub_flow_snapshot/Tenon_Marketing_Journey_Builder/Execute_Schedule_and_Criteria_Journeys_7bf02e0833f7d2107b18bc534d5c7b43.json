@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "7bf02e0833f7d2107b18bc534d5c7b43",
+    "extracted_at": "2025-09-19T21:49:30.861Z",
+    "display_value": "Execute Schedule and Criteria Journeys",
+    "application": "Tenon_Marketing_Journey_Builder",
+    "scope": {
+      "display_value": "Tenon Marketing Journey Builder",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/cd61acbbc3c85a1085b196c4e40131bd",
+      "value": "cd61acbbc3c85a1085b196c4e40131bd"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"cb16b73d-1401-4dfd-8048-ac5aa4fbb186.Records\",\"label\":\"3 - Look Up Records➛Records\",\"reference_display\":\"Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"c5eb522e-ea93-4f50-bb0d-3cac5caf5dba\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.trigger.conditions\",\"label\":\"2 - For Each➛Version Record➛Trigger➛Conditions\",\"reference\":\"\",\"reference_display\":\"Conditions\",\"type\":\"conditions\",\"base_type\":\"conditions\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"conditions\",\"usedInstances\":{\"cb16b73d-1401-4dfd-8048-ac5aa4fbb186\":[\"conditions\"]}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.trigger.table\",\"label\":\"2 - For Each➛Version Record➛Trigger➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"table\",\"usedInstances\":{\"9b7888f6-feb7-43e4-95b9-29fedaadd9ce\":[\"table_name\"],\"cb16b73d-1401-4dfd-8048-ac5aa4fbb186\":[\"table\"],\"540c2c13-73d3-4917-b3da-678d3a82d6c2\":[\"table\"]}},{\"name\":\"59e9c649-6c40-46b1-bd81-a6fdb4d583a9.Records\",\"label\":\"1 - Look Up Records➛Version Records\",\"reference\":\"x_cadso_journey_version\",\"reference_display\":\"Version Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"35af308f-4320-4cb7-b6a4-529a4997b8cb\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.journey\",\"label\":\"2 - For Each➛Version Record➛Journey\",\"reference\":\"x_cadso_journey_flow\",\"reference_display\":\"Journey\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_version\",\"column_name\":\"journey\",\"usedInstances\":{\"540c2c13-73d3-4917-b3da-678d3a82d6c2\":[\"journey\"]}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item\",\"label\":\"2 - For Each➛Version Record\",\"reference\":\"x_cadso_journey_version\",\"reference_display\":\"Version Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"540c2c13-73d3-4917-b3da-678d3a82d6c2\":[\"version\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.trigger.datetime\",\"label\":\"2 - For Each➛Version Record➛Trigger➛DateTime\",\"reference\":\"\",\"reference_display\":\"DateTime\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"datetime\",\"usedInstances\":{\"540c2c13-73d3-4917-b3da-678d3a82d6c2\":[\"published_date\"]}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.trigger\",\"label\":\"2 - For Each➛Version Record➛Trigger\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_version\",\"column_name\":\"trigger\",\"usedInstances\":{\"1177465d-f0ab-4135-b882-75b706b23946\":[\"record\"]}}]",
+    "display_value": "[{\"name\":\"cb16b73d-1401-4dfd-8048-ac5aa4fbb186.Records\",\"label\":\"3 - Look Up Records➛Records\",\"reference_display\":\"Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"c5eb522e-ea93-4f50-bb0d-3cac5caf5dba\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.trigger.conditions\",\"label\":\"2 - For Each➛Version Record➛Trigger➛Conditions\",\"reference\":\"\",\"reference_display\":\"Conditions\",\"type\":\"conditions\",\"base_type\":\"conditions\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"conditions\",\"usedInstances\":{\"cb16b73d-1401-4dfd-8048-ac5aa4fbb186\":[\"conditions\"]}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.trigger.table\",\"label\":\"2 - For Each➛Version Record➛Trigger➛Table\",\"reference\":\"\",\"reference_display\":\"Table\",\"type\":\"string\",\"base_type\":\"string\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"table\",\"usedInstances\":{\"9b7888f6-feb7-43e4-95b9-29fedaadd9ce\":[\"table_name\"],\"cb16b73d-1401-4dfd-8048-ac5aa4fbb186\":[\"table\"],\"540c2c13-73d3-4917-b3da-678d3a82d6c2\":[\"table\"]}},{\"name\":\"59e9c649-6c40-46b1-bd81-a6fdb4d583a9.Records\",\"label\":\"1 - Look Up Records➛Version Records\",\"reference\":\"x_cadso_journey_version\",\"reference_display\":\"Version Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"35af308f-4320-4cb7-b6a4-529a4997b8cb\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.journey\",\"label\":\"2 - For Each➛Version Record➛Journey\",\"reference\":\"x_cadso_journey_flow\",\"reference_display\":\"Journey\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_version\",\"column_name\":\"journey\",\"usedInstances\":{\"540c2c13-73d3-4917-b3da-678d3a82d6c2\":[\"journey\"]}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item\",\"label\":\"2 - For Each➛Version Record\",\"reference\":\"x_cadso_journey_version\",\"reference_display\":\"Version Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"540c2c13-73d3-4917-b3da-678d3a82d6c2\":[\"version\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.trigger.datetime\",\"label\":\"2 - For Each➛Version Record➛Trigger➛DateTime\",\"reference\":\"\",\"reference_display\":\"DateTime\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_journey_version_step\",\"column_name\":\"datetime\",\"usedInstances\":{\"540c2c13-73d3-4917-b3da-678d3a82d6c2\":[\"published_date\"]}},{\"name\":\"35af308f-4320-4cb7-b6a4-529a4997b8cb.item.trigger\",\"label\":\"2 - For Each➛Version Record➛Trigger\",\"reference\":\"x_cadso_journey_version_step\",\"reference_display\":\"Version Step\",\"type\":\"reference\",\"base_type\":\"reference\",\"parent_table_name\":\"x_cadso_journey_version\",\"column_name\":\"trigger\",\"usedInstances\":{\"1177465d-f0ab-4135-b882-75b706b23946\":[\"record\"]}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Execute Schedule and Criteria Journeys",
+    "display_value": "Execute Schedule and Criteria Journeys"
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_updated_on": {
+    "value": "2025-02-13 22:17:42",
+    "display_value": "2025-02-13 02:17:42 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "execute_schedule_and_criteria_journeys",
+    "display_value": "execute_schedule_and_criteria_journeys"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2025-02-13 22:17:42",
+    "display_value": "2025-02-13 02:17:42 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "cd61acbbc3c85a1085b196c4e40131bd",
+    "display_value": "Tenon Marketing Journey Builder"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "32049d7b33a392107b18bc534d5c7b97",
+    "display_value": ""
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Execute Schedule and Criteria Journeys",
+    "display_value": "Execute Schedule and Criteria Journeys"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

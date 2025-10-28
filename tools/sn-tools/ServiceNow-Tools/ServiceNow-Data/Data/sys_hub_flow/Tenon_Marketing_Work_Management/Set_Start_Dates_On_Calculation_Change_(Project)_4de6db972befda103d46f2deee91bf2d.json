@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "4de6db972befda103d46f2deee91bf2d",
+    "extracted_at": "2025-09-19T21:48:46.060Z",
+    "display_value": "Set Start Dates On Calculation Change (Project)",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-07-16 19:43:24",
+    "display_value": "2025-07-16 12:43:24 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "7099db5b2befda103d46f2deee91bf5c",
+    "display_value": "7099db5b2befda103d46f2deee91bf5c"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "set_start_dates_on_calculation_change_project",
+    "display_value": "set_start_dates_on_calculation_change_project"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_created_on": {
+    "value": "2025-02-11 18:17:43",
+    "display_value": "2025-02-11 10:17:43 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch9-05-21-2025_06-04-2025_0434.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch9-05-21-2025_06-04-2025_0434.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Set Start Dates On Calculation Change (Project)",
+    "display_value": "Set Start Dates On Calculation Change (Project)"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "7099db5b2befda103d46f2deee91bf5c",
+    "display_value": "7099db5b2befda103d46f2deee91bf5c"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_4de6db972befda103d46f2deee91bf2d",
+    "display_value": "sys_hub_flow_4de6db972befda103d46f2deee91bf2d"
+  },
+  "name": {
+    "value": "Set Start Dates On Calculation Change (Project)",
+    "display_value": "Set Start Dates On Calculation Change (Project)"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"617a37e5-e934-4e02-a867-67491ddf89d3.record.sys_id\",\"label\":\"13 - Update Record➛Project Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"sys_id\",\"usedInstances\":{\"45d96568-19a9-4067-ba4f-86bd0a8bcc25\":[\"projectsysid\"]}},{\"name\":\"6634aea3-e007-4dbc-8a45-7750a6a4a52a.end_date\",\"label\":\"12 - Get Project Start and End Date from Task➛End Date\",\"reference_display\":\"End Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"usedInstances\":{\"617a37e5-e934-4e02-a867-67491ddf89d3\":[\"expected_end\"]},\"attributes\":{\"uiType\":\"glide_date_time\",\"uiTypeLabel\":\"Date/Time\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"e8fcd690-0210-4260-b136-bca8d9707e1d\"}},{\"name\":\"6634aea3-e007-4dbc-8a45-7750a6a4a52a.start_date\",\"label\":\"12 - Get Project Start and End Date from Task➛Start Date\",\"reference_display\":\"Start Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"usedInstances\":{\"617a37e5-e934-4e02-a867-67491ddf89d3\":[\"expected_start\"]},\"attributes\":{\"uiType\":\"glide_date_time\",\"uiTypeLabel\":\"Date/Time\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"1e1eef65-4e42-4c46-ad0b-960a54654d6a\"}},{\"name\":\"e7e225e4-898a-49d6-86c1-966ff53e598f.item.expected_end\",\"label\":\"10 - For Each➛Marketing Task Record➛End Date\",\"reference\":\"\",\"reference_display\":\"End Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_work_task\",\"column_name\":\"expected_end\",\"usedInstances\":{\"25af5c60-76c3-4850-a719-80ef2a3783fe\":[\"due_date\"]}},{\"name\":\"e7e225e4-898a-49d6-86c1-966ff53e598f.item\",\"label\":\"10 - For Each➛Marketing Task Record\",\"reference\":\"x_cadso_work_task\",\"reference_display\":\"Marketing Task\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"25af5c60-76c3-4850-a719-80ef2a3783fe\":[\"record\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"449eb631-d36e-41e9-b3f7-87c83506b157.Records\",\"label\":\"9 - Look Up Records➛Marketing Task Records\",\"reference\":\"x_cadso_work_task\",\"reference_display\":\"Marketing Task\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"e7e225e4-898a-49d6-86c1-966ff53e598f\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Updated_1.current.expected_end\",\"label\":\"Trigger - Record Updated➛Project Record➛End Date\",\"reference\":\"\",\"reference_display\":\"End Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"expected_end\",\"usedInstances\":{\"432f87eb-93bc-49db-84ef-9ed77683f2d0\":[\"start_date\"]}},{\"name\":\"Updated_1.current.calculate_dates\",\"label\":\"Trigger - Record Updated➛Project Record➛Calculate Task Dates From\",\"reference\":\"\",\"reference_display\":\"Calculate Task Dates From\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"calculate_dates\",\"choices\":[{\"label\":\"Start Date\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"Start Date\",\"value\":\"start\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}},{\"label\":\"End Date\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"End Date\",\"value\":\"end\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}},{\"label\":\"Start Date (Dates Within Schedule)\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"Start Date (Dates Within Schedule)\",\"value\":\"startSchedule\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}},{\"label\":\"End Date (Dates Within Schedule)\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"End Date (Dates Within Schedule)\",\"value\":\"endSchedule\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}},{\"label\":\"Ad Hoc\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"Ad Hoc\",\"value\":\"adHoc\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"10c9f9cd-d314-437f-896e-ebaa259da627\":[\"condition\"],\"a02d83ea-cd88-4f09-8a9c-342fa97dd0ac\":[\"condition\"]}},{\"name\":\"0daa15d1-7451-491e-82d8-2062094060bd.item.current_value\",\"label\":\"2 - For Each➛FDChangeDetails➛Current Value\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"0eff16cd-95a5-4dd2-b3b7-5d668bea648c\":[\"condition\"]},\"attributes\":{}},{\"name\":\"0daa15d1-7451-491e-82d8-2062094060bd.item.previous_value\",\"label\":\"2 - For Each➛FDChangeDetails➛Previous Value\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"0eff16cd-95a5-4dd2-b3b7-5d668bea648c\":[\"condition\"]},\"attributes\":{}},{\"name\":\"0daa15d1-7451-491e-82d8-2062094060bd.item.field_name\",\"label\":\"2 - For Each➛FDChangeDetails➛Field Name\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"0eff16cd-95a5-4dd2-b3b7-5d668bea648c\":[\"condition\"]},\"attributes\":{}},{\"name\":\"Updated_1.changed_fields\",\"label\":\"Trigger - Record Updated➛Changed Fields\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"usedInstances\":{\"0daa15d1-7451-491e-82d8-2062094060bd\":[\"items\"]},\"attributes\":{\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_name\":\"FDChangeDetails\"}},{\"name\":\"Updated_1.current\",\"label\":\"Trigger - Record Updated➛Project Record\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"546b583c-fdce-4de6-8a2d-ee2e31d5bda9\":[\"record\"],\"2ad6385b-f070-4629-815f-b92d75f8c85f\":[\"project\"],\"432f87eb-93bc-49db-84ef-9ed77683f2d0\":[\"project\"],\"449eb631-d36e-41e9-b3f7-87c83506b157\":[\"conditions\"],\"6634aea3-e007-4dbc-8a45-7750a6a4a52a\":[\"project\"],\"617a37e5-e934-4e02-a867-67491ddf89d3\":[\"record\"]},\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"617a37e5-e934-4e02-a867-67491ddf89d3.record.sys_id\",\"label\":\"13 - Update Record➛Project Record➛Sys ID\",\"reference\":\"\",\"reference_display\":\"Sys ID\",\"type\":\"GUID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"sys_id\",\"usedInstances\":{\"45d96568-19a9-4067-ba4f-86bd0a8bcc25\":[\"projectsysid\"]}},{\"name\":\"6634aea3-e007-4dbc-8a45-7750a6a4a52a.end_date\",\"label\":\"12 - Get Project Start and End Date from Task➛End Date\",\"reference_display\":\"End Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"usedInstances\":{\"617a37e5-e934-4e02-a867-67491ddf89d3\":[\"expected_end\"]},\"attributes\":{\"uiType\":\"glide_date_time\",\"uiTypeLabel\":\"Date/Time\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"e8fcd690-0210-4260-b136-bca8d9707e1d\"}},{\"name\":\"6634aea3-e007-4dbc-8a45-7750a6a4a52a.start_date\",\"label\":\"12 - Get Project Start and End Date from Task➛Start Date\",\"reference_display\":\"Start Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"usedInstances\":{\"617a37e5-e934-4e02-a867-67491ddf89d3\":[\"expected_start\"]},\"attributes\":{\"uiType\":\"glide_date_time\",\"uiTypeLabel\":\"Date/Time\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiUniqueId\":\"1e1eef65-4e42-4c46-ad0b-960a54654d6a\"}},{\"name\":\"e7e225e4-898a-49d6-86c1-966ff53e598f.item.expected_end\",\"label\":\"10 - For Each➛Marketing Task Record➛End Date\",\"reference\":\"\",\"reference_display\":\"End Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_work_task\",\"column_name\":\"expected_end\",\"usedInstances\":{\"25af5c60-76c3-4850-a719-80ef2a3783fe\":[\"due_date\"]}},{\"name\":\"e7e225e4-898a-49d6-86c1-966ff53e598f.item\",\"label\":\"10 - For Each➛Marketing Task Record\",\"reference\":\"x_cadso_work_task\",\"reference_display\":\"Marketing Task\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"25af5c60-76c3-4850-a719-80ef2a3783fe\":[\"record\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"449eb631-d36e-41e9-b3f7-87c83506b157.Records\",\"label\":\"9 - Look Up Records➛Marketing Task Records\",\"reference\":\"x_cadso_work_task\",\"reference_display\":\"Marketing Task\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"e7e225e4-898a-49d6-86c1-966ff53e598f\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"Updated_1.current.expected_end\",\"label\":\"Trigger - Record Updated➛Project Record➛End Date\",\"reference\":\"\",\"reference_display\":\"End Date\",\"type\":\"glide_date_time\",\"base_type\":\"glide_date_time\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"expected_end\",\"usedInstances\":{\"432f87eb-93bc-49db-84ef-9ed77683f2d0\":[\"start_date\"]}},{\"name\":\"Updated_1.current.calculate_dates\",\"label\":\"Trigger - Record Updated➛Project Record➛Calculate Task Dates From\",\"reference\":\"\",\"reference_display\":\"Calculate Task Dates From\",\"type\":\"choice\",\"base_type\":\"choice\",\"parent_table_name\":\"x_cadso_work_project\",\"column_name\":\"calculate_dates\",\"choices\":[{\"label\":\"Start Date\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"Start Date\",\"value\":\"start\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}},{\"label\":\"End Date\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"End Date\",\"value\":\"end\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}},{\"label\":\"Start Date (Dates Within Schedule)\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"Start Date (Dates Within Schedule)\",\"value\":\"startSchedule\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}},{\"label\":\"End Date (Dates Within Schedule)\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"End Date (Dates Within Schedule)\",\"value\":\"endSchedule\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}},{\"label\":\"Ad Hoc\",\"image\":\"\",\"used\":false,\"reference\":false,\"selected\":false,\"missing\":false,\"rawLabel\":\"Ad Hoc\",\"value\":\"adHoc\",\"parameters\":{\"name\":\"x_cadso_work_project\",\"dependent_values\":[\"\"]}}],\"usedInstances\":{\"10c9f9cd-d314-437f-896e-ebaa259da627\":[\"condition\"],\"a02d83ea-cd88-4f09-8a9c-342fa97dd0ac\":[\"condition\"]}},{\"name\":\"0daa15d1-7451-491e-82d8-2062094060bd.item.current_value\",\"label\":\"2 - For Each➛FDChangeDetails➛Current Value\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"0eff16cd-95a5-4dd2-b3b7-5d668bea648c\":[\"condition\"]},\"attributes\":{}},{\"name\":\"0daa15d1-7451-491e-82d8-2062094060bd.item.previous_value\",\"label\":\"2 - For Each➛FDChangeDetails➛Previous Value\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"0eff16cd-95a5-4dd2-b3b7-5d668bea648c\":[\"condition\"]},\"attributes\":{}},{\"name\":\"0daa15d1-7451-491e-82d8-2062094060bd.item.field_name\",\"label\":\"2 - For Each➛FDChangeDetails➛Field Name\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"0eff16cd-95a5-4dd2-b3b7-5d668bea648c\":[\"condition\"]},\"attributes\":{}},{\"name\":\"Updated_1.changed_fields\",\"label\":\"Trigger - Record Updated➛Changed Fields\",\"type\":\"array.object\",\"base_type\":\"array.object\",\"usedInstances\":{\"0daa15d1-7451-491e-82d8-2062094060bd\":[\"items\"]},\"attributes\":{\"uiTypeLabel\":\"Array.Object\",\"co_type_name\":\"FDCollection\",\"child_label\":\"FDChangeDetails\",\"child_type_label\":\"Object\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiType\":\"array.object\",\"child_type\":\"object\",\"child_name\":\"FDChangeDetails\"}},{\"name\":\"Updated_1.current\",\"label\":\"Trigger - Record Updated➛Project Record\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"546b583c-fdce-4de6-8a2d-ee2e31d5bda9\":[\"record\"],\"2ad6385b-f070-4629-815f-b92d75f8c85f\":[\"project\"],\"432f87eb-93bc-49db-84ef-9ed77683f2d0\":[\"project\"],\"449eb631-d36e-41e9-b3f7-87c83506b157\":[\"conditions\"],\"6634aea3-e007-4dbc-8a45-7750a6a4a52a\":[\"project\"],\"617a37e5-e934-4e02-a867-67491ddf89d3\":[\"record\"]},\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "This sets the start dates once the project has been created from template.",
+    "display_value": "This sets the start dates once the project has been created from template."
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "3",
+    "display_value": "3"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow_priority": {
+    "value": "HIGH",
+    "display_value": "High"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=13393535000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=13393535000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "91991f5b2befda103d46f2deee91bf47",
+    "display_value": "91991f5b2befda103d46f2deee91bf47"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  }
+}

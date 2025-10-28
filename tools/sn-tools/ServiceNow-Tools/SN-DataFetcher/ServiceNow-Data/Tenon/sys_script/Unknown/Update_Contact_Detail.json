@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "39d597ac3341aa507b18bc534d5c7bc0",
+    "extracted_at": "2025-08-22T18:42:38.136Z",
+    "display_value": "Update Contact Detail",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-18 18:44:01",
+    "display_value": "2025-04-18 11:44:01 AM"
+  },
+  "name": {
+    "value": "Update Contact Detail",
+    "display_value": "Update Contact Detail"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-18 18:58:07",
+    "display_value": "2025-04-18 11:58:07 AM"
+  }
+}

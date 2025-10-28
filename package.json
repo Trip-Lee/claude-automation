@@ -1,7 +1,7 @@
 {
   "name": "claude-automation",
-  "version": "1.0.0",
-  "description": "Claude Multi-Agent Coding System - Mobile-accessible AI-powered coding orchestration",
+  "version": "0.11.0-alpha",
+  "description": "Claude Multi-Agent Coding System - Dynamic routing with workflow-driven experience",
   "type": "module",
   "bin": {
     "claude": "./cli.js",
@@ -9,7 +9,11 @@
   },
   "scripts": {
     "start": "node cli.js",
-    "test": "node test/system-check.js"
+    "test": "node test/run-unit-tests.js",
+    "test:unit": "node test/run-unit-tests.js",
+    "test:smoke": "node test/smoke-test.js",
+    "test:validate": "node test/validation-suite.js",
+    "test:all": "npm run test:unit && npm run test:smoke && npm run test:validate"
   },
   "keywords": [
     "ai",

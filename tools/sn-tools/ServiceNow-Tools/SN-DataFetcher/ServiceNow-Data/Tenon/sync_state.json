@@ -1,0 +1,26 @@
+{
+  "lastFullSync": "2025-08-22T18:36:46.393Z",
+  "tables": {
+    "sys_script_include": {
+      "lastSync": "2025-08-22T18:36:46.392Z",
+      "recordCount": 160,
+      "deletedCount": 0
+    },
+    "sys_ws_operation": {
+      "lastSync": "2025-08-22T18:36:48.897Z",
+      "recordCount": 163,
+      "deletedCount": 0
+    },
+    "sys_script": {
+      "lastSync": "2025-08-22T18:36:55.205Z",
+      "recordCount": 302,
+      "deletedCount": 0
+    },
+    "sys_script_client": {
+      "lastSync": "2025-08-22T18:36:55.787Z",
+      "recordCount": 31,
+      "deletedCount": 0
+    }
+  },
+  "version": "1.0"
+}

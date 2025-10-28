@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "f6534bd4474b751098519fd8036d4393",
+    "extracted_at": "2025-08-22T18:42:37.460Z",
+    "display_value": "List Action Menu (Export)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-12-07 20:17:22",
+    "display_value": "2023-12-07 12:17:22 PM"
+  },
+  "name": {
+    "value": "List Action Menu (Export)",
+    "display_value": "List Action Menu (Export)"
+  },
+  "sys_updated_on": {
+    "value": "2023-12-08 15:33:51",
+    "display_value": "2023-12-08 07:33:51 AM"
+  }
+}

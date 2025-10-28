@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "9a2e2e7333e066107b18bc534d5c7ba7",
+    "extracted_at": "2025-08-22T18:42:37.248Z",
+    "display_value": "Get Message Metrics",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-03 21:39:31",
+    "display_value": "2025-04-03 02:39:31 PM"
+  },
+  "name": {
+    "value": "Get Message Metrics",
+    "display_value": "Get Message Metrics"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-22 16:51:10",
+    "display_value": "2025-07-22 09:51:10 AM"
+  }
+}

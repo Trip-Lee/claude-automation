@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "a4132680c3f0e610d4ddf1db050131b7",
+    "extracted_at": "2025-08-22T18:42:33.933Z",
+    "display_value": "LeadScoring",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-04 15:29:47",
+    "display_value": "2025-04-04 08:29:47 AM"
+  },
+  "name": {
+    "value": "LeadScoring",
+    "display_value": "LeadScoring"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-23 18:41:26",
+    "display_value": "2025-04-23 11:41:26 AM"
+  }
+}

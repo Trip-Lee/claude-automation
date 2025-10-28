@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "6bb152b3336066107b18bc534d5c7b2c",
+    "extracted_at": "2025-08-22T18:46:19.778Z",
+    "display_value": "MessageMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-04-03 19:35:22",
+    "display_value": "2025-04-03 12:35:22 PM"
+  },
+  "name": {
+    "value": "MessageMS",
+    "display_value": "MessageMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-22 16:51:37",
+    "display_value": "2025-07-22 09:51:37 AM"
+  }
+}

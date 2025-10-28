@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "2a4c7835c347ee50d4ddf1db050131d9",
+    "extracted_at": "2025-09-19T21:48:36.928Z",
+    "display_value": "Do Not Move - Score Lead On Create",
+    "application": "Tenon_Lead_Management",
+    "scope": {
+      "display_value": "Tenon Lead Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/d7d2017bc3646610d4ddf1db050131db",
+      "value": "d7d2017bc3646610d4ddf1db050131db"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_update": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "Score the lead based on information provided on create.\r\n\r\n\"first_name\" + 1\r\n\"last_name\" + 1\r\n\"company\" + 2\r\n\"email\" + 2\r\n\"business_phone\" + 3\r\n\"mobile_phone\" + 3\r\n\"title\" + 2\r\n\"short_description\" + 2\r\n",
+    "display_value": "Score the lead based on information provided on create.\r\n\r\n\"first_name\" + 1\r\n\"last_name\" + 1\r\n\"company\" + 2\r\n\"email\" + 2\r\n\"business_phone\" + 3\r\n\"mobile_phone\" + 3\r\n\"title\" + 2\r\n\"short_description\" + 2\r\n"
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-04 20:09:25",
+    "display_value": "2025-08-04 01:09:25 PM"
+  },
+  "when": {
+    "value": "before",
+    "display_value": "before"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2025-07-30 14:55:19",
+    "display_value": "2025-07-30 07:55:19 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Do Not Move - Score Lead On Create",
+    "display_value": "Do Not Move - Score Lead On Create"
+  },
+  "sys_scope": {
+    "value": "d7d2017bc3646610d4ddf1db050131db",
+    "display_value": "Tenon Lead Management"
+  },
+  "sys_created_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "order": {
+    "value": "150",
+    "display_value": "150"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "20",
+    "display_value": "20"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "sn_lead_mgmt_core_lead",
+    "display_value": "sn_lead_mgmt_core_lead"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/ ) {\r\n    function getLeadRatings() {\r\n        let minRating = 0;\r\n        let lowestRating = 0;\r\n        let leadRatings = [];\r\n        let ratingGR = new GlideRecord('x_cadso_lead_rating_definition');\r\n        ratingGR.orderBy('max_rating');\r\n        ratingGR.query();\r\n\r\n        while (ratingGR.next()) {\r\n            let maxRating = Number(ratingGR.getValue('max_rating'));\r\n            if (maxRating < 0) {\r\n                gs.info(\"LEAD SCORING ERROR: RATING SCORE WAS LESS THEN 0. THE RATING WAS CHANGED TO 0\");\r\n                maxRating = 0;\r\n            }\r\n            let newRating = ratingGR.segment_name.value.getValue();\r\n            let newAction = ratingGR.getValue('marketing_sales_action');\r\n            leadRatings.push({\r\n                scoreRange: [minRating, maxRating],\r\n                rating: newRating,\r\n                action: newAction\r\n            });\r\n            minRating = maxRating;\r\n        }\r\n        return leadRatings;\r\n    }\r\n    try {\r\n        // Get form values\r\n        const firstName = current.first_name.getValue();\r\n        const lastName = current.last_name.getValue();\r\n        const email = current.email.getValue();\r\n        const company = current.company.getValue();\r\n        const title = current.title.getValue();\r\n        const phone = current.business_phone.getValue();\r\n        const mobilePhone = current.mobile_phone.getValue();\r\n        const description = current.short_description.getValue();\r\n        let message = \"\";\r\n        let count = 1;\r\n        let totalScore = Number(current.lead_score.getValue());\r\n        const leadRatings = getLeadRatings();\r\n\r\n\r\n\r\n        if (email) {\r\n            totalScore += 2;\r\n            message += count + \". User provided an email address. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (company) {\r\n            totalScore += 2;\r\n            message += count + \". User provided a company name. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (title) {\r\n            totalScore += 2;\r\n            message += count + \". User provided a title. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (phone || mobilePhone) {\r\n            totalScore += 3;\r\n            message += count + \". User provided a phone number. 3 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (firstName || lastName) {\r\n            totalScore += 1;\r\n            message += count + \". User provided a name. 1 point added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (description) {\r\n            totalScore += 2;\r\n            message += count + \". User provided a description. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n\r\n        if (totalScore > 0) {\r\n            message += \"\\n\\nThe sales score for this user has been updated to \" + totalScore + \".\";\r\n        }\r\n        let highestRating = 0;\r\n        let tempScore = totalScore;\r\n        for (let r = 0; r < leadRatings.length; r++) {\r\n\r\n            if (highestRating < leadRatings[r].scoreRange[1]) {\r\n                highestRating = leadRatings[r].scoreRange[1];\r\n            }\r\n        }\r\n\r\n        for (let w = 0; w < leadRatings.length; w++) {\r\n            let minRating = leadRatings[w].scoreRange[0];\r\n            let maxRating = leadRatings[w].scoreRange[1];\r\n\r\n            if (tempScore > highestRating) {\r\n                tempScore = highestRating;\r\n            }\r\n\r\n            if (tempScore <= 0) {\r\n                tempScore = 1;\r\n            }\r\n            if (tempScore > minRating && tempScore <= maxRating) {\r\n                current.lead_rating = leadRatings[w].rating;\r\n                current.x_cadso_lead_marketing_sales_action = leadRatings[w].action;\r\n                break;\r\n            }\r\n        }\r\n        current.lead_score = totalScore;\r\n        current.x_cadso_lead_sales_score = totalScore;\r\n        current.work_notes = message;\r\n    } catch (e) {\r\n        gs.info(\"Lead Create Scoring Business Rule Error: \" + e.message);\r\n    }\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/ ) {\r\n    function getLeadRatings() {\r\n        let minRating = 0;\r\n        let lowestRating = 0;\r\n        let leadRatings = [];\r\n        let ratingGR = new GlideRecord('x_cadso_lead_rating_definition');\r\n        ratingGR.orderBy('max_rating');\r\n        ratingGR.query();\r\n\r\n        while (ratingGR.next()) {\r\n            let maxRating = Number(ratingGR.getValue('max_rating'));\r\n            if (maxRating < 0) {\r\n                gs.info(\"LEAD SCORING ERROR: RATING SCORE WAS LESS THEN 0. THE RATING WAS CHANGED TO 0\");\r\n                maxRating = 0;\r\n            }\r\n            let newRating = ratingGR.segment_name.value.getValue();\r\n            let newAction = ratingGR.getValue('marketing_sales_action');\r\n            leadRatings.push({\r\n                scoreRange: [minRating, maxRating],\r\n                rating: newRating,\r\n                action: newAction\r\n            });\r\n            minRating = maxRating;\r\n        }\r\n        return leadRatings;\r\n    }\r\n    try {\r\n        // Get form values\r\n        const firstName = current.first_name.getValue();\r\n        const lastName = current.last_name.getValue();\r\n        const email = current.email.getValue();\r\n        const company = current.company.getValue();\r\n        const title = current.title.getValue();\r\n        const phone = current.business_phone.getValue();\r\n        const mobilePhone = current.mobile_phone.getValue();\r\n        const description = current.short_description.getValue();\r\n        let message = \"\";\r\n        let count = 1;\r\n        let totalScore = Number(current.lead_score.getValue());\r\n        const leadRatings = getLeadRatings();\r\n\r\n\r\n\r\n        if (email) {\r\n            totalScore += 2;\r\n            message += count + \". User provided an email address. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (company) {\r\n            totalScore += 2;\r\n            message += count + \". User provided a company name. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (title) {\r\n            totalScore += 2;\r\n            message += count + \". User provided a title. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (phone || mobilePhone) {\r\n            totalScore += 3;\r\n            message += count + \". User provided a phone number. 3 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (firstName || lastName) {\r\n            totalScore += 1;\r\n            message += count + \". User provided a name. 1 point added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (description) {\r\n            totalScore += 2;\r\n            message += count + \". User provided a description. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n\r\n        if (totalScore > 0) {\r\n            message += \"\\n\\nThe sales score for this user has been updated to \" + totalScore + \".\";\r\n        }\r\n        let highestRating = 0;\r\n        let tempScore = totalScore;\r\n        for (let r = 0; r < leadRatings.length; r++) {\r\n\r\n            if (highestRating < leadRatings[r].scoreRange[1]) {\r\n                highestRating = leadRatings[r].scoreRange[1];\r\n            }\r\n        }\r\n\r\n        for (let w = 0; w < leadRatings.length; w++) {\r\n            let minRating = leadRatings[w].scoreRange[0];\r\n            let maxRating = leadRatings[w].scoreRange[1];\r\n\r\n            if (tempScore > highestRating) {\r\n                tempScore = highestRating;\r\n            }\r\n\r\n            if (tempScore <= 0) {\r\n                tempScore = 1;\r\n            }\r\n            if (tempScore > minRating && tempScore <= maxRating) {\r\n                current.lead_rating = leadRatings[w].rating;\r\n                current.x_cadso_lead_marketing_sales_action = leadRatings[w].action;\r\n                break;\r\n            }\r\n        }\r\n        current.lead_score = totalScore;\r\n        current.x_cadso_lead_sales_score = totalScore;\r\n        current.work_notes = message;\r\n    } catch (e) {\r\n        gs.info(\"Lead Create Scoring Business Rule Error: \" + e.message);\r\n    }\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 110,
+      "char_count": 4156,
+      "preview": "(function executeRule(current, previous /*null when async*/ ) {\r\n    function getLeadRatings() {\r\n        let minRating = 0;\r\n        let lowestRating = 0;\r\n        let leadRatings = [];\r\n        let ...",
+      "full_script": "(function executeRule(current, previous /*null when async*/ ) {\r\n    function getLeadRatings() {\r\n        let minRating = 0;\r\n        let lowestRating = 0;\r\n        let leadRatings = [];\r\n        let ratingGR = new GlideRecord('x_cadso_lead_rating_definition');\r\n        ratingGR.orderBy('max_rating');\r\n        ratingGR.query();\r\n\r\n        while (ratingGR.next()) {\r\n            let maxRating = Number(ratingGR.getValue('max_rating'));\r\n            if (maxRating < 0) {\r\n                gs.info(\"LEAD SCORING ERROR: RATING SCORE WAS LESS THEN 0. THE RATING WAS CHANGED TO 0\");\r\n                maxRating = 0;\r\n            }\r\n            let newRating = ratingGR.segment_name.value.getValue();\r\n            let newAction = ratingGR.getValue('marketing_sales_action');\r\n            leadRatings.push({\r\n                scoreRange: [minRating, maxRating],\r\n                rating: newRating,\r\n                action: newAction\r\n            });\r\n            minRating = maxRating;\r\n        }\r\n        return leadRatings;\r\n    }\r\n    try {\r\n        // Get form values\r\n        const firstName = current.first_name.getValue();\r\n        const lastName = current.last_name.getValue();\r\n        const email = current.email.getValue();\r\n        const company = current.company.getValue();\r\n        const title = current.title.getValue();\r\n        const phone = current.business_phone.getValue();\r\n        const mobilePhone = current.mobile_phone.getValue();\r\n        const description = current.short_description.getValue();\r\n        let message = \"\";\r\n        let count = 1;\r\n        let totalScore = Number(current.lead_score.getValue());\r\n        const leadRatings = getLeadRatings();\r\n\r\n\r\n\r\n        if (email) {\r\n            totalScore += 2;\r\n            message += count + \". User provided an email address. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (company) {\r\n            totalScore += 2;\r\n            message += count + \". User provided a company name. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (title) {\r\n            totalScore += 2;\r\n            message += count + \". User provided a title. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (phone || mobilePhone) {\r\n            totalScore += 3;\r\n            message += count + \". User provided a phone number. 3 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (firstName || lastName) {\r\n            totalScore += 1;\r\n            message += count + \". User provided a name. 1 point added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n        if (description) {\r\n            totalScore += 2;\r\n            message += count + \". User provided a description. 2 points added to the lead score.\\n\";\r\n            count++;\r\n        }\r\n\r\n        if (totalScore > 0) {\r\n            message += \"\\n\\nThe sales score for this user has been updated to \" + totalScore + \".\";\r\n        }\r\n        let highestRating = 0;\r\n        let tempScore = totalScore;\r\n        for (let r = 0; r < leadRatings.length; r++) {\r\n\r\n            if (highestRating < leadRatings[r].scoreRange[1]) {\r\n                highestRating = leadRatings[r].scoreRange[1];\r\n            }\r\n        }\r\n\r\n        for (let w = 0; w < leadRatings.length; w++) {\r\n            let minRating = leadRatings[w].scoreRange[0];\r\n            let maxRating = leadRatings[w].scoreRange[1];\r\n\r\n            if (tempScore > highestRating) {\r\n                tempScore = highestRating;\r\n            }\r\n\r\n            if (tempScore <= 0) {\r\n                tempScore = 1;\r\n            }\r\n            if (tempScore > minRating && tempScore <= maxRating) {\r\n                current.lead_rating = leadRatings[w].rating;\r\n                current.x_cadso_lead_marketing_sales_action = leadRatings[w].action;\r\n                break;\r\n            }\r\n        }\r\n        current.lead_score = totalScore;\r\n        current.x_cadso_lead_sales_score = totalScore;\r\n        current.work_notes = message;\r\n    } catch (e) {\r\n        gs.info(\"Lead Create Scoring Business Rule Error: \" + e.message);\r\n    }\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "d7d2017bc3646610d4ddf1db050131db",
+    "display_value": "Tenon Lead Management"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_2a4c7835c347ee50d4ddf1db050131d9",
+    "display_value": "sys_script_2a4c7835c347ee50d4ddf1db050131d9"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Do Not Move - Score Lead On Create",
+    "display_value": "Do Not Move - Score Lead On Create"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

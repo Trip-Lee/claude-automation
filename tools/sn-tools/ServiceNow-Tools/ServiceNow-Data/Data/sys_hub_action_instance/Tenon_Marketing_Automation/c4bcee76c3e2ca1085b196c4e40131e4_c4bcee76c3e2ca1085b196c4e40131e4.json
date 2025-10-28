@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "c4bcee76c3e2ca1085b196c4e40131e4",
+    "extracted_at": "2025-09-19T21:49:00.206Z",
+    "display_value": "c4bcee76c3e2ca1085b196c4e40131e4",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "6ecdee36935023005e69925cf67ffb47",
+    "display_value": "Look Up Attachment"
+  },
+  "ui_id": {
+    "value": "2aaf21a4-7bdd-4a76-814d-1c590731483e",
+    "display_value": "2aaf21a4-7bdd-4a76-814d-1c590731483e"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "sys_updated_on": {
+    "value": "2024-06-06 12:42:27",
+    "display_value": "2024-06-06 05:42:27 AM"
+  },
+  "compiled_snapshot": {
+    "value": "6ecdee36935023005e69925cf67ffb47",
+    "display_value": "6ecdee36935023005e69925cf67ffb47"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "aabdae36935023005e69925cf67ffb5e",
+    "display_value": "Look Up Attachment"
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-06-06 12:42:27",
+    "display_value": "2024-06-06 05:42:27 AM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "flow": {
+    "value": "00bcee76c3e2ca1085b196c4e40131db",
+    "display_value": "Validate Test"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "order": {
+    "value": "1",
+    "display_value": "1"
+  }
+}

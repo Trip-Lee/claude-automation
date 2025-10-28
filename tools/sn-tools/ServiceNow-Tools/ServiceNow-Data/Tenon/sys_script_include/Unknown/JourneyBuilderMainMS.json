@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "9e324677c3c99a10d4ddf1db050131d0",
+    "extracted_at": "2025-08-22T18:46:19.921Z",
+    "display_value": "JourneyBuilderMainMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-11 18:47:48",
+    "display_value": "2024-10-11 11:47:48 AM"
+  },
+  "name": {
+    "value": "JourneyBuilderMainMS",
+    "display_value": "JourneyBuilderMainMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-19 06:55:06",
+    "display_value": "2025-03-18 11:55:06 PM"
+  }
+}

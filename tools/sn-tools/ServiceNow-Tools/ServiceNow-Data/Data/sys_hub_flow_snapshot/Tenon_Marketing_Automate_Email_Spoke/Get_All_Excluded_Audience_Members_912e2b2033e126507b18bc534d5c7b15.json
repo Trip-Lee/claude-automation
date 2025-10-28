@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "912e2b2033e126507b18bc534d5c7b15",
+    "extracted_at": "2025-09-19T21:49:20.191Z",
+    "display_value": "Get All Excluded Audience Members",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"flow_variable.all_members_processed\",\"label\":\"Flow Variables➛All Members Processed\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"column_name\":\"\",\"choices\":[],\"usedInstances\":{\"b9013941-5a21-4ea8-8297-40a847c0276b\":[\"condition\"],\"267dab94-12bb-4412-868f-07f81e18cbb1\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"1c01061a-f1d2-414a-823b-81e0ccb4b108\"}},{\"name\":\"fc50afc2-d672-4dc6-bd31-932df86a7ad3.Records\",\"label\":\"3 - Look Up Records➛Audience Member Records\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"9cd97583-f0c1-4f3f-b9f8-a3029e9f5044\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"flow_variable.all_members_processed\",\"label\":\"Flow Variables➛All Members Processed\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"boolean\",\"base_type\":\"boolean\",\"column_name\":\"\",\"choices\":[],\"usedInstances\":{\"b9013941-5a21-4ea8-8297-40a847c0276b\":[\"condition\"],\"267dab94-12bb-4412-868f-07f81e18cbb1\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"1c01061a-f1d2-414a-823b-81e0ccb4b108\"}},{\"name\":\"fc50afc2-d672-4dc6-bd31-932df86a7ad3.Records\",\"label\":\"3 - Look Up Records➛Audience Member Records\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"9cd97583-f0c1-4f3f-b9f8-a3029e9f5044\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-05-13 17:01:36",
+    "display_value": "2025-05-13 10:01:36 AM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "get_all_excluded_audience_members",
+    "display_value": "get_all_excluded_audience_members"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2025-05-13 17:01:36",
+    "display_value": "2025-05-13 10:01:36 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "d2b8e7e433a126507b18bc534d5c7b65",
+    "display_value": "Get All Excluded Audience Members"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Get All Excluded Audience Members",
+    "display_value": "Get All Excluded Audience Members"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

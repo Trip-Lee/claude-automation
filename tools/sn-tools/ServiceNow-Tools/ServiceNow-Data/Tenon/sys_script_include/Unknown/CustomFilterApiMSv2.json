@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "7b5fb5694782061098519fd8036d43d6",
+    "extracted_at": "2025-08-22T18:46:19.800Z",
+    "display_value": "CustomFilterApiMSv2",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-05-08 15:41:56",
+    "display_value": "2024-05-08 08:41:56 AM"
+  },
+  "name": {
+    "value": "CustomFilterApiMSv2",
+    "display_value": "CustomFilterApiMSv2"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-15 21:13:47",
+    "display_value": "2025-08-15 02:13:47 PM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "7d4c0ec38780d690369f33373cbb354d",
+    "extracted_at": "2025-08-22T18:42:36.009Z",
+    "display_value": "FreeForm Event",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-08-20 18:36:04",
+    "display_value": "2024-08-20 11:36:04 AM"
+  },
+  "name": {
+    "value": "FreeForm Event",
+    "display_value": "FreeForm Event"
+  },
+  "sys_updated_on": {
+    "value": "2025-01-21 20:53:57",
+    "display_value": "2025-01-21 12:53:57 PM"
+  }
+}

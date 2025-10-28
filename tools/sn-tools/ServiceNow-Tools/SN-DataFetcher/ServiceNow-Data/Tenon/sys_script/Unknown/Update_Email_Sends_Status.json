@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "15a0d7aa335426107b18bc534d5c7bc2",
+    "extracted_at": "2025-08-22T18:42:37.897Z",
+    "display_value": "Update Email Sends Status",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-03-18 16:46:44",
+    "display_value": "2025-03-18 09:46:44 AM"
+  },
+  "name": {
+    "value": "Update Email Sends Status",
+    "display_value": "Update Email Sends Status"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-18 16:48:48",
+    "display_value": "2025-03-18 09:48:48 AM"
+  }
+}

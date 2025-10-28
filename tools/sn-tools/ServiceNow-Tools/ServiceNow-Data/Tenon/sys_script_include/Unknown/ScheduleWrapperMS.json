@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "21725da447de7150b0361ae8036d439b",
+    "extracted_at": "2025-08-22T18:46:19.548Z",
+    "display_value": "ScheduleWrapperMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-10-31 23:56:23",
+    "display_value": "2023-10-31 04:56:23 PM"
+  },
+  "name": {
+    "value": "ScheduleWrapperMS",
+    "display_value": "ScheduleWrapperMS"
+  },
+  "sys_updated_on": {
+    "value": "2024-11-14 22:18:51",
+    "display_value": "2024-11-14 02:18:51 PM"
+  }
+}

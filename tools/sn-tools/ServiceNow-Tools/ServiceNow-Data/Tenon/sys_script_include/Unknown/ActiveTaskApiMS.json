@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "bfa79f41472c2d50a1052a02e26d43b2",
+    "extracted_at": "2025-08-22T18:46:21.291Z",
+    "display_value": "ActiveTaskApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-01-21 02:53:02",
+    "display_value": "2023-01-20 06:53:02 PM"
+  },
+  "name": {
+    "value": "ActiveTaskApiMS",
+    "display_value": "ActiveTaskApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-18 01:03:43",
+    "display_value": "2024-10-17 06:03:43 PM"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "81c6e3eec320a250d4ddf1db05013166",
+    "extracted_at": "2025-08-22T18:42:39.714Z",
+    "display_value": "Set Subflow",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-03-31 04:37:15",
+    "display_value": "2025-03-30 09:37:15 PM"
+  },
+  "name": {
+    "value": "Set Subflow",
+    "display_value": "Set Subflow"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-31 04:37:15",
+    "display_value": "2025-03-30 09:37:15 PM"
+  }
+}

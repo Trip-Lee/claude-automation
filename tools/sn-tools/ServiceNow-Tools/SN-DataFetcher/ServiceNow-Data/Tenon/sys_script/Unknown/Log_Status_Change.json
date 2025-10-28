@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "85cbdd21c3099210d4ddf1db050131ed",
+    "extracted_at": "2025-08-22T18:42:39.731Z",
+    "display_value": "Log Status Change",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-04 16:14:35",
+    "display_value": "2024-10-04 09:14:35 AM"
+  },
+  "name": {
+    "value": "Log Status Change",
+    "display_value": "Log Status Change"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-04 16:14:35",
+    "display_value": "2024-10-04 09:14:35 AM"
+  }
+}

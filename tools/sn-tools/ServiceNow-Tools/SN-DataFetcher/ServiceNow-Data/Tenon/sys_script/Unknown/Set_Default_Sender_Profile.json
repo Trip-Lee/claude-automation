@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "ed2176a387541214369f33373cbb3556",
+    "extracted_at": "2025-08-22T18:42:41.635Z",
+    "display_value": "Set Default Sender Profile",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-09-03 20:47:55",
+    "display_value": "2024-09-03 01:47:55 PM"
+  },
+  "name": {
+    "value": "Set Default Sender Profile",
+    "display_value": "Set Default Sender Profile"
+  },
+  "sys_updated_on": {
+    "value": "2024-09-03 20:47:55",
+    "display_value": "2024-09-03 01:47:55 PM"
+  }
+}

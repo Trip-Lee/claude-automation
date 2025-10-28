@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "676b0fc447d63150b0361ae8036d4398",
+    "extracted_at": "2025-09-19T21:49:02.062Z",
+    "display_value": "676b0fc447d63150b0361ae8036d4398",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "f9d01dd2c31332002841b63b12d3aea1",
+    "display_value": "Update Record"
+  },
+  "ui_id": {
+    "value": "5850b3e6-9d0e-44ab-966d-b48d7ecc7783",
+    "display_value": "5850b3e6-9d0e-44ab-966d-b48d7ecc7783"
+  },
+  "sys_mod_count": {
+    "value": "22",
+    "display_value": "22"
+  },
+  "sys_updated_on": {
+    "value": "2023-10-30 21:01:57",
+    "display_value": "2023-10-30 02:01:57 PM"
+  },
+  "compiled_snapshot": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "baf174c8c3c232002841b63b12d3aee4",
+    "display_value": "Update Record"
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "sys_created_on": {
+    "value": "2023-10-30 19:26:37",
+    "display_value": "2023-10-30 12:26:37 PM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "11b96c7a-6a57-4a4e-be5e-1db7af237970",
+    "display_value": "11b96c7a-6a57-4a4e-be5e-1db7af237970"
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "af6b0fc447d63150b0361ae8036d4348",
+    "display_value": "On Hold - Project"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "order": {
+    "value": "3",
+    "display_value": "3"
+  }
+}

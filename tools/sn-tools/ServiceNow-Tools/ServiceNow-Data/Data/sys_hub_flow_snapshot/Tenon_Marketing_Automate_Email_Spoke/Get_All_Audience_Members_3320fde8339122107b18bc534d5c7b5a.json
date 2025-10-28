@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "3320fde8339122107b18bc534d5c7b5a",
+    "extracted_at": "2025-09-19T21:49:23.037Z",
+    "display_value": "Get All Audience Members",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"subflow.exluded_members\",\"label\":\"Input➛Exluded Members\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"usedInstances\":{\"b56cc719-fe1c-4623-a90c-470c6039f783\":[\"items\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"4d282bb0-587c-4f84-b075-494dc577746e\"}},{\"name\":\"subflow.included_audiences\",\"label\":\"Input➛Included Audiences\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"usedInstances\":{\"d8c61982-b7f2-4932-8403-8cf18297f04d\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"47fed235-0876-4218-8c67-fbe26e5c8491\",\"uiTypeLabel\":\"List\"}},{\"name\":\"b6361c6f-2e12-4b08-b094-d74e8e72886b.item\",\"label\":\"3 - For Each➛Audience Member Record\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"d8c61982-b7f2-4932-8403-8cf18297f04d\":[\"condition\"],\"7b8dcbbd-6266-4088-aa27-844b0b206f12\":[\"condition\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"subflow.excluded_audiences\",\"label\":\"Input➛Excluded Audiences\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"usedInstances\":{},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"7f344351-8619-49f6-bb43-e5570fd76afd\",\"uiTypeLabel\":\"List\"}},{\"name\":\"096d43fe-eb6f-4314-b9c0-e40481631ffb.Records\",\"label\":\"2 - Look Up Records➛Audience Member Records\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"b6361c6f-2e12-4b08-b094-d74e8e72886b\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"884b8a7c-fa98-4ed6-99cb-02e2645b3d93.Records\",\"label\":\"1 - Look Up Records➛Audience Member Records\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"7b8dcbbd-6266-4088-aa27-844b0b206f12\":[\"condition\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"subflow.exluded_members\",\"label\":\"Input➛Exluded Members\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"array.string\",\"base_type\":\"array.string\",\"usedInstances\":{\"b56cc719-fe1c-4623-a90c-470c6039f783\":[\"items\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"4d282bb0-587c-4f84-b075-494dc577746e\"}},{\"name\":\"subflow.included_audiences\",\"label\":\"Input➛Included Audiences\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"usedInstances\":{\"d8c61982-b7f2-4932-8403-8cf18297f04d\":[\"condition\"]},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"47fed235-0876-4218-8c67-fbe26e5c8491\",\"uiTypeLabel\":\"List\"}},{\"name\":\"b6361c6f-2e12-4b08-b094-d74e8e72886b.item\",\"label\":\"3 - For Each➛Audience Member Record\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member Record\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"d8c61982-b7f2-4932-8403-8cf18297f04d\":[\"condition\"],\"7b8dcbbd-6266-4088-aa27-844b0b206f12\":[\"condition\"]},\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"subflow.excluded_audiences\",\"label\":\"Input➛Excluded Audiences\",\"reference\":\"x_cadso_automate_audience\",\"reference_display\":\"Audience\",\"type\":\"glide_list\",\"base_type\":\"glide_list\",\"usedInstances\":{},\"attributes\":{\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"sourceId\":\"\",\"uiUniqueId\":\"7f344351-8619-49f6-bb43-e5570fd76afd\",\"uiTypeLabel\":\"List\"}},{\"name\":\"096d43fe-eb6f-4314-b9c0-e40481631ffb.Records\",\"label\":\"2 - Look Up Records➛Audience Member Records\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"b6361c6f-2e12-4b08-b094-d74e8e72886b\":[\"items\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}},{\"name\":\"884b8a7c-fa98-4ed6-99cb-02e2645b3d93.Records\",\"label\":\"1 - Look Up Records➛Audience Member Records\",\"reference\":\"x_cadso_automate_audience_member\",\"reference_display\":\"Audience Member Records\",\"type\":\"records\",\"base_type\":\"records\",\"usedInstances\":{\"7b8dcbbd-6266-4088-aa27-844b0b206f12\":[\"condition\"]},\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2025-04-30 21:35:35",
+    "display_value": "2025-04-30 02:35:35 PM"
+  },
+  "type": {
+    "value": "subflow",
+    "display_value": "SubFlow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "get_all_audience_members",
+    "display_value": "get_all_audience_members"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2025-04-30 21:35:35",
+    "display_value": "2025-04-30 02:35:35 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "2c632924335122107b18bc534d5c7bf2",
+    "display_value": "Get Non Excluded Audience Members And Recipient Variables"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Get All Audience Members",
+    "display_value": "Get All Audience Members"
+  },
+  "attributes": {
+    "value": "labelCacheCleanUpExecuted=true",
+    "display_value": "labelCacheCleanUpExecuted=true"
+  },
+  "remote_trigger_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

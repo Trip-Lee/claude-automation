@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "466072af974c7d10ac33f109c253afe0",
+    "extracted_at": "2025-08-22T18:42:43.107Z",
+    "display_value": "Autopopulate 'Sprint' on Retro Feedback",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-07-21 18:06:27",
+    "display_value": "2023-07-21 11:06:27 AM"
+  },
+  "name": {
+    "value": "Autopopulate 'Sprint' on Retro Feedback",
+    "display_value": "Autopopulate 'Sprint' on Retro Feedback"
+  },
+  "sys_updated_on": {
+    "value": "2023-11-10 11:23:05",
+    "display_value": "2023-11-10 03:23:05 AM"
+  }
+}

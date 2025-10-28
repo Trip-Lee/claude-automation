@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "991e759997f56510ac33f109c253af12",
+    "extracted_at": "2025-08-22T18:42:33.901Z",
+    "display_value": "UISlushBucketApiMS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-03-24 18:18:31",
+    "display_value": "2023-03-24 11:18:31 AM"
+  },
+  "name": {
+    "value": "UISlushBucketApiMS",
+    "display_value": "UISlushBucketApiMS"
+  },
+  "sys_updated_on": {
+    "value": "2025-01-28 20:11:43",
+    "display_value": "2025-01-28 12:11:43 PM"
+  }
+}

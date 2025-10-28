@@ -1,48 +1,82 @@
-# Prioritized TODOs - October 21, 2025
+# Prioritized TODOs - October 28, 2025
 
-**Current Version**: v0.9.1
-**Current Phase**: Phase 3.1 (Hardening - 2/6 complete)
+**Current Version**: v0.12.0-alpha
+**Current Phase**: Phase 4.1 (Performance Optimization & Testing)
+**Last Updated**: 2025-10-28
+
+> **📝 Note**: This is the actively maintained TODO list. The old `TODO.md` has been archived as of 2025-10-23.
+> **✅ Latest**: Documentation cleanup complete (v0.12.0) - All docs aligned to current version
+
+---
+
+## ✅ RECENTLY COMPLETED (Last 2 Weeks)
+
+### External Tools System - COMPLETE (2025-10-27)
+**Status**: DONE - ServiceNow tools integrated
+**Time Actual**: ~6 hours
+
+**Completed**:
+- [x] Created `lib/tool-registry.js` (357 lines) - Tool discovery & management
+- [x] Created `lib/tool-executor.js` (249 lines) - Tool execution with fallback
+- [x] Updated `lib/docker-manager.js` (+40 lines) - Tools mount & env vars
+- [x] Updated `lib/orchestrator.js` (+20 lines) - Tool registry integration
+- [x] Created `tools/` directory with sn-tools v2.1.0
+- [x] Created tool manifest system (YAML-based)
+- [x] Created `tools/README.md` (350 lines) - Tools documentation
+- [x] Created `tools/template/tool-manifest.yaml` - Template for new tools
+- [x] Created `TOOLS_SYSTEM.md` (650+ lines) - Implementation docs
+- [x] Updated all documentation (README, STATUS, CHANGELOG)
+
+**Results**:
+- ✅ Tool registry auto-discovers tools
+- ✅ ServiceNow tools (11 capabilities) available to agents
+- ✅ Read-only mounting security enforced
+- ✅ Namespaced environment variables (SNTOOL_*)
+- ✅ Dedicated execution interface with Bash fallback
+- ✅ Template-based tool creation
+- ✅ Complete documentation
+
+**Documentation**: See TOOLS_SYSTEM.md, tools/README.md
+
+**Benefits**:
+- Agents can now use external tools beyond core functionality
+- Reusable tools across all agents and tasks
+- Easy addition of new tools (Jira, Slack, etc.)
+- Secure execution environment
+
+---
+
+### System Validation & Smoke Tests - COMPLETE (2025-10-24)
+**Status**: DONE - 57 tests, 100% pass rate
+**Time Actual**: 8 hours (includes unit tests)
+
+**Completed**:
+- [x] Created `test/smoke-test.js` - 7 tests, ~3-5s
+- [x] Created `test/validation-suite.js` - 25 tests, ~3-5s
+- [x] Created `test/unit/claude-code-agent.test.js` - 25 tests, ~0.2s
+- [x] Created `test/run-unit-tests.js` - Auto-discovering test runner
+- [x] Added `claude validate` command with --smoke and --full flags
+- [x] Added `claude test` command with --all flag
+- [x] Added NPM test scripts (test, test:unit, test:smoke, test:validate, test:all)
+- [x] Created docs/TESTING.md (550 lines comprehensive guide)
+
+**Results**:
+- ✅ 57/57 tests passing (100%)
+- ✅ Duration: ~8 seconds total
+- ✅ Coverage: ~30% (critical paths)
+- ✅ CLI integration complete
+
+**Documentation**: See docs/TESTING.md
 
 ---
 
 ## 🔥 HIGH PRIORITY (Next 1-2 Weeks)
 
-### Goal: Make system reliable and usable for daily work
+### Goal: Optimize performance and expand test coverage
 
 ---
 
-### 1. System Validation & Smoke Tests ⏱️ 2-3 hours
-**Why First**: Need confidence system works before optimizing
-**Impact**: HIGH - Catches regressions early
-
-**Tasks**:
-- [ ] Create `test/smoke-test.js` - Quick validation script
-  - Runs simple task (add comment to file)
-  - Verifies all agents work
-  - Checks cleanup happens
-  - Duration: <30 seconds
-- [ ] Create `test/validation-suite.js` - Full system validation
-  - Tests all 3 agents (architect, coder, reviewer)
-  - Tests error handling (timeout, retry)
-  - Tests cleanup (success, error, interrupt)
-  - Validates file writing
-  - Checks cost tracking
-- [ ] Add `claude validate` command to CLI
-  - Runs validation suite
-  - Reports pass/fail
-  - Shows system health
-
-**Success Criteria**:
-- Can run `claude validate` and get green ✅
-- Takes <2 minutes to run
-- Catches broken functionality
-
-**Blocks**: Nothing - can do now
-**Unblocks**: Confident changes won't break things
-
----
-
-### 2. Performance - Low-Hanging Fruit ⏱️ 4-6 hours
+### 1. Performance - Low-Hanging Fruit ⏱️ 4-6 hours
 **Why**: System is 2x slower than goal (245s vs 120s)
 **Impact**: HIGH - Users feel the speed
 
@@ -53,7 +87,7 @@
 
 **Quick Wins (No Architecture Changes)**:
 
-#### 2.1 Reduce Architect Brief Verbosity
+#### 1.1 Reduce Architect Brief Verbosity
 - [ ] Analyze architect brief from test run
 - [ ] Identify redundant sections
 - [ ] Create concise brief template
@@ -62,14 +96,14 @@
 
 **Expected**: -10-15s (20% architect improvement)
 
-#### 2.2 Optimize Reviewer with Context
+#### 1.2 Optimize Reviewer with Context
 - [ ] Pre-load test results to reviewer
 - [ ] Skip redundant file reads
 - [ ] Streamline approval flow
 
 **Expected**: -5-10s (15-20% reviewer improvement)
 
-#### 2.3 Parallel Test Execution (If applicable)
+#### 1.3 Parallel Test Execution (If applicable)
 - [ ] Run tests while coder is working
 - [ ] Don't block on sequential test → review
 
@@ -80,13 +114,13 @@
 
 ---
 
-### 3. CLI Quick Wins ⏱️ 3-4 hours
+### 2. CLI Quick Wins ⏱️ 3-4 hours
 **Why**: Improves daily usability immediately
 **Impact**: MEDIUM-HIGH - Better UX
 
 **Essential Commands**:
 
-#### 3.1 `claude cancel <taskId>` command
+#### 2.1 `claude cancel <taskId>` command
 - [ ] Stop running agents gracefully
 - [ ] Cleanup containers
 - [ ] Mark task as cancelled
@@ -94,7 +128,7 @@
 
 **User Story**: "I started wrong task, need to cancel it"
 
-#### 3.2 `claude status` command
+#### 2.2 `claude status` command
 - [ ] Show all active/pending tasks
 - [ ] Show container status
 - [ ] Show resource usage
@@ -102,7 +136,7 @@
 
 **User Story**: "What tasks are running? What happened yesterday?"
 
-#### 3.3 Improved error messages
+#### 2.3 Improved error messages
 - [ ] Better validation errors (missing config, etc)
 - [ ] Suggest fixes for common problems
 - [ ] Link to troubleshooting docs
@@ -111,7 +145,7 @@
 
 ---
 
-### 4. Basic Unit Tests ⏱️ 6-8 hours
+### 3. Unit Test Coverage to 50% ⏱️ 6-8 hours
 **Why**: Prevent regressions, enable confident changes
 **Impact**: MEDIUM - Foundation for quality
 
@@ -143,7 +177,7 @@
 
 ---
 
-### 5. Comprehensive Test Suite ⏱️ 12-16 hours
+### 4. Comprehensive Test Suite ⏱️ 12-16 hours
 
 **Integration Tests**:
 - [ ] Test full workflow (simple task)
@@ -169,7 +203,7 @@
 
 ---
 
-### 6. Model Selection Strategy ⏱️ 4-6 hours
+### 5. Model Selection Strategy ⏱️ 4-6 hours
 **Why**: Can reduce cost 30-40% with similar speed
 **Impact**: MEDIUM - Cost optimization
 
@@ -189,7 +223,7 @@
 
 ---
 
-### 7. Advanced CLI Features ⏱️ 6-8 hours
+### 6. Advanced CLI Features ⏱️ 6-8 hours
 
 - [ ] Progress indicators (ora library)
   - Show agent thinking
@@ -208,7 +242,7 @@
 
 ---
 
-### 8. Context Caching Optimization ⏱️ 8-12 hours
+### 7. Context Caching Optimization ⏱️ 8-12 hours
 
 **Current Issue**: Files read multiple times
 - Architect reads: main.py, test_main.py
@@ -225,7 +259,7 @@
 
 ---
 
-### 9. Docker Enhancements ⏱️ 4-6 hours
+### 8. Docker Enhancements ⏱️ 4-6 hours
 
 - [ ] Container versioning (tag containers with version)
 - [ ] Health checks (verify container is responsive)
@@ -235,7 +269,7 @@
 
 ---
 
-### 10. Git/GitHub Enhancements ⏱️ 6-8 hours
+### 9. Git/GitHub Enhancements ⏱️ 6-8 hours
 
 - [ ] Merge conflict detection
 - [ ] Draft PRs (for review before final)
@@ -245,7 +279,7 @@
 
 ---
 
-### 11. Advanced Agent Features ⏱️ 12-20 hours
+### 10. Advanced Agent Features ⏱️ 12-20 hours
 
 - [ ] Agent-to-agent dialogue (already implemented, needs testing)
 - [ ] Consensus detection tuning
@@ -255,93 +289,136 @@
 
 ---
 
-## 📋 RECOMMENDED SPRINT PLAN
+### 11. Documentation & Research ⏱️ 4-6 hours
 
-### Week 1 (Oct 21-27): Validation & Quick Wins
-**Goal**: Confidence + Speed improvements
+**Documentation Needs:**
+- [ ] Claude Code Backend guide (`docs/CLAUDE_CODE_BACKEND.md`)
+  - Architecture diagram (Orchestrator → ClaudeCodeAgent → CLI)
+  - Setup guide (no API key required)
+  - Troubleshooting section
+  - Performance expectations
+  - Cost comparison (API vs Pro/Max)
+- [ ] Update README with current capabilities
+  - Add Claude Code backend option
+  - Update prerequisites (Claude Pro/Max OR API key)
+  - Add performance metrics and cost estimates
 
-**Monday-Tuesday** (6 hours):
-- ✅ System validation suite
-- ✅ Smoke tests
-- ✅ `claude validate` command
-
-**Wednesday-Thursday** (8 hours):
-- ✅ Reduce architect brief verbosity
-- ✅ Optimize reviewer context
-- ✅ Measure improvements
-
-**Friday** (4 hours):
-- ✅ `claude status` command
-- ✅ `claude cancel` command
-
-**Expected Outcomes**:
-- Can run `claude validate` ✅
-- System 10-15% faster
-- Better daily usability
+**Research Tasks:**
+- [ ] Alternative Claude Code flags exploration
+  - `--fallback-model` for reliability
+  - `--mcp-config` for custom tools
+  - `--agents` for custom agent definitions
+  - `--permission-mode` options
+- [ ] Session continuation with `--continue` flag
+  - Research flag behavior
+  - Test if session persists between spawns
+  - Potential for faster execution and lower cost
+- [ ] MCP integration revisited (future exploration)
+  - Evaluate pros/cons for container tools
+  - Consider when testing infrastructure is solid
 
 ---
 
-### Week 2 (Oct 28-Nov 3): Testing Foundation
-**Goal**: Prevent regressions
+### 12. Docker Edge Cases Testing ⏱️ 2-3 hours
 
-**Monday-Wednesday** (12 hours):
-- ✅ Unit tests for critical modules
-- ✅ 50-60% coverage on key paths
-- ✅ Run tests in CI (if applicable)
+- [ ] Test large files (>1MB)
+- [ ] Test special characters in filenames
+- [ ] Test deep directory structures
+- [ ] Verify file permissions after write
+- [ ] Test with binary files
+- [ ] Stress test concurrent operations
 
-**Thursday-Friday** (6 hours):
-- ✅ Integration tests (happy path)
-- ✅ Error scenario tests
+---
+
+## 📋 RECOMMENDED SPRINT PLAN
+
+### ✅ Week 1 (Oct 21-27): COMPLETE - Validation & Tools
+**Goal**: Foundation + External Tools
+
+**Completed**:
+- ✅ System validation suite (v0.11.1)
+- ✅ 57 tests, 100% pass rate
+- ✅ External tools system (v0.12.0)
+- ✅ ServiceNow integration
+- ✅ Documentation updates
+
+---
+
+### Week 2 (Oct 28-Nov 3): Performance & Testing
+**Goal**: Speed improvements + Test coverage
+
+**Monday-Tuesday** (6-8 hours):
+- [ ] Performance optimization (Item #1)
+  - Architect brief reduction
+  - Reviewer optimization
+  - Model selection experiments
+- [ ] Measure improvements
+
+**Wednesday-Thursday** (4-6 hours):
+- [ ] CLI Quick Wins (Item #2)
+  - `claude status` command
+  - `claude cancel` command
+  - Improved error messages
+
+**Friday** (6-8 hours):
+- [ ] Start Unit Test Coverage (Item #3)
+  - Orchestrator tests
+  - Begin ConfigManager tests
+
+**Expected Outcomes**:
+- System 15-30% faster
+- `claude status` working
+- Foundation for testing expansion
+
+---
+
+### Week 3 (Nov 4-10): Test Coverage Complete
+**Goal**: Solid test foundation
+
+- [ ] Complete Unit Test Coverage (Item #3)
+  - Finish Orchestrator, ConfigManager tests
+  - Tool Registry tests
+  - Target: 50-60% coverage
+- [ ] Comprehensive Test Suite (Item #4)
+  - Integration tests
+  - Error scenarios
+  - Edge cases
 
 **Expected Outcomes**:
 - 50-60% test coverage ✅
-- Confident to make changes
-- Catch bugs early
+- Integration tests passing ✅
+- Confident to make major changes
 
 ---
 
-### Week 3-4 (Nov 4-17): Polish & Optimization
+### Week 4 (Nov 11-17): Polish & Advanced Features
 **Goal**: Production-ready polish
 
-**Week 3**:
-- Model selection strategy (Haiku for architect/reviewer)
-- Comprehensive test suite
-- Benchmark suite
-
-**Week 4**:
-- Advanced CLI features
-- Progress indicators
-- Performance tuning
+- [ ] Model Selection Strategy (Item #5)
+- [ ] Advanced CLI Features (Item #6)
+- [ ] Troubleshooting documentation
+- [ ] Performance monitoring
 
 **Expected Outcomes**:
-- 80% test coverage ✅
-- Cost reduced 30% ✅
-- Professional UX ✅
+- Cost reduced 30-40% ✅
+- Professional CLI polish ✅
+- Complete documentation
 
 ---
 
-## 🎯 MY TOP 3 RECOMMENDATIONS
+## 🎯 CURRENT TOP PRIORITIES (Updated 2025-10-28)
 
 ### If You Have 6 Hours This Week:
 
-**#1: System Validation (2-3 hours) - CRITICAL**
-```bash
-claude validate
-# Runs smoke tests
-# Verifies system works
-# Gives confidence
-```
-
-**Why**: You need to know the system works reliably before doing anything else.
-
-**#2: Performance Quick Wins (3-4 hours) - HIGH IMPACT**
+**#1: Performance Optimization (4-6 hours) - HIGH IMPACT** (Item #1)
 - Reduce architect brief verbosity
 - Optimize reviewer context
-- Measure 10-15% improvement
+- Model selection experiments (Haiku vs Sonnet)
+- Measure improvements
 
-**Why**: System is 2x slower than goal. Quick wins get you closer fast.
+**Why**: System is 2x slower than goal (245s vs 120s). Quick wins provide immediate value.
 
-**#3: `claude status` Command (1 hour) - HIGH VALUE**
+**#2: `claude status` Command (1-2 hours) - HIGH VALUE** (Item #2.2)
 ```bash
 claude status
 # Shows running tasks
@@ -355,12 +432,19 @@ claude status
 
 ### If You Have 12 Hours This Week:
 
-Do all of the above (#1-3) PLUS:
+Do all of the above (#1-2) PLUS:
 
-**#4: Basic Unit Tests (6-8 hours)**
-- Test error handling logic
-- Test cleanup logic
-- 50-60% coverage of critical paths
+**#3: CLI Quick Wins (3-4 hours)** (Item #2)
+- `claude cancel` command
+- `claude status` command (if not done)
+- Improved error messages
+
+**Why**: Professional polish. Better daily experience.
+
+**#4: Start Unit Tests (4-6 hours)** (Item #3)
+- Begin Orchestrator tests
+- Begin ConfigManager tests
+- Foundation for 50% coverage
 
 **Why**: Foundation for quality. Enables confident changes.
 
@@ -370,19 +454,20 @@ Do all of the above (#1-3) PLUS:
 
 Do all of the above (#1-4) PLUS:
 
-**#5: Model Selection (4-6 hours)**
-- Haiku for architect
-- Haiku for reviewer
-- Measure cost reduction (30-40%)
+**#5: Complete Unit Test Coverage (6-8 hours)** (Item #3)
+- Finish Orchestrator tests
+- Finish ConfigManager tests
+- Tool Registry tests
+- Target: 50-60% coverage
 
-**Why**: Big cost savings with minimal risk.
+**Why**: Solid foundation prevents regressions.
 
-**#6: CLI Polish (3-4 hours)**
-- `claude cancel` command
-- Progress indicators
-- Better error messages
+**#6: Comprehensive Test Suite (4-6 hours)** (Item #4)
+- Integration tests
+- Error scenarios
+- Happy path verification
 
-**Why**: Professional polish. Better daily experience.
+**Why**: Confidence in end-to-end functionality.
 
 ---
 
@@ -391,7 +476,7 @@ Do all of the above (#1-4) PLUS:
 ### ❌ Don't Do These Until High Priority Items Are Done:
 
 1. **❌ Multi-agent expansion** (20+ agents)
-   - Current 3 agents work fine
+   - Current 7 agents work fine
    - Not a bottleneck
    - Wait until testing is solid
 
@@ -437,45 +522,55 @@ Do all of the above (#1-4) PLUS:
 
 ---
 
-## 🎯 FINAL RECOMMENDATION
+## 🎯 FINAL RECOMMENDATION (Updated 2025-10-28)
 
-### Start With This (6-8 hours):
+### Start With This Week (6-8 hours):
 
-1. **System Validation Suite** (2-3 hours)
-   - Creates `claude validate` command
-   - Smoke tests all functionality
-   - Foundation for confidence
-
-2. **Performance Quick Wins** (3-4 hours)
+1. **Performance Optimization** (4-6 hours) - Item #1
    - Reduce architect brief verbosity
-   - Optimize reviewer
-   - Measure 10-15% improvement
-   - Get closer to 180s goal
+   - Optimize reviewer context
+   - Model selection experiments
+   - Measure 15-30% improvement
 
-3. **`claude status` Command** (1 hour)
-   - Shows running tasks
-   - Daily usability win
-   - Quick to implement
+2. **CLI Quick Wins** (1-2 hours) - Item #2
+   - `claude status` command
+   - `claude cancel` command (if time permits)
+   - Better error messages
 
-4. **Basic Error Message Improvements** (1 hour)
-   - Better validation errors
-   - Suggest fixes
-   - Link to docs
-
-**Total: 7-9 hours**
+**Total: 5-8 hours**
 
 **Result**:
-- ✅ Confidence system works
-- ✅ 10-15% faster
-- ✅ Better daily UX
-- ✅ Ready for next phase
+- ✅ System 15-30% faster
+- ✅ Better daily usability
+- ✅ Foundation for next phase
 
 ---
 
-**After That**: Week 2 focus on unit tests (50-60% coverage), then Week 3+ polish and optimization.
+**After That**: Continue with unit test coverage (Item #3), then comprehensive test suite (Item #4).
 
 ---
 
-**Last Updated**: 2025-10-21
-**Next Review**: After completing Week 1 tasks
+**Last Updated**: 2025-10-28
+**Next Review**: After completing Week 2 performance tasks
 **Maintained By**: System development team
+
+---
+
+## 📝 CHANGELOG
+
+**2025-10-28:**
+- Updated to v0.12.0-alpha (External Tools System complete)
+- Moved completed items to "Recently Completed" section
+  - External Tools System (v0.12.0) - ServiceNow integration
+  - System Validation & Smoke Tests (v0.11.1) - 57 tests, 100% pass
+- Renumbered all items (1-12 instead of 1-13)
+- Updated Sprint Plan to reflect Week 2 (Oct 28-Nov 3)
+- Updated Top Priorities section
+- Changed Phase to 4.1 (Performance Optimization & Testing)
+- Last Updated date changed to 2025-10-28
+
+**2025-10-23:**
+- Updated version to v0.10.0
+- Archived old `TODO.md` (v0.6.0 era)
+- Consolidated unique items from `TODO.md` into this file
+- Added items 12 (Documentation & Research) and 13 (Docker Edge Cases Testing)

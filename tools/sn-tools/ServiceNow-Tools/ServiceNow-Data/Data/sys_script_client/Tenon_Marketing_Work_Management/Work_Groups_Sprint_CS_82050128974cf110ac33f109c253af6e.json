@@ -1,0 +1,140 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "82050128974cf110ac33f109c253af6e",
+    "extracted_at": "2025-09-19T21:48:45.053Z",
+    "display_value": "Work Groups \"Sprint\" CS",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "isolate_script": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "applies_extended": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "global": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_updated_on": {
+    "value": "2023-07-12 02:42:30",
+    "display_value": "2023-07-11 07:42:30 PM"
+  },
+  "type": {
+    "value": "onLoad",
+    "display_value": "onLoad"
+  },
+  "sys_class_name": {
+    "value": "sys_script_client",
+    "display_value": "Client Script"
+  },
+  "ui_type": {
+    "value": "0",
+    "display_value": "Desktop"
+  },
+  "view": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2023-07-12 02:35:53",
+    "display_value": "2023-07-11 07:35:53 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Work Groups \"Sprint\" CS",
+    "display_value": "Work Groups \"Sprint\" CS"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "table": {
+    "value": "x_cadso_work_group",
+    "display_value": "x_cadso_work_group"
+  },
+  "order": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_mod_count": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "function onLoad() {\n\tif (g_scratchpad.agile_mode == 'true') {\n\t\tg_form.setVisible('agile', true);\n\t} else {\n\t\tg_form.setVisible('agile', false);\n\t}\n}",
+    "display_value": "function onLoad() {\n\tif (g_scratchpad.agile_mode == 'true') {\n\t\tg_form.setVisible('agile', true);\n\t} else {\n\t\tg_form.setVisible('agile', false);\n\t}\n}",
+    "formatted_script": {
+      "line_count": 7,
+      "char_count": 149,
+      "preview": "function onLoad() {\n\tif (g_scratchpad.agile_mode == 'true') {\n\t\tg_form.setVisible('agile', true);\n\t} else {\n\t\tg_form.setVisible('agile', false);\n\t}\n}",
+      "full_script": "function onLoad() {\n\tif (g_scratchpad.agile_mode == 'true') {\n\t\tg_form.setVisible('agile', true);\n\t} else {\n\t\tg_form.setVisible('agile', false);\n\t}\n}"
+    }
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_client_82050128974cf110ac33f109c253af6e",
+    "display_value": "sys_script_client_82050128974cf110ac33f109c253af6e"
+  },
+  "field": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "Work Groups \"Sprint\" CS",
+    "display_value": "Work Groups \"Sprint\" CS"
+  },
+  "messages": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

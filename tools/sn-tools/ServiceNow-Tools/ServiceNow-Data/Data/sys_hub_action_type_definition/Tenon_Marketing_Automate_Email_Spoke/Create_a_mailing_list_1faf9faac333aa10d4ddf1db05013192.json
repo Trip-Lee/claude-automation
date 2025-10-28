@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "1faf9faac333aa10d4ddf1db05013192",
+    "extracted_at": "2025-09-19T21:48:48.812Z",
+    "display_value": "Create a mailing list",
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": {
+      "display_value": "Tenon Marketing Automate Email Spoke",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/c44692d8c366425085b196c4e4013187",
+      "value": "c44692d8c366425085b196c4e4013187"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.address}}\",\"label\":\"action➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.name}}\",\"label\":\"action➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.description}}\",\"label\":\"action➛Description\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.access_level}}\",\"label\":\"action➛Access Level\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"choice\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":[{\"label\":\"Read Only\",\"value\":\"readonly\",\"order\":1.0},{\"label\":\"Members\",\"value\":\"members\",\"order\":2.0},{\"label\":\"Everyone\",\"value\":\"everyone\",\"order\":3.0}],\"attributes\":{}},{\"name\":\"{{action.reply_preference}}\",\"label\":\"action➛Reply Preference\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"choice\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":[{\"label\":\"List\",\"value\":\"list\",\"order\":1.0},{\"label\":\"Sender\",\"value\":\"sender\",\"order\":2.0}],\"attributes\":{}},{\"name\":\"{{action.domain_region}}\",\"label\":\"action➛Domain Region\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"7ffb32a7-4c6b-4348-bfac-634b2b440a81\"}},{\"name\":\"{{step[78f816c8-52b4-4404-b9ba-02051e11a905].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[78f816c8-52b4-4404-b9ba-02051e11a905].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[78f816c8-52b4-4404-b9ba-02051e11a905].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[4ed874fa-5bfd-43af-b3da-2db73ae2b002].root.list}}\",\"label\":\"step➛JSON Parser step➛root➛list\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[4ed874fa-5bfd-43af-b3da-2db73ae2b002].__step_status__.message}}\",\"label\":\"step➛JSON Parser step➛Step Status➛Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]",
+    "display_value": "[{\"name\":\"{{action.address}}\",\"label\":\"action➛Address\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.name}}\",\"label\":\"action➛Name\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.description}}\",\"label\":\"action➛Description\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.access_level}}\",\"label\":\"action➛Access Level\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"choice\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":[{\"label\":\"Read Only\",\"value\":\"readonly\",\"order\":1.0},{\"label\":\"Members\",\"value\":\"members\",\"order\":2.0},{\"label\":\"Everyone\",\"value\":\"everyone\",\"order\":3.0}],\"attributes\":{}},{\"name\":\"{{action.reply_preference}}\",\"label\":\"action➛Reply Preference\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"choice\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":[{\"label\":\"List\",\"value\":\"list\",\"order\":1.0},{\"label\":\"Sender\",\"value\":\"sender\",\"order\":2.0}],\"attributes\":{}},{\"name\":\"{{action.domain_region}}\",\"label\":\"action➛Domain Region\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"string\",\"uiUniqueId\":\"7ffb32a7-4c6b-4348-bfac-634b2b440a81\"}},{\"name\":\"{{step[78f816c8-52b4-4404-b9ba-02051e11a905].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[78f816c8-52b4-4404-b9ba-02051e11a905].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[78f816c8-52b4-4404-b9ba-02051e11a905].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[4ed874fa-5bfd-43af-b3da-2db73ae2b002].root.list}}\",\"label\":\"step➛JSON Parser step➛root➛list\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"object\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[4ed874fa-5bfd-43af-b3da-2db73ae2b002].__step_status__.message}}\",\"label\":\"step➛JSON Parser step➛Step Status➛Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "Adds a mailing list to the account.",
+    "display_value": "Adds a mailing list to the account."
+  },
+  "sys_updated_on": {
+    "value": "2025-09-08 17:28:06",
+    "display_value": "2025-09-08 10:28:06 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Create a mailing list",
+    "display_value": "Create a mailing list"
+  },
+  "latest_snapshot": {
+    "value": "b7cf9beac333aa10d4ddf1db05013107",
+    "display_value": "b7cf9beac333aa10d4ddf1db05013107"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "copy_of_create_a_mailing_list",
+    "display_value": "copy_of_create_a_mailing_list"
+  },
+  "sys_updated_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "sys_created_on": {
+    "value": "2025-09-08 17:27:31",
+    "display_value": "2025-09-08 10:27:31 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patch9b-07-28-2025_08-07-2025_0908.zip",
+    "display_value": "glide-xanadu-07-02-2024__patch9b-07-28-2025_08-07-2025_0908.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Create a mailing list",
+    "display_value": "Create a mailing list"
+  },
+  "sys_scope": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "abcf5beac333aa10d4ddf1db05013143",
+    "display_value": "abcf5beac333aa10d4ddf1db05013143"
+  },
+  "sys_created_by": {
+    "value": "desiree.morehouse",
+    "display_value": "desiree.morehouse"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "5",
+    "display_value": "5"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "c44692d8c366425085b196c4e4013187",
+    "display_value": "Tenon Marketing Automate Email Spoke"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_1faf9faac333aa10d4ddf1db05013192",
+    "display_value": "sys_hub_action_type_definition_1faf9faac333aa10d4ddf1db05013192"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Create a mailing list",
+    "display_value": "Create a mailing list"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "67f5645fc36e0e1085b196c4e4013136",
+    "display_value": "Mailing Lists"
+  },
+  "copied_from": {
+    "value": "aff5645fc36e0e1085b196c4e40131ce",
+    "display_value": "aff5645fc36e0e1085b196c4e40131ce"
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

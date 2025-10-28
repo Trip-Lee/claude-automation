@@ -1,0 +1,108 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "9468f1f033ae66507b18bc534d5c7bd3",
+    "extracted_at": "2025-09-19T21:48:28.763Z",
+    "display_value": "MergeTagsAPI",
+    "application": "Tenon_-_Core",
+    "scope": {
+      "display_value": "Tenon - Core",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/608cd026c374e250d4ddf1db050131bb",
+      "value": "608cd026c374e250d4ddf1db050131bb"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "mobile_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-07-02 20:08:20",
+    "display_value": "2025-07-02 01:08:20 PM"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sandbox_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "script": {
+    "value": "var MergeTagsAPI = Class.create();\r\nMergeTagsAPI.prototype = Object.extendsObject(x_cadso_core.MergeTagsAPIMS, {\r\n\r\n    initialize: function() {\r\n\t\tx_cadso_core.MergeTagsAPIMS.prototype.initialize.apply(this, arguments);\r\n    },\r\n\t\r\n    type: 'MergeTagsAPI'\r\n});\r\n\r\n",
+    "display_value": "var MergeTagsAPI = Class.create();\r\nMergeTagsAPI.prototype = Object.extendsObject(x_cadso_core.MergeTagsAPIMS, {\r\n\r\n    initialize: function() {\r\n\t\tx_cadso_core.MergeTagsAPIMS.prototype.initialize.apply(this, arguments);\r\n    },\r\n\t\r\n    type: 'MergeTagsAPI'\r\n});\r\n\r\n",
+    "formatted_script": {
+      "line_count": 11,
+      "char_count": 266,
+      "preview": "var MergeTagsAPI = Class.create();\r\nMergeTagsAPI.prototype = Object.extendsObject(x_cadso_core.MergeTagsAPIMS, {\r\n\r\n    initialize: function() {\r\n\t\tx_cadso_core.MergeTagsAPIMS.prototype.initialize.app...",
+      "full_script": "var MergeTagsAPI = Class.create();\r\nMergeTagsAPI.prototype = Object.extendsObject(x_cadso_core.MergeTagsAPIMS, {\r\n\r\n    initialize: function() {\r\n\t\tx_cadso_core.MergeTagsAPIMS.prototype.initialize.apply(this, arguments);\r\n    },\r\n\t\r\n    type: 'MergeTagsAPI'\r\n});\r\n\r\n"
+    }
+  },
+  "sys_class_name": {
+    "value": "sys_script_include",
+    "display_value": "Script Include"
+  },
+  "sys_package": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_update_name": {
+    "value": "sys_script_include_9468f1f033ae66507b18bc534d5c7bd3",
+    "display_value": "sys_script_include_9468f1f033ae66507b18bc534d5c7bd3"
+  },
+  "sys_updated_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "api_name": {
+    "value": "x_cadso_core.MergeTagsAPI",
+    "display_value": "x_cadso_core.MergeTagsAPI"
+  },
+  "sys_created_on": {
+    "value": "2025-07-02 20:08:20",
+    "display_value": "2025-07-02 01:08:20 PM"
+  },
+  "caller_access": {
+    "value": "",
+    "display_value": null
+  },
+  "name": {
+    "value": "MergeTagsAPI",
+    "display_value": "MergeTagsAPI"
+  },
+  "sys_name": {
+    "value": "MergeTagsAPI",
+    "display_value": "MergeTagsAPI"
+  },
+  "sys_scope": {
+    "value": "608cd026c374e250d4ddf1db050131bb",
+    "display_value": "Tenon - Core"
+  },
+  "sys_created_by": {
+    "value": "admin",
+    "display_value": "admin"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

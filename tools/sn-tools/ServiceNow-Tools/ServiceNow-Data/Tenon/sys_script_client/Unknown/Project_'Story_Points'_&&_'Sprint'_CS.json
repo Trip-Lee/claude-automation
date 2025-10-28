@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "bb7b467197a62d90ac33f109c253afda",
+    "extracted_at": "2025-08-22T18:46:29.118Z",
+    "display_value": "Project 'Story Points'  && 'Sprint' CS",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-05-02 15:21:30",
+    "display_value": "2023-05-02 08:21:30 AM"
+  },
+  "name": {
+    "value": "Project 'Story Points'  && 'Sprint' CS",
+    "display_value": "Project 'Story Points'  && 'Sprint' CS"
+  },
+  "sys_updated_on": {
+    "value": "2023-07-14 21:52:33",
+    "display_value": "2023-07-14 02:52:33 PM"
+  }
+}

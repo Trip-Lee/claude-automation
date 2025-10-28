@@ -1,0 +1,178 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow_snapshot",
+    "sys_id": "9f545a33c3d7c61085b196c4e401318f",
+    "extracted_at": "2025-09-19T21:50:03.451Z",
+    "display_value": "Get Content Template Thumbnail",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"bd00cd31-07e7-4526-b6e8-1a3acc0e92f1.__status__.message\",\"label\":\"3 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"6ad4f36b-af15-4be8-9d00-4f2b50fa9d82\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Content Template Record\",\"reference\":\"x_cadso_automate_content_template\",\"reference_display\":\"Content Template\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"3ead54f8-a6ef-47b4-a8cd-2c1791e32988\":[\"content_template\"],\"84dde876-f992-422f-b991-2dc7fedd619d\":[\"record\"]},\"attributes\":{}},{\"name\":\"ff8f790f-880e-443f-aa38-60bd67840b3b.access_token\",\"label\":\"1 - Get Content Service Token➛Access Token\",\"reference_display\":\"Access Token\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"3ead54f8-a6ef-47b4-a8cd-2c1791e32988\":[\"token\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"dc9e87c2-4356-464f-adc9-099e25c1670e\"}}]",
+    "display_value": "[{\"name\":\"bd00cd31-07e7-4526-b6e8-1a3acc0e92f1.__status__.message\",\"label\":\"3 - Top Level Catch➛Error Status➛Message\",\"reference\":\"\",\"reference_display\":\"\",\"type\":\"string\",\"base_type\":\"string\",\"column_name\":\"\",\"usedInstances\":{\"6ad4f36b-af15-4be8-9d00-4f2b50fa9d82\":[\"log_message\"]},\"attributes\":{}},{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Content Template Record\",\"reference\":\"x_cadso_automate_content_template\",\"reference_display\":\"Content Template\",\"type\":\"reference\",\"base_type\":\"reference\",\"usedInstances\":{\"3ead54f8-a6ef-47b4-a8cd-2c1791e32988\":[\"content_template\"],\"84dde876-f992-422f-b991-2dc7fedd619d\":[\"record\"]},\"attributes\":{}},{\"name\":\"ff8f790f-880e-443f-aa38-60bd67840b3b.access_token\",\"label\":\"1 - Get Content Service Token➛Access Token\",\"reference_display\":\"Access Token\",\"type\":\"string\",\"base_type\":\"string\",\"usedInstances\":{\"3ead54f8-a6ef-47b4-a8cd-2c1791e32988\":[\"token\"]},\"attributes\":{\"uiType\":\"string\",\"uiTypeLabel\":\"String\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"pwd2droppable\":\"true\",\"uiUniqueId\":\"dc9e87c2-4356-464f-adc9-099e25c1670e\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "user",
+    "display_value": "User who initiates the session"
+  },
+  "sys_updated_on": {
+    "value": "2024-07-16 20:17:11",
+    "display_value": "2024-07-16 01:17:11 PM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow_snapshot",
+    "display_value": "Flow Snapshot"
+  },
+  "internal_name": {
+    "value": "get_content_template_thumbnail",
+    "display_value": "get_content_template_thumbnail"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-07-16 20:17:11",
+    "display_value": "2024-07-16 01:17:11 PM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "parent_flow": {
+    "value": "313ae8f9c347c21085b196c4e4013162",
+    "display_value": "Get Content Template Thumbnail"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "version": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "master": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "authored_on_release_version": {
+    "value": "25000",
+    "display_value": "25,000"
+  },
+  "sys_package": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "flow_priority": {
+    "value": "MEDIUM",
+    "display_value": "Medium"
+  },
+  "name": {
+    "value": "Get Content Template Thumbnail",
+    "display_value": "Get Content Template Thumbnail"
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1284310000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=1284310000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "267d0d62c3d3421085b196c4e401312f",
+    "display_value": "267d0d62c3d3421085b196c4e401312f"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

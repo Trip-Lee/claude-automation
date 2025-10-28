@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "7fbd759997f56510ac33f109c253af0e",
+    "extracted_at": "2025-08-22T18:42:33.829Z",
+    "display_value": "UISlushBucketApi",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-03-24 18:17:03",
+    "display_value": "2023-03-24 11:17:03 AM"
+  },
+  "name": {
+    "value": "UISlushBucketApi",
+    "display_value": "UISlushBucketApi"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-11 02:45:52",
+    "display_value": "2024-10-10 07:45:52 PM"
+  }
+}

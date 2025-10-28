@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "b98f2efa87091610369f33373cbb356c",
+    "extracted_at": "2025-08-22T18:46:29.111Z",
+    "display_value": "Task Ad hoc Readonly for Project Adhoc",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-08 19:36:09",
+    "display_value": "2024-10-08 12:36:09 PM"
+  },
+  "name": {
+    "value": "Task Ad hoc Readonly for Project Adhoc",
+    "display_value": "Task Ad hoc Readonly for Project Adhoc"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-08 19:36:09",
+    "display_value": "2024-10-08 12:36:09 PM"
+  }
+}

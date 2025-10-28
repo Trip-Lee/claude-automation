@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_client",
+    "sys_id": "ce17a9f43391d2107b18bc534d5c7bb9",
+    "extracted_at": "2025-08-22T18:42:43.201Z",
+    "display_value": "Ad hoc checkbox for Task",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-10-14 19:27:19",
+    "display_value": "2024-10-14 12:27:19 PM"
+  },
+  "name": {
+    "value": "Ad hoc checkbox for Task",
+    "display_value": "Ad hoc checkbox for Task"
+  },
+  "sys_updated_on": {
+    "value": "2024-10-14 19:34:48",
+    "display_value": "2024-10-14 12:34:48 PM"
+  }
+}

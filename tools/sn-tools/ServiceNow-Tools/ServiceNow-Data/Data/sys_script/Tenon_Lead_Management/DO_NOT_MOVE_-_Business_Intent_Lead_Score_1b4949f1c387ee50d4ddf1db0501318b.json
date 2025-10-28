@@ -1,0 +1,200 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "1b4949f1c387ee50d4ddf1db0501318b",
+    "extracted_at": "2025-09-19T21:48:36.920Z",
+    "display_value": "DO NOT MOVE - Business Intent Lead Score",
+    "application": "Tenon_Lead_Management",
+    "scope": {
+      "display_value": "Tenon Lead Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/d7d2017bc3646610d4ddf1db050131db",
+      "value": "d7d2017bc3646610d4ddf1db050131db"
+    }
+  },
+  "client_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "template": {
+    "value": "",
+    "display_value": ""
+  },
+  "access": {
+    "value": "package_private",
+    "display_value": "This application scope only"
+  },
+  "action_insert": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "action_update": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "advanced": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "action_delete": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "change_fields": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "description": {
+    "value": "Updates the lead score if the Form Fill with business intent is set to true.\r\n\r\n\"u_filled_contact_us_form_with_business_intent\" + 15",
+    "display_value": "Updates the lead score if the Form Fill with business intent is set to true.\r\n\r\n\"u_filled_contact_us_form_with_business_intent\" + 15"
+  },
+  "action_query": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_updated_on": {
+    "value": "2025-08-04 20:08:50",
+    "display_value": "2025-08-04 01:08:50 PM"
+  },
+  "when": {
+    "value": "before",
+    "display_value": "before"
+  },
+  "sys_class_name": {
+    "value": "sys_script",
+    "display_value": "Business Rule"
+  },
+  "is_rest": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "rest_method_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "rest_service_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_created_on": {
+    "value": "2025-07-30 16:31:41",
+    "display_value": "2025-07-30 09:31:41 AM"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "DO NOT MOVE - Business Intent Lead Score",
+    "display_value": "DO NOT MOVE - Business Intent Lead Score"
+  },
+  "sys_scope": {
+    "value": "d7d2017bc3646610d4ddf1db050131db",
+    "display_value": "Tenon Lead Management"
+  },
+  "sys_created_by": {
+    "value": "will.mcgill",
+    "display_value": "will.mcgill"
+  },
+  "order": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "rest_method": {
+    "value": "",
+    "display_value": ""
+  },
+  "rest_service": {
+    "value": "",
+    "display_value": ""
+  },
+  "add_message": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "sys_mod_count": {
+    "value": "7",
+    "display_value": "7"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "collection": {
+    "value": "sn_lead_mgmt_core_lead",
+    "display_value": "sn_lead_mgmt_core_lead"
+  },
+  "message": {
+    "value": "",
+    "display_value": null
+  },
+  "priority": {
+    "value": "100",
+    "display_value": "100"
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "script": {
+    "value": "(function executeRule(current, previous /*null when async*/ ) {\r\n    function getLeadRatings() {\r\n        let minRating = 0;\r\n        let lowestRating = 0;\r\n        let leadRatings = [];\r\n        let ratingGR = new GlideRecord('x_cadso_lead_rating_definition');\r\n        ratingGR.orderBy('max_rating');\r\n        ratingGR.query();\r\n\r\n        while (ratingGR.next()) {\r\n            let maxRating = Number(ratingGR.getValue('max_rating'));\r\n            if (maxRating < 0) {\r\n                gs.info(\"LEAD SCORING ERROR: RATING SCORE WAS LESS THEN 0. THE RATING WAS CHANGED TO 0\");\r\n                maxRating = 0;\r\n            }\r\n            let newRating = ratingGR.segment_name.value.getValue();\r\n            let newAction = ratingGR.getValue('marketing_sales_action');\r\n            leadRatings.push({\r\n                scoreRange: [minRating, maxRating],\r\n                rating: newRating,\r\n                action: newAction\r\n            });\r\n            minRating = maxRating;\r\n        }\r\n        return leadRatings;\r\n    }\r\n    try {\r\n        const isChecked = current.u_filled_contact_us_form_with_business_intent.getValue();\r\n        let leadScore = Number(current.lead_score.getValue());\r\n        let salesScore = Number(current.x_cadso_lead_sales_score.getValue());\r\n        const leadRatings = getLeadRatings();\r\n        if (isChecked > 0) {\r\n\t\t\tlet tempScore = leadScore += 15;\r\n            current.lead_score = tempScore;\r\n            current.x_cadso_lead_sales_score = salesScore += 15;\r\n            let highestRating = 0;\r\n\r\n            for (let r = 0; r < leadRatings.length; r++) {\r\n\r\n                if (highestRating < leadRatings[r].scoreRange[1]) {\r\n                    highestRating = leadRatings[r].scoreRange[1];\r\n                }\r\n            }\r\n\r\n            for (let w = 0; w < leadRatings.length; w++) {\r\n                let minRating = leadRatings[w].scoreRange[0];\r\n                let maxRating = leadRatings[w].scoreRange[1];\r\n\r\n                if (tempScore > highestRating) {\r\n                    tempScore = highestRating;\r\n                }\r\n\r\n                if (tempScore <= 0) {\r\n                    tempScore = 1;\r\n                }\r\n                if (tempScore > minRating && tempScore <= maxRating) {\r\n                    current.lead_rating = leadRatings[w].rating;\r\n                    current.x_cadso_lead_marketing_sales_action = leadRatings[w].action;\r\n                    break;\r\n                }\r\n            }\r\n            current.work_notes = \"Contact Us form filled with business intent. 15 points added to lead score.\";\r\n        }\r\n    } catch (e) {\r\n        gs.info(\"Lead Form Filled With Intent Business Rule Error: \" + e.message);\r\n    }\r\n\r\n})(current, previous);",
+    "display_value": "(function executeRule(current, previous /*null when async*/ ) {\r\n    function getLeadRatings() {\r\n        let minRating = 0;\r\n        let lowestRating = 0;\r\n        let leadRatings = [];\r\n        let ratingGR = new GlideRecord('x_cadso_lead_rating_definition');\r\n        ratingGR.orderBy('max_rating');\r\n        ratingGR.query();\r\n\r\n        while (ratingGR.next()) {\r\n            let maxRating = Number(ratingGR.getValue('max_rating'));\r\n            if (maxRating < 0) {\r\n                gs.info(\"LEAD SCORING ERROR: RATING SCORE WAS LESS THEN 0. THE RATING WAS CHANGED TO 0\");\r\n                maxRating = 0;\r\n            }\r\n            let newRating = ratingGR.segment_name.value.getValue();\r\n            let newAction = ratingGR.getValue('marketing_sales_action');\r\n            leadRatings.push({\r\n                scoreRange: [minRating, maxRating],\r\n                rating: newRating,\r\n                action: newAction\r\n            });\r\n            minRating = maxRating;\r\n        }\r\n        return leadRatings;\r\n    }\r\n    try {\r\n        const isChecked = current.u_filled_contact_us_form_with_business_intent.getValue();\r\n        let leadScore = Number(current.lead_score.getValue());\r\n        let salesScore = Number(current.x_cadso_lead_sales_score.getValue());\r\n        const leadRatings = getLeadRatings();\r\n        if (isChecked > 0) {\r\n\t\t\tlet tempScore = leadScore += 15;\r\n            current.lead_score = tempScore;\r\n            current.x_cadso_lead_sales_score = salesScore += 15;\r\n            let highestRating = 0;\r\n\r\n            for (let r = 0; r < leadRatings.length; r++) {\r\n\r\n                if (highestRating < leadRatings[r].scoreRange[1]) {\r\n                    highestRating = leadRatings[r].scoreRange[1];\r\n                }\r\n            }\r\n\r\n            for (let w = 0; w < leadRatings.length; w++) {\r\n                let minRating = leadRatings[w].scoreRange[0];\r\n                let maxRating = leadRatings[w].scoreRange[1];\r\n\r\n                if (tempScore > highestRating) {\r\n                    tempScore = highestRating;\r\n                }\r\n\r\n                if (tempScore <= 0) {\r\n                    tempScore = 1;\r\n                }\r\n                if (tempScore > minRating && tempScore <= maxRating) {\r\n                    current.lead_rating = leadRatings[w].rating;\r\n                    current.x_cadso_lead_marketing_sales_action = leadRatings[w].action;\r\n                    break;\r\n                }\r\n            }\r\n            current.work_notes = \"Contact Us form filled with business intent. 15 points added to lead score.\";\r\n        }\r\n    } catch (e) {\r\n        gs.info(\"Lead Form Filled With Intent Business Rule Error: \" + e.message);\r\n    }\r\n\r\n})(current, previous);",
+    "formatted_script": {
+      "line_count": 68,
+      "char_count": 2718,
+      "preview": "(function executeRule(current, previous /*null when async*/ ) {\r\n    function getLeadRatings() {\r\n        let minRating = 0;\r\n        let lowestRating = 0;\r\n        let leadRatings = [];\r\n        let ...",
+      "full_script": "(function executeRule(current, previous /*null when async*/ ) {\r\n    function getLeadRatings() {\r\n        let minRating = 0;\r\n        let lowestRating = 0;\r\n        let leadRatings = [];\r\n        let ratingGR = new GlideRecord('x_cadso_lead_rating_definition');\r\n        ratingGR.orderBy('max_rating');\r\n        ratingGR.query();\r\n\r\n        while (ratingGR.next()) {\r\n            let maxRating = Number(ratingGR.getValue('max_rating'));\r\n            if (maxRating < 0) {\r\n                gs.info(\"LEAD SCORING ERROR: RATING SCORE WAS LESS THEN 0. THE RATING WAS CHANGED TO 0\");\r\n                maxRating = 0;\r\n            }\r\n            let newRating = ratingGR.segment_name.value.getValue();\r\n            let newAction = ratingGR.getValue('marketing_sales_action');\r\n            leadRatings.push({\r\n                scoreRange: [minRating, maxRating],\r\n                rating: newRating,\r\n                action: newAction\r\n            });\r\n            minRating = maxRating;\r\n        }\r\n        return leadRatings;\r\n    }\r\n    try {\r\n        const isChecked = current.u_filled_contact_us_form_with_business_intent.getValue();\r\n        let leadScore = Number(current.lead_score.getValue());\r\n        let salesScore = Number(current.x_cadso_lead_sales_score.getValue());\r\n        const leadRatings = getLeadRatings();\r\n        if (isChecked > 0) {\r\n\t\t\tlet tempScore = leadScore += 15;\r\n            current.lead_score = tempScore;\r\n            current.x_cadso_lead_sales_score = salesScore += 15;\r\n            let highestRating = 0;\r\n\r\n            for (let r = 0; r < leadRatings.length; r++) {\r\n\r\n                if (highestRating < leadRatings[r].scoreRange[1]) {\r\n                    highestRating = leadRatings[r].scoreRange[1];\r\n                }\r\n            }\r\n\r\n            for (let w = 0; w < leadRatings.length; w++) {\r\n                let minRating = leadRatings[w].scoreRange[0];\r\n                let maxRating = leadRatings[w].scoreRange[1];\r\n\r\n                if (tempScore > highestRating) {\r\n                    tempScore = highestRating;\r\n                }\r\n\r\n                if (tempScore <= 0) {\r\n                    tempScore = 1;\r\n                }\r\n                if (tempScore > minRating && tempScore <= maxRating) {\r\n                    current.lead_rating = leadRatings[w].rating;\r\n                    current.x_cadso_lead_marketing_sales_action = leadRatings[w].action;\r\n                    break;\r\n                }\r\n            }\r\n            current.work_notes = \"Contact Us form filled with business intent. 15 points added to lead score.\";\r\n        }\r\n    } catch (e) {\r\n        gs.info(\"Lead Form Filled With Intent Business Rule Error: \" + e.message);\r\n    }\r\n\r\n})(current, previous);"
+    }
+  },
+  "abort_action": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "execute_function": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "filter_condition": {
+    "value": "u_filled_contact_us_form_with_business_intentVALCHANGES^EQ",
+    "display_value": "u_filled_contact_us_form_with_business_intentVALCHANGES^EQ"
+  },
+  "sys_package": {
+    "value": "d7d2017bc3646610d4ddf1db050131db",
+    "display_value": "Tenon Lead Management"
+  },
+  "condition": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_script_1b4949f1c387ee50d4ddf1db0501318b",
+    "display_value": "sys_script_1b4949f1c387ee50d4ddf1db0501318b"
+  },
+  "rest_variables": {
+    "value": "",
+    "display_value": ""
+  },
+  "name": {
+    "value": "DO NOT MOVE - Business Intent Lead Score",
+    "display_value": "DO NOT MOVE - Business Intent Lead Score"
+  },
+  "role_conditions": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

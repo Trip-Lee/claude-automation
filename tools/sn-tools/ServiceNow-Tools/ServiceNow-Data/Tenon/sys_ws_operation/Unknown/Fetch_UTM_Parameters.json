@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "13e37bb833f2e2107b18bc534d5c7bf9",
+    "extracted_at": "2025-08-22T18:46:21.668Z",
+    "display_value": "Fetch UTM Parameters",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-07-15 15:27:37",
+    "display_value": "2025-07-15 08:27:37 AM"
+  },
+  "name": {
+    "value": "Fetch UTM Parameters",
+    "display_value": "Fetch UTM Parameters"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-16 19:43:05",
+    "display_value": "2025-07-16 12:43:05 PM"
+  }
+}

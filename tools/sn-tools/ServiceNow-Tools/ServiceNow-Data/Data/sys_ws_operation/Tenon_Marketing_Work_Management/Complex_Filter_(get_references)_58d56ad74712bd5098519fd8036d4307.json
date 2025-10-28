@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "58d56ad74712bd5098519fd8036d4307",
+    "extracted_at": "2025-09-19T21:48:35.112Z",
+    "display_value": "Complex Filter (get references)",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "short_description": {
+    "value": "",
+    "display_value": ""
+  },
+  "operation_script": {
+    "value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\n\n    var ComplexFilterApi = new x_cadso_work.ComplexFilterApi();\n\t\n\treturn ComplexFilterApi.get_reference_options(request, response);\n\n})(request, response);",
+    "display_value": "(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {\n\n    var ComplexFilterApi = new x_cadso_work.ComplexFilterApi();\n\t\n\treturn ComplexFilterApi.get_reference_options(request, response);\n\n})(request, response);"
+  },
+  "sys_updated_on": {
+    "value": "2024-05-17 03:26:04",
+    "display_value": "2024-05-16 08:26:04 PM"
+  },
+  "enforce_acl": {
+    "value": "85a45d5247b1ed10fc4c1ae8036d439e",
+    "display_value": "Tenon Work Baseline Access"
+  },
+  "web_service_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_ws_operation",
+    "display_value": "Scripted REST Resource"
+  },
+  "requires_acl_authorization": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "request_example": {
+    "value": "",
+    "display_value": ""
+  },
+  "http_method": {
+    "value": "POST",
+    "display_value": "POST"
+  },
+  "sys_updated_by": {
+    "value": "trevor.offen",
+    "display_value": "trevor.offen"
+  },
+  "operation_uri": {
+    "value": "/api/x_cadso_work/ui/complex_filter/get_reference",
+    "display_value": "/api/x_cadso_work/ui/complex_filter/get_reference"
+  },
+  "sys_created_on": {
+    "value": "2023-11-09 19:05:25",
+    "display_value": "2023-11-09 11:05:25 AM"
+  },
+  "sys_name": {
+    "value": "Complex Filter (get references)",
+    "display_value": "Complex Filter (get references)"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_created_by": {
+    "value": "trevor.offen",
+    "display_value": "trevor.offen"
+  },
+  "web_service_definition": {
+    "value": "3a4228b84728e950a1052a02e26d43b0",
+    "display_value": "Tenon Work UI API"
+  },
+  "consumes": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "x_cadso_api_docs_request_body_schema": {
+    "value": "",
+    "display_value": ""
+  },
+  "requires_snc_internal_role": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "requires_authentication": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_mod_count": {
+    "value": "2",
+    "display_value": "2"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "x_cadso_api_docs_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "sys_update_name": {
+    "value": "sys_ws_operation_58d56ad74712bd5098519fd8036d4307",
+    "display_value": "sys_ws_operation_58d56ad74712bd5098519fd8036d4307"
+  },
+  "consumes_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Complex Filter (get references)",
+    "display_value": "Complex Filter (get references)"
+  },
+  "produces": {
+    "value": "application/json,application/xml,text/xml",
+    "display_value": "application/json,application/xml,text/xml"
+  },
+  "relative_path": {
+    "value": "/complex_filter/get_reference",
+    "display_value": "/complex_filter/get_reference"
+  },
+  "produces_customized": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "default_operation_uri": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}

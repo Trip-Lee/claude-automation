@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "ad2d30428727ad10b656fe66cebb35a9",
+    "extracted_at": "2025-08-22T18:46:25.965Z",
+    "display_value": "Set Index (if blank)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-06-21 21:25:54",
+    "display_value": "2023-06-21 02:25:54 PM"
+  },
+  "name": {
+    "value": "Set Index (if blank)",
+    "display_value": "Set Index (if blank)"
+  },
+  "sys_updated_on": {
+    "value": "2023-07-18 23:00:23",
+    "display_value": "2023-07-18 04:00:23 PM"
+  }
+}

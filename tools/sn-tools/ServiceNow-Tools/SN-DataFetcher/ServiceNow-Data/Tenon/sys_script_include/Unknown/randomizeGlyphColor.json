@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script_include",
+    "sys_id": "5d988a44875a6950b656fe66cebb35fa",
+    "extracted_at": "2025-08-22T18:42:33.737Z",
+    "display_value": "randomizeGlyphColor",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2023-04-14 18:23:57",
+    "display_value": "2023-04-14 11:23:57 AM"
+  },
+  "name": {
+    "value": "randomizeGlyphColor",
+    "display_value": "randomizeGlyphColor"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-11 18:46:28",
+    "display_value": "2025-03-11 11:46:28 AM"
+  }
+}

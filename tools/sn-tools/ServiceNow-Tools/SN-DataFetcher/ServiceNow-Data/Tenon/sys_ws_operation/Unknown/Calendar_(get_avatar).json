@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "188d60e1c388521485b196c4e4013120",
+    "extracted_at": "2025-08-22T18:42:35.677Z",
+    "display_value": "Calendar (get avatar)",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-08-15 19:48:32",
+    "display_value": "2024-08-15 12:48:32 PM"
+  },
+  "name": {
+    "value": "Calendar (get avatar)",
+    "display_value": "Calendar (get avatar)"
+  },
+  "sys_updated_on": {
+    "value": "2024-08-19 16:32:59",
+    "display_value": "2024-08-19 09:32:59 AM"
+  }
+}

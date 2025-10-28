@@ -1,0 +1,94 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_instance",
+    "sys_id": "942f69a347996110fc4c1ae8036d4344",
+    "extracted_at": "2025-09-19T21:49:02.437Z",
+    "display_value": "942f69a347996110fc4c1ae8036d4344",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type": {
+    "value": "253e296347996110fc4c1ae8036d4387",
+    "display_value": "Set asofdate as flow variable"
+  },
+  "ui_id": {
+    "value": "cf13f327-8b1b-4eed-adad-5f0322a32c92",
+    "display_value": "cf13f327-8b1b-4eed-adad-5f0322a32c92"
+  },
+  "sys_mod_count": {
+    "value": "217",
+    "display_value": "217"
+  },
+  "sys_updated_on": {
+    "value": "2025-07-14 18:03:57",
+    "display_value": "2025-07-14 11:03:57 AM"
+  },
+  "compiled_snapshot": {
+    "value": "253e296347996110fc4c1ae8036d4387",
+    "display_value": "253e296347996110fc4c1ae8036d4387"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_type_parent": {
+    "value": "",
+    "display_value": ""
+  },
+  "display_text": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_instance",
+    "display_value": "Action Instance"
+  },
+  "sys_updated_by": {
+    "value": "system",
+    "display_value": "system"
+  },
+  "sys_created_on": {
+    "value": "2023-03-06 20:28:08",
+    "display_value": "2023-03-06 12:28:08 PM"
+  },
+  "action_inputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "parent_ui_id": {
+    "value": "",
+    "display_value": ""
+  },
+  "attributes": {
+    "value": "",
+    "display_value": ""
+  },
+  "comment": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow": {
+    "value": "6f29b16147386510a1052a02e26d430b",
+    "display_value": "Project Start Business Logic - OnChange Start Date/Status"
+  },
+  "sys_created_by": {
+    "value": "Kyle.Commette",
+    "display_value": "Kyle.Commette"
+  },
+  "order": {
+    "value": "3",
+    "display_value": "3"
+  }
+}

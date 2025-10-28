@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_script",
+    "sys_id": "cb65b80233d222107b18bc534d5c7b29",
+    "extracted_at": "2025-08-22T18:46:27.351Z",
+    "display_value": "Create UTM Mapping",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2025-06-24 02:14:30",
+    "display_value": "2025-06-23 07:14:30 PM"
+  },
+  "name": {
+    "value": "Create UTM Mapping",
+    "display_value": "Create UTM Mapping"
+  },
+  "sys_updated_on": {
+    "value": "2025-06-27 02:51:39",
+    "display_value": "2025-06-26 07:51:39 PM"
+  }
+}

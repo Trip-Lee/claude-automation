@@ -1,0 +1,21 @@
+{
+  "_metadata": {
+    "table": "sys_ws_operation",
+    "sys_id": "ffb3f591c3c6da10d4ddf1db05013117",
+    "extracted_at": "2025-08-22T18:42:37.499Z",
+    "display_value": "MMS Image",
+    "application": "Unknown"
+  },
+  "sys_created_on": {
+    "value": "2024-11-22 16:52:22",
+    "display_value": "2024-11-22 08:52:22 AM"
+  },
+  "name": {
+    "value": "MMS Image",
+    "display_value": "MMS Image"
+  },
+  "sys_updated_on": {
+    "value": "2025-03-19 16:55:24",
+    "display_value": "2025-03-19 09:55:24 AM"
+  }
+}

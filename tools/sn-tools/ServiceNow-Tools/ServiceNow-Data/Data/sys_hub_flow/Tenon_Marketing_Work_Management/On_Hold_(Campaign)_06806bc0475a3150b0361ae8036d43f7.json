@@ -1,0 +1,210 @@
+{
+  "_metadata": {
+    "table": "sys_hub_flow",
+    "sys_id": "06806bc0475a3150b0361ae8036d43f7",
+    "extracted_at": "2025-09-19T21:48:46.630Z",
+    "display_value": "On Hold (Campaign)",
+    "application": "Tenon_Marketing_Work_Management",
+    "scope": {
+      "display_value": "Tenon Marketing Work Management",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/4e4449a5475c255085d19fd8036d43a0",
+      "value": "4e4449a5475c255085d19fd8036d43a0"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "show_draft_actions": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "sc_callable": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_updated_on": {
+    "value": "2025-02-04 18:25:07",
+    "display_value": "2025-02-04 10:25:07 AM"
+  },
+  "type": {
+    "value": "flow",
+    "display_value": "Flow"
+  },
+  "run_with_roles": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "",
+    "display_value": ""
+  },
+  "latest_snapshot": {
+    "value": "e112a744475a3150b0361ae8036d43cb",
+    "display_value": "e112a744475a3150b0361ae8036d43cb"
+  },
+  "show_triggered_flows": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "internal_name": {
+    "value": "on_hold_campaign",
+    "display_value": "on_hold_campaign"
+  },
+  "sys_updated_by": {
+    "value": "nathan.long",
+    "display_value": "nathan.long"
+  },
+  "sys_created_on": {
+    "value": "2023-10-30 20:58:48",
+    "display_value": "2023-10-30 01:58:48 PM"
+  },
+  "compiler_build": {
+    "value": "glide-utah-12-21-2022__patch7-09-07-2023_09-14-2023_1002.zip",
+    "display_value": "glide-utah-12-21-2022__patch7-09-07-2023_09-14-2023_1002.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "On Hold (Campaign)",
+    "display_value": "On Hold (Campaign)"
+  },
+  "display_name_after_preview": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot": {
+    "value": "e112a744475a3150b0361ae8036d43cb",
+    "display_value": "e112a744475a3150b0361ae8036d43cb"
+  },
+  "sys_created_by": {
+    "value": "daniel.cudney",
+    "display_value": "daniel.cudney"
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "generation_source": {
+    "value": "",
+    "display_value": ""
+  },
+  "substatus": {
+    "value": "",
+    "display_value": ""
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "version": {
+    "value": "1",
+    "display_value": "1"
+  },
+  "authored_on_release_version": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_update_name": {
+    "value": "sys_hub_flow_06806bc0475a3150b0361ae8036d43f7",
+    "display_value": "sys_hub_flow_06806bc0475a3150b0361ae8036d43f7"
+  },
+  "name": {
+    "value": "On Hold (Campaign)",
+    "display_value": "On Hold (Campaign)"
+  },
+  "copied_from": {
+    "value": "",
+    "display_value": ""
+  },
+  "status": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Campaign Record\",\"reference\":\"x_cadso_work_campaign\",\"reference_display\":\"Campaign\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{}},{\"name\":\"e58a9db4-9970-48c3-8d3b-724fef7badb5.item\",\"label\":\"2 - For Each➛Project Record\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"498b21e9-62ce-424c-b6b9-afa9b1eddae2.Records\",\"label\":\"1 - Look Up Records➛Project Records\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]",
+    "display_value": "[{\"name\":\"Created or Updated_1.current\",\"label\":\"Trigger - Record Created or Updated➛Campaign Record\",\"reference\":\"x_cadso_work_campaign\",\"reference_display\":\"Campaign\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{}},{\"name\":\"e58a9db4-9970-48c3-8d3b-724fef7badb5.item\",\"label\":\"2 - For Each➛Project Record\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"reference\",\"base_type\":\"reference\",\"attributes\":{\"pills_draggable_inside_block\":\"true\",\"pills_draggable_outside_block\":\"false\"}},{\"name\":\"498b21e9-62ce-424c-b6b9-afa9b1eddae2.Records\",\"label\":\"1 - Look Up Records➛Project Records\",\"reference\":\"x_cadso_work_project\",\"reference_display\":\"Project\",\"type\":\"records\",\"base_type\":\"records\",\"attributes\":{\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "description": {
+    "value": "",
+    "display_value": ""
+  },
+  "run_as": {
+    "value": "system",
+    "display_value": "System user"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_flow",
+    "display_value": "Flow"
+  },
+  "sys_scope": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "0",
+    "display_value": "0"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_package": {
+    "value": "4e4449a5475c255085d19fd8036d43a0",
+    "display_value": "Tenon Marketing Work Management"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "attributes": {
+    "value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=39949469000,viewActivatedIn=naturalLanguage",
+    "display_value": "browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=39949469000,viewActivatedIn=naturalLanguage"
+  },
+  "remote_trigger_id": {
+    "value": "3512e744475a3150b0361ae8036d432b",
+    "display_value": "3512e744475a3150b0361ae8036d432b"
+  },
+  "category": {
+    "value": "",
+    "display_value": ""
+  }
+}

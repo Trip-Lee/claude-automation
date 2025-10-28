@@ -1,0 +1,186 @@
+{
+  "_metadata": {
+    "table": "sys_hub_action_type_definition",
+    "sys_id": "f07c37de87e8de14369f33373cbb35b3",
+    "extracted_at": "2025-09-19T21:48:49.327Z",
+    "display_value": "Get Email Send Thumbnail",
+    "application": "Tenon_Marketing_Automation",
+    "scope": {
+      "display_value": "Tenon Marketing Automation",
+      "link": "https://tenonworkstudio.service-now.com/api/now/table/sys_scope/5e9f5f8b87420250369f33373cbb3559",
+      "value": "5e9f5f8b87420250369f33373cbb3559"
+    }
+  },
+  "outputs": {
+    "value": "",
+    "display_value": ""
+  },
+  "label_cache": {
+    "value": "[{\"name\":\"{{action.token}}\",\"label\":\"action➛Token\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.content_template}}\",\"label\":\"action➛Content Template\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Content Template\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"d59e6a87-15e5-4266-aeb4-bc14f54a9a9f\"}},{\"name\":\"{{action.width}}\",\"label\":\"action➛Width\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"integer\",\"uiUniqueId\":\"27a8adff-e7e5-4d12-b86b-a8d678183993\"}},{\"name\":\"{{action.height}}\",\"label\":\"action➛Height\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.file_type}}\",\"label\":\"action➛File Type\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"choice\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":[{\"label\":\"jpg\",\"value\":\"jpg\",\"order\":1.0},{\"label\":\"png\",\"value\":\"png\",\"order\":2.0}],\"attributes\":{}},{\"name\":\"{{action.size}}\",\"label\":\"action➛Size\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.image_size}}\",\"label\":\"action➛Size\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"integer\",\"uiUniqueId\":\"9b67f5a8-452e-4fba-85d4-f4f74127a181\"}},{\"name\":\"{{action.table}}\",\"label\":\"action➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.content_template.sys_id}}\",\"label\":\"action➛Content Template➛Sys ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Sys ID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_content_template\",\"column_name\":\"sys_id\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.html}}\",\"label\":\"action➛HTML\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_send}}\",\"label\":\"action➛Email Send\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_send.sys_id}}\",\"label\":\"action➛Email Send➛Sys ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Sys ID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"sys_id\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0fc896d5-14f4-469c-a0ff-8a4580084418].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[0fc896d5-14f4-469c-a0ff-8a4580084418].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[0fc896d5-14f4-469c-a0ff-8a4580084418].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}}]",
+    "display_value": "[{\"name\":\"{{action.token}}\",\"label\":\"action➛Token\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.content_template}}\",\"label\":\"action➛Content Template\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Content Template\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Reference\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"reference\",\"uiUniqueId\":\"d59e6a87-15e5-4266-aeb4-bc14f54a9a9f\"}},{\"name\":\"{{action.width}}\",\"label\":\"action➛Width\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"integer\",\"uiUniqueId\":\"27a8adff-e7e5-4d12-b86b-a8d678183993\"}},{\"name\":\"{{action.height}}\",\"label\":\"action➛Height\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.file_type}}\",\"label\":\"action➛File Type\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"choice\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":[{\"label\":\"jpg\",\"value\":\"jpg\",\"order\":1.0},{\"label\":\"png\",\"value\":\"png\",\"order\":2.0}],\"attributes\":{}},{\"name\":\"{{action.size}}\",\"label\":\"action➛Size\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"integer\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.image_size}}\",\"label\":\"action➛Size\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"uiTypeLabel\":\"Integer\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"uiType\":\"integer\",\"uiUniqueId\":\"9b67f5a8-452e-4fba-85d4-f4f74127a181\"}},{\"name\":\"{{action.table}}\",\"label\":\"action➛Table\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.content_template.sys_id}}\",\"label\":\"action➛Content Template➛Sys ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Sys ID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_content_template\",\"column_name\":\"sys_id\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.html}}\",\"label\":\"action➛HTML\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_send}}\",\"label\":\"action➛Email Send\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Email Send\",\"base_type\":\"reference\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{action.email_send.sys_id}}\",\"label\":\"action➛Email Send➛Sys ID\",\"type\":\"action\",\"ref\":\"\",\"reference_display\":\"Sys ID\",\"base_type\":\"GUID\",\"parent_table_name\":\"x_cadso_automate_email_send\",\"column_name\":\"sys_id\",\"choices\":null,\"attributes\":{}},{\"name\":\"{{step[0fc896d5-14f4-469c-a0ff-8a4580084418].status_code}}\",\"label\":\"step➛REST step➛Status Code\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[0fc896d5-14f4-469c-a0ff-8a4580084418].error_message}}\",\"label\":\"step➛REST step➛Error Message\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}},{\"name\":\"{{step[0fc896d5-14f4-469c-a0ff-8a4580084418].response_body}}\",\"label\":\"step➛REST step➛Response Body\",\"type\":\"step\",\"ref\":\"\",\"reference_display\":\"\",\"base_type\":\"string\",\"parent_table_name\":\"\",\"column_name\":\"\",\"choices\":null,\"attributes\":{\"hidden_for\":\"DATASTREAM\"}}]"
+  },
+  "access": {
+    "value": "public",
+    "display_value": "All application scopes"
+  },
+  "acls": {
+    "value": "",
+    "display_value": ""
+  },
+  "callable_by_client_api": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "natlang": {
+    "value": "",
+    "display_value": ""
+  },
+  "description": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_updated_on": {
+    "value": "2024-09-12 15:25:44",
+    "display_value": "2024-09-12 08:25:44 AM"
+  },
+  "type": {
+    "value": "",
+    "display_value": ""
+  },
+  "copied_from_name": {
+    "value": "Get Content Thumbnail",
+    "display_value": "Get Content Thumbnail"
+  },
+  "latest_snapshot": {
+    "value": "b7dd3752872cde14369f33373cbb35fe",
+    "display_value": "b7dd3752872cde14369f33373cbb35fe"
+  },
+  "sys_class_name": {
+    "value": "sys_hub_action_type_definition",
+    "display_value": "Action Type"
+  },
+  "internal_name": {
+    "value": "get_email_send_thumbnail",
+    "display_value": "get_email_send_thumbnail"
+  },
+  "sys_updated_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "sys_created_on": {
+    "value": "2024-09-12 15:19:31",
+    "display_value": "2024-09-12 08:19:31 AM"
+  },
+  "compiler_build": {
+    "value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip",
+    "display_value": "glide-xanadu-07-02-2024__patchrtp-07-02-2024_07-09-2024_0940.zip"
+  },
+  "sys_domain": {
+    "value": "global",
+    "display_value": "global"
+  },
+  "sys_name": {
+    "value": "Get Email Send Thumbnail",
+    "display_value": "Get Email Send Thumbnail"
+  },
+  "sys_scope": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "state": {
+    "value": "published",
+    "display_value": "Published"
+  },
+  "master_snapshot": {
+    "value": "dfdd3752872cde14369f33373cbb356c",
+    "display_value": "dfdd3752872cde14369f33373cbb356c"
+  },
+  "sys_created_by": {
+    "value": "rob.medved",
+    "display_value": "rob.medved"
+  },
+  "action_status": {
+    "value": "",
+    "display_value": ""
+  },
+  "action_template": {
+    "value": "",
+    "display_value": ""
+  },
+  "pre_compiled": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "annotation": {
+    "value": "",
+    "display_value": null
+  },
+  "sys_mod_count": {
+    "value": "8",
+    "display_value": "8"
+  },
+  "active": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_overrides": {
+    "value": "",
+    "display_value": ""
+  },
+  "sys_domain_path": {
+    "value": "/",
+    "display_value": "/"
+  },
+  "sys_tags": {
+    "value": "",
+    "display_value": ""
+  },
+  "master_snapshot_digest": {
+    "value": "",
+    "display_value": ""
+  },
+  "authored_on_release_version": {
+    "value": "26000",
+    "display_value": "26,000"
+  },
+  "sys_package": {
+    "value": "5e9f5f8b87420250369f33373cbb3559",
+    "display_value": "Tenon Marketing Automation"
+  },
+  "sys_update_name": {
+    "value": "sys_hub_action_type_definition_f07c37de87e8de14369f33373cbb35b3",
+    "display_value": "sys_hub_action_type_definition_f07c37de87e8de14369f33373cbb35b3"
+  },
+  "flow_priority": {
+    "value": "",
+    "display_value": null
+  },
+  "system_level": {
+    "value": "false",
+    "display_value": "false"
+  },
+  "name": {
+    "value": "Get Email Send Thumbnail",
+    "display_value": "Get Email Send Thumbnail"
+  },
+  "attributes": {
+    "value": "{labelCacheCleanUpExecuted=true}",
+    "display_value": "{labelCacheCleanUpExecuted=true}"
+  },
+  "category": {
+    "value": "{}",
+    "display_value": ""
+  },
+  "copied_from": {
+    "value": "fbcc9879c307c21085b196c4e4013182",
+    "display_value": "fbcc9879c307c21085b196c4e4013182"
+  },
+  "ih_action": {
+    "value": "true",
+    "display_value": "true"
+  },
+  "sys_policy": {
+    "value": "",
+    "display_value": null
+  }
+}
