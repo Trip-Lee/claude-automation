@@ -1,6 +1,6 @@
 # Claude Multi-Agent Coding System
 
-**Version**: v0.12.0-alpha
+**Version**: v0.12.1-alpha
 **Status**: Professional CLI + Dynamic Routing + Workflow Mode + External Tools Complete
 **Date**: 2025-10-28
 
@@ -223,11 +223,27 @@ The tools system allows agents to use external tools to extend their capabilitie
 ### Available Tools
 
 **ServiceNow Tools (sn-tools v2.1.0)**
-- Query and modify ServiceNow records
-- Multi-instance support (dev/prod)
-- Dependency tracking and impact analysis
-- Real-time file watching and syncing
-- 11 specialized capabilities
+
+A comprehensive ServiceNow development toolkit that enables agents to interact with ServiceNow instances directly. Designed for ServiceNow developers who need to automate workflows, analyze dependencies, and sync code changes in real-time.
+
+**What Problems It Solves:**
+- **Manual CRUD Operations** - Eliminates manual record creation/updates via ServiceNow UI
+- **Dependency Blindness** - Maps Script Include dependencies and Flow relationships automatically
+- **Multi-Environment Complexity** - Manages separate dev/prod instances with intelligent routing
+- **Code Synchronization** - Watches local files and syncs changes to ServiceNow in real-time
+- **Impact Assessment** - Analyzes change impact across the ServiceNow platform before deployment
+
+**Key Capabilities:**
+- Query and modify ServiceNow records (Script Includes, Flows, REST APIs, any table)
+- Multi-instance support with automatic routing (dev/prod environments)
+- Dependency tracking and impact analysis with visual graph generation
+- Real-time file watching and automatic syncing to ServiceNow
+- Flow tracing and execution path analysis
+- AI-powered record creation and code analysis
+- Cross-platform support (Windows, macOS, Linux)
+
+**Getting Started with sn-tools:**
+See "Using ServiceNow Tools" section below for setup instructions.
 
 ### How It Works
 
