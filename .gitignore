@@ -25,6 +25,7 @@ package-lock.json
 
 # ServiceNow Tools - Sensitive Config
 tools/sn-tools/**/sn-config.json
+!tools/sn-tools/**/sn-config.example.json
 tools/sn-tools/**/.sn-key
 tools/sn-tools/**/.env
 

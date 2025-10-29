@@ -1,0 +1,56 @@
+{
+  "instances": {
+    "dev": {
+      "instance": "your-dev-instance.service-now.com",
+      "username": "your-username",
+      "password": "your-password"
+    },
+    "prod": {
+      "instance": "your-prod-instance.service-now.com",
+      "username": "your-username",
+      "password": "your-password"
+    }
+  },
+  "routing": {
+    "stories": "prod",
+    "default": "dev",
+    "tables": {
+      "sys_script_include": "dev",
+      "sys_ws_operation": "dev",
+      "rm_story": "prod",
+      "sys_script": "dev",
+      "sys_ui_action": "dev",
+      "sys_script_client": "dev",
+      "sys_hub_flow": "dev",
+      "sys_hub_action_type_definition": "dev",
+      "sys_hub_action_instance": "dev"
+    }
+  },
+  "stories": {
+    "instance": "prod",
+    "table": "rm_story",
+    "query": "active=true^assigned_toISNOTEMPTY^state!=6",
+    "fields": "number,short_description,assigned_to,state,sprint"
+  },
+  "tables": {
+    "sys_script_include": {
+      "instance": "dev",
+      "query": "active=true",
+      "fields": null
+    },
+    "sys_ws_operation": {
+      "instance": "dev",
+      "query": "active=true",
+      "fields": null
+    }
+  },
+  "ai": {
+    "enabled": false,
+    "providers": {
+      "claude": {
+        "apiKey": "your-anthropic-api-key-here",
+        "model": "claude-3-5-sonnet-20241022"
+      }
+    }
+  }
+}
