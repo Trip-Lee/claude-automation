@@ -40,10 +40,10 @@ program
     }
   });
 
-// Approve command - approve task and create PR
+// Approve command - manually create PR (if auto-creation failed)
 program
   .command('approve <taskId>')
-  .description('Approve task and create PR')
+  .description('Manually create PR for a task (use if auto-PR creation failed)')
   .action(async (taskId) => {
     try {
       const orchestrator = new Orchestrator(
@@ -58,10 +58,10 @@ program
     }
   });
 
-// Reject command - reject task and cleanup
+// Reject command - reject task and cleanup (delete branch)
 program
   .command('reject <taskId>')
-  .description('Reject task and cleanup')
+  .description('Reject task and delete branch (use to discard unwanted changes)')
   .action(async (taskId) => {
     try {
       const orchestrator = new Orchestrator(
@@ -754,30 +754,17 @@ async function runWorkflow() {
 
     const result = await orchestrator.executeTask(selectedProject, description);
 
-    // Step 6: Ask for decision (Approve / Reject / Hold)
-    console.log(chalk.cyan.bold('\nTask Completed!\n'));
+    // Step 6: Display results
+    console.log(chalk.cyan.bold('\n✅ Task Completed!\n'));
 
-    const { decision } = await inquirer.prompt([{
-      type: 'list',
-      name: 'decision',
-      message: 'What would you like to do?',
-      choices: [
-        { name: 'Approve & Create PR', value: 'approve' },
-        { name: 'Reject & Delete Branch', value: 'reject' },
-        { name: 'Hold for Later Review', value: 'hold' }
-      ]
-    }]);
-
-    if (decision === 'approve') {
-      console.log(chalk.blue('\nApproving task...\n'));
-      await orchestrator.approve(result.taskId);
-    } else if (decision === 'reject') {
-      console.log(chalk.blue('\nRejecting task...\n'));
-      await orchestrator.reject(result.taskId);
+    if (result.pr) {
+      console.log(chalk.green.bold('Pull Request Created:\n'));
+      console.log(chalk.cyan(`  ${result.pr.url}\n`));
+      console.log(chalk.gray('Review and merge the PR in GitHub when ready.\n'));
     } else {
-      console.log(chalk.yellow('\nTask held for review\n'));
+      console.log(chalk.yellow('Branch created but PR not created automatically.'));
       console.log(chalk.gray(`  Branch: ${result.branchName}`));
-      console.log(chalk.gray(`  Review later: claude approve ${result.taskId}\n`));
+      console.log(chalk.gray(`  Create PR manually: claude approve ${result.taskId}\n`));
     }
 
     // Step 7: Auto cleanup containers
