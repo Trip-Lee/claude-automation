@@ -1,26 +1,41 @@
 # Claude Multi-Agent Coding System
 
-**Version**: v0.12.1-alpha
-**Status**: Professional CLI + Dynamic Routing + Workflow Mode + External Tools Complete
-**Date**: 2025-10-28
+**Version**: v0.13.0
+**Status**: ✨ Fully Installable & Portable - Ready for Production
+**Date**: 2025-10-29
 
 ---
 
 ## Overview
 
-An intelligent multi-agent coding system that uses **dynamic routing** to automatically select and orchestrate specialized AI agents for coding tasks. Features include GitHub integration, workflow mode, external tools support, and automatic container management.
+An intelligent, **installable** multi-agent coding system that uses **dynamic routing** to automatically select and orchestrate specialized AI agents for coding tasks. Now features a professional installer, automatic PR creation, comprehensive error handling, and works on any system.
 
 ### Key Features
 
+#### 🆕 Installation & Portability (v0.13.0)
+- **Interactive Installer** - Guided setup with dependency validation
+- **Fully Portable** - Works on any system, any user (no hardcoded paths)
+- **Auto-Configuration** - Creates all directories and config files
+- **Dependency Validation** - Checks Node.js, Docker, Git, GitHub CLI
+
+#### 🤖 AI & Agents
 - **Dynamic Agent Routing** - Agents decide next steps intelligently
 - **7 Specialized Agents** - Architect, Coder, Reviewer, Security, Documenter, Tester, Performance
 - **External Tools System** - Extensible tool integration (ServiceNow, Jira, etc.)
+- **Session Continuity** - Agents share context across workflow
+
+#### 🚀 Workflow & Integration
+- **Auto-PR Creation** - PRs created automatically after task completion (v0.13.0)
 - **Workflow Mode** - Interactive guided workflow (just run `claude`)
 - **In-Workflow Project Creation** - Create projects directly from dropdown menu
 - **GitHub Integration** - Auto-validation, repo creation, PR management
+- **Pre-flight Validation** - Catches errors before expensive agent execution (v0.13.0)
+
+#### 🔒 Security & Reliability
 - **Docker Isolation** - Each task runs in isolated container
+- **Comprehensive Error Handling** - Clear, actionable error messages (v0.13.0)
 - **Cost Tracking** - Monitor API usage per task
-- **Session Continuity** - Agents share context across workflow
+- **Automatic Cleanup** - Containers removed after completion
 - **Professional CLI** - Clean, emoji-free interface
 
 ---
@@ -30,32 +45,76 @@ An intelligent multi-agent coding system that uses **dynamic routing** to automa
 ### 1. Install
 
 ```bash
-cd ~/claude-automation
+# Clone repository
+git clone https://github.com/YOUR_USERNAME/claude-automation.git
+cd claude-automation
+
+# Install dependencies
 npm install
-npm link
+
+# Run interactive installer
+node install.js
 ```
 
-### 2. Configure
+The installer will:
+- ✅ Validate system dependencies (Node.js 20+, Docker, Git)
+- ✅ Create required directories
+- ✅ Prompt for API keys (Anthropic required, GitHub optional)
+- ✅ Create `~/.env` configuration
+- ✅ Link `claude` command globally
+- ✅ Create example project config
 
-Create `~/.env`:
+### 2. Create Your First Project
+
 ```bash
-GITHUB_TOKEN=ghp_your_token_here
-# ANTHROPIC_API_KEY=sk_your_key_here  # Optional
+# Copy example config
+cp ~/.claude-projects/example-project.yaml ~/.claude-projects/my-project.yaml
+
+# Edit with your details
+nano ~/.claude-projects/my-project.yaml
 ```
 
-### 3. Run Workflow Mode
+### 3. Run Your First Task
 
 ```bash
+# Interactive workflow mode
 claude
+
+# Or direct task mode
+claude task my-project "Add documentation to README"
 ```
 
-**That's it!** The workflow will guide you through:
-1. Select existing project OR create new project from dropdown
-2. Enter task description
-3. Validate/create GitHub repo
-4. Execute task with dynamic agents
-5. Approve/reject/hold
-6. Auto cleanup
+**That's it!** The system will:
+1. Validate GitHub repository
+2. Execute task with dynamic agents
+3. Auto-create pull request
+4. Display PR URL for review
+
+For detailed installation instructions, see **[INSTALLATION.md](INSTALLATION.md)**
+
+---
+
+## 🆕 What's New in v0.13.0
+
+### Installation & Portability
+- ✅ **Interactive Installer** - Automated setup with dependency validation
+- ✅ **Fully Portable** - Works on any system/user (no hardcoded paths)
+- ✅ **Global Configuration** - Centralized config management
+- ✅ **Auto-Directory Creation** - All directories created automatically
+
+### Workflow Improvements
+- ✅ **Auto-PR Creation** - PRs created automatically after tasks (no manual approval!)
+- ✅ **Pre-flight Validation** - Catches errors before expensive agent execution
+- ✅ **Comprehensive Error Handling** - Clear, actionable error messages with solutions
+- ✅ **SSH URL Support** - Fixed parsing for `git@github.com:user/repo.git` format
+
+### Developer Experience
+- ✅ **System Validator** - Checks Node.js, Docker, Git, GitHub CLI automatically
+- ✅ **Better Error Messages** - All GitHub API errors now include fix instructions
+- ✅ **Configurable Paths** - Customize all directory locations via config
+- ✅ **Example Configs** - Auto-generated project config templates
+
+**Migration from v0.12.x**: Run `node install.js` to update paths and configuration. See [CHANGELOG.md](docs/CHANGELOG.md) for full details.
 
 ---
 
@@ -200,17 +259,26 @@ claude
 - Clone repo to local machine
 - Generate complete project config
 
-### Pull Request Creation
+### Pull Request Creation (Auto-Created in v0.13.0!)
 
+**🆕 Automatic PR Creation:**
+After task completion, the system automatically:
+- Pushes branch to GitHub
+- Creates pull request with detailed description
+- Includes test results and metrics
+- Displays PR URL for immediate review
+- Links to task ID for tracking
+
+**Manual PR Creation (if auto-creation fails):**
 ```bash
 claude approve <taskId>
 ```
 
-**Automatically:**
-- Pushes branch to GitHub
-- Creates pull request with detailed description
-- Includes test results and metrics
-- Links to task ID for tracking
+**What changed in v0.13.0:**
+- ✅ No more manual approval prompts
+- ✅ PRs created immediately after task completion
+- ✅ Full context always available in GitHub
+- ✅ Faster workflow (no context switching)
 
 ---
 
@@ -577,61 +645,113 @@ Note: GitHub repo will be validated/created in the next step.
 
 ### System Requirements
 - **OS**: Linux, macOS, or WSL2 on Windows
-- **Node.js**: v20.0.0 or higher
-- **Docker**: For container isolation
-- **Git**: For repository management
+- **Node.js**: v20.0.0 or higher (validated by installer)
+- **Docker**: For container isolation (validated by installer)
+- **Git**: For repository management (validated by installer)
+- **GitHub CLI (gh)**: Optional but recommended (validated by installer)
 
-### API Keys (Optional)
-- **GITHUB_TOKEN**: Required for GitHub integration (repo creation, PRs)
-- **ANTHROPIC_API_KEY**: Optional (uses Claude Code CLI by default)
+**The installer validates all requirements automatically!**
+
+### API Keys
+- **ANTHROPIC_API_KEY**: **Required** for Claude API (installer prompts for this)
+- **GITHUB_TOKEN**: Optional but recommended for PR creation and repo access (installer prompts)
 
 ---
 
 ## Configuration
 
-### Environment Variables
+### Automatic Configuration (v0.13.0)
 
-Create `~/.env`:
+The installer (`node install.js`) automatically:
+- ✅ Creates `~/.env` with your API keys
+- ✅ Creates all required directories
+- ✅ Generates example project config
+- ✅ Sets up global config at `~/.claude-automation/config.json`
+
+### Manual Configuration
+
+If you need to add keys later, edit `~/.env`:
 
 ```bash
-# GitHub (required for repo features)
+# Required: Anthropic API for Claude
+ANTHROPIC_API_KEY=sk-ant-your_api_key_here
+
+# Optional: GitHub for PR creation
 GITHUB_TOKEN=ghp_your_github_token
 
-# Anthropic API (optional - uses Claude Code CLI if not set)
-# ANTHROPIC_API_KEY=sk_ant_your_api_key
+# Optional: Docker defaults
+DEFAULT_DOCKER_MEMORY=4g
+DEFAULT_DOCKER_CPUS=2
+
+# Optional: Safety defaults
+DEFAULT_MAX_COST=5.00
 ```
 
-### GitHub Token Setup
+### API Key Setup
 
+**Anthropic API Key** (Required):
+1. Go to https://console.anthropic.com/settings/keys
+2. Create new API key
+3. Copy key (starts with `sk-ant-`)
+
+**GitHub Token** (Optional):
 1. Go to https://github.com/settings/tokens
 2. Generate new token (classic)
 3. Select scopes:
    - `repo` - Full control of repositories
-   - `workflow` - Update GitHub Actions
-4. Copy token to `~/.env`
+4. Copy token (starts with `ghp_` or `github_pat_`)
+
+**The installer guides you through this!**
 
 ---
 
 ## Troubleshooting
 
-### "No projects configured"
+### Installation Issues
+
+**"Docker daemon is not running"**
+```bash
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+**"Node.js version too old"**
+```bash
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+**"command not found: claude"**
+```bash
+cd /path/to/claude-automation
+npm link
+```
+
+**For comprehensive troubleshooting**, see **[INSTALLATION.md](INSTALLATION.md)**
+
+### Usage Issues
+
+**"No projects configured"**
 ```bash
 claude add-project my-first-project
 ```
 Or use the "+ Create New Project" option in the workflow dropdown!
 
-### "GitHub token not configured"
-Add `GITHUB_TOKEN` to `~/.env`
+**"ANTHROPIC_API_KEY is not set"**
+Add to `~/.env` or run the installer again:
+```bash
+node install.js
+```
 
-### "Repository not found"
+**"Repository not found"**
 The workflow will offer to create it for you!
 
-### "Docker not running"
+**"Docker not running"**
 ```bash
 sudo systemctl start docker
 ```
 
-### "Container cleanup needed"
+**"Container cleanup needed"**
 Happens automatically after each workflow!
 
 ---
