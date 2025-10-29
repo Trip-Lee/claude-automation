@@ -33,6 +33,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Was parsing incorrectly, causing GitHub API calls to fail
   - Now supports all 5 repo URL formats correctly
 
+### 🔒 Security
+
+- Enhanced `.gitignore` to prevent secrets from being committed
+  - Added patterns for `.env`, `*.key`, `*.secret`, credentials files
+  - Added ServiceNow-specific config exclusions
+- Removed sensitive configuration files from git tracking
+  - `.sn-key` files no longer tracked
+  - `sn-config.json` files no longer tracked
+- **Action Required**: If you have ServiceNow credentials in `tools/sn-tools/ServiceNow-Tools/sn-config.json`, they were exposed in git history and should be rotated
+
 ### ✨ Enhancements
 
 #### Orchestrator (`lib/orchestrator.js`)

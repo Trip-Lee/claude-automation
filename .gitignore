@@ -23,6 +23,11 @@ package-lock.json
 **/secrets.json
 **/config.private.json
 
+# ServiceNow Tools - Sensitive Config
+tools/sn-tools/**/sn-config.json
+tools/sn-tools/**/.sn-key
+tools/sn-tools/**/.env
+
 # Logs
 logs/
 *.log
