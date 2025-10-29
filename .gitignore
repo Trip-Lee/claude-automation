@@ -6,6 +6,22 @@ package-lock.json
 .env
 .env.local
 .env.*.local
+*.env
+**/.env
+**/.env.*
+
+# API Keys and Secrets
+*.key
+*.secret
+**/*-key
+**/*.key
+**/*-secret
+**/*.secret
+.sn-key
+**/.sn-key
+**/credentials.json
+**/secrets.json
+**/config.private.json
 
 # Logs
 logs/
