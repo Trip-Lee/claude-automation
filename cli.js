@@ -8,12 +8,16 @@
 import { Command } from 'commander';
 import chalk from 'chalk';
 import { Orchestrator } from './lib/orchestrator.js';
+import { getGlobalConfig } from './lib/global-config.js';
 import dotenv from 'dotenv';
-import { homedir } from 'os';
 import path from 'path';
 
-// Load environment variables from home directory
-dotenv.config({ path: path.join(homedir(), '.env') });
+// Initialize global config and ensure directories exist
+const globalConfig = getGlobalConfig();
+globalConfig.ensureDirectories();
+
+// Load environment variables from configured location
+dotenv.config({ path: globalConfig.get('envFile') });
 
 const program = new Command();
 

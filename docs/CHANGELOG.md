@@ -43,6 +43,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `sn-config.json` files no longer tracked
 - **Action Required**: If you have ServiceNow credentials in `tools/sn-tools/ServiceNow-Tools/sn-config.json`, they were exposed in git history and should be rotated
 
+### 🎁 Installability & Portability
+
+#### Global Configuration System (`lib/global-config.js`)
+- **New**: Centralized configuration management for all system paths
+- Configurable directory locations (projects, tasks, logs, configs)
+- Auto-creates required directories on first run
+- Supports custom installation paths
+- Configuration stored in `~/.claude-automation/config.json`
+
+#### Interactive Installer (`install.js`)
+- **New**: Full-featured installation wizard
+- Validates system dependencies (Node.js, Docker, Git, GitHub CLI)
+- Creates directory structure automatically
+- Interactive API key setup
+- Creates example project configuration
+- Links CLI command globally
+- Comprehensive installation guide with troubleshooting
+
+#### System Validator (`lib/system-validator.js`)
+- **New**: Dependency checker with detailed feedback
+- Validates Node.js version (>= 20.0.0)
+- Checks Docker installation and daemon status
+- Verifies Git installation
+- Optional GitHub CLI check with auth status
+- Directory and permissions validation
+
+#### Removed Hardcoded Paths
+- All hardcoded `/home/coltrip/*` paths removed
+- Dynamic path detection using global config
+- Works on any system, any user
+- Security validation now uses dynamic paths
+
 ### ✨ Enhancements
 
 #### Orchestrator (`lib/orchestrator.js`)
@@ -155,11 +187,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 📦 Code Statistics
 
-- **Total Lines Added**: ~175 lines
-- **Bug Fixes**: 1 critical
-- **Files Modified**: 5 core files
-- **Documentation**: 6 new comprehensive guides
-- **Tests**: 12 automated tests
+- **Total Lines Added**: ~1,200 lines
+  - Error handling: ~175 lines
+  - Installation system: ~700 lines
+  - Configuration system: ~200 lines
+  - Documentation: ~125 lines
+- **New Files Created**: 4
+  - `lib/global-config.js` (250 lines)
+  - `lib/system-validator.js` (250 lines)
+  - `install.js` (200 lines)
+  - `INSTALLATION.md` (400+ lines)
+- **Files Modified**: 11 core files
+  - All hardcoded paths removed
+  - Global config integration
+  - Security improvements
+- **Bug Fixes**: 1 critical (SSH URL parsing)
+- **Features**: 2 major (Auto-PR + Installation)
+- **Documentation**: 8 comprehensive guides
+- **Tests**: 12 automated tests (v0.13.0 validation)
 
 ### 🔗 Related Issues
 

@@ -1,7 +1,7 @@
 {
   "name": "claude-automation",
-  "version": "0.12.1-alpha",
-  "description": "Claude Multi-Agent Coding System - Dynamic routing with workflow-driven experience",
+  "version": "0.13.0",
+  "description": "Claude Multi-Agent Coding System - Installable AI-powered development orchestration",
   "type": "module",
   "bin": {
     "claude": "./cli.js",
@@ -9,6 +9,8 @@
   },
   "scripts": {
     "start": "node cli.js",
+    "install": "node install.js",
+    "postinstall": "echo '\nRun \"node install.js\" to complete installation\n'",
     "test": "node test/run-unit-tests.js",
     "test:unit": "node test/run-unit-tests.js",
     "test:smoke": "node test/smoke-test.js",
