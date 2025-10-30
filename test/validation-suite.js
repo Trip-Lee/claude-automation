@@ -183,15 +183,15 @@ async function runValidationSuite() {
 
     if (containerResult.passed) {
       await runTest('fileOps', 'List files in container', async () => {
-        const output = await dockerManager.exec(testContainer, 'ls -la /workspace');
-        if (!output.includes('main.py') || !output.includes('test_main.py')) {
+        const result = await dockerManager.exec(testContainer, 'ls -la /workspace');
+        if (!result.stdout.includes('main.py') || !result.stdout.includes('test_main.py')) {
           throw new Error('Expected files not found');
         }
       });
 
       await runTest('fileOps', 'Read file in container', async () => {
-        const output = await dockerManager.exec(testContainer, 'cat /workspace/main.py');
-        if (!output.includes('def greet') || !output.includes('def add_numbers')) {
+        const result = await dockerManager.exec(testContainer, 'cat /workspace/main.py');
+        if (!result.stdout.includes('def greet') || !result.stdout.includes('def add_numbers')) {
           throw new Error('Expected content not found');
         }
       });
@@ -200,28 +200,28 @@ async function runValidationSuite() {
         // Write to /tmp to avoid git changes
         await dockerManager.exec(testContainer, 'echo "validation test" > /tmp/test.txt');
 
-        const output = await dockerManager.exec(testContainer, 'cat /tmp/test.txt');
-        if (!output.includes('validation test')) {
+        const result = await dockerManager.exec(testContainer, 'cat /tmp/test.txt');
+        if (!result.stdout.includes('validation test')) {
           throw new Error('File write failed');
         }
       });
 
       await runTest('fileOps', 'Execute Python in container', async () => {
-        const output = await dockerManager.exec(
+        const result = await dockerManager.exec(
           testContainer,
           'python3 -c "print(2 + 2)"'
         );
-        if (!output.includes('4')) {
+        if (!result.stdout.includes('4')) {
           throw new Error('Python execution failed');
         }
       });
 
       await runTest('fileOps', 'Run pytest in container', async () => {
-        const output = await dockerManager.exec(
+        const result = await dockerManager.exec(
           testContainer,
           'cd /workspace && python3 -m pytest test_main.py -v'
         );
-        if (!output.includes('passed') && !output.includes('PASSED')) {
+        if (!result.stdout.includes('passed') && !result.stdout.includes('PASSED')) {
           throw new Error('Tests did not pass');
         }
       });

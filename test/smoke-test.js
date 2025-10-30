@@ -101,23 +101,23 @@ async function runSmokeTests() {
       // Test 5: Basic file operations in container
       if (testContainer) {
         await runTest('File operations in container', async () => {
-          // List files - exec already returns output directly
-          const lsOutput = await dockerManager.exec(testContainer, 'ls -la /workspace');
-          if (!lsOutput.includes('main.py')) {
+          // List files - exec now returns {exitCode, stdout, stderr}
+          const lsResult = await dockerManager.exec(testContainer, 'ls -la /workspace');
+          if (!lsResult.stdout.includes('main.py')) {
             throw new Error('main.py not found in workspace');
           }
 
           // Read file
-          const catOutput = await dockerManager.exec(testContainer, 'cat /workspace/main.py');
-          if (!catOutput.includes('def greet')) {
+          const catResult = await dockerManager.exec(testContainer, 'cat /workspace/main.py');
+          if (!catResult.stdout.includes('def greet')) {
             throw new Error('Expected content not found in main.py');
           }
 
           // Write file (test with echo to /tmp, not workspace to avoid git changes)
           await dockerManager.exec(testContainer, 'echo "test" > /tmp/smoke-test.txt');
 
-          const readOutput = await dockerManager.exec(testContainer, 'cat /tmp/smoke-test.txt');
-          if (!readOutput.includes('test')) {
+          const readResult = await dockerManager.exec(testContainer, 'cat /tmp/smoke-test.txt');
+          if (!readResult.stdout.includes('test')) {
             throw new Error('File write test failed');
           }
         });
