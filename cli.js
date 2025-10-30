@@ -7,7 +7,12 @@
 
 import { Command } from 'commander';
 import chalk from 'chalk';
+import inquirer from 'inquirer';
+import { spawn } from 'child_process';
+import { randomBytes } from 'crypto';
+import { createWriteStream } from 'fs';
 import { Orchestrator } from './lib/orchestrator.js';
+import { TaskStateManager } from './lib/task-state-manager.js';
 import { getGlobalConfig } from './lib/global-config.js';
 import dotenv from 'dotenv';
 import path from 'path';
@@ -30,8 +35,89 @@ program
 program
   .command('task <project> <description>')
   .description('Create a new coding task')
-  .action(async (project, description) => {
+  .option('-b, --background', 'Run task in background')
+  .action(async (project, description, options) => {
     try {
+      // Background execution mode
+      if (options.background) {
+        const stateManager = new TaskStateManager();
+
+        // Check parallel task limit
+        const running = await stateManager.getRunningTasks();
+        const maxParallel = globalConfig.get('maxParallelTasks') || 10;
+
+        if (running.length >= maxParallel) {
+          console.error(chalk.red(`\n❌ Maximum parallel tasks limit reached (${maxParallel})`));
+          console.log(chalk.yellow(`   ${running.length} tasks currently running`));
+          console.log(chalk.gray('\nRunning tasks:'));
+          for (const task of running.slice(0, 5)) {
+            console.log(chalk.gray(`  - ${task.taskId}: ${task.project} (${task.currentAgent || 'starting'})`));
+          }
+          if (running.length > 5) {
+            console.log(chalk.gray(`  ... and ${running.length - 5} more`));
+          }
+          console.log(chalk.yellow(`\nView status: dev-tools status`));
+          process.exit(1);
+        }
+
+        // Generate task ID
+        const taskId = randomBytes(6).toString('hex');
+
+        // Create log file
+        const logsDir = globalConfig.get('logsDir');
+        const logPath = path.join(logsDir, `${taskId}.log`);
+        const logStream = createWriteStream(logPath);
+
+        // Spawn detached background process
+        const workerPath = path.join(globalConfig.getInstallPath(), 'background-worker.js');
+        const child = spawn('node', [
+          workerPath,
+          taskId,
+          project,
+          description
+        ], {
+          detached: true,
+          stdio: ['ignore', logStream, logStream],
+          env: process.env
+        });
+
+        child.unref();
+
+        // Save initial task state
+        await stateManager.saveTaskState(taskId, {
+          taskId,
+          project,
+          description,
+          status: 'running',
+          pid: child.pid,
+          startedAt: new Date().toISOString(),
+          logFile: logPath,
+          currentAgent: null,
+          completedAgents: [],
+          progress: {
+            percent: 0,
+            eta: null
+          }
+        });
+
+        // Display task info
+        console.log(chalk.green.bold('\n✓ Background task started\n'));
+        console.log(chalk.gray('Task Details:'));
+        console.log(chalk.cyan(`  ID:       ${taskId}`));
+        console.log(chalk.cyan(`  Project:  ${project}`));
+        console.log(chalk.cyan(`  PID:      ${child.pid}`));
+        console.log(chalk.gray(`\n  Log:      ${logPath}`));
+        console.log(chalk.gray('\nMonitoring:'));
+        console.log(chalk.white(`  View logs:    dev-tools logs ${taskId}`));
+        console.log(chalk.white(`  Follow logs:  dev-tools logs -f ${taskId}`));
+        console.log(chalk.white(`  Check status: dev-tools status`));
+        console.log(chalk.white(`  Cancel task:  dev-tools cancel ${taskId}`));
+        console.log();
+
+        process.exit(0);
+      }
+
+      // Normal foreground execution
       console.log(chalk.blue.bold('\nClaude Multi-Agent System\n'));
       const orchestrator = new Orchestrator(
         process.env.GITHUB_TOKEN,
@@ -80,17 +166,345 @@ program
     }
   });
 
-// Status command - check task status
+// Status command - show running background tasks
 program
-  .command('status [taskId]')
-  .description('Check task status')
+  .command('status [project]')
+  .description('Show running background tasks (optionally filter by project)')
+  .action(async (project) => {
+    try {
+      const stateManager = new TaskStateManager();
+
+      // Sync states first (mark dead processes as interrupted)
+      await stateManager.syncTaskStates();
+
+      // Get tasks
+      let tasks;
+      if (project) {
+        tasks = await stateManager.getProjectTasks(project);
+        tasks = tasks.filter(t => t.status === 'running');
+      } else {
+        tasks = await stateManager.getRunningTasks();
+      }
+
+      if (tasks.length === 0) {
+        if (project) {
+          console.log(chalk.yellow(`\nNo running tasks for project: ${project}\n`));
+        } else {
+          console.log(chalk.yellow('\nNo running tasks\n'));
+        }
+        return;
+      }
+
+      // Helper function to format time ago
+      const formatTimeAgo = (isoString) => {
+        const seconds = Math.floor((Date.now() - new Date(isoString)) / 1000);
+        if (seconds < 60) return `${seconds}s ago`;
+        const minutes = Math.floor(seconds / 60);
+        if (minutes < 60) return `${minutes}m ago`;
+        const hours = Math.floor(minutes / 60);
+        if (hours < 24) return `${hours}h ago`;
+        const days = Math.floor(hours / 24);
+        return `${days}d ago`;
+      };
+
+      // Display header
+      console.log(chalk.bold.cyan('\n Running Background Tasks\n'));
+      if (project) {
+        console.log(chalk.gray(`Filtered by project: ${project}\n`));
+      }
+
+      // Display table header
+      console.log(
+        chalk.gray(
+          'ID          '.padEnd(14) +
+          'Project     '.padEnd(14) +
+          'Stage       '.padEnd(12) +
+          'Progress'.padEnd(10) +
+          'ETA   '.padEnd(8) +
+          'Started'
+        )
+      );
+      console.log(chalk.gray('─'.repeat(70)));
+
+      // Display each task
+      for (const task of tasks) {
+        const summary = stateManager.formatTaskSummary(task);
+        const id = summary.id.substring(0, 12).padEnd(14);
+        const proj = (summary.project.substring(0, 12)).padEnd(14);
+        const stage = (summary.stage.substring(0, 10)).padEnd(12);
+        const progress = `${summary.progress}%`.padEnd(10);
+        const eta = summary.eta !== '-' ? `${summary.eta}s`.padEnd(8) : '-'.padEnd(8);
+        const started = formatTimeAgo(summary.started);
+
+        console.log(`${chalk.cyan(id)}${chalk.white(proj)}${chalk.yellow(stage)}${chalk.green(progress)}${chalk.blue(eta)}${chalk.gray(started)}`);
+      }
+
+      console.log(chalk.gray('\n' + '─'.repeat(70)));
+      console.log(chalk.gray(`\nTotal: ${tasks.length} running task${tasks.length !== 1 ? 's' : ''}`));
+      console.log(chalk.gray('\nCommands:'));
+      console.log(chalk.white(`  View logs:   dev-tools logs <taskId>`));
+      console.log(chalk.white(`  Cancel task: dev-tools cancel <taskId>`));
+      console.log();
+
+    } catch (error) {
+      console.error(chalk.red('\nERROR:'), error.message);
+      process.exit(1);
+    }
+  });
+
+// Logs command - view or follow task logs
+program
+  .command('logs <taskId>')
+  .description('View logs for a background task')
+  .option('-f, --follow', 'Follow log output in real-time (like tail -f)')
+  .option('-n, --lines <number>', 'Number of lines to show', '50')
+  .action(async (taskId, options) => {
+    try {
+      const stateManager = new TaskStateManager();
+      const task = await stateManager.loadTaskState(taskId);
+
+      if (!task) {
+        console.error(chalk.red(`\n❌ Task not found: ${taskId}\n`));
+        process.exit(1);
+      }
+
+      const logPath = task.logFile || path.join(globalConfig.get('logsDir'), `${taskId}.log`);
+
+      // Check if log file exists
+      const { existsSync } = await import('fs');
+      if (!existsSync(logPath)) {
+        console.error(chalk.red(`\n❌ Log file not found: ${logPath}\n`));
+        process.exit(1);
+      }
+
+      console.log(chalk.gray(`\nTask: ${task.project} - ${task.description}`));
+      console.log(chalk.gray(`Status: ${task.status}`));
+      console.log(chalk.gray(`Log file: ${logPath}\n`));
+
+      if (options.follow) {
+        console.log(chalk.yellow('Following logs (press Ctrl+C to stop)...\n'));
+
+        // Stream logs in real-time using tail -f
+        const tail = spawn('tail', ['-f', logPath], { stdio: 'inherit' });
+
+        // Handle Ctrl+C gracefully
+        process.on('SIGINT', () => {
+          tail.kill();
+          console.log(chalk.gray('\n\nStopped following logs\n'));
+          process.exit(0);
+        });
+
+        // Handle tail exit
+        tail.on('close', (code) => {
+          process.exit(code);
+        });
+
+      } else {
+        // Show last N lines using tail -n
+        const tail = spawn('tail', ['-n', options.lines, logPath], { stdio: 'inherit' });
+
+        tail.on('close', (code) => {
+          console.log(); // Add newline at end
+          process.exit(code);
+        });
+      }
+
+    } catch (error) {
+      console.error(chalk.red('\nERROR:'), error.message);
+      process.exit(1);
+    }
+  });
+
+// Cancel command - gracefully cancel a running background task
+program
+  .command('cancel [taskId]')
+  .description('Cancel a running background task')
   .action(async (taskId) => {
     try {
-      const orchestrator = new Orchestrator(
-        process.env.GITHUB_TOKEN,
-        process.env.ANTHROPIC_API_KEY
-      );
-      await orchestrator.showStatus(taskId);
+      const stateManager = new TaskStateManager();
+
+      // If no taskId provided, show interactive selection
+      if (!taskId) {
+        const running = await stateManager.getRunningTasks();
+
+        if (running.length === 0) {
+          console.log(chalk.yellow('\nNo running tasks to cancel\n'));
+          return;
+        }
+
+        const choices = running.map(t => ({
+          name: `${t.taskId.substring(0, 12)} - ${t.project} (${t.currentAgent || 'starting'})`,
+          value: t.taskId
+        }));
+
+        const answer = await inquirer.prompt([{
+          type: 'list',
+          name: 'taskId',
+          message: 'Select task to cancel:',
+          choices
+        }]);
+
+        taskId = answer.taskId;
+      }
+
+      // Load task
+      const task = await stateManager.loadTaskState(taskId);
+
+      if (!task) {
+        console.error(chalk.red(`\n❌ Task not found: ${taskId}\n`));
+        process.exit(1);
+      }
+
+      if (task.status !== 'running') {
+        console.log(chalk.yellow(`\n⚠️  Task ${taskId} is not running (status: ${task.status})\n`));
+        return;
+      }
+
+      console.log(chalk.yellow(`\nCanceling task ${taskId}...`));
+      console.log(chalk.gray(`  Project: ${task.project}`));
+      console.log(chalk.gray(`  PID: ${task.pid}`));
+
+      // Try graceful shutdown first (SIGTERM)
+      try {
+        console.log(chalk.gray('\n  Sending SIGTERM (graceful shutdown)...'));
+        process.kill(task.pid, 'SIGTERM');
+
+        // Wait 5 seconds for graceful shutdown
+        await new Promise(resolve => setTimeout(resolve, 5000));
+
+        // Check if still running
+        if (stateManager.isProcessRunning(task.pid)) {
+          console.log(chalk.yellow('  Graceful shutdown timed out'));
+          console.log(chalk.gray('  Sending SIGKILL (force kill)...'));
+          process.kill(task.pid, 'SIGKILL');
+
+          // Wait a bit for force kill to take effect
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        } else {
+          console.log(chalk.green('  Process stopped gracefully'));
+        }
+
+        // Update task state
+        await stateManager.updateTaskState(taskId, {
+          status: 'cancelled',
+          completedAt: new Date().toISOString()
+        });
+
+        console.log(chalk.green(`\n✓ Task ${taskId} cancelled\n`));
+
+      } catch (error) {
+        if (error.code === 'ESRCH') {
+          // Process already dead
+          console.log(chalk.gray('  Process already stopped'));
+          await stateManager.updateTaskState(taskId, {
+            status: 'cancelled',
+            completedAt: new Date().toISOString()
+          });
+          console.log(chalk.green(`\n✓ Task ${taskId} cancelled\n`));
+        } else {
+          console.error(chalk.red(`\n❌ Failed to cancel task: ${error.message}\n`));
+          process.exit(1);
+        }
+      }
+
+    } catch (error) {
+      console.error(chalk.red('\nERROR:'), error.message);
+      process.exit(1);
+    }
+  });
+
+// Restart command - restart a failed or completed task
+program
+  .command('restart <taskId>')
+  .description('Restart a failed or completed task')
+  .option('-b, --background', 'Run in background')
+  .action(async (taskId, options) => {
+    try {
+      const stateManager = new TaskStateManager();
+      const task = await stateManager.loadTaskState(taskId);
+
+      if (!task) {
+        console.error(chalk.red(`\n❌ Task not found: ${taskId}\n`));
+        process.exit(1);
+      }
+
+      if (task.status === 'running') {
+        console.log(chalk.yellow(`\n⚠️  Task ${taskId} is already running\n`));
+        console.log(chalk.gray('Use `dev-tools status` to check progress'));
+        console.log(chalk.gray('Use `dev-tools cancel` to stop it first\n'));
+        return;
+      }
+
+      console.log(chalk.cyan('\nRestarting task...\n'));
+      console.log(chalk.gray('Original Task:'));
+      console.log(chalk.gray(`  ID:          ${taskId}`));
+      console.log(chalk.gray(`  Project:     ${task.project}`));
+      console.log(chalk.gray(`  Description: ${task.description}`));
+      console.log(chalk.gray(`  Status:      ${task.status}\n`));
+
+      // Generate new task ID
+      const newTaskId = randomBytes(6).toString('hex');
+
+      if (options.background) {
+        // Background execution
+        const logsDir = globalConfig.get('logsDir');
+        const logPath = path.join(logsDir, `${newTaskId}.log`);
+        const logStream = createWriteStream(logPath);
+
+        // Spawn detached background process
+        const workerPath = path.join(globalConfig.getInstallPath(), 'background-worker.js');
+        const child = spawn('node', [
+          workerPath,
+          newTaskId,
+          task.project,
+          task.description
+        ], {
+          detached: true,
+          stdio: ['ignore', logStream, logStream],
+          env: process.env
+        });
+
+        child.unref();
+
+        // Save initial task state
+        await stateManager.saveTaskState(newTaskId, {
+          taskId: newTaskId,
+          project: task.project,
+          description: task.description,
+          status: 'running',
+          pid: child.pid,
+          startedAt: new Date().toISOString(),
+          logFile: logPath,
+          currentAgent: null,
+          completedAgents: [],
+          progress: {
+            percent: 0,
+            eta: null
+          },
+          restartedFrom: taskId
+        });
+
+        console.log(chalk.green('✓ Task restarted in background\n'));
+        console.log(chalk.cyan(`  New ID:  ${newTaskId}`));
+        console.log(chalk.cyan(`  PID:     ${child.pid}`));
+        console.log(chalk.gray(`\n  Log:     ${logPath}`));
+        console.log(chalk.gray('\nMonitoring:'));
+        console.log(chalk.white(`  View logs:    dev-tools logs ${newTaskId}`));
+        console.log(chalk.white(`  Check status: dev-tools status`));
+        console.log();
+
+      } else {
+        // Foreground execution
+        console.log(chalk.blue.bold('Starting foreground execution...\n'));
+
+        const orchestrator = new Orchestrator(
+          process.env.GITHUB_TOKEN,
+          process.env.ANTHROPIC_API_KEY
+        );
+
+        await orchestrator.executeTask(task.project, task.description);
+      }
+
     } catch (error) {
       console.error(chalk.red('\nERROR:'), error.message);
       process.exit(1);
@@ -444,24 +858,6 @@ program
 
     } catch (error) {
       console.error(chalk.red('\nERROR: Test failed:'), error.message);
-      process.exit(1);
-    }
-  });
-
-// Cancel command - cancel a task and cleanup
-program
-  .command('cancel <taskId>')
-  .description('Cancel task and cleanup (works for any status)')
-  .action(async (taskId) => {
-    try {
-      const orchestrator = new Orchestrator(
-        process.env.GITHUB_TOKEN,
-        process.env.ANTHROPIC_API_KEY
-      );
-      await orchestrator.cancel(taskId);
-      console.log(chalk.yellow('\nTask cancelled and cleaned up\n'));
-    } catch (error) {
-      console.error(chalk.red('\nERROR:'), error.message);
       process.exit(1);
     }
   });
