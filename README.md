@@ -62,11 +62,13 @@ dev-tools restart [-b] <taskId>               # Restart task
 
 ### 🤖 AI & Agents
 
-- **7 Specialized Agents** - Architect, Coder, Reviewer, Security, Documenter, Tester, Performance
+- **15 Specialized Agents** - 7 standard + 8 ServiceNow-specific agents
+  - **Standard**: Architect, Coder, Reviewer, Security, Documenter, Tester, Performance
+  - **ServiceNow**: API, Flows, Scripting, UI, Integration, Security, Testing, Performance
 - **Dynamic Agent Routing** - Agents decide next steps intelligently
 - **Parallel Coordination** - Multiple agents work simultaneously
 - **Session Continuity** - Agents share context across workflow
-- **External Tools System** - Extensible tool integration (ServiceNow, Jira, etc.)
+- **Platform-Specific Agents** - Optimized for ServiceNow, extensible to other platforms
 
 ### 🚀 Workflow & Integration
 
@@ -596,6 +598,64 @@ DEFAULT_MAX_COST=5.00
 
 ---
 
+## ServiceNow Agents
+
+The system includes **8 specialized ServiceNow agents** optimized for ServiceNow platform development and SN-tools testing:
+
+### Available Agents
+
+| Agent | Icon | Focus | Use Case |
+|-------|------|-------|----------|
+| **sn-api** | 🔌 | REST APIs, GlideAjax | API development, integrations |
+| **sn-flows** | 🔄 | Flow Designer, IntegrationHub | Workflow automation |
+| **sn-scripting** | 📜 | Business rules, client scripts | Server/client scripting |
+| **sn-ui** | 🎨 | Service Portal, widgets | UI development |
+| **sn-integration** | 🔗 | External integrations, ETL | System integrations |
+| **sn-security** | 🔐 | ACLs, security audit | Security reviews |
+| **sn-testing** | 🧪 | ATF tests | Automated testing |
+| **sn-performance** | ⚡ | Query optimization | Performance tuning |
+
+### Quick Examples
+
+```bash
+# Create REST API endpoint
+dev-tools task sn-tools "Create REST API for incident statistics"
+# → architect → sn-api → sn-testing → reviewer
+
+# Build workflow automation
+dev-tools task sn-tools "Create flow to auto-assign incidents"
+# → architect → sn-flows → sn-testing → reviewer
+
+# Security audit
+dev-tools task sn-tools "Review ACLs on incident table"
+# → architect → sn-security → reviewer
+
+# Performance optimization
+dev-tools task sn-tools "Optimize slow business rule on incident"
+# → architect → sn-performance → sn-scripting → sn-performance → reviewer
+
+# Service Portal widget
+dev-tools task sn-tools "Create widget for user's open tasks"
+# → architect → sn-ui → sn-testing → reviewer
+```
+
+### Automatic Agent Selection
+
+The system automatically selects ServiceNow agents based on task keywords:
+
+- **"api", "rest", "glideajax"** → sn-api-dev sequence
+- **"flow", "workflow"** → sn-flow-dev sequence
+- **"portal", "widget"** → sn-ui-dev sequence
+- **"integration", "import"** → sn-integration-dev sequence
+- **"acl", "security"** → sn-security-audit sequence
+- **"performance", "slow"** → sn-performance sequence
+
+### Documentation
+
+For detailed ServiceNow agent documentation, see [SERVICENOW_AGENTS.md](SERVICENOW_AGENTS.md)
+
+---
+
 ## Troubleshooting
 
 ### Background Tasks Not Starting
@@ -712,10 +772,12 @@ claude-automation/
 │   ├── parallel-agent-manager.js  # Parallel coordination
 │   ├── branch-merger.js       # Branch merging
 │   ├── task-state-manager.js  # State persistence
+│   ├── agent-registry.js      # Agent management
+│   ├── standard-agents.js     # Standard agent definitions
+│   ├── servicenow-agents.js   # ServiceNow agent definitions
 │   ├── docker-manager.js      # Docker operations
 │   ├── git-manager.js         # Git operations
 │   ├── github-client.js       # GitHub API
-│   ├── agent-registry.js      # Agent management
 │   ├── cost-monitor.js        # Cost tracking
 │   └── ...
 ├── test/
@@ -749,6 +811,16 @@ claude-automation/
   - Sequential branch merging with conflict detection
   - Graceful fallback to sequential execution
 
+- **ServiceNow Platform Agents** (8 specialized agents)
+  - sn-api: REST API and GlideAjax development
+  - sn-flows: Flow Designer and IntegrationHub
+  - sn-scripting: Business rules and client scripts
+  - sn-ui: Service Portal and UI Builder
+  - sn-integration: External system integration
+  - sn-security: ACL and security audits
+  - sn-testing: ATF automated testing
+  - sn-performance: Query and performance optimization
+
 **✨ Enhancements**
 - Status command redesigned for background tasks
 - New logs command with follow mode
@@ -758,9 +830,10 @@ claude-automation/
 - Task state persistence system
 
 **📊 Statistics**
-- 3,645 lines of code added
-- 5 new components
-- 11 files modified
+- 4,427 lines of code added (including ServiceNow agents)
+- 8 new components (3 parallel execution + 5 state management)
+- 15 total specialized agents (7 standard + 8 ServiceNow)
+- 13 files modified/created
 - 75/75 tests passing
 
 ### v0.13.0 (2025-10-29)
@@ -777,6 +850,7 @@ claude-automation/
 
 ### Documentation
 - [Installation Guide](INSTALLATION.md)
+- [ServiceNow Agents Guide](SERVICENOW_AGENTS.md)
 - [Phase 2: Background Execution](PHASE2_PLAN.md)
 - [Phase 3: Parallel Execution](PHASE3_PLAN.md)
 - [Test Results](TEST_RESULTS_PHASE2_PHASE3.md)
