@@ -22,9 +22,9 @@ dotenv.config({ path: globalConfig.get('envFile') });
 const program = new Command();
 
 program
-  .name('claude')
-  .description('Claude Multi-Agent Coding System')
-  .version('1.0.0');
+  .name('dev-tools')
+  .description('Dev Tools - AI-powered development orchestration')
+  .version('0.13.0');
 
 // Task command - create a new coding task
 program
@@ -319,7 +319,7 @@ program
       console.log(chalk.gray(`Config saved: ${configPath}\n`));
       console.log(chalk.cyan(`Next steps:`));
       console.log(chalk.gray(`  1. Review/edit config: ${configPath}`));
-      console.log(chalk.gray(`  2. Run task: claude task ${name} "<description>"\n`));
+      console.log(chalk.gray(`  2. Run task: dev-tools task ${name} "<description>"\n`));
 
     } catch (error) {
       console.error(chalk.red('\nERROR: Failed to add project:'), error.message);
@@ -545,7 +545,7 @@ async function runWorkflow() {
         program.parse();
         return;
       } else {
-        console.log(chalk.gray('\nRun "claude add-project <name>" to add a project.\n'));
+        console.log(chalk.gray('\nRun "dev-tools add-project <name>" to add a project.\n'));
         process.exit(0);
       }
     }
@@ -768,7 +768,7 @@ async function runWorkflow() {
     } else {
       console.log(chalk.yellow('Branch created but PR not created automatically.'));
       console.log(chalk.gray(`  Branch: ${result.branchName}`));
-      console.log(chalk.gray(`  Create PR manually: claude approve ${result.taskId}\n`));
+      console.log(chalk.gray(`  Create PR manually: dev-tools approve ${result.taskId}\n`));
     }
 
     // Step 7: Auto cleanup containers

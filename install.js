@@ -159,7 +159,7 @@ ${answers.GITHUB_TOKEN ? `GITHUB_TOKEN=${answers.GITHUB_TOKEN}` : '# GITHUB_TOKE
       // Check if already linked
       let needsLink = true;
       try {
-        const linkedPath = execSync('which claude', { encoding: 'utf8' }).trim();
+        const linkedPath = execSync('which dev-tools', { encoding: 'utf8' }).trim();
         if (linkedPath) {
           console.log(chalk.gray(`  CLI already linked: ${linkedPath}`));
           needsLink = false;
@@ -172,7 +172,7 @@ ${answers.GITHUB_TOKEN ? `GITHUB_TOKEN=${answers.GITHUB_TOKEN}` : '# GITHUB_TOKE
         console.log(chalk.gray('  Linking CLI command (may require sudo)...'));
         try {
           execSync('npm link', { stdio: 'inherit' });
-          console.log(chalk.green('  ✅ CLI command "claude" is now available globally'));
+          console.log(chalk.green('  ✅ CLI command "dev-tools" is now available globally'));
         } catch (error) {
           console.log(chalk.yellow('  ⚠️  Could not automatically link CLI command'));
           console.log(chalk.gray('  You can manually link it later with: npm link'));
@@ -240,10 +240,10 @@ safety:
     console.log(chalk.gray('     # Edit my-project.yaml with your project details\n'));
 
     console.log(chalk.cyan('  2. Run your first task:'));
-    console.log(chalk.gray('     claude task my-project "Add documentation to README"\n'));
+    console.log(chalk.gray('     dev-tools task my-project "Add documentation to README"\n'));
 
     console.log(chalk.cyan('  3. Or use workflow mode:'));
-    console.log(chalk.gray('     claude\n'));
+    console.log(chalk.gray('     dev-tools\n'));
 
     console.log(chalk.bold('Documentation:\n'));
     console.log(chalk.gray('  - Installation Guide: INSTALLATION.md'));
