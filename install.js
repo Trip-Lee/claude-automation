@@ -48,7 +48,7 @@ async function main() {
     globalConfig.updateInstallInfo({
       installPath: process.cwd(),
       installedAt: new Date().toISOString(),
-      version: '0.13.0'
+      version: '0.14.0'
     });
 
     console.log(chalk.gray(`  Installation directory: ${process.cwd()}`));
@@ -242,7 +242,12 @@ safety:
     console.log(chalk.cyan('  2. Run your first task:'));
     console.log(chalk.gray('     dev-tools task my-project "Add documentation to README"\n'));
 
-    console.log(chalk.cyan('  3. Or use workflow mode:'));
+    console.log(chalk.cyan('  3. Try background execution (NEW in v0.14.0):'));
+    console.log(chalk.gray('     dev-tools task -b my-project "Add tests"'));
+    console.log(chalk.gray('     dev-tools status'));
+    console.log(chalk.gray('     dev-tools logs -f <taskId>\n'));
+
+    console.log(chalk.cyan('  4. Or use workflow mode:'));
     console.log(chalk.gray('     dev-tools\n'));
 
     console.log(chalk.bold('Documentation:\n'));

@@ -29,7 +29,7 @@ const program = new Command();
 program
   .name('dev-tools')
   .description('Dev Tools - AI-powered development orchestration')
-  .version('0.13.0');
+  .version('0.14.0');
 
 // Task command - create a new coding task
 program
