@@ -1,12 +1,32 @@
-# ServiceNow Tools v2.1 - Complete Documentation
+# ServiceNow Tools v2.2 - Complete Documentation
 
-**Professional ServiceNow Development Toolkit with Enhanced Security & AI Integration**
+**Professional ServiceNow Development Toolkit with 15 Operations, Performance Monitoring & AI Integration**
 
 A comprehensive, production-ready suite of tools for ServiceNow development, data management, and automated workflows with intelligent AI integration, enterprise-grade security, robust error handling, and comprehensive input validation.
 
 ---
 
-## 🎉 What's New in v2.1
+## 🎉 What's New in v2.2
+
+### 🚀 **15 Operation Types - Complete Coverage**
+- **Server-Side Scripts**: Business Rules, Scheduled Jobs
+- **Client-Side Scripts**: Client Scripts, UI Actions
+- **Security & Access**: ACLs, Data Policies, UI Policies
+- **APIs & Integration**: REST APIs
+- **User Experience**: Notifications, Catalog Items
+- **Schema Operations**: Create/Extend Tables, Add Fields, Choices
+
+### 📊 **Performance Monitoring & Optimization**
+- **Real-Time Performance Metrics**: Cache hit rates, response times, API statistics
+- **HTTP Connection Pooling**: 20-50ms latency reduction per request
+- **Performance Dashboard**: Interactive metrics visualization
+- **API Performance Tracking**: Monitor and optimize slow endpoints
+
+### 📚 **Complete Documentation**
+- **All 15 Operations Documented**: Comprehensive guides with examples
+- **Quick Reference Guide**: Copy-paste ready CLI commands
+- **Best Practices**: For each operation type
+- **Troubleshooting**: Common issues and solutions
 
 ### 🔒 **Security Enhancements**
 - **AES-256-CBC Encryption** for all sensitive credentials
@@ -25,12 +45,7 @@ A comprehensive, production-ready suite of tools for ServiceNow development, dat
 - **3-Way AI Model**: External AI ↔ sn-tools ↔ AI APIs
 - **Universal AI Support**: Claude Code, ChatGPT CLI, Claude API
 - **Enhanced Security**: AI prompt validation and sanitization
-
-### ⚡ **Performance & UX**
-- **Interactive Setup Wizard** for first-time configuration
-- **95% Faster Config Loading** with intelligent caching
-- **Better Error Messages** with actionable suggestions
-- **Comprehensive Testing Suite** ensuring 100% system readiness
+- **CRUD Auto-Detection**: Automatically detect Create/Read/Update/Delete operations
 
 ---
 
@@ -49,10 +64,20 @@ A comprehensive, production-ready suite of tools for ServiceNow development, dat
 
 ## 📚 Additional Documentation
 
+### Core Guides
+- **[🚀 NEW FEATURES GUIDE](NEW_FEATURES_GUIDE.md)** - Complete guide to all 15 operation types
+- **[⚡ QUICK REFERENCE](QUICK_REFERENCE.md)** - Fast reference for all operations and commands
+- **[🤖 AI Tools Guide](AI_TOOLS_GUIDE.md)** - AI-assisted operations and workflows
+- **[📊 CRUD Analyzer Guide](CRUD_ANALYZER_GUIDE.md)** - Auto-detect CRUD operations in scripts
+
+### AI Integration
 - **[🚀 AI Quick Start Guide](AI_QUICK_START.md)** - Get started with AI integration in 5 minutes
 - **[🤖 Enhanced AI Integration Guide](CLAUDE_INTEGRATION.md)** - Complete AI features documentation
-- **[📜 Scripts Reference](SCRIPTS_REFERENCE.md)** - All available commands and examples
 - **[🔧 AI Integration Improvements](AI_INTEGRATION_IMPROVEMENTS.md)** - Technical details and migration guide
+
+### Reference
+- **[📜 Scripts Reference](SCRIPTS_REFERENCE.md)** - All available commands and examples
+- **[✅ Implementation Complete](IMPLEMENTATION_COMPLETE.md)** - System capabilities and status
 
 ---
 
