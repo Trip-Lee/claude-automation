@@ -1,0 +1,3 @@
+[submodule "tools/sn-tools"]
+	path = tools/sn-tools
+	url = https://github.com/Trip-Lee/sn-tools.git
