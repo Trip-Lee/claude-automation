@@ -1,0 +1,283 @@
+# ServiceNow Tools - Tool Manifest
+# Version: 2.3.0
+# This manifest describes the capabilities and usage of the ServiceNow Tools toolkit
+
+name: sn-tools
+version: 2.3.0
+description: Professional ServiceNow development toolkit with multi-instance support, real-time syncing, dependency tracking, API automation, and unified full-stack tracing
+type: node_script
+
+# What this tool can do (for agent decision-making)
+capabilities:
+  - "Query ServiceNow tables and records (incidents, stories, change requests, etc.)"
+  - "Create and update ServiceNow records through API"
+  - "Test ServiceNow instance connectivity and authentication"
+  - "Fetch data from multiple ServiceNow instances (dev/prod routing)"
+  - "Watch local files and auto-sync changes to ServiceNow"
+  - "Scan and analyze Script Include dependencies"
+  - "Perform impact analysis for code changes"
+  - "Trace ServiceNow Flow execution paths"
+  - "Map and validate ServiceNow table fields"
+  - "Generate AI context summaries for ServiceNow projects"
+  - "Handle multi-instance configurations (dev/prod separation)"
+  # NEW in v2.3.0: Unified Tracing & Query Interface
+  - "Trace component → API → script → table lineage (forward tracing)"
+  - "Trace table → script → API → component dependencies (backward tracing)"
+  - "Query full bidirectional lineage for any entity (component/api/script/table)"
+  - "Validate changes with automated impact analysis and risk assessment"
+  - "Query unified interface for all dependency, CRUD, and schema operations"
+  - "Analyze table schemas and relationships"
+  - "Detect CRUD operations in Script Includes"
+
+# How to use this tool
+entry_point: ServiceNow-Tools/sn-auto-execute.js
+working_directory: tools/sn-tools
+
+# Usage instructions for agents
+usage: |
+  Execute commands from the working directory:
+
+  # Interactive launcher (full menu)
+  node ServiceNow-Tools/sn-auto-execute.js
+
+  # Or use npm scripts (recommended):
+  cd tools/sn-tools/ServiceNow-Tools && npm run <command>
+
+  Available npm commands:
+    # Legacy operations:
+    - npm run execute              # Interactive launcher
+    - npm run test-connections     # Test ServiceNow connectivity
+    - npm run fetch-data           # Fetch ServiceNow data
+    - npm run fetch-stories        # Fetch stories from ServiceNow
+    - npm run fetch-all            # Fetch all data
+    - npm run watch                # Watch files for changes
+    - npm run dependency-scan      # Scan Script Include dependencies
+    - npm run impact-analysis      # Analyze change impact
+    - npm run generate-context     # Generate AI context summary
+    - npm run setup                # Configuration wizard
+    - npm run create-enhanced      # Create ServiceNow records
+
+    # NEW in v2.3.0: Unified Tracing & Query Interface
+    - npm run trace-impact         # Forward trace: component → tables
+    - npm run trace-backward       # Backward trace: table → components
+    - npm run trace-lineage        # Full bidirectional lineage
+    - npm run validate-change      # Validate change impact
+    - npm run query                # Unified query interface
+    - npm run refresh-cache        # Refresh dependency cache
+
+# AI operation restrictions (enforced by claude-automation)
+# AI agents can ONLY execute operations in the safe_operations list
+# All other operations are forbidden and will be blocked
+safe_operations:
+  # Legacy read-only operations
+  - "test-connections"      # Test ServiceNow connectivity (read-only)
+  - "fetch-data"            # Fetch records from ServiceNow (read-only)
+  - "fetch-stories"         # Fetch stories from ServiceNow (read-only)
+  - "fetch-all"             # Fetch all data (read-only)
+  - "dependency-scan"       # Scan Script Include dependencies (read-only)
+  - "impact-analysis"       # Analyze change impact (read-only)
+  - "generate-context"      # Generate AI context (read-only)
+  - "table-fields"          # Show table fields (read-only)
+  - "search-fields"         # Search for fields (read-only)
+  - "table-info"            # Show table info (read-only)
+  - "mapper-stats"          # Show field mapper stats (read-only)
+
+  # NEW in v2.3.0: Unified tracing operations (read-only)
+  - "trace-impact"          # Forward trace: component → tables (read-only)
+  - "trace-backward"        # Backward trace: table → components (read-only)
+  - "trace-lineage"         # Full lineage: bidirectional trace (read-only)
+  - "validate-change"       # Validate change impact (read-only)
+  - "query"                 # Unified query interface (read-only)
+  - "refresh-cache"         # Refresh dependency cache (read-only)
+
+# Operations that require human approval (AI cannot execute these)
+forbidden_operations:
+  - "process-updates"       # Push temp_updates/ to ServiceNow (HUMAN ONLY)
+  - "watch-auto"            # Auto-push file changes (HUMAN ONLY)
+  - "create-enhanced"       # Create records (USE TEMP_UPDATES INSTEAD)
+
+# Concrete examples for agent learning
+examples:
+  # Legacy examples
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run test-connections"
+    description: "Test connectivity to configured ServiceNow instances"
+    use_case: "Verify ServiceNow credentials and instance accessibility before performing operations"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run fetch-data"
+    description: "Fetch incident and table data from ServiceNow"
+    use_case: "Download current ServiceNow data for analysis or backup"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run dependency-scan"
+    description: "Scan all Script Includes and map their dependencies"
+    use_case: "Understand code dependencies before making changes"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run impact-analysis"
+    description: "Analyze the impact of potential code changes"
+    use_case: "Determine what will be affected by modifying a Script Include"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run generate-context"
+    description: "Generate AI-friendly context summary of ServiceNow project"
+    use_case: "Create comprehensive context for AI analysis of ServiceNow codebase"
+
+  # NEW v2.3.0 examples: Unified Tracing
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run trace-impact -- WorkCampaignBoard"
+    description: "Trace component impact: WorkCampaignBoard → APIs → Scripts → Tables"
+    use_case: "Find all backend tables affected by a UI component change"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run trace-backward -- x_cadso_work_campaign"
+    description: "Trace table dependencies: x_cadso_work_campaign → Scripts → APIs → Components"
+    use_case: "Find all UI components that depend on a specific database table"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run trace-lineage -- CampaignAPI api"
+    description: "Get full bidirectional lineage for CampaignAPI"
+    use_case: "Understand complete dependency chain for an API (both upstream and downstream)"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run validate-change -- script WorkClientUtilsMS"
+    description: "Validate impact before modifying WorkClientUtilsMS script"
+    use_case: "Get risk assessment and warnings before changing a Script Include"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run query -- component-impact WorkCampaignBoard"
+    description: "Query component impact using unified interface"
+    use_case: "Use query interface for flexible component impact analysis"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run query -- table-dependencies x_cadso_work_campaign"
+    description: "Query table dependencies using unified interface"
+    use_case: "Find what depends on a table using standardized query API"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run query -- script-crud MyScriptInclude"
+    description: "Query CRUD operations in a Script Include"
+    use_case: "Understand what database operations a script performs"
+
+# System requirements
+requires:
+  - "Node.js 12.0.0 or higher (v22.11.0 recommended)"
+  - "ServiceNow instance URL and credentials"
+  - "npm packages (installed via npm install in ServiceNow-Tools/)"
+
+# Required environment variables (must be set in container)
+environment:
+  - name: SNTOOL_DEV_URL
+    description: "ServiceNow development instance URL (e.g., https://dev12345.service-now.com)"
+    required: false
+    example: "https://dev12345.service-now.com"
+
+  - name: SNTOOL_DEV_USERNAME
+    description: "ServiceNow development instance username"
+    required: false
+    example: "admin"
+
+  - name: SNTOOL_DEV_PASSWORD
+    description: "ServiceNow development instance password"
+    required: false
+    example: "your_password"
+
+  - name: SNTOOL_PROD_URL
+    description: "ServiceNow production instance URL"
+    required: false
+    example: "https://prod12345.service-now.com"
+
+  - name: SNTOOL_PROD_USERNAME
+    description: "ServiceNow production instance username"
+    required: false
+    example: "admin"
+
+  - name: SNTOOL_PROD_PASSWORD
+    description: "ServiceNow production instance password"
+    required: false
+    example: "your_password"
+
+# Note: Tool reads from sn-config.json for full configuration
+# Environment variables can override config file settings
+
+# Security and execution constraints
+constraints:
+  read_only: true          # Tool code cannot be modified by agents
+  executable: true         # Tool can be executed by agents
+  network: true            # Requires network access to ServiceNow instances
+  requires_config: true    # Needs sn-config.json configuration
+
+# Metadata
+metadata:
+  author: "CadenceSoft/Tenon"
+  version_date: "2025-11-14"
+  license: "UNLICENSED"
+  documentation: "README.md"
+  installation_required: true
+  install_command: "cd ServiceNow-Tools && npm install"
+
+# Agent guidance
+agent_notes: |
+  This tool is best used when:
+  - Working with ServiceNow instances
+  - Needing to query ServiceNow data (read-only operations)
+  - Testing ServiceNow connectivity
+  - Analyzing ServiceNow code dependencies
+  - Fetching ServiceNow records for local analysis
+  - **NEW v2.3.0:** Tracing component-to-table lineage (forward/backward)
+  - **NEW v2.3.0:** Validating changes before implementation
+  - **NEW v2.3.0:** Understanding full-stack dependencies
+
+  IMPORTANT: AI Agent Workflow
+  1. Use ONLY safe_operations (test-connections, fetch-data, dependency-scan, trace-*, etc.)
+  2. ALL modifications must be saved to LOCAL files in temp_updates/
+  3. NEVER execute process-updates or watch-auto (these push to ServiceNow)
+  4. User will manually review and approve changes before pushing to ServiceNow
+
+  Proper workflow:
+  Step 1: Fetch data
+    npm run fetch-data  # Downloads records to temp_updates/
+
+  Step 2: Modify LOCAL files
+    - Read files from temp_updates/
+    - Make modifications
+    - Write back to temp_updates/
+
+  Step 3: Stop (human reviews)
+    - AI task completes
+    - User reviews temp_updates/ files
+    - User approves PR
+
+  Step 4: Human pushes (NOT AI)
+    - User manually runs: npm run process-updates
+    - This pushes temp_updates/ to ServiceNow
+
+  **NEW in v2.3.0: Unified Tracing Workflow**
+
+  When analyzing ServiceNow components and backend integration:
+
+  1. Forward tracing (Component → Table):
+     npm run trace-impact -- ComponentName
+     # Shows: Component → APIs → Scripts → Tables
+     # Use when: "What tables does this component affect?"
+
+  2. Backward tracing (Table → Component):
+     npm run trace-backward -- table_name
+     # Shows: Table → Scripts → APIs → Components
+     # Use when: "What UI components depend on this table?"
+
+  3. Full lineage (Any entity):
+     npm run trace-lineage -- EntityName type
+     # Types: component, api, script, table
+     # Shows: Complete bidirectional dependency chain
+
+  4. Change validation:
+     npm run validate-change -- type EntityName
+     # Returns: Risk level, warnings, suggestions
+     # Use before: Making any changes to scripts/APIs/tables
+
+  5. Unified query interface (15+ query types):
+     npm run query -- query-type target
+     # Examples:
+     # - component-impact ComponentName
+     # - table-dependencies table_name
+     # - api-tables APIName
+     # - script-crud ScriptName
+     # - table-schema table_name
+
+  The unified tracing system provides ~90% full-stack tracing coverage,
+  bridging all internal sn-tools subsystems into a single cohesive interface.
+
+  The tool supports multi-instance routing (dev/prod) and will automatically
+  route operations to the correct ServiceNow instance based on configuration.
+
+  NEVER attempt to use sn-tools' AI features - you ARE the AI.
