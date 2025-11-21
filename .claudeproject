@@ -1,0 +1,75 @@
+{
+  "name": "claude-automation",
+  "description": "Multi-agent automation framework for ServiceNow development with MCP integration",
+  "version": "1.0.0",
+  "created": "2025-10-21",
+  "updated": "2025-11-21",
+
+  "knowledge": {
+    "description": "Project knowledge base - automatically loaded in every session",
+    "files": [
+      ".claude/PROJECT_OVERVIEW.md",
+      ".claude/CODING_STANDARDS.md",
+      ".claude/API_PATTERNS.md",
+      ".claude/DEVELOPMENT_WORKFLOW.md",
+      ".claude/LESSONS_LEARNED.md",
+      ".claude/QUICK_REFERENCE.md",
+      "MCP_GUIDE.md",
+      "docs/SERVICENOW_TESTING.md"
+    ]
+  },
+
+  "instructions": {
+    "description": "Project-specific instructions that apply to all sessions",
+    "file": ".claude/PROJECT_INSTRUCTIONS.md"
+  },
+
+  "mcp": {
+    "description": "MCP servers available for this project",
+    "configFile": "mcp-config.json",
+    "servers": {
+      "sn-tools": {
+        "description": "ServiceNow dependency tracing and impact analysis",
+        "tools": [
+          "trace_component_impact",
+          "trace_table_dependencies",
+          "trace_full_lineage",
+          "validate_change_impact",
+          "query_table_schema",
+          "analyze_script_crud",
+          "refresh_dependency_cache"
+        ]
+      }
+    }
+  },
+
+  "workflows": {
+    "description": "Common workflows for this project",
+    "files": [
+      "lib/servicenow-workflows.js"
+    ]
+  },
+
+  "testing": {
+    "description": "Testing strategy and commands",
+    "quickTest": "npm run test:smoke",
+    "fullTest": "npm run test:servicenow",
+    "validation": "node test/validation-suite.js"
+  },
+
+  "directories": {
+    "lib": "Core libraries and managers",
+    "test": "Test suites and validation",
+    "mcp": "MCP server implementation",
+    "tools": "External tools (sn-tools submodule)",
+    "docs": "User-facing documentation",
+    ".claude": "Development guides and references"
+  },
+
+  "keyFiles": {
+    "orchestrator": "lib/orchestrator.js",
+    "workflows": "lib/servicenow-workflows.js",
+    "mcpServer": "mcp/sn-tools-mcp-server.js",
+    "tests": "test/servicenow-component-backend-tests.js"
+  }
+}
