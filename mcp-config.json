@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "sn-tools": {
+      "command": "node",
+      "args": [
+        "./mcp/sn-tools-mcp-server.js"
+      ],
+      "env": {
+        "SN_TOOLS_PATH": "${SN_TOOLS_PATH:-./tools/sn-tools/ServiceNow-Tools}"
+      },
+      "cwd": "${CLAUDE_AUTOMATION_HOME:-./}",
+      "description": "ServiceNow dependency tracing and impact analysis tools",
+      "disabled": false
+    }
+  },
+  "version": "1.0.0",
+  "description": "MCP configuration for claude-automation project"
+}

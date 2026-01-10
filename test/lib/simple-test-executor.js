@@ -354,17 +354,19 @@ Please complete these steps before continuing.
     }
 
     // MCP tool equivalents mapping
+    // Maps bash command names to their MCP tool equivalents
+    // Actual MCP tools: trace_component_impact, trace_table_dependencies, trace_full_lineage,
+    //                   validate_change_impact, query_table_schema, analyze_script_crud, refresh_dependency_cache
     const mcpEquivalents = {
-      'trace-impact': ['trace_component_impact', 'trace-component-impact'],
-      'trace-backward': ['trace_table_dependencies', 'trace-table-dependencies'],
-      'trace-lineage': ['trace_full_lineage', 'trace-full-lineage'],
-      'validate-change': ['validate_change_impact', 'validate-change-impact'],
-      'query': ['query_table_schema', 'query_script_crud', 'query_table_dependencies',
-               'query_component_impact', 'query_api_tables', 'query_api_forward', 'query_api_backward'],
+      'trace-impact': ['trace_component_impact'],
+      'trace-backward': ['trace_table_dependencies'],
+      'trace-lineage': ['trace_full_lineage'],
+      'validate-change': ['validate_change_impact'],
+      'query': ['query_table_schema', 'analyze_script_crud', 'trace_table_dependencies', 'trace_component_impact'],
       'query table-schema': ['query_table_schema'],
-      'query table-dependencies': ['query_table_dependencies'],
-      'query script-crud': ['query_script_crud'],
-      'query component-impact': ['query_component_impact']
+      'query table-dependencies': ['trace_table_dependencies'],
+      'query script-crud': ['analyze_script_crud'],
+      'query component-impact': ['trace_component_impact']
     };
 
     const executed = [];
