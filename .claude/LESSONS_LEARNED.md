@@ -1,6 +1,86 @@
-# Lessons Learned - October 21, 2025
+# Lessons Learned - January 10, 2026
 
 ## Key Insights from Development Sessions
+
+---
+
+## 13. MCP Tool Integration with Agents (January 2026)
+
+### Root Cause Analysis Process
+
+**The Problem:**
+- Agents were not using MCP tools despite MCP server being configured
+- Agents would "hallucinate" MCP tool outputs (mention using them) but mcpToolCalls: 0
+- Tests showed prompts instructing agents to use MCP tools, but tools never invoked
+
+**The Investigation:**
+1. Checked MCP server - working correctly, returns 7 tools
+2. Checked mcp-config.json - properly configured
+3. Checked agent spawning - `--mcp-config` flag was being passed
+4. **Found root cause**: `--allowedTools Read,Write,Edit,Bash` was BLOCKING MCP tools
+
+**Key Insight:**
+The `--allowedTools` flag in Claude Code CLI is restrictive, not additive. If you specify allowedTools, ONLY those tools are available. MCP tools must be explicitly included in the allowedTools list.
+
+### The Fix Pattern
+
+```javascript
+// MCP tool names constant
+const MCP_TOOL_NAMES = [
+  'trace_component_impact',
+  'trace_table_dependencies',
+  'trace_full_lineage',
+  'validate_change_impact',
+  'query_table_schema',
+  'analyze_script_crud',
+  'refresh_dependency_cache'
+];
+
+// When building args, merge MCP tools into allowedTools
+let effectiveAllowedTools = [...this.allowedTools];
+if (mcpConfigFound) {
+  effectiveAllowedTools = [...new Set([...effectiveAllowedTools, ...MCP_TOOL_NAMES])];
+  args.push('--mcp-config', mcpConfigPath);
+}
+args.push('--allowedTools', effectiveAllowedTools.join(','));
+```
+
+### Tool Name Consistency
+
+**Problem:** Test code referenced wrong tool names
+- Used `query_script_crud` but actual tool is `analyze_script_crud`
+- Used `query_table_dependencies` but actual tool is `trace_table_dependencies`
+
+**Lesson:** Always verify tool names match exactly between:
+1. MCP server tool definitions (tool-schemas.js)
+2. Test mappings (mcpEquivalents in test files)
+3. Documentation and prompts
+
+### Dependency Cache Management
+
+**Problem:** MCP tools returned empty results because dependency cache was never populated
+
+**Fix:** Auto-scan on first use
+```javascript
+async ensureLoaded(options = {}) {
+  const { autoScan = true, quiet = false } = options;
+  const stats = this.tracker.getStatistics();
+  const hasData = stats.components > 0 || stats.apis > 0;
+
+  if (!hasData && autoScan) {
+    await this.tracker.scanAll({ quiet });
+    this.tracker.saveCache();
+  }
+}
+```
+
+### Key Takeaways
+
+1. **CLI flags are restrictive** - `--allowedTools` blocks everything not listed
+2. **Verify tool names end-to-end** - Server → Tests → Docs must match exactly
+3. **Auto-initialize resources** - Don't assume cache is populated
+4. **Test MCP integration separately** - Create dedicated integration tests
+5. **Watch for "hallucination"** - Agents may claim tool use without actual invocation
 
 ---
 
