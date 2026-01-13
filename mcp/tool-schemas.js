@@ -152,6 +152,31 @@ export const REFRESH_DEPENDENCY_CACHE = {
 };
 
 /**
+ * Tool schema for querying execution context
+ * Returns what happens when you create/update/delete a record
+ */
+export const QUERY_EXECUTION_CONTEXT = {
+  name: 'query_execution_context',
+  description: 'Query what happens when you create, update, or delete a record on a ServiceNow table. Returns Business Rules that fire (in order), fields that are auto-set, cascading records created, Script Includes called, and risk level. Use this BEFORE creating or modifying records to understand side effects.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      table_name: {
+        type: 'string',
+        description: 'Name of the table (e.g., "incident", "x_cadso_work_campaign")'
+      },
+      operation: {
+        type: 'string',
+        enum: ['insert', 'update', 'delete'],
+        description: 'The operation to simulate',
+        default: 'insert'
+      }
+    },
+    required: ['table_name']
+  }
+};
+
+/**
  * All available tool schemas
  */
 export const ALL_TOOLS = [
@@ -161,7 +186,8 @@ export const ALL_TOOLS = [
   VALIDATE_CHANGE_IMPACT,
   QUERY_TABLE_SCHEMA,
   ANALYZE_SCRIPT_CRUD,
-  REFRESH_DEPENDENCY_CACHE
+  REFRESH_DEPENDENCY_CACHE,
+  QUERY_EXECUTION_CONTEXT
 ];
 
 /**

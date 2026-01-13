@@ -17,7 +17,7 @@ const SN_TOOLS_PATH = process.env.SN_TOOLS_PATH || path.join(__dirname, '..', 't
 // Import UnifiedTracer from sn-tools
 let UnifiedTracer;
 try {
-  const snToolsPath = path.join(SN_TOOLS_PATH, 'sn-unified-tracer.js');
+  const snToolsPath = path.join(SN_TOOLS_PATH, 'src', 'sn-unified-tracer.js');
   const module = await import(snToolsPath);
   UnifiedTracer = module.UnifiedTracer;
 } catch (error) {
@@ -375,6 +375,77 @@ export class AnalyzeScriptCrudHandler extends ToolHandler {
 }
 
 /**
+ * Handler for query_execution_context tool
+ * Returns what happens when you create/update/delete a record
+ */
+export class QueryExecutionContextHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { table_name, operation = 'insert' } = params;
+
+      if (!table_name) {
+        throw new Error('table_name is required. Provide a ServiceNow table name like "incident" or "x_cadso_work_campaign".');
+      }
+
+      // Validate operation
+      const validOps = ['insert', 'update', 'delete'];
+      if (!validOps.includes(operation)) {
+        throw new Error(`Invalid operation: ${operation}. Must be one of: ${validOps.join(', ')}`);
+      }
+
+      // Load execution context from cache
+      const cachePath = path.join(SN_TOOLS_PATH, 'ai-context-cache', 'execution-chains', `${table_name}.${operation}.json`);
+
+      try {
+        const fs = await import('fs/promises');
+        const data = await fs.readFile(cachePath, 'utf8');
+        const context = JSON.parse(data);
+
+        // Return structured execution context
+        return {
+          success: true,
+          table: table_name,
+          operation: operation,
+          execution_context: {
+            business_rules: context.businessRules || [],
+            phases: context.phases || {},
+            fields_auto_set: context.fieldsAutoSet || [],
+            tables_affected: context.tablesAffected || [],
+            script_includes_involved: context.scriptIncludesInvolved || [],
+            risk_level: context.riskLevel || 'UNKNOWN'
+          },
+          summary: {
+            total_business_rules: (context.businessRules || []).length,
+            before_rules: (context.phases?.before || []).length,
+            after_rules: (context.phases?.after || []).length,
+            async_rules: (context.phases?.async || []).length,
+            fields_modified: (context.fieldsAutoSet || []).length,
+            cascading_tables: (context.tablesAffected || []).length,
+            scripts_called: (context.scriptIncludesInvolved || []).length
+          },
+          metadata: {
+            cache_file: cachePath,
+            timestamp: new Date().toISOString()
+          }
+        };
+      } catch (error) {
+        if (error.code === 'ENOENT') {
+          return {
+            success: false,
+            table: table_name,
+            operation: operation,
+            error: `No execution context cached for ${table_name}.${operation}`,
+            suggestion: 'Run "npm run cache-build" to populate execution context cache',
+            available_operations: 'Check ai-context-cache/execution-chains/ for available table.operation combinations'
+          };
+        }
+        throw error;
+      }
+    }, 'query_execution_context');
+  }
+}
+
+/**
  * Handler for refresh_dependency_cache tool
  */
 export class RefreshDependencyCacheHandler extends ToolHandler {
@@ -404,7 +475,8 @@ export const TOOL_HANDLERS = {
   'validate_change_impact': new ValidateChangeImpactHandler(),
   'query_table_schema': new QueryTableSchemaHandler(),
   'analyze_script_crud': new AnalyzeScriptCrudHandler(),
-  'refresh_dependency_cache': new RefreshDependencyCacheHandler()
+  'refresh_dependency_cache': new RefreshDependencyCacheHandler(),
+  'query_execution_context': new QueryExecutionContextHandler()
 };
 
 /**
