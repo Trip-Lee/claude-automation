@@ -1,0 +1,42 @@
+{
+  "tasks": [
+    {
+      "id": "STORY-1234",
+      "title": "Add user authentication endpoint",
+      "description": "Create a POST /api/auth/login endpoint that accepts email and password, validates credentials against the database, and returns a JWT token.",
+      "priority": "high",
+      "acceptance_criteria": [
+        "Endpoint accepts POST with email/password",
+        "Returns JWT on success",
+        "Rate limits to 5 attempts/minute"
+      ]
+    },
+    {
+      "id": "STORY-1235",
+      "title": "Create user profile page",
+      "description": "Build a React component at /profile that displays user information including name, email, and avatar.",
+      "priority": "medium",
+      "acceptance_criteria": [
+        "Displays user name, email, avatar",
+        "Edit functionality works",
+        "Form validation present"
+      ]
+    },
+    {
+      "id": "STORY-1236",
+      "title": "Add email notification service",
+      "description": "Implement an email service using SendGrid for welcome emails and password reset.",
+      "priority": "medium",
+      "acceptance_criteria": [
+        "Sends welcome email on registration",
+        "Sends password reset email",
+        "HTML templates included"
+      ]
+    }
+  ],
+  "metadata": {
+    "project": "my-project",
+    "sprint": "12",
+    "exported_at": "2025-01-05T10:00:00Z"
+  }
+}

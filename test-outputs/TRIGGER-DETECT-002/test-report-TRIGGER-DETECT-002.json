@@ -1,0 +1,297 @@
+{
+  "testId": "TRIGGER-DETECT-002",
+  "testName": "TRIGGER-DETECT-002",
+  "description": "",
+  "status": "failed",
+  "startedAt": "2026-01-15T15:31:40.598Z",
+  "completedAt": "2026-01-15T15:31:40.599Z",
+  "config": {
+    "taskPrompt": "A user is changing the 'status' field on an x_cadso_automate_email_send record from 'draft' to 'send-ready'.\n\nUsing the caches at:\n- Agent cache: /home/coltrip/projects/sn-tools/ServiceNow-Tools/cache/servicenow-agent-cache.json\n- Full cache (if needed): /home/coltrip/projects/sn-tools/ServiceNow-Tools/cache/servicenow-full-cache.json\n\nDetermine:\n1. Will any flows trigger? Which ones?\n2. What is the exact trigger condition that matches this change?\n3. What will each triggered flow do (high-level summary)?\n4. How many steps will execute?\n5. What is the estimated impact on the system?\n\nWrite a detailed impact report to: trigger-analysis/status-change-impact.md",
+    "expectedArtifacts": [],
+    "successCriteria": [],
+    "requiredSnTools": []
+  },
+  "sections": {
+    "summary": {
+      "testId": "TRIGGER-DETECT-002",
+      "testName": "TRIGGER-DETECT-002",
+      "status": "failed",
+      "duration": "0s",
+      "cost": "$1.0342",
+      "criteriaScore": "0/0",
+      "criteriaPercentage": 0,
+      "mcpToolCalls": 0,
+      "conversationTurns": 10,
+      "artifactsCreated": 3,
+      "expectedArtifacts": 0,
+      "keyFindings": []
+    },
+    "mcpCalls": [],
+    "decisionTrail": [
+      {
+        "id": "decision-1768490821274-u57f6eso8",
+        "timestamp": "2026-01-15T15:27:01.274Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 1 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 199191,
+        "context": {
+          "promptSummary": "A user is changing the 'status' field on an x_cadso_automate_email_send record from 'draft' to 'send-ready'.\n\nUsing the caches at:\n- Agent cache: /home/coltrip/projects/sn-tools/ServiceNow-Tools/cache",
+          "conversationTurn": 1
+        }
+      },
+      {
+        "id": "decision-1768491020466-4x1i5b1pr",
+        "timestamp": "2026-01-15T15:30:20.466Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 2 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 8496,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 2
+        }
+      },
+      {
+        "id": "decision-1768491028962-0ferpw0b6",
+        "timestamp": "2026-01-15T15:30:28.962Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 3 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 8877,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 3
+        }
+      },
+      {
+        "id": "decision-1768491037839-98rp3dd7f",
+        "timestamp": "2026-01-15T15:30:37.839Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 4 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 9481,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 4
+        }
+      },
+      {
+        "id": "decision-1768491047320-3e3n5dx4i",
+        "timestamp": "2026-01-15T15:30:47.320Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 5 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 9542,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 5
+        }
+      },
+      {
+        "id": "decision-1768491056862-13g14r85r",
+        "timestamp": "2026-01-15T15:30:56.862Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 6 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 8652,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 6
+        }
+      },
+      {
+        "id": "decision-1768491065514-dlqkypfdy",
+        "timestamp": "2026-01-15T15:31:05.514Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 7 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 7841,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 7
+        }
+      },
+      {
+        "id": "decision-1768491073356-is1jkgnj0",
+        "timestamp": "2026-01-15T15:31:13.356Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 8 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 8666,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 8
+        }
+      },
+      {
+        "id": "decision-1768491082023-locnymcv7",
+        "timestamp": "2026-01-15T15:31:22.023Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 9 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 10094,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 9
+        }
+      },
+      {
+        "id": "decision-1768491092118-mhsm00can",
+        "timestamp": "2026-01-15T15:31:32.118Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 10 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 8478,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 10
+        }
+      }
+    ],
+    "criteriaMapping": [],
+    "artifacts": [
+      {
+        "path": "conversation.json",
+        "type": "json",
+        "size": 25459,
+        "created": "2026-01-15T15:31:40.596Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis-summary.txt",
+        "type": "text",
+        "size": 442,
+        "created": "2026-01-15T15:31:40.596Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis.json",
+        "type": "json",
+        "size": 963,
+        "created": "2026-01-15T15:31:40.596Z",
+        "contentSummary": null,
+        "expected": false
+      }
+    ],
+    "metrics": {
+      "totalDurationMs": 1,
+      "totalCost": 1.0341544999999999,
+      "conversationTurns": 10,
+      "mcpToolCalls": 0,
+      "successfulCalls": 0,
+      "failedCalls": 0,
+      "truncatedResponses": 0,
+      "tool_calls": 0,
+      "tools_used": {},
+      "total_response_size_chars": 0,
+      "total_response_size_kb": 0,
+      "truncated_responses": 0,
+      "average_response_size_kb": 0,
+      "largest_response": null,
+      "total_execution_time_ms": 0,
+      "average_execution_time_ms": 0,
+      "by_tool": {}
+    },
+    "timeline": [
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:27:01.274Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:30:20.466Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:30:28.962Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:30:37.839Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:30:47.320Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:30:56.862Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:31:05.514Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:31:13.356Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:31:22.023Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:31:32.118Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: conversation.json",
+        "timestamp": "2026-01-15T15:31:40.596Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis-summary.txt",
+        "timestamp": "2026-01-15T15:31:40.596Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis.json",
+        "timestamp": "2026-01-15T15:31:40.596Z"
+      }
+    ],
+    "recommendations": []
+  }
+}

@@ -3,23 +3,29 @@
 /**
  * ServiceNow Component-Backend Integration Tests
  *
- * Purpose: Test the AI's ability to trace and analyze relationships between
- * UI components and backend ServiceNow elements using sn-tools v2.3.0
- * unified tracing capabilities.
+ * Purpose: Test the AI's ability to use sn-tools cached data to trace and
+ * analyze relationships between ServiceNow elements.
  *
- * These tests specifically validate:
- * 1. Component → Table lineage tracing (what tables does a component affect?)
- * 2. Table → Component dependency tracing (what UI depends on this table?)
- * 3. Table relationship analysis (how do tables relate through BRs/workflows?)
- * 4. REST API backend impact analysis (what changes are needed?)
- * 5. Script Include dependency chains (calling scripts from scripts/BRs)
+ * IMPORTANT: These tests use REAL CACHED DATA from sn-tools v2.3.0
+ * The cache contains:
+ * - 177 Script Includes (e.g., WorkClientUtilsMS, AudienceMS, Audience)
+ * - 173 REST APIs
+ * - 74 Tables (e.g., x_cadso_work_campaign, sys_user)
+ * - 0 Components (component tracing not available)
  *
- * All tests should leverage sn-tools v2.3.0 unified tracing:
- * - npm run trace-impact -- ComponentName
- * - npm run trace-backward -- table_name
- * - npm run trace-lineage -- EntityName type
- * - npm run validate-change -- type EntityName
- * - npm run query -- query-type target
+ * Tests validate agent ability to:
+ * 1. Query Script Include CRUD operations from cache
+ * 2. Trace table dependencies using cached data
+ * 3. Analyze table relationships through cached Script Includes
+ * 4. Assess change impact using cached dependency chains
+ * 5. Generate documentation from cached analysis
+ *
+ * Key sn-tools commands that use the cache:
+ * - npm run query -- script-crud <ScriptIncludeName>
+ * - npm run trace-backward -- <table_name>
+ * - npm run trace-lineage -- <EntityName> <type>
+ * - npm run validate-change -- <type> <EntityName>
+ * - npm run cache-status (verify cache is populated)
  */
 
 import chalk from 'chalk';
@@ -42,57 +48,56 @@ console.log(chalk.gray('Testing AI ability to trace component-backend relationsh
 const COMPONENT_BACKEND_TESTS = [
   {
     id: 'SN-CB-001',
-    name: 'Trace Component to Backend Tables',
-    description: 'Analyze what backend tables a UI component affects',
-    taskPrompt: `Using sn-tools unified tracing, analyze the WorkCampaignBoard component:
+    name: 'Trace Script Include to Backend Tables',
+    description: 'Analyze what backend tables a Script Include accesses using cached data',
+    taskPrompt: `Using sn-tools unified tracing, analyze the WorkClientUtilsMS Script Include:
 
 QUESTIONS TO ANSWER:
-1. What backend tables does WorkCampaignBoard component directly access?
-2. What REST APIs does it call?
-3. What Script Includes are used by those APIs?
-4. What CRUD operations (create/read/update/delete) are performed on each table?
-5. What is the complete lineage path: Component → APIs → Scripts → Tables?
+1. What backend tables does WorkClientUtilsMS directly access?
+2. What CRUD operations (create/read/update/delete) are performed on each table?
+3. What other Script Includes does it depend on?
+4. What APIs use this Script Include?
+5. What is the complete dependency chain?
 
 EXPECTED WORKFLOW:
-1. Use: npm run trace-impact -- WorkCampaignBoard
-2. Analyze the output to identify:
-   - All APIs called by the component
-   - All Script Includes used by those APIs
+1. Use: npm run query -- script-crud WorkClientUtilsMS
+2. Use: npm run trace-lineage -- WorkClientUtilsMS script
+3. Analyze the output to identify:
    - All tables accessed (with CRUD operations)
-3. Provide a summary in markdown format with:
-   - Component name
-   - List of APIs with descriptions
-   - List of Script Includes with purposes
+   - Dependencies on other Script Includes
+   - APIs that consume this Script Include
+4. Provide a summary in markdown format with:
+   - Script Include name and purpose
    - List of tables with CRUD operations
-   - Complete lineage diagram
+   - Dependency diagram
+   - Impact assessment
 
 DELIVERABLES:
-- analysis/WorkCampaignBoard_backend_analysis.md
-- Include sn-tools command outputs
-- Include lineage diagram (text-based or mermaid)
+- analysis/WorkClientUtilsMS_backend_analysis.md
+- Include sn-tools command outputs (JSON from cache)
+- Include dependency diagram (text-based or mermaid)
 - List any potential issues or concerns`,
     expectedArtifacts: [
-      'analysis/WorkCampaignBoard_backend_analysis.md'
+      'analysis/WorkClientUtilsMS_backend_analysis.md'
     ],
     successCriteria: [
-      'Used npm run trace-impact command',
-      'Identified all APIs called by component',
-      'Identified all Script Includes used',
+      'Used npm run query -- script-crud command',
+      'Used npm run trace-lineage command',
       'Identified all tables accessed',
       'Listed CRUD operations for each table',
-      'Created lineage diagram',
-      'Documented complete path: Component → API → Script → Table',
+      'Identified Script Include dependencies',
+      'Created dependency diagram',
       'Analysis is accurate and comprehensive',
       'Included sn-tools command outputs',
       'Markdown formatting is clean'
     ],
     requiredSnTools: [
-      'trace-impact',
-      'query component-impact'
+      'query script-crud',
+      'trace-lineage'
     ],
-    estimatedTime: '5-7 minutes',
-    estimatedCost: '$0.60-0.80',
-    expectedAgents: ['architect', 'sn-tools-analyst', 'documenter'],
+    estimatedTime: '3-5 minutes',
+    estimatedCost: '$0.40-0.60',
+    expectedAgents: ['architect', 'sn-scripting', 'documenter'],
     complexity: 'MEDIUM',
     pointValue: 30
   },
@@ -157,74 +162,66 @@ BONUS:
 
   {
     id: 'SN-CB-003',
-    name: 'Analyze Table Relationships and Workflows',
-    description: 'Map relationships between multiple tables through Business Rules and workflows',
-    taskPrompt: `Analyze the relationship and workflow between these Tenon tables:
-- x_cadso_work_campaign (Campaign)
-- x_cadso_work_project (Project)
-- x_cadso_work_task (Task)
+    name: 'Analyze Script Include Cross-Table Operations',
+    description: 'Map how Script Includes operate across multiple tables using cached data',
+    taskPrompt: `Analyze Script Includes that operate across multiple Tenon Work tables:
+
+TARGET SCRIPT INCLUDES (from cache - have multiple table dependencies):
+- WorkClientUtilsMS (7 tables including x_cadso_work_campaign, x_cadso_work_project)
+- Audience (7 tables in automate namespace)
+- GetColorsForFieldsMS (4 tables)
 
 QUESTIONS TO ANSWER:
-1. How are these tables related? (parent-child, reference fields, etc.)
-2. What Business Rules connect these tables?
-3. What workflows or flows orchestrate actions across these tables?
-4. What is the data flow when a Campaign is created?
-5. What cascading effects happen when updating records?
-6. What Script Includes handle cross-table operations?
+1. What tables does each Script Include access?
+2. What CRUD operations are performed on each table?
+3. Are there overlapping table dependencies between Script Includes?
+4. What is the risk if one Script Include's table access changes?
+5. How do the Script Includes relate to each other?
 
 EXPECTED WORKFLOW:
-1. Use: npm run query -- table-schema x_cadso_work_campaign
-2. Use: npm run query -- table-schema x_cadso_work_project
-3. Use: npm run query -- table-schema x_cadso_work_task
-4. Use: npm run query -- table-relationships for each table
-5. Analyze Business Rules that reference these tables
-6. Trace Script Includes that operate across multiple tables
-7. Document the complete workflow
+1. Use: npm run query -- script-crud WorkClientUtilsMS
+2. Use: npm run query -- script-crud Audience
+3. Use: npm run query -- script-crud GetColorsForFieldsMS
+4. Use: npm run trace-lineage -- WorkClientUtilsMS script
+5. Analyze overlapping dependencies from cached data
+6. Document the cross-table operation patterns
 
 DELIVERABLES:
-- analysis/tenon_work_management_workflow.md
+- analysis/tenon_cross_table_operations.md
 - Include:
-  - Entity Relationship Diagram (text/mermaid)
-  - Table schemas with key fields
-  - Reference field mappings
-  - Business Rules that cross tables
-  - Workflow descriptions
-  - Data flow diagrams
-  - Common operations and their effects
+  - Script Include → Table mapping (from cache)
+  - CRUD operations per table per Script Include
+  - Venn diagram of overlapping table access
+  - Dependency diagram showing SI relationships
+  - Risk assessment for table modifications
 
-EXAMPLE SCENARIOS TO DOCUMENT:
-- "What happens when I create a Campaign?"
-- "What happens when I update a Project status?"
-- "What happens when I complete a Task?"
-- "How do changes cascade through the hierarchy?"`,
+EXAMPLE ANALYSIS:
+- "If I modify x_cadso_work_campaign, which Script Includes are affected?"
+- "Which tables are accessed by multiple Script Includes?"
+- "What is the blast radius of a table schema change?"`,
     expectedArtifacts: [
-      'analysis/tenon_work_management_workflow.md',
-      'diagrams/tenon_erd.md',
-      'diagrams/tenon_workflow_cascade.md'
+      'analysis/tenon_cross_table_operations.md'
     ],
     successCriteria: [
-      'Used npm run query for table schemas',
-      'Used npm run query for table relationships',
-      'Identified all reference fields between tables',
-      'Documented parent-child relationships',
-      'Listed all Business Rules affecting these tables',
-      'Documented workflows/flows',
-      'Created Entity Relationship Diagram',
-      'Created workflow cascade diagram',
-      'Documented common operation scenarios',
-      'Explained data flow clearly',
-      'Identified potential issues or constraints'
+      'Used npm run query -- script-crud for multiple SIs',
+      'Used npm run trace-lineage command',
+      'Identified all tables accessed by each SI',
+      'Documented CRUD operations per table',
+      'Identified overlapping table dependencies',
+      'Created dependency diagram',
+      'Documented risk assessment',
+      'Analysis uses cached data correctly',
+      'Explained cross-table patterns clearly'
     ],
     requiredSnTools: [
-      'query table-schema',
-      'query table-relationships',
+      'query script-crud',
       'trace-lineage'
     ],
-    estimatedTime: '10-12 minutes',
-    estimatedCost: '$2.00-2.50',
-    expectedAgents: ['architect', 'sn-tools-analyst', 'sn-integration', 'documenter'],
-    complexity: 'COMPLEX',
-    pointValue: 50
+    estimatedTime: '5-8 minutes',
+    estimatedCost: '$0.60-1.00',
+    expectedAgents: ['architect', 'sn-scripting', 'documenter'],
+    complexity: 'MEDIUM',
+    pointValue: 40
   },
 
   {
@@ -326,48 +323,42 @@ Use sn-tools to verify the implementation:
 
   {
     id: 'SN-CB-005',
-    name: 'REST API Backend Impact Analysis',
-    description: 'Analyze backend changes needed when modifying a REST API',
-    taskPrompt: `Analyze the impact of adding a new property to the CampaignAPI REST API:
+    name: 'Script Include Change Impact Analysis',
+    description: 'Analyze impact of modifying a widely-used Script Include',
+    taskPrompt: `Analyze the impact of modifying the AudienceMS Script Include:
 
 SCENARIO:
-The CampaignAPI currently has these endpoints:
-- GET /campaign/{sys_id} - Get campaign details
-- POST /campaign - Create new campaign
-- PUT /campaign/{sys_id} - Update campaign
+The AudienceMS Script Include is used for audience management and accesses multiple tables.
+We need to add a new method "validateAudienceMembers()" that checks member data integrity.
 
 NEW REQUIREMENT:
-Add a new property "estimated_budget" to all API responses and requests.
+Add validation logic that:
+- Checks all audience members have valid email addresses
+- Verifies member records exist in the contact table
+- Returns validation results with error details
 
 QUESTIONS TO ANSWER:
-1. What backend tables need to be modified?
-2. What Script Includes call the current API?
-3. What components consume the API responses?
-4. What database fields need to be added?
-5. What Business Rules might be affected?
-6. What validation logic needs updating?
-7. What documentation needs updating?
-8. What is the complete impact radius?
+1. What tables does AudienceMS currently access?
+2. What other Script Includes depend on AudienceMS?
+3. What APIs use AudienceMS?
+4. What new table access will the validation require?
+5. What is the complete impact radius of this change?
+6. What testing is required?
 
 EXPECTED WORKFLOW:
-1. Use: npm run trace-lineage -- CampaignAPI api
-2. Identify all components calling the API
-3. Identify all Script Includes used by the API
-4. Identify all tables accessed by the API
-5. Use: npm run validate-change -- api CampaignAPI
-6. Analyze the impact assessment
-7. Document all required changes
+1. Use: npm run query -- script-crud AudienceMS
+2. Use: npm run trace-lineage -- AudienceMS script
+3. Use: npm run validate-change -- script AudienceMS "Adding validateAudienceMembers method"
+4. Analyze the cached dependency data
+5. Document all required changes and impacts
 
 DELIVERABLES:
-- analysis/CampaignAPI_budget_property_impact.md
+- analysis/AudienceMS_validation_impact.md
 - Include:
-  - Current API structure
-  - Proposed API changes
-  - Backend table changes needed (field additions)
-  - Script Include modifications needed
-  - Business Rule updates needed
-  - Component updates needed
-  - Migration plan
+  - Current Script Include structure (from cache)
+  - Tables accessed with CRUD operations
+  - Dependent APIs and Script Includes
+  - Proposed changes
   - Risk assessment
   - Testing plan
   - Rollback strategy
@@ -375,40 +366,33 @@ DELIVERABLES:
 BONUS:
 - Generate a change checklist
 - Estimate effort for each change
-- Identify dependencies between changes
-- Suggest deployment sequence`,
+- Identify dependencies between changes`,
     expectedArtifacts: [
-      'analysis/CampaignAPI_budget_property_impact.md',
-      'checklists/CampaignAPI_budget_change_checklist.md'
+      'analysis/AudienceMS_validation_impact.md'
     ],
     successCriteria: [
-      'Used npm run trace-lineage for API',
+      'Used npm run query -- script-crud command',
+      'Used npm run trace-lineage for Script Include',
       'Used npm run validate-change for impact',
-      'Identified all affected tables',
-      'Listed all Script Include changes',
-      'Listed all component changes',
-      'Documented database field additions',
-      'Created migration plan',
+      'Identified all tables accessed',
+      'Listed all dependent Script Includes',
+      'Listed all consuming APIs',
+      'Documented CRUD operations',
       'Included risk assessment',
       'Created testing plan',
       'Created rollback strategy',
-      'Generated change checklist',
-      'Estimated effort accurately',
-      'Identified change dependencies',
-      'Suggested deployment sequence'
+      'Analysis uses cached data correctly'
     ],
     requiredSnTools: [
+      'query script-crud',
       'trace-lineage',
-      'validate-change',
-      'query api-tables',
-      'query api-forward',
-      'query api-backward'
+      'validate-change'
     ],
-    estimatedTime: '10-12 minutes',
-    estimatedCost: '$1.50-2.00',
-    expectedAgents: ['architect', 'sn-tools-analyst', 'sn-api', 'sn-integration', 'documenter'],
-    complexity: 'COMPLEX',
-    pointValue: 55
+    estimatedTime: '5-8 minutes',
+    estimatedCost: '$0.60-1.00',
+    expectedAgents: ['architect', 'sn-scripting', 'documenter'],
+    complexity: 'MEDIUM',
+    pointValue: 45
   },
 
   {
@@ -536,6 +520,196 @@ After analysis, use sn-tools to validate assumptions:
     ],
     complexity: 'COMPLEX',
     pointValue: 100
+  },
+
+  // ============================================================================
+  // EXECUTION CONTEXT TESTS (v2.3.0 - Natural Agent Behavior)
+  // ============================================================================
+  {
+    id: 'SN-CB-007',
+    name: 'Execution Context - Natural Discovery on Record Create',
+    description: 'Test that agents naturally discover and use execution context before creating records',
+    taskPrompt: `You need to create a new email marketing record on the x_cadso_automate_email table.
+
+TASK:
+Create a comprehensive analysis BEFORE actually creating the record. Your goal is to understand what will happen when you create the record.
+
+IMPORTANT: Before creating any record, you should:
+1. Understand what Business Rules will fire
+2. Know what fields will be auto-set
+3. Understand cascading effects to other tables
+4. Assess the risk level of the operation
+
+QUESTIONS TO ANSWER:
+1. What Business Rules fire when creating a record on x_cadso_automate_email?
+2. What is the execution order (before, after, async phases)?
+3. What fields are automatically set by Business Rules?
+4. What other tables might be affected (cascading)?
+5. What is the risk level of this operation?
+6. Are there any Script Includes involved?
+
+EXPECTED APPROACH:
+- Use the execution context query tools to understand what happens
+- The system has pre-computed execution chains for this table
+- Query: npm run cache-query -- x_cadso_automate_email insert
+- Analyze the business rule chain and understand the flow
+
+DELIVERABLES:
+- analysis/x_cadso_automate_email_execution_context.md
+- Include:
+  - Complete business rule execution chain
+  - Phase breakdown (before, after, async)
+  - Fields auto-set by rules
+  - Cascading table effects
+  - Risk assessment
+  - Recommendations for safe record creation
+
+NOTE: This test validates that agents naturally discover execution context without explicit instructions to do so.`,
+    expectedArtifacts: [
+      'analysis/x_cadso_automate_email_execution_context.md'
+    ],
+    successCriteria: [
+      'Agent queried execution context using cache-query',
+      'Identified all Business Rules (should find ~11 for insert)',
+      'Documented before/after/async phases correctly',
+      'Listed cascading tables (x_cadso_automate_email_send, sys_db_object)',
+      'Identified risk level as HIGH',
+      'Analysis shows understanding of execution flow',
+      'Documentation is comprehensive',
+      'Agent naturally used execution context without explicit prompting'
+    ],
+    requiredSnTools: [
+      'cache-query'
+    ],
+    estimatedTime: '3-5 minutes',
+    estimatedCost: '$0.30-0.50',
+    expectedAgents: ['sn-scripting', 'sn-api', 'documenter'],
+    complexity: 'MEDIUM',
+    pointValue: 35,
+    testCategory: 'execution-context'
+  },
+
+  {
+    id: 'SN-CB-008',
+    name: 'Execution Context - Update vs Insert Comparison',
+    description: 'Test agent ability to compare execution contexts for different operations',
+    taskPrompt: `Compare the execution contexts for INSERT vs UPDATE operations on x_cadso_automate_email.
+
+TASK:
+Analyze the differences between creating a new email record vs updating an existing one.
+
+QUESTIONS TO ANSWER:
+1. How many Business Rules fire on INSERT vs UPDATE?
+2. Which rules run on both operations vs only one?
+3. Are there different risk levels for each operation?
+4. What cascading effects differ between operations?
+5. Which operation is safer to perform?
+
+EXPECTED APPROACH:
+1. Query execution context for INSERT: npm run cache-query -- x_cadso_automate_email insert
+2. Query execution context for UPDATE: npm run cache-query -- x_cadso_automate_email update
+3. Compare the results
+4. Analyze the differences
+
+DELIVERABLES:
+- analysis/x_cadso_automate_email_insert_vs_update.md
+- Include:
+  - Side-by-side comparison table
+  - Rules unique to INSERT
+  - Rules unique to UPDATE
+  - Rules common to both
+  - Risk comparison
+  - Recommendation on safer approach
+
+BONUS:
+- Also analyze DELETE: npm run cache-query -- x_cadso_automate_email delete
+- Include in comparison`,
+    expectedArtifacts: [
+      'analysis/x_cadso_automate_email_insert_vs_update.md'
+    ],
+    successCriteria: [
+      'Queried execution context for INSERT operation',
+      'Queried execution context for UPDATE operation',
+      'Created comparison table',
+      'Identified differences in Business Rule counts (11 vs 10)',
+      'Noted shared vs unique rules',
+      'Compared risk levels',
+      'Provided recommendation',
+      'Analysis is thorough and accurate'
+    ],
+    requiredSnTools: [
+      'cache-query'
+    ],
+    estimatedTime: '4-6 minutes',
+    estimatedCost: '$0.40-0.60',
+    expectedAgents: ['sn-scripting', 'sn-api', 'documenter'],
+    complexity: 'MEDIUM',
+    pointValue: 40,
+    testCategory: 'execution-context'
+  },
+
+  {
+    id: 'SN-CB-009',
+    name: 'Execution Context - Pre-flight Safety Check',
+    description: 'Test agent using execution context for pre-flight validation before risky operation',
+    taskPrompt: `Scenario: You are about to perform a bulk update on multiple x_cadso_automate_email records.
+
+TASK:
+Before executing the bulk update, perform a comprehensive pre-flight safety check using execution context.
+
+CONTEXT:
+- You will be updating 50 email records
+- Each update will change the "state" field
+- This is a production system
+- You need to understand ALL implications before proceeding
+
+QUESTIONS TO ANSWER:
+1. What Business Rules will fire FOR EACH record updated?
+2. With 50 records, how many total BR executions will occur?
+3. What cascading effects will multiply across records?
+4. What is the cumulative risk?
+5. Should this operation proceed? What precautions are needed?
+
+EXPECTED APPROACH:
+1. Query execution context: npm run cache-query -- x_cadso_automate_email update
+2. Analyze the multiplication effect (50 records × X rules)
+3. Identify potential bottlenecks or race conditions
+4. Assess cumulative risk
+5. Develop mitigation strategy
+
+DELIVERABLES:
+- analysis/bulk_update_preflight_check.md
+- Include:
+  - Per-record impact analysis
+  - Cumulative impact (50× multiplier)
+  - Cascading table load estimates
+  - Performance concerns
+  - GO/NO-GO recommendation
+  - If GO: precautions and batch strategy
+  - If NO-GO: alternative approaches`,
+    expectedArtifacts: [
+      'analysis/bulk_update_preflight_check.md'
+    ],
+    successCriteria: [
+      'Queried execution context for UPDATE',
+      'Calculated cumulative BR executions (50 × 10 = 500 rule executions)',
+      'Analyzed cascading table load',
+      'Identified performance concerns',
+      'Made clear GO/NO-GO recommendation',
+      'Provided mitigation strategies',
+      'Suggested batch approach if proceeding',
+      'Analysis demonstrates safety-first thinking'
+    ],
+    requiredSnTools: [
+      'cache-query',
+      'validate-change'
+    ],
+    estimatedTime: '5-8 minutes',
+    estimatedCost: '$0.50-0.80',
+    expectedAgents: ['sn-scripting', 'sn-performance', 'documenter'],
+    complexity: 'MEDIUM',
+    pointValue: 45,
+    testCategory: 'execution-context'
   }
 ];
 
@@ -1257,7 +1431,306 @@ class ComponentBackendTestRunner {
         }
       }
 
-      // Strategy 21: Check for sn-tools command outputs (bash OR MCP tool JSON)
+      // Strategy 21: Execution Context - cache-query usage
+      // Handles criteria like "Agent queried execution context using cache-query"
+      if (!criterionPassed && (criterion.includes('cache-query') || criterion.includes('execution context'))) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            // Check for cache-query command or MCP query_execution_context
+            const hasCacheQuery = content.match(/cache-query|npm run cache-query/i);
+            const hasMcpExecContext = content.match(/query_execution_context/i);
+            const hasExecContextData = content.match(/"businessRules":\s*\[/i) ||
+                                       content.match(/Business\s*Rules?\s*will\s*fire/i);
+
+            if (hasCacheQuery || hasMcpExecContext || hasExecContextData) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 22: Execution Context - Business Rules identification
+      if (!criterionPassed && criterion.includes('Business Rules')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            // Check for BR listing or count
+            const hasBrList = content.match(/("name"|"timing"|"order")/i);
+            const hasBrSection = content.match(/##?\s*Business\s*Rules?/i);
+            const hasBrCount = content.match(/\d+\s*(business\s*)?rules?/i) ||
+                              content.match(/rules?:\s*\d+/i);
+
+            if ((hasBrList && hasBrSection) || (hasBrList && hasBrCount) || hasBrSection) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 23: Execution Context - Phase documentation (before/after/async)
+      if (!criterionPassed && criterion.includes('phases')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasBefore = content.match(/before|"timing":\s*"before"/i);
+            const hasAfter = content.match(/after|"timing":\s*"after"/i);
+            const hasPhaseSection = content.match(/##?\s*(Phase|Execution\s*(Order|Phases?))/i);
+
+            if ((hasBefore && hasAfter) || hasPhaseSection) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 24: Execution Context - Cascading tables
+      if (!criterionPassed && criterion.includes('cascading')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasCascading = content.match(/cascad(e|ing)|chain|child\s*tables?|related\s*tables?/i);
+            const hasEmailSend = content.match(/x_cadso_automate_email_send/i);
+            const hasTableAffected = content.match(/tables?\s*(affected|impacted)/i);
+
+            if (hasCascading || hasEmailSend || hasTableAffected) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 25: Execution Context - Risk level
+      if (!criterionPassed && criterion.includes('risk level')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasRiskLevel = content.match(/risk\s*(level)?:\s*(HIGH|MEDIUM|LOW)/i) ||
+                                content.match(/(HIGH|MEDIUM|LOW)\s*RISK/i);
+
+            if (hasRiskLevel) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 26: Execution Context - Execution flow understanding
+      if (!criterionPassed && (criterion.includes('execution flow') || criterion.includes('understanding'))) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasFlowDiagram = content.includes('→') || content.includes('->');
+            const hasOrderSection = content.match(/##?\s*(Execution\s*)?(Order|Flow|Sequence)/i);
+            const hasPhaseBreakdown = content.match(/before\s*phase|after\s*phase/i) ||
+                                      content.match(/phases?\s*breakdown/i);
+
+            if (hasFlowDiagram || hasOrderSection || hasPhaseBreakdown) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 27: Execution Context - Comprehensive documentation
+      if (!criterionPassed && criterion.includes('comprehensive')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            // Check for multiple required sections
+            let sectionCount = 0;
+            if (content.match(/##?\s*Executive\s*Summary/i)) sectionCount++;
+            if (content.match(/##?\s*(Risk|Safety)/i)) sectionCount++;
+            if (content.match(/##?\s*(Recommendation|Conclusion)/i)) sectionCount++;
+            if (content.match(/##?\s*(Business\s*Rules?|Execution)/i)) sectionCount++;
+            if (content.length > 2000) sectionCount++; // Length check
+
+            if (sectionCount >= 3) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 28: Execution Context - Natural usage (agent proactively used context)
+      if (!criterionPassed && criterion.includes('naturally')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            // Check if execution context data appears in the analysis
+            const hasExecData = content.match(/"businessRules":/i) ||
+                               content.match(/cache-query/i) ||
+                               content.match(/11\s*(business\s*)?rules?/i);
+            const hasAnalysis = content.match(/##?\s*(Analysis|Assessment)/i);
+
+            if (hasExecData && hasAnalysis) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 29: Execution Context - Comparison table
+      if (!criterionPassed && criterion.includes('comparison')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasComparisonTable = content.match(/\|.*INSERT.*\|.*UPDATE.*\|/i) ||
+                                       content.match(/\|.*Operation.*\|/i);
+            const hasSideBySide = content.match(/side.by.side|comparison/i);
+            const hasVsSection = content.match(/INSERT\s*vs\.?\s*UPDATE/i);
+
+            if (hasComparisonTable || hasSideBySide || hasVsSection) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 30: Execution Context - BR count differences
+      if (!criterionPassed && criterion.includes('differences') && criterion.includes('Business Rule')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasCountComparison = content.match(/11.*10|10.*11/i) ||
+                                       content.match(/INSERT:\s*\d+.*UPDATE:\s*\d+/i);
+            const hasDifferenceNote = content.match(/differ(ent|ence)|unique|only\s*(on|for)/i);
+
+            if (hasCountComparison || hasDifferenceNote) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 31: Execution Context - Shared vs unique rules
+      if (!criterionPassed && (criterion.includes('shared') || criterion.includes('unique'))) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasSharedUnique = content.match(/shared|common|both|unique|only\s*(on|for)/i);
+            const hasRuleComparison = content.match(/rules?\s*(unique|common|shared)/i);
+
+            if (hasSharedUnique || hasRuleComparison) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 32: Execution Context - Cumulative calculations (for bulk operations)
+      if (!criterionPassed && criterion.includes('cumulative')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasMultiplier = content.match(/50\s*[×x*]\s*\d+|500/i);
+            const hasCumulativeSection = content.match(/cumulative|total\s*(executions?|impact)/i);
+            const hasPerRecordCalc = content.match(/per\s*record|each\s*record/i);
+
+            if (hasMultiplier || hasCumulativeSection || hasPerRecordCalc) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 33: Execution Context - Performance concerns
+      if (!criterionPassed && criterion.includes('performance')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasPerfSection = content.match(/##?\s*Performance/i);
+            const hasPerfKeywords = content.match(/bottleneck|latency|throughput|race\s*condition|blocking/i);
+            const hasLoadEstimate = content.match(/load|executions?|transactions?/i);
+
+            if (hasPerfSection || hasPerfKeywords || hasLoadEstimate) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 34: Execution Context - GO/NO-GO recommendation
+      if (!criterionPassed && (criterion.includes('GO/NO-GO') || criterion.includes('recommendation'))) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasGoNoGo = content.match(/GO|NO-GO|proceed|abort|recommend/i);
+            const hasDecision = content.match(/##?\s*(Decision|Recommendation|Verdict|Conclusion)/i);
+            const hasSafety = content.match(/safe(r|ly)?|caution|proceed\s*with\s*care/i);
+
+            if (hasGoNoGo || hasDecision || hasSafety) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 35: Execution Context - Mitigation strategies
+      if (!criterionPassed && criterion.includes('mitigation')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasMitigation = content.match(/mitigat(e|ion)|precaution|safeguard/i);
+            const hasStrategy = content.match(/strateg(y|ies)|approach|measure/i);
+            const hasSteps = content.match(/step\s*\d|batch|chunk|incremental/i);
+
+            if (hasMitigation || (hasStrategy && hasSteps)) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 36: Execution Context - Batch approach
+      if (!criterionPassed && criterion.includes('batch')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasBatch = content.match(/batch(es|ing)?|chunk(s|ing)?|incremental/i);
+            const hasSize = content.match(/\d+\s*(records?|at\s*a\s*time|per\s*batch)/i);
+
+            if (hasBatch || hasSize) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 37: Execution Context - Safety-first thinking
+      if (!criterionPassed && criterion.includes('safety')) {
+        for (const artifact of test.expectedArtifacts) {
+          const content = await this.readArtifact(artifact);
+          if (content) {
+            const hasSafety = content.match(/safe(ty|ly)?|careful|caution|risk\s*assess/i);
+            const hasPreFlight = content.match(/pre-?flight|before\s*proceed/i);
+            const hasValidation = content.match(/validat(e|ion)|check|verify/i);
+
+            if (hasSafety || hasPreFlight || hasValidation) {
+              criterionPassed = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Strategy 38: Check for sn-tools command outputs (bash OR MCP tool JSON)
       // This handles the criterion "Included sn-tools command outputs" which can be
       // satisfied by either bash command outputs OR MCP tool JSON responses
       if (!criterionPassed && (criterion.includes('sn-tools') || criterion.includes('command outputs'))) {

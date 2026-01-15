@@ -16,6 +16,7 @@ import { TaskStateManager } from './lib/task-state-manager.js';
 import { getGlobalConfig } from './lib/global-config.js';
 import dotenv from 'dotenv';
 import path from 'path';
+import { homedir } from 'os';
 
 // Initialize global config and ensure directories exist
 const globalConfig = getGlobalConfig();
@@ -25,6 +26,48 @@ globalConfig.ensureDirectories();
 dotenv.config({ path: globalConfig.get('envFile') });
 
 const program = new Command();
+
+/**
+ * Enhanced error display with actionable suggestions
+ */
+function displayError(error, context = {}) {
+  console.error(chalk.red('\nERROR:'), error.message);
+
+  // Provide context-specific suggestions
+  if (error.message.includes('GITHUB_TOKEN')) {
+    console.log(chalk.yellow('\nSuggestion:'));
+    console.log(chalk.gray('  1. Check if GitHub CLI is authenticated: gh auth status'));
+    console.log(chalk.gray('  2. Set GITHUB_TOKEN in ~/.env or environment'));
+    console.log(chalk.gray('  3. Generate token at: https://github.com/settings/tokens\n'));
+  } else if (error.message.includes('ANTHROPIC_API_KEY')) {
+    console.log(chalk.yellow('\nSuggestion:'));
+    console.log(chalk.gray('  1. Set ANTHROPIC_API_KEY in ~/.env'));
+    console.log(chalk.gray('  2. Get API key at: https://console.anthropic.com/\n'));
+  } else if (error.message.includes('Docker') || error.message.includes('docker')) {
+    console.log(chalk.yellow('\nSuggestion:'));
+    console.log(chalk.gray('  1. Check Docker is running: docker ps'));
+    console.log(chalk.gray('  2. Start Docker: sudo systemctl start docker'));
+    console.log(chalk.gray('  3. Add user to docker group: sudo usermod -aG docker $USER\n'));
+  } else if (error.message.includes('Project') && error.message.includes('not found')) {
+    console.log(chalk.yellow('\nSuggestion:'));
+    console.log(chalk.gray('  1. Check project config exists in ~/.claude-projects/'));
+    console.log(chalk.gray('  2. Run dev-tools without args to create a project'));
+    console.log(chalk.gray('  3. Check project name spelling\n'));
+  } else if (error.message.includes('repository') || error.message.includes('repo')) {
+    console.log(chalk.yellow('\nSuggestion:'));
+    console.log(chalk.gray('  1. Check repository URL in project config'));
+    console.log(chalk.gray('  2. Verify GitHub authentication: gh auth status'));
+    console.log(chalk.gray('  3. Check repository exists and you have access\n'));
+  } else if (error.message.includes('permission') || error.message.includes('Permission')) {
+    console.log(chalk.yellow('\nSuggestion:'));
+    console.log(chalk.gray('  1. Check file/directory permissions'));
+    console.log(chalk.gray('  2. Verify you own the project directory'));
+    console.log(chalk.gray('  3. Run with appropriate user permissions\n'));
+  } else if (context.command) {
+    console.log(chalk.yellow('\nFor help:'));
+    console.log(chalk.gray(`  dev-tools ${context.command} --help\n`));
+  }
+}
 
 program
   .name('dev-tools')
@@ -47,7 +90,7 @@ program
         const maxParallel = globalConfig.get('maxParallelTasks') || 10;
 
         if (running.length >= maxParallel) {
-          console.error(chalk.red(`\n❌ Maximum parallel tasks limit reached (${maxParallel})`));
+          console.error(chalk.red(`\nERROR: Maximum parallel tasks limit reached (${maxParallel})`));
           console.log(chalk.yellow(`   ${running.length} tasks currently running`));
           console.log(chalk.gray('\nRunning tasks:'));
           for (const task of running.slice(0, 5)) {
@@ -125,43 +168,127 @@ program
       );
       await orchestrator.executeTask(project, description);
     } catch (error) {
-      console.error(chalk.red('\nERROR:'), error.message);
+      displayError(error, { command: 'task' });
       process.exit(1);
     }
   });
 
-// Approve command - manually create PR (if auto-creation failed)
+// Run command - process tasks from inbox folder
 program
-  .command('approve <taskId>')
-  .description('Manually create PR for a task (use if auto-PR creation failed)')
-  .action(async (taskId) => {
+  .command('run [project]')
+  .description('Process tasks from inbox folder (~/.claude-tasks/tasks/)')
+  .option('-p, --parallel', 'Execute tasks in parallel (default: sequential)')
+  .option('-c, --concurrency <n>', 'Max concurrent tasks when parallel', '3')
+  .option('--continue-on-error', 'Continue if a task fails')
+  .option('--dry-run', 'Show tasks without executing')
+  .action(async (project, options) => {
     try {
-      const orchestrator = new Orchestrator(
-        process.env.GITHUB_TOKEN,
-        process.env.ANTHROPIC_API_KEY
-      );
-      const pr = await orchestrator.approve(taskId);
-      console.log(chalk.green(`\nPR created: ${pr.url}\n`));
-    } catch (error) {
-      console.error(chalk.red('\nERROR:'), error.message);
-      process.exit(1);
-    }
-  });
+      const { TaskListProcessor } = await import('./lib/task-list-processor.js');
 
-// Reject command - reject task and cleanup (delete branch)
-program
-  .command('reject <taskId>')
-  .description('Reject task and delete branch (use to discard unwanted changes)')
-  .action(async (taskId) => {
-    try {
+      console.log(chalk.cyan.bold('\nClaude Task Runner\n'));
+
+      // Create orchestrator
       const orchestrator = new Orchestrator(
         process.env.GITHUB_TOKEN,
         process.env.ANTHROPIC_API_KEY
       );
-      await orchestrator.reject(taskId);
-      console.log(chalk.yellow('\nTask rejected and cleaned up\n'));
+
+      // Create processor with options
+      const processor = new TaskListProcessor(orchestrator, {
+        parallel: options.parallel,
+        concurrency: parseInt(options.concurrency) || 3,
+        continueOnError: options.continueOnError,
+        dryRun: options.dryRun
+      });
+
+      // Scan inbox
+      console.log(chalk.gray('Scanning ~/.claude-tasks/tasks/...\n'));
+      const taskFiles = await processor.scanInbox();
+
+      if (taskFiles.length === 0) {
+        console.log(chalk.yellow('No task files found in inbox.\n'));
+        console.log(chalk.gray('Drop task files (.txt, .md, .json, .xml) into:'));
+        console.log(chalk.gray('  ~/.claude-tasks/tasks/\n'));
+        return;
+      }
+
+      // Show files found
+      console.log(chalk.white(`Found ${taskFiles.length} task file(s):\n`));
+      for (let i = 0; i < taskFiles.length; i++) {
+        const file = taskFiles[i];
+        const tasks = await processor.parseFile(file.path);
+        const marker = i === 0 ? chalk.green('→') : chalk.gray(' ');
+        console.log(`  ${marker} ${file.name} (${tasks.length} tasks)`);
+      }
+      console.log();
+
+      // Get project name if not provided
+      let projectName = project;
+      if (!projectName) {
+        const { ConfigManager } = await import('./lib/config-manager.js');
+        const configManager = new ConfigManager();
+        const projects = await configManager.listProjects();
+
+        if (projects.length === 0) {
+          console.log(chalk.red('ERROR: No projects configured.\n'));
+          console.log(chalk.gray('Please create a project configuration first.\n'));
+          process.exit(1);
+        }
+
+        if (projects.length === 1) {
+          projectName = projects[0];
+          console.log(chalk.gray(`Using project: ${projectName}\n`));
+        } else {
+          const { selectedProject } = await inquirer.prompt([{
+            type: 'list',
+            name: 'selectedProject',
+            message: 'Select project:',
+            choices: projects
+          }]);
+          projectName = selectedProject;
+          console.log();
+        }
+      }
+
+      // Process files one at a time
+      for (let i = 0; i < taskFiles.length; i++) {
+        const file = taskFiles[i];
+
+        console.log(chalk.cyan.bold(`\nProcessing: ${file.name}`));
+        console.log(chalk.gray('─'.repeat(50)));
+
+        const result = await processor.processFile(projectName, file.path);
+
+        // Show summary
+        console.log(processor.generateSummary(result));
+
+        // Move to completed (unless dry-run)
+        if (!options.dryRun && result.successful > 0) {
+          const destPath = await processor.moveToCompleted(file.path);
+          console.log(chalk.green(`\n✓ File moved to: ${destPath}\n`));
+        }
+
+        // Ask to continue to next file
+        if (i < taskFiles.length - 1) {
+          const nextFile = taskFiles[i + 1];
+          const { continueNext } = await inquirer.prompt([{
+            type: 'confirm',
+            name: 'continueNext',
+            message: `Continue with next file (${nextFile.name})?`,
+            default: true
+          }]);
+
+          if (!continueNext) {
+            console.log(chalk.gray('\nStopping. Remaining files left in inbox.\n'));
+            break;
+          }
+        }
+      }
+
+      console.log(chalk.green.bold('\nTask processing complete!\n'));
+
     } catch (error) {
-      console.error(chalk.red('\nERROR:'), error.message);
+      displayError(error, { command: 'run' });
       process.exit(1);
     }
   });
@@ -173,6 +300,8 @@ program
   .action(async (project) => {
     try {
       const stateManager = new TaskStateManager();
+
+      console.log(chalk.gray('Loading task status...'));
 
       // Sync states first (mark dead processes as interrupted)
       await stateManager.syncTaskStates();
@@ -264,7 +393,7 @@ program
       const task = await stateManager.loadTaskState(taskId);
 
       if (!task) {
-        console.error(chalk.red(`\n❌ Task not found: ${taskId}\n`));
+        console.error(chalk.red(`\nERROR: Task not found: ${taskId}\n`));
         process.exit(1);
       }
 
@@ -273,7 +402,7 @@ program
       // Check if log file exists
       const { existsSync } = await import('fs');
       if (!existsSync(logPath)) {
-        console.error(chalk.red(`\n❌ Log file not found: ${logPath}\n`));
+        console.error(chalk.red(`\nERROR: Log file not found: ${logPath}\n`));
         process.exit(1);
       }
 
@@ -351,12 +480,12 @@ program
       const task = await stateManager.loadTaskState(taskId);
 
       if (!task) {
-        console.error(chalk.red(`\n❌ Task not found: ${taskId}\n`));
+        console.error(chalk.red(`\nERROR: Task not found: ${taskId}\n`));
         process.exit(1);
       }
 
       if (task.status !== 'running') {
-        console.log(chalk.yellow(`\n⚠️  Task ${taskId} is not running (status: ${task.status})\n`));
+        console.log(chalk.yellow(`\nWARNING: Task ${taskId} is not running (status: ${task.status})\n`));
         return;
       }
 
@@ -400,9 +529,9 @@ program
             status: 'cancelled',
             completedAt: new Date().toISOString()
           });
-          console.log(chalk.green(`\n✓ Task ${taskId} cancelled\n`));
+          console.log(chalk.green(`\nSUCCESS: Task ${taskId} cancelled\n`));
         } else {
-          console.error(chalk.red(`\n❌ Failed to cancel task: ${error.message}\n`));
+          console.error(chalk.red(`\nERROR: Failed to cancel task: ${error.message}\n`));
           process.exit(1);
         }
       }
@@ -413,491 +542,7 @@ program
     }
   });
 
-// Restart command - restart a failed or completed task
-program
-  .command('restart <taskId>')
-  .description('Restart a failed or completed task')
-  .option('-b, --background', 'Run in background')
-  .action(async (taskId, options) => {
-    try {
-      const stateManager = new TaskStateManager();
-      const task = await stateManager.loadTaskState(taskId);
-
-      if (!task) {
-        console.error(chalk.red(`\n❌ Task not found: ${taskId}\n`));
-        process.exit(1);
-      }
-
-      if (task.status === 'running') {
-        console.log(chalk.yellow(`\n⚠️  Task ${taskId} is already running\n`));
-        console.log(chalk.gray('Use `dev-tools status` to check progress'));
-        console.log(chalk.gray('Use `dev-tools cancel` to stop it first\n'));
-        return;
-      }
-
-      console.log(chalk.cyan('\nRestarting task...\n'));
-      console.log(chalk.gray('Original Task:'));
-      console.log(chalk.gray(`  ID:          ${taskId}`));
-      console.log(chalk.gray(`  Project:     ${task.project}`));
-      console.log(chalk.gray(`  Description: ${task.description}`));
-      console.log(chalk.gray(`  Status:      ${task.status}\n`));
-
-      // Generate new task ID
-      const newTaskId = randomBytes(6).toString('hex');
-
-      if (options.background) {
-        // Background execution
-        const logsDir = globalConfig.get('logsDir');
-        const logPath = path.join(logsDir, `${newTaskId}.log`);
-        const logStream = createWriteStream(logPath);
-
-        // Spawn detached background process
-        const workerPath = path.join(globalConfig.getInstallPath(), 'background-worker.js');
-        const child = spawn('node', [
-          workerPath,
-          newTaskId,
-          task.project,
-          task.description
-        ], {
-          detached: true,
-          stdio: ['ignore', logStream, logStream],
-          env: process.env
-        });
-
-        child.unref();
-
-        // Save initial task state
-        await stateManager.saveTaskState(newTaskId, {
-          taskId: newTaskId,
-          project: task.project,
-          description: task.description,
-          status: 'running',
-          pid: child.pid,
-          startedAt: new Date().toISOString(),
-          logFile: logPath,
-          currentAgent: null,
-          completedAgents: [],
-          progress: {
-            percent: 0,
-            eta: null
-          },
-          restartedFrom: taskId
-        });
-
-        console.log(chalk.green('✓ Task restarted in background\n'));
-        console.log(chalk.cyan(`  New ID:  ${newTaskId}`));
-        console.log(chalk.cyan(`  PID:     ${child.pid}`));
-        console.log(chalk.gray(`\n  Log:     ${logPath}`));
-        console.log(chalk.gray('\nMonitoring:'));
-        console.log(chalk.white(`  View logs:    dev-tools logs ${newTaskId}`));
-        console.log(chalk.white(`  Check status: dev-tools status`));
-        console.log();
-
-      } else {
-        // Foreground execution
-        console.log(chalk.blue.bold('Starting foreground execution...\n'));
-
-        const orchestrator = new Orchestrator(
-          process.env.GITHUB_TOKEN,
-          process.env.ANTHROPIC_API_KEY
-        );
-
-        await orchestrator.executeTask(task.project, task.description);
-      }
-
-    } catch (error) {
-      console.error(chalk.red('\nERROR:'), error.message);
-      process.exit(1);
-    }
-  });
-
-// List projects command
-program
-  .command('list-projects')
-  .description('List all configured projects')
-  .action(async () => {
-    try {
-      const orchestrator = new Orchestrator(
-        process.env.GITHUB_TOKEN,
-        process.env.ANTHROPIC_API_KEY
-      );
-      await orchestrator.listProjects();
-    } catch (error) {
-      console.error(chalk.red('\nERROR:'), error.message);
-      process.exit(1);
-    }
-  });
-
-// Monitor command - show system status
-program
-  .command('monitor')
-  .description('Show system status')
-  .action(async () => {
-    console.log(chalk.blue('\nSystem Monitor\n'));
-    console.log(chalk.yellow('WARNING: Monitor command not implemented yet'));
-    console.log(chalk.gray('Coming in Phase 1: Week 8\n'));
-    // TODO: Display system info: CPU, RAM, disk, Docker containers, active tasks
-  });
-
-// Add project command - interactive wizard
-program
-  .command('add-project <name>')
-  .description('Add new project with GitHub validation (interactive)')
-  .option('--no-github', 'Skip GitHub validation and repo creation')
-  .action(async (name, options) => {
-    try {
-      const inquirer = (await import('inquirer')).default;
-      const yaml = (await import('yaml')).default;
-      const fs = await import('fs/promises');
-      const path = await import('path');
-      const { homedir } = await import('os');
-
-      console.log(chalk.blue.bold(`\nAdding Project: ${name}\n`));
-
-      // Check if project already exists
-      const projectsDir = path.join(homedir(), '.claude-projects');
-      const configPath = path.join(projectsDir, `${name}.yaml`);
-
-      try {
-        await fs.access(configPath);
-        console.log(chalk.red(`ERROR: Project '${name}' already exists at ${configPath}\n`));
-        process.exit(1);
-      } catch {
-        // Good, project doesn't exist yet
-      }
-
-      // Gather project information
-      const answers = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'description',
-          message: 'Project description:',
-          default: `Automated project: ${name}`
-        },
-        {
-          type: 'input',
-          name: 'localPath',
-          message: 'Local project path:',
-          default: path.join(homedir(), 'projects', name),
-          validate: (input) => input.length > 0 || 'Path is required'
-        },
-        {
-          type: 'confirm',
-          name: 'hasGitHub',
-          message: 'Use GitHub integration?',
-          default: !options.noGithub,
-          when: () => !options.noGithub
-        },
-        {
-          type: 'input',
-          name: 'githubRepo',
-          message: 'GitHub repository (owner/repo):',
-          when: (answers) => answers.hasGitHub,
-          validate: (input) => {
-            if (!input) return 'Repository is required for GitHub integration';
-            if (!input.includes('/')) return 'Format must be: owner/repo';
-            return true;
-          }
-        },
-        {
-          type: 'list',
-          name: 'visibility',
-          message: 'Repository visibility:',
-          choices: ['public', 'private'],
-          default: 'public',
-          when: (answers) => answers.hasGitHub
-        },
-        {
-          type: 'input',
-          name: 'baseBranch',
-          message: 'Base branch:',
-          default: 'main'
-        },
-        {
-          type: 'input',
-          name: 'dockerImage',
-          message: 'Docker image:',
-          default: 'claude-python:latest'
-        }
-      ]);
-
-      // Validate and create GitHub repo if needed
-      if (answers.hasGitHub && process.env.GITHUB_TOKEN) {
-        console.log(chalk.blue('\nValidating GitHub repository...\n'));
-
-        const { GitHubClient } = await import('./lib/github-client.js');
-        const githubClient = new GitHubClient(process.env.GITHUB_TOKEN);
-
-        const fullRepoUrl = `github.com/${answers.githubRepo}`;
-        const repoExists = await githubClient.checkRepoAccess(fullRepoUrl);
-
-        if (!repoExists) {
-          console.log(chalk.yellow(`WARNING: Repository '${answers.githubRepo}' not found\n`));
-
-          const createRepo = await inquirer.prompt([{
-            type: 'confirm',
-            name: 'create',
-            message: 'Would you like me to create this repository on GitHub?',
-            default: true
-          }]);
-
-          if (createRepo.create) {
-            const repoName = answers.githubRepo.split('/')[1];
-            const user = await githubClient.getAuthenticatedUser();
-
-            console.log(chalk.blue(`\nCreating repository '${repoName}' for ${user.login}...\n`));
-
-            const newRepo = await githubClient.createRepository({
-              name: repoName,
-              description: answers.description,
-              private: answers.visibility === 'private',
-              autoInit: true
-            });
-
-            console.log(chalk.green(`Repository created: ${newRepo.url}\n`));
-
-            // Ask if they want to clone it
-            const clonePrompt = await inquirer.prompt([{
-              type: 'confirm',
-              name: 'clone',
-              message: `Clone repository to ${answers.localPath}?`,
-              default: true
-            }]);
-
-            if (clonePrompt.clone) {
-              console.log(chalk.blue(`\nCloning repository...\n`));
-              const { spawn } = await import('child_process');
-
-              await new Promise((resolve, reject) => {
-                const git = spawn('git', ['clone', newRepo.cloneUrl, answers.localPath]);
-                git.on('close', (code) => {
-                  if (code === 0) {
-                    console.log(chalk.green(`Repository cloned to ${answers.localPath}\n`));
-                    resolve();
-                  } else {
-                    reject(new Error('Git clone failed'));
-                  }
-                });
-              });
-            }
-          } else {
-            console.log(chalk.yellow('WARNING: Skipping repository creation. You\'ll need to create it manually.\n'));
-          }
-        } else {
-          console.log(chalk.green(`Repository '${answers.githubRepo}' found and accessible\n`));
-        }
-      } else if (answers.hasGitHub && !process.env.GITHUB_TOKEN) {
-        console.log(chalk.yellow('\nWARNING: GITHUB_TOKEN not set. Skipping validation.\n'));
-        console.log(chalk.gray('Set GITHUB_TOKEN in .env to enable GitHub features\n'));
-      }
-
-      // Create project configuration
-      const config = {
-        name,
-        repo: answers.githubRepo ? `github.com/${answers.githubRepo}` : 'local',
-        base_branch: answers.baseBranch,
-        pr: {
-          title_prefix: `[${name}]`,
-          auto_merge: false,
-          reviewers: [],
-          labels: ['automated']
-        },
-        docker: {
-          image: answers.dockerImage,
-          memory: '1g',
-          cpus: 2,
-          network_mode: 'none'
-        },
-        tests: {
-          command: '',
-          timeout: 30,
-          required: false
-        },
-        security: {
-          secrets_scanning: true,
-          dependency_check: true
-        },
-        safety: {
-          max_cost_per_task: 2.0,
-          max_duration: 300,
-          max_file_size: 1048576
-        }
-      };
-
-      // Save configuration
-      await fs.mkdir(projectsDir, { recursive: true });
-      const yamlContent = yaml.stringify(config);
-      await fs.writeFile(configPath, yamlContent);
-
-      console.log(chalk.green.bold(`\nProject '${name}' configured!\n`));
-      console.log(chalk.gray(`Config saved: ${configPath}\n`));
-      console.log(chalk.cyan(`Next steps:`));
-      console.log(chalk.gray(`  1. Review/edit config: ${configPath}`));
-      console.log(chalk.gray(`  2. Run task: dev-tools task ${name} "<description>"\n`));
-
-    } catch (error) {
-      console.error(chalk.red('\nERROR: Failed to add project:'), error.message);
-      process.exit(1);
-    }
-  });
-
-// Cleanup command - remove all hanging Claude containers
-program
-  .command('cleanup')
-  .description('Clean up all hanging Claude containers')
-  .option('-a, --all', 'Clean up ALL Claude containers (including active ones)')
-  .action(async (options) => {
-    try {
-      console.log(chalk.blue.bold('\nClaude Container Cleanup\n'));
-      const orchestrator = new Orchestrator(
-        process.env.GITHUB_TOKEN,
-        process.env.ANTHROPIC_API_KEY
-      );
-
-      if (options.all) {
-        // Clean up ALL Claude containers (including active)
-        const result = await orchestrator.cleanupAllClaudeContainers();
-        if (result.cleaned > 0) {
-          console.log(chalk.green(`\nCleanup complete: ${result.cleaned} container(s) removed\n`));
-        } else {
-          console.log(chalk.gray('\nNo Claude containers found to clean up.\n'));
-        }
-      } else {
-        // Clean up only tracked active containers
-        await orchestrator.cleanupAll();
-        if (orchestrator.activeContainers.size === 0) {
-          console.log(chalk.gray('\nNo active containers to clean up.'));
-          console.log(chalk.gray('Use --all flag to clean up all Claude containers.\n'));
-        }
-      }
-    } catch (error) {
-      console.error(chalk.red('\nERROR: Cleanup failed:'), error.message);
-      process.exit(1);
-    }
-  });
-
-// Validate command - run system validation tests
-program
-  .command('validate')
-  .description('Validate system health and functionality')
-  .option('--smoke', 'Run quick smoke tests only (<30s)')
-  .option('--full', 'Run comprehensive validation suite')
-  .action(async (options) => {
-    try {
-      const { spawn } = await import('child_process');
-
-      // Determine which test to run
-      let testScript;
-      let testName;
-
-      if (options.smoke) {
-        testScript = './test/smoke-test.js';
-        testName = 'Smoke Tests';
-      } else if (options.full) {
-        testScript = './test/validation-suite.js';
-        testName = 'Full Validation Suite';
-      } else {
-        // Default: run smoke tests
-        testScript = './test/smoke-test.js';
-        testName = 'Smoke Tests (Quick)';
-        console.log(chalk.gray('Tip: Use --full for comprehensive validation\n'));
-      }
-
-      // Run the test script
-      const testProcess = spawn('node', [testScript], {
-        cwd: process.cwd(),
-        stdio: 'inherit'
-      });
-
-      testProcess.on('close', (code) => {
-        process.exit(code);
-      });
-
-    } catch (error) {
-      console.error(chalk.red('\nERROR: Validation failed:'), error.message);
-      process.exit(1);
-    }
-  });
-
-// Test command - run unit tests
-program
-  .command('test')
-  .description('Run unit tests')
-  .option('--all', 'Run all tests (unit + smoke + validation)')
-  .action(async (options) => {
-    try {
-      const { spawn } = await import('child_process');
-
-      let testScript;
-      let testName;
-
-      if (options.all) {
-        // Run all tests via npm script
-        console.log(chalk.cyan.bold('\nRunning All Tests...\n'));
-        const testProcess = spawn('npm', ['run', 'test:all'], {
-          cwd: process.cwd(),
-          stdio: 'inherit',
-          shell: true
-        });
-
-        testProcess.on('close', (code) => {
-          process.exit(code);
-        });
-      } else {
-        // Run just unit tests
-        console.log(chalk.cyan.bold('\nRunning Unit Tests...\n'));
-        const testProcess = spawn('node', ['test/run-unit-tests.js'], {
-          cwd: process.cwd(),
-          stdio: 'inherit'
-        });
-
-        testProcess.on('close', (code) => {
-          process.exit(code);
-        });
-      }
-
-    } catch (error) {
-      console.error(chalk.red('\nERROR: Test failed:'), error.message);
-      process.exit(1);
-    }
-  });
-
-// Retry command - retry a failed task
-program
-  .command('retry <taskId>')
-  .description('Retry a failed or rejected task')
-  .action(async (taskId) => {
-    try {
-      const orchestrator = new Orchestrator(
-        process.env.GITHUB_TOKEN,
-        process.env.ANTHROPIC_API_KEY
-      );
-      await orchestrator.retry(taskId);
-    } catch (error) {
-      console.error(chalk.red('\nERROR:'), error.message);
-      process.exit(1);
-    }
-  });
-
-// Diff command - show git diff for a task
-program
-  .command('diff <taskId>')
-  .description('Show git diff for task changes')
-  .option('--stat', 'Show diffstat only')
-  .action(async (taskId, options) => {
-    try {
-      const orchestrator = new Orchestrator(
-        process.env.GITHUB_TOKEN,
-        process.env.ANTHROPIC_API_KEY
-      );
-      await orchestrator.showDiff(taskId, options.stat);
-    } catch (error) {
-      console.error(chalk.red('\nERROR:'), error.message);
-      process.exit(1);
-    }
-  });
-
-// Workflow-driven interactive mode
+// Simplified interactive mode
 async function runWorkflow() {
   const inquirer = (await import('inquirer')).default;
   const fs = await import('fs/promises');
@@ -918,8 +563,11 @@ async function runWorkflow() {
       // No projects directory
     }
 
+    let selectedProject = null;
+    let needsProjectCreation = false;
+
     if (projectFiles.length === 0) {
-      console.log(chalk.yellow('WARNING: No projects configured yet.\n'));
+      console.log(chalk.yellow('No projects configured yet.\n'));
 
       const { createProject } = await inquirer.prompt([{
         type: 'confirm',
@@ -928,46 +576,41 @@ async function runWorkflow() {
         default: true
       }]);
 
-      if (createProject) {
-        const { projectName } = await inquirer.prompt([{
-          type: 'input',
-          name: 'projectName',
-          message: 'Project name:',
-          validate: (input) => input.length > 0 || 'Project name is required'
-        }]);
-
-        // Run add-project
-        process.argv = ['node', 'cli.js', 'add-project', projectName];
-        program.parse();
-        return;
-      } else {
-        console.log(chalk.gray('\nRun "dev-tools add-project <name>" to add a project.\n'));
+      if (!createProject) {
+        console.log(chalk.gray('\nPlease create a project configuration file in ~/.claude-projects/\n'));
         process.exit(0);
+      }
+
+      needsProjectCreation = true;
+    } else {
+      // Step 2: Select project from dropdown
+      const projectChoices = projectFiles.map(f => {
+        const name = f.replace(/\.(yaml|yml)$/, '');
+        return { name: `  ${name}`, value: name };
+      });
+
+      // Add "Create New Project" option
+      projectChoices.push(
+        { name: '─────────────────', value: 'separator', disabled: true },
+        { name: '+ Create New Project', value: '__create_new__' }
+      );
+
+      const { project } = await inquirer.prompt([{
+        type: 'list',
+        name: 'project',
+        message: 'Select project:',
+        choices: projectChoices
+      }]);
+
+      if (project === '__create_new__') {
+        needsProjectCreation = true;
+      } else {
+        selectedProject = project;
       }
     }
 
-    // Step 2: Select project from dropdown
-    const projectChoices = projectFiles.map(f => {
-      const name = f.replace(/\.(yaml|yml)$/, '');
-      return { name: `  ${name}`, value: name };
-    });
-
-    // Add "Create New Project" option
-    projectChoices.push(
-      { name: '─────────────────', value: 'separator', disabled: true },
-      { name: '+ Create New Project', value: '__create_new__' }
-    );
-
-    const { project } = await inquirer.prompt([{
-      type: 'list',
-      name: 'project',
-      message: 'Select project:',
-      choices: projectChoices
-    }]);
-
-    // Handle "Create New Project" selection
-    let selectedProject = project;
-    if (project === '__create_new__') {
+    // Handle project creation
+    if (needsProjectCreation) {
       console.log(chalk.blue('\nCreating New Project\n'));
 
       // Get project name
@@ -1155,7 +798,7 @@ async function runWorkflow() {
     const result = await orchestrator.executeTask(selectedProject, description);
 
     // Step 6: Display results
-    console.log(chalk.cyan.bold('\n✅ Task Completed!\n'));
+    console.log(chalk.cyan.bold('\nSUCCESS: Task Completed!\n'));
 
     if (result.pr) {
       console.log(chalk.green.bold('Pull Request Created:\n'));
@@ -1164,7 +807,7 @@ async function runWorkflow() {
     } else {
       console.log(chalk.yellow('Branch created but PR not created automatically.'));
       console.log(chalk.gray(`  Branch: ${result.branchName}`));
-      console.log(chalk.gray(`  Create PR manually: dev-tools approve ${result.taskId}\n`));
+      console.log(chalk.gray(`  Task ID: ${result.taskId}\n`));
     }
 
     // Step 7: Auto cleanup containers

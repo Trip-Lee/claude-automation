@@ -1,0 +1,432 @@
+{
+  "testId": "SN-CB-008",
+  "testName": "SN-CB-008",
+  "description": "",
+  "status": "failed",
+  "startedAt": "2026-01-13T23:34:51.278Z",
+  "completedAt": "2026-01-13T23:34:51.278Z",
+  "config": {
+    "taskPrompt": "Compare the execution contexts for INSERT vs UPDATE operations on x_cadso_automate_email.\n\nTASK:\nAnalyze the differences between creating a new email record vs updating an existing one.\n\nQUESTIONS TO ANSWER:\n1. How many Business Rules fire on INSERT vs UPDATE?\n2. Which rules run on both operations vs only one?\n3. Are there different risk levels for each operation?\n4. What cascading effects differ between operations?\n5. Which operation is safer to perform?\n\nEXPECTED APPROACH:\n1. Query execution context for INSERT: npm run cache-query -- x_cadso_automate_email insert\n2. Query execution context for UPDATE: npm run cache-query -- x_cadso_automate_email update\n3. Compare the results\n4. Analyze the differences\n\nDELIVERABLES:\n- analysis/x_cadso_automate_email_insert_vs_update.md\n- Include:\n  - Side-by-side comparison table\n  - Rules unique to INSERT\n  - Rules unique to UPDATE\n  - Rules common to both\n  - Risk comparison\n  - Recommendation on safer approach\n\nBONUS:\n- Also analyze DELETE: npm run cache-query -- x_cadso_automate_email delete\n- Include in comparison",
+    "expectedArtifacts": [
+      "analysis/x_cadso_automate_email_insert_vs_update.md"
+    ],
+    "successCriteria": [],
+    "requiredSnTools": [
+      "cache-query"
+    ]
+  },
+  "sections": {
+    "summary": {
+      "testId": "SN-CB-008",
+      "testName": "SN-CB-008",
+      "status": "failed",
+      "duration": "0s",
+      "cost": "$1.1409",
+      "criteriaScore": "0/0",
+      "criteriaPercentage": 0,
+      "mcpToolCalls": 0,
+      "conversationTurns": 15,
+      "artifactsCreated": 5,
+      "expectedArtifacts": 1,
+      "keyFindings": [
+        {
+          "type": "error",
+          "message": "1 expected artifacts were not created"
+        }
+      ]
+    },
+    "mcpCalls": [],
+    "decisionTrail": [
+      {
+        "id": "decision-1768346823810-y9b6dppzo",
+        "timestamp": "2026-01-13T23:27:03.810Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 1 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 351232,
+        "context": {
+          "promptSummary": "Compare the execution contexts for INSERT vs UPDATE operations on x_cadso_automate_email.\n\nTASK:\nAnalyze the differences between creating a new email record vs updating an existing one.\n\nQUESTIONS TO ",
+          "conversationTurn": 1
+        }
+      },
+      {
+        "id": "decision-1768347175042-7z7f9ftea",
+        "timestamp": "2026-01-13T23:32:55.042Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 2 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 7870,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 2
+        }
+      },
+      {
+        "id": "decision-1768347182913-c1kq3dhdy",
+        "timestamp": "2026-01-13T23:33:02.913Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 3 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 7935,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 3
+        }
+      },
+      {
+        "id": "decision-1768347190849-ss5kawi8p",
+        "timestamp": "2026-01-13T23:33:10.849Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 4 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 7545,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 4
+        }
+      },
+      {
+        "id": "decision-1768347198394-dmmlykef2",
+        "timestamp": "2026-01-13T23:33:18.394Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 5 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8328,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 5
+        }
+      },
+      {
+        "id": "decision-1768347206723-7bcya254w",
+        "timestamp": "2026-01-13T23:33:26.723Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 6 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8358,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 6
+        }
+      },
+      {
+        "id": "decision-1768347215081-nurvoxzvk",
+        "timestamp": "2026-01-13T23:33:35.081Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 7 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8295,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 7
+        }
+      },
+      {
+        "id": "decision-1768347223377-7aezimuth",
+        "timestamp": "2026-01-13T23:33:43.377Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 8 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8232,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 8
+        }
+      },
+      {
+        "id": "decision-1768347231609-4ff64ulr7",
+        "timestamp": "2026-01-13T23:33:51.609Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 9 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8521,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 9
+        }
+      },
+      {
+        "id": "decision-1768347240130-rods80pxa",
+        "timestamp": "2026-01-13T23:34:00.130Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 10 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8173,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 10
+        }
+      },
+      {
+        "id": "decision-1768347248304-l283doiam",
+        "timestamp": "2026-01-13T23:34:08.304Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 11 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8471,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 11
+        }
+      },
+      {
+        "id": "decision-1768347256776-j9o5izdlq",
+        "timestamp": "2026-01-13T23:34:16.776Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 12 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 7834,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 12
+        }
+      },
+      {
+        "id": "decision-1768347264610-7k1l34ncs",
+        "timestamp": "2026-01-13T23:34:24.611Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 13 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8704,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 13
+        }
+      },
+      {
+        "id": "decision-1768347273314-lf8u6hmwn",
+        "timestamp": "2026-01-13T23:34:33.314Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 14 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 9492,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 14
+        }
+      },
+      {
+        "id": "decision-1768347282807-0az6kzt5c",
+        "timestamp": "2026-01-13T23:34:42.807Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 15 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8466,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 15
+        }
+      }
+    ],
+    "criteriaMapping": [],
+    "artifacts": [
+      {
+        "path": "conversation.json",
+        "type": "json",
+        "size": 36317,
+        "created": "2026-01-13T17:19:52.091Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis-summary.txt",
+        "type": "text",
+        "size": 442,
+        "created": "2026-01-13T17:19:52.091Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis.json",
+        "type": "json",
+        "size": 963,
+        "created": "2026-01-13T17:19:52.091Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "test-report-SN-CB-008.json",
+        "type": "json",
+        "size": 11539,
+        "created": "2026-01-13T17:19:52.091Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "test-report-SN-CB-008.md",
+        "type": "markdown",
+        "size": 3334,
+        "created": "2026-01-13T17:19:52.095Z",
+        "contentSummary": null,
+        "expected": false
+      }
+    ],
+    "metrics": {
+      "totalDurationMs": 0,
+      "totalCost": 1.1408915000000002,
+      "conversationTurns": 15,
+      "mcpToolCalls": 0,
+      "successfulCalls": 0,
+      "failedCalls": 0,
+      "truncatedResponses": 0,
+      "tool_calls": 0,
+      "tools_used": {},
+      "total_response_size_chars": 0,
+      "total_response_size_kb": 0,
+      "truncated_responses": 0,
+      "average_response_size_kb": 0,
+      "largest_response": null,
+      "total_execution_time_ms": 0,
+      "average_execution_time_ms": 0,
+      "by_tool": {}
+    },
+    "timeline": [
+      {
+        "type": "artifact",
+        "description": "Created: conversation.json",
+        "timestamp": "2026-01-13T17:19:52.091Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis-summary.txt",
+        "timestamp": "2026-01-13T17:19:52.091Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis.json",
+        "timestamp": "2026-01-13T17:19:52.091Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: test-report-SN-CB-008.json",
+        "timestamp": "2026-01-13T17:19:52.091Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: test-report-SN-CB-008.md",
+        "timestamp": "2026-01-13T17:19:52.095Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:27:03.810Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:32:55.042Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:33:02.913Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:33:10.849Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:33:18.394Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:33:26.723Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:33:35.081Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:33:43.377Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:33:51.609Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:34:00.130Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:34:08.304Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:34:16.776Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:34:24.611Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:34:33.314Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:34:42.807Z"
+      }
+    ],
+    "recommendations": []
+  }
+}

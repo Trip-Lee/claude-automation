@@ -1,0 +1,17 @@
+=== MCP Tool Usage Analysis ===
+
+Total conversation turns: 15
+Primary method: bash_fallback
+MCP tool calls: 0
+Bash fallbacks: 1
+Manual investigations: 0
+
+--- Failure Analysis ---
+  [HIGH] tool_call_failed: Tool calls failed: 1 errors
+  [MEDIUM] agent_chose_bash: Agent used bash commands instead of MCP tools
+
+--- Recommendations ---
+  [MEDIUM] Agent is using bash fallback instead of native MCP tools
+    Action: Verify MCP server is running and tools are available
+  [HIGH] 1 errors detected during execution
+    Action: Review error messages and fix underlying issues

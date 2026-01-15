@@ -1,0 +1,117 @@
+{
+  "testId": "FLOW-UNDERSTAND-001",
+  "testName": "FLOW-UNDERSTAND-001",
+  "description": "",
+  "status": "passed",
+  "startedAt": "2026-01-15T15:15:05.501Z",
+  "completedAt": "2026-01-15T15:15:05.503Z",
+  "config": {
+    "taskPrompt": "Using the ServiceNow cache files and flow parser, analyze the \"Send Email V4\" flow and provide a complete explanation.\n\nCache files are located at:\n- Agent cache: /home/coltrip/projects/sn-tools/ServiceNow-Tools/cache/servicenow-agent-cache.json\n- Full cache: /home/coltrip/projects/sn-tools/ServiceNow-Tools/cache/servicenow-full-cache.json\n- Flow parser: /home/coltrip/projects/sn-tools/ServiceNow-Tools/src/sn-flow-parser.js\n\nPlease provide:\n1. What is the purpose of this flow?\n2. How many steps does it have?\n3. Which steps contain scripts? What do those scripts do?\n4. What tables does this flow read from or write to?\n5. What triggers this flow?\n6. What is the overall complexity and risk level?\n\nWrite your analysis to a file: flow-analysis/send-email-v4-analysis.md",
+    "expectedArtifacts": [],
+    "successCriteria": [],
+    "requiredSnTools": []
+  },
+  "sections": {
+    "summary": {
+      "testId": "FLOW-UNDERSTAND-001",
+      "testName": "FLOW-UNDERSTAND-001",
+      "status": "passed",
+      "duration": "0s",
+      "cost": "$0.7572",
+      "criteriaScore": "0/0",
+      "criteriaPercentage": 0,
+      "mcpToolCalls": 0,
+      "conversationTurns": 1,
+      "artifactsCreated": 3,
+      "expectedArtifacts": 0,
+      "keyFindings": []
+    },
+    "mcpCalls": [],
+    "decisionTrail": [
+      {
+        "id": "decision-1768489883309-ws3y9b6z1",
+        "timestamp": "2026-01-15T15:11:23.309Z",
+        "type": "tool_selection",
+        "agentRole": "sn-flows",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 1 with sn-flows role",
+        "outcome": "success",
+        "durationMs": 222182,
+        "context": {
+          "promptSummary": "Using the ServiceNow cache files and flow parser, analyze the \"Send Email V4\" flow and provide a complete explanation.\n\nCache files are located at:\n- Agent cache: /home/coltrip/projects/sn-tools/Servi",
+          "conversationTurn": 1
+        }
+      }
+    ],
+    "criteriaMapping": [],
+    "artifacts": [
+      {
+        "path": "conversation.json",
+        "type": "json",
+        "size": 4911,
+        "created": "2026-01-15T15:15:05.494Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis-summary.txt",
+        "type": "text",
+        "size": 243,
+        "created": "2026-01-15T15:15:05.498Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis.json",
+        "type": "json",
+        "size": 880,
+        "created": "2026-01-15T15:15:05.494Z",
+        "contentSummary": null,
+        "expected": false
+      }
+    ],
+    "metrics": {
+      "totalDurationMs": 2,
+      "totalCost": 0.7571695,
+      "conversationTurns": 1,
+      "mcpToolCalls": 0,
+      "successfulCalls": 0,
+      "failedCalls": 0,
+      "truncatedResponses": 0,
+      "tool_calls": 0,
+      "tools_used": {},
+      "total_response_size_chars": 0,
+      "total_response_size_kb": 0,
+      "truncated_responses": 0,
+      "average_response_size_kb": 0,
+      "largest_response": null,
+      "total_execution_time_ms": 0,
+      "average_execution_time_ms": 0,
+      "by_tool": {}
+    },
+    "timeline": [
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:11:23.309Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: conversation.json",
+        "timestamp": "2026-01-15T15:15:05.494Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis.json",
+        "timestamp": "2026-01-15T15:15:05.494Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis-summary.txt",
+        "timestamp": "2026-01-15T15:15:05.498Z"
+      }
+    ],
+    "recommendations": []
+  }
+}

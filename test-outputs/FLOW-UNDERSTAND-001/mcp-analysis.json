@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-01-15T15:15:05.493Z",
+  "summary": {
+    "totalTurns": 1,
+    "mcpToolCallsDetected": 0,
+    "bashFallbacksDetected": 0,
+    "manualInvestigationsDetected": 1,
+    "mcpToolsUsed": [],
+    "primaryMethod": "manual_grep"
+  },
+  "mcpToolCalls": [],
+  "bashFallbacks": [],
+  "manualInvestigations": [
+    {
+      "turnNumber": 1,
+      "type": "manual_grep",
+      "pattern": "ag\\s+",
+      "context": "| **Generate Mailing List Tag** (x2) | Creates tag arrays for email tracking |"
+    }
+  ],
+  "agentDecisions": [],
+  "confidenceLevels": [],
+  "failureAnalysis": {
+    "mcpConfigLoaded": null,
+    "toolCallAttempts": [],
+    "errorResponses": [],
+    "avoidanceReasons": [
+      {
+        "reason": "unknown",
+        "description": "Could not determine why MCP tools were not used",
+        "severity": "medium"
+      }
+    ]
+  },
+  "recommendations": []
+}

@@ -1,0 +1,13 @@
+1. Add user authentication endpoint
+   Create a POST /api/auth/login endpoint that accepts email and password,
+   validates credentials against the database, and returns a JWT token.
+   Include rate limiting of 5 attempts per minute.
+
+2. Create user profile page
+   Build a React component at /profile that displays user information
+   including name, email, and avatar. Add edit functionality with form
+   validation.
+
+3. Add email notification service
+   Implement an email service using SendGrid that sends welcome emails
+   on registration and password reset emails. Include HTML templates.

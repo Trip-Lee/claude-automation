@@ -1,0 +1,434 @@
+{
+  "testId": "SN-CB-005",
+  "testName": "SN-CB-005",
+  "description": "",
+  "status": "failed",
+  "startedAt": "2026-01-13T23:17:49.416Z",
+  "completedAt": "2026-01-13T23:17:49.418Z",
+  "config": {
+    "taskPrompt": "Analyze the impact of modifying the AudienceMS Script Include:\n\nSCENARIO:\nThe AudienceMS Script Include is used for audience management and accesses multiple tables.\nWe need to add a new method \"validateAudienceMembers()\" that checks member data integrity.\n\nNEW REQUIREMENT:\nAdd validation logic that:\n- Checks all audience members have valid email addresses\n- Verifies member records exist in the contact table\n- Returns validation results with error details\n\nQUESTIONS TO ANSWER:\n1. What tables does AudienceMS currently access?\n2. What other Script Includes depend on AudienceMS?\n3. What APIs use AudienceMS?\n4. What new table access will the validation require?\n5. What is the complete impact radius of this change?\n6. What testing is required?\n\nEXPECTED WORKFLOW:\n1. Use: npm run query -- script-crud AudienceMS\n2. Use: npm run trace-lineage -- AudienceMS script\n3. Use: npm run validate-change -- script AudienceMS \"Adding validateAudienceMembers method\"\n4. Analyze the cached dependency data\n5. Document all required changes and impacts\n\nDELIVERABLES:\n- analysis/AudienceMS_validation_impact.md\n- Include:\n  - Current Script Include structure (from cache)\n  - Tables accessed with CRUD operations\n  - Dependent APIs and Script Includes\n  - Proposed changes\n  - Risk assessment\n  - Testing plan\n  - Rollback strategy\n\nBONUS:\n- Generate a change checklist\n- Estimate effort for each change\n- Identify dependencies between changes",
+    "expectedArtifacts": [
+      "analysis/AudienceMS_validation_impact.md"
+    ],
+    "successCriteria": [],
+    "requiredSnTools": [
+      "query script-crud",
+      "trace-lineage",
+      "validate-change"
+    ]
+  },
+  "sections": {
+    "summary": {
+      "testId": "SN-CB-005",
+      "testName": "SN-CB-005",
+      "status": "failed",
+      "duration": "0s",
+      "cost": "$2.0500",
+      "criteriaScore": "0/0",
+      "criteriaPercentage": 0,
+      "mcpToolCalls": 0,
+      "conversationTurns": 15,
+      "artifactsCreated": 5,
+      "expectedArtifacts": 1,
+      "keyFindings": [
+        {
+          "type": "error",
+          "message": "1 expected artifacts were not created"
+        }
+      ]
+    },
+    "mcpCalls": [],
+    "decisionTrail": [
+      {
+        "id": "decision-1768345846974-zjz5x1ryy",
+        "timestamp": "2026-01-13T23:10:46.974Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 1 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 300890,
+        "context": {
+          "promptSummary": "Analyze the impact of modifying the AudienceMS Script Include:\n\nSCENARIO:\nThe AudienceMS Script Include is used for audience management and accesses multiple tables.\nWe need to add a new method \"valid",
+          "conversationTurn": 1
+        }
+      },
+      {
+        "id": "decision-1768346147864-gqbb822o0",
+        "timestamp": "2026-01-13T23:15:47.864Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 2 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 7905,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 2
+        }
+      },
+      {
+        "id": "decision-1768346155770-291bdgjyc",
+        "timestamp": "2026-01-13T23:15:55.770Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 3 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8139,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 3
+        }
+      },
+      {
+        "id": "decision-1768346163910-nx4cono6h",
+        "timestamp": "2026-01-13T23:16:03.910Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 4 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 10876,
+        "context": {
+          "promptSummary": "\n🚨 CHECKPOINT (Turn 3):\n\nYou have not executed the required sn-tools analyses yet. You can use EITHER bash commands OR MCP tools.\n\nREQUIRED NEXT STEPS:\n1. Option 1 (Bash): cd tools/sn-tools/ServiceNo",
+          "conversationTurn": 4
+        }
+      },
+      {
+        "id": "decision-1768346174786-f2eyfe33f",
+        "timestamp": "2026-01-13T23:16:14.786Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 5 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8798,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 5
+        }
+      },
+      {
+        "id": "decision-1768346183584-ewnp6khv1",
+        "timestamp": "2026-01-13T23:16:23.584Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 6 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8628,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 6
+        }
+      },
+      {
+        "id": "decision-1768346192216-o7zbj93we",
+        "timestamp": "2026-01-13T23:16:32.216Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 7 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8905,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 7
+        }
+      },
+      {
+        "id": "decision-1768346201121-7zulra5dg",
+        "timestamp": "2026-01-13T23:16:41.121Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 8 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8523,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 8
+        }
+      },
+      {
+        "id": "decision-1768346209644-xwqrh3e23",
+        "timestamp": "2026-01-13T23:16:49.644Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 9 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8642,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 9
+        }
+      },
+      {
+        "id": "decision-1768346218286-ex17q4ah8",
+        "timestamp": "2026-01-13T23:16:58.286Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 10 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 9427,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 10
+        }
+      },
+      {
+        "id": "decision-1768346227714-so1z8wgyb",
+        "timestamp": "2026-01-13T23:17:07.714Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 11 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 7788,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 11
+        }
+      },
+      {
+        "id": "decision-1768346235502-i0nhdog6f",
+        "timestamp": "2026-01-13T23:17:15.502Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 12 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8163,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 12
+        }
+      },
+      {
+        "id": "decision-1768346243666-hzm72vycc",
+        "timestamp": "2026-01-13T23:17:23.666Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 13 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8672,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 13
+        }
+      },
+      {
+        "id": "decision-1768346252338-igriegywa",
+        "timestamp": "2026-01-13T23:17:32.338Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 14 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8896,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 14
+        }
+      },
+      {
+        "id": "decision-1768346261234-3c19n4qsn",
+        "timestamp": "2026-01-13T23:17:41.234Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 15 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 8174,
+        "context": {
+          "promptSummary": "Please continue with the task or provide status update.",
+          "conversationTurn": 15
+        }
+      }
+    ],
+    "criteriaMapping": [],
+    "artifacts": [
+      {
+        "path": "conversation.json",
+        "type": "json",
+        "size": 37638,
+        "created": "2026-01-08T23:03:29.984Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis-summary.txt",
+        "type": "text",
+        "size": 442,
+        "created": "2026-01-09T21:03:31.392Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis.json",
+        "type": "json",
+        "size": 1064,
+        "created": "2026-01-09T21:03:31.392Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "test-report-SN-CB-005.json",
+        "type": "json",
+        "size": 5960,
+        "created": "2026-01-09T21:03:31.392Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "test-report-SN-CB-005.md",
+        "type": "markdown",
+        "size": 1148,
+        "created": "2026-01-09T21:03:31.392Z",
+        "contentSummary": null,
+        "expected": false
+      }
+    ],
+    "metrics": {
+      "totalDurationMs": 2,
+      "totalCost": 2.0499900000000006,
+      "conversationTurns": 15,
+      "mcpToolCalls": 0,
+      "successfulCalls": 0,
+      "failedCalls": 0,
+      "truncatedResponses": 0,
+      "tool_calls": 0,
+      "tools_used": {},
+      "total_response_size_chars": 0,
+      "total_response_size_kb": 0,
+      "truncated_responses": 0,
+      "average_response_size_kb": 0,
+      "largest_response": null,
+      "total_execution_time_ms": 0,
+      "average_execution_time_ms": 0,
+      "by_tool": {}
+    },
+    "timeline": [
+      {
+        "type": "artifact",
+        "description": "Created: conversation.json",
+        "timestamp": "2026-01-08T23:03:29.984Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis-summary.txt",
+        "timestamp": "2026-01-09T21:03:31.392Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis.json",
+        "timestamp": "2026-01-09T21:03:31.392Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: test-report-SN-CB-005.json",
+        "timestamp": "2026-01-09T21:03:31.392Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: test-report-SN-CB-005.md",
+        "timestamp": "2026-01-09T21:03:31.392Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:10:46.974Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:15:47.864Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:15:55.770Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:16:03.910Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:16:14.786Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:16:23.584Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:16:32.216Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:16:41.121Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:16:49.644Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:16:58.286Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:17:07.714Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:17:15.502Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:17:23.666Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:17:32.338Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:17:41.234Z"
+      }
+    ],
+    "recommendations": []
+  }
+}

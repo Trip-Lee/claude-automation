@@ -1,0 +1,228 @@
+name: Execution Context Tests
+
+on:
+  push:
+    paths:
+      - 'tools/sn-tools/ServiceNow-Tools/src/sn-context-cache.js'
+      - 'tools/sn-tools/ServiceNow-Tools/ai-context-cache/**'
+      - 'mcp/tool-handlers.js'
+      - 'lib/dynamic-agent-executor.js'
+      - 'test/execution-context*.js'
+      - '.github/workflows/execution-context-tests.yml'
+  pull_request:
+    paths:
+      - 'tools/sn-tools/ServiceNow-Tools/src/sn-context-cache.js'
+      - 'tools/sn-tools/ServiceNow-Tools/ai-context-cache/**'
+      - 'mcp/tool-handlers.js'
+      - 'lib/dynamic-agent-executor.js'
+      - 'test/execution-context*.js'
+  workflow_dispatch:
+    inputs:
+      run_agent_tests:
+        description: 'Run full agent integration tests (costs ~$1)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  infrastructure-tests:
+    name: Infrastructure & Edge Case Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install sn-tools dependencies
+        run: |
+          cd tools/sn-tools/ServiceNow-Tools
+          npm ci
+
+      - name: Verify execution chains exist
+        run: |
+          CHAIN_COUNT=$(ls tools/sn-tools/ServiceNow-Tools/ai-context-cache/execution-chains/*.json 2>/dev/null | wc -l)
+          echo "Found $CHAIN_COUNT execution chains"
+          if [ "$CHAIN_COUNT" -lt 100 ]; then
+            echo "Warning: Expected 100+ chains, found $CHAIN_COUNT"
+            exit 1
+          fi
+
+      - name: Run execution context integration tests
+        run: node test/execution-context-test.js
+
+      - name: Run execution context simulation tests
+        run: node test/execution-context-simulation-test.js
+
+  data-quality:
+    name: Data Quality Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate execution chain structure
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+
+          const chainsDir = 'tools/sn-tools/ServiceNow-Tools/ai-context-cache/execution-chains';
+          const files = fs.readdirSync(chainsDir).filter(f => f.endsWith('.json'));
+
+          let valid = 0;
+          let invalid = 0;
+          const issues = [];
+
+          for (const file of files) {
+            try {
+              const data = JSON.parse(fs.readFileSync(path.join(chainsDir, file)));
+              if (data.table && data.operation && data.businessRules && data.riskLevel) {
+                valid++;
+              } else {
+                invalid++;
+                issues.push(file);
+              }
+            } catch (e) {
+              invalid++;
+              issues.push(file + ': ' + e.message);
+            }
+          }
+
+          console.log('Valid chains:', valid);
+          console.log('Invalid chains:', invalid);
+
+          if (invalid > 0) {
+            console.log('Issues:', issues);
+            process.exit(1);
+          }
+          "
+
+      - name: Check for x_cadso_automate_email chains
+        run: |
+          for op in insert update delete; do
+            FILE="tools/sn-tools/ServiceNow-Tools/ai-context-cache/execution-chains/x_cadso_automate_email.$op.json"
+            if [ -f "$FILE" ]; then
+              echo "✓ x_cadso_automate_email.$op.json exists"
+              BRS=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$FILE')).businessRules.length)")
+              echo "  - Business Rules: $BRS"
+            else
+              echo "✗ Missing: x_cadso_automate_email.$op.json"
+              exit 1
+            fi
+          done
+
+  mcp-tool-tests:
+    name: MCP Tool Handler Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install sn-tools dependencies
+        run: |
+          cd tools/sn-tools/ServiceNow-Tools
+          npm ci
+
+      - name: Test query_execution_context handler
+        run: |
+          node --input-type=module -e "
+          import { QueryExecutionContextHandler } from './mcp/tool-handlers.js';
+
+          const handler = new QueryExecutionContextHandler();
+
+          // Test valid query
+          const result = await handler.handle({
+            table_name: 'x_cadso_automate_email',
+            operation: 'insert'
+          });
+
+          if (!result.data?.success) {
+            console.error('Query failed:', result);
+            process.exit(1);
+          }
+
+          const brCount = result.data.summary?.total_business_rules || 0;
+          console.log('✓ query_execution_context works');
+          console.log('  - BRs found:', brCount);
+          console.log('  - Risk level:', result.data.execution_context?.risk_level);
+
+          if (brCount < 5) {
+            console.error('Expected 5+ BRs, got', brCount);
+            process.exit(1);
+          }
+          "
+
+      - name: Test error handling
+        run: |
+          node --input-type=module -e "
+          import { QueryExecutionContextHandler } from './mcp/tool-handlers.js';
+
+          const handler = new QueryExecutionContextHandler();
+
+          // Test non-existent table
+          const result = await handler.handle({
+            table_name: 'fake_table_xyz',
+            operation: 'insert'
+          });
+
+          if (result.data?.success !== false) {
+            console.error('Should have returned success=false for non-existent table');
+            process.exit(1);
+          }
+
+          console.log('✓ Error handling works correctly');
+          "
+
+  # Optional: Full agent integration tests (expensive, manual trigger only)
+  agent-integration-tests:
+    name: Agent Integration Tests
+    runs-on: ubuntu-latest
+    if: github.event.inputs.run_agent_tests == 'true'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install sn-tools dependencies
+        run: |
+          cd tools/sn-tools/ServiceNow-Tools
+          npm ci
+
+      - name: Run agent execution context tests
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node test/run-execution-context-tests.js

@@ -1,0 +1,117 @@
+{
+  "testId": "FLOW-UNDERSTAND-002",
+  "testName": "FLOW-UNDERSTAND-002",
+  "description": "",
+  "status": "passed",
+  "startedAt": "2026-01-15T15:17:53.854Z",
+  "completedAt": "2026-01-15T15:17:53.854Z",
+  "config": {
+    "taskPrompt": "Using the ServiceNow full cache or flow parser, extract the script from Step 1 of the \"Send Email V4\" flow and explain what it does.\n\nTools available:\n- Full cache: /home/coltrip/projects/sn-tools/ServiceNow-Tools/cache/servicenow-full-cache.json\n- Flow parser CLI: node /home/coltrip/projects/sn-tools/ServiceNow-Tools/src/sn-flow-parser.js --step \"Send Email V4\" 1\n\nPlease provide:\n1. The complete script code\n2. Line-by-line explanation of what the script does\n3. What inputs does it expect?\n4. What Script Includes or APIs does it call?\n5. Are there any potential issues or improvements?\n\nWrite your analysis to: flow-analysis/step1-script-analysis.md",
+    "expectedArtifacts": [],
+    "successCriteria": [],
+    "requiredSnTools": []
+  },
+  "sections": {
+    "summary": {
+      "testId": "FLOW-UNDERSTAND-002",
+      "testName": "FLOW-UNDERSTAND-002",
+      "status": "passed",
+      "duration": "0s",
+      "cost": "$0.6862",
+      "criteriaScore": "0/0",
+      "criteriaPercentage": 0,
+      "mcpToolCalls": 0,
+      "conversationTurns": 1,
+      "artifactsCreated": 3,
+      "expectedArtifacts": 0,
+      "keyFindings": []
+    },
+    "mcpCalls": [],
+    "decisionTrail": [
+      {
+        "id": "decision-1768490105521-ty29s5tv9",
+        "timestamp": "2026-01-15T15:15:05.521Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 1 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 168329,
+        "context": {
+          "promptSummary": "Using the ServiceNow full cache or flow parser, extract the script from Step 1 of the \"Send Email V4\" flow and explain what it does.\n\nTools available:\n- Full cache: /home/coltrip/projects/sn-tools/Ser",
+          "conversationTurn": 1
+        }
+      }
+    ],
+    "criteriaMapping": [],
+    "artifacts": [
+      {
+        "path": "conversation.json",
+        "type": "json",
+        "size": 4313,
+        "created": "2026-01-15T15:17:53.850Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis-summary.txt",
+        "type": "text",
+        "size": 243,
+        "created": "2026-01-15T15:17:53.850Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis.json",
+        "type": "json",
+        "size": 863,
+        "created": "2026-01-15T15:17:53.850Z",
+        "contentSummary": null,
+        "expected": false
+      }
+    ],
+    "metrics": {
+      "totalDurationMs": 0,
+      "totalCost": 0.6862294999999999,
+      "conversationTurns": 1,
+      "mcpToolCalls": 0,
+      "successfulCalls": 0,
+      "failedCalls": 0,
+      "truncatedResponses": 0,
+      "tool_calls": 0,
+      "tools_used": {},
+      "total_response_size_chars": 0,
+      "total_response_size_kb": 0,
+      "truncated_responses": 0,
+      "average_response_size_kb": 0,
+      "largest_response": null,
+      "total_execution_time_ms": 0,
+      "average_execution_time_ms": 0,
+      "by_tool": {}
+    },
+    "timeline": [
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-15T15:15:05.521Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: conversation.json",
+        "timestamp": "2026-01-15T15:17:53.850Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis-summary.txt",
+        "timestamp": "2026-01-15T15:17:53.850Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis.json",
+        "timestamp": "2026-01-15T15:17:53.850Z"
+      }
+    ],
+    "recommendations": []
+  }
+}

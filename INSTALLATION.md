@@ -133,17 +133,31 @@ sudo apt install gh
 brew install node docker git gh
 ```
 
-### Step 2: Clone Repository
+### Step 2: Clone Repository with Submodules
+
+**IMPORTANT**: Use `--recurse-submodules` to initialize sn-tools git submodule
 
 ```bash
-git clone https://github.com/Trip-Lee/claude-automation.git
+git clone --recurse-submodules https://github.com/Trip-Lee/claude-automation.git
 cd claude-automation
+```
+
+**If you already cloned without `--recurse-submodules`:**
+```bash
+cd claude-automation
+git submodule update --init --recursive
 ```
 
 ### Step 3: Install Dependencies
 
 ```bash
+# Install main project dependencies
 npm install
+
+# Install sn-tools dependencies
+cd tools/sn-tools/ServiceNow-Tools
+npm install
+cd ../../..
 ```
 
 ### Step 4: Run Interactive Installer

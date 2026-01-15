@@ -27,6 +27,123 @@ try {
   process.exit(1);
 }
 
+// Import UnifiedCache from sn-tools (CommonJS module)
+let UnifiedCache;
+try {
+  // Use createRequire for CommonJS interop
+  const { createRequire } = await import('module');
+  const require = createRequire(import.meta.url);
+  const cachePath = path.join(SN_TOOLS_PATH, 'src', 'sn-context-cache.js');
+  const cacheModule = require(cachePath);
+  UnifiedCache = cacheModule.UnifiedCache;
+} catch (error) {
+  console.error('Failed to load sn-tools UnifiedCache:', error.message);
+  // Non-fatal - unified cache tools will be unavailable but legacy tools still work
+  UnifiedCache = null;
+}
+
+// ============================================================================
+// SINGLETON CACHE MANAGER (Issue #2 Fix)
+// Ensures all handlers share a single cache instance to avoid redundant disk I/O
+// ============================================================================
+class CacheManager {
+  constructor() {
+    this.unifiedCache = null;
+    this.initPromise = null;
+    this.lastLoadTime = null;
+    this.stats = {
+      hits: 0,
+      misses: 0,
+      loadCount: 0,
+      totalLoadTimeMs: 0
+    };
+  }
+
+  /**
+   * Get the singleton UnifiedCache instance
+   * Thread-safe through promise caching
+   */
+  async getCache() {
+    // Return cached instance if available and loaded
+    if (this.unifiedCache && this.unifiedCache.loaded) {
+      this.stats.hits++;
+      return this.unifiedCache;
+    }
+
+    // If initialization is in progress, wait for it
+    if (this.initPromise) {
+      return this.initPromise;
+    }
+
+    // Start initialization
+    this.stats.misses++;
+    this.initPromise = this._initializeCache();
+
+    try {
+      const cache = await this.initPromise;
+      return cache;
+    } finally {
+      this.initPromise = null;
+    }
+  }
+
+  async _initializeCache() {
+    if (!UnifiedCache) {
+      console.error('[CacheManager] UnifiedCache class not available');
+      return null;
+    }
+
+    const startTime = Date.now();
+
+    try {
+      this.unifiedCache = new UnifiedCache({ rootPath: SN_TOOLS_PATH });
+      await this.unifiedCache.initialize();
+
+      const loadTime = Date.now() - startTime;
+      this.lastLoadTime = new Date();
+      this.stats.loadCount++;
+      this.stats.totalLoadTimeMs += loadTime;
+
+      console.error(`[CacheManager] Cache loaded in ${loadTime}ms (load #${this.stats.loadCount})`);
+
+      return this.unifiedCache;
+    } catch (error) {
+      console.error('[CacheManager] Failed to initialize cache:', error.message);
+      this.unifiedCache = null;
+      return null;
+    }
+  }
+
+  /**
+   * Force reload the cache (useful after cache rebuild)
+   */
+  async reload() {
+    this.unifiedCache = null;
+    this.initPromise = null;
+    return this.getCache();
+  }
+
+  /**
+   * Get cache statistics
+   */
+  getStats() {
+    return {
+      ...this.stats,
+      cacheLoaded: this.unifiedCache?.loaded || false,
+      lastLoadTime: this.lastLoadTime,
+      avgLoadTimeMs: this.stats.loadCount > 0
+        ? Math.round(this.stats.totalLoadTimeMs / this.stats.loadCount)
+        : 0,
+      hitRate: this.stats.hits + this.stats.misses > 0
+        ? ((this.stats.hits / (this.stats.hits + this.stats.misses)) * 100).toFixed(1) + '%'
+        : 'N/A'
+    };
+  }
+}
+
+// Module-level singleton instance
+const cacheManager = new CacheManager();
+
 /**
  * Base handler class with common functionality
  */
@@ -377,11 +494,12 @@ export class AnalyzeScriptCrudHandler extends ToolHandler {
 /**
  * Handler for query_execution_context tool
  * Returns what happens when you create/update/delete a record
+ * Now uses UnifiedCache for enhanced context including CRUD summaries and rollback strategies
  */
 export class QueryExecutionContextHandler extends ToolHandler {
   async handle(params) {
     return this.execute(async () => {
-      const { table_name, operation = 'insert' } = params;
+      const { table_name, operation = 'insert', include_crud_summary = true } = params;
 
       if (!table_name) {
         throw new Error('table_name is required. Provide a ServiceNow table name like "incident" or "x_cadso_work_campaign".');
@@ -393,7 +511,45 @@ export class QueryExecutionContextHandler extends ToolHandler {
         throw new Error(`Invalid operation: ${operation}. Must be one of: ${validOps.join(', ')}`);
       }
 
-      // Load execution context from cache
+      // Try unified cache first (preferred) - uses singleton
+      const unifiedCache = await cacheManager.getCache();
+      if (unifiedCache && unifiedCache.loaded) {
+        const context = unifiedCache.getContext('table', table_name, { operation });
+
+        if (context) {
+          const result = {
+            success: true,
+            table: table_name,
+            operation: operation,
+            execution_context: context.executionContext || {},
+            summary: {
+              total_business_rules: context.executionContext?.businessRules?.length || 0,
+              before_rules: context.executionContext?.phases?.before?.length || 0,
+              after_rules: context.executionContext?.phases?.after?.length || 0,
+              async_rules: context.executionContext?.phases?.async?.length || 0,
+              risk_level: context.executionContext?.riskLevel || 'UNKNOWN'
+            },
+            metadata: {
+              source: 'unified_cache',
+              timestamp: new Date().toISOString()
+            }
+          };
+
+          // Include CRUD summary if requested (pre-formatted markdown)
+          if (include_crud_summary && context.crudSummary) {
+            result.crud_summary = context.crudSummary;
+          }
+
+          // Include rollback strategy
+          if (context.rollbackStrategy) {
+            result.rollback_strategy = context.rollbackStrategy;
+          }
+
+          return result;
+        }
+      }
+
+      // Fallback to legacy execution chains
       const cachePath = path.join(SN_TOOLS_PATH, 'ai-context-cache', 'execution-chains', `${table_name}.${operation}.json`);
 
       try {
@@ -424,6 +580,7 @@ export class QueryExecutionContextHandler extends ToolHandler {
             scripts_called: (context.scriptIncludesInvolved || []).length
           },
           metadata: {
+            source: 'legacy_execution_chains',
             cache_file: cachePath,
             timestamp: new Date().toISOString()
           }
@@ -435,8 +592,8 @@ export class QueryExecutionContextHandler extends ToolHandler {
             table: table_name,
             operation: operation,
             error: `No execution context cached for ${table_name}.${operation}`,
-            suggestion: 'Run "npm run cache-build" to populate execution context cache',
-            available_operations: 'Check ai-context-cache/execution-chains/ for available table.operation combinations'
+            suggestion: 'Run "npm run unified-build" to build the unified cache, or "npm run cache-build" for legacy execution chains',
+            available_operations: 'Check cache/unified-agent-cache.json or ai-context-cache/execution-chains/ for available tables'
           };
         }
         throw error;
@@ -451,17 +608,551 @@ export class QueryExecutionContextHandler extends ToolHandler {
 export class RefreshDependencyCacheHandler extends ToolHandler {
   async handle(params) {
     return this.execute(async () => {
-      const { full_scan = false } = params;
+      const { rebuild_execution_chains = true, full_scan = false } = params;
 
-      // This would need to be implemented in sn-tools
-      // For now, return a message indicating manual refresh needed
+      const { spawn } = await import('child_process');
+      const results = {
+        success: true,
+        operations: [],
+        errors: []
+      };
+
+      // Rebuild execution chains if requested
+      if (rebuild_execution_chains) {
+        try {
+          const buildResult = await new Promise((resolve, reject) => {
+            const proc = spawn('npm', ['run', 'cache-build'], {
+              cwd: SN_TOOLS_PATH,
+              shell: true
+            });
+
+            let stdout = '';
+            let stderr = '';
+
+            proc.stdout.on('data', (data) => { stdout += data; });
+            proc.stderr.on('data', (data) => { stderr += data; });
+
+            proc.on('close', (code) => {
+              if (code === 0) {
+                resolve({ success: true, output: stdout });
+              } else {
+                reject(new Error(`cache-build failed with code ${code}: ${stderr}`));
+              }
+            });
+
+            proc.on('error', reject);
+
+            // Timeout after 60 seconds
+            setTimeout(() => reject(new Error('cache-build timed out after 60s')), 60000);
+          });
+
+          results.operations.push({
+            operation: 'rebuild_execution_chains',
+            success: true,
+            message: 'Execution chains rebuilt successfully'
+          });
+        } catch (error) {
+          results.errors.push({
+            operation: 'rebuild_execution_chains',
+            error: error.message
+          });
+          results.success = false;
+        }
+      }
+
+      // Count execution chains
+      try {
+        const fs = await import('fs/promises');
+        const chainsDir = path.join(SN_TOOLS_PATH, 'ai-context-cache', 'execution-chains');
+        const files = await fs.readdir(chainsDir);
+        const jsonFiles = files.filter(f => f.endsWith('.json'));
+        results.execution_chains_count = jsonFiles.length;
+      } catch (error) {
+        results.execution_chains_count = 'unknown';
+      }
+
       return {
-        success: false,
-        message: 'Cache refresh must be performed manually using: npm run refresh-cache',
-        command: 'npm run refresh-cache',
-        recommendation: 'Run this command from tools/sn-tools/ServiceNow-Tools directory'
+        success: results.success,
+        message: results.success
+          ? `Cache refresh completed. ${results.execution_chains_count} execution chains available.`
+          : `Cache refresh had errors: ${results.errors.map(e => e.error).join('; ')}`,
+        operations: results.operations,
+        errors: results.errors,
+        execution_chains_count: results.execution_chains_count,
+        timestamp: new Date().toISOString()
       };
     }, 'refresh_dependency_cache');
+  }
+}
+
+/**
+ * Handler for query_unified_context tool
+ * Single unified query for all context types
+ */
+export class QueryUnifiedContextHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { entity_type, entity_name, operation } = params;
+
+      if (!entity_type) {
+        throw new Error('entity_type is required. Valid types: table, script_include, api, component');
+      }
+      if (!entity_name) {
+        throw new Error('entity_name is required. Provide the name of the entity to query.');
+      }
+
+      const validTypes = ['table', 'script_include', 'api', 'component'];
+      if (!validTypes.includes(entity_type)) {
+        throw new Error(`Invalid entity_type: ${entity_type}. Must be one of: ${validTypes.join(', ')}`);
+      }
+
+      // Uses singleton cache manager
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache || !unifiedCache.loaded) {
+        return {
+          success: false,
+          error: 'Unified cache not available. Run "npm run unified-build" to build it.',
+          suggestion: 'Build the unified cache first using: cd tools/sn-tools/ServiceNow-Tools && npm run unified-build'
+        };
+      }
+
+      const context = unifiedCache.getContext(entity_type, entity_name, { operation });
+
+      if (!context) {
+        return {
+          success: false,
+          entity_type,
+          entity_name,
+          error: `No context found for ${entity_type} "${entity_name}"`,
+          suggestion: `Check if ${entity_name} exists in the codebase and rebuild cache if needed`
+        };
+      }
+
+      return {
+        success: true,
+        entity_type,
+        entity_name,
+        context,
+        metadata: {
+          source: 'unified_cache',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'query_unified_context');
+  }
+}
+
+/**
+ * Handler for query_crud_summary tool
+ * Returns pre-formatted CRUD summary markdown
+ */
+export class QueryCrudSummaryHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { entity_type, entity_name } = params;
+
+      if (!entity_type) {
+        throw new Error('entity_type is required. Valid types: table, script_include');
+      }
+      if (!entity_name) {
+        throw new Error('entity_name is required. Provide the name of the entity.');
+      }
+
+      const validTypes = ['table', 'script_include'];
+      if (!validTypes.includes(entity_type)) {
+        throw new Error(`Invalid entity_type: ${entity_type}. Must be one of: ${validTypes.join(', ')}`);
+      }
+
+      // Uses singleton cache manager
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache || !unifiedCache.loaded) {
+        return {
+          success: false,
+          error: 'Unified cache not available. Run "npm run unified-build" to build it.'
+        };
+      }
+
+      const summary = unifiedCache.getCrudSummary(entity_type, entity_name);
+
+      if (!summary) {
+        return {
+          success: false,
+          entity_type,
+          entity_name,
+          error: `No CRUD summary found for ${entity_type} "${entity_name}"`
+        };
+      }
+
+      return {
+        success: true,
+        entity_type,
+        entity_name,
+        crud_summary: summary,
+        metadata: {
+          source: 'unified_cache',
+          format: 'markdown',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'query_crud_summary');
+  }
+}
+
+/**
+ * Handler for query_table_relationships tool
+ * Returns cross-table relationships and cascading patterns
+ */
+export class QueryTableRelationshipsHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { table_name } = params;
+
+      if (!table_name) {
+        throw new Error('table_name is required. Provide a ServiceNow table name.');
+      }
+
+      // Uses singleton cache manager
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache || !unifiedCache.loaded) {
+        return {
+          success: false,
+          error: 'Unified cache not available. Run "npm run unified-build" to build it.'
+        };
+      }
+
+      const relationships = unifiedCache.getTableRelationships(table_name);
+
+      if (!relationships) {
+        return {
+          success: false,
+          table_name,
+          error: `No relationships found for table "${table_name}"`
+        };
+      }
+
+      return {
+        success: true,
+        table_name,
+        relationships,
+        metadata: {
+          source: 'unified_cache',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'query_table_relationships');
+  }
+}
+
+/**
+ * Handler for query_impact_template tool
+ * Returns impact assessment templates for change planning
+ */
+export class QueryImpactTemplateHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { entity_type } = params;
+
+      if (!entity_type) {
+        throw new Error('entity_type is required. Valid types: table, script_include, api, component');
+      }
+
+      const validTypes = ['table', 'script_include', 'api', 'component'];
+      if (!validTypes.includes(entity_type)) {
+        throw new Error(`Invalid entity_type: ${entity_type}. Must be one of: ${validTypes.join(', ')}`);
+      }
+
+      // Uses singleton cache manager
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache || !unifiedCache.loaded) {
+        return {
+          success: false,
+          error: 'Unified cache not available. Run "npm run unified-build" to build it.'
+        };
+      }
+
+      const template = unifiedCache.getImpactTemplate(entity_type);
+
+      if (!template) {
+        return {
+          success: false,
+          entity_type,
+          error: `No impact template found for entity type "${entity_type}"`
+        };
+      }
+
+      return {
+        success: true,
+        entity_type,
+        impact_template: template,
+        metadata: {
+          source: 'unified_cache',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'query_impact_template');
+  }
+}
+
+/**
+ * Handler for query_reverse_dependencies tool
+ * Returns "what uses this" information
+ */
+export class QueryReverseDependenciesHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { entity_type, entity_name } = params;
+
+      if (!entity_type) {
+        throw new Error('entity_type is required. Valid types: table, script_include, api');
+      }
+      if (!entity_name) {
+        throw new Error('entity_name is required. Provide the name of the entity.');
+      }
+
+      const validTypes = ['table', 'script_include', 'api'];
+      if (!validTypes.includes(entity_type)) {
+        throw new Error(`Invalid entity_type: ${entity_type}. Must be one of: ${validTypes.join(', ')}`);
+      }
+
+      // Uses singleton cache manager
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache || !unifiedCache.loaded) {
+        return {
+          success: false,
+          error: 'Unified cache not available. Run "npm run unified-build" to build it.'
+        };
+      }
+
+      const dependencies = unifiedCache.getReverseDependencies(entity_type, entity_name);
+
+      if (!dependencies || dependencies.length === 0) {
+        return {
+          success: true,
+          entity_type,
+          entity_name,
+          reverse_dependencies: [],
+          message: `No reverse dependencies found for ${entity_type} "${entity_name}" - it may not be used by other entities`
+        };
+      }
+
+      return {
+        success: true,
+        entity_type,
+        entity_name,
+        reverse_dependencies: dependencies,
+        count: dependencies.length,
+        metadata: {
+          source: 'unified_cache',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'query_reverse_dependencies');
+  }
+}
+
+/**
+ * Handler for get_cache_stats tool
+ * Returns cache manager statistics for monitoring
+ */
+export class GetCacheStatsHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const stats = cacheManager.getStats();
+
+      return {
+        success: true,
+        cache_stats: stats,
+        metadata: {
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'get_cache_stats');
+  }
+}
+
+// ============================================================================
+// FLOW DESIGNER TOOL HANDLERS
+// Query and analyze ServiceNow Flow Designer flows
+// ============================================================================
+
+/**
+ * Handler for query_flow tool
+ * Returns details about a specific flow
+ */
+export class QueryFlowHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { flow_identifier } = params;
+
+      if (!flow_identifier) {
+        return {
+          success: false,
+          error: 'flow_identifier is required'
+        };
+      }
+
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache) {
+        return {
+          success: false,
+          error: 'Unified cache not available'
+        };
+      }
+
+      const flow = unifiedCache.getFlow(flow_identifier);
+
+      return {
+        success: true,
+        ...flow,
+        metadata: {
+          source: 'unified_cache',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'query_flow');
+  }
+}
+
+/**
+ * Handler for query_flows_for_table tool
+ * Returns all flows that affect a specific table
+ */
+export class QueryFlowsForTableHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { table_name } = params;
+
+      if (!table_name) {
+        return {
+          success: false,
+          error: 'table_name is required'
+        };
+      }
+
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache) {
+        return {
+          success: false,
+          error: 'Unified cache not available'
+        };
+      }
+
+      const flows = unifiedCache.getFlowsForTable(table_name);
+
+      return {
+        success: true,
+        ...flows,
+        metadata: {
+          source: 'unified_cache',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'query_flows_for_table');
+  }
+}
+
+/**
+ * Handler for query_flow_impact tool
+ * Returns flow impact preview for a table operation
+ */
+export class QueryFlowImpactHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { table_name, operation = 'insert' } = params;
+
+      if (!table_name) {
+        return {
+          success: false,
+          error: 'table_name is required'
+        };
+      }
+
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache) {
+        return {
+          success: false,
+          error: 'Unified cache not available'
+        };
+      }
+
+      const impact = unifiedCache.getFlowImpactPreview(table_name, operation);
+
+      return {
+        success: true,
+        ...impact,
+        metadata: {
+          source: 'unified_cache',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'query_flow_impact');
+  }
+}
+
+/**
+ * Handler for search_flows tool
+ * Searches flows by name, description, or application
+ */
+export class SearchFlowsHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const { query } = params;
+
+      if (!query) {
+        return {
+          success: false,
+          error: 'query is required'
+        };
+      }
+
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache) {
+        return {
+          success: false,
+          error: 'Unified cache not available'
+        };
+      }
+
+      const results = unifiedCache.searchFlows(query);
+
+      return {
+        success: true,
+        ...results,
+        metadata: {
+          source: 'unified_cache',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'search_flows');
+  }
+}
+
+/**
+ * Handler for query_flow_statistics tool
+ * Returns overall flow statistics
+ */
+export class QueryFlowStatisticsHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const unifiedCache = await cacheManager.getCache();
+      if (!unifiedCache) {
+        return {
+          success: false,
+          error: 'Unified cache not available'
+        };
+      }
+
+      const statistics = unifiedCache.getFlowStatistics();
+
+      return {
+        success: true,
+        statistics,
+        metadata: {
+          source: 'unified_cache',
+          timestamp: new Date().toISOString()
+        }
+      };
+    }, 'query_flow_statistics');
   }
 }
 
@@ -476,8 +1167,24 @@ export const TOOL_HANDLERS = {
   'query_table_schema': new QueryTableSchemaHandler(),
   'analyze_script_crud': new AnalyzeScriptCrudHandler(),
   'refresh_dependency_cache': new RefreshDependencyCacheHandler(),
-  'query_execution_context': new QueryExecutionContextHandler()
+  'query_execution_context': new QueryExecutionContextHandler(),
+  // New unified cache tools
+  'query_unified_context': new QueryUnifiedContextHandler(),
+  'query_crud_summary': new QueryCrudSummaryHandler(),
+  'query_table_relationships': new QueryTableRelationshipsHandler(),
+  'query_impact_template': new QueryImpactTemplateHandler(),
+  'query_reverse_dependencies': new QueryReverseDependenciesHandler(),
+  'get_cache_stats': new GetCacheStatsHandler(),
+  // Flow Designer tools
+  'query_flow': new QueryFlowHandler(),
+  'query_flows_for_table': new QueryFlowsForTableHandler(),
+  'query_flow_impact': new QueryFlowImpactHandler(),
+  'search_flows': new SearchFlowsHandler(),
+  'query_flow_statistics': new QueryFlowStatisticsHandler()
 };
+
+// Export cache manager for external access (e.g., reload after cache rebuild)
+export { cacheManager };
 
 /**
  * Execute a tool by name

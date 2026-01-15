@@ -1,0 +1,129 @@
+================================================================================
+SERVICENOW TEST CLEANUP - QUICK REFERENCE
+================================================================================
+
+CLEANUP SCRIPT: test/servicenow-test-cleanup.js
+DOCUMENTATION: test/SERVICENOW_CLEANUP_GUIDE.md
+
+================================================================================
+MOST COMMON COMMANDS
+================================================================================
+
+# Preview what will be deleted (SAFE - nothing deleted)
+node test/servicenow-test-cleanup.js --dry-run
+
+# Clean everything (asks for confirmation)
+node test/servicenow-test-cleanup.js --all
+
+# Clean everything without confirmation
+node test/servicenow-test-cleanup.js --all --force
+
+# Clean specific test
+node test/servicenow-test-cleanup.js --test-id SN-SIMPLE-001
+
+# Clean by difficulty level
+node test/servicenow-test-cleanup.js --level simple
+node test/servicenow-test-cleanup.js --level medium
+node test/servicenow-test-cleanup.js --level complex
+
+# Get help
+node test/servicenow-test-cleanup.js --help
+
+================================================================================
+WHAT GETS CLEANED UP
+================================================================================
+
+1. ALL TEST ARTIFACTS
+   - Business rules, client scripts, script includes
+   - REST APIs, Service Portal widgets
+   - Flow Designer flows, Import Sets, Transform Maps
+   - Scheduled jobs, ACLs, test files
+   - Documentation files
+   
+2. EMPTY DIRECTORIES
+   - Removes any empty directories left after file deletion
+   
+3. GIT CHANGES
+   - Reverts all modified files (git reset --hard HEAD)
+   - Removes all untracked files (git clean -fd)
+   
+RESULT: sn-tools project back to clean state ✨
+
+================================================================================
+SAFETY FEATURES
+================================================================================
+
+✓ DRY RUN MODE: Always preview deletions first (--dry-run)
+✓ CONFIRMATION: Asks "Continue? (yes/no)" before deleting
+✓ FORCE MODE: Skip confirmation with --force flag
+✓ GRACEFUL: Non-existent files don't cause errors
+✓ DETAILED OUTPUT: Shows exactly what was deleted
+
+================================================================================
+RECOMMENDED WORKFLOW
+================================================================================
+
+1. Run test:        dev-tools task sn-tools "[prompt]"
+2. Validate:        Check artifacts and score
+3. Preview cleanup: node test/servicenow-test-cleanup.js --dry-run
+4. Clean up:        node test/servicenow-test-cleanup.js --test-id [ID]
+5. Verify:          git status ~/projects/sn-tools/
+
+================================================================================
+TEST ID REFERENCE
+================================================================================
+
+SIMPLE:
+  SN-SIMPLE-001  - Business Rule
+  SN-SIMPLE-002  - Client Script
+  SN-SIMPLE-003  - Script Include
+
+MEDIUM:
+  SN-MEDIUM-001  - REST API
+  SN-MEDIUM-002  - Service Portal Widget
+  SN-MEDIUM-003  - Flow Designer
+  SN-MEDIUM-004  - Import Set + Transform Map
+
+COMPLEX:
+  SN-COMPLEX-001 - Smart Assignment System (11 files)
+  SN-COMPLEX-002 - Team Dashboard Portal (25+ files)
+  SN-COMPLEX-003 - Slack Integration Spoke (22+ files)
+
+================================================================================
+EXAMPLES
+================================================================================
+
+# After completing SN-SIMPLE-001
+node test/servicenow-test-cleanup.js --test-id SN-SIMPLE-001
+
+# After completing all SIMPLE tests
+node test/servicenow-test-cleanup.js --level simple
+
+# After completing entire test suite
+node test/servicenow-test-cleanup.js --all
+
+# Quick cleanup without confirmation
+node test/servicenow-test-cleanup.js --all --force
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Project not found?
+  → Check: ls ~/projects/sn-tools/
+
+Permission denied?
+  → Run: chmod +x test/servicenow-test-cleanup.js
+
+Want manual cleanup?
+  → Run: cd ~/projects/sn-tools && git reset --hard HEAD && git clean -fd
+
+================================================================================
+MORE INFO
+================================================================================
+
+Full documentation: test/SERVICENOW_CLEANUP_GUIDE.md
+Test documentation: test/SERVICENOW_TESTS_README.md
+Project overview:   SERVICENOW_TESTING_SUITE.md
+
+================================================================================

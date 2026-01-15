@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-01-13T23:10:46.937Z",
+  "summary": {
+    "totalTurns": 1,
+    "mcpToolCallsDetected": 0,
+    "bashFallbacksDetected": 1,
+    "manualInvestigationsDetected": 0,
+    "mcpToolsUsed": [],
+    "primaryMethod": "bash_fallback"
+  },
+  "mcpToolCalls": [],
+  "bashFallbacks": [
+    {
+      "turnNumber": 1,
+      "type": "bash_fallback",
+      "command": "npm run query -- table-schema x_cadso_work_campaign",
+      "fullContent": "# Table Schema Analysis\n$ npm run query -- table-schema x_cadso_work_campaign\n{\n  \"success\": true,\n  \"data\": {\n    \"table\": \"x_cadso_work_campaign\",\n    \"field_count\": 16,\n    \"fields\": [\n      {\"name\": \"total_budget\", \"type\": \"currency\", \"mandatory\": true},\n      {\"name\": \"project_owner\", \"type\": \"reference\", \"mandatory\": false},\n      {\"name\": \"goal\", \"type\": \"reference\", \"mandatory\": false},\n      ...\n    ]\n  }\n}\n\n# Table Dependencies\n$ npm run query -- table-dependencies x_cadso_work_campaig"
+    }
+  ],
+  "manualInvestigations": [],
+  "agentDecisions": [],
+  "confidenceLevels": [],
+  "failureAnalysis": {
+    "mcpConfigLoaded": null,
+    "toolCallAttempts": [],
+    "errorResponses": [],
+    "avoidanceReasons": [
+      {
+        "reason": "agent_chose_bash",
+        "description": "Agent used bash commands instead of MCP tools",
+        "severity": "medium",
+        "bashCommands": 1
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": "medium",
+      "category": "tool_usage",
+      "recommendation": "Agent is using bash fallback instead of native MCP tools",
+      "action": "Verify MCP server is running and tools are available"
+    }
+  ]
+}

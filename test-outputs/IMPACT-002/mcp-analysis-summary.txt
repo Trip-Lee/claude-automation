@@ -1,0 +1,10 @@
+=== MCP Tool Usage Analysis ===
+
+Total conversation turns: 10
+Primary method: manual_grep
+MCP tool calls: 0
+Bash fallbacks: 0
+Manual investigations: 1
+
+--- Failure Analysis ---
+  [MEDIUM] unknown: Could not determine why MCP tools were not used

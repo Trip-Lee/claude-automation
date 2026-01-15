@@ -1,0 +1,299 @@
+{
+  "flowMetadata": {
+    "sysId": "d3847d253348f2907b18bc534d5c7be9",
+    "name": "Send Email V4",
+    "internalName": "send_email_v4",
+    "type": "flow",
+    "status": "published",
+    "active": true,
+    "application": "Tenon_Marketing_Automate_Email_Spoke",
+    "scope": "Tenon Marketing Automate Email Spoke",
+    "version": "2",
+    "createdOn": "2025-09-17T17:21:15Z",
+    "updatedOn": "2025-12-16T14:56:40Z",
+    "createdBy": "desiree.morehouse",
+    "updatedBy": "desiree.morehouse"
+  },
+  "triggers": [
+    {
+      "table": "x_cadso_automate_email_batch",
+      "condition": "statusCHANGESTOready_to_send",
+      "operations": { "insert": true, "update": true, "delete": false }
+    },
+    {
+      "table": "x_cadso_automate_domain",
+      "condition": "verification_statusCHANGESTOValidating",
+      "operations": { "insert": false, "update": true, "delete": false }
+    },
+    {
+      "table": "x_cadso_automate_email_send",
+      "condition": "email_htmlVALCHANGES^email_htmlISNOTEMPTY",
+      "operations": { "insert": false, "update": true, "delete": false }
+    },
+    {
+      "table": "x_cadso_automate_email_send",
+      "condition": "statusCHANGESTOsend-ready",
+      "operations": { "insert": true, "update": true, "delete": false }
+    },
+    {
+      "table": "x_cadso_automate_email_send",
+      "condition": "statusCHANGESFROMdraft^statusCHANGESTOsend-ready",
+      "operations": { "insert": false, "update": true, "delete": false }
+    },
+    {
+      "table": "x_cadso_automate_dns_record",
+      "condition": "type=dkim^valueISEMPTY",
+      "operations": { "insert": true, "update": false, "delete": false }
+    },
+    {
+      "table": "x_cadso_automate_domain",
+      "condition": "verification_statusVALCHANGES^verification_statusCHANGESTOverifying",
+      "operations": { "insert": true, "update": true, "delete": false }
+    },
+    {
+      "table": "x_cadso_automate_email",
+      "condition": "htmlISNOTEMPTY^htmlVALCHANGES^jsonISNOTEMPTY",
+      "operations": { "insert": true, "update": true, "delete": false }
+    },
+    {
+      "table": "x_cadso_automate_email",
+      "condition": "htmlISNOTEMPTY^stateINerror,draft,standard,automated,scheduled,queue,sent,published,archive^htmlVALCHANGES",
+      "operations": { "insert": false, "update": true, "delete": false }
+    }
+  ],
+  "scriptIncludes": {
+    "referenced": [
+      {
+        "name": "Audience",
+        "scope": "x_cadso_automate",
+        "fullName": "x_cadso_automate.Audience",
+        "methods": [
+          "refreshAudienceHash()",
+          "generateSMSTemps(sendId)",
+          "generateEmailTemps(sendId)",
+          "deleteSMSTemps(sendId)",
+          "deleteEmailTemps(sendId)"
+        ],
+        "usedInSteps": [1, 2, 21]
+      }
+    ],
+    "builtIn": [
+      {
+        "name": "GlideRecord",
+        "usedInSteps": [4, 5]
+      }
+    ]
+  },
+  "tables": {
+    "accessed": [
+      {
+        "name": "x_cadso_automate_email_send",
+        "operations": {
+          "create": false,
+          "read": true,
+          "update": true,
+          "delete": false
+        },
+        "accessedInSteps": [4, 5, 22, 25],
+        "description": "Main email send record - status updated to 'completed' or 'error'"
+      },
+      {
+        "name": "x_cadso_automate_email_temp",
+        "operations": {
+          "create": false,
+          "read": true,
+          "update": false,
+          "delete": true
+        },
+        "accessedInSteps": [4],
+        "description": "Temporary email records for batch processing"
+      },
+      {
+        "name": "x_cadso_automate_audience",
+        "operations": {
+          "create": false,
+          "read": true,
+          "update": false,
+          "delete": false
+        },
+        "accessedInSteps": [5],
+        "description": "Audience records for email targeting"
+      }
+    ],
+    "triggeredBy": [
+      "x_cadso_automate_email_batch",
+      "x_cadso_automate_domain",
+      "x_cadso_automate_email_send",
+      "x_cadso_automate_dns_record",
+      "x_cadso_automate_email"
+    ]
+  },
+  "externalAPIs": {
+    "integrations": [
+      {
+        "name": "Mailgun API",
+        "connectionAlias": "956cc622c3ee4a1085b196c4e401317e",
+        "endpoints": [
+          {
+            "action": "Create a mailing list",
+            "resourcePath": "/v3/lists",
+            "httpMethod": "POST",
+            "usedInSteps": [7, 15],
+            "description": "Creates mailing lists in Mailgun for bulk email sending"
+          },
+          {
+            "action": "Send An Email V2",
+            "httpMethod": "POST",
+            "usedInSteps": [10, 18],
+            "apiOperation": "47b5ec1fc36e0e1085b196c4e40131ec",
+            "apiSource": "cfb5281fc36e0e1085b196c4e401316b",
+            "description": "Sends bulk emails via Mailgun API"
+          }
+        ],
+        "capabilities": "18409d8007482000dada43c0d1021e8f",
+        "retryPolicy": "ef751ff07301330025d71afe2ff6a7f9"
+      }
+    ]
+  },
+  "subflows": {
+    "called": [],
+    "note": "This flow does not call any subflows directly; all actions are inline"
+  },
+  "flowActions": {
+    "steps": [
+      { "order": 0, "type": "logic", "action": "Top Level Try" },
+      { "order": 1, "type": "action", "action": "Refresh Audience Hash", "hasScript": true },
+      { "order": 2, "type": "action", "action": "Generate Temps", "hasScript": true },
+      { "order": 4, "type": "action", "action": "Generate Mailing List Address", "hasScript": true },
+      { "order": 5, "type": "action", "action": "Email Audience Batching Check", "hasScript": true },
+      { "order": 6, "type": "logic", "action": "If", "condition": "Audience < 2.5M" },
+      { "order": 7, "type": "action", "action": "Create a mailing list", "isRESTCall": true },
+      { "order": 9, "type": "action", "action": "Generate Mailing List Tag", "hasScript": true },
+      { "order": 10, "type": "action", "action": "Send An Email V2", "isRESTCall": true },
+      { "order": 11, "type": "logic", "action": "Else" },
+      { "order": 12, "type": "action", "action": "Set Flow Variables" },
+      { "order": 13, "type": "logic", "action": "Do the following until" },
+      { "order": 14, "type": "action", "action": "Loop through Email Batches", "hasScript": true },
+      { "order": 15, "type": "action", "action": "Create a mailing list", "isRESTCall": true },
+      { "order": 17, "type": "action", "action": "Generate Mailing List Tag", "hasScript": true },
+      { "order": 18, "type": "action", "action": "Send An Email V2", "isRESTCall": true },
+      { "order": 21, "type": "action", "action": "Delete Temps", "hasScript": true },
+      { "order": 22, "type": "action", "action": "Update Record", "targetTable": "x_cadso_automate_email_send", "setValues": "status=completed" },
+      { "order": 23, "type": "logic", "action": "Top Level Catch" },
+      { "order": 24, "type": "action", "action": "Log" },
+      { "order": 25, "type": "action", "action": "Update Record", "targetTable": "x_cadso_automate_email_send", "setValues": "status=error" }
+    ]
+  },
+  "relatedFlows": {
+    "triggeredBySameTables": [
+      {
+        "sysId": "1909a7dbc34fe690d4ddf1db05013199",
+        "name": "Create new DKIM Flow",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "fc109f4487a70a10369f33373cbb3558",
+        "name": "Get Domain Stats (Daily)",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "44096326c3c22e10d4ddf1db05013134",
+        "name": "Get Email Send Thumbnail",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "3c4d773bc3712290d4ddf1db0501318b",
+        "name": "Get Email Thumbnail",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "b267424633036a507b18bc534d5c7b01",
+        "name": "Get Plain Text Email",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "fe6ecbe733d152507b18bc534d5c7b37",
+        "name": "Process All Unsubscribes V2",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "0a05a4c0336d92507b18bc534d5c7b0f",
+        "name": "Reset Monthly Email Validation Count",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "a6f0b6b68777c690369f33373cbb35fb",
+        "name": "Retrieve Email Events",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "c05276c7c3232610d4ddf1db050131b1",
+        "name": "Retrieve Email Metrics",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "881d8b80c334be10d4ddf1db05013149",
+        "name": "Set Scheduled Emails To Send Ready",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "5ce8038d33f4aa107b18bc534d5c7b45",
+        "name": "Verify DNS Settings Flow",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain", "x_cadso_automate_email_batch"]
+      },
+      {
+        "sysId": "004d8e26c3af065085b196c4e40131eb",
+        "name": "Audience - Update Dynamic Lists",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain"]
+      },
+      {
+        "sysId": "313ae8f9c347c21085b196c4e4013162",
+        "name": "Get Content Template Thumbnail",
+        "sharedTriggers": ["x_cadso_automate_email_send", "x_cadso_automate_domain"]
+      }
+    ],
+    "potentiallyAffected": [
+      {
+        "name": "Send Automated Email",
+        "sysId": "d388b1e53360e2507b18bc534d5c7bc1",
+        "reason": "Related email sending functionality"
+      },
+      {
+        "name": "Retrieve Domain Email Events",
+        "sysId": "8ba56f6e87b89694369f33373cbb3555",
+        "reason": "Depends on email domain configuration"
+      },
+      {
+        "name": "Retrieve Domain Email Events V2",
+        "sysId": "2171a3e2c373aa10d4ddf1db050131a0",
+        "reason": "Depends on email domain configuration"
+      }
+    ]
+  },
+  "impactAnalysis": {
+    "riskLevel": "HIGH",
+    "reasons": [
+      "Critical email sending functionality",
+      "Integration with external Mailgun API",
+      "Multiple table triggers can cause race conditions",
+      "13 other flows share the same table triggers",
+      "Batch processing handles up to 2.5M recipients per batch"
+    ],
+    "recommendations": [
+      "Test changes in non-production environment first",
+      "Monitor Mailgun API quota limits",
+      "Consider impact on related flows during maintenance",
+      "Validate audience data before sending",
+      "Implement proper error handling for API failures"
+    ]
+  },
+  "crudSummary": {
+    "tables": {
+      "x_cadso_automate_email_send": { "C": false, "R": true, "U": true, "D": false },
+      "x_cadso_automate_email_temp": { "C": false, "R": true, "U": false, "D": true },
+      "x_cadso_automate_audience": { "C": false, "R": true, "U": false, "D": false }
+    }
+  },
+  "generatedAt": "2026-01-15T00:00:00Z",
+  "generatedBy": "Claude Code Analysis"
+}

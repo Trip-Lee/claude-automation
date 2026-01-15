@@ -1,0 +1,159 @@
+{
+  "testId": "SN-CB-004",
+  "testName": "SN-CB-004",
+  "description": "",
+  "status": "passed",
+  "startedAt": "2026-01-13T23:10:46.941Z",
+  "completedAt": "2026-01-13T23:10:46.942Z",
+  "config": {
+    "taskPrompt": "Create a comprehensive Script Include system with cross-script calling:\n\nCOMPONENTS TO BUILD:\n\n1. Script Include: \"WorkItemValidator\"\n   - Purpose: Validates work items (campaigns, projects, tasks)\n   - Functions:\n     - validateCampaign(campaignSysId): Validates campaign data\n     - validateProject(projectSysId): Validates project data\n     - validateTask(taskSysId): Validates task data\n     - checkReferences(tableName, sysId): Validates reference integrity\n   - Returns: {valid: true/false, errors: [array], warnings: [array]}\n   - Include proper error handling and logging\n\n2. Script Include: \"WorkItemManager\"\n   - Purpose: Manages work item lifecycle\n   - Functions:\n     - createCampaign(data): Creates campaign and validates using WorkItemValidator\n     - createProject(campaignSysId, data): Creates project under campaign\n     - createTask(projectSysId, data): Creates task under project\n   - MUST call WorkItemValidator before creating records\n   - Returns: {success: true/false, sysId: string, errors: [array]}\n\n3. Business Rule: \"Validate Before Campaign Insert\"\n   - Table: x_cadso_work_campaign\n   - When: Before Insert\n   - Action: Calls WorkItemValidator.validateCampaign(current.sys_id)\n   - If validation fails, abort insert and show errors\n   - Logs validation results\n\n4. Business Rule: \"Validate Before Project Insert\"\n   - Table: x_cadso_work_project\n   - When: Before Insert\n   - Action: Calls WorkItemValidator.validateProject(current.sys_id)\n   - Also validates parent campaign using checkReferences\n   - Abort if validation fails\n\nREQUIREMENTS:\n- Demonstrate Script Include → Script Include calling\n- Demonstrate Business Rule → Script Include calling\n- Proper error handling throughout\n- Comprehensive logging\n- JSDoc documentation\n- Unit tests for all functions\n\nDELIVERABLES:\n- script-includes/WorkItemValidator.js\n- script-includes/WorkItemManager.js\n- business-rules/validate_before_campaign_insert.js\n- business-rules/validate_before_project_insert.js\n- tests/test_work_item_validator.js\n- tests/test_work_item_manager.js\n- docs/WORK_ITEM_VALIDATION_SYSTEM.md\n\nVALIDATION:\nUse sn-tools to verify the implementation:\n- npm run query -- script-crud WorkItemValidator\n- npm run query -- script-crud WorkItemManager\n- npm run validate-change -- script WorkItemValidator",
+    "expectedArtifacts": [
+      "script-includes/WorkItemValidator.js",
+      "script-includes/WorkItemManager.js",
+      "business-rules/validate_before_campaign_insert.js",
+      "business-rules/validate_before_project_insert.js",
+      "tests/test_work_item_validator.js",
+      "tests/test_work_item_manager.js",
+      "docs/WORK_ITEM_VALIDATION_SYSTEM.md"
+    ],
+    "successCriteria": [],
+    "requiredSnTools": [
+      "query script-crud",
+      "validate-change"
+    ]
+  },
+  "sections": {
+    "summary": {
+      "testId": "SN-CB-004",
+      "testName": "SN-CB-004",
+      "status": "passed",
+      "duration": "0s",
+      "cost": "$2.2753",
+      "criteriaScore": "0/0",
+      "criteriaPercentage": 0,
+      "mcpToolCalls": 0,
+      "conversationTurns": 1,
+      "artifactsCreated": 5,
+      "expectedArtifacts": 7,
+      "keyFindings": [
+        {
+          "type": "error",
+          "message": "7 expected artifacts were not created"
+        }
+      ]
+    },
+    "mcpCalls": [],
+    "decisionTrail": [
+      {
+        "id": "decision-1768345307242-k419sv2rr",
+        "timestamp": "2026-01-13T23:01:47.242Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 1 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 539694,
+        "context": {
+          "promptSummary": "Create a comprehensive Script Include system with cross-script calling:\n\nCOMPONENTS TO BUILD:\n\n1. Script Include: \"WorkItemValidator\"\n   - Purpose: Validates work items (campaigns, projects, tasks)\n  ",
+          "conversationTurn": 1
+        }
+      }
+    ],
+    "criteriaMapping": [],
+    "artifacts": [
+      {
+        "path": "conversation.json",
+        "type": "json",
+        "size": 8947,
+        "created": "2026-01-08T22:58:42.959Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis-summary.txt",
+        "type": "text",
+        "size": 410,
+        "created": "2026-01-09T20:59:02.545Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis.json",
+        "type": "json",
+        "size": 1678,
+        "created": "2026-01-09T20:59:02.545Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "test-report-SN-CB-004.json",
+        "type": "json",
+        "size": 16890,
+        "created": "2026-01-09T20:59:02.545Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "test-report-SN-CB-004.md",
+        "type": "markdown",
+        "size": 4553,
+        "created": "2026-01-09T20:59:02.549Z",
+        "contentSummary": null,
+        "expected": false
+      }
+    ],
+    "metrics": {
+      "totalDurationMs": 1,
+      "totalCost": 2.2753485,
+      "conversationTurns": 1,
+      "mcpToolCalls": 0,
+      "successfulCalls": 0,
+      "failedCalls": 0,
+      "truncatedResponses": 0,
+      "tool_calls": 0,
+      "tools_used": {},
+      "total_response_size_chars": 0,
+      "total_response_size_kb": 0,
+      "truncated_responses": 0,
+      "average_response_size_kb": 0,
+      "largest_response": null,
+      "total_execution_time_ms": 0,
+      "average_execution_time_ms": 0,
+      "by_tool": {}
+    },
+    "timeline": [
+      {
+        "type": "artifact",
+        "description": "Created: conversation.json",
+        "timestamp": "2026-01-08T22:58:42.959Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis-summary.txt",
+        "timestamp": "2026-01-09T20:59:02.545Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis.json",
+        "timestamp": "2026-01-09T20:59:02.545Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: test-report-SN-CB-004.json",
+        "timestamp": "2026-01-09T20:59:02.545Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: test-report-SN-CB-004.md",
+        "timestamp": "2026-01-09T20:59:02.549Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:01:47.242Z"
+      }
+    ],
+    "recommendations": []
+  }
+}
