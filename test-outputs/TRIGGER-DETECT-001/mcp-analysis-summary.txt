@@ -1,0 +1,14 @@
+=== MCP Tool Usage Analysis ===
+
+Total conversation turns: 10
+Primary method: none
+MCP tool calls: 0
+Bash fallbacks: 0
+Manual investigations: 0
+
+--- Failure Analysis ---
+  [HIGH] prompt_misunderstood: Agent did not use any sn-tools (MCP or bash) - may have misunderstood prompt
+
+--- Recommendations ---
+  [HIGH] No sn-tools usage detected (neither MCP nor bash)
+    Action: Review agent system prompt to ensure sn-tools instructions are clear

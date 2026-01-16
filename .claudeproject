@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "created": "2025-10-21",
   "updated": "2025-11-21",
+  "enableAllProjectMcpServers": true,
 
   "knowledge": {
     "description": "Project knowledge base - automatically loaded in every session",

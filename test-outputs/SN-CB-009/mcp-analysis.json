@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-01-13T23:44:02.879Z",
+  "summary": {
+    "totalTurns": 15,
+    "mcpToolCallsDetected": 0,
+    "bashFallbacksDetected": 1,
+    "manualInvestigationsDetected": 0,
+    "mcpToolsUsed": [],
+    "primaryMethod": "bash_fallback"
+  },
+  "mcpToolCalls": [],
+  "bashFallbacks": [
+    {
+      "turnNumber": 4,
+      "type": "bash_fallback",
+      "command": "npm run trace-lineage -- <ScriptName> script",
+      "fullContent": "# For Script Includes:\nnpm run trace-lineage -- <ScriptName> script\nnpm run query -- script-crud <ScriptName>\nnpm run validate-change -- script <ScriptName>\nnpm run query -- script-forward <ScriptName>\nnpm run query -- script-backward <ScriptName>\n\n# For Tables:\nnpm run query -- table-schema <table_name>\nnpm run query -- table-dependencies <table_name>\nnpm run trace-backward -- <table_name> table\n\n# For Components:\nnpm run trace-impact -- <ComponentName>\nnpm run trace-lineage -- <ComponentName> "
+    }
+  ],
+  "manualInvestigations": [],
+  "agentDecisions": [],
+  "confidenceLevels": [],
+  "failureAnalysis": {
+    "mcpConfigLoaded": null,
+    "toolCallAttempts": [],
+    "errorResponses": [
+      {
+        "turnNumber": 1,
+        "type": "timeout"
+      }
+    ],
+    "avoidanceReasons": [
+      {
+        "reason": "tool_call_failed",
+        "description": "Tool calls failed: 1 errors",
+        "severity": "high",
+        "errors": [
+          {
+            "turnNumber": 1,
+            "type": "timeout"
+          }
+        ]
+      },
+      {
+        "reason": "agent_chose_bash",
+        "description": "Agent used bash commands instead of MCP tools",
+        "severity": "medium",
+        "bashCommands": 1
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": "medium",
+      "category": "tool_usage",
+      "recommendation": "Agent is using bash fallback instead of native MCP tools",
+      "action": "Verify MCP server is running and tools are available"
+    },
+    {
+      "priority": "high",
+      "category": "errors",
+      "recommendation": "1 errors detected during execution",
+      "action": "Review error messages and fix underlying issues"
+    }
+  ]
+}

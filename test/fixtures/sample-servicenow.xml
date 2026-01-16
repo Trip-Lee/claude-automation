@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <rm_story>
+    <sys_id>abc123def456</sys_id>
+    <number>STORY-1234</number>
+    <short_description>Add user authentication endpoint</short_description>
+    <description>Create a POST /api/auth/login endpoint that accepts email and password, validates credentials against the database, and returns a JWT token.</description>
+    <acceptance_criteria>- Endpoint accepts POST with email/password
+- Returns JWT on success
+- Rate limits to 5 attempts/minute</acceptance_criteria>
+    <priority>1</priority>
+    <state>2</state>
+  </rm_story>
+  <rm_story>
+    <sys_id>ghi789jkl012</sys_id>
+    <number>STORY-1235</number>
+    <short_description>Create user profile page</short_description>
+    <description>Build a React component at /profile that displays user information including name, email, and avatar.</description>
+    <acceptance_criteria>- Displays user info
+- Edit functionality
+- Form validation</acceptance_criteria>
+    <priority>2</priority>
+    <state>2</state>
+  </rm_story>
+  <rm_story>
+    <sys_id>mno345pqr678</sys_id>
+    <number>STORY-1236</number>
+    <short_description>Add email notification service</short_description>
+    <description>Implement an email service using SendGrid for welcome emails and password reset.</description>
+    <acceptance_criteria>- Welcome email on registration
+- Password reset email
+- HTML templates</acceptance_criteria>
+    <priority>2</priority>
+    <state>2</state>
+  </rm_story>
+</xml>

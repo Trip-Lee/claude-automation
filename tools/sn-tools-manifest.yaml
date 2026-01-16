@@ -90,6 +90,11 @@ safe_operations:
   - "query"                 # Unified query interface (read-only)
   - "refresh-cache"         # Refresh dependency cache (read-only)
 
+  # Execution Context (what happens when you create/update records)
+  - "cache-query"           # Query execution context for table operations (read-only)
+  - "cache-status"          # Check cache status and freshness (read-only)
+  - "simulate"              # Simulate record operations (read-only)
+
 # Operations that require human approval (AI cannot execute these)
 forbidden_operations:
   - "process-updates"       # Push temp_updates/ to ServiceNow (HUMAN ONLY)
@@ -147,6 +152,19 @@ examples:
   - command: "cd tools/sn-tools/ServiceNow-Tools && npm run query -- script-crud MyScriptInclude"
     description: "Query CRUD operations in a Script Include"
     use_case: "Understand what database operations a script performs"
+
+  # Execution Context examples (what happens when you create/update records)
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run cache-query -- incident insert"
+    description: "Query what happens when inserting an incident record"
+    use_case: "Before creating a record, understand what Business Rules fire, what fields are auto-set, what cascading records are created"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run cache-query -- incident update"
+    description: "Query what happens when updating an incident record"
+    use_case: "Before modifying a record, understand the side effects and cascading operations"
+
+  - command: "cd tools/sn-tools/ServiceNow-Tools && npm run cache-status"
+    description: "Check the status and freshness of the execution context cache"
+    use_case: "Verify the cache is populated and fresh before querying execution context"
 
 # System requirements
 requires:
@@ -276,6 +294,38 @@ agent_notes: |
 
   The unified tracing system provides ~90% full-stack tracing coverage,
   bridging all internal sn-tools subsystems into a single cohesive interface.
+
+  **EXECUTION CONTEXT: What Happens When You Create/Update Records**
+
+  BEFORE creating or modifying any record, query the execution context:
+
+  npm run cache-query -- <table> <operation>
+
+  This returns:
+  - Business Rules that will fire (in execution order)
+  - Fields that will be auto-set
+  - Cascading records that will be created
+  - Script Includes that will be called
+  - Risk level (LOW/MEDIUM/HIGH)
+
+  Example output for "incident insert":
+  {
+    "businessRules": [
+      { "name": "Set Priority", "timing": "before", "fieldsModified": ["priority", "urgency"] },
+      { "name": "Auto-Assign", "timing": "before", "scriptIncludesCalled": ["AssignmentEngine"] },
+      { "name": "Calculate SLA", "timing": "after", "scriptIncludesCalled": ["SLAUtils"] }
+    ],
+    "fieldsAutoSet": ["priority", "urgency", "assigned_to", "state"],
+    "tablesAffected": ["task"],
+    "scriptIncludesInvolved": ["IncidentUtils", "AssignmentEngine", "SLAUtils"],
+    "riskLevel": "HIGH"
+  }
+
+  USE THIS DATA TO:
+  - Understand side effects before creating records
+  - Predict what fields will be auto-populated
+  - Know what cascading operations will occur
+  - Make informed decisions about record operations
 
   The tool supports multi-instance routing (dev/prod) and will automatically
   route operations to the correct ServiceNow instance based on configuration.

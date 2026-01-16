@@ -1,20 +1,27 @@
 {
   "name": "claude-automation",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Claude Multi-Agent Coding System - Installable AI-powered development orchestration",
   "type": "module",
   "bin": {
-    "dev-tools": "./cli.js"
+    "dev-tools": "./cli.js",
+    "worktree": "./worktree-cli.js"
   },
   "scripts": {
     "start": "node cli.js",
     "install": "node install.js",
     "postinstall": "echo '\nRun \"node install.js\" to complete installation\n'",
-    "test": "node test/run-unit-tests.js",
+    "test": "node test/run-all-tests.js --quick",
     "test:unit": "node test/run-unit-tests.js",
     "test:smoke": "node test/smoke-test.js",
     "test:validate": "node test/validation-suite.js",
-    "test:all": "npm run test:unit && npm run test:smoke && npm run test:validate"
+    "test:all": "node test/run-all-tests.js",
+    "test:quick": "node test/run-all-tests.js --quick",
+    "test:stress": "node test/stress-test.js",
+    "test:servicenow": "node test/run-all-tests.js --servicenow",
+    "test:servicenow:capability": "node test/servicenow-capability-tests.js",
+    "test:servicenow:components": "node test/servicenow-component-backend-tests.js",
+    "test:servicenow:flows": "node test/servicenow-flow-understanding-tests.js"
   },
   "keywords": [
     "ai",

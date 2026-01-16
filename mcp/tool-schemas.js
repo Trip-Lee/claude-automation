@@ -152,6 +152,239 @@ export const REFRESH_DEPENDENCY_CACHE = {
 };
 
 /**
+ * Tool schema for querying execution context
+ * Returns what happens when you create/update/delete a record
+ */
+export const QUERY_EXECUTION_CONTEXT = {
+  name: 'query_execution_context',
+  description: 'Query what happens when you create, update, or delete a record on a ServiceNow table. Returns Business Rules that fire (in order), fields that are auto-set, cascading records created, Script Includes called, and risk level. Use this BEFORE creating or modifying records to understand side effects.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      table_name: {
+        type: 'string',
+        description: 'Name of the table (e.g., "incident", "x_cadso_work_campaign")'
+      },
+      operation: {
+        type: 'string',
+        enum: ['insert', 'update', 'delete'],
+        description: 'The operation to simulate',
+        default: 'insert'
+      }
+    },
+    required: ['table_name']
+  }
+};
+
+/**
+ * Tool schema for querying unified context
+ * Single interface for all context types from the unified cache
+ */
+export const QUERY_UNIFIED_CONTEXT = {
+  name: 'query_unified_context',
+  description: 'Query the unified cache for full context about any ServiceNow entity. Returns pre-computed CRUD summaries, dependency diagrams, execution context, and rollback strategies in a single query. Use this as your primary context source before making changes.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      entity_type: {
+        type: 'string',
+        enum: ['table', 'script_include', 'api', 'component'],
+        description: 'Type of entity to query'
+      },
+      entity_name: {
+        type: 'string',
+        description: 'Name of the entity (e.g., "x_cadso_work_campaign", "CampaignUtils")'
+      },
+      operation: {
+        type: 'string',
+        enum: ['insert', 'update', 'delete'],
+        description: 'Optional: specific operation for table context (insert, update, delete)'
+      }
+    },
+    required: ['entity_type', 'entity_name']
+  }
+};
+
+/**
+ * Tool schema for querying CRUD summaries
+ * Returns pre-formatted markdown tables
+ */
+export const QUERY_CRUD_SUMMARY = {
+  name: 'query_crud_summary',
+  description: 'Get a pre-formatted CRUD summary for a table or script include. Returns markdown tables showing Create, Read, Update, Delete operations, business rules, and risk levels. Perfect for including in responses to users.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      entity_type: {
+        type: 'string',
+        enum: ['table', 'script_include'],
+        description: 'Type of entity to get CRUD summary for'
+      },
+      entity_name: {
+        type: 'string',
+        description: 'Name of the entity'
+      }
+    },
+    required: ['entity_type', 'entity_name']
+  }
+};
+
+/**
+ * Tool schema for querying table relationships
+ * Returns cross-table dependencies and cascading patterns
+ */
+export const QUERY_TABLE_RELATIONSHIPS = {
+  name: 'query_table_relationships',
+  description: 'Get cross-table relationships for a ServiceNow table. Shows parent tables, child tables, reference fields, and cascading patterns. Essential for understanding impact of table changes.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      table_name: {
+        type: 'string',
+        description: 'Name of the table to query relationships for'
+      }
+    },
+    required: ['table_name']
+  }
+};
+
+/**
+ * Tool schema for querying impact templates
+ * Returns checklists for change planning
+ */
+export const QUERY_IMPACT_TEMPLATE = {
+  name: 'query_impact_template',
+  description: 'Get an impact assessment template for a specific entity type. Returns a checklist of considerations for change planning, including rollback strategies, testing requirements, and deployment notes.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      entity_type: {
+        type: 'string',
+        enum: ['table', 'script_include', 'api', 'component'],
+        description: 'Type of entity to get impact template for'
+      }
+    },
+    required: ['entity_type']
+  }
+};
+
+/**
+ * Tool schema for querying reverse dependencies
+ * Returns "what uses this" information
+ */
+export const QUERY_REVERSE_DEPENDENCIES = {
+  name: 'query_reverse_dependencies',
+  description: 'Find what entities depend on a given table, script include, or API. Returns a list of dependent entities that would be affected by changes. Critical for impact analysis.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      entity_type: {
+        type: 'string',
+        enum: ['table', 'script_include', 'api'],
+        description: 'Type of entity to find dependencies for'
+      },
+      entity_name: {
+        type: 'string',
+        description: 'Name of the entity'
+      }
+    },
+    required: ['entity_type', 'entity_name']
+  }
+};
+
+/**
+ * Tool schema for querying flow details
+ * Returns flow metadata, triggers, table operations
+ */
+export const QUERY_FLOW = {
+  name: 'query_flow',
+  description: 'Get details about a ServiceNow Flow Designer flow or subflow. Returns flow metadata, triggers, table operations, and script include dependencies.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      flow_identifier: {
+        type: 'string',
+        description: 'Flow name or sys_id to query'
+      }
+    },
+    required: ['flow_identifier']
+  }
+};
+
+/**
+ * Tool schema for querying flows that affect a table
+ */
+export const QUERY_FLOWS_FOR_TABLE = {
+  name: 'query_flows_for_table',
+  description: 'Find all Flow Designer flows that affect a specific table. Returns flows that trigger on table operations or reference the table in their steps.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      table_name: {
+        type: 'string',
+        description: 'Name of the table to find flows for'
+      }
+    },
+    required: ['table_name']
+  }
+};
+
+/**
+ * Tool schema for flow impact preview
+ * Shows which flows will trigger for a table operation
+ */
+export const QUERY_FLOW_IMPACT = {
+  name: 'query_flow_impact',
+  description: 'Get flow impact preview for a table operation. Shows which flows will trigger, their conditions, and risk assessment. Use this BEFORE creating or modifying records to understand flow side effects.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      table_name: {
+        type: 'string',
+        description: 'Name of the table'
+      },
+      operation: {
+        type: 'string',
+        enum: ['insert', 'update', 'delete'],
+        description: 'The operation to check impact for',
+        default: 'insert'
+      }
+    },
+    required: ['table_name']
+  }
+};
+
+/**
+ * Tool schema for searching flows
+ */
+export const SEARCH_FLOWS = {
+  name: 'search_flows',
+  description: 'Search for Flow Designer flows by name, description, or application. Returns matching flows with their metadata.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      query: {
+        type: 'string',
+        description: 'Search query (flow name, description, or application)'
+      }
+    },
+    required: ['query']
+  }
+};
+
+/**
+ * Tool schema for flow statistics
+ */
+export const QUERY_FLOW_STATISTICS = {
+  name: 'query_flow_statistics',
+  description: 'Get overall statistics about Flow Designer flows in the instance. Returns counts by type, application, and tables affected.',
+  inputSchema: {
+    type: 'object',
+    properties: {}
+  }
+};
+
+/**
  * All available tool schemas
  */
 export const ALL_TOOLS = [
@@ -161,7 +394,20 @@ export const ALL_TOOLS = [
   VALIDATE_CHANGE_IMPACT,
   QUERY_TABLE_SCHEMA,
   ANALYZE_SCRIPT_CRUD,
-  REFRESH_DEPENDENCY_CACHE
+  REFRESH_DEPENDENCY_CACHE,
+  QUERY_EXECUTION_CONTEXT,
+  // New unified cache tools
+  QUERY_UNIFIED_CONTEXT,
+  QUERY_CRUD_SUMMARY,
+  QUERY_TABLE_RELATIONSHIPS,
+  QUERY_IMPACT_TEMPLATE,
+  QUERY_REVERSE_DEPENDENCIES,
+  // Flow Designer tools
+  QUERY_FLOW,
+  QUERY_FLOWS_FOR_TABLE,
+  QUERY_FLOW_IMPACT,
+  SEARCH_FLOWS,
+  QUERY_FLOW_STATISTICS
 ];
 
 /**

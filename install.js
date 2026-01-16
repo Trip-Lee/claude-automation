@@ -22,7 +22,7 @@ import { join } from 'path';
 import { execSync } from 'child_process';
 
 console.log(chalk.bold.cyan('\n═══════════════════════════════════════════════════════════\n'));
-console.log(chalk.bold.cyan('  🚀 Claude Automation Installation Wizard\n'));
+console.log(chalk.bold.cyan('  Claude Automation Installation Wizard\n'));
 console.log(chalk.bold.cyan('═══════════════════════════════════════════════════════════\n'));
 
 async function main() {
@@ -33,12 +33,12 @@ async function main() {
     const results = await validator.validateAll();
 
     if (!results.allPassed) {
-      console.log(chalk.red('\n❌ Installation cannot continue with missing dependencies.'));
+      console.log(chalk.red('\nERROR: Installation cannot continue with missing dependencies.'));
       console.log(chalk.yellow('Please fix the issues above and run the installer again.\n'));
       process.exit(1);
     }
 
-    console.log(chalk.green('✅ All system dependencies validated!\n'));
+    console.log(chalk.green('SUCCESS: All system dependencies validated!\n'));
 
     // Step 2: Initialize Global Config
     console.log(chalk.bold('Step 2: Setting Up Configuration\n'));
@@ -76,11 +76,11 @@ async function main() {
       dirResults.failed.forEach(({ dir, error }) => {
         console.log(chalk.red(`    - ${dir}: ${error}`));
       });
-      console.log(chalk.red('\n❌ Installation failed due to directory creation errors.\n'));
+      console.log(chalk.red('\nERROR: Installation failed due to directory creation errors.\n'));
       process.exit(1);
     }
 
-    console.log(chalk.green('\n✅ Directory structure created!\n'));
+    console.log(chalk.green('\nSUCCESS: Directory structure created!\n'));
 
     // Step 4: API Keys Configuration
     console.log(chalk.bold('Step 4: API Keys Configuration\n'));
@@ -150,7 +150,7 @@ ${answers.GITHUB_TOKEN ? `GITHUB_TOKEN=${answers.GITHUB_TOKEN}` : '# GITHUB_TOKE
 `;
 
     writeFileSync(envPath, envContent, 'utf8');
-    console.log(chalk.green(`\n✅ Configuration saved to ${envPath}\n`));
+    console.log(chalk.green(`\nSUCCESS: Configuration saved to ${envPath}\n`));
 
     // Step 5: Link CLI Command
     console.log(chalk.bold('Step 5: Setting Up CLI Command\n'));
@@ -172,15 +172,15 @@ ${answers.GITHUB_TOKEN ? `GITHUB_TOKEN=${answers.GITHUB_TOKEN}` : '# GITHUB_TOKE
         console.log(chalk.gray('  Linking CLI command (may require sudo)...'));
         try {
           execSync('npm link', { stdio: 'inherit' });
-          console.log(chalk.green('  ✅ CLI command "dev-tools" is now available globally'));
+          console.log(chalk.green('  SUCCESS: CLI command "dev-tools" is now available globally'));
         } catch (error) {
-          console.log(chalk.yellow('  ⚠️  Could not automatically link CLI command'));
+          console.log(chalk.yellow('  WARNING: Could not automatically link CLI command'));
           console.log(chalk.gray('  You can manually link it later with: npm link'));
           console.log(chalk.gray(`  Or run directly: node ${join(process.cwd(), 'cli.js')}`));
         }
       }
     } catch (error) {
-      console.log(chalk.yellow('  ⚠️  CLI linking skipped'));
+      console.log(chalk.yellow('  WARNING: CLI linking skipped'));
     }
 
     // Step 6: Create Example Project Config
@@ -223,7 +223,7 @@ safety:
 `;
 
       writeFileSync(exampleConfigPath, exampleConfig, 'utf8');
-      console.log(chalk.green(`  ✅ Example config created: ${exampleConfigPath}`));
+      console.log(chalk.green(`  SUCCESS: Example config created: ${exampleConfigPath}`));
       console.log(chalk.gray('  Copy and customize this for your projects'));
     } else {
       console.log(chalk.gray(`  Example config already exists: ${exampleConfigPath}`));
@@ -231,7 +231,7 @@ safety:
 
     // Installation Complete!
     console.log(chalk.bold.green('\n═══════════════════════════════════════════════════════════'));
-    console.log(chalk.bold.green('  ✨ Installation Complete! ✨'));
+    console.log(chalk.bold.green('  Installation Complete!'));
     console.log(chalk.bold.green('═══════════════════════════════════════════════════════════\n'));
 
     console.log(chalk.bold('Quick Start:\n'));
@@ -262,10 +262,10 @@ safety:
     console.log(chalk.gray(`  - Tasks Data: ${globalConfig.get('tasksDir')}`));
     console.log(chalk.gray(`  - Logs: ${globalConfig.get('logsDir')}\n`));
 
-    console.log(chalk.green('Happy coding! 🚀\n'));
+    console.log(chalk.green('Happy coding!\n'));
 
   } catch (error) {
-    console.error(chalk.red(`\n❌ Installation failed: ${error.message}\n`));
+    console.error(chalk.red(`\nERROR: Installation failed: ${error.message}\n`));
     console.error(chalk.gray(error.stack));
     process.exit(1);
   }

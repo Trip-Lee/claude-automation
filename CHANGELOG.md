@@ -5,6 +5,74 @@ All notable changes to the Claude Multi-Agent Coding System will be documented i
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.17.0] - 2025-01-13
+
+### Execution Context & Natural Agent Behavior
+
+#### Added
+- **Execution Context System** (`tools/sn-tools/tool-manifest.yaml`)
+  - New `cache-query` command - Query what happens on record operations
+  - New `cache-status` command - Check cache freshness
+  - New `simulate` command - Simulate record operations
+  - Pre-computed execution chains showing Business Rules, fields auto-set, cascading records
+  - Risk level assessment (LOW/MEDIUM/HIGH)
+
+- **MCP Tool: query_execution_context** (`mcp/tool-schemas.js`, `mcp/tool-handlers.js`)
+  - New MCP tool for querying execution context via protocol
+  - Returns Business Rules that fire (in execution order)
+  - Shows fields auto-set, cascading tables, Script Includes called
+  - Supports insert/update/delete operations
+
+- **Dynamic Execution Context Discovery** (`lib/dynamic-agent-executor.js`)
+  - New `getAvailableExecutionContext()` method
+  - Auto-discovers cached table.operation combinations
+  - Injects context hint into ServiceNow agent prompts
+  - No hardcoded instructions - agents discover tools naturally
+
+- **Execution Context Cache** (`tools/sn-tools/ServiceNow-Tools/ai-context-cache/execution-chains/`)
+  - `incident.insert.json` - 5 Business Rules, VIP handling, auto-assignment
+  - `incident.update.json` - Update-specific Business Rules
+  - Structured data: phases (before/after/async), fields modified, risk level
+
+#### Changed
+- **Tool Manifest v2.3.0** (`tools/sn-tools/tool-manifest.yaml`)
+  - Added execution context commands to `safe_operations`
+  - Added execution context examples with use cases
+  - Extended `agent_notes` with execution context workflow documentation
+
+- **ServiceNow Tests** (`test/servicenow-component-backend-tests.js`, `lib/servicenow-workflows.js`)
+  - Updated SN-CB-001 to use WorkClientUtilsMS (exists in cache)
+  - Updated SN-CB-003 to use AudienceMS (exists in cache)
+  - Updated SN-CB-005 to use Audience component (exists in cache)
+  - Tests now aligned with actual cached entities
+
+#### Verified
+- Tool registry discovers sn-tools v2.3.0 with execution context
+- `npm run cache-query -- incident insert` returns full context
+- Dynamic discovery finds cached table.operation combinations
+- MCP tool `query_execution_context` operational
+
+#### Example Execution Context Output
+```json
+{
+  "businessRules": [
+    { "name": "Set Priority Based on Impact", "timing": "before", "fieldsModified": ["priority", "urgency"] },
+    { "name": "VIP Customer Handler", "timing": "before", "fieldsModified": ["priority", "u_vip_flag"] },
+    { "name": "Auto-Assign Incident", "timing": "before", "fieldsModified": ["assigned_to", "state"] }
+  ],
+  "fieldsAutoSet": ["priority", "urgency", "u_vip_flag", "assigned_to", "state"],
+  "tablesAffected": ["task"],
+  "scriptIncludesInvolved": ["IncidentUtils", "AssignmentEngine", "SLAUtils"],
+  "riskLevel": "HIGH"
+}
+```
+
+#### Next Steps
+- Test natural agent behavior with execution context
+- Verify agents query context before record operations without explicit instruction
+
+---
+
 ## [0.16.0] - 2025-01-10
 
 ### MCP Tool Agent Integration Fix
@@ -64,7 +132,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Note: Failures are due to incomplete analysis sections, NOT MCP tool availability issues.
 
-#### The 7 MCP Tools Now Available to Agents
+#### The 8 MCP Tools Now Available to Agents
 1. `trace_component_impact` - Trace UI component to backend
 2. `trace_table_dependencies` - Trace table backward dependencies
 3. `trace_full_lineage` - Complete bidirectional lineage
@@ -72,6 +140,7 @@ Note: Failures are due to incomplete analysis sections, NOT MCP tool availabilit
 5. `query_table_schema` - Get table field information
 6. `analyze_script_crud` - Analyze script CRUD operations
 7. `refresh_dependency_cache` - Refresh cached dependency data
+8. `query_execution_context` - Query what happens on record operations (v0.17.0)
 
 #### Pull Request
 - PR #3: https://github.com/Trip-Lee/claude-automation/pull/3

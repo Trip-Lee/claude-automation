@@ -1,0 +1,492 @@
+[
+  {
+    "turn": 1,
+    "prompt": "Analyze the \"Send Email V4\" flow and map all its dependencies.\n\nUsing the cache files at:\n- Agent cache: /home/coltrip/projects/sn-tools/ServiceNow-Tools/cache/servicenow-agent-cache.json\n- Full cache: /home/coltrip/projects/sn-tools/ServiceNow-Tools/cache/servicenow-full-cache.json\n\nCreate a dependency map showing:\n1. Script Includes referenced\n2. Tables accessed (read/write/reference)\n3. External APIs or integrations called\n4. Subflows called (if any)\n5. Any other flows that might be affected\n\nOutput format: JSON file with structured dependency data\nWrite to: flow-analysis/send-email-v4-dependencies.json",
+    "response": {
+      "response": "I've completed the comprehensive analysis of the \"Send Email V4\" flow. Here's a summary of what was discovered:\n\n## Send Email V4 Flow - Dependency Analysis Summary\n\n### Flow Overview\n| Property | Value |\n|----------|-------|\n| **Name** | Send Email V4 |\n| **Sys ID** | d3847d253348f2907b18bc534d5c7be9 |\n| **Application** | Tenon Marketing Automate Email Spoke |\n| **Status** | Published & Active |\n\n### 1. Script Includes Referenced\n| Script Include | Scope | Methods Used |\n|----------------|-------|--------------|\n| **Audience** | x_cadso_automate | `refreshAudienceHash()`, `generateSMSTemps()`, `generateEmailTemps()`, `deleteSMSTemps()`, `deleteEmailTemps()` |\n\n### 2. Tables Accessed (CRUD)\n| Table | CREATE | READ | UPDATE | DELETE |\n|-------|--------|------|--------|--------|\n| x_cadso_automate_email_send | ✗ | ✓ | ✓ | ✗ |\n| x_cadso_automate_email_temp | ✗ | ✓ | ✗ | ✓ |\n| x_cadso_automate_audience | ✗ | ✓ | ✗ | ✗ |\n\n### 3. External APIs/Integrations\n**Mailgun API** (Connection Alias: `956cc622c3ee4a1085b196c4e401317e`)\n- **POST /v3/lists** - Creates mailing lists for bulk sending\n- **POST (Send An Email V2)** - Sends bulk emails\n\n### 4. Subflows Called\nNone - all actions are inline within the flow\n\n### 5. Related/Affected Flows\n**13 flows share the same table triggers**, including:\n- Create new DKIM Flow\n- Get Domain Stats (Daily)\n- Get Email Send Thumbnail\n- Get Plain Text Email\n- Process All Unsubscribes V2\n- Retrieve Email Events/Metrics\n- Set Scheduled Emails To Send Ready\n- Verify DNS Settings Flow\n\n### Impact Assessment\n- **Risk Level**: HIGH\n- **Key Concerns**: Critical email functionality, external API integration, 2.5M batch size, potential race conditions with 13 related flows\n\nThe complete dependency map has been written to:\n**`/home/coltrip/claude-automation/flow-analysis/send-email-v4-dependencies.json`**",
+      "usage": {
+        "input_tokens": 86,
+        "cache_creation_input_tokens": 49274,
+        "cache_read_input_tokens": 1090514,
+        "output_tokens": 12509,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 49274
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 86,
+          "outputTokens": 12509,
+          "cacheReadInputTokens": 1090514,
+          "cacheCreationInputTokens": 49274,
+          "webSearchRequests": 0,
+          "costUSD": 1.1663744999999999,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        },
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 63306,
+          "outputTokens": 621,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.066411,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 1.2327855,
+      "sessionId": "b687994a-1f12-4ac5-ae80-ac1bcfd7eab3",
+      "duration": 218075,
+      "wallClockDuration": 220587,
+      "numTurns": 30,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490273865-dv7fs1nut",
+      "profiling": {
+        "spawnTime": 3,
+        "executionTime": 220584,
+        "parseTime": 0,
+        "totalTime": 220587
+      }
+    },
+    "timestamp": "2026-01-15T15:21:34.452Z"
+  },
+  {
+    "turn": 2,
+    "prompt": "Please continue with the task or provide status update.",
+    "response": {
+      "response": "I don't have any prior context about a specific task. This appears to be the start of our conversation.\n\nCould you please provide details about what you'd like me to help you with? For example:\n\n1. **Script Include work** - Creating, modifying, or analyzing Script Includes\n2. **Business Rule development** - Writing before/after, sync/async rules\n3. **Client Scripts** - Creating client-side functionality\n4. **Dependency analysis** - Using sn-tools to trace lineage and impacts\n5. **Code review** - Reviewing existing ServiceNow scripts for best practices\n6. **Performance optimization** - Improving script efficiency\n\nPlease share:\n- The specific task or requirement\n- Any relevant script names, table names, or component names\n- The ServiceNow instance or project context if applicable",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 330,
+        "cache_read_input_tokens": 18322,
+        "output_tokens": 181,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 330
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 2,
+          "outputTokens": 181,
+          "cacheReadInputTokens": 18322,
+          "cacheCreationInputTokens": 330,
+          "webSearchRequests": 0,
+          "costUSD": 0.0157585,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 0.0157585,
+      "sessionId": "d27706b2-e43f-44a2-90f6-33aef96fc4ea",
+      "duration": 5893,
+      "wallClockDuration": 8645,
+      "numTurns": 1,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490494452-sjdbu09qq",
+      "profiling": {
+        "spawnTime": 3,
+        "executionTime": 8642,
+        "parseTime": 0,
+        "totalTime": 8645
+      }
+    },
+    "timestamp": "2026-01-15T15:21:43.097Z"
+  },
+  {
+    "turn": 3,
+    "prompt": "Please continue with the task or provide status update.",
+    "response": {
+      "response": "I don't have any previous context or task to continue. This appears to be the start of a new conversation.\n\nCould you please provide details about what you'd like me to help you with? For example:\n\n1. **Script Include work** - Creating, modifying, or analyzing Script Includes\n2. **Business Rule development** - Before/after rules, async/sync configurations\n3. **Client Script creation** - Form behaviors, field validations\n4. **Code review** - Analyzing existing ServiceNow scripts for performance or security\n5. **Dependency analysis** - Using sn-tools to trace lineage and impact\n6. **Documentation** - Creating technical specifications or analysis documents\n\nPlease share the specific task or question you have, and I'll be happy to assist!",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 18652,
+        "output_tokens": 169,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 2,
+          "outputTokens": 169,
+          "cacheReadInputTokens": 18652,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.013560999999999998,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 0.013560999999999998,
+      "sessionId": "b100cdb7-dd9a-47aa-a8e6-c28e6cf8bb48",
+      "duration": 5756,
+      "wallClockDuration": 8084,
+      "numTurns": 1,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490503097-x7sx6y8z5",
+      "profiling": {
+        "spawnTime": 2,
+        "executionTime": 8082,
+        "parseTime": 0,
+        "totalTime": 8084
+      }
+    },
+    "timestamp": "2026-01-15T15:21:51.181Z"
+  },
+  {
+    "turn": 4,
+    "prompt": "Please continue with the task or provide status update.",
+    "response": {
+      "response": "I don't have any prior context about a specific task you're working on. This appears to be the start of our conversation.\n\nCould you please provide details about what you'd like me to help you with? For example:\n\n1. **Script Include Analysis** - I can analyze dependencies, CRUD operations, and impact of changes\n2. **Business Rule Development** - I can help create or modify business rules\n3. **Client Script Work** - I can assist with client-side scripting\n4. **Performance Review** - I can analyze scripts for optimization opportunities\n5. **Security Assessment** - I can review scripts for security best practices\n\nPlease share:\n- The specific ServiceNow script, table, or component you're working with\n- What you're trying to accomplish\n- Any relevant requirements or constraints\n\nI'll then use the sn-tools to analyze dependencies and provide a comprehensive deliverable following all quality standards.",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 18652,
+        "output_tokens": 197,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 2,
+          "outputTokens": 197,
+          "cacheReadInputTokens": 18652,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.014261,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 0.014261,
+      "sessionId": "b66b5655-e08c-4136-8ecf-79f029a5c925",
+      "duration": 5694,
+      "wallClockDuration": 7946,
+      "numTurns": 1,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490511181-exjweziss",
+      "profiling": {
+        "spawnTime": 2,
+        "executionTime": 7944,
+        "parseTime": 0,
+        "totalTime": 7946
+      }
+    },
+    "timestamp": "2026-01-15T15:21:59.127Z"
+  },
+  {
+    "turn": 5,
+    "prompt": "Please continue with the task or provide status update.",
+    "response": {
+      "response": "I don't have any previous context or task to continue. This appears to be the start of a new conversation.\n\nCould you please provide details about what you'd like me to help you with? For example:\n\n1. **Script Include Analysis** - I can analyze dependencies, CRUD operations, and impact of changes\n2. **Business Rule Development** - I can help create or modify business rules\n3. **Client Script Work** - I can assist with client-side scripting\n4. **Performance Optimization** - I can review and optimize GlideRecord/GlideQuery usage\n5. **Dependency Tracing** - I can trace lineage and dependencies using sn-tools\n\nPlease share:\n- The specific script, table, or component you want to work with\n- What you're trying to accomplish\n- Any relevant context about your ServiceNow environment\n\nI'm ready to help once you provide the details!",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 18652,
+        "output_tokens": 200,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 2,
+          "outputTokens": 200,
+          "cacheReadInputTokens": 18652,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.014335999999999998,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 0.014335999999999998,
+      "sessionId": "ae1f73d9-0fc5-42cb-8e51-5bb19e679c39",
+      "duration": 5405,
+      "wallClockDuration": 7630,
+      "numTurns": 1,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490519127-tm908fise",
+      "profiling": {
+        "spawnTime": 2,
+        "executionTime": 7628,
+        "parseTime": 0,
+        "totalTime": 7630
+      }
+    },
+    "timestamp": "2026-01-15T15:22:06.757Z"
+  },
+  {
+    "turn": 6,
+    "prompt": "Please continue with the task or provide status update.",
+    "response": {
+      "response": "I don't have any previous context or task to continue. This appears to be the start of a new conversation.\n\nCould you please provide details about what you'd like me to help you with? For example:\n\n1. **Script Include work** - Creating, modifying, or analyzing Script Includes\n2. **Business Rule development** - Before/after rules, async operations\n3. **Client Script creation** - Form manipulation, field validation\n4. **Dependency analysis** - Using sn-tools to trace lineage and impacts\n5. **Performance optimization** - GlideRecord/GlideQuery improvements\n6. **Code review** - Analyzing existing ServiceNow scripts\n\nPlease share:\n- The specific task or requirement\n- Any relevant script names, table names, or component names\n- The ServiceNow instance context (if applicable)\n\nI'm ready to help with ServiceNow scripting work and will follow all the mandatory checklist items including sn-tools validation!",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 18652,
+        "output_tokens": 213,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 2,
+          "outputTokens": 213,
+          "cacheReadInputTokens": 18652,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.014660999999999999,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 0.014660999999999999,
+      "sessionId": "266c0cfb-71c7-4c18-b6fa-d87c800eee29",
+      "duration": 6056,
+      "wallClockDuration": 9318,
+      "numTurns": 1,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490526757-lc9c81wm6",
+      "profiling": {
+        "spawnTime": 2,
+        "executionTime": 9316,
+        "parseTime": 0,
+        "totalTime": 9318
+      }
+    },
+    "timestamp": "2026-01-15T15:22:16.075Z"
+  },
+  {
+    "turn": 7,
+    "prompt": "Please continue with the task or provide status update.",
+    "response": {
+      "response": "I don't have any active task in progress. Could you please provide me with details about what you'd like me to help you with?\n\nHere are some examples of tasks I can assist with:\n\n1. **Script Include Analysis** - Analyze dependencies, CRUD operations, and impact of Script Includes\n2. **Business Rule Development** - Create or modify Business Rules with proper validation\n3. **Client Script Work** - Develop client-side scripts with best practices\n4. **Performance Optimization** - Review and optimize ServiceNow scripts\n5. **Dependency Tracing** - Use sn-tools to trace component lineage and dependencies\n6. **Code Review** - Review existing scripts for security and performance issues\n\nPlease share:\n- What specific task you'd like me to work on\n- Any relevant script names, table names, or component names\n- Any context or requirements for the work",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 18652,
+        "output_tokens": 194,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 2,
+          "outputTokens": 194,
+          "cacheReadInputTokens": 18652,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.014185999999999999,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 0.014185999999999999,
+      "sessionId": "bd3f075c-fad6-4144-8f18-49d6677f9fdb",
+      "duration": 5992,
+      "wallClockDuration": 8144,
+      "numTurns": 1,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490536075-d5bi303zc",
+      "profiling": {
+        "spawnTime": 2,
+        "executionTime": 8141,
+        "parseTime": 0,
+        "totalTime": 8143
+      }
+    },
+    "timestamp": "2026-01-15T15:22:24.219Z"
+  },
+  {
+    "turn": 8,
+    "prompt": "Please continue with the task or provide status update.",
+    "response": {
+      "response": "I don't have any previous context or ongoing task to continue. This appears to be the start of a new conversation.\n\nCould you please provide details about what you'd like me to help you with? For example:\n\n1. **Script Include Analysis** - I can analyze dependencies, CRUD operations, and impact of changes to Script Includes\n2. **Business Rule Development** - I can help create or modify Business Rules with proper validation\n3. **Client Script Work** - I can assist with client-side scripting\n4. **Performance Optimization** - I can review scripts for performance improvements\n5. **Security Review** - I can analyze scripts for security best practices\n6. **Impact Assessment** - I can trace dependencies before making changes\n\nPlease share:\n- The specific script, table, or component you're working with\n- What task you need to accomplish\n- Any relevant requirements or constraints\n\nI'll then follow the mandatory checklist to properly analyze dependencies using sn-tools before making any recommendations or changes.",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 18652,
+        "output_tokens": 216,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 2,
+          "outputTokens": 216,
+          "cacheReadInputTokens": 18652,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.014735999999999999,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 0.014735999999999999,
+      "sessionId": "b370b59e-9aae-4638-a5d0-ea9f6f57631b",
+      "duration": 7111,
+      "wallClockDuration": 9408,
+      "numTurns": 1,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490544219-v12620gv6",
+      "profiling": {
+        "spawnTime": 2,
+        "executionTime": 9406,
+        "parseTime": 0,
+        "totalTime": 9408
+      }
+    },
+    "timestamp": "2026-01-15T15:22:33.627Z"
+  },
+  {
+    "turn": 9,
+    "prompt": "Please continue with the task or provide status update.",
+    "response": {
+      "response": "I don't have any active task context to continue from. This appears to be a fresh conversation.\n\nCould you please provide details about what you'd like me to help you with? For example:\n\n1. **Script Include Analysis** - Analyze dependencies, CRUD operations, and impact of a specific Script Include\n2. **Business Rule Development** - Create or modify a Business Rule with proper validation\n3. **Client Script Work** - Develop or review Client Scripts\n4. **Table/Component Analysis** - Trace dependencies and lineage for ServiceNow components\n5. **Code Review** - Review existing ServiceNow scripts for best practices and performance\n\nPlease share:\n- The specific script, table, or component name you're working with\n- What task you'd like me to perform (analyze, create, modify, review)\n- Any relevant context or requirements\n\nI'll follow the mandatory checklist and use sn-tools to properly analyze dependencies before making any changes.",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 18652,
+        "output_tokens": 208,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 2,
+          "outputTokens": 208,
+          "cacheReadInputTokens": 18652,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.014535999999999999,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 0.014535999999999999,
+      "sessionId": "99b37bd6-c408-4ea7-a421-8fda84231d5e",
+      "duration": 6513,
+      "wallClockDuration": 8759,
+      "numTurns": 1,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490553627-ynsy1l49h",
+      "profiling": {
+        "spawnTime": 3,
+        "executionTime": 8756,
+        "parseTime": 0,
+        "totalTime": 8759
+      }
+    },
+    "timestamp": "2026-01-15T15:22:42.387Z"
+  },
+  {
+    "turn": 10,
+    "prompt": "Please continue with the task or provide status update.",
+    "response": {
+      "response": "I don't have context from a previous conversation about a specific task. Could you please provide more details about what you'd like me to help you with?\n\nFor example:\n- **Script Include work**: Creating, modifying, or analyzing a Script Include\n- **Business Rule work**: Writing or reviewing Business Rules\n- **Client Script work**: Developing Client Scripts\n- **Dependency analysis**: Tracing lineage and impact of ServiceNow components\n- **Code review**: Reviewing existing ServiceNow scripts for best practices\n- **Performance optimization**: Analyzing and optimizing script performance\n\nPlease describe the task you'd like me to work on, including:\n1. The specific script or component name (if applicable)\n2. What changes or analysis you need\n3. Any relevant table names or requirements",
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 18652,
+        "output_tokens": 172,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        }
+      },
+      "modelUsage": {
+        "claude-opus-4-5-20251101": {
+          "inputTokens": 2,
+          "outputTokens": 172,
+          "cacheReadInputTokens": 18652,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.013635999999999999,
+          "contextWindow": 200000,
+          "maxOutputTokens": 64000
+        }
+      },
+      "cost": 0.013635999999999999,
+      "sessionId": "c5a0415e-30cd-4a3c-b104-4bf23a7a7a48",
+      "duration": 6410,
+      "wallClockDuration": 8583,
+      "numTurns": 1,
+      "mcpToolCalls": [],
+      "auditTrailId": "decision-1768490562387-86urlzbq9",
+      "profiling": {
+        "spawnTime": 2,
+        "executionTime": 8581,
+        "parseTime": 0,
+        "totalTime": 8583
+      }
+    },
+    "timestamp": "2026-01-15T15:22:50.970Z"
+  }
+]

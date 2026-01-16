@@ -1,0 +1,152 @@
+{
+  "testId": "SN-CB-007",
+  "testName": "SN-CB-007",
+  "description": "",
+  "status": "passed",
+  "startedAt": "2026-01-13T23:27:03.788Z",
+  "completedAt": "2026-01-13T23:27:03.789Z",
+  "config": {
+    "taskPrompt": "You need to create a new email marketing record on the x_cadso_automate_email table.\n\nTASK:\nCreate a comprehensive analysis BEFORE actually creating the record. Your goal is to understand what will happen when you create the record.\n\nIMPORTANT: Before creating any record, you should:\n1. Understand what Business Rules will fire\n2. Know what fields will be auto-set\n3. Understand cascading effects to other tables\n4. Assess the risk level of the operation\n\nQUESTIONS TO ANSWER:\n1. What Business Rules fire when creating a record on x_cadso_automate_email?\n2. What is the execution order (before, after, async phases)?\n3. What fields are automatically set by Business Rules?\n4. What other tables might be affected (cascading)?\n5. What is the risk level of this operation?\n6. Are there any Script Includes involved?\n\nEXPECTED APPROACH:\n- Use the execution context query tools to understand what happens\n- The system has pre-computed execution chains for this table\n- Query: npm run cache-query -- x_cadso_automate_email insert\n- Analyze the business rule chain and understand the flow\n\nDELIVERABLES:\n- analysis/x_cadso_automate_email_execution_context.md\n- Include:\n  - Complete business rule execution chain\n  - Phase breakdown (before, after, async)\n  - Fields auto-set by rules\n  - Cascading table effects\n  - Risk assessment\n  - Recommendations for safe record creation\n\nNOTE: This test validates that agents naturally discover execution context without explicit instructions to do so.",
+    "expectedArtifacts": [
+      "analysis/x_cadso_automate_email_execution_context.md"
+    ],
+    "successCriteria": [],
+    "requiredSnTools": [
+      "cache-query"
+    ]
+  },
+  "sections": {
+    "summary": {
+      "testId": "SN-CB-007",
+      "testName": "SN-CB-007",
+      "status": "passed",
+      "duration": "0s",
+      "cost": "$1.1050",
+      "criteriaScore": "0/0",
+      "criteriaPercentage": 0,
+      "mcpToolCalls": 0,
+      "conversationTurns": 1,
+      "artifactsCreated": 5,
+      "expectedArtifacts": 1,
+      "keyFindings": [
+        {
+          "type": "error",
+          "message": "1 expected artifacts were not created"
+        }
+      ]
+    },
+    "mcpCalls": [],
+    "decisionTrail": [
+      {
+        "id": "decision-1768346587635-y1n0xu846",
+        "timestamp": "2026-01-13T23:23:07.635Z",
+        "type": "tool_selection",
+        "agentRole": "sn-scripting",
+        "action": "execute_query",
+        "target": "claude_code_cli",
+        "reasoning": "Executing query turn 1 with sn-scripting role",
+        "outcome": "success",
+        "durationMs": 236150,
+        "context": {
+          "promptSummary": "You need to create a new email marketing record on the x_cadso_automate_email table.\n\nTASK:\nCreate a comprehensive analysis BEFORE actually creating the record. Your goal is to understand what will ha",
+          "conversationTurn": 1
+        }
+      }
+    ],
+    "criteriaMapping": [],
+    "artifacts": [
+      {
+        "path": "conversation.json",
+        "type": "json",
+        "size": 6244,
+        "created": "2026-01-13T17:16:00.852Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis-summary.txt",
+        "type": "text",
+        "size": 441,
+        "created": "2026-01-13T17:16:00.852Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "mcp-analysis.json",
+        "type": "json",
+        "size": 962,
+        "created": "2026-01-13T17:16:00.852Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "test-report-SN-CB-007.json",
+        "type": "json",
+        "size": 5742,
+        "created": "2026-01-13T17:16:00.856Z",
+        "contentSummary": null,
+        "expected": false
+      },
+      {
+        "path": "test-report-SN-CB-007.md",
+        "type": "markdown",
+        "size": 1160,
+        "created": "2026-01-13T17:16:00.856Z",
+        "contentSummary": null,
+        "expected": false
+      }
+    ],
+    "metrics": {
+      "totalDurationMs": 1,
+      "totalCost": 1.105021,
+      "conversationTurns": 1,
+      "mcpToolCalls": 0,
+      "successfulCalls": 0,
+      "failedCalls": 0,
+      "truncatedResponses": 0,
+      "tool_calls": 0,
+      "tools_used": {},
+      "total_response_size_chars": 0,
+      "total_response_size_kb": 0,
+      "truncated_responses": 0,
+      "average_response_size_kb": 0,
+      "largest_response": null,
+      "total_execution_time_ms": 0,
+      "average_execution_time_ms": 0,
+      "by_tool": {}
+    },
+    "timeline": [
+      {
+        "type": "artifact",
+        "description": "Created: conversation.json",
+        "timestamp": "2026-01-13T17:16:00.852Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis-summary.txt",
+        "timestamp": "2026-01-13T17:16:00.852Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: mcp-analysis.json",
+        "timestamp": "2026-01-13T17:16:00.852Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: test-report-SN-CB-007.json",
+        "timestamp": "2026-01-13T17:16:00.856Z"
+      },
+      {
+        "type": "artifact",
+        "description": "Created: test-report-SN-CB-007.md",
+        "timestamp": "2026-01-13T17:16:00.856Z"
+      },
+      {
+        "type": "decision",
+        "description": "execute_query → claude_code_cli",
+        "timestamp": "2026-01-13T23:23:07.635Z"
+      }
+    ],
+    "recommendations": []
+  }
+}
