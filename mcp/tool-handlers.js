@@ -499,7 +499,7 @@ export class AnalyzeScriptCrudHandler extends ToolHandler {
 export class QueryExecutionContextHandler extends ToolHandler {
   async handle(params) {
     return this.execute(async () => {
-      const { table_name, operation = 'insert', include_crud_summary = true } = params;
+      const { table_name, operation = 'insert', include_crud_summary = true, include_impact_chain = true } = params;
 
       if (!table_name) {
         throw new Error('table_name is required. Provide a ServiceNow table name like "incident" or "x_cadso_work_campaign".');
@@ -543,6 +543,28 @@ export class QueryExecutionContextHandler extends ToolHandler {
           // Include rollback strategy
           if (context.rollbackStrategy) {
             result.rollback_strategy = context.rollbackStrategy;
+          }
+
+          // Include impact chain analysis (flows that trigger or reference this table)
+          if (include_impact_chain) {
+            const flowImpact = unifiedCache.getFlowImpactPreview(table_name, operation);
+            if (flowImpact && flowImpact.found) {
+              result.impact_chain = {
+                triggering_flows: flowImpact.triggeringFlows || [],
+                referencing_flows: flowImpact.referencingFlows || [],
+                flow_risk_level: flowImpact.summary?.riskLevel || 'LOW',
+                summary: {
+                  total_triggering: flowImpact.triggeringFlows?.length || 0,
+                  total_referencing: flowImpact.referencingFlows?.length || 0,
+                  description: flowImpact.triggeringFlows?.length > 0
+                    ? `${flowImpact.triggeringFlows.length} flow(s) will auto-trigger on ${operation}`
+                    : flowImpact.referencingFlows?.length > 0
+                      ? `${flowImpact.referencingFlows.length} flow(s) reference this table`
+                      : 'No flows affect this table'
+                },
+                warnings: flowImpact.warnings || []
+              };
+            }
           }
 
           return result;
@@ -1156,6 +1178,247 @@ export class QueryFlowStatisticsHandler extends ToolHandler {
   }
 }
 
+// ============================================================================
+// CACHE PROVIDER SINGLETON
+// Wraps the comprehensive agent cache for all query operations
+// ============================================================================
+
+let CacheProvider;
+let cacheProviderInstance = null;
+
+try {
+  const { createRequire } = await import('module');
+  const require = createRequire(import.meta.url);
+  const providerPath = path.join(SN_TOOLS_PATH, 'src', 'sn-cache-provider.js');
+  const providerModule = require(providerPath);
+  CacheProvider = providerModule.CacheProvider;
+} catch (error) {
+  console.error('Failed to load CacheProvider:', error.message);
+  CacheProvider = null;
+}
+
+/**
+ * Get or create the CacheProvider singleton instance
+ */
+async function getCacheProvider() {
+  if (!CacheProvider) {
+    return null;
+  }
+
+  if (!cacheProviderInstance) {
+    cacheProviderInstance = new CacheProvider({ rootPath: SN_TOOLS_PATH });
+    await cacheProviderInstance.initialize();
+  }
+
+  return cacheProviderInstance;
+}
+
+// ============================================================================
+// AGENT CACHE TOOL HANDLERS
+// Query comprehensive ServiceNow cache
+// ============================================================================
+
+/**
+ * Handler for list_sn_capabilities tool
+ */
+export class ListSnCapabilitiesHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return {
+          success: false,
+          error: 'CacheProvider not available. Check sn-tools installation.'
+        };
+      }
+      return provider.listCapabilities();
+    }, 'list_sn_capabilities');
+  }
+}
+
+/**
+ * Handler for query_entry_points tool
+ */
+export class QueryEntryPointsHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.queryEntryPoints(params);
+    }, 'query_entry_points');
+  }
+}
+
+/**
+ * Handler for query_rest_apis tool
+ */
+export class QueryRestApisHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.queryRestApis(params);
+    }, 'query_rest_apis');
+  }
+}
+
+/**
+ * Handler for query_execution_chains tool
+ */
+export class QueryExecutionChainsHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.queryExecutionChains(params);
+    }, 'query_execution_chains');
+  }
+}
+
+/**
+ * Handler for query_security tool
+ */
+export class QuerySecurityHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.querySecurity(params);
+    }, 'query_security');
+  }
+}
+
+/**
+ * Handler for query_client_side tool
+ */
+export class QueryClientSideHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.queryClientSide(params);
+    }, 'query_client_side');
+  }
+}
+
+/**
+ * Handler for query_validations tool
+ */
+export class QueryValidationsHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.queryValidations(params);
+    }, 'query_validations');
+  }
+}
+
+/**
+ * Handler for query_integrations tool
+ */
+export class QueryIntegrationsHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.queryIntegrations(params);
+    }, 'query_integrations');
+  }
+}
+
+/**
+ * Handler for query_performance tool
+ */
+export class QueryPerformanceHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.queryPerformance(params);
+    }, 'query_performance');
+  }
+}
+
+/**
+ * Handler for query_slas tool
+ */
+export class QuerySlasHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.querySlas(params);
+    }, 'query_slas');
+  }
+}
+
+/**
+ * Handler for query_tests tool
+ */
+export class QueryTestsHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.queryTests(params);
+    }, 'query_tests');
+  }
+}
+
+/**
+ * Handler for query_table_overview tool
+ */
+export class QueryTableOverviewHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return provider.queryTable(params);
+    }, 'query_table_overview');
+  }
+}
+
+/**
+ * Handler for get_cache_status tool
+ */
+export class GetCacheStatusHandler extends ToolHandler {
+  async handle(params) {
+    return this.execute(async () => {
+      const provider = await getCacheProvider();
+      if (!provider) {
+        return { success: false, error: 'CacheProvider not available' };
+      }
+      return {
+        success: true,
+        status: provider.getStatus()
+      };
+    }, 'get_cache_status');
+  }
+}
+
 /**
  * Tool handler registry
  */
@@ -1180,7 +1443,21 @@ export const TOOL_HANDLERS = {
   'query_flows_for_table': new QueryFlowsForTableHandler(),
   'query_flow_impact': new QueryFlowImpactHandler(),
   'search_flows': new SearchFlowsHandler(),
-  'query_flow_statistics': new QueryFlowStatisticsHandler()
+  'query_flow_statistics': new QueryFlowStatisticsHandler(),
+  // Agent cache tools (comprehensive queries)
+  'list_sn_capabilities': new ListSnCapabilitiesHandler(),
+  'query_entry_points': new QueryEntryPointsHandler(),
+  'query_rest_apis': new QueryRestApisHandler(),
+  'query_execution_chains': new QueryExecutionChainsHandler(),
+  'query_security': new QuerySecurityHandler(),
+  'query_client_side': new QueryClientSideHandler(),
+  'query_validations': new QueryValidationsHandler(),
+  'query_integrations': new QueryIntegrationsHandler(),
+  'query_performance': new QueryPerformanceHandler(),
+  'query_slas': new QuerySlasHandler(),
+  'query_tests': new QueryTestsHandler(),
+  'query_table_overview': new QueryTableOverviewHandler(),
+  'get_cache_status': new GetCacheStatusHandler()
 };
 
 // Export cache manager for external access (e.g., reload after cache rebuild)
