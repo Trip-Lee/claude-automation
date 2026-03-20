@@ -3,16 +3,70 @@
     "sn-tools": {
       "command": "node",
       "args": [
-        "./mcp/sn-tools-mcp-server.js"
+        "./tools/sn-tools/mcp/sn-tools-mcp-server.js"
       ],
-      "env": {
-        "SN_TOOLS_PATH": "${SN_TOOLS_PATH:-./tools/sn-tools/ServiceNow-Tools}"
-      },
-      "cwd": "${CLAUDE_AUTOMATION_HOME:-./}",
-      "description": "ServiceNow dependency tracing and impact analysis tools",
+      "description": "ServiceNow dependency tracing, impact analysis, and comprehensive cache queries (41 tools)",
       "disabled": false
     }
   },
-  "version": "1.0.0",
-  "description": "MCP configuration for claude-automation project"
+  "version": "2.0.0",
+  "description": "MCP configuration for claude-automation project - Updated with v3.0 cache query tools",
+  "toolCategories": {
+    "tracing": [
+      "trace_component_impact",
+      "trace_table_dependencies",
+      "trace_full_lineage"
+    ],
+    "validation": [
+      "validate_change_impact",
+      "query_table_schema",
+      "analyze_script_crud"
+    ],
+    "context": [
+      "query_execution_context",
+      "query_unified_context",
+      "query_crud_summary",
+      "query_table_relationships",
+      "query_impact_template",
+      "query_reverse_dependencies"
+    ],
+    "flows": [
+      "query_flow",
+      "query_flows_for_table",
+      "query_flow_impact",
+      "search_flows",
+      "query_flow_statistics"
+    ],
+    "cacheQueries": [
+      "list_sn_capabilities",
+      "query_entry_points",
+      "query_rest_apis",
+      "query_execution_chains",
+      "query_security",
+      "query_client_side",
+      "query_validations",
+      "query_integrations",
+      "query_performance",
+      "query_slas",
+      "query_tests",
+      "query_table_overview",
+      "get_cache_status"
+    ],
+    "composite": [
+      "full_component_analysis",
+      "full_table_analysis",
+      "pre_change_validation"
+    ],
+    "scopeManagement": [
+      "list_application_scopes",
+      "get_current_scope",
+      "switch_scope",
+      "get_current_update_set",
+      "switch_update_set",
+      "create_update_set"
+    ],
+    "maintenance": [
+      "refresh_dependency_cache"
+    ]
+  }
 }
